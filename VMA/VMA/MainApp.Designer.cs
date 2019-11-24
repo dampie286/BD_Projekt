@@ -37,6 +37,7 @@
             this.button_statistic = new System.Windows.Forms.Button();
             this.button_settings = new System.Windows.Forms.Button();
             this.panel_vehicleDB = new System.Windows.Forms.Panel();
+            this.button_logout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_who_online
@@ -95,6 +96,7 @@
             this.button_databaseVeh.Text = "Baza pojazdów";
             this.button_databaseVeh.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button_databaseVeh.UseVisualStyleBackColor = false;
+            this.button_databaseVeh.Click += new System.EventHandler(this.button_databaseVeh_Click);
             // 
             // button_reservation
             // 
@@ -175,11 +177,31 @@
             this.panel_vehicleDB.Size = new System.Drawing.Size(706, 533);
             this.panel_vehicleDB.TabIndex = 10;
             // 
+            // button_logout
+            // 
+            this.button_logout.BackColor = System.Drawing.Color.DimGray;
+            this.button_logout.FlatAppearance.BorderSize = 0;
+            this.button_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_logout.ForeColor = System.Drawing.Color.Yellow;
+            this.button_logout.Location = new System.Drawing.Point(18, 81);
+            this.button_logout.Margin = new System.Windows.Forms.Padding(0);
+            this.button_logout.MaximumSize = new System.Drawing.Size(144, 28);
+            this.button_logout.MinimumSize = new System.Drawing.Size(144, 28);
+            this.button_logout.Name = "button_logout";
+            this.button_logout.Size = new System.Drawing.Size(144, 28);
+            this.button_logout.TabIndex = 11;
+            this.button_logout.Text = "Wyloguj się";
+            this.button_logout.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_logout.UseVisualStyleBackColor = false;
+            this.button_logout.Click += new System.EventHandler(this.button_logout_Click);
+            // 
             // MainApp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.button_logout);
             this.Controls.Add(this.panel_vehicleDB);
             this.Controls.Add(this.button_settings);
             this.Controls.Add(this.button_statistic);
@@ -211,5 +233,6 @@
         private System.Windows.Forms.Button button_statistic;
         private System.Windows.Forms.Button button_settings;
         private System.Windows.Forms.Panel panel_vehicleDB;
+        private System.Windows.Forms.Button button_logout;
     }
 }

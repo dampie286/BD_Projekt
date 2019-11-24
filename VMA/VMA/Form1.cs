@@ -12,7 +12,7 @@ namespace VMA
 {
     public partial class Form_login : Form
     {
-        MainApp mainapp = new MainApp();
+        MainApp mainapp;
         public Form_login()
         {
             InitializeComponent();
@@ -20,8 +20,10 @@ namespace VMA
 
         private void button_sign_in_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
+            mainapp = new MainApp(this);
             mainapp.Show();
+            this.Hide();
         }
 
         private void Form_login_Load(object sender, EventArgs e)
