@@ -39,7 +39,7 @@
             this.textBox_login_name.MaximumSize = new System.Drawing.Size(204, 38);
             this.textBox_login_name.MinimumSize = new System.Drawing.Size(204, 38);
             this.textBox_login_name.Name = "textBox_login_name";
-            this.textBox_login_name.Size = new System.Drawing.Size(204, 38);
+            this.textBox_login_name.Size = new System.Drawing.Size(204, 22);
             this.textBox_login_name.TabIndex = 0;
             // 
             // textBox_login_password
@@ -48,7 +48,8 @@
             this.textBox_login_password.MaximumSize = new System.Drawing.Size(204, 38);
             this.textBox_login_password.MinimumSize = new System.Drawing.Size(204, 38);
             this.textBox_login_password.Name = "textBox_login_password";
-            this.textBox_login_password.Size = new System.Drawing.Size(204, 38);
+            this.textBox_login_password.PasswordChar = '*';
+            this.textBox_login_password.Size = new System.Drawing.Size(204, 22);
             this.textBox_login_password.TabIndex = 1;
             // 
             // button_sign_in
@@ -75,6 +76,7 @@
             this.MaximumSize = new System.Drawing.Size(400, 350);
             this.MinimumSize = new System.Drawing.Size(400, 350);
             this.Name = "Form_login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VM Application";
             this.Load += new System.EventHandler(this.Form_login_Load);
             this.ResumeLayout(false);

@@ -12,21 +12,21 @@ namespace VMA
 {
     public partial class MainApp : Form
     {
-        private Form_login windLog;
-        private Panel tmp;
-        private bool close = false;
+        private Form_login windLog;     //przechowywanie adresu do loginy
+        public DataTable tmp;
+        private bool close = false;     //sprawdzamy czy wylogowywaliśmy się
+       
         public MainApp(Form_login login)
         {
             InitializeComponent();
-            windLog = login;
+            windLog = login;        //przenoszenie adresu do zmiennej
+            userControl_Welcome2.BringToFront();
+           
         }
 
         private void MainApp_Load(object sender, EventArgs e)
         {
-
-
-
-           // panel_vehicle_DB2();
+            FillTmpDataTable();
             MaximizeBox = false;
             MinimizeBox = false;
         }
@@ -36,25 +36,13 @@ namespace VMA
             if(!close)
                  Application.Exit();
         }
-        private void panel_vehicle_DB2()
-        {
-            panel_vehicleDB.Hide();
-            tmp = new Panel();
-            tmp.BackColor =Color.Black;
-            tmp.Location = new Point(177, 27);
-           tmp.Name = "panel_vehicleDB";
-           tmp.Size = new Size(706, 533);
-           tmp.TabIndex = 11;
-           Controls.Add(tmp);
-            
-
-        }
+      
 
         private void button_databaseVeh_Click(object sender, EventArgs e)
         {
-            panel_vehicle_DB2();
-          tmp.Show();
-
+            userControl_veh_DB2.fillDataGridView(tmp);
+            userControl_veh_DB2.BringToFront();
+            
         }
 
         private void button_logout_Click(object sender, EventArgs e)
@@ -62,8 +50,27 @@ namespace VMA
             close = true;
             this.Close();
             windLog.Show();
-          
-           
         }
+
+        private void FillTmpDataTable()
+        {
+            tmp = new DataTable();
+            tmp.Columns.Add("VehID", typeof(int));
+            tmp.Columns.Add("BrandName");
+            tmp.Columns.Add("Model");
+            tmp.Columns.Add("Equipment");
+            tmp.Columns.Add("Version");
+            tmp.Columns.Add("Mileage");
+            tmp.Columns.Add("License");
+            for(int i=0;i<50;i++)
+            {
+                tmp.Rows.Add(i+1, "Audi", "A3", "VIP", "Hatchback", "34 315 km", "WE 123BD");
+                i++;
+                tmp.Rows.Add(i + 1, "BMW", "X3", "LUX", "SUV", "12 131 km", "WE 567BD");
+            }
+            
+             
+        }
+      
     }
 }

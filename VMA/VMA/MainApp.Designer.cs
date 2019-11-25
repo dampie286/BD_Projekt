@@ -36,8 +36,9 @@
             this.button_rent = new System.Windows.Forms.Button();
             this.button_statistic = new System.Windows.Forms.Button();
             this.button_settings = new System.Windows.Forms.Button();
-            this.panel_vehicleDB = new System.Windows.Forms.Panel();
             this.button_logout = new System.Windows.Forms.Button();
+            this.userControl_veh_DB2 = new VMA.UserControl_veh_DB();
+            this.userControl_Welcome2 = new VMA.UserControl_Welcome();
             this.SuspendLayout();
             // 
             // label_who_online
@@ -169,14 +170,6 @@
             this.button_settings.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button_settings.UseVisualStyleBackColor = false;
             // 
-            // panel_vehicleDB
-            // 
-            this.panel_vehicleDB.BackColor = System.Drawing.Color.Gray;
-            this.panel_vehicleDB.Location = new System.Drawing.Point(177, 27);
-            this.panel_vehicleDB.Name = "panel_vehicleDB";
-            this.panel_vehicleDB.Size = new System.Drawing.Size(706, 533);
-            this.panel_vehicleDB.TabIndex = 10;
-            // 
             // button_logout
             // 
             this.button_logout.BackColor = System.Drawing.Color.DimGray;
@@ -196,13 +189,32 @@
             this.button_logout.UseVisualStyleBackColor = false;
             this.button_logout.Click += new System.EventHandler(this.button_logout_Click);
             // 
+            // userControl_veh_DB2
+            // 
+            this.userControl_veh_DB2.BackColor = System.Drawing.Color.Gray;
+            this.userControl_veh_DB2.Location = new System.Drawing.Point(177, 27);
+            this.userControl_veh_DB2.Margin = new System.Windows.Forms.Padding(0);
+            this.userControl_veh_DB2.Name = "userControl_veh_DB2";
+            this.userControl_veh_DB2.Size = new System.Drawing.Size(706, 533);
+            this.userControl_veh_DB2.TabIndex = 12;
+            // 
+            // userControl_Welcome2
+            // 
+            this.userControl_Welcome2.BackColor = System.Drawing.Color.Gray;
+            this.userControl_Welcome2.Location = new System.Drawing.Point(177, 27);
+            this.userControl_Welcome2.Margin = new System.Windows.Forms.Padding(0);
+            this.userControl_Welcome2.Name = "userControl_Welcome2";
+            this.userControl_Welcome2.Size = new System.Drawing.Size(706, 533);
+            this.userControl_Welcome2.TabIndex = 13;
+            // 
             // MainApp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.userControl_Welcome2);
+            this.Controls.Add(this.userControl_veh_DB2);
             this.Controls.Add(this.button_logout);
-            this.Controls.Add(this.panel_vehicleDB);
             this.Controls.Add(this.button_settings);
             this.Controls.Add(this.button_statistic);
             this.Controls.Add(this.button_rent);
@@ -211,9 +223,12 @@
             this.Controls.Add(this.label_name_statistic);
             this.Controls.Add(this.label_name_reservation);
             this.Controls.Add(this.label_who_online);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(900, 600);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "MainApp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VM Application";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainApp_FormClosed);
             this.Load += new System.EventHandler(this.MainApp_Load);
@@ -232,7 +247,9 @@
         private System.Windows.Forms.Button button_rent;
         private System.Windows.Forms.Button button_statistic;
         private System.Windows.Forms.Button button_settings;
-        private System.Windows.Forms.Panel panel_vehicleDB;
         private System.Windows.Forms.Button button_logout;
+       
+        private UserControl_veh_DB userControl_veh_DB2;
+        private UserControl_Welcome userControl_Welcome2;
     }
 }

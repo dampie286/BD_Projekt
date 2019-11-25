@@ -60,6 +60,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl_veh_DB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_veh_DB.Designer.cs">
+      <DependentUpon>UserControl_veh_DB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_Welcome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_Welcome.Designer.cs">
+      <DependentUpon>UserControl_Welcome.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +87,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControl_veh_DB.resx">
+      <DependentUpon>UserControl_veh_DB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Welcome.resx">
+      <DependentUpon>UserControl_Welcome.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
