@@ -60,6 +60,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl_myStatics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_myStatics.Designer.cs">
+      <DependentUpon>UserControl_myStatics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_my_reservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_my_reservation.Designer.cs">
+      <DependentUpon>UserControl_my_reservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_rent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_rent.Designer.cs">
+      <DependentUpon>UserControl_rent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_rent_with_DB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_rent_with_DB.Designer.cs">
+      <DependentUpon>UserControl_rent_with_DB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_reservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_reservation.Designer.cs">
+      <DependentUpon>UserControl_reservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_veh_DB.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,6 +117,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControl_myStatics.resx">
+      <DependentUpon>UserControl_myStatics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_my_reservation.resx">
+      <DependentUpon>UserControl_my_reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_rent.resx">
+      <DependentUpon>UserControl_rent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_rent_with_DB.resx">
+      <DependentUpon>UserControl_rent_with_DB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_reservation.resx">
+      <DependentUpon>UserControl_reservation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_veh_DB.resx">
       <DependentUpon>UserControl_veh_DB.cs</DependentUpon>
     </EmbeddedResource>
