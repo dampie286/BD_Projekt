@@ -71,6 +71,10 @@ namespace VMA
             
              
         }
-      
+
+        private void userControl_Welcome2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

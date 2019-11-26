@@ -35,30 +35,33 @@
             // 
             // textBox_login_name
             // 
-            this.textBox_login_name.Location = new System.Drawing.Point(98, 77);
-            this.textBox_login_name.MaximumSize = new System.Drawing.Size(204, 38);
-            this.textBox_login_name.MinimumSize = new System.Drawing.Size(204, 38);
+            this.textBox_login_name.Location = new System.Drawing.Point(74, 63);
+            this.textBox_login_name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_login_name.MaximumSize = new System.Drawing.Size(154, 38);
+            this.textBox_login_name.MinimumSize = new System.Drawing.Size(154, 38);
             this.textBox_login_name.Name = "textBox_login_name";
-            this.textBox_login_name.Size = new System.Drawing.Size(204, 22);
+            this.textBox_login_name.Size = new System.Drawing.Size(154, 20);
             this.textBox_login_name.TabIndex = 0;
             // 
             // textBox_login_password
             // 
-            this.textBox_login_password.Location = new System.Drawing.Point(98, 144);
-            this.textBox_login_password.MaximumSize = new System.Drawing.Size(204, 38);
-            this.textBox_login_password.MinimumSize = new System.Drawing.Size(204, 38);
+            this.textBox_login_password.Location = new System.Drawing.Point(74, 117);
+            this.textBox_login_password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_login_password.MaximumSize = new System.Drawing.Size(154, 38);
+            this.textBox_login_password.MinimumSize = new System.Drawing.Size(154, 38);
             this.textBox_login_password.Name = "textBox_login_password";
             this.textBox_login_password.PasswordChar = '*';
-            this.textBox_login_password.Size = new System.Drawing.Size(204, 22);
+            this.textBox_login_password.Size = new System.Drawing.Size(154, 20);
             this.textBox_login_password.TabIndex = 1;
             // 
             // button_sign_in
             // 
-            this.button_sign_in.Location = new System.Drawing.Point(120, 226);
-            this.button_sign_in.MaximumSize = new System.Drawing.Size(161, 40);
-            this.button_sign_in.MinimumSize = new System.Drawing.Size(161, 40);
+            this.button_sign_in.Location = new System.Drawing.Point(90, 184);
+            this.button_sign_in.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_sign_in.MaximumSize = new System.Drawing.Size(121, 32);
+            this.button_sign_in.MinimumSize = new System.Drawing.Size(121, 32);
             this.button_sign_in.Name = "button_sign_in";
-            this.button_sign_in.Size = new System.Drawing.Size(161, 40);
+            this.button_sign_in.Size = new System.Drawing.Size(121, 32);
             this.button_sign_in.TabIndex = 2;
             this.button_sign_in.Text = "Zaloguj się";
             this.button_sign_in.UseVisualStyleBackColor = true;
@@ -66,18 +69,25 @@
             // 
             // Form_login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(382, 303);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(288, 253);
             this.Controls.Add(this.button_sign_in);
             this.Controls.Add(this.textBox_login_password);
             this.Controls.Add(this.textBox_login_name);
-            this.MaximumSize = new System.Drawing.Size(400, 350);
-            this.MinimumSize = new System.Drawing.Size(400, 350);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(304, 292);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(304, 292);
             this.Name = "Form_login";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VM Application";
+            this.Text = "Vehicles Management App";
             this.Load += new System.EventHandler(this.Form_login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
