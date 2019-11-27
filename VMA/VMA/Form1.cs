@@ -13,8 +13,11 @@ namespace VMA
     public partial class Form_login : Form
     {
         MainApp mainapp;
-        string name = "admin";
-        string password = "admin";
+        Form_panel_admin adminapp;
+        string name = "damianek";
+        string password = "damianek";
+        string name_adm = "admin";
+        string pass_adm = "admin";
         public Form_login()
         {
             InitializeComponent();
@@ -28,6 +31,14 @@ namespace VMA
                 textBox_login_password.Clear();
                 mainapp = new MainApp(this);
                 mainapp.Show();
+                this.Hide();
+            }
+            else if ((name_adm == textBox_login_name.Text.ToString()) && (pass_adm == textBox_login_password.Text.ToString()))
+            {
+                textBox_login_name.Clear();
+                textBox_login_password.Clear();
+                adminapp = new Form_panel_admin(this);
+                adminapp.Show();
                 this.Hide();
             }
             else

@@ -385,7 +385,6 @@
             this.Controls.Add(this.textBox_brand);
             this.Name = "UserControl_rent_with_DB";
             this.Size = new System.Drawing.Size(941, 656);
-           
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_veh_DB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
