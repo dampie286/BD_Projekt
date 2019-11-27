@@ -124,5 +124,10 @@ namespace VMA
         {
             userControl_myStatics1.BringToFront();
         }
+
+        private void button_settings_Click(object sender, EventArgs e)
+        {
+            userControl_settings1.BringToFront();
+        }
     }
 }

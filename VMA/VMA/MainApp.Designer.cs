@@ -35,13 +35,14 @@
             this.button_statistic = new System.Windows.Forms.Button();
             this.button_settings = new System.Windows.Forms.Button();
             this.button_logout = new System.Windows.Forms.Button();
+            this.userControl_myStatics1 = new VMA.UserControl_myStatics();
             this.userControl_my_reservation1 = new VMA.UserControl_my_reservation();
             this.userControl_rent_with_DB1 = new VMA.UserControl_rent_with_DB();
             this.userControl_rent1 = new VMA.UserControl_rent();
             this.userControl_reservation1 = new VMA.UserControl_reservation();
             this.userControl_Welcome2 = new VMA.UserControl_Welcome();
             this.userControl_veh_DB2 = new VMA.UserControl_veh_DB();
-            this.userControl_myStatics1 = new VMA.UserControl_myStatics();
+            this.userControl_settings1 = new VMA.UserControl_settings();
             this.SuspendLayout();
             // 
             // label_who_online
@@ -158,6 +159,7 @@
             this.button_settings.TabIndex = 9;
             this.button_settings.Text = "Ustawienia";
             this.button_settings.UseVisualStyleBackColor = false;
+            this.button_settings.Click += new System.EventHandler(this.button_settings_Click);
             // 
             // button_logout
             // 
@@ -179,6 +181,14 @@
             this.button_logout.Text = "Wyloguj się";
             this.button_logout.UseVisualStyleBackColor = false;
             this.button_logout.Click += new System.EventHandler(this.button_logout_Click);
+            // 
+            // userControl_myStatics1
+            // 
+            this.userControl_myStatics1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_myStatics1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_myStatics1.Name = "userControl_myStatics1";
+            this.userControl_myStatics1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_myStatics1.TabIndex = 18;
             // 
             // userControl_my_reservation1
             // 
@@ -221,7 +231,6 @@
             this.userControl_Welcome2.Name = "userControl_Welcome2";
             this.userControl_Welcome2.Size = new System.Drawing.Size(706, 533);
             this.userControl_Welcome2.TabIndex = 13;
-           
             // 
             // userControl_veh_DB2
             // 
@@ -232,19 +241,20 @@
             this.userControl_veh_DB2.Size = new System.Drawing.Size(706, 533);
             this.userControl_veh_DB2.TabIndex = 12;
             // 
-            // userControl_myStatics1
+            // userControl_settings1
             // 
-            this.userControl_myStatics1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_myStatics1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_myStatics1.Name = "userControl_myStatics1";
-            this.userControl_myStatics1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_myStatics1.TabIndex = 18;
+            this.userControl_settings1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_settings1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_settings1.Name = "userControl_settings1";
+            this.userControl_settings1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_settings1.TabIndex = 19;
             // 
             // MainApp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.userControl_settings1);
             this.Controls.Add(this.userControl_myStatics1);
             this.Controls.Add(this.userControl_my_reservation1);
             this.Controls.Add(this.button_logout);
@@ -291,5 +301,6 @@
         private UserControl_rent_with_DB userControl_rent_with_DB1;
         private UserControl_my_reservation userControl_my_reservation1;
         private UserControl_myStatics userControl_myStatics1;
+        private UserControl_settings userControl_settings1;
     }
 }

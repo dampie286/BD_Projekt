@@ -90,6 +90,12 @@
     <Compile Include="UserControl_reservation.Designer.cs">
       <DependentUpon>UserControl_reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_settings.Designer.cs">
+      <DependentUpon>UserControl_settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_veh_DB.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_reservation.resx">
       <DependentUpon>UserControl_reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_settings.resx">
+      <DependentUpon>UserControl_settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_veh_DB.resx">
       <DependentUpon>UserControl_veh_DB.cs</DependentUpon>
