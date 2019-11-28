@@ -28,38 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_login));
             this.textBox_login_name = new System.Windows.Forms.TextBox();
             this.textBox_login_password = new System.Windows.Forms.TextBox();
             this.button_sign_in = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel_underline_pass = new System.Windows.Forms.Panel();
+            this.panel_underline_login = new System.Windows.Forms.Panel();
+            this.pictureBox_pass_symbol = new System.Windows.Forms.PictureBox();
+            this.pictureBox_login_symbol = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pass_symbol)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_login_symbol)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_login_name
             // 
-            this.textBox_login_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.textBox_login_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.textBox_login_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_login_name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_login_name.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_login_name.Location = new System.Drawing.Point(96, 61);
+            this.textBox_login_name.Location = new System.Drawing.Point(93, 61);
             this.textBox_login_name.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_login_name.Name = "textBox_login_name";
-            this.textBox_login_name.Size = new System.Drawing.Size(130, 19);
+            this.textBox_login_name.Size = new System.Drawing.Size(133, 19);
             this.textBox_login_name.TabIndex = 0;
             this.textBox_login_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_login_password
             // 
-            this.textBox_login_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.textBox_login_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.textBox_login_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_login_password.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_login_password.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_login_password.Location = new System.Drawing.Point(96, 118);
+            this.textBox_login_password.Location = new System.Drawing.Point(93, 118);
             this.textBox_login_password.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_login_password.Name = "textBox_login_password";
             this.textBox_login_password.PasswordChar = '*';
-            this.textBox_login_password.Size = new System.Drawing.Size(130, 19);
+            this.textBox_login_password.Size = new System.Drawing.Size(133, 19);
             this.textBox_login_password.TabIndex = 1;
             this.textBox_login_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -81,28 +85,45 @@
             this.button_sign_in.UseVisualStyleBackColor = false;
             this.button_sign_in.Click += new System.EventHandler(this.button_sign_in_Click);
             // 
-            // panel1
+            // panel_underline_pass
             // 
-            this.panel1.BackColor = System.Drawing.Color.Yellow;
-            this.panel1.Location = new System.Drawing.Point(72, 138);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(154, 1);
-            this.panel1.TabIndex = 3;
+            this.panel_underline_pass.BackColor = System.Drawing.Color.Yellow;
+            this.panel_underline_pass.Location = new System.Drawing.Point(72, 140);
+            this.panel_underline_pass.Name = "panel_underline_pass";
+            this.panel_underline_pass.Size = new System.Drawing.Size(154, 1);
+            this.panel_underline_pass.TabIndex = 3;
             // 
-            // panel2
+            // panel_underline_login
             // 
-            this.panel2.BackColor = System.Drawing.Color.Yellow;
-            this.panel2.Location = new System.Drawing.Point(72, 81);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(154, 1);
-            this.panel2.TabIndex = 4;
+            this.panel_underline_login.BackColor = System.Drawing.Color.Yellow;
+            this.panel_underline_login.Location = new System.Drawing.Point(72, 83);
+            this.panel_underline_login.Name = "panel_underline_login";
+            this.panel_underline_login.Size = new System.Drawing.Size(154, 1);
+            this.panel_underline_login.TabIndex = 4;
             // 
-            // panel3
+            // pictureBox_pass_symbol
             // 
-            this.panel3.Location = new System.Drawing.Point(72, 61);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(0, 0);
-            this.panel3.TabIndex = 5;
+            this.pictureBox_pass_symbol.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_pass_symbol.ErrorImage = null;
+            this.pictureBox_pass_symbol.Image = global::VMA.Properties.Resources._lock;
+            this.pictureBox_pass_symbol.InitialImage = null;
+            this.pictureBox_pass_symbol.Location = new System.Drawing.Point(72, 118);
+            this.pictureBox_pass_symbol.Name = "pictureBox_pass_symbol";
+            this.pictureBox_pass_symbol.Size = new System.Drawing.Size(19, 19);
+            this.pictureBox_pass_symbol.TabIndex = 6;
+            this.pictureBox_pass_symbol.TabStop = false;
+            // 
+            // pictureBox_login_symbol
+            // 
+            this.pictureBox_login_symbol.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_login_symbol.ErrorImage = null;
+            this.pictureBox_login_symbol.Image = global::VMA.Properties.Resources.user_alt;
+            this.pictureBox_login_symbol.InitialImage = null;
+            this.pictureBox_login_symbol.Location = new System.Drawing.Point(72, 61);
+            this.pictureBox_login_symbol.Name = "pictureBox_login_symbol";
+            this.pictureBox_login_symbol.Size = new System.Drawing.Size(19, 19);
+            this.pictureBox_login_symbol.TabIndex = 5;
+            this.pictureBox_login_symbol.TabStop = false;
             // 
             // Form_login
             // 
@@ -110,14 +131,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(288, 253);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox_pass_symbol);
+            this.Controls.Add(this.pictureBox_login_symbol);
+            this.Controls.Add(this.panel_underline_login);
+            this.Controls.Add(this.panel_underline_pass);
             this.Controls.Add(this.button_sign_in);
             this.Controls.Add(this.textBox_login_password);
             this.Controls.Add(this.textBox_login_name);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(304, 292);
@@ -125,10 +148,11 @@
             this.MinimumSize = new System.Drawing.Size(304, 292);
             this.Name = "Form_login";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vehicles Management App";
             this.Load += new System.EventHandler(this.Form_login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pass_symbol)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_login_symbol)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,9 +163,10 @@
         private System.Windows.Forms.TextBox textBox_login_name;
         private System.Windows.Forms.TextBox textBox_login_password;
         private System.Windows.Forms.Button button_sign_in;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel_underline_pass;
+        private System.Windows.Forms.Panel panel_underline_login;
+        private System.Windows.Forms.PictureBox pictureBox_login_symbol;
+        private System.Windows.Forms.PictureBox pictureBox_pass_symbol;
     }
 }
 

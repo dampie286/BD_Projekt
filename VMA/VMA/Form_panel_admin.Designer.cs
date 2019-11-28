@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_panel_admin));
             this.label_admin_is_online = new System.Windows.Forms.Label();
             this.button_logout = new System.Windows.Forms.Button();
             this.button_settings = new System.Windows.Forms.Button();
@@ -37,6 +38,8 @@
             this.userControl_veh_DB1 = new VMA.UserControl_veh_DB();
             this.userControl_menage_cars1 = new VMA.UserControl_menage_cars();
             this.userControl_add_Car1 = new VMA.UserControl_add_Car();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label_admin_is_online
@@ -46,7 +49,7 @@
             this.label_admin_is_online.ForeColor = System.Drawing.Color.Yellow;
             this.label_admin_is_online.Location = new System.Drawing.Point(429, 7);
             this.label_admin_is_online.Name = "label_admin_is_online";
-            this.label_admin_is_online.Size = new System.Drawing.Size(174, 17);
+            this.label_admin_is_online.Size = new System.Drawing.Size(148, 15);
             this.label_admin_is_online.TabIndex = 1;
             this.label_admin_is_online.Text = "Zalogowany Administrator";
             // 
@@ -166,6 +169,7 @@
             // 
             this.userControl_menage_cars1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.userControl_menage_cars1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_menage_cars1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_menage_cars1.Name = "userControl_menage_cars1";
             this.userControl_menage_cars1.Size = new System.Drawing.Size(941, 656);
             this.userControl_menage_cars1.TabIndex = 19;
@@ -174,15 +178,28 @@
             // 
             this.userControl_add_Car1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.userControl_add_Car1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_add_Car1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_add_Car1.Name = "userControl_add_Car1";
             this.userControl_add_Car1.Size = new System.Drawing.Size(941, 656);
             this.userControl_add_Car1.TabIndex = 20;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Image = global::VMA.Properties.Resources.LogoVMA;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(36, 46);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // Form_panel_admin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.userControl_add_Car1);
             this.Controls.Add(this.userControl_menage_cars1);
             this.Controls.Add(this.userControl_veh_DB1);
@@ -193,12 +210,14 @@
             this.Controls.Add(this.button_databaseVeh);
             this.Controls.Add(this.label_admin_is_online);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_panel_admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vehicles Management App";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_panel_admin_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,5 +234,6 @@
         private UserControl_veh_DB userControl_veh_DB1;
         private UserControl_menage_cars userControl_menage_cars1;
         private UserControl_add_Car userControl_add_Car1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

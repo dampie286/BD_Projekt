@@ -49,9 +49,9 @@
             // 
             this.textBox_brand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_brand.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_brand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_brand.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_brand.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_brand.Location = new System.Drawing.Point(20, 16);
+            this.textBox_brand.Location = new System.Drawing.Point(18, 19);
             this.textBox_brand.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_brand.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_brand.MinimumSize = new System.Drawing.Size(4, 18);
@@ -65,9 +65,9 @@
             // 
             this.textBox_model.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_model.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_model.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_model.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_model.Location = new System.Drawing.Point(114, 16);
+            this.textBox_model.Location = new System.Drawing.Point(113, 19);
             this.textBox_model.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_model.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_model.MinimumSize = new System.Drawing.Size(4, 18);
@@ -81,9 +81,9 @@
             // 
             this.textBox_equipment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_equipment.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_equipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_equipment.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_equipment.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_equipment.Location = new System.Drawing.Point(208, 16);
+            this.textBox_equipment.Location = new System.Drawing.Point(208, 19);
             this.textBox_equipment.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_equipment.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_equipment.MinimumSize = new System.Drawing.Size(4, 18);
@@ -97,9 +97,9 @@
             // 
             this.textBox_version.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_version.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_version.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_version.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_version.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_version.Location = new System.Drawing.Point(302, 16);
+            this.textBox_version.Location = new System.Drawing.Point(303, 19);
             this.textBox_version.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_version.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_version.MinimumSize = new System.Drawing.Size(4, 18);
@@ -113,9 +113,9 @@
             // 
             this.textBox_mileage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_mileage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_mileage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_mileage.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_mileage.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_mileage.Location = new System.Drawing.Point(396, 16);
+            this.textBox_mileage.Location = new System.Drawing.Point(398, 19);
             this.textBox_mileage.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_mileage.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_mileage.MinimumSize = new System.Drawing.Size(4, 18);
@@ -129,9 +129,9 @@
             // 
             this.textBox_license.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_license.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_license.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_license.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_license.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_license.Location = new System.Drawing.Point(490, 16);
+            this.textBox_license.Location = new System.Drawing.Point(493, 19);
             this.textBox_license.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_license.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_license.MinimumSize = new System.Drawing.Size(4, 18);
@@ -148,7 +148,7 @@
             this.button_filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_filter.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_filter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_filter.Location = new System.Drawing.Point(612, 12);
+            this.button_filter.Location = new System.Drawing.Point(610, 15);
             this.button_filter.Margin = new System.Windows.Forms.Padding(2);
             this.button_filter.Name = "button_filter";
             this.button_filter.Size = new System.Drawing.Size(75, 25);
@@ -174,7 +174,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Yellow;
-            this.panel1.Location = new System.Drawing.Point(20, 38);
+            this.panel1.Location = new System.Drawing.Point(18, 38);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(90, 1);
             this.panel1.TabIndex = 8;
@@ -182,7 +182,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Yellow;
-            this.panel2.Location = new System.Drawing.Point(114, 38);
+            this.panel2.Location = new System.Drawing.Point(113, 38);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(90, 1);
             this.panel2.TabIndex = 9;
@@ -198,7 +198,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Yellow;
-            this.panel4.Location = new System.Drawing.Point(302, 38);
+            this.panel4.Location = new System.Drawing.Point(303, 38);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(90, 1);
             this.panel4.TabIndex = 9;
@@ -206,7 +206,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Yellow;
-            this.panel5.Location = new System.Drawing.Point(396, 38);
+            this.panel5.Location = new System.Drawing.Point(398, 38);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(90, 1);
             this.panel5.TabIndex = 9;
@@ -214,7 +214,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Yellow;
-            this.panel6.Location = new System.Drawing.Point(490, 38);
+            this.panel6.Location = new System.Drawing.Point(493, 38);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(90, 1);
             this.panel6.TabIndex = 9;

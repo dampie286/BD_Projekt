@@ -36,12 +36,12 @@
             // label_my_reservation
             // 
             this.label_my_reservation.AutoSize = true;
-            this.label_my_reservation.Font = new System.Drawing.Font("Arial Narrow", 14.2F, System.Drawing.FontStyle.Bold);
+            this.label_my_reservation.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_my_reservation.ForeColor = System.Drawing.Color.Yellow;
-            this.label_my_reservation.Location = new System.Drawing.Point(20, 16);
+            this.label_my_reservation.Location = new System.Drawing.Point(15, 13);
             this.label_my_reservation.Margin = new System.Windows.Forms.Padding(0);
             this.label_my_reservation.Name = "label_my_reservation";
-            this.label_my_reservation.Size = new System.Drawing.Size(225, 29);
+            this.label_my_reservation.Size = new System.Drawing.Size(214, 22);
             this.label_my_reservation.TabIndex = 47;
             this.label_my_reservation.Text = "TWOJE REZERWACJE";
             // 
@@ -52,23 +52,24 @@
             this.dataGridView_my_reservation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_my_reservation.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView_my_reservation.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.dataGridView_my_reservation.Location = new System.Drawing.Point(25, 90);
+            this.dataGridView_my_reservation.Location = new System.Drawing.Point(19, 73);
             this.dataGridView_my_reservation.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView_my_reservation.Name = "dataGridView_my_reservation";
             this.dataGridView_my_reservation.RowTemplate.Height = 24;
             this.dataGridView_my_reservation.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_my_reservation.Size = new System.Drawing.Size(889, 295);
+            this.dataGridView_my_reservation.Size = new System.Drawing.Size(667, 240);
             this.dataGridView_my_reservation.TabIndex = 48;
             // 
             // UserControl_my_reservation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.Controls.Add(this.dataGridView_my_reservation);
             this.Controls.Add(this.label_my_reservation);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserControl_my_reservation";
-            this.Size = new System.Drawing.Size(941, 656);
+            this.Size = new System.Drawing.Size(706, 533);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_my_reservation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
