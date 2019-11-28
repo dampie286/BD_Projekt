@@ -69,6 +69,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl_addWorker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_addWorker.Designer.cs">
+      <DependentUpon>UserControl_addWorker.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_add_Car.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -80,6 +86,18 @@
     </Compile>
     <Compile Include="UserControl_menage_cars.Designer.cs">
       <DependentUpon>UserControl_menage_cars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_menage_workers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_menage_workers.Designer.cs">
+      <DependentUpon>UserControl_menage_workers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_modified_delet_car.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_modified_delet_car.Designer.cs">
+      <DependentUpon>UserControl_modified_delet_car.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl_myStatics.cs">
       <SubType>UserControl</SubType>
@@ -148,11 +166,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControl_addWorker.resx">
+      <DependentUpon>UserControl_addWorker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_add_Car.resx">
       <DependentUpon>UserControl_add_Car.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_menage_cars.resx">
       <DependentUpon>UserControl_menage_cars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_menage_workers.resx">
+      <DependentUpon>UserControl_menage_workers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_modified_delet_car.resx">
+      <DependentUpon>UserControl_modified_delet_car.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_myStatics.resx">
       <DependentUpon>UserControl_myStatics.cs</DependentUpon>

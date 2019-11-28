@@ -20,10 +20,23 @@ namespace VMA
             windLog = add_tmp;
             InitializeComponent();
             userControl_menage_cars1.Button_addCar_Click+= new System.EventHandler(this.userControl_menage_Button_addCar_Click);
+            userControl_menage_cars1.Button_menANDDelCar_Click+=new System.EventHandler(this.userControl_menage_Button_menANDDelCar_Click);
+            userControl_menage_workers1.Button_addWorker_Click += new System.EventHandler(this.userControl_menage_Button_addWorker_Click);
+            userControl_menage_workers1.Button_menANDDelWorker_Click += new System.EventHandler(this.userControl_menage_Button_menAndDelWorker_Click);
 
             FillTmpDataTable();
             userControl_veh_DB1.fillDataGridView(tmp);
             userControl_veh_DB1.BringToFront();
+        }
+
+        private void userControl_menage_Button_menAndDelWorker_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void userControl_menage_Button_addWorker_Click(object sender, EventArgs e)
+        {
+            userControl_addWorker1.BringToFront();
         }
 
         private void button_databaseVeh_Click(object sender, EventArgs e)
@@ -71,6 +84,17 @@ namespace VMA
         private void userControl_menage_Button_addCar_Click(object sender, EventArgs e)
         {
             userControl_add_Car1.BringToFront();
+        }
+
+        private void userControl_menage_Button_menANDDelCar_Click(object sender,EventArgs e)
+        {
+            userControl_modified_delet_car1.fillDataGridView(tmp); 
+            userControl_modified_delet_car1.BringToFront();
+        }
+
+        private void button_rent_Click(object sender, EventArgs e)
+        {
+            userControl_menage_workers1.BringToFront();
         }
     }
 }

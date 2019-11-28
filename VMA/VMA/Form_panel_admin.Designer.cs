@@ -35,10 +35,13 @@
             this.button_rent = new System.Windows.Forms.Button();
             this.button_reservation = new System.Windows.Forms.Button();
             this.button_databaseVeh = new System.Windows.Forms.Button();
-            this.userControl_veh_DB1 = new VMA.UserControl_veh_DB();
-            this.userControl_menage_cars1 = new VMA.UserControl_menage_cars();
-            this.userControl_add_Car1 = new VMA.UserControl_add_Car();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.userControl_addWorker1 = new VMA.UserControl_addWorker();
+            this.userControl_menage_workers1 = new VMA.UserControl_menage_workers();
+            this.userControl_modified_delet_car1 = new VMA.UserControl_modified_delet_car();
+            this.userControl_add_Car1 = new VMA.UserControl_add_Car();
+            this.userControl_menage_cars1 = new VMA.UserControl_menage_cars();
+            this.userControl_veh_DB1 = new VMA.UserControl_veh_DB();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +52,7 @@
             this.label_admin_is_online.ForeColor = System.Drawing.Color.Yellow;
             this.label_admin_is_online.Location = new System.Drawing.Point(429, 7);
             this.label_admin_is_online.Name = "label_admin_is_online";
-            this.label_admin_is_online.Size = new System.Drawing.Size(148, 15);
+            this.label_admin_is_online.Size = new System.Drawing.Size(174, 17);
             this.label_admin_is_online.TabIndex = 1;
             this.label_admin_is_online.Text = "Zalogowany Administrator";
             // 
@@ -113,6 +116,7 @@
             this.button_rent.TabIndex = 13;
             this.button_rent.Text = "Zarządzanie pracownikami";
             this.button_rent.UseVisualStyleBackColor = false;
+            this.button_rent.Click += new System.EventHandler(this.button_rent_Click);
             // 
             // button_reservation
             // 
@@ -156,33 +160,6 @@
             this.button_databaseVeh.UseVisualStyleBackColor = false;
             this.button_databaseVeh.Click += new System.EventHandler(this.button_databaseVeh_Click);
             // 
-            // userControl_veh_DB1
-            // 
-            this.userControl_veh_DB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_veh_DB1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_veh_DB1.Margin = new System.Windows.Forms.Padding(0);
-            this.userControl_veh_DB1.Name = "userControl_veh_DB1";
-            this.userControl_veh_DB1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_veh_DB1.TabIndex = 18;
-            // 
-            // userControl_menage_cars1
-            // 
-            this.userControl_menage_cars1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.userControl_menage_cars1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_menage_cars1.Margin = new System.Windows.Forms.Padding(2);
-            this.userControl_menage_cars1.Name = "userControl_menage_cars1";
-            this.userControl_menage_cars1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_menage_cars1.TabIndex = 19;
-            // 
-            // userControl_add_Car1
-            // 
-            this.userControl_add_Car1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.userControl_add_Car1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_add_Car1.Margin = new System.Windows.Forms.Padding(2);
-            this.userControl_add_Car1.Name = "userControl_add_Car1";
-            this.userControl_add_Car1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_add_Car1.TabIndex = 20;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = null;
@@ -194,11 +171,65 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // userControl_addWorker1
+            // 
+            this.userControl_addWorker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_addWorker1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_addWorker1.Name = "userControl_addWorker1";
+            this.userControl_addWorker1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_addWorker1.TabIndex = 24;
+            // 
+            // userControl_menage_workers1
+            // 
+            this.userControl_menage_workers1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_menage_workers1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_menage_workers1.Name = "userControl_menage_workers1";
+            this.userControl_menage_workers1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_menage_workers1.TabIndex = 23;
+            // 
+            // userControl_modified_delet_car1
+            // 
+            this.userControl_modified_delet_car1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.userControl_modified_delet_car1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_modified_delet_car1.Name = "userControl_modified_delet_car1";
+            this.userControl_modified_delet_car1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_modified_delet_car1.TabIndex = 22;
+            // 
+            // userControl_add_Car1
+            // 
+            this.userControl_add_Car1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.userControl_add_Car1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_add_Car1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_add_Car1.Name = "userControl_add_Car1";
+            this.userControl_add_Car1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_add_Car1.TabIndex = 20;
+            // 
+            // userControl_menage_cars1
+            // 
+            this.userControl_menage_cars1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.userControl_menage_cars1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_menage_cars1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_menage_cars1.Name = "userControl_menage_cars1";
+            this.userControl_menage_cars1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_menage_cars1.TabIndex = 19;
+            // 
+            // userControl_veh_DB1
+            // 
+            this.userControl_veh_DB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_veh_DB1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_veh_DB1.Margin = new System.Windows.Forms.Padding(0);
+            this.userControl_veh_DB1.Name = "userControl_veh_DB1";
+            this.userControl_veh_DB1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_veh_DB1.TabIndex = 18;
+            // 
             // Form_panel_admin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.userControl_addWorker1);
+            this.Controls.Add(this.userControl_menage_workers1);
+            this.Controls.Add(this.userControl_modified_delet_car1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.userControl_add_Car1);
             this.Controls.Add(this.userControl_menage_cars1);
@@ -215,7 +246,7 @@
             this.MinimizeBox = false;
             this.Name = "Form_panel_admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Vehicles Management App";
+            this.Text = " ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_panel_admin_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -235,5 +266,8 @@
         private UserControl_menage_cars userControl_menage_cars1;
         private UserControl_add_Car userControl_add_Car1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private UserControl_modified_delet_car userControl_modified_delet_car1;
+        private UserControl_menage_workers userControl_menage_workers1;
+        private UserControl_addWorker userControl_addWorker1;
     }
 }
