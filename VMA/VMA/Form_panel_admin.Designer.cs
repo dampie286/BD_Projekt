@@ -42,6 +42,7 @@
             this.userControl_add_Car1 = new VMA.UserControl_add_Car();
             this.userControl_menage_cars1 = new VMA.UserControl_menage_cars();
             this.userControl_veh_DB1 = new VMA.UserControl_veh_DB();
+            this.userControl_modified_del_Workesrs1 = new VMA.UserControl_modified_del_Workesrs();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -222,11 +223,20 @@
             this.userControl_veh_DB1.Size = new System.Drawing.Size(941, 656);
             this.userControl_veh_DB1.TabIndex = 18;
             // 
+            // userControl_modified_del_Workesrs1
+            // 
+            this.userControl_modified_del_Workesrs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.userControl_modified_del_Workesrs1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_modified_del_Workesrs1.Name = "userControl_modified_del_Workesrs1";
+            this.userControl_modified_del_Workesrs1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_modified_del_Workesrs1.TabIndex = 25;
+            // 
             // Form_panel_admin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.userControl_modified_del_Workesrs1);
             this.Controls.Add(this.userControl_addWorker1);
             this.Controls.Add(this.userControl_menage_workers1);
             this.Controls.Add(this.userControl_modified_delet_car1);
@@ -269,5 +279,6 @@
         private UserControl_modified_delet_car userControl_modified_delet_car1;
         private UserControl_menage_workers userControl_menage_workers1;
         private UserControl_addWorker userControl_addWorker1;
+        private UserControl_modified_del_Workesrs userControl_modified_del_Workesrs1;
     }
 }

@@ -29,7 +29,7 @@ namespace VMA
             {
                 textBox_login_name.Clear();
                 textBox_login_password.Clear();
-                mainapp = new MainApp(this);
+                mainapp = new MainApp(this,"Damian","Pietryja");
                 mainapp.Show();
                 this.Hide();
             }

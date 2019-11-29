@@ -15,6 +15,7 @@ namespace VMA
         private Form_login windLog;     //przechowywanie adresu do loginy
         private bool close = false;     //sprawdzamy czy wylogowywaliśmy się
         public DataTable tmp;           //przykładowe zmienne do bazy danych z samochodami
+        public DataTable tmp2;          //przykładowe dane pracowników
         public Form_panel_admin(Form_login add_tmp)
         {
             windLog = add_tmp;
@@ -25,13 +26,16 @@ namespace VMA
             userControl_menage_workers1.Button_menANDDelWorker_Click += new System.EventHandler(this.userControl_menage_Button_menAndDelWorker_Click);
 
             FillTmpDataTable();
+            FillTmp2DataTable();
             userControl_veh_DB1.fillDataGridView(tmp);
+
             userControl_veh_DB1.BringToFront();
         }
-
+        
         private void userControl_menage_Button_menAndDelWorker_Click(object sender, EventArgs e)
         {
-            
+            userControl_modified_del_Workesrs1.fillDataGridView(tmp2);
+            userControl_modified_del_Workesrs1.BringToFront();
         }
 
         private void userControl_menage_Button_addWorker_Click(object sender, EventArgs e)
@@ -73,6 +77,24 @@ namespace VMA
                 tmp.Rows.Add(i + 1, "Audi", "A3", "VIP", "Hatchback", "34 315 km", "WE 123BD");
                 i++;
                 tmp.Rows.Add(i + 1, "BMW", "X3", "LUX", "SUV", "12 131 km", "WE 567BD");
+            }
+        }
+
+        private void FillTmp2DataTable()     //dodanie danych
+        {
+            tmp2 = new DataTable();
+            tmp2.Columns.Add("WorkID", typeof(int));
+            tmp2.Columns.Add("Name");
+            tmp2.Columns.Add("Surrname");
+            tmp2.Columns.Add("ID");
+            tmp2.Columns.Add("Position");
+            
+            for (int i = 0; i < 50; i++)
+            {
+                tmp2.Rows.Add(i + 1, "Damian", "Pietryja", "97070745619", "Przedstawiciel");
+                i++;
+                tmp2.Rows.Add(i + 1, "Tobiasz", "Pilnicki", "97070845719", "Przedstawiciel");
+
             }
         }
 

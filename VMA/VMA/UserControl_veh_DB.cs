@@ -12,15 +12,18 @@ namespace VMA
 {
     public partial class UserControl_veh_DB : UserControl
     {
+        private DataTable veh_DB = new DataTable();
         public UserControl_veh_DB()
         {
             InitializeComponent();
+
            
         }
 
        
         public void fillDataGridView(DataTable tmp)
         {
+            veh_DB = tmp;
             dataGridView_veh_DB.DataSource = tmp;
            
 
@@ -37,6 +40,17 @@ namespace VMA
             dataGridView_veh_DB.Columns[5].Width = 90;
             dataGridView_veh_DB.Columns[6].Width = 90;
 
+        }
+
+        private void button_filter_Click(object sender, EventArgs e)
+        {
+            // dtSpecifficCliniDoctors = dtDoctor.Select("CID = " + dtClinic.Rows[comboBox_clinic.SelectedIndex]["CID"]).CopyToDataTable();
+           
+        }
+
+        private void textBox_brand_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

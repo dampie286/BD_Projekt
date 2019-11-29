@@ -99,6 +99,12 @@
     <Compile Include="UserControl_modified_delet_car.Designer.cs">
       <DependentUpon>UserControl_modified_delet_car.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_modified_del_Workesrs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_modified_del_Workesrs.Designer.cs">
+      <DependentUpon>UserControl_modified_del_Workesrs.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_myStatics.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_modified_delet_car.resx">
       <DependentUpon>UserControl_modified_delet_car.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_modified_del_Workesrs.resx">
+      <DependentUpon>UserControl_modified_del_Workesrs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_myStatics.resx">
       <DependentUpon>UserControl_myStatics.cs</DependentUpon>

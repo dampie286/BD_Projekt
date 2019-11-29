@@ -16,13 +16,16 @@ namespace VMA
         public DataTable tmp;           //przykładowe zmienne do bazy danych z samochodami
         public DataTable tmp2;          //przykładowe zmienne do rezerwacji
         private bool close = false;     //sprawdzamy czy wylogowywaliśmy się
-       
-        public MainApp(Form_login login)
+        private string name, surrname;
+        public MainApp(Form_login login,string nameWork,string surrnameWork)
         {
             InitializeComponent();
             windLog = login;        //przenoszenie adresu do zmiennej
+          
             userControl_Welcome2.BringToFront();
-           
+            label_who_online.Text = "Zalogowany jako " + nameWork + " " + surrnameWork;
+
+
         }
 
         private void MainApp_Load(object sender, EventArgs e)

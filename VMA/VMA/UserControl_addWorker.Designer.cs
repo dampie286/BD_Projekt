@@ -183,7 +183,7 @@
             this.textBox_equipment.Name = "textBox_equipment";
             this.textBox_equipment.Size = new System.Drawing.Size(173, 19);
             this.textBox_equipment.TabIndex = 66;
-            this.textBox_equipment.Text = "Wyposażenie";
+            this.textBox_equipment.Text = "Data urodzenia";
             this.textBox_equipment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel2

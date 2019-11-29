@@ -34,7 +34,6 @@ namespace VMA
             dataGridView_veh_DB.Columns[4].Width = 90;
             dataGridView_veh_DB.Columns[5].Width = 90;
             dataGridView_veh_DB.Columns[6].Width = 90;
-
         }
     }
 }
