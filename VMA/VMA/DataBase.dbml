@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Baza_projekt" Class="DataBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Baza_projekt;Integrated Security=True" SettingsObjectName="VMA.Properties.Settings" SettingsPropertyName="Baza_projektConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Care_serviceSet" Member="Care_serviceSets">
+    <Type Name="Care_serviceSet">
+      <Column Name="care_service_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date_from" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="data_to" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Care_care_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Company_company_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Service_service_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CareSet_Care_serviceSet" Member="CareSet" ThisKey="Care_care_id" OtherKey="care_id" Type="CareSet" IsForeignKey="true" />
+      <Association Name="CompanySet_Care_serviceSet" Member="CompanySet" ThisKey="Company_company_id" OtherKey="company_id" Type="CompanySet" IsForeignKey="true" />
+      <Association Name="ServiceSet_Care_serviceSet" Member="ServiceSet" ThisKey="Service_service_id" OtherKey="service_id" Type="ServiceSet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CareSet" Member="CareSets">
+    <Type Name="CareSet">
+      <Column Name="care_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date_from" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_to" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Vehicle_vehicle_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Keeper_worker_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CareSet_Care_serviceSet" Member="Care_serviceSets" ThisKey="care_id" OtherKey="Care_care_id" Type="Care_serviceSet" />
+      <Association Name="VehicleSet_CareSet" Member="VehicleSet" ThisKey="Vehicle_vehicle_id" OtherKey="vehicle_id" Type="VehicleSet" IsForeignKey="true" />
+      <Association Name="WorkerSet_Keeper_CareSet" Member="WorkerSet_Keeper" ThisKey="Keeper_worker_id" OtherKey="worker_id" Type="WorkerSet_Keeper" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Check_vehicleSet" Member="Check_vehicleSets">
+    <Type Name="Check_vehicleSet">
+      <Column Name="check_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tech_review" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="oil_change" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="oil_change_mileage" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="timing_gear" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="timing_gear_mileage" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vehicle_vehicle_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="VehicleSet_Check_vehicleSet" Member="VehicleSet" ThisKey="Vehicle_vehicle_id" OtherKey="vehicle_id" Type="VehicleSet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanySet" Member="CompanySets">
+    <Type Name="CompanySet">
+      <Column Name="company_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="phone_nr" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="CompanySet_Care_serviceSet" Member="Care_serviceSets" ThisKey="company_id" OtherKey="Company_company_id" Type="Care_serviceSet" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PurchaseSet" Member="PurchaseSets">
+    <Type Name="PurchaseSet">
+      <Column Name="purchase_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="purchase_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="mileage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="litres" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Rent_rent_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="RentSet_PurchaseSet" Member="RentSet" ThisKey="Rent_rent_id" OtherKey="rent_id" Type="RentSet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RentSet" Member="RentSets">
+    <Type Name="RentSet">
+      <Column Name="rent_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="purpose" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="date_from" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_to" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="mileage_start" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Worker_worker_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reservation_reservation_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vehicle_vehicle_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="RentSet_PurchaseSet" Member="PurchaseSets" ThisKey="rent_id" OtherKey="Rent_rent_id" Type="PurchaseSet" />
+      <Association Name="ReservationSet_RentSet" Member="ReservationSet" ThisKey="Reservation_reservation_id" OtherKey="reservation_id" Type="ReservationSet" IsForeignKey="true" />
+      <Association Name="VehicleSet_RentSet" Member="VehicleSet" ThisKey="Vehicle_vehicle_id" OtherKey="vehicle_id" Type="VehicleSet" IsForeignKey="true" />
+      <Association Name="WorkerSet_RentSet" Member="WorkerSet" ThisKey="Worker_worker_id" OtherKey="worker_id" Type="WorkerSet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReservationSet" Member="ReservationSets">
+    <Type Name="ReservationSet">
+      <Column Name="reservation_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="purpose" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="date_from" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_to" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Worker_worker_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vehicle_vehicle_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ReservationSet_RentSet" Member="RentSets" ThisKey="reservation_id" OtherKey="Reservation_reservation_id" Type="RentSet" />
+      <Association Name="VehicleSet_ReservationSet" Member="VehicleSet" ThisKey="Vehicle_vehicle_id" OtherKey="vehicle_id" Type="VehicleSet" IsForeignKey="true" />
+      <Association Name="WorkerSet_ReservationSet" Member="WorkerSet" ThisKey="Worker_worker_id" OtherKey="worker_id" Type="WorkerSet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServiceSet" Member="ServiceSets">
+    <Type Name="ServiceSet">
+      <Column Name="service_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="is_repair" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="ServiceSet_Care_serviceSet" Member="Care_serviceSets" ThisKey="service_id" OtherKey="Service_service_id" Type="Care_serviceSet" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VehicleSet" Member="VehicleSets">
+    <Type Name="VehicleSet">
+      <Column Name="vehicle_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="brand" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="model" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="version" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="equipment" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="licence_plate" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="avg_consumption" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="fuel_type" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="available" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="VehicleSet_CareSet" Member="CareSets" ThisKey="vehicle_id" OtherKey="Vehicle_vehicle_id" Type="CareSet" />
+      <Association Name="VehicleSet_Check_vehicleSet" Member="Check_vehicleSets" ThisKey="vehicle_id" OtherKey="Vehicle_vehicle_id" Type="Check_vehicleSet" />
+      <Association Name="VehicleSet_RentSet" Member="RentSets" ThisKey="vehicle_id" OtherKey="Vehicle_vehicle_id" Type="RentSet" />
+      <Association Name="VehicleSet_ReservationSet" Member="ReservationSets" ThisKey="vehicle_id" OtherKey="Vehicle_vehicle_id" Type="ReservationSet" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkerSet" Member="WorkerSets">
+    <Type Name="WorkerSet">
+      <Column Name="worker_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="surname" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="position" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PESEL" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="date_of_birth" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="phone_nr" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="WorkerSet_RentSet" Member="RentSets" ThisKey="worker_id" OtherKey="Worker_worker_id" Type="RentSet" />
+      <Association Name="WorkerSet_ReservationSet" Member="ReservationSets" ThisKey="worker_id" OtherKey="Worker_worker_id" Type="ReservationSet" />
+      <Association Name="WorkerSet_WorkerSet_Keeper" Member="WorkerSet_Keeper" ThisKey="worker_id" OtherKey="worker_id" Type="WorkerSet_Keeper" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkerSet_Keeper" Member="WorkerSet_Keepers">
+    <Type Name="WorkerSet_Keeper">
+      <Column Name="keeper_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="worker_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="WorkerSet_Keeper_CareSet" Member="CareSets" ThisKey="worker_id" OtherKey="Keeper_worker_id" Type="CareSet" />
+      <Association Name="WorkerSet_WorkerSet_Keeper" Member="WorkerSet" ThisKey="worker_id" OtherKey="worker_id" Type="WorkerSet" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>
