@@ -17,6 +17,8 @@ namespace VMA
         public DataTable tmp2;          //przykładowe zmienne do rezerwacji
         private bool close = false;     //sprawdzamy czy wylogowywaliśmy się
         private string name, surrname;
+
+       
         public MainApp(Form_login login,string nameWork,string surrnameWork)
         {
             InitializeComponent();
@@ -48,7 +50,9 @@ namespace VMA
 
         private void button_databaseVeh_Click(object sender, EventArgs e)
         {
-            userControl_veh_DB2.fillDataGridView(tmp);      //dodanie danych do tabeli
+            
+            userControl_veh_DB2.fillDataGridView();      //dodanie danych do tabeli
+
             userControl_veh_DB2.BringToFront();
             
         }

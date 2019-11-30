@@ -27,7 +27,7 @@ namespace VMA
 
             FillTmpDataTable();
             FillTmp2DataTable();
-            userControl_veh_DB1.fillDataGridView(tmp);
+            userControl_veh_DB1.fillDataGridView();
 
             userControl_veh_DB1.BringToFront();
         }
@@ -45,7 +45,7 @@ namespace VMA
 
         private void button_databaseVeh_Click(object sender, EventArgs e)
         {
-            userControl_veh_DB1.fillDataGridView(tmp);
+            userControl_veh_DB1.fillDataGridView();
             userControl_veh_DB1.BringToFront();
         }
 
