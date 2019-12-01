@@ -189,6 +189,51 @@ namespace VMA
                 textBox_avg_fuel.Text = "Średnie spalanie";
             }
         }
+
+        private void textBox_brand_Click(object sender, EventArgs e)
+        {
+            textBox_brand.Clear();
+        }
+
+        private void textBox_model_Click(object sender, EventArgs e)
+        {
+            textBox_model.Clear();
+        }
+
+        private void textBox_age_Click(object sender, EventArgs e)
+        {
+            textBox_age.Clear();
+        }
+
+        private void textBox_equipment_Click(object sender, EventArgs e)
+        {
+            textBox_equipment.Clear();
+        }
+
+        private void textBox_fuel_type_Click(object sender, EventArgs e)
+        {
+            textBox_fuel_type.Clear();
+        }
+
+        private void textBox_license_Click(object sender, EventArgs e)
+        {
+            textBox_license.Clear();
+        }
+
+        private void textBox_date_register_Click(object sender, EventArgs e)
+        {
+            textBox_date_register.Clear();
+        }
+
+        private void textBox_mileage_Click(object sender, EventArgs e)
+        {
+            textBox_mileage.Clear();
+        }
+
+        private void textBox_avg_fuel_Click(object sender, EventArgs e)
+        {
+            textBox_avg_fuel.Clear();
+        }
     }
 }
 

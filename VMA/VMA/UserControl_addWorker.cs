@@ -56,5 +56,39 @@ namespace VMA
             }
         }
 
+        private void textBox_name_Click(object sender, EventArgs e)
+        {
+            textBox_name.Clear();
+        }
+
+        private void textBox_surrname_Click(object sender, EventArgs e)
+        {
+            textBox_surrname.Clear();
+        }
+
+        private void textBox_id_worker_Click(object sender, EventArgs e)
+        {
+            textBox_id_worker.Clear();
+        }
+
+        private void textBox_equipment_Click(object sender, EventArgs e)
+        {
+            textBox_equipment.Clear();
+        }
+
+        private void textBox_phone_number_Click(object sender, EventArgs e)
+        {
+            textBox_phone_number.Clear();
+        }
+
+        private void textBox_position_Click(object sender, EventArgs e)
+        {
+            textBox_position.Clear();
+        }
+
+        private void textBox_tmp_pass_Click(object sender, EventArgs e)
+        {
+            textBox_tmp_pass.Clear();
+        }
     }
 }
