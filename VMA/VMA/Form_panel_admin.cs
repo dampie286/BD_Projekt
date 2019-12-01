@@ -34,7 +34,7 @@ namespace VMA
         
         private void userControl_menage_Button_menAndDelWorker_Click(object sender, EventArgs e)
         {
-            userControl_modified_del_Workesrs1.fillDataGridView();///////////tutaj sie pracuje teraz
+            userControl_modified_del_Workesrs1.fillDataGridView(tmp2);
             userControl_modified_del_Workesrs1.BringToFront();
         }
 
