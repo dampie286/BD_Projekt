@@ -36,7 +36,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox_equipment = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox_version_car = new System.Windows.Forms.TextBox();
+            this.textBox_fuel_type = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox_license = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -77,14 +77,16 @@
             this.textBox_brand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_brand.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_brand.Location = new System.Drawing.Point(267, 85);
-            this.textBox_brand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_brand.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_brand.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_brand.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_brand.Name = "textBox_brand";
-            this.textBox_brand.Size = new System.Drawing.Size(130, 18);
+            this.textBox_brand.Size = new System.Drawing.Size(130, 15);
             this.textBox_brand.TabIndex = 40;
             this.textBox_brand.Text = "Marka";
             this.textBox_brand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_brand.Enter += new System.EventHandler(this.textBox_brand_Enter);
+            this.textBox_brand.Leave += new System.EventHandler(this.textBox_brand_Leave);
             // 
             // panel2
             // 
@@ -101,11 +103,11 @@
             this.textBox_age.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_age.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_age.Location = new System.Drawing.Point(267, 161);
-            this.textBox_age.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_age.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_age.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_age.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_age.Name = "textBox_age";
-            this.textBox_age.Size = new System.Drawing.Size(130, 18);
+            this.textBox_age.Size = new System.Drawing.Size(130, 15);
             this.textBox_age.TabIndex = 42;
             this.textBox_age.Text = "Rocznik";
             this.textBox_age.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -125,11 +127,11 @@
             this.textBox_equipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_equipment.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_equipment.Location = new System.Drawing.Point(267, 200);
-            this.textBox_equipment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_equipment.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_equipment.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_equipment.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_equipment.Name = "textBox_equipment";
-            this.textBox_equipment.Size = new System.Drawing.Size(130, 18);
+            this.textBox_equipment.Size = new System.Drawing.Size(130, 15);
             this.textBox_equipment.TabIndex = 44;
             this.textBox_equipment.Text = "Wyposażenie";
             this.textBox_equipment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -142,21 +144,21 @@
             this.panel4.Size = new System.Drawing.Size(130, 1);
             this.panel4.TabIndex = 47;
             // 
-            // textBox_version_car
+            // textBox_fuel_type
             // 
-            this.textBox_version_car.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBox_version_car.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_version_car.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_version_car.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_version_car.Location = new System.Drawing.Point(267, 238);
-            this.textBox_version_car.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox_version_car.MaximumSize = new System.Drawing.Size(150, 25);
-            this.textBox_version_car.MinimumSize = new System.Drawing.Size(4, 18);
-            this.textBox_version_car.Name = "textBox_version_car";
-            this.textBox_version_car.Size = new System.Drawing.Size(130, 18);
-            this.textBox_version_car.TabIndex = 46;
-            this.textBox_version_car.Text = "Wersja nadwozia";
-            this.textBox_version_car.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_fuel_type.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.textBox_fuel_type.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_fuel_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_fuel_type.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_fuel_type.Location = new System.Drawing.Point(267, 238);
+            this.textBox_fuel_type.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_fuel_type.MaximumSize = new System.Drawing.Size(150, 25);
+            this.textBox_fuel_type.MinimumSize = new System.Drawing.Size(4, 18);
+            this.textBox_fuel_type.Name = "textBox_fuel_type";
+            this.textBox_fuel_type.Size = new System.Drawing.Size(130, 15);
+            this.textBox_fuel_type.TabIndex = 46;
+            this.textBox_fuel_type.Text = "Typ paliwa";
+            this.textBox_fuel_type.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel5
             // 
@@ -173,11 +175,11 @@
             this.textBox_license.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_license.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_license.Location = new System.Drawing.Point(267, 275);
-            this.textBox_license.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_license.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_license.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_license.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_license.Name = "textBox_license";
-            this.textBox_license.Size = new System.Drawing.Size(130, 18);
+            this.textBox_license.Size = new System.Drawing.Size(130, 15);
             this.textBox_license.TabIndex = 48;
             this.textBox_license.Text = "Numer rejestracyjny";
             this.textBox_license.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -197,11 +199,11 @@
             this.textBox_mileage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_mileage.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_mileage.Location = new System.Drawing.Point(267, 346);
-            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_mileage.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_mileage.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_mileage.Name = "textBox_mileage";
-            this.textBox_mileage.Size = new System.Drawing.Size(130, 18);
+            this.textBox_mileage.Size = new System.Drawing.Size(130, 15);
             this.textBox_mileage.TabIndex = 50;
             this.textBox_mileage.Text = "Przebieg";
             this.textBox_mileage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -221,14 +223,16 @@
             this.textBox_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_model.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_model.Location = new System.Drawing.Point(267, 123);
-            this.textBox_model.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_model.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_model.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_model.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_model.Name = "textBox_model";
-            this.textBox_model.Size = new System.Drawing.Size(130, 18);
+            this.textBox_model.Size = new System.Drawing.Size(130, 15);
             this.textBox_model.TabIndex = 52;
             this.textBox_model.Text = "Model";
             this.textBox_model.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_model.Enter += new System.EventHandler(this.textBox_model_Enter);
+            this.textBox_model.Leave += new System.EventHandler(this.textBox_model_Leave);
             // 
             // panel8
             // 
@@ -245,11 +249,11 @@
             this.textBox_avg_fuel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_avg_fuel.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_avg_fuel.Location = new System.Drawing.Point(267, 384);
-            this.textBox_avg_fuel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_avg_fuel.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_avg_fuel.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_avg_fuel.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_avg_fuel.Name = "textBox_avg_fuel";
-            this.textBox_avg_fuel.Size = new System.Drawing.Size(130, 18);
+            this.textBox_avg_fuel.Size = new System.Drawing.Size(130, 15);
             this.textBox_avg_fuel.TabIndex = 54;
             this.textBox_avg_fuel.Text = "Średnie spalanie";
             this.textBox_avg_fuel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -269,11 +273,11 @@
             this.textBox_date_register.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_date_register.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_date_register.Location = new System.Drawing.Point(267, 309);
-            this.textBox_date_register.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_date_register.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_date_register.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_date_register.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_date_register.Name = "textBox_date_register";
-            this.textBox_date_register.Size = new System.Drawing.Size(130, 18);
+            this.textBox_date_register.Size = new System.Drawing.Size(130, 15);
             this.textBox_date_register.TabIndex = 58;
             this.textBox_date_register.Text = "Data Rejestracji";
             this.textBox_date_register.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -286,12 +290,13 @@
             this.button_add_car.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_add_car.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_add_car.Location = new System.Drawing.Point(267, 441);
-            this.button_add_car.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_add_car.Margin = new System.Windows.Forms.Padding(2);
             this.button_add_car.Name = "button_add_car";
             this.button_add_car.Size = new System.Drawing.Size(130, 25);
             this.button_add_car.TabIndex = 60;
             this.button_add_car.Text = "Dodaj pojazd";
             this.button_add_car.UseVisualStyleBackColor = false;
+            this.button_add_car.Click += new System.EventHandler(this.button_add_car_Click);
             // 
             // UserControl_add_Car
             // 
@@ -310,7 +315,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.textBox_license);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.textBox_version_car);
+            this.Controls.Add(this.textBox_fuel_type);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.textBox_equipment);
             this.Controls.Add(this.panel2);
@@ -318,7 +323,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox_brand);
             this.Controls.Add(this.label_information_about_car);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl_add_Car";
             this.Size = new System.Drawing.Size(706, 533);
             this.ResumeLayout(false);
@@ -336,7 +341,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox textBox_equipment;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox_version_car;
+        private System.Windows.Forms.TextBox textBox_fuel_type;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBox_license;
         private System.Windows.Forms.Panel panel6;
