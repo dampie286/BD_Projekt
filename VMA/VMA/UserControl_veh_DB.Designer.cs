@@ -58,7 +58,7 @@
             this.textBox_brand.Name = "textBox_brand";
             this.textBox_brand.Size = new System.Drawing.Size(120, 19);
             this.textBox_brand.TabIndex = 0;
-            this.textBox_brand.Text = "Brand";
+            this.textBox_brand.Text = "Marka";
             this.textBox_brand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_brand.TextChanged += new System.EventHandler(this.textBox_brand_TextChanged);
             // 
@@ -91,7 +91,7 @@
             this.textBox_equipment.Name = "textBox_equipment";
             this.textBox_equipment.Size = new System.Drawing.Size(120, 19);
             this.textBox_equipment.TabIndex = 2;
-            this.textBox_equipment.Text = "Equipment";
+            this.textBox_equipment.Text = "Spalanie";
             this.textBox_equipment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_version
@@ -107,7 +107,7 @@
             this.textBox_version.Name = "textBox_version";
             this.textBox_version.Size = new System.Drawing.Size(120, 19);
             this.textBox_version.TabIndex = 3;
-            this.textBox_version.Text = "Version";
+            this.textBox_version.Text = "Wersja";
             this.textBox_version.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_mileage
@@ -123,7 +123,7 @@
             this.textBox_mileage.Name = "textBox_mileage";
             this.textBox_mileage.Size = new System.Drawing.Size(120, 19);
             this.textBox_mileage.TabIndex = 4;
-            this.textBox_mileage.Text = "Mileage";
+            this.textBox_mileage.Text = "Typ paliwa";
             this.textBox_mileage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_license
@@ -139,7 +139,7 @@
             this.textBox_license.Name = "textBox_license";
             this.textBox_license.Size = new System.Drawing.Size(120, 19);
             this.textBox_license.TabIndex = 5;
-            this.textBox_license.Text = "License nr";
+            this.textBox_license.Text = "Rejestracja";
             this.textBox_license.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button_filter

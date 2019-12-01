@@ -17,13 +17,13 @@ namespace VMA
         public DataTable tmp2;          //przykładowe zmienne do rezerwacji
         private bool close = false;     //sprawdzamy czy wylogowywaliśmy się
         private string name, surrname;
-
+        public int log;//id zalogowanego
        
-        public MainApp(Form_login login,string nameWork,string surrnameWork)
+        public MainApp(Form_login login,string nameWork,string surrnameWork,int id_log)
         {
             InitializeComponent();
             windLog = login;        //przenoszenie adresu do zmiennej
-          
+            log = id_log;
             userControl_Welcome2.BringToFront();
             label_who_online.Text = "Zalogowany jako " + nameWork + " " + surrnameWork;
 
@@ -134,6 +134,7 @@ namespace VMA
 
         private void button_settings_Click(object sender, EventArgs e)
         {
+            userControl_settings1.workersettings(log);//przekazanie id pracownika
             userControl_settings1.BringToFront();
         }
     }

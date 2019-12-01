@@ -51,12 +51,10 @@ namespace VMA
                     }
                     else
                     {
-                        var surname = (from WorkerSet W in db.WorkerSets
-                                       where W.name == name
-                                       select W.surname).Single();
+                    
                         textBox_login_name.Clear();
                         textBox_login_password.Clear();
-                        mainapp = new MainApp(this, name, surname);
+                        mainapp = new MainApp(this, user.name, user.surname,user.worker_id);
                         mainapp.Show();
                         this.Hide();
                     }

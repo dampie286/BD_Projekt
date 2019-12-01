@@ -51,6 +51,8 @@ namespace VMA
             string filtr_model = textBox_model.Text;
             string filtr_version = textBox_version.Text;
             string filtr_licence = textBox_license.Text;
+            string filtr_avg = textBox_equipment.Text;
+            string filtr_fuel = textBox_mileage.Text;
             DataBaseDataContext db = new DataBaseDataContext();
 
 
@@ -59,7 +61,7 @@ namespace VMA
 
             var query = from x in db.VehicleSets where x.available == "yes " select x;
 
-            if (filtr_brand == "Brand" || filtr_brand == "")
+            if (filtr_brand == "Marka" || filtr_brand == "")
             {
 
             }
@@ -78,7 +80,7 @@ namespace VMA
                 query = from x in query where x.model == filtr_model select x;
 
             }
-            if (filtr_version == "Version" || filtr_version == "")
+            if (filtr_version == "Wersja" || filtr_version == "")
             {
 
             }
@@ -87,8 +89,40 @@ namespace VMA
                 query = from x in query where x.version == filtr_version select x;
 
             }
+            if (filtr_licence == "Rejestracja" || filtr_licence == "")
+            {
 
-            var query1 = from x in query select new { MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type };
+            }
+            else
+            {
+                query = from x in query where x.licence_plate == filtr_licence select x;
+
+            }
+            
+            if (filtr_avg == "Spalanie" || filtr_avg == "")
+            {
+
+            }
+            else
+            {
+                double avg = Convert.ToDouble(filtr_avg);// wymaga zabezpieczenia przed złym formatem i stringiem 
+                query = from x in query where x.avg_consumption <= avg select x;
+
+            }
+            if (filtr_fuel == "Typ paliwa" || filtr_fuel == "")
+            {
+
+            }
+            else
+            {
+                query = from x in query where x.fuel_type == filtr_fuel select x;
+
+            }
+
+
+
+
+            var query1 = from x in query select new { MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type, };
 
             dataGridView_veh_DB.DataSource = query1;
 
