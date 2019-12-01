@@ -75,6 +75,8 @@
             // 
             // dataGridView_workers_DB
             // 
+            this.dataGridView_workers_DB.AllowUserToAddRows = false;
+            this.dataGridView_workers_DB.AllowUserToDeleteRows = false;
             this.dataGridView_workers_DB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_workers_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_workers_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
