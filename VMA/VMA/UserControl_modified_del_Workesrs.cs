@@ -12,21 +12,18 @@ namespace VMA
 {
     public partial class UserControl_modified_del_Workesrs : UserControl
     {
-<<<<<<< HEAD
-        
-=======
->>>>>>> 991a2c04fa29bcf8c0a19a08a91bbd9b2423cf8d
+
         public UserControl_modified_del_Workesrs()
         {
             InitializeComponent();
         }
 
-<<<<<<< HEAD
+
         private void Grid_edit()
         {
 
             //widocznos kolumn
-          //  dataGridView_workers_DB.RowHeadersVisible = false;
+            //  dataGridView_workers_DB.RowHeadersVisible = false;
             dataGridView_workers_DB.Columns[0].Visible = false;
             //  dataGridView_workers_DB.Columns[1].Visible = false;
             // dataGridView_workers_DB.Columns[2].Visible = false;
@@ -62,48 +59,18 @@ namespace VMA
 
         public void fillDataGridView()
         {
-=======
-        public void fillDataGridView(DataTable tmp)
-        { 
->>>>>>> 991a2c04fa29bcf8c0a19a08a91bbd9b2423cf8d
+
+
             DataBaseDataContext db = new DataBaseDataContext();
-            var Selectquery = from x in db.WorkerSets select new { IMIE = x.name, NAZWISKO = x.surname, STANOWISKO = x.position, PESEL = x.PESEL, DATA_UR = x.date_of_birth, HASLO = x.password, NR_TEL = x.phone_nr};
-
-            dataGridView_workers_DB.DataSource = Selectquery;
-
-<<<<<<< HEAD
-            if (filtr_name == "Imię" || filtr_name == "")
-            {
-
-            }
-            else
-            {
-                query = from x in query where x.name == filtr_name select x;
-
-            }
-            if (filtr_surname == "Nazwisko" || filtr_surname == "")
-            {
-
-            }
-            else
-            {
-                query = from x in query where x.surname == filtr_surname select x;
-
-            }
-            if (filtr_position == "Stanowisko" || filtr_position== "")
-            {
-
-            }
-            else
-            {
-                query = from x in query where x.position == filtr_position select x;
-
-            }
+            var query = from x in db.WorkerSets select x;
 
             dataGridView_workers_DB.DataSource = query;
             Grid_edit();
 
         }
+
+        
+
 
 
 
@@ -137,7 +104,7 @@ namespace VMA
             catch
             {
                 MessageBox.Show("Nie udało się zmienić danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-               
+
             }
 
             if (confirm)
@@ -156,11 +123,11 @@ namespace VMA
             int row = dataGridView_workers_DB.CurrentCell.RowIndex;
 
             var delete_id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value;
-           
 
 
 
-            var delete_list = (from x in db.WorkerSets where x.worker_id == delete_id  select x).ToList();
+
+            var delete_list = (from x in db.WorkerSets where x.worker_id == delete_id select x).ToList();
 
             db.WorkerSets.DeleteAllOnSubmit(delete_list);
 
@@ -175,7 +142,7 @@ namespace VMA
 
                 MessageBox.Show("Nie można usunąć pracownika będącego opiekunem", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-          if(confirm)
+            if (confirm)
                 MessageBox.Show("Usunięto pracownika", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             var Selectquery = from x in db.WorkerSets select x;
@@ -187,26 +154,45 @@ namespace VMA
             Grid_edit();
 
         }
-=======
->>>>>>> 991a2c04fa29bcf8c0a19a08a91bbd9b2423cf8d
 
-            dataGridView_workers_DB.Columns[0].Visible = false;
-            dataGridView_workers_DB.RowHeadersVisible = false;
-            dataGridView_workers_DB.ReadOnly = true;        //nie moze edytować kolumn
-
-<<<<<<< HEAD
-        private void dataGridView_workers_DB_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button_filter_Click(object sender, EventArgs e)
         {
-          
-           
-=======
->>>>>>> 991a2c04fa29bcf8c0a19a08a91bbd9b2423cf8d
+            DataBaseDataContext db = new DataBaseDataContext();
+            var query = from x in db.WorkerSets select x;
+            string filtr_name=textBox_name.Text;
+            string filtr_surname=textBox_surrname.Text;
+            string filtr_position=textBox_position.Text;
+            if (filtr_name == "Imię" || filtr_name == "")
+            {
 
-            dataGridView_workers_DB.Columns[1].Width = 60;
-            dataGridView_workers_DB.Columns[2].Width = 60;
-            dataGridView_workers_DB.Columns[3].Width = 60;
-            dataGridView_workers_DB.Columns[4].Width = 90;
-            
-        }
+            }
+            else
+            {
+                query = from x in query where x.name == filtr_name select x;
+
+            }
+           if (filtr_surname == "Nazwisko" || filtr_surname == "")
+            {
+             }
+           else
+             {
+                  query = from x in query where x.surname == filtr_surname select x;
+
+               }
+              if (filtr_position == "Stanowisko" || filtr_position== "")
+               {
+
+                 }
+               else
+               {
+                query = from x in query where x.position == filtr_position select x;
+                }
+
+                 dataGridView_workers_DB.DataSource = query;
+                  Grid_edit();
+
+
+
+            }
     }
 }

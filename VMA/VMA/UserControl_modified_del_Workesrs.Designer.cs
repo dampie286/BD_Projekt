@@ -70,6 +70,7 @@
             this.button_modified.TabIndex = 75;
             this.button_modified.Text = "Modyfikuj";
             this.button_modified.UseVisualStyleBackColor = false;
+            this.button_modified.Click += new System.EventHandler(this.button_modified_Click);
             // 
             // dataGridView_workers_DB
             // 
@@ -127,6 +128,7 @@
             this.button_filter.TabIndex = 67;
             this.button_filter.Text = "Filtruj";
             this.button_filter.UseVisualStyleBackColor = false;
+            this.button_filter.Click += new System.EventHandler(this.button_filter_Click);
             // 
             // textBox_position
             // 
