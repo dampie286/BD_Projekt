@@ -15,6 +15,7 @@ namespace VMA
         public UserControl_myStatics()
         {
             InitializeComponent();
+            label_kilometers.Text = "123";
         }
 
       

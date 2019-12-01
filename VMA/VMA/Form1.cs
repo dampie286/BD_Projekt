@@ -38,10 +38,7 @@ namespace VMA
 
                 if (user != null)
                 {
-                    var position = (from WorkerSet W in db.WorkerSets
-                                    where W.name == name
-                                    select W.position).Single();
-                    if (position == "kierownik")
+                    if (user.position == "kierownik")
                     {
                         textBox_login_name.Clear();
                         textBox_login_password.Clear();
@@ -76,6 +73,11 @@ namespace VMA
             
             MaximizeBox = false;
             MinimizeBox = false;
+        }
+
+        private void button_sign_in_KeyDown(object sender, KeyEventArgs e)
+        {
+           
         }
     }
 }
