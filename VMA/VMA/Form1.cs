@@ -74,5 +74,10 @@ namespace VMA
             MaximizeBox = false;
             MinimizeBox = false;
         }
+
+        private void button_sign_in_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
     }
 }

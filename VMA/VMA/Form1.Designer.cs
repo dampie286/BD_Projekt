@@ -84,6 +84,7 @@
             this.button_sign_in.Text = "Zaloguj się";
             this.button_sign_in.UseVisualStyleBackColor = false;
             this.button_sign_in.Click += new System.EventHandler(this.button_sign_in_Click);
+            this.button_sign_in.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_sign_in_KeyDown);
             // 
             // panel_underline_pass
             // 

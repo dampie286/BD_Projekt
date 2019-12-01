@@ -111,6 +111,8 @@
             this.textBox_age.TabIndex = 42;
             this.textBox_age.Text = "Rocznik";
             this.textBox_age.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_age.Enter += new System.EventHandler(this.textBox_age_Enter);
+            this.textBox_age.Leave += new System.EventHandler(this.textBox_age_Leave);
             // 
             // panel3
             // 
@@ -135,6 +137,8 @@
             this.textBox_equipment.TabIndex = 44;
             this.textBox_equipment.Text = "Wyposażenie";
             this.textBox_equipment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_equipment.Enter += new System.EventHandler(this.textBox_equipment_Enter);
+            this.textBox_equipment.Leave += new System.EventHandler(this.textBox_equipment_Leave);
             // 
             // panel4
             // 
@@ -159,6 +163,8 @@
             this.textBox_fuel_type.TabIndex = 46;
             this.textBox_fuel_type.Text = "Typ paliwa";
             this.textBox_fuel_type.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_fuel_type.Enter += new System.EventHandler(this.textBox_fuel_type_Enter);
+            this.textBox_fuel_type.Leave += new System.EventHandler(this.textBox_fuel_type_Leave);
             // 
             // panel5
             // 
@@ -183,6 +189,8 @@
             this.textBox_license.TabIndex = 48;
             this.textBox_license.Text = "Numer rejestracyjny";
             this.textBox_license.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_license.Enter += new System.EventHandler(this.textBox_license_Enter);
+            this.textBox_license.Leave += new System.EventHandler(this.textBox_license_Leave);
             // 
             // panel6
             // 
@@ -207,6 +215,8 @@
             this.textBox_mileage.TabIndex = 50;
             this.textBox_mileage.Text = "Przebieg";
             this.textBox_mileage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_mileage.Enter += new System.EventHandler(this.textBox_mileage_Enter);
+            this.textBox_mileage.Leave += new System.EventHandler(this.textBox_mileage_Leave);
             // 
             // panel7
             // 
@@ -257,6 +267,8 @@
             this.textBox_avg_fuel.TabIndex = 54;
             this.textBox_avg_fuel.Text = "Średnie spalanie";
             this.textBox_avg_fuel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_avg_fuel.Enter += new System.EventHandler(this.textBox_avg_fuel_Enter);
+            this.textBox_avg_fuel.Leave += new System.EventHandler(this.textBox_avg_fuel_Leave);
             // 
             // panel10
             // 
@@ -281,6 +293,8 @@
             this.textBox_date_register.TabIndex = 58;
             this.textBox_date_register.Text = "Data Rejestracji";
             this.textBox_date_register.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_date_register.Enter += new System.EventHandler(this.textBox_date_register_Enter);
+            this.textBox_date_register.Leave += new System.EventHandler(this.textBox_date_register_Leave);
             // 
             // button_add_car
             // 
