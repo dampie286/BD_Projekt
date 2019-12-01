@@ -290,6 +290,8 @@
             this.textBox_reserv_purpose.TabIndex = 24;
             this.textBox_reserv_purpose.Text = "Cel rezerwacji";
             this.textBox_reserv_purpose.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_reserv_purpose.Enter += new System.EventHandler(this.textBox_reserv_purpose_Enter);
+            this.textBox_reserv_purpose.Leave += new System.EventHandler(this.textBox_reserv_purpose_Leave);
             // 
             // dateTimePicker_from_date_reserv
             // 

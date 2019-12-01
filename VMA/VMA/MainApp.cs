@@ -106,6 +106,7 @@ namespace VMA
         {
             userControl_reservation1.fillDataGridView(tmp);
             userControl_reservation1.BringToFront();
+            userControl_reservation1.setWorkerID(log); //przekazanie id pracownika do rezerwacji
         }
 
         private void button_rent_Click(object sender, EventArgs e)
@@ -136,6 +137,7 @@ namespace VMA
         {
             userControl_settings1.workersettings(log);//przekazanie id pracownika
             userControl_settings1.BringToFront();
+           
         }
     }
 }
