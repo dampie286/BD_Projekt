@@ -55,6 +55,7 @@
             this.button_delete.TabIndex = 76;
             this.button_delete.Text = "Usuń";
             this.button_delete.UseVisualStyleBackColor = false;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // button_modified
             // 
@@ -70,9 +71,12 @@
             this.button_modified.TabIndex = 75;
             this.button_modified.Text = "Modyfikuj";
             this.button_modified.UseVisualStyleBackColor = false;
+            this.button_modified.Click += new System.EventHandler(this.button_modified_Click);
             // 
             // dataGridView_workers_DB
             // 
+            this.dataGridView_workers_DB.AllowUserToAddRows = false;
+            this.dataGridView_workers_DB.AllowUserToDeleteRows = false;
             this.dataGridView_workers_DB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_workers_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_workers_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -85,6 +89,7 @@
             this.dataGridView_workers_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_workers_DB.Size = new System.Drawing.Size(765, 531);
             this.dataGridView_workers_DB.TabIndex = 74;
+            this.dataGridView_workers_DB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_workers_DB_CellContentClick);
             // 
             // panel3
             // 
@@ -127,6 +132,7 @@
             this.button_filter.TabIndex = 67;
             this.button_filter.Text = "Filtruj";
             this.button_filter.UseVisualStyleBackColor = false;
+            this.button_filter.Click += new System.EventHandler(this.button_filter_Click);
             // 
             // textBox_position
             // 
