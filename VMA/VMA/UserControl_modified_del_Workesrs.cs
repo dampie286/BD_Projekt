@@ -116,42 +116,7 @@ namespace VMA
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            //usuwanie pracownika
-            DataBaseDataContext db = new DataBaseDataContext();
-
-            bool confirm = false;
-            int row = dataGridView_workers_DB.CurrentCell.RowIndex;
-
-            var delete_id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value;
-
-
-
-
-            var delete_list = (from x in db.WorkerSets where x.worker_id == delete_id select x).ToList();
-
-            db.WorkerSets.DeleteAllOnSubmit(delete_list);
-
-
-            try
-            {
-                db.SubmitChanges();
-                confirm = true;
-            }
-            catch
-            {
-
-                MessageBox.Show("Nie można usunąć pracownika będącego opiekunem", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (confirm)
-                MessageBox.Show("Usunięto pracownika", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-            var Selectquery = from x in db.WorkerSets select x;
-
-
-
-
-            dataGridView_workers_DB.DataSource = Selectquery;
-            Grid_edit();
+            
 
         }
 
@@ -194,5 +159,49 @@ namespace VMA
 
 
             }
+
+        private void button_delete_Click_1(object sender, EventArgs e)
+        {
+
+
+            //usuwanie pracownika
+            DataBaseDataContext db = new DataBaseDataContext();
+
+            bool confirm = false;
+            int row = dataGridView_workers_DB.CurrentCell.RowIndex;
+
+            var delete_id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value;
+
+
+
+
+            var delete_list = (from x in db.WorkerSets where x.worker_id == delete_id select x).ToList();
+
+            db.WorkerSets.DeleteAllOnSubmit(delete_list);
+
+
+            try
+            {
+                db.SubmitChanges();
+                confirm = true;
+            }
+            catch
+            {
+
+                MessageBox.Show("Nie można usunąć pracownika będącego opiekunem", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (confirm)
+                MessageBox.Show("Usunięto pracownika", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+            var Selectquery = from x in db.WorkerSets select x;
+
+
+
+
+            dataGridView_workers_DB.DataSource = Selectquery;
+            Grid_edit();
+
+
+        }
     }
 }
