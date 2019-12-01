@@ -19,11 +19,14 @@ namespace VMA
 
         public void fillDataGridView(DataTable tmp)     //uzupełnienie tabeli
         {
-            dataGridView_veh_DB.DataSource = tmp;
+            DataBaseDataContext db = new DataBaseDataContext();
+            var Selectquery = from x in db.VehicleSets join y in db.ReservationSets on x.vehicle_id equals y.Vehicle_vehicle_id select new { REJESTRACJA = x.licence_plate, MARKA = x.brand, MODEL = x.model, WERSJA = x.version,  SPALANIE = x.avg_consumption, PALIWO = x.fuel_type, y.date_from, y.date_to  };
+
+            dataGridView_veh_DB.DataSource = Selectquery;
 
 
 
-            dataGridView_veh_DB.Columns[0].Visible = false;
+            //dataGridView_veh_DB.Columns[0].Visible = false;
             dataGridView_veh_DB.RowHeadersVisible = false;
             dataGridView_veh_DB.ReadOnly = true;        //nie moze edytować kolumn
             
@@ -50,6 +53,40 @@ namespace VMA
 
         }
 
-       
+        private void button_reserv_Click(object sender, EventArgs e)
+        {
+            using (DataBaseDataContext db = new DataBaseDataContext())
+            {
+                var vechicle_id = db.VehicleSets.Where(i => i.licence_plate == Convert.ToString(textBox_reser_license.Text)).Single();
+
+                ReservationSet reserv = new ReservationSet()
+                {
+                    purpose = Convert.ToString(textBox_reserv_purpose.Text),
+                    date_from = dateTimePicker_from_date_reserv.Value,
+                    date_to = dateTimePicker_to_date_reserv.Value,
+                    Worker_worker_id = 2,
+                    Vehicle_vehicle_id = vechicle_id.vehicle_id
+                };
+
+                db.ReservationSets.InsertOnSubmit(reserv);
+                db.SubmitChanges();
+            }
+        }
+
+        private void textBox_reser_license_Enter(object sender, EventArgs e)
+        {
+            if (textBox_reser_license.Text.Equals(@"Nr rejestracyjny"))
+            {
+                textBox_reser_license.Text = "";
+            }
+        }
+
+        private void textBox_reser_license_Leave(object sender, EventArgs e)
+        {
+            if (textBox_reser_license.Text.Equals(""))
+            {
+                textBox_reser_license.Text = "Nr rejestracyjny";
+            }
+        }
     }
 }
