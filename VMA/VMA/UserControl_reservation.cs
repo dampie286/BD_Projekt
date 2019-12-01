@@ -21,7 +21,7 @@ namespace VMA
         public void fillDataGridView(DataTable tmp)     //uzupełnienie tabeli
         {
             DataBaseDataContext db = new DataBaseDataContext();
-            var Selectquery = from x in db.VehicleSets join y in db.ReservationSets on x.vehicle_id equals y.Vehicle_vehicle_id join z in db.WorkerSets on y.Worker_worker_id equals z.worker_id  select new { REJESTRACJA = x.licence_plate, MARKA = x.brand, MODEL = x.model,OD = y.date_from, DO = y.date_to, REZERWUJACY = z.surname};
+            var Selectquery = from x in db.VehicleSets join y in db.ReservationSets on x.vehicle_id equals y.Vehicle_vehicle_id join z in db.WorkerSets on y.Worker_worker_id equals z.worker_id  select new { REJESTRACJA = x.licence_plate, MARKA = x.brand, MODEL = x.model,OD = y.date_from, DO = y.date_to, REZERWUJACY = z.surname, CEL = y.purpose};
 
             dataGridView_veh_DB.DataSource = Selectquery;
 
@@ -36,8 +36,8 @@ namespace VMA
             dataGridView_veh_DB.Columns[1].Width = 60;
             dataGridView_veh_DB.Columns[2].Width = 60;
             dataGridView_veh_DB.Columns[3].Width = 60;
-            //dataGridView_veh_DB.Columns[4].Width = 90;
-            //dataGridView_veh_DB.Columns[5].Width = 90;
+            dataGridView_veh_DB.Columns[4].Width = 90;
+            dataGridView_veh_DB.Columns[5].Width = 90;
             //dataGridView_veh_DB.Columns[6].Width = 90;
 
         }
