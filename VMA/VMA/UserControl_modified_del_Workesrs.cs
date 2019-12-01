@@ -122,21 +122,13 @@ namespace VMA
         private void button_modified_Click(object sender, EventArgs e)
         {
 
-            
-            DataBaseDataContext db = new DataBaseDataContext();
-
-            db.SubmitChanges();
-
-
-            var Selectquery = from x in db.WorkerSets select x;
-
-            dataGridView_workers_DB.DataSource = Selectquery;
-            Grid_edit();
+           //modyfikowanie pracownika
 
         }
 
         private void button_delete_Click(object sender, EventArgs e)
         {
+            //usuwanie pracownika
             DataBaseDataContext db = new DataBaseDataContext();
             var delete = from x in db.WorkerSets where x.worker_id == delete_id select x;
 
