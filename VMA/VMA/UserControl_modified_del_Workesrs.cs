@@ -12,7 +12,7 @@ namespace VMA
 {
     public partial class UserControl_modified_del_Workesrs : UserControl
     {
-        int delete_id;
+        
         public UserControl_modified_del_Workesrs()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace VMA
         {
 
             //widocznos kolumn
-            dataGridView_workers_DB.RowHeadersVisible = false;
+          //  dataGridView_workers_DB.RowHeadersVisible = false;
             dataGridView_workers_DB.Columns[0].Visible = false;
             //  dataGridView_workers_DB.Columns[1].Visible = false;
             // dataGridView_workers_DB.Columns[2].Visible = false;
@@ -121,8 +121,41 @@ namespace VMA
 
         private void button_modified_Click(object sender, EventArgs e)
         {
+            //modyfikowanie pracownika
+            DataBaseDataContext db = new DataBaseDataContext();
+            bool confirm = false;
 
-           //modyfikowanie pracownika
+            int row = dataGridView_workers_DB.CurrentCell.RowIndex;
+
+            var edit_id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value;
+            var surname_edit = dataGridView_workers_DB.Rows[row].Cells[2].Value.ToString();
+            var position_edit = dataGridView_workers_DB.Rows[row].Cells[3].Value.ToString();
+            var phone_edit = dataGridView_workers_DB.Rows[row].Cells[7].Value.ToString();
+
+            var query = from x in db.WorkerSets where x.worker_id == edit_id select x;
+
+            foreach (WorkerSet x in query)
+            {
+                x.surname = surname_edit;
+                x.position = position_edit;
+                x.phone_nr = phone_edit;
+
+            }
+            try
+            {
+                db.SubmitChanges();
+                confirm = true;
+            }
+            catch
+            {
+                MessageBox.Show("Nie udało się zmienić danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
+            }
+
+            if (confirm)
+            {
+                MessageBox.Show("Zmieniono dane", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
 
         }
 
@@ -130,33 +163,48 @@ namespace VMA
         {
             //usuwanie pracownika
             DataBaseDataContext db = new DataBaseDataContext();
-            var delete = from x in db.WorkerSets where x.worker_id == delete_id select x;
 
-            foreach (var worker in delete)
-            {
-                db.WorkerSets.DeleteOnSubmit(worker);
-            }
+            bool confirm = false;
+            int row = dataGridView_workers_DB.CurrentCell.RowIndex;
+
+            var delete_id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value;
+           
+
+
+
+            var delete_list = (from x in db.WorkerSets where x.worker_id == delete_id  select x).ToList();
+
+            db.WorkerSets.DeleteAllOnSubmit(delete_list);
+
 
             try
             {
                 db.SubmitChanges();
+                confirm = true;
             }
-            catch 
+            catch
             {
-               
+
+                MessageBox.Show("Nie można usunąć pracownika będącego opiekunem", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+          if(confirm)
+                MessageBox.Show("Usunięto pracownika", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
             var Selectquery = from x in db.WorkerSets select x;
 
+
+
+
+            dataGridView_workers_DB.DataSource = Selectquery;
+            Grid_edit();
 
         }
 
 
         private void dataGridView_workers_DB_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            DataGridViewRow selectedRow = dataGridView_workers_DB.Rows[index];
-            delete_id = (int)selectedRow.Cells[0].Value;
-            MessageBox.Show(delete_id.ToString());
+          
+           
 
         }
     }
