@@ -12,12 +12,16 @@ namespace VMA
 {
     public partial class UserControl_modified_del_Workesrs : UserControl
     {
+<<<<<<< HEAD
         
+=======
+>>>>>>> 991a2c04fa29bcf8c0a19a08a91bbd9b2423cf8d
         public UserControl_modified_del_Workesrs()
         {
             InitializeComponent();
         }
 
+<<<<<<< HEAD
         private void Grid_edit()
         {
 
@@ -58,32 +62,16 @@ namespace VMA
 
         public void fillDataGridView()
         {
+=======
+        public void fillDataGridView(DataTable tmp)
+        { 
+>>>>>>> 991a2c04fa29bcf8c0a19a08a91bbd9b2423cf8d
             DataBaseDataContext db = new DataBaseDataContext();
-            var Selectquery = from x in db.WorkerSets select x;
-
-          
-
+            var Selectquery = from x in db.WorkerSets select new { IMIE = x.name, NAZWISKO = x.surname, STANOWISKO = x.position, PESEL = x.PESEL, DATA_UR = x.date_of_birth, HASLO = x.password, NR_TEL = x.phone_nr};
 
             dataGridView_workers_DB.DataSource = Selectquery;
-            Grid_edit();
 
-        }
-
-        private void button_filter_Click(object sender, EventArgs e)
-        {
-            string filtr_name = textBox_name.Text;
-            string filtr_surname = textBox_surrname.Text;
-            string filtr_position = textBox_position.Text;
-
-
-            DataBaseDataContext db = new DataBaseDataContext();
-
-
-
-
-
-            var query = from x in db.WorkerSets select x;
-
+<<<<<<< HEAD
             if (filtr_name == "Imię" || filtr_name == "")
             {
 
@@ -199,13 +187,26 @@ namespace VMA
             Grid_edit();
 
         }
+=======
+>>>>>>> 991a2c04fa29bcf8c0a19a08a91bbd9b2423cf8d
 
+            dataGridView_workers_DB.Columns[0].Visible = false;
+            dataGridView_workers_DB.RowHeadersVisible = false;
+            dataGridView_workers_DB.ReadOnly = true;        //nie moze edytować kolumn
 
+<<<<<<< HEAD
         private void dataGridView_workers_DB_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
           
            
+=======
+>>>>>>> 991a2c04fa29bcf8c0a19a08a91bbd9b2423cf8d
 
+            dataGridView_workers_DB.Columns[1].Width = 60;
+            dataGridView_workers_DB.Columns[2].Width = 60;
+            dataGridView_workers_DB.Columns[3].Width = 60;
+            dataGridView_workers_DB.Columns[4].Width = 90;
+            
         }
     }
 }
