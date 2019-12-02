@@ -54,7 +54,7 @@
             this.button_add_worker.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_add_worker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_add_worker.Location = new System.Drawing.Point(290, 384);
-            this.button_add_worker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_add_worker.Margin = new System.Windows.Forms.Padding(2);
             this.button_add_worker.Name = "button_add_worker";
             this.button_add_worker.Size = new System.Drawing.Size(130, 25);
             this.button_add_worker.TabIndex = 80;
@@ -77,7 +77,7 @@
             this.textBox_tmp_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_tmp_pass.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_tmp_pass.Location = new System.Drawing.Point(290, 328);
-            this.textBox_tmp_pass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_tmp_pass.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_tmp_pass.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_tmp_pass.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_tmp_pass.Name = "textBox_tmp_pass";
@@ -85,6 +85,8 @@
             this.textBox_tmp_pass.TabIndex = 76;
             this.textBox_tmp_pass.Text = "Hasło";
             this.textBox_tmp_pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_tmp_pass.Enter += new System.EventHandler(this.textBox_tmp_pass_Enter);
+            this.textBox_tmp_pass.Leave += new System.EventHandler(this.textBox_tmp_pass_Leave);
             // 
             // panel7
             // 
@@ -101,7 +103,7 @@
             this.textBox_surrname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_surrname.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_surrname.Location = new System.Drawing.Point(290, 134);
-            this.textBox_surrname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_surrname.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_surrname.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_surrname.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_surrname.Name = "textBox_surrname";
@@ -127,7 +129,7 @@
             this.textBox_position.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_position.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_position.Location = new System.Drawing.Point(290, 286);
-            this.textBox_position.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_position.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_position.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_position.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_position.Name = "textBox_position";
@@ -153,7 +155,7 @@
             this.textBox_phone_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_phone_number.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_phone_number.Location = new System.Drawing.Point(290, 249);
-            this.textBox_phone_number.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_phone_number.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_phone_number.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_phone_number.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_phone_number.Name = "textBox_phone_number";
@@ -179,7 +181,7 @@
             this.textBox_equipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_equipment.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_equipment.Location = new System.Drawing.Point(290, 211);
-            this.textBox_equipment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_equipment.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_equipment.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_equipment.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_equipment.Name = "textBox_equipment";
@@ -205,7 +207,7 @@
             this.textBox_id_worker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_id_worker.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_id_worker.Location = new System.Drawing.Point(290, 172);
-            this.textBox_id_worker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_id_worker.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_id_worker.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_id_worker.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_id_worker.Name = "textBox_id_worker";
@@ -231,7 +233,7 @@
             this.textBox_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_name.ForeColor = System.Drawing.Color.Yellow;
             this.textBox_name.Location = new System.Drawing.Point(290, 97);
-            this.textBox_name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_name.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_name.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_name.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_name.Name = "textBox_name";
@@ -275,7 +277,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox_name);
             this.Controls.Add(this.label_information_about_worker);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl_addWorker";
             this.Size = new System.Drawing.Size(706, 533);
             this.ResumeLayout(false);

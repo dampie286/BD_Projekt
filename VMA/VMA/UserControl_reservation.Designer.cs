@@ -83,7 +83,7 @@
             this.textBox_license.Name = "textBox_license";
             this.textBox_license.Size = new System.Drawing.Size(90, 15);
             this.textBox_license.TabIndex = 12;
-            this.textBox_license.Text = "License nr";
+            this.textBox_license.Text = "Rejestracja";
             this.textBox_license.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_mileage
@@ -99,7 +99,7 @@
             this.textBox_mileage.Name = "textBox_mileage";
             this.textBox_mileage.Size = new System.Drawing.Size(90, 15);
             this.textBox_mileage.TabIndex = 11;
-            this.textBox_mileage.Text = "Mileage";
+            this.textBox_mileage.Text = "Typ paliwa";
             this.textBox_mileage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_version
@@ -115,7 +115,7 @@
             this.textBox_version.Name = "textBox_version";
             this.textBox_version.Size = new System.Drawing.Size(90, 15);
             this.textBox_version.TabIndex = 10;
-            this.textBox_version.Text = "Version";
+            this.textBox_version.Text = "Wersja";
             this.textBox_version.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_equipment
@@ -131,7 +131,7 @@
             this.textBox_equipment.Name = "textBox_equipment";
             this.textBox_equipment.Size = new System.Drawing.Size(90, 15);
             this.textBox_equipment.TabIndex = 9;
-            this.textBox_equipment.Text = "Equipment";
+            this.textBox_equipment.Text = "Spalanie";
             this.textBox_equipment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_model
@@ -163,7 +163,7 @@
             this.textBox_brand.Name = "textBox_brand";
             this.textBox_brand.Size = new System.Drawing.Size(90, 15);
             this.textBox_brand.TabIndex = 7;
-            this.textBox_brand.Text = "Brand";
+            this.textBox_brand.Text = "Marka";
             this.textBox_brand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel6
