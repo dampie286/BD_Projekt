@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_panel_admin));
             this.label_admin_is_online = new System.Windows.Forms.Label();
             this.button_logout = new System.Windows.Forms.Button();
-            this.button_settings = new System.Windows.Forms.Button();
+            this.button_manage_ceeper = new System.Windows.Forms.Button();
             this.button_rent = new System.Windows.Forms.Button();
             this.button_reservation = new System.Windows.Forms.Button();
             this.button_databaseVeh = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@
             this.label_admin_is_online.ForeColor = System.Drawing.Color.Yellow;
             this.label_admin_is_online.Location = new System.Drawing.Point(429, 7);
             this.label_admin_is_online.Name = "label_admin_is_online";
-            this.label_admin_is_online.Size = new System.Drawing.Size(174, 17);
+            this.label_admin_is_online.Size = new System.Drawing.Size(148, 15);
             this.label_admin_is_online.TabIndex = 1;
             this.label_admin_is_online.Text = "Zalogowany Administrator";
             // 
@@ -78,25 +78,25 @@
             this.button_logout.UseVisualStyleBackColor = false;
             this.button_logout.Click += new System.EventHandler(this.button_logout_Click);
             // 
-            // button_settings
+            // button_manage_ceeper
             // 
-            this.button_settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.button_settings.FlatAppearance.BorderSize = 0;
-            this.button_settings.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.button_settings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.button_settings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.button_settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_settings.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_settings.ForeColor = System.Drawing.Color.Yellow;
-            this.button_settings.Location = new System.Drawing.Point(0, 401);
-            this.button_settings.Margin = new System.Windows.Forms.Padding(0);
-            this.button_settings.MaximumSize = new System.Drawing.Size(177, 35);
-            this.button_settings.MinimumSize = new System.Drawing.Size(177, 35);
-            this.button_settings.Name = "button_settings";
-            this.button_settings.Size = new System.Drawing.Size(177, 35);
-            this.button_settings.TabIndex = 16;
-            this.button_settings.Text = "Ustawienia";
-            this.button_settings.UseVisualStyleBackColor = false;
+            this.button_manage_ceeper.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.button_manage_ceeper.FlatAppearance.BorderSize = 0;
+            this.button_manage_ceeper.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button_manage_ceeper.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button_manage_ceeper.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button_manage_ceeper.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_manage_ceeper.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_manage_ceeper.ForeColor = System.Drawing.Color.Yellow;
+            this.button_manage_ceeper.Location = new System.Drawing.Point(0, 401);
+            this.button_manage_ceeper.Margin = new System.Windows.Forms.Padding(0);
+            this.button_manage_ceeper.MaximumSize = new System.Drawing.Size(177, 70);
+            this.button_manage_ceeper.MinimumSize = new System.Drawing.Size(177, 70);
+            this.button_manage_ceeper.Name = "button_manage_ceeper";
+            this.button_manage_ceeper.Size = new System.Drawing.Size(177, 70);
+            this.button_manage_ceeper.TabIndex = 16;
+            this.button_manage_ceeper.Text = "Zarządzanie opiekunami";
+            this.button_manage_ceeper.UseVisualStyleBackColor = false;
             // 
             // button_rent
             // 
@@ -176,6 +176,7 @@
             // 
             this.userControl_addWorker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_addWorker1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_addWorker1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_addWorker1.Name = "userControl_addWorker1";
             this.userControl_addWorker1.Size = new System.Drawing.Size(941, 656);
             this.userControl_addWorker1.TabIndex = 24;
@@ -184,6 +185,7 @@
             // 
             this.userControl_menage_workers1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_menage_workers1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_menage_workers1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_menage_workers1.Name = "userControl_menage_workers1";
             this.userControl_menage_workers1.Size = new System.Drawing.Size(941, 656);
             this.userControl_menage_workers1.TabIndex = 23;
@@ -192,6 +194,7 @@
             // 
             this.userControl_modified_delet_car1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.userControl_modified_delet_car1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_modified_delet_car1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_modified_delet_car1.Name = "userControl_modified_delet_car1";
             this.userControl_modified_delet_car1.Size = new System.Drawing.Size(941, 656);
             this.userControl_modified_delet_car1.TabIndex = 22;
@@ -200,7 +203,7 @@
             // 
             this.userControl_add_Car1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.userControl_add_Car1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_add_Car1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_add_Car1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_add_Car1.Name = "userControl_add_Car1";
             this.userControl_add_Car1.Size = new System.Drawing.Size(941, 656);
             this.userControl_add_Car1.TabIndex = 20;
@@ -209,7 +212,7 @@
             // 
             this.userControl_menage_cars1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.userControl_menage_cars1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_menage_cars1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_menage_cars1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_menage_cars1.Name = "userControl_menage_cars1";
             this.userControl_menage_cars1.Size = new System.Drawing.Size(941, 656);
             this.userControl_menage_cars1.TabIndex = 19;
@@ -227,6 +230,7 @@
             // 
             this.userControl_modified_del_Workesrs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.userControl_modified_del_Workesrs1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_modified_del_Workesrs1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_modified_del_Workesrs1.Name = "userControl_modified_del_Workesrs1";
             this.userControl_modified_del_Workesrs1.Size = new System.Drawing.Size(941, 656);
             this.userControl_modified_del_Workesrs1.TabIndex = 25;
@@ -245,7 +249,7 @@
             this.Controls.Add(this.userControl_menage_cars1);
             this.Controls.Add(this.userControl_veh_DB1);
             this.Controls.Add(this.button_logout);
-            this.Controls.Add(this.button_settings);
+            this.Controls.Add(this.button_manage_ceeper);
             this.Controls.Add(this.button_rent);
             this.Controls.Add(this.button_reservation);
             this.Controls.Add(this.button_databaseVeh);
@@ -268,7 +272,7 @@
 
         private System.Windows.Forms.Label label_admin_is_online;
         private System.Windows.Forms.Button button_logout;
-        private System.Windows.Forms.Button button_settings;
+        private System.Windows.Forms.Button button_manage_ceeper;
         private System.Windows.Forms.Button button_rent;
         private System.Windows.Forms.Button button_reservation;
         private System.Windows.Forms.Button button_databaseVeh;

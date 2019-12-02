@@ -12,18 +12,26 @@ namespace VMA
 {
     public partial class UserControl_my_reservation : UserControl
     {
+        int user_id;
         public UserControl_my_reservation()
         {
             InitializeComponent();
         }
 
-      
+        public void setID(int id)
+        {
+            user_id = id;
+        }
+
         public void fillDataGridView(DataTable tmp) //funkcja do wypłenienia tabeli
         {
-            dataGridView_my_reservation.DataSource = tmp;
 
+            DataBaseDataContext db = new DataBaseDataContext();
+            var Selectquery = from x in db.VehicleSets join y in db.ReservationSets on x.vehicle_id equals y.Vehicle_vehicle_id join z in db.WorkerSets on y.Worker_worker_id equals z.worker_id where z.worker_id== user_id select new { REJESTRACJA = x.licence_plate, MARKA = x.brand, MODEL = x.model, OD = y.date_from, DO = y.date_to, REZERWUJACY = z.surname, CEL = y.purpose };
 
+            dataGridView_my_reservation.DataSource = Selectquery;
 
+            
             dataGridView_my_reservation.Columns[0].Visible = false;
             dataGridView_my_reservation.RowHeadersVisible = false;
             dataGridView_my_reservation.ReadOnly = true;        //nie moze edytować kolumn
