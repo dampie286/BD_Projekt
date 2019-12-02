@@ -120,12 +120,15 @@ namespace VMA
 
             userControl_rent_with_DB1.BringToFront();
             userControl_rent_with_DB1.fillDataGridView(tmp);
+               
         }
 
         private void userControl_rent_Button_rentResev_Click(object sender, EventArgs e)    //zdarzenie kiedy naciśnie się przycisk wypożyczenie z baz danyuch
         {
             userControl_my_reservation1.BringToFront();
+            userControl_my_reservation1.setID(log);
             userControl_my_reservation1.fillDataGridView(tmp2);
+            
         }
 
         private void button_statistic_Click(object sender, EventArgs e)

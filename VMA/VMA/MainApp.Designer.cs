@@ -189,7 +189,7 @@
             // 
             this.userControl_settings1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_settings1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_settings1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_settings1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_settings1.Name = "userControl_settings1";
             this.userControl_settings1.Size = new System.Drawing.Size(941, 656);
             this.userControl_settings1.TabIndex = 19;
