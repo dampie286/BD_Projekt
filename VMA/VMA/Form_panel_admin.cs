@@ -35,7 +35,8 @@ namespace VMA
 
         private void userControl_meange_Button_modAndDelKeeper_Click(object sender, EventArgs e)
         {
-            
+            userControl_delete_keeper1.fillDataGridView2();
+            userControl_delete_keeper1.BringToFront();
         }
 
         private void userControl_menage_Button_addKeeper_Click(object sender, EventArgs e)
