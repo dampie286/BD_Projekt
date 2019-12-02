@@ -43,6 +43,8 @@
             this.userControl_menage_cars1 = new VMA.UserControl_menage_cars();
             this.userControl_veh_DB1 = new VMA.UserControl_veh_DB();
             this.userControl_modified_del_Workesrs1 = new VMA.UserControl_modified_del_Workesrs();
+            this.userControl_manage_keeper1 = new VMA.UserControl_manage_keeper();
+            this.userControl_addKeeper1 = new VMA.UserControl_addKeeper();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +55,7 @@
             this.label_admin_is_online.ForeColor = System.Drawing.Color.Yellow;
             this.label_admin_is_online.Location = new System.Drawing.Point(429, 7);
             this.label_admin_is_online.Name = "label_admin_is_online";
-            this.label_admin_is_online.Size = new System.Drawing.Size(148, 15);
+            this.label_admin_is_online.Size = new System.Drawing.Size(174, 17);
             this.label_admin_is_online.TabIndex = 1;
             this.label_admin_is_online.Text = "Zalogowany Administrator";
             // 
@@ -97,6 +99,7 @@
             this.button_manage_ceeper.TabIndex = 16;
             this.button_manage_ceeper.Text = "Zarządzanie opiekunami";
             this.button_manage_ceeper.UseVisualStyleBackColor = false;
+            this.button_manage_ceeper.Click += new System.EventHandler(this.button_manage_ceeper_Click);
             // 
             // button_rent
             // 
@@ -185,7 +188,7 @@
             // 
             this.userControl_menage_workers1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_menage_workers1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_menage_workers1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_menage_workers1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_menage_workers1.Name = "userControl_menage_workers1";
             this.userControl_menage_workers1.Size = new System.Drawing.Size(941, 656);
             this.userControl_menage_workers1.TabIndex = 23;
@@ -203,7 +206,7 @@
             // 
             this.userControl_add_Car1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.userControl_add_Car1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_add_Car1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_add_Car1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_add_Car1.Name = "userControl_add_Car1";
             this.userControl_add_Car1.Size = new System.Drawing.Size(941, 656);
             this.userControl_add_Car1.TabIndex = 20;
@@ -212,7 +215,7 @@
             // 
             this.userControl_menage_cars1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.userControl_menage_cars1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_menage_cars1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_menage_cars1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_menage_cars1.Name = "userControl_menage_cars1";
             this.userControl_menage_cars1.Size = new System.Drawing.Size(941, 656);
             this.userControl_menage_cars1.TabIndex = 19;
@@ -230,16 +233,35 @@
             // 
             this.userControl_modified_del_Workesrs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.userControl_modified_del_Workesrs1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_modified_del_Workesrs1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_modified_del_Workesrs1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_modified_del_Workesrs1.Name = "userControl_modified_del_Workesrs1";
             this.userControl_modified_del_Workesrs1.Size = new System.Drawing.Size(941, 656);
             this.userControl_modified_del_Workesrs1.TabIndex = 25;
+            // 
+            // userControl_manage_keeper1
+            // 
+            this.userControl_manage_keeper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_manage_keeper1.ForeColor = System.Drawing.Color.Black;
+            this.userControl_manage_keeper1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_manage_keeper1.Name = "userControl_manage_keeper1";
+            this.userControl_manage_keeper1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_manage_keeper1.TabIndex = 26;
+            // 
+            // userControl_addKeeper1
+            // 
+            this.userControl_addKeeper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_addKeeper1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_addKeeper1.Name = "userControl_addKeeper1";
+            this.userControl_addKeeper1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_addKeeper1.TabIndex = 27;
             // 
             // Form_panel_admin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.userControl_addKeeper1);
+            this.Controls.Add(this.userControl_manage_keeper1);
             this.Controls.Add(this.userControl_modified_del_Workesrs1);
             this.Controls.Add(this.userControl_addWorker1);
             this.Controls.Add(this.userControl_menage_workers1);
@@ -284,5 +306,7 @@
         private UserControl_menage_workers userControl_menage_workers1;
         private UserControl_addWorker userControl_addWorker1;
         private UserControl_modified_del_Workesrs userControl_modified_del_Workesrs1;
+        private UserControl_manage_keeper userControl_manage_keeper1;
+        private UserControl_addKeeper userControl_addKeeper1;
     }
 }

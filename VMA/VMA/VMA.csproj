@@ -75,6 +75,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl_addKeeper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_addKeeper.Designer.cs">
+      <DependentUpon>UserControl_addKeeper.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_addWorker.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,6 +92,12 @@
     </Compile>
     <Compile Include="UserControl_add_Car.Designer.cs">
       <DependentUpon>UserControl_add_Car.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_manage_keeper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_manage_keeper.Designer.cs">
+      <DependentUpon>UserControl_manage_keeper.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl_menage_cars.cs">
       <SubType>UserControl</SubType>
@@ -181,11 +193,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControl_addKeeper.resx">
+      <DependentUpon>UserControl_addKeeper.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_addWorker.resx">
       <DependentUpon>UserControl_addWorker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_add_Car.resx">
       <DependentUpon>UserControl_add_Car.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_manage_keeper.resx">
+      <DependentUpon>UserControl_manage_keeper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_menage_cars.resx">
       <DependentUpon>UserControl_menage_cars.cs</DependentUpon>
