@@ -12,6 +12,7 @@ namespace VMA
 {
     public partial class UserControl_addKeeper : UserControl
     {
+        DataBaseDataContext db = new DataBaseDataContext();
         public UserControl_addKeeper()
         {
             InitializeComponent();
@@ -19,7 +20,9 @@ namespace VMA
 
         public void fillDataGridView(DataTable tmp) //uzupełnienie tabeli
         {
-            dataGridView_veh_DB.DataSource = tmp;
+            
+            var query = from x in db.VehicleSets select new { MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type };
+            dataGridView_veh_DB.DataSource = query;
 
 
 
@@ -33,7 +36,7 @@ namespace VMA
             dataGridView_veh_DB.Columns[3].Width = 60;
             dataGridView_veh_DB.Columns[4].Width = 90;
             dataGridView_veh_DB.Columns[5].Width = 90;
-            dataGridView_veh_DB.Columns[6].Width = 90;
+           // dataGridView_veh_DB.Columns[6].Width = 90;
 
         }
 
@@ -79,7 +82,7 @@ namespace VMA
         {
 
 
-            DataBaseDataContext db = new DataBaseDataContext();
+        
             var query = from x in db.WorkerSets select x;
 
             dataGridView_work_DB.DataSource = query;

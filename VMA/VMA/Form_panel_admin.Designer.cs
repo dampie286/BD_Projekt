@@ -36,15 +36,16 @@
             this.button_reservation = new System.Windows.Forms.Button();
             this.button_databaseVeh = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.userControl_addKeeper1 = new VMA.UserControl_addKeeper();
+            this.userControl_manage_keeper1 = new VMA.UserControl_manage_keeper();
+            this.userControl_modified_del_Workesrs1 = new VMA.UserControl_modified_del_Workesrs();
             this.userControl_addWorker1 = new VMA.UserControl_addWorker();
             this.userControl_menage_workers1 = new VMA.UserControl_menage_workers();
             this.userControl_modified_delet_car1 = new VMA.UserControl_modified_delet_car();
             this.userControl_add_Car1 = new VMA.UserControl_add_Car();
             this.userControl_menage_cars1 = new VMA.UserControl_menage_cars();
             this.userControl_veh_DB1 = new VMA.UserControl_veh_DB();
-            this.userControl_modified_del_Workesrs1 = new VMA.UserControl_modified_del_Workesrs();
-            this.userControl_manage_keeper1 = new VMA.UserControl_manage_keeper();
-            this.userControl_addKeeper1 = new VMA.UserControl_addKeeper();
+            this.userControl_delete_keeper1 = new VMA.UserControl_delete_keeper();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,6 +176,32 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // userControl_addKeeper1
+            // 
+            this.userControl_addKeeper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_addKeeper1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_addKeeper1.Name = "userControl_addKeeper1";
+            this.userControl_addKeeper1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_addKeeper1.TabIndex = 27;
+            // 
+            // userControl_manage_keeper1
+            // 
+            this.userControl_manage_keeper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_manage_keeper1.ForeColor = System.Drawing.Color.Black;
+            this.userControl_manage_keeper1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_manage_keeper1.Name = "userControl_manage_keeper1";
+            this.userControl_manage_keeper1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_manage_keeper1.TabIndex = 26;
+            // 
+            // userControl_modified_del_Workesrs1
+            // 
+            this.userControl_modified_del_Workesrs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.userControl_modified_del_Workesrs1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_modified_del_Workesrs1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_modified_del_Workesrs1.Name = "userControl_modified_del_Workesrs1";
+            this.userControl_modified_del_Workesrs1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_modified_del_Workesrs1.TabIndex = 25;
+            // 
             // userControl_addWorker1
             // 
             this.userControl_addWorker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
@@ -229,37 +256,20 @@
             this.userControl_veh_DB1.Size = new System.Drawing.Size(941, 656);
             this.userControl_veh_DB1.TabIndex = 18;
             // 
-            // userControl_modified_del_Workesrs1
+            // userControl_delete_keeper1
             // 
-            this.userControl_modified_del_Workesrs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.userControl_modified_del_Workesrs1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_modified_del_Workesrs1.Margin = new System.Windows.Forms.Padding(2);
-            this.userControl_modified_del_Workesrs1.Name = "userControl_modified_del_Workesrs1";
-            this.userControl_modified_del_Workesrs1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_modified_del_Workesrs1.TabIndex = 25;
-            // 
-            // userControl_manage_keeper1
-            // 
-            this.userControl_manage_keeper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_manage_keeper1.ForeColor = System.Drawing.Color.Black;
-            this.userControl_manage_keeper1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_manage_keeper1.Name = "userControl_manage_keeper1";
-            this.userControl_manage_keeper1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_manage_keeper1.TabIndex = 26;
-            // 
-            // userControl_addKeeper1
-            // 
-            this.userControl_addKeeper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_addKeeper1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_addKeeper1.Name = "userControl_addKeeper1";
-            this.userControl_addKeeper1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_addKeeper1.TabIndex = 27;
+            this.userControl_delete_keeper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_delete_keeper1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_delete_keeper1.Name = "userControl_delete_keeper1";
+            this.userControl_delete_keeper1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_delete_keeper1.TabIndex = 28;
             // 
             // Form_panel_admin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.userControl_delete_keeper1);
             this.Controls.Add(this.userControl_addKeeper1);
             this.Controls.Add(this.userControl_manage_keeper1);
             this.Controls.Add(this.userControl_modified_del_Workesrs1);
@@ -308,5 +318,6 @@
         private UserControl_modified_del_Workesrs userControl_modified_del_Workesrs1;
         private UserControl_manage_keeper userControl_manage_keeper1;
         private UserControl_addKeeper userControl_addKeeper1;
+        private UserControl_delete_keeper userControl_delete_keeper1;
     }
 }
