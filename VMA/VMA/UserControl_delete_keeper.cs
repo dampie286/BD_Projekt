@@ -67,5 +67,53 @@ namespace VMA
             Grid_edit();
 
         }
+
+        private void textBox_name_Enter(object sender, EventArgs e)
+        {
+            if (textBox_name.Text.Equals(@"Imię"))
+            {
+                textBox_name.Text = "";
+            }
+        }
+
+        private void textBox_name_Leave(object sender, EventArgs e)
+        {
+            if (textBox_name.Text.Equals(""))
+            {
+                textBox_name.Text = "Imię";
+            }
+        }
+
+        private void textBox_surrname_Enter(object sender, EventArgs e)
+        {
+            if (textBox_surrname.Text.Equals(@"Nazwisko"))
+            {
+                textBox_surrname.Text = "";
+            }
+        }
+
+        private void textBox_surrname_Leave(object sender, EventArgs e)
+        {
+            if (textBox_surrname.Text.Equals(""))
+            {
+                textBox_surrname.Text = "Nazwisko";
+            }
+        }
+
+        private void textBox_position_Enter(object sender, EventArgs e)
+        {
+            if (textBox_position.Text.Equals(@"Stanowisko"))
+            {
+                textBox_position.Text = "";
+            }
+        }
+
+        private void textBox_position_Leave(object sender, EventArgs e)
+        {
+            if (textBox_position.Text.Equals(""))
+            {
+                textBox_position.Text = "Stanowisko";
+            }
+        }
     }
 }
