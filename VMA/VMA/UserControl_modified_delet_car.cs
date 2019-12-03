@@ -17,27 +17,75 @@ namespace VMA
             InitializeComponent();
         }
 
-        public void fillDataGridView(DataTable tmp)
+        private void gridedit()
         {
-            dataGridView_veh_DB.DataSource = tmp;
 
-
-
-            dataGridView_veh_DB.Columns[0].Visible = false;
-            dataGridView_veh_DB.RowHeadersVisible = false;
+            
             dataGridView_veh_DB.ReadOnly = true;        //nie moze edytować kolumn
+            dataGridView_veh_DB.Columns[0].Width = 50;///id auta
+            dataGridView_veh_DB.Columns[1].Width = 60;///marka
+            dataGridView_veh_DB.Columns[2].Width = 60;//model
+            dataGridView_veh_DB.Columns[3].Width = 70;//wersja
+            dataGridView_veh_DB.Columns[4].Width = 85;//rejestracja
+            dataGridView_veh_DB.Columns[5].Width = 66;//spalanie
+            dataGridView_veh_DB.Columns[6].Width = 55;//paliwo
+            //dataGridView_veh_DB.Columns[7].Width = 55;//przebieg 
 
+        }
 
-            dataGridView_veh_DB.Columns[1].Width = 60;
-            dataGridView_veh_DB.Columns[2].Width = 60;
-            dataGridView_veh_DB.Columns[3].Width = 60;
-            dataGridView_veh_DB.Columns[4].Width = 90;
-            dataGridView_veh_DB.Columns[5].Width = 90;
-            dataGridView_veh_DB.Columns[6].Width = 90;
+        public void fillDataGridView()
+        {
+
+            DataBaseDataContext db = new DataBaseDataContext();
+            var Selectquery = from x in db.VehicleSets where x.available == "yes " && x.available != "deleted" select  new {Id_auta=x.vehicle_id, MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type };
+
+            dataGridView_veh_DB.DataSource = Selectquery;
+
+            gridedit();
+             
+            
+
         }
 
         private void button_delete_Click(object sender, EventArgs e)
         {
+
+
+            DataBaseDataContext db = new DataBaseDataContext();
+            bool confirm = false;
+
+            int row = dataGridView_veh_DB.CurrentCell.RowIndex;
+
+            var delete_id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
+          
+
+            var query = from x in db.VehicleSets where x.vehicle_id == delete_id select x;
+
+            foreach (VehicleSet x in query)
+            {
+                x.available = "deleted";
+
+
+            }
+            try
+            {
+                db.SubmitChanges();
+                confirm = true;
+            }
+            catch
+            {
+                MessageBox.Show("Nie udało się usunąć auta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+            if (confirm)
+            {
+                MessageBox.Show("Usunięto auto", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+
+            fillDataGridView();
+
+
 
         }
 
@@ -52,10 +100,10 @@ namespace VMA
             DataBaseDataContext db = new DataBaseDataContext();
 
 
+            try
+            { 
 
-
-
-            var query = from x in db.VehicleSets where x.available == "yes " select x;
+            var query = from x in db.VehicleSets where x.available == "yes " && x.available != "deleted" select x;
 
             if (filtr_brand == "Marka" || filtr_brand == "")
             {
@@ -118,27 +166,125 @@ namespace VMA
 
 
 
-            var query1 = from x in query select new { MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type, };
+            var query1 = from x in query select new {I_auta=x.vehicle_id, MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type };
 
             dataGridView_veh_DB.DataSource = query1;
 
+            gridedit();
+        }
+            catch
+            {
+
+
+                MessageBox.Show("Zły format danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
 
 
 
 
+        }
 
+        private void button_modified_Click(object sender, EventArgs e)
+        {
+              /// co mozna tu zmieniac :O
+        }
 
-            dataGridView_veh_DB.RowHeadersVisible = false;
-            dataGridView_veh_DB.ReadOnly = true;        //nie moze edytować kolumn
+        private void textBox_brand_Enter(object sender, EventArgs e)
+        {
+            if (textBox_brand.Text.Equals(@"Marka"))
+            {
+                textBox_brand.Text = "";
+            }
+        }
 
-            dataGridView_veh_DB.Columns[0].Width = 70;
-            dataGridView_veh_DB.Columns[1].Width = 70;
-            dataGridView_veh_DB.Columns[2].Width = 90;
-            dataGridView_veh_DB.Columns[3].Width = 100;
-            dataGridView_veh_DB.Columns[4].Width = 90;
-            dataGridView_veh_DB.Columns[5].Width = 90;
+        private void textBox_brand_Leave(object sender, EventArgs e)
+        {
+            if (textBox_brand.Text.Equals(""))
+            {
+                textBox_brand.Text= "Marka";
+            }
+        }
 
+        private void textBox_model_Enter(object sender, EventArgs e)
+        {
+            if (textBox_model.Text.Equals(@"Model"))
+            {
+                textBox_model.Text = "";
+            }
+        }
+
+        private void textBox_model_Leave(object sender, EventArgs e)
+        {
+            if (textBox_model.Text.Equals(""))
+            {
+                textBox_model.Text = "Model";
+            }
+        }
+
+        private void textBox_equipment_Enter(object sender, EventArgs e)
+        {
+            if (textBox_equipment.Text.Equals(@"Spalanie"))
+            {
+                textBox_equipment.Text = "";
+            }
+        }
+
+        private void textBox_equipment_Leave(object sender, EventArgs e)
+        {
+            if (textBox_equipment.Text.Equals(""))
+            {
+                textBox_equipment.Text = "Spalanie";
+            }
+        }
+
+        private void textBox_version_Enter(object sender, EventArgs e)
+        {
+            if (textBox_version.Text.Equals(@"Wersja"))
+            {
+                textBox_version.Text = "";
+            }
+
+        }
+
+        private void textBox_version_Leave(object sender, EventArgs e)
+        {
+            if (textBox_version.Text.Equals(""))
+            {
+                textBox_version.Text = "Wersja";
+            }
+        }
+
+        private void textBox_mileage_Enter(object sender, EventArgs e)
+        {
+            if (textBox_mileage.Text.Equals(@"Typ paliwa"))
+            {
+                textBox_mileage.Text = "";
+            }
+        }
+
+        private void textBox_mileage_Leave(object sender, EventArgs e)
+        {
+            if (textBox_mileage.Text.Equals(""))
+            {
+                textBox_mileage.Text = "Typ paliwa";
+            }
+        }
+
+        private void textBox_license_Enter(object sender, EventArgs e)
+        {
+            if (textBox_license.Text.Equals(@"Rejestracja"))
+            {
+                textBox_license.Text = "";
+            }
+        }
+
+        private void textBox_license_Leave(object sender, EventArgs e)
+        {
+            if (textBox_license.Text.Equals(""))
+            {
+                textBox_license.Text = "Rejestracja";
+            }
         }
     }
 }

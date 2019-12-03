@@ -127,35 +127,41 @@ namespace VMA
             string filtr_name=textBox_name.Text;
             string filtr_surname=textBox_surrname.Text;
             string filtr_position=textBox_position.Text;
-            if (filtr_name == "Imię" || filtr_name == "")
+            try
             {
+                if (filtr_name == "Imię" || filtr_name == "")
+                {
 
-            }
-            else
-            {
-                query = from x in query where x.name == filtr_name select x;
+                }
+                else
+                {
+                    query = from x in query where x.name == filtr_name select x;
 
-            }
-           if (filtr_surname == "Nazwisko" || filtr_surname == "")
-            {
-             }
-           else
-             {
-                  query = from x in query where x.surname == filtr_surname select x;
+                }
+                if (filtr_surname == "Nazwisko" || filtr_surname == "")
+                {
+                }
+                else
+                {
+                    query = from x in query where x.surname == filtr_surname select x;
 
-               }
-              if (filtr_position == "Stanowisko" || filtr_position== "")
-               {
+                }
+                if (filtr_position == "Stanowisko" || filtr_position == "")
+                {
 
-                 }
-               else
-               {
-                query = from x in query where x.position == filtr_position select x;
+                }
+                else
+                {
+                    query = from x in query where x.position == filtr_position select x;
                 }
 
-                 dataGridView_workers_DB.DataSource = query;
-                  Grid_edit();
-
+                dataGridView_workers_DB.DataSource = query;
+                Grid_edit();
+            }
+            catch
+            {
+                MessageBox.Show("Zły format danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
 
             }

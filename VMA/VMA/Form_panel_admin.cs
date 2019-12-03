@@ -124,7 +124,7 @@ namespace VMA
 
         private void userControl_menage_Button_menANDDelCar_Click(object sender,EventArgs e)
         {
-            userControl_modified_delet_car1.fillDataGridView(tmp); 
+            userControl_modified_delet_car1.fillDataGridView(); 
             userControl_modified_delet_car1.BringToFront();
         }
 

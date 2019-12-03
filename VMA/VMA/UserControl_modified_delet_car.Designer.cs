@@ -51,7 +51,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.Yellow;
             this.panel6.Location = new System.Drawing.Point(671, 48);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(120, 1);
             this.panel6.TabIndex = 53;
@@ -60,7 +60,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Yellow;
             this.panel5.Location = new System.Drawing.Point(541, 48);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(120, 1);
             this.panel5.TabIndex = 54;
@@ -69,7 +69,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Yellow;
             this.panel4.Location = new System.Drawing.Point(411, 48);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(120, 1);
             this.panel4.TabIndex = 55;
@@ -78,7 +78,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Yellow;
             this.panel3.Location = new System.Drawing.Point(283, 48);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(120, 1);
             this.panel3.TabIndex = 56;
@@ -87,7 +87,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Yellow;
             this.panel2.Location = new System.Drawing.Point(152, 48);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(120, 1);
             this.panel2.TabIndex = 57;
@@ -96,7 +96,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Yellow;
             this.panel1.Location = new System.Drawing.Point(24, 48);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(120, 1);
             this.panel1.TabIndex = 52;
@@ -130,8 +130,10 @@
             this.textBox_license.Name = "textBox_license";
             this.textBox_license.Size = new System.Drawing.Size(120, 19);
             this.textBox_license.TabIndex = 50;
-            this.textBox_license.Text = "License nr";
+            this.textBox_license.Text = "Rejestracja";
             this.textBox_license.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_license.Enter += new System.EventHandler(this.textBox_license_Enter);
+            this.textBox_license.Leave += new System.EventHandler(this.textBox_license_Leave);
             // 
             // textBox_mileage
             // 
@@ -146,8 +148,10 @@
             this.textBox_mileage.Name = "textBox_mileage";
             this.textBox_mileage.Size = new System.Drawing.Size(120, 19);
             this.textBox_mileage.TabIndex = 49;
-            this.textBox_mileage.Text = "Mileage";
+            this.textBox_mileage.Text = "Typ paliwa";
             this.textBox_mileage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_mileage.Enter += new System.EventHandler(this.textBox_mileage_Enter);
+            this.textBox_mileage.Leave += new System.EventHandler(this.textBox_mileage_Leave);
             // 
             // textBox_version
             // 
@@ -162,8 +166,10 @@
             this.textBox_version.Name = "textBox_version";
             this.textBox_version.Size = new System.Drawing.Size(120, 19);
             this.textBox_version.TabIndex = 48;
-            this.textBox_version.Text = "Version";
+            this.textBox_version.Text = "Wersja";
             this.textBox_version.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_version.Enter += new System.EventHandler(this.textBox_version_Enter);
+            this.textBox_version.Leave += new System.EventHandler(this.textBox_version_Leave);
             // 
             // textBox_equipment
             // 
@@ -178,8 +184,10 @@
             this.textBox_equipment.Name = "textBox_equipment";
             this.textBox_equipment.Size = new System.Drawing.Size(120, 19);
             this.textBox_equipment.TabIndex = 47;
-            this.textBox_equipment.Text = "Equipment";
+            this.textBox_equipment.Text = "Spalanie";
             this.textBox_equipment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_equipment.Enter += new System.EventHandler(this.textBox_equipment_Enter);
+            this.textBox_equipment.Leave += new System.EventHandler(this.textBox_equipment_Leave);
             // 
             // textBox_model
             // 
@@ -196,6 +204,8 @@
             this.textBox_model.TabIndex = 46;
             this.textBox_model.Text = "Model";
             this.textBox_model.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_model.Enter += new System.EventHandler(this.textBox_model_Enter);
+            this.textBox_model.Leave += new System.EventHandler(this.textBox_model_Leave);
             // 
             // textBox_brand
             // 
@@ -210,8 +220,10 @@
             this.textBox_brand.Name = "textBox_brand";
             this.textBox_brand.Size = new System.Drawing.Size(120, 19);
             this.textBox_brand.TabIndex = 45;
-            this.textBox_brand.Text = "Brand";
+            this.textBox_brand.Text = "Marka";
             this.textBox_brand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_brand.Enter += new System.EventHandler(this.textBox_brand_Enter);
+            this.textBox_brand.Leave += new System.EventHandler(this.textBox_brand_Leave);
             // 
             // dataGridView_veh_DB
             // 
@@ -242,6 +254,7 @@
             this.button_modified.TabIndex = 59;
             this.button_modified.Text = "Modyfikuj";
             this.button_modified.UseVisualStyleBackColor = false;
+            this.button_modified.Click += new System.EventHandler(this.button_modified_Click);
             // 
             // button_delete
             // 

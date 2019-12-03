@@ -25,7 +25,7 @@ namespace VMA
         public void fillDataGridView()
         {
             DataBaseDataContext db = new DataBaseDataContext();
-            var Selectquery = from x in db.VehicleSets  where x.available=="yes "select new { MARKA=x.brand,MODEL=x.model,WERSJA=x.version,REJESTRACJA=x.licence_plate,SPALANIE=x.avg_consumption,PALIWO=x.fuel_type };
+            var Selectquery = from x in db.VehicleSets  where x.available=="yes " &&x.available!="deleted"select new { MARKA=x.brand,MODEL=x.model,WERSJA=x.version,REJESTRACJA=x.licence_plate,SPALANIE=x.avg_consumption,PALIWO=x.fuel_type };
 
             dataGridView_veh_DB.DataSource = Selectquery;
             
@@ -56,77 +56,82 @@ namespace VMA
             DataBaseDataContext db = new DataBaseDataContext();
 
 
-
-     
-
-            var query = from x in db.VehicleSets where x.available == "yes " select x;
-
-            if (filtr_brand == "Marka" || filtr_brand == "")
+            try
             {
 
+
+                var query = from x in db.VehicleSets where x.available == "yes " &&x.available!="deleted" select x;
+
+                if (filtr_brand == "Marka" || filtr_brand == "")
+                {
+
+                }
+                else
+                {
+                    query = from x in query where x.brand == filtr_brand select x;
+
+                }
+
+                if (filtr_model == "Model" || filtr_model == "")
+                {
+
+                }
+                else
+                {
+                    query = from x in query where x.model == filtr_model select x;
+
+                }
+                if (filtr_version == "Wersja" || filtr_version == "")
+                {
+
+                }
+                else
+                {
+                    query = from x in query where x.version == filtr_version select x;
+
+                }
+                if (filtr_licence == "Rejestracja" || filtr_licence == "")
+                {
+
+                }
+                else
+                {
+                    query = from x in query where x.licence_plate == filtr_licence select x;
+
+                }
+
+                if (filtr_avg == "Spalanie" || filtr_avg == "")
+                {
+
+                }
+                else
+                {
+                    double avg = Convert.ToDouble(filtr_avg);// wymaga zabezpieczenia przed złym formatem i stringiem 
+                    query = from x in query where x.avg_consumption <= avg select x;
+
+                }
+                if (filtr_fuel == "Typ paliwa" || filtr_fuel == "")
+                {
+
+                }
+                else
+                {
+                    query = from x in query where x.fuel_type == filtr_fuel select x;
+
+                }
+
+
+
+
+                var query1 = from x in query select new { MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type, };
+
+                dataGridView_veh_DB.DataSource = query1;
+
             }
-            else
+            catch
             {
-                query = from x in query where x.brand == filtr_brand select x;
-
+                MessageBox.Show("Zły format danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            if (filtr_model == "Model" || filtr_model == "")
-            {
-
-            }
-            else
-            {
-                query = from x in query where x.model == filtr_model select x;
-
-            }
-            if (filtr_version == "Wersja" || filtr_version == "")
-            {
-
-            }
-            else
-            {
-                query = from x in query where x.version == filtr_version select x;
-
-            }
-            if (filtr_licence == "Rejestracja" || filtr_licence == "")
-            {
-
-            }
-            else
-            {
-                query = from x in query where x.licence_plate == filtr_licence select x;
-
-            }
-            
-            if (filtr_avg == "Spalanie" || filtr_avg == "")
-            {
-
-            }
-            else
-            {
-                double avg = Convert.ToDouble(filtr_avg);// wymaga zabezpieczenia przed złym formatem i stringiem 
-                query = from x in query where x.avg_consumption <= avg select x;
-
-            }
-            if (filtr_fuel == "Typ paliwa" || filtr_fuel == "")
-            {
-
-            }
-            else
-            {
-                query = from x in query where x.fuel_type == filtr_fuel select x;
-
-            }
-
-
-
-
-            var query1 = from x in query select new { MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type, };
-
-            dataGridView_veh_DB.DataSource = query1;
-
-
 
 
 
