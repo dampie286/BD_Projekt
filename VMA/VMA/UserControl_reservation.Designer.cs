@@ -307,6 +307,7 @@
             this.dateTimePicker_from_date_reserv.Size = new System.Drawing.Size(151, 20);
             this.dateTimePicker_from_date_reserv.TabIndex = 26;
             this.dateTimePicker_from_date_reserv.ValueChanged += new System.EventHandler(this.dateTimePicker_from_date_reserv_ValueChanged);
+            this.dateTimePicker_from_date_reserv.Leave += new System.EventHandler(this.dateTimePicker_from_date_reserv_Leave);
             // 
             // label_from_date
             // 
@@ -345,6 +346,7 @@
             this.dateTimePicker_to_date_reserv.Name = "dateTimePicker_to_date_reserv";
             this.dateTimePicker_to_date_reserv.Size = new System.Drawing.Size(151, 20);
             this.dateTimePicker_to_date_reserv.TabIndex = 29;
+            this.dateTimePicker_to_date_reserv.Leave += new System.EventHandler(this.dateTimePicker_to_date_reserv_Leave);
             // 
             // button_reserv
             // 
