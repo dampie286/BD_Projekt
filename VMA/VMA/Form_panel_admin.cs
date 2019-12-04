@@ -41,8 +41,8 @@ namespace VMA
 
         private void userControl_menage_Button_addKeeper_Click(object sender, EventArgs e)
         {
-            userControl_addKeeper1.fillDataGridView2();
-            userControl_addKeeper1.fillDataGridView(tmp);
+           
+            userControl_addKeeper1.fillDataGridView();
             userControl_addKeeper1.BringToFront();  
         }
 
