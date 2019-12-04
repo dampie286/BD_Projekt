@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox_brand = new System.Windows.Forms.TextBox();
             this.textBox_model = new System.Windows.Forms.TextBox();
             this.textBox_equipment = new System.Windows.Forms.TextBox();
@@ -50,9 +54,9 @@
             this.textBox_brand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_brand.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_brand.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_brand.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_brand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_brand.Location = new System.Drawing.Point(18, 19);
-            this.textBox_brand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_brand.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_brand.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_brand.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_brand.Name = "textBox_brand";
@@ -69,9 +73,9 @@
             this.textBox_model.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_model.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_model.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_model.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_model.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_model.Location = new System.Drawing.Point(113, 19);
-            this.textBox_model.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_model.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_model.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_model.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_model.Name = "textBox_model";
@@ -87,9 +91,9 @@
             this.textBox_equipment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_equipment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_equipment.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_equipment.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_equipment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_equipment.Location = new System.Drawing.Point(208, 19);
-            this.textBox_equipment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_equipment.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_equipment.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_equipment.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_equipment.Name = "textBox_equipment";
@@ -105,9 +109,9 @@
             this.textBox_version.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_version.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_version.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_version.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_version.Location = new System.Drawing.Point(303, 19);
-            this.textBox_version.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_version.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_version.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_version.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_version.Name = "textBox_version";
@@ -123,9 +127,9 @@
             this.textBox_mileage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_mileage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_mileage.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_mileage.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_mileage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_mileage.Location = new System.Drawing.Point(398, 19);
-            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_mileage.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_mileage.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_mileage.Name = "textBox_mileage";
@@ -141,9 +145,9 @@
             this.textBox_license.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_license.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_license.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_license.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_license.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_license.Location = new System.Drawing.Point(493, 19);
-            this.textBox_license.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_license.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_license.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_license.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_license.Name = "textBox_license";
@@ -162,7 +166,7 @@
             this.button_filter.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_filter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_filter.Location = new System.Drawing.Point(610, 15);
-            this.button_filter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_filter.Margin = new System.Windows.Forms.Padding(2);
             this.button_filter.Name = "button_filter";
             this.button_filter.Size = new System.Drawing.Size(75, 25);
             this.button_filter.TabIndex = 6;
@@ -173,18 +177,62 @@
             // dataGridView_veh_DB
             // 
             this.dataGridView_veh_DB.AllowUserToOrderColumns = true;
+            this.dataGridView_veh_DB.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView_veh_DB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_veh_DB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_veh_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_veh_DB.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView_veh_DB.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_veh_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_veh_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_veh_DB.Cursor = System.Windows.Forms.Cursors.Arrow;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_veh_DB.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView_veh_DB.EnableHeadersVisualStyles = false;
             this.dataGridView_veh_DB.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_veh_DB.Location = new System.Drawing.Point(20, 57);
             this.dataGridView_veh_DB.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridView_veh_DB.MultiSelect = false;
             this.dataGridView_veh_DB.Name = "dataGridView_veh_DB";
+            this.dataGridView_veh_DB.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_veh_DB.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView_veh_DB.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView_veh_DB.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.dataGridView_veh_DB.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridView_veh_DB.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Yellow;
+            this.dataGridView_veh_DB.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Yellow;
+            this.dataGridView_veh_DB.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView_veh_DB.RowTemplate.Height = 24;
             this.dataGridView_veh_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView_veh_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_veh_DB.Size = new System.Drawing.Size(667, 455);
-            this.dataGridView_veh_DB.TabIndex = 7;
+            this.dataGridView_veh_DB.TabIndex = 0;
             // 
             // panel1
             // 

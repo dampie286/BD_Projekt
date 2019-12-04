@@ -55,9 +55,14 @@
             this.dataGridView_my_reservation.Location = new System.Drawing.Point(19, 73);
             this.dataGridView_my_reservation.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView_my_reservation.Name = "dataGridView_my_reservation";
+            this.dataGridView_my_reservation.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView_my_reservation.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.dataGridView_my_reservation.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Yellow;
+            this.dataGridView_my_reservation.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Yellow;
+            this.dataGridView_my_reservation.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView_my_reservation.RowTemplate.Height = 24;
             this.dataGridView_my_reservation.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_my_reservation.Size = new System.Drawing.Size(667, 240);
+            this.dataGridView_my_reservation.Size = new System.Drawing.Size(667, 429);
             this.dataGridView_my_reservation.TabIndex = 48;
             // 
             // UserControl_my_reservation
@@ -67,7 +72,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.Controls.Add(this.dataGridView_my_reservation);
             this.Controls.Add(this.label_my_reservation);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl_my_reservation";
             this.Size = new System.Drawing.Size(706, 533);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_my_reservation)).EndInit();

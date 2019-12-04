@@ -161,6 +161,7 @@ namespace VMA
             if (textBox_brand.Text.Equals(""))
             {
                 textBox_brand.Text = "Marka";
+                textBox_brand.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
 
@@ -168,6 +169,7 @@ namespace VMA
         {
             if (textBox_brand.Text.Equals(@"Marka"))
             {
+                textBox_brand.ForeColor = Color.FromArgb(255, 255, 0);
                 textBox_brand.Text = "";
             }
         }
@@ -177,6 +179,7 @@ namespace VMA
             if (textBox_model.Text.Equals(@"Model"))
             {
                 textBox_model.Text = "";
+                textBox_model.ForeColor = Color.FromArgb(255, 255, 0);
             }
         }
 
@@ -185,6 +188,7 @@ namespace VMA
             if (textBox_model.Text.Equals(""))
             {
                 textBox_model.Text = "Model";
+                textBox_model.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
 
@@ -193,6 +197,7 @@ namespace VMA
             if (textBox_equipment.Text.Equals(@"Spalanie"))
             {
                 textBox_equipment.Text = "";
+                textBox_equipment.ForeColor = Color.FromArgb(255, 255, 0);
             }
         }
 
@@ -201,6 +206,7 @@ namespace VMA
             if (textBox_equipment.Text.Equals(""))
             {
                 textBox_equipment.Text = "Spalanie";
+                textBox_equipment.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
 
@@ -209,6 +215,7 @@ namespace VMA
             if (textBox_version.Text.Equals(@"Wersja"))
             {
                 textBox_version.Text = "";
+                textBox_version.ForeColor = Color.FromArgb(255, 255, 0);
             }
         }
 
@@ -217,6 +224,7 @@ namespace VMA
             if (textBox_version.Text.Equals(""))
             {
                 textBox_version.Text = "Wersja";
+                textBox_version.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
 
@@ -225,6 +233,7 @@ namespace VMA
             if (textBox_mileage.Text.Equals(@"Typ paliwa"))
             {
                 textBox_mileage.Text = "";
+                textBox_mileage.ForeColor = Color.FromArgb(255, 255, 0);
             }
         }
 
@@ -233,6 +242,7 @@ namespace VMA
             if (textBox_mileage.Text.Equals(""))
             {
                 textBox_mileage.Text = "Typ paliwa";
+                textBox_mileage.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
 
@@ -241,6 +251,7 @@ namespace VMA
             if (textBox_license.Text.Equals(@"Rejestracja"))
             {
                 textBox_license.Text = "";
+                textBox_license.ForeColor = Color.FromArgb(255, 255, 0);
             }
         }
 
@@ -249,6 +260,7 @@ namespace VMA
             if (textBox_license.Text.Equals(""))
             {
                 textBox_license.Text = "Rejestracja";
+                textBox_license.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
     }
