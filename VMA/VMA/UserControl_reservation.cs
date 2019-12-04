@@ -194,5 +194,85 @@ namespace VMA
         {
             time_to = dateTimePicker_to_date_reserv.Value;
         }
+
+        private void textBox_brand_Enter(object sender, EventArgs e)
+        {
+            if (textBox_brand.Text.Equals(@"Marka"))
+            {
+                textBox_brand.Text = "";
+            }
+        }
+
+        private void textBox_brand_Leave(object sender, EventArgs e)
+        {
+            if (textBox_brand.Text.Equals(""))
+            {
+                textBox_brand.Text = "Marka";
+            }
+        }
+
+        private void textBox_model_Enter(object sender, EventArgs e)
+        {
+            if (textBox_model.Text.Equals(@"Model"))
+            {
+                textBox_model.Text = "";
+            }
+        }
+
+        private void textBox_model_Leave(object sender, EventArgs e)
+        {
+            if (textBox_model.Text.Equals(""))
+            {
+                textBox_model.Text = "Model";
+            }
+        }
+
+        private void textBox_equipment_Enter(object sender, EventArgs e)
+        {
+            if (textBox_equipment.Text.Equals(@"Spalanie"))
+            {
+                textBox_equipment.Text = "";
+            }
+        }
+
+        private void textBox_equipment_Leave(object sender, EventArgs e)
+        {
+            if (textBox_equipment.Text.Equals(""))
+            {
+                textBox_equipment.Text = "Spalanie";
+            }
+        }
+
+        private void textBox_mileage_Enter(object sender, EventArgs e)
+        {
+            if (textBox_mileage.Text.Equals(@"Typ paliwa"))
+            {
+                textBox_mileage.Text = "";
+            }
+        }
+
+        private void textBox_mileage_Leave(object sender, EventArgs e)
+        {
+            if (textBox_mileage.Text.Equals(""))
+            {
+                textBox_mileage.Text = "Typ paliwa";
+            }
+        }
+
+        private void textBox_license_Enter(object sender, EventArgs e)
+        {
+            if (textBox_license.Text.Equals(@"Rejestracja"))
+            {
+                textBox_license.Text = "";
+            }
+        }
+
+        private void textBox_license_Leave(object sender, EventArgs e)
+        {
+            if (textBox_license.Text.Equals(""))
+            {
+                textBox_license.Text = "Rejestracja";
+            }
+        }
     }
 }
