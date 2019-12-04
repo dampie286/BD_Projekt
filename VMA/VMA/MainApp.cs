@@ -19,13 +19,31 @@ namespace VMA
         private string name, surrname;
         public int log;//id zalogowanego
        
-        public MainApp(Form_login login,string nameWork,string surrnameWork,int id_log)
+
+
+
+        public MainApp(Form_login login,string nameWork,string surrnameWork,int id_log,bool if_keeper)
         {
             InitializeComponent();
             windLog = login;        //przenoszenie adresu do zmiennej
             log = id_log;
             userControl_Welcome2.BringToFront();
             label_who_online.Text = "Zalogowany jako " + nameWork + " " + surrnameWork;
+            if( if_keeper)
+            {
+                //label_who_online.Text += " Opiekunek"; to było do sprawdzenai czy opiekun się pojawi i wczyta
+                this.button_manag_care_car.Location = new System.Drawing.Point(0, 326);
+                this.button_statistic.Location= new System.Drawing.Point(0, 377);
+                this.button_settings.Location= new System.Drawing.Point(0, 428);
+               // this.userControl_menage_care_car1 = new UserControl_menage_care_cars();
+                
+                //userControl_menage_care_car1.SendToBack();
+            }
+            else
+            {
+                button_manag_care_car.Hide();
+                this.Controls.Remove(userControl_menage_care_cars1);
+            }
 
 
         }
@@ -134,6 +152,11 @@ namespace VMA
         private void button_statistic_Click(object sender, EventArgs e)
         {
             userControl_myStatics1.BringToFront();
+        }
+
+        private void button_manag_care_car_Click(object sender, EventArgs e)
+        {
+            userControl_menage_care_cars1.BringToFront();
         }
 
         private void button_settings_Click(object sender, EventArgs e)

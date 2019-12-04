@@ -36,6 +36,8 @@
             this.button_statistic = new System.Windows.Forms.Button();
             this.button_settings = new System.Windows.Forms.Button();
             this.button_logout = new System.Windows.Forms.Button();
+            this.button_manag_care_car = new System.Windows.Forms.Button();
+            this.pictureBox_main_logo = new System.Windows.Forms.PictureBox();
             this.userControl_settings1 = new VMA.UserControl_settings();
             this.userControl_myStatics1 = new VMA.UserControl_myStatics();
             this.userControl_my_reservation1 = new VMA.UserControl_my_reservation();
@@ -44,7 +46,7 @@
             this.userControl_reservation1 = new VMA.UserControl_reservation();
             this.userControl_Welcome2 = new VMA.UserControl_Welcome();
             this.userControl_veh_DB2 = new VMA.UserControl_veh_DB();
-            this.pictureBox_main_logo = new System.Windows.Forms.PictureBox();
+            this.userControl_menage_care_cars1 = new VMA.UserControl_menage_care_cars();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_main_logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +57,7 @@
             this.label_who_online.ForeColor = System.Drawing.Color.Yellow;
             this.label_who_online.Location = new System.Drawing.Point(429, 7);
             this.label_who_online.Name = "label_who_online";
-            this.label_who_online.Size = new System.Drawing.Size(188, 15);
+            this.label_who_online.Size = new System.Drawing.Size(220, 17);
             this.label_who_online.TabIndex = 0;
             this.label_who_online.Text = "Zalogowany jako Imię i Nazwisko";
             // 
@@ -185,11 +187,44 @@
             this.button_logout.UseVisualStyleBackColor = false;
             this.button_logout.Click += new System.EventHandler(this.button_logout_Click);
             // 
+            // button_manag_care_car
+            // 
+            this.button_manag_care_car.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.button_manag_care_car.FlatAppearance.BorderSize = 0;
+            this.button_manag_care_car.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button_manag_care_car.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button_manag_care_car.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button_manag_care_car.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_manag_care_car.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_manag_care_car.ForeColor = System.Drawing.Color.Yellow;
+            this.button_manag_care_car.Location = new System.Drawing.Point(0, 428);
+            this.button_manag_care_car.Margin = new System.Windows.Forms.Padding(0);
+            this.button_manag_care_car.MaximumSize = new System.Drawing.Size(177, 35);
+            this.button_manag_care_car.MinimumSize = new System.Drawing.Size(177, 35);
+            this.button_manag_care_car.Name = "button_manag_care_car";
+            this.button_manag_care_car.Size = new System.Drawing.Size(177, 35);
+            this.button_manag_care_car.TabIndex = 21;
+            this.button_manag_care_car.Text = "Opieka";
+            this.button_manag_care_car.UseVisualStyleBackColor = false;
+            this.button_manag_care_car.Click += new System.EventHandler(this.button_manag_care_car_Click);
+            // 
+            // pictureBox_main_logo
+            // 
+            this.pictureBox_main_logo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox_main_logo.ErrorImage = null;
+            this.pictureBox_main_logo.Image = global::VMA.Properties.Resources.LogoVMA;
+            this.pictureBox_main_logo.InitialImage = null;
+            this.pictureBox_main_logo.Location = new System.Drawing.Point(36, 46);
+            this.pictureBox_main_logo.Name = "pictureBox_main_logo";
+            this.pictureBox_main_logo.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox_main_logo.TabIndex = 20;
+            this.pictureBox_main_logo.TabStop = false;
+            // 
             // userControl_settings1
             // 
             this.userControl_settings1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_settings1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_settings1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_settings1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_settings1.Name = "userControl_settings1";
             this.userControl_settings1.Size = new System.Drawing.Size(941, 656);
             this.userControl_settings1.TabIndex = 19;
@@ -257,23 +292,21 @@
             this.userControl_veh_DB2.Size = new System.Drawing.Size(706, 533);
             this.userControl_veh_DB2.TabIndex = 12;
             // 
-            // pictureBox_main_logo
+            // userControl_menage_care_cars1
             // 
-            this.pictureBox_main_logo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox_main_logo.ErrorImage = null;
-            this.pictureBox_main_logo.Image = global::VMA.Properties.Resources.LogoVMA;
-            this.pictureBox_main_logo.InitialImage = null;
-            this.pictureBox_main_logo.Location = new System.Drawing.Point(36, 46);
-            this.pictureBox_main_logo.Name = "pictureBox_main_logo";
-            this.pictureBox_main_logo.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox_main_logo.TabIndex = 20;
-            this.pictureBox_main_logo.TabStop = false;
+            this.userControl_menage_care_cars1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_menage_care_cars1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_menage_care_cars1.Name = "userControl_menage_care_cars1";
+            this.userControl_menage_care_cars1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_menage_care_cars1.TabIndex = 22;
             // 
             // MainApp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.userControl_menage_care_cars1);
+            this.Controls.Add(this.button_manag_care_car);
             this.Controls.Add(this.pictureBox_main_logo);
             this.Controls.Add(this.userControl_settings1);
             this.Controls.Add(this.userControl_myStatics1);
@@ -326,5 +359,7 @@
         private UserControl_myStatics userControl_myStatics1;
         private UserControl_settings userControl_settings1;
         private System.Windows.Forms.PictureBox pictureBox_main_logo;
+        private System.Windows.Forms.Button button_manag_care_car;
+        private UserControl_menage_care_cars userControl_menage_care_cars1;
     }
 }

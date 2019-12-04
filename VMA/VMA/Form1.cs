@@ -48,12 +48,23 @@ namespace VMA
                     }
                     else
                     {
-                    
-                        textBox_login_name.Clear();
-                        textBox_login_password.Clear();
-                        mainapp = new MainApp(this, user.name, user.surname,user.worker_id);
-                        mainapp.Show();
-                        this.Hide();
+                        var keeeper = db.WorkerSet_Keepers.Where(i => i.worker_id == user.worker_id);
+                        if (keeeper != null)
+                        {
+                            textBox_login_name.Clear();
+                            textBox_login_password.Clear();
+                            mainapp = new MainApp(this, user.name, user.surname, user.worker_id,true);
+                            mainapp.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            textBox_login_name.Clear();
+                            textBox_login_password.Clear();
+                            mainapp = new MainApp(this, user.name, user.surname, user.worker_id,false);
+                            mainapp.Show();
+                            this.Hide();
+                        }
                     }
                 }
             }
