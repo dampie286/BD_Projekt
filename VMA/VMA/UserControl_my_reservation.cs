@@ -15,7 +15,9 @@ namespace VMA
         int user_id;
         public UserControl_my_reservation()
         {
+           
             InitializeComponent();
+            panel_with_myreservation.Hide();
         }
 
         public void setID(int id)
@@ -44,6 +46,19 @@ namespace VMA
             dataGridView_my_reservation.Columns[5].Width = 90;
             
 
+        }
+
+      
+
+        private void dataGridView_my_reservation_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            panel_with_myreservation.Show();
+            int row = dataGridView_my_reservation.CurrentCell.RowIndex;
+            label_brand.Text = (string)dataGridView_my_reservation.Rows[row].Cells[1].Value;
+            label_model.Text = (string)dataGridView_my_reservation.Rows[row].Cells[2].Value;
+            label_from.Text = dataGridView_my_reservation.Rows[row].Cells[3].Value.ToString();
+            label_to.Text = (string)dataGridView_my_reservation.Rows[row].Cells[4].Value.ToString();
+            label_purpose.Text = dataGridView_my_reservation.Rows[row].Cells[6].Value.ToString();
         }
     }
 }
