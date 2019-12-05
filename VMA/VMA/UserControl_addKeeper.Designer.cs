@@ -44,13 +44,13 @@
             this.dataGridView_Worker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Worker.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView_Worker.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.dataGridView_Worker.Location = new System.Drawing.Point(22, 28);
+            this.dataGridView_Worker.Location = new System.Drawing.Point(0, 42);
             this.dataGridView_Worker.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView_Worker.Name = "dataGridView_Worker";
             this.dataGridView_Worker.ReadOnly = true;
             this.dataGridView_Worker.RowTemplate.Height = 24;
             this.dataGridView_Worker.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_Worker.Size = new System.Drawing.Size(393, 351);
+            this.dataGridView_Worker.Size = new System.Drawing.Size(407, 385);
             this.dataGridView_Worker.TabIndex = 46;
             // 
             // dataGridView_veh
@@ -62,7 +62,7 @@
             this.dataGridView_veh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_veh.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView_veh.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.dataGridView_veh.Location = new System.Drawing.Point(518, 42);
+            this.dataGridView_veh.Location = new System.Drawing.Point(540, 42);
             this.dataGridView_veh.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView_veh.Name = "dataGridView_veh";
             this.dataGridView_veh.ReadOnly = true;
@@ -78,7 +78,7 @@
             this.add_care.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_care.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.add_care.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.add_care.Location = new System.Drawing.Point(114, 477);
+            this.add_care.Location = new System.Drawing.Point(373, 475);
             this.add_care.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.add_care.Name = "add_care";
             this.add_care.Size = new System.Drawing.Size(173, 31);
