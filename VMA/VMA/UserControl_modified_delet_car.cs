@@ -20,7 +20,7 @@ namespace VMA
         private void gridedit()
         {
 
-            
+            dataGridView_veh_DB.Columns[0].Visible = false;
             dataGridView_veh_DB.ReadOnly = true;        //nie moze edytować kolumn
             dataGridView_veh_DB.Columns[0].Width = 50;///id auta
             dataGridView_veh_DB.Columns[1].Width = 60;///marka

@@ -74,8 +74,8 @@ namespace VMA
                 textBox_login_password.Clear();
                 MessageBox.Show("Błędny login lub hasło ", "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
 
+            System.Diagnostics.Process.Start("https://youtu.be/XqZsoesa55w?t=29");
         }
 
         private void Form_login_Load(object sender, EventArgs e)

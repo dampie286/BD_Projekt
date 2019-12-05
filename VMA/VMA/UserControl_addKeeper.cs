@@ -38,7 +38,7 @@ namespace VMA
             ///auta bez opiekuna
 
             var query2 = from x in db.VehicleSets
-                         where !(from o in db.CareSets select o.Vehicle_vehicle_id).Contains(x.vehicle_id)
+                         where !(from o in db.CareSets where o.date_to==null select o.Vehicle_vehicle_id).Contains(x.vehicle_id)
                          select new { Id = x.vehicle_id, Marka = x.brand, Model = x.model, Rejestracja = x.licence_plate };
 
 

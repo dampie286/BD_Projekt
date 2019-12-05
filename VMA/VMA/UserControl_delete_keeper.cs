@@ -18,19 +18,64 @@ namespace VMA
             InitializeComponent();
         }
 
-     
+
 
         public void fillDataGridView2()
         {
 
 
 
-         
-          var query = from x in db.CareSets select new { IMIE = x.WorkerSet_Keeper.WorkerSet.name, NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname, OPIEKA = x.VehicleSet.model, REJESTRACJA = x.VehicleSet.licence_plate };
+
+            var query = from x in db.CareSets where x.date_to==null select new { ID=x.care_id,IMIE = x.WorkerSet_Keeper.WorkerSet.name, NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname, OPIEKA = x.VehicleSet.model, REJESTRACJA = x.VehicleSet.licence_plate };
             dataGridView_keepers_DB.DataSource = query;
-           
+            dataGridView_keepers_DB.Columns[0].Visible = false;
 
         }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+
+
+
+            DataBaseDataContext db = new DataBaseDataContext();
+            bool confirm = false;
+
+            int row = dataGridView_keepers_DB.CurrentCell.RowIndex;
+
+            var edit_id = (int)dataGridView_keepers_DB.Rows[row].Cells[0].Value;
+            
+            var query = from x in db.CareSets where x.care_id== edit_id select x;
+
+            foreach (CareSet x in query)
+            {
+                x.date_to = DateTime.Today;
+                
+            }
+            try
+            {
+                db.SubmitChanges();
+                confirm = true;
+            }
+            catch
+            {
+                MessageBox.Show("Nie udało się zakończyć opieki", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+            if (confirm)
+            {
+                MessageBox.Show("Zakończono opieke", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+
+            fillDataGridView2();
+
+
+          
+        }
+
+
+
+
 
         private void textBox_name_Enter(object sender, EventArgs e)
         {
@@ -80,13 +125,6 @@ namespace VMA
             }
         }
 
-        private void button_delete_Click(object sender, EventArgs e)
-        {
 
-
-
-            
-            System.Diagnostics.Process.Start("https://youtu.be/XqZsoesa55w?t=29");
-        }
     }
 }
