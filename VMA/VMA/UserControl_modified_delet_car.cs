@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+
 
 namespace VMA
 {
     public partial class UserControl_modified_delet_car : UserControl
     {
+        int id;
+        
         public UserControl_modified_delet_car()
         {
             InitializeComponent();
@@ -20,6 +24,9 @@ namespace VMA
         private void gridedit()
         {
 
+
+
+            dataGridView_veh_DB.RowHeadersVisible = false;
             dataGridView_veh_DB.Columns[0].Visible = false;
             dataGridView_veh_DB.Columns[1].Visible = true;
             dataGridView_veh_DB.Columns[2].Visible = true;
@@ -42,16 +49,7 @@ namespace VMA
 
 
 
-            dataGridView_veh_DB.Columns[0].ReadOnly = true;
-            dataGridView_veh_DB.Columns[1].ReadOnly = true;
-            dataGridView_veh_DB.Columns[2].ReadOnly = true;
-            dataGridView_veh_DB.Columns[3].ReadOnly = true;
-            dataGridView_veh_DB.Columns[4].ReadOnly = true;
-            dataGridView_veh_DB.Columns[5].ReadOnly = true;
-            dataGridView_veh_DB.Columns[6].ReadOnly = false;
-            dataGridView_veh_DB.Columns[7].ReadOnly = false;
-            dataGridView_veh_DB.Columns[8].ReadOnly = true;
-            //  dataGridView_veh_DB.Columns[7].ReadOnly = true;//przebieg
+          
 
 
 
@@ -216,19 +214,17 @@ namespace VMA
             bool confirm = false;
             try
             {
-                int row = dataGridView_veh_DB.CurrentCell.RowIndex;
-
-            var edit_id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
-            var avg = (double)dataGridView_veh_DB.Rows[row].Cells[6].Value;
-            var fuel = dataGridView_veh_DB.Rows[row].Cells[7].Value.ToString();
             
 
-            var query = from x in db.VehicleSets where x.vehicle_id == edit_id select x;
+            var query = from x in db.VehicleSets where x.vehicle_id ==id select x;
 
-            foreach (VehicleSet x in query)
+                double avg=Double.Parse(textBox_edit_avg.Text, CultureInfo.InvariantCulture);
+
+                foreach (VehicleSet x in query)
             {
-                x.avg_consumption = avg;
-                x.fuel_type = fuel;
+                    x.avg_consumption = avg;
+                    x.fuel_type = textBox_edit_fuel.Text.ToString();
+                    x.licence_plate = textBox_edit_lic.Text.ToString();
                 
 
             }
@@ -348,6 +344,27 @@ namespace VMA
             {
                 textBox_license.Text = "Rejestracja";
             }
+        }
+
+        private void dataGridView_veh_DB_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int row = dataGridView_veh_DB.CurrentCell.RowIndex;
+
+            id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value; ;
+            var lic = dataGridView_veh_DB.Rows[row].Cells[5].Value;
+           var  avg = (double)dataGridView_veh_DB.Rows[row].Cells[6].Value;
+            var fuel = dataGridView_veh_DB.Rows[row].Cells[7].Value.ToString();
+            
+
+                label_brand.Text= dataGridView_veh_DB.Rows[row].Cells[1].Value.ToString();
+            label_model.Text = dataGridView_veh_DB.Rows[row].Cells[2].Value.ToString();
+            label_version.Text = (dataGridView_veh_DB.Rows[row].Cells[3].Value).ToString();
+
+
+            textBox_edit_avg.Text = avg.ToString();
+            textBox_edit_fuel.Text =fuel.ToString();
+            textBox_edit_lic.Text = lic.ToString();
         }
     }
 }
