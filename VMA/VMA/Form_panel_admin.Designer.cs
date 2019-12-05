@@ -260,6 +260,7 @@
             // 
             this.userControl_delete_keeper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_delete_keeper1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_delete_keeper1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControl_delete_keeper1.Name = "userControl_delete_keeper1";
             this.userControl_delete_keeper1.Size = new System.Drawing.Size(941, 656);
             this.userControl_delete_keeper1.TabIndex = 28;
@@ -292,7 +293,7 @@
             this.MinimizeBox = false;
             this.Name = "Form_panel_admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = " Vehicles Management App";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_panel_admin_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
