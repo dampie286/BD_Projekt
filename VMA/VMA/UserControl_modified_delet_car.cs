@@ -410,13 +410,13 @@ namespace VMA
 
         private void textBox_combustion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char ch = e.KeyChar;
-            if (ch == 46 && textBox_combustion.Text.IndexOf('.') != -1)
+            char chh = e.KeyChar;
+            if (chh == 46 && textBox_combustion.Text.IndexOf('.') != -1)
             {
                 e.Handled = true;
                 return;
             }
-            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            if (!Char.IsDigit(chh) && chh != 8 && chh != 46)
             {
                 e.Handled = true;
             }
@@ -428,16 +428,21 @@ namespace VMA
         private void textBox_equipment_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            char ch = e.KeyChar;
-            if (ch == 46 && textBox_combustion.Text.IndexOf('.') != -1)
+
+            char chh = e.KeyChar;
+            if (chh == 46 && textBox_equipment.Text.IndexOf('.') != -1)
             {
                 e.Handled = true;
                 return;
             }
-            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            if (!Char.IsDigit(chh) && chh != 8 && chh != 46)
             {
                 e.Handled = true;
             }
+
+
+
+
         }
     }
 }
