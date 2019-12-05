@@ -88,7 +88,7 @@
             this.button_add_keeper.TabIndex = 81;
             this.button_add_keeper.Text = "Dodaj opiekuna";
             this.button_add_keeper.UseVisualStyleBackColor = false;
-            this.button_add_keeper.Click += new System.EventHandler(this.button_add_keeper_Click);
+         
             // 
             // dataGridView_Keepers
             // 

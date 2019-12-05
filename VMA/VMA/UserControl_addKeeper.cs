@@ -20,22 +20,25 @@ namespace VMA
 
         public void fillDataGridView() //uzupełnienie tabeli 
         {
+
             // obecni opiekunowie
-            var query = from x in db.WorkerSet_Keepers
-                        select new {Id_opiekuna=x.keeper_id,Imie=x.WorkerSet.name, Nawisko = x.WorkerSet.surname, Stanowsiko= x.WorkerSet.position };
-            
-            dataGridView_Keepers.DataSource = query;
-            dataGridView_Keepers.Columns[0].Visible = false;
-            ////
-            ///
+
+
+
+
+
+
             //pracownicy którzy mogą stać się opiekunami
+
+
 
             var query1 = from x in db.WorkerSets
                          where !(from o in db.WorkerSet_Keepers select o.worker_id).Contains(x.worker_id)
-                         select new {Id=x.worker_id, Imie = x.name, Nawisko = x.surname, Stanowsiko = x.position };
+                         select new { Id = x.worker_id, Imie = x.name, Nawisko = x.surname, Stanowsiko = x.position };
 
-            
-            dataGridView_Worker.DataSource = query1;
+            var query = from x in db.WorkerSets select new { Id_opiekuna = x.worker_id, Imie = x.name, Nawisko = x.surname, Stanowsiko = x.position };
+
+            dataGridView_Worker.DataSource = query;
             dataGridView_Worker.Columns[0].Visible = false;
 
             ///auta bez opiekuna
@@ -50,7 +53,7 @@ namespace VMA
             dataGridView_veh.Columns[1].Width = 70;
             dataGridView_veh.Columns[2].Width = 70;
 
-           
+
 
 
         }
@@ -59,44 +62,7 @@ namespace VMA
 
 
 
-        private void button_add_keeper_Click(object sender, EventArgs e) // dodanie pracownika jako opiekuna 
-        {
-            
 
-            bool confirm = false;
-            try
-            {
-                
-
-                int row = dataGridView_Worker.CurrentCell.RowIndex;
-
-                var new_id = (int)dataGridView_Worker.Rows[row].Cells[0].Value;
-
-                WorkerSet_Keeper keeper = new WorkerSet_Keeper()
-                {
-                  keeper_id=new_id,
-                  worker_id=new_id,
-                
-                };
-                db.WorkerSet_Keepers.InsertOnSubmit(keeper);
-                db.SubmitChanges();
-                confirm = true;
-
-            }
-            catch
-            {
-                MessageBox.Show("Bład dodania opiekuna", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-
-
-
-            if (confirm)
-                MessageBox.Show("Dodano opiekuna", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-            fillDataGridView();
-
-        }
 
         private void add_care_Click(object sender, EventArgs e)// przypisanie auta opiekunowi z listy 
         {
@@ -106,18 +72,37 @@ namespace VMA
             {
 
 
-                int row = dataGridView_Keepers.CurrentCell.RowIndex;
+                int row = dataGridView_Worker.CurrentCell.RowIndex;
                 int row1 = dataGridView_veh.CurrentCell.RowIndex;
 
-                var keeper_id = (int)dataGridView_Keepers.Rows[row].Cells[0].Value;
+                int selected_worker_id = (int)dataGridView_Worker.Rows[row].Cells[0].Value;
                 var car_id = (int)dataGridView_veh.Rows[row1].Cells[0].Value;
+
+                var keeper = (from x in db.WorkerSet_Keepers where x.keeper_id == selected_worker_id select x).Any();
+
+                if (!keeper)
+                {
+                    WorkerSet_Keeper keeperr = new WorkerSet_Keeper()
+                    {
+                        keeper_id = selected_worker_id,
+                        worker_id = selected_worker_id,
+
+                    };
+                    db.WorkerSet_Keepers.InsertOnSubmit(keeperr);
+                    db.SubmitChanges();
+
+                }
+
+
+
+                int keeper_id = selected_worker_id;
 
                 CareSet care = new CareSet()
                 {
                     date_from = DateTime.Today,
-                    date_to=null,
-                    Vehicle_vehicle_id=car_id,
-                    Keeper_worker_id=keeper_id,
+                    date_to = null,
+                    Vehicle_vehicle_id = car_id,
+                    Keeper_worker_id = keeper_id,
 
                 };
 
@@ -143,5 +128,5 @@ namespace VMA
 
         }
     }
-    }
+}
 
