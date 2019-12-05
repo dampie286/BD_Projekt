@@ -44,6 +44,12 @@
             this.dataGridView_veh_DB = new System.Windows.Forms.DataGridView();
             this.button_modified = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
+            this.textBox_edit_avg = new System.Windows.Forms.TextBox();
+            this.textBox_edit_fuel = new System.Windows.Forms.TextBox();
+            this.textBox_edit_lic = new System.Windows.Forms.TextBox();
+            this.label_brand = new System.Windows.Forms.Label();
+            this.label_model = new System.Windows.Forms.Label();
+            this.label_version = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_veh_DB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -237,10 +243,12 @@
             this.dataGridView_veh_DB.Location = new System.Drawing.Point(27, 110);
             this.dataGridView_veh_DB.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView_veh_DB.Name = "dataGridView_veh_DB";
+            this.dataGridView_veh_DB.ReadOnly = true;
             this.dataGridView_veh_DB.RowTemplate.Height = 24;
             this.dataGridView_veh_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_veh_DB.Size = new System.Drawing.Size(765, 530);
+            this.dataGridView_veh_DB.Size = new System.Drawing.Size(897, 333);
             this.dataGridView_veh_DB.TabIndex = 58;
+            this.dataGridView_veh_DB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_veh_DB_CellContentClick);
             // 
             // button_modified
             // 
@@ -249,7 +257,7 @@
             this.button_modified.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_modified.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_modified.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_modified.Location = new System.Drawing.Point(824, 133);
+            this.button_modified.Location = new System.Drawing.Point(727, 520);
             this.button_modified.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_modified.Name = "button_modified";
             this.button_modified.Size = new System.Drawing.Size(100, 31);
@@ -265,7 +273,7 @@
             this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_delete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_delete.Location = new System.Drawing.Point(824, 203);
+            this.button_delete.Location = new System.Drawing.Point(833, 520);
             this.button_delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(100, 31);
@@ -274,11 +282,92 @@
             this.button_delete.UseVisualStyleBackColor = false;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
+            // textBox_edit_avg
+            // 
+            this.textBox_edit_avg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.textBox_edit_avg.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_edit_avg.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_edit_avg.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_edit_avg.Location = new System.Drawing.Point(341, 526);
+            this.textBox_edit_avg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_edit_avg.MaximumSize = new System.Drawing.Size(120, 25);
+            this.textBox_edit_avg.MinimumSize = new System.Drawing.Size(5, 15);
+            this.textBox_edit_avg.Name = "textBox_edit_avg";
+            this.textBox_edit_avg.Size = new System.Drawing.Size(120, 19);
+            this.textBox_edit_avg.TabIndex = 61;
+            this.textBox_edit_avg.Text = "Wersja";
+            this.textBox_edit_avg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_edit_fuel
+            // 
+            this.textBox_edit_fuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.textBox_edit_fuel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_edit_fuel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_edit_fuel.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_edit_fuel.Location = new System.Drawing.Point(471, 526);
+            this.textBox_edit_fuel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_edit_fuel.MaximumSize = new System.Drawing.Size(120, 25);
+            this.textBox_edit_fuel.MinimumSize = new System.Drawing.Size(5, 15);
+            this.textBox_edit_fuel.Name = "textBox_edit_fuel";
+            this.textBox_edit_fuel.Size = new System.Drawing.Size(120, 19);
+            this.textBox_edit_fuel.TabIndex = 62;
+            this.textBox_edit_fuel.Text = "Typ paliwa";
+            this.textBox_edit_fuel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_edit_lic
+            // 
+            this.textBox_edit_lic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.textBox_edit_lic.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_edit_lic.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_edit_lic.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_edit_lic.Location = new System.Drawing.Point(601, 526);
+            this.textBox_edit_lic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_edit_lic.MaximumSize = new System.Drawing.Size(120, 25);
+            this.textBox_edit_lic.MinimumSize = new System.Drawing.Size(5, 15);
+            this.textBox_edit_lic.Name = "textBox_edit_lic";
+            this.textBox_edit_lic.Size = new System.Drawing.Size(120, 19);
+            this.textBox_edit_lic.TabIndex = 63;
+            this.textBox_edit_lic.Text = "Rejestracja";
+            this.textBox_edit_lic.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label_brand
+            // 
+            this.label_brand.AutoSize = true;
+            this.label_brand.Location = new System.Drawing.Point(14, 528);
+            this.label_brand.Name = "label_brand";
+            this.label_brand.Size = new System.Drawing.Size(47, 17);
+            this.label_brand.TabIndex = 64;
+            this.label_brand.Text = "Marka";
+            // 
+            // label_model
+            // 
+            this.label_model.AutoSize = true;
+            this.label_model.Location = new System.Drawing.Point(103, 528);
+            this.label_model.Name = "label_model";
+            this.label_model.Size = new System.Drawing.Size(46, 17);
+            this.label_model.TabIndex = 65;
+            this.label_model.Text = "Model";
+            // 
+            // label_version
+            // 
+            this.label_version.AutoSize = true;
+            this.label_version.Location = new System.Drawing.Point(225, 528);
+            this.label_version.Name = "label_version";
+            this.label_version.Size = new System.Drawing.Size(48, 17);
+            this.label_version.TabIndex = 66;
+            this.label_version.Text = "wersja";
+            // 
             // UserControl_modified_delet_car
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.Controls.Add(this.label_version);
+            this.Controls.Add(this.label_model);
+            this.Controls.Add(this.label_brand);
+            this.Controls.Add(this.textBox_edit_lic);
+            this.Controls.Add(this.textBox_edit_fuel);
+            this.Controls.Add(this.textBox_edit_avg);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_modified);
             this.Controls.Add(this.dataGridView_veh_DB);
@@ -322,5 +411,11 @@
         private System.Windows.Forms.DataGridView dataGridView_veh_DB;
         private System.Windows.Forms.Button button_modified;
         private System.Windows.Forms.Button button_delete;
+        private System.Windows.Forms.TextBox textBox_edit_avg;
+        private System.Windows.Forms.TextBox textBox_edit_fuel;
+        private System.Windows.Forms.TextBox textBox_edit_lic;
+        private System.Windows.Forms.Label label_brand;
+        private System.Windows.Forms.Label label_model;
+        private System.Windows.Forms.Label label_version;
     }
 }
