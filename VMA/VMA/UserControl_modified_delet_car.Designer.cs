@@ -227,6 +227,8 @@
             // 
             // dataGridView_veh_DB
             // 
+            this.dataGridView_veh_DB.AllowUserToAddRows = false;
+            this.dataGridView_veh_DB.AllowUserToDeleteRows = false;
             this.dataGridView_veh_DB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_veh_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_veh_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

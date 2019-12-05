@@ -21,15 +21,39 @@ namespace VMA
         {
 
             dataGridView_veh_DB.Columns[0].Visible = false;
-            dataGridView_veh_DB.ReadOnly = true;        //nie moze edytować kolumn
-            dataGridView_veh_DB.Columns[0].Width = 50;///id auta
+            dataGridView_veh_DB.Columns[1].Visible = true;
+            dataGridView_veh_DB.Columns[2].Visible = true;
+            dataGridView_veh_DB.Columns[3].Visible = true;
+            dataGridView_veh_DB.Columns[4].Visible = false;
+            dataGridView_veh_DB.Columns[5].Visible = true;
+            dataGridView_veh_DB.Columns[6].Visible = true;
+            dataGridView_veh_DB.Columns[7].Visible = true;
+            dataGridView_veh_DB.Columns[8].Visible = false;
+
+           
+            
             dataGridView_veh_DB.Columns[1].Width = 60;///marka
             dataGridView_veh_DB.Columns[2].Width = 60;//model
             dataGridView_veh_DB.Columns[3].Width = 70;//wersja
-            dataGridView_veh_DB.Columns[4].Width = 85;//rejestracja
-            dataGridView_veh_DB.Columns[5].Width = 66;//spalanie
-            dataGridView_veh_DB.Columns[6].Width = 55;//paliwo
+            dataGridView_veh_DB.Columns[5].Width = 85;//rejestracja
+            dataGridView_veh_DB.Columns[6].Width = 66;//spalanie
+            dataGridView_veh_DB.Columns[7].Width = 55;//paliwo
             //dataGridView_veh_DB.Columns[7].Width = 55;//przebieg 
+
+
+
+            dataGridView_veh_DB.Columns[0].ReadOnly = true;
+            dataGridView_veh_DB.Columns[1].ReadOnly = true;
+            dataGridView_veh_DB.Columns[2].ReadOnly = true;
+            dataGridView_veh_DB.Columns[3].ReadOnly = true;
+            dataGridView_veh_DB.Columns[4].ReadOnly = true;
+            dataGridView_veh_DB.Columns[5].ReadOnly = true;
+            dataGridView_veh_DB.Columns[6].ReadOnly = false;
+            dataGridView_veh_DB.Columns[7].ReadOnly = false;
+            dataGridView_veh_DB.Columns[8].ReadOnly = true;
+            //  dataGridView_veh_DB.Columns[7].ReadOnly = true;//przebieg
+
+
 
         }
 
@@ -37,13 +61,13 @@ namespace VMA
         {
 
             DataBaseDataContext db = new DataBaseDataContext();
-            var Selectquery = from x in db.VehicleSets where x.available == "yes " && x.available != "deleted" select  new {Id_auta=x.vehicle_id, MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type };
+            var Selectquery = from x in db.VehicleSets where x.available == "yes " && x.available != "deleted" select x;
 
             dataGridView_veh_DB.DataSource = Selectquery;
 
             gridedit();
-             
-            
+
+         
 
         }
 
@@ -187,7 +211,46 @@ namespace VMA
 
         private void button_modified_Click(object sender, EventArgs e)
         {
-              /// co mozna tu zmieniac :O
+
+            DataBaseDataContext db = new DataBaseDataContext();
+            bool confirm = false;
+            try
+            {
+                int row = dataGridView_veh_DB.CurrentCell.RowIndex;
+
+            var edit_id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
+            var avg = (double)dataGridView_veh_DB.Rows[row].Cells[6].Value;
+            var fuel = dataGridView_veh_DB.Rows[row].Cells[7].Value.ToString();
+            
+
+            var query = from x in db.VehicleSets where x.vehicle_id == edit_id select x;
+
+            foreach (VehicleSet x in query)
+            {
+                x.avg_consumption = avg;
+                x.fuel_type = fuel;
+                
+
+            }
+           
+                db.SubmitChanges();
+                confirm = true;
+            }
+            catch
+            {
+                MessageBox.Show("Nie udało się zmienić danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+            if (confirm)
+            {
+                MessageBox.Show("Zmieniono dane", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+
+            fillDataGridView();
+            gridedit();
+
+
         }
 
         private void textBox_brand_Enter(object sender, EventArgs e)

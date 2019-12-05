@@ -43,7 +43,7 @@ namespace VMA
             dataGridView_workers_DB.Columns[5].ReadOnly = true;//data urodzenia
             dataGridView_workers_DB.Columns[6].ReadOnly = false;//haslo
             dataGridView_workers_DB.Columns[7].ReadOnly = false;//telefon
-            dataGridView_workers_DB.Columns[8].Visible = false;//keeper
+            dataGridView_workers_DB.Columns[8].ReadOnly = true;//keeper
 
 
 
