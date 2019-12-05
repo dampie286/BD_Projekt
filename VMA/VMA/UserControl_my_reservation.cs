@@ -17,7 +17,7 @@ namespace VMA
         {
            
             InitializeComponent();
-            panel_with_myreservation.Hide();
+            //panel_with_myreservation.Hide();
         }
 
         public void setID(int id)
@@ -52,7 +52,7 @@ namespace VMA
 
         private void dataGridView_my_reservation_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            panel_with_myreservation.Show();
+           // panel_with_myreservation.Show();
             int row = dataGridView_my_reservation.CurrentCell.RowIndex;
             label_brand.Text = (string)dataGridView_my_reservation.Rows[row].Cells[1].Value;
             label_model.Text = (string)dataGridView_my_reservation.Rows[row].Cells[2].Value;
