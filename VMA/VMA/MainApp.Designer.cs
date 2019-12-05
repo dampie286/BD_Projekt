@@ -57,7 +57,7 @@
             this.label_who_online.ForeColor = System.Drawing.Color.Yellow;
             this.label_who_online.Location = new System.Drawing.Point(429, 7);
             this.label_who_online.Name = "label_who_online";
-            this.label_who_online.Size = new System.Drawing.Size(188, 15);
+            this.label_who_online.Size = new System.Drawing.Size(220, 17);
             this.label_who_online.TabIndex = 0;
             this.label_who_online.Text = "Zalogowany jako Imię i Nazwisko";
             // 
@@ -224,7 +224,7 @@
             // 
             this.userControl_settings1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_settings1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_settings1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_settings1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_settings1.Name = "userControl_settings1";
             this.userControl_settings1.Size = new System.Drawing.Size(941, 656);
             this.userControl_settings1.TabIndex = 19;
@@ -296,7 +296,7 @@
             // 
             this.userControl_menage_care_cars1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_menage_care_cars1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_menage_care_cars1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_menage_care_cars1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_menage_care_cars1.Name = "userControl_menage_care_cars1";
             this.userControl_menage_care_cars1.Size = new System.Drawing.Size(941, 656);
             this.userControl_menage_care_cars1.TabIndex = 22;
@@ -305,13 +305,9 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.userControl_menage_care_cars1);
+            this.ClientSize = new System.Drawing.Size(882, 553);
             this.Controls.Add(this.button_manag_care_car);
             this.Controls.Add(this.pictureBox_main_logo);
-            this.Controls.Add(this.userControl_settings1);
-            this.Controls.Add(this.userControl_myStatics1);
-            this.Controls.Add(this.userControl_my_reservation1);
             this.Controls.Add(this.button_logout);
             this.Controls.Add(this.button_settings);
             this.Controls.Add(this.button_statistic);
@@ -319,11 +315,15 @@
             this.Controls.Add(this.button_reservation);
             this.Controls.Add(this.button_databaseVeh);
             this.Controls.Add(this.label_who_online);
+            this.Controls.Add(this.userControl_Welcome2);
+            this.Controls.Add(this.userControl_veh_DB2);
+            this.Controls.Add(this.userControl_menage_care_cars1);
+            this.Controls.Add(this.userControl_settings1);
+            this.Controls.Add(this.userControl_myStatics1);
+            this.Controls.Add(this.userControl_my_reservation1);
             this.Controls.Add(this.userControl_rent_with_DB1);
             this.Controls.Add(this.userControl_rent1);
             this.Controls.Add(this.userControl_reservation1);
-            this.Controls.Add(this.userControl_Welcome2);
-            this.Controls.Add(this.userControl_veh_DB2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

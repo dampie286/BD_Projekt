@@ -87,6 +87,11 @@ namespace VMA
         {
             textBox_avg_fuel.Clear();
         }
+
+        private void UserControl_add_Car_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

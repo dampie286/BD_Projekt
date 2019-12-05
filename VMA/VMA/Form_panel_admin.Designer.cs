@@ -231,7 +231,7 @@
             // 
             // userControl_add_Car1
             // 
-            this.userControl_add_Car1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.userControl_add_Car1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_add_Car1.Location = new System.Drawing.Point(177, 27);
             this.userControl_add_Car1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_add_Car1.Name = "userControl_add_Car1";
@@ -240,7 +240,7 @@
             // 
             // userControl_menage_cars1
             // 
-            this.userControl_menage_cars1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.userControl_menage_cars1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_menage_cars1.Location = new System.Drawing.Point(177, 27);
             this.userControl_menage_cars1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_menage_cars1.Name = "userControl_menage_cars1";
@@ -270,15 +270,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
-            this.Controls.Add(this.userControl_delete_keeper1);
-            this.Controls.Add(this.userControl_addKeeper1);
-            this.Controls.Add(this.userControl_manage_keeper1);
-            this.Controls.Add(this.userControl_modified_del_Workesrs1);
-            this.Controls.Add(this.userControl_addWorker1);
-            this.Controls.Add(this.userControl_menage_workers1);
-            this.Controls.Add(this.userControl_modified_delet_car1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.userControl_add_Car1);
             this.Controls.Add(this.userControl_menage_cars1);
             this.Controls.Add(this.userControl_veh_DB1);
             this.Controls.Add(this.button_logout);
@@ -287,6 +279,14 @@
             this.Controls.Add(this.button_reservation);
             this.Controls.Add(this.button_databaseVeh);
             this.Controls.Add(this.label_admin_is_online);
+            this.Controls.Add(this.userControl_delete_keeper1);
+            this.Controls.Add(this.userControl_addKeeper1);
+            this.Controls.Add(this.userControl_manage_keeper1);
+            this.Controls.Add(this.userControl_modified_del_Workesrs1);
+            this.Controls.Add(this.userControl_addWorker1);
+            this.Controls.Add(this.userControl_menage_workers1);
+            this.Controls.Add(this.userControl_modified_delet_car1);
+            this.Controls.Add(this.userControl_add_Car1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
