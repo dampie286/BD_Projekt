@@ -202,6 +202,7 @@
             this.textBox_equipment.Text = "Spalanie";
             this.textBox_equipment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_equipment.Enter += new System.EventHandler(this.textBox_equipment_Enter);
+            this.textBox_equipment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_equipment_KeyPress);
             this.textBox_equipment.Leave += new System.EventHandler(this.textBox_equipment_Leave);
             // 
             // textBox_model
@@ -257,8 +258,6 @@
             this.dataGridView_veh_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_veh_DB.Size = new System.Drawing.Size(634, 255);
             this.dataGridView_veh_DB.TabIndex = 58;
-           
-            
             // 
             // button_modified
             // 
@@ -364,6 +363,7 @@
             this.button1.TabIndex = 94;
             this.button1.Text = "Potwierdź modyfikacje";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox_combustion
             // 
@@ -378,8 +378,8 @@
             this.textBox_combustion.Name = "textBox_combustion";
             this.textBox_combustion.Size = new System.Drawing.Size(50, 19);
             this.textBox_combustion.TabIndex = 93;
-            this.textBox_combustion.Text = "sr";
             this.textBox_combustion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_combustion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_combustion_KeyPress);
             // 
             // comboBox_type_of_fuel
             // 

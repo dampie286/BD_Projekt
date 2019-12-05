@@ -16,6 +16,7 @@ namespace VMA
     {
         int id;
         
+        
         public UserControl_modified_delet_car()
         {
             InitializeComponent();
@@ -74,37 +75,55 @@ namespace VMA
         {
 
 
-            DataBaseDataContext db = new DataBaseDataContext();
-            bool confirm = false;
-
-            
-          
-
-            var query = from x in db.VehicleSets where x.vehicle_id == id select x;
-
-            foreach (VehicleSet x in query)
+            var result = MessageBox.Show("Czy napewno chcesz usunąć auto?", "Potwierdzenie",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                x.available = "deleted";
+
+                DataBaseDataContext db = new DataBaseDataContext();
+                bool confirm = false;
+
+                int row = dataGridView_veh_DB.CurrentCell.RowIndex;
+
+                var id_del = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
 
 
+                var query = from x in db.VehicleSets where x.vehicle_id == id_del select x;
+
+
+
+                foreach (VehicleSet x in query)
+                {
+                    x.available = "deleted";
+
+
+                }
+                try
+                {
+                    db.SubmitChanges();
+                    confirm = true;
+                }
+                catch
+                {
+                    MessageBox.Show("Nie udało się usunąć auta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+
+                if (confirm)
+                {
+                    MessageBox.Show("Usunięto auto", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+
+
+
+
+                fillDataGridView();
             }
-            try
-            {
-                db.SubmitChanges();
-                confirm = true;
-            }
-            catch
-            {
-                MessageBox.Show("Nie udało się usunąć auta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else {
 
+                MessageBox.Show("Anulowano usunięcie auta", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            if (confirm)
-            {
-                MessageBox.Show("Usunięto auto", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-
-            fillDataGridView();
 
 
 
@@ -170,8 +189,8 @@ namespace VMA
             }
             else
             {
-                double avg = Convert.ToDouble(filtr_avg);// wymaga zabezpieczenia przed złym formatem i stringiem 
-                query = from x in query where x.avg_consumption <= avg select x;
+                double avg = Double.Parse(filtr_avg, CultureInfo.InvariantCulture);// wymaga zabezpieczenia przed złym formatem i stringiem 
+                    query = from x in query where x.avg_consumption <= avg select x;
 
             }
             if (filtr_fuel == "Typ paliwa" || filtr_fuel == "")
@@ -214,45 +233,50 @@ namespace VMA
             id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
             label_brand.Text = dataGridView_veh_DB.Rows[row].Cells[1].Value.ToString();
             label_model.Text = dataGridView_veh_DB.Rows[row].Cells[2].Value.ToString();
-            //(dataGridView_veh_DB.Rows[row].Cells[3].Value).ToString();
-            // var lic = dataGridView_veh_DB.Rows[row].Cells[5].Value;
-            // var  avg = (double)dataGridView_veh_DB.Rows[row].Cells[6].Value;
-            // var fuel = dataGridView_veh_DB.Rows[row].Cells[7].Value.ToString();
+            textBox_combustion.Text = dataGridView_veh_DB.Rows[row].Cells[6].Value.ToString();
+          
 
-
-
-
-
-            //textBox_edit_avg.Text = dataGridView_veh_DB.Rows[row].Cells[6].Value.ToString();
-            //textBox_edit_fuel.Text = dataGridView_veh_DB.Rows[row].Cells[7].Value.ToString();
+            comboBox_car_version.Text = dataGridView_veh_DB.Rows[row].Cells[3].Value.ToString();
+          
             textBox_edit_lic.Text = dataGridView_veh_DB.Rows[row].Cells[5].Value.ToString();
-            textBox_combustion.Text= dataGridView_veh_DB.Rows[row].Cells[6].Value.ToString();
-            /*
+            comboBox_type_of_fuel.Text= dataGridView_veh_DB.Rows[row].Cells[7].Value.ToString();
+
+
+
+
+
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
             DataBaseDataContext db = new DataBaseDataContext();
             bool confirm = false;
             try
             {
-            
 
-            var query = from x in db.VehicleSets where x.vehicle_id ==id select x;
 
-                double avg=Double.Parse(textBox_edit_avg.Text, CultureInfo.InvariantCulture);
+                var query = from x in db.VehicleSets where x.vehicle_id == id select x;
+
+                double avg = Double.Parse(textBox_combustion.Text, CultureInfo.InvariantCulture);
 
                 foreach (VehicleSet x in query)
-            {
+                {
                     x.avg_consumption = avg;
-                    x.fuel_type = textBox_edit_fuel.Text.ToString();
+                    x.fuel_type = comboBox_type_of_fuel.Text.ToString();
                     x.licence_plate = textBox_edit_lic.Text.ToString();
-                
+                    x.version = comboBox_car_version.Text.ToString();
 
-            }
-           
+
+                }
+
                 db.SubmitChanges();
                 confirm = true;
             }
             catch
             {
-                MessageBox.Show("Nie udało się zmienić danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nie udało się zmienić danych.Spróbuj podać Spalanie w formiacie wartość.wartość", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
 
@@ -263,7 +287,8 @@ namespace VMA
 
             fillDataGridView();
             gridedit();
-            */
+
+
 
         }
 
@@ -363,31 +388,42 @@ namespace VMA
                 textBox_license.Text = "Rejestracja";
             }
         }
-
-        private void dataGridView_veh_DB_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            int row = dataGridView_veh_DB.CurrentCell.RowIndex;
-
-            id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value; ;
-            var lic = dataGridView_veh_DB.Rows[row].Cells[5].Value;
-           var  avg = (double)dataGridView_veh_DB.Rows[row].Cells[6].Value;
-            var fuel = dataGridView_veh_DB.Rows[row].Cells[7].Value.ToString();
-            
-
-                label_brand.Text= dataGridView_veh_DB.Rows[row].Cells[1].Value.ToString();
-            label_model.Text = dataGridView_veh_DB.Rows[row].Cells[2].Value.ToString();
-            //label_version.Text = (dataGridView_veh_DB.Rows[row].Cells[3].Value).ToString();
-
-
-            //textBox_edit_avg.Text = avg.ToString();
-            //textBox_edit_fuel.Text =fuel.ToString();
-            textBox_edit_lic.Text = lic.ToString();
-        }
-
+       
         public void panelHide()
         {
             panel_modified.Hide();
+        }
+
+        private void textBox_combustion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && textBox_combustion.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+
+
+
+        }
+
+        private void textBox_equipment_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            char ch = e.KeyChar;
+            if (ch == 46 && textBox_combustion.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
