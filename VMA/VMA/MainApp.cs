@@ -157,6 +157,8 @@ namespace VMA
         private void button_manag_care_car_Click(object sender, EventArgs e)
         {
             userControl_menage_care_cars1.BringToFront();
+            userControl_menage_care_cars1.setUserID(log);
+            userControl_menage_care_cars1.fillDataGridView();
         }
 
         private void button_settings_Click(object sender, EventArgs e)

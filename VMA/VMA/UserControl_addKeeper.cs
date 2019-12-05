@@ -21,7 +21,8 @@ namespace VMA
         public void fillDataGridView() //uzupełnienie tabeli 
         {
             // obecni opiekunowie
-            var query = from x in db.WorkerSet_Keepers select new {Id_opiekuna=x.keeper_id,Imie=x.WorkerSet.name, Nawisko = x.WorkerSet.surname, Stanowsiko= x.WorkerSet.position };
+            var query = from x in db.WorkerSet_Keepers
+                        select new {Id_opiekuna=x.keeper_id,Imie=x.WorkerSet.name, Nawisko = x.WorkerSet.surname, Stanowsiko= x.WorkerSet.position };
             
             dataGridView_Keepers.DataSource = query;
             dataGridView_Keepers.Columns[0].Visible = false;
@@ -29,7 +30,9 @@ namespace VMA
             ///
             //pracownicy którzy mogą stać się opiekunami
 
-            var query1 = from x in db.WorkerSets where !(from o in db.WorkerSet_Keepers select o.worker_id).Contains(x.worker_id) select new {Id=x.worker_id, Imie = x.name, Nawisko = x.surname, Stanowsiko = x.position };
+            var query1 = from x in db.WorkerSets
+                         where !(from o in db.WorkerSet_Keepers select o.worker_id).Contains(x.worker_id)
+                         select new {Id=x.worker_id, Imie = x.name, Nawisko = x.surname, Stanowsiko = x.position };
 
             
             dataGridView_Worker.DataSource = query1;
@@ -37,7 +40,9 @@ namespace VMA
 
             ///auta bez opiekuna
 
-            var query2 = from x in db.VehicleSets where !(from o in db.CareSets select o.Vehicle_vehicle_id).Contains(x.vehicle_id) select new { Id = x.vehicle_id, Marka = x.brand, Model = x.model, Rejestracja = x.licence_plate };
+            var query2 = from x in db.VehicleSets
+                         where !(from o in db.CareSets select o.Vehicle_vehicle_id).Contains(x.vehicle_id)
+                         select new { Id = x.vehicle_id, Marka = x.brand, Model = x.model, Rejestracja = x.licence_plate };
 
 
             dataGridView_veh.DataSource = query2;
