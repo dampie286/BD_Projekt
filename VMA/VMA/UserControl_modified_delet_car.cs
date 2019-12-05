@@ -77,12 +77,10 @@ namespace VMA
             DataBaseDataContext db = new DataBaseDataContext();
             bool confirm = false;
 
-            int row = dataGridView_veh_DB.CurrentCell.RowIndex;
-
-            var delete_id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
+            
           
 
-            var query = from x in db.VehicleSets where x.vehicle_id == delete_id select x;
+            var query = from x in db.VehicleSets where x.vehicle_id == id select x;
 
             foreach (VehicleSet x in query)
             {
