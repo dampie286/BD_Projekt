@@ -12,10 +12,13 @@ namespace VMA
 {
     public partial class UserControl_menage_care_cars : UserControl
     {
+        DataBaseDataContext db = new DataBaseDataContext();
         private int user_id;
+        int car_id;
         public UserControl_menage_care_cars()
         {
             InitializeComponent();
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public void setUserID(int id)
@@ -24,19 +27,61 @@ namespace VMA
         }
         public void fillDataGridView()
         {
-            DataBaseDataContext db = new DataBaseDataContext();
+           
 
             var query = from x in db.CareSets
                         join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
                         where x.Keeper_worker_id == user_id
                         select new
                         {
+                            ID = y.vehicle_id,
                             AUTO = y.model,
                             REJESTRACJA = y.licence_plate
 
                         };
             dataGridView_care_car_DB.DataSource = query;
+
+            dataGridView_care_car_DB.Columns[0].Visible = false;
+
         }
+
         
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "INNA")
+            {
+                textBox1.Visible = true;
+            }
+            else
+            {
+                textBox1.Visible = false;
+            }
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "Rodzaj serwisu")
+            {
+                textBox1.Text = "";
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "Rodzaj serwisu";
+            }
+        }
+
+        private void button_send_to_service_Click(object sender, EventArgs e)
+        {
+            int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
+
+            car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
+            VehicleSet vechicle = db.VehicleSets.Where(x => x.vehicle_id ==  car_id).First();
+           // vechicle.available = "no";
+           
+        }
     }
 }
