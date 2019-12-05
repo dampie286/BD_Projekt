@@ -122,9 +122,8 @@
             this.label_to.Location = new System.Drawing.Point(391, 115);
             this.label_to.Margin = new System.Windows.Forms.Padding(0);
             this.label_to.Name = "label_to";
-            this.label_to.Size = new System.Drawing.Size(48, 24);
+            this.label_to.Size = new System.Drawing.Size(0, 24);
             this.label_to.TabIndex = 67;
-            this.label_to.Text = "temp";
             // 
             // label_from
             // 
@@ -134,9 +133,8 @@
             this.label_from.Location = new System.Drawing.Point(391, 65);
             this.label_from.Margin = new System.Windows.Forms.Padding(0);
             this.label_from.Name = "label_from";
-            this.label_from.Size = new System.Drawing.Size(48, 24);
+            this.label_from.Size = new System.Drawing.Size(0, 24);
             this.label_from.TabIndex = 66;
-            this.label_from.Text = "temp";
             // 
             // label_purpose
             // 
@@ -146,9 +144,8 @@
             this.label_purpose.Location = new System.Drawing.Point(106, 165);
             this.label_purpose.Margin = new System.Windows.Forms.Padding(0);
             this.label_purpose.Name = "label_purpose";
-            this.label_purpose.Size = new System.Drawing.Size(48, 24);
+            this.label_purpose.Size = new System.Drawing.Size(0, 24);
             this.label_purpose.TabIndex = 65;
-            this.label_purpose.Text = "temp";
             // 
             // label_model
             // 
@@ -158,9 +155,8 @@
             this.label_model.Location = new System.Drawing.Point(106, 115);
             this.label_model.Margin = new System.Windows.Forms.Padding(0);
             this.label_model.Name = "label_model";
-            this.label_model.Size = new System.Drawing.Size(48, 24);
+            this.label_model.Size = new System.Drawing.Size(0, 24);
             this.label_model.TabIndex = 64;
-            this.label_model.Text = "temp";
             // 
             // label_brand
             // 
@@ -170,9 +166,8 @@
             this.label_brand.Location = new System.Drawing.Point(106, 65);
             this.label_brand.Margin = new System.Windows.Forms.Padding(0);
             this.label_brand.Name = "label_brand";
-            this.label_brand.Size = new System.Drawing.Size(48, 24);
+            this.label_brand.Size = new System.Drawing.Size(0, 24);
             this.label_brand.TabIndex = 63;
-            this.label_brand.Text = "temp";
             // 
             // label_desc_my_choice
             // 
