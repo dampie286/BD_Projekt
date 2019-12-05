@@ -377,12 +377,17 @@ namespace VMA
 
                 label_brand.Text= dataGridView_veh_DB.Rows[row].Cells[1].Value.ToString();
             label_model.Text = dataGridView_veh_DB.Rows[row].Cells[2].Value.ToString();
-            label_version.Text = (dataGridView_veh_DB.Rows[row].Cells[3].Value).ToString();
+            //label_version.Text = (dataGridView_veh_DB.Rows[row].Cells[3].Value).ToString();
 
 
-            textBox_edit_avg.Text = avg.ToString();
-            textBox_edit_fuel.Text =fuel.ToString();
+            //textBox_edit_avg.Text = avg.ToString();
+            //textBox_edit_fuel.Text =fuel.ToString();
             textBox_edit_lic.Text = lic.ToString();
+        }
+
+        public void panelHide()
+        {
+            panel_modified.Hide();
         }
     }
 }
