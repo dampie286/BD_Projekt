@@ -227,28 +227,33 @@ namespace VMA
 
         private void button_modified_Click(object sender, EventArgs e)
         {
-            panel_modified.Show();
-           
+            try
+            {
+                panel_modified.Show();
 
-            int row = dataGridView_veh_DB.CurrentCell.RowIndex;
+                int row = dataGridView_veh_DB.CurrentCell.RowIndex;
 
-            id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
-            label_brand.Text = dataGridView_veh_DB.Rows[row].Cells[1].Value.ToString();
-            label_model.Text = dataGridView_veh_DB.Rows[row].Cells[2].Value.ToString();
+                id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
+                label_brand.Text = dataGridView_veh_DB.Rows[row].Cells[1].Value.ToString();
+                label_model.Text = dataGridView_veh_DB.Rows[row].Cells[2].Value.ToString();
 
-         string x = dataGridView_veh_DB.Rows[row].Cells[6].Value.ToString();
+                string x = dataGridView_veh_DB.Rows[row].Cells[6].Value.ToString();
 
-           string y= x.Replace(",", ".");
+                string y = x.Replace(",", ".");
 
-            textBox_combustion.Text = y;
-
-            
-            comboBox_car_version.Text = dataGridView_veh_DB.Rows[row].Cells[3].Value.ToString();
-          
-            textBox_edit_lic.Text = dataGridView_veh_DB.Rows[row].Cells[5].Value.ToString();
-            comboBox_type_of_fuel.Text= dataGridView_veh_DB.Rows[row].Cells[7].Value.ToString();
+                textBox_combustion.Text = y;
 
 
+                comboBox_car_version.Text = dataGridView_veh_DB.Rows[row].Cells[3].Value.ToString();
+
+                textBox_edit_lic.Text = dataGridView_veh_DB.Rows[row].Cells[5].Value.ToString();
+                comboBox_type_of_fuel.Text = dataGridView_veh_DB.Rows[row].Cells[7].Value.ToString();
+
+            }
+            catch {
+
+                MessageBox.Show("Nie wybrano auta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
 
