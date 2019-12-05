@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace VMA
 {
     public partial class UserControl_modified_del_Workesrs : UserControl
-    {
+    { int id;
 
         public UserControl_modified_del_Workesrs()
         {
@@ -23,7 +23,7 @@ namespace VMA
         {
 
             //widocznos kolumn
-            //  dataGridView_workers_DB.RowHeadersVisible = false;
+              dataGridView_workers_DB.RowHeadersVisible = false;
             dataGridView_workers_DB.Columns[0].Visible = false;
             //  dataGridView_workers_DB.Columns[1].Visible = false;
             // dataGridView_workers_DB.Columns[2].Visible = false;
@@ -35,15 +35,7 @@ namespace VMA
             dataGridView_workers_DB.Columns[8].Visible = false;
             //opcje kolumn w edycji
 
-            dataGridView_workers_DB.Columns[0].ReadOnly = true;//id
-            dataGridView_workers_DB.Columns[1].ReadOnly = true;//imie
-            dataGridView_workers_DB.Columns[2].ReadOnly = false;//nazwisko
-            dataGridView_workers_DB.Columns[3].ReadOnly = false;//pozycja
-            dataGridView_workers_DB.Columns[4].ReadOnly = true;//pesel
-            dataGridView_workers_DB.Columns[5].ReadOnly = true;//data urodzenia
-            dataGridView_workers_DB.Columns[6].ReadOnly = false;//haslo
-            dataGridView_workers_DB.Columns[7].ReadOnly = false;//telefon
-            dataGridView_workers_DB.Columns[8].ReadOnly = true;//keeper
+          
 
 
 
@@ -80,20 +72,18 @@ namespace VMA
             DataBaseDataContext db = new DataBaseDataContext();
             bool confirm = false;
 
-            int row = dataGridView_workers_DB.CurrentCell.RowIndex;
 
-            var edit_id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value;
-            var surname_edit = dataGridView_workers_DB.Rows[row].Cells[2].Value.ToString();
-            var position_edit = dataGridView_workers_DB.Rows[row].Cells[3].Value.ToString();
-            var phone_edit = dataGridView_workers_DB.Rows[row].Cells[7].Value.ToString();
 
-            var query = from x in db.WorkerSets where x.worker_id == edit_id select x;
+
+            
+
+            var query = from x in db.WorkerSets where x.worker_id == id select x;
 
             foreach (WorkerSet x in query)
             {
-                x.surname = surname_edit;
-                x.position = position_edit;
-                x.phone_nr = phone_edit;
+                x.surname = textBox_edit_surname.Text.ToString();
+                x.position = textBox_edit_position.Text.ToString();
+                x.phone_nr = textBox_edit_number.Text.ToString();
 
             }
             try
@@ -114,11 +104,7 @@ namespace VMA
 
         }
 
-        private void button_delete_Click(object sender, EventArgs e)
-        {
-            
-
-        }
+        
 
         private void button_filter_Click(object sender, EventArgs e)
         {
@@ -174,14 +160,12 @@ namespace VMA
             DataBaseDataContext db = new DataBaseDataContext();
 
             bool confirm = false;
-            int row = dataGridView_workers_DB.CurrentCell.RowIndex;
-
-            var delete_id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value;
+           
 
 
 
 
-            var delete_list = (from x in db.WorkerSets where x.worker_id == delete_id select x).ToList();
+            var delete_list = (from x in db.WorkerSets where x.worker_id == id select x).ToList();
 
             db.WorkerSets.DeleteAllOnSubmit(delete_list);
 
@@ -257,6 +241,32 @@ namespace VMA
             {
                 textBox_position.Text = "Stanowisko";
             }
+        }
+
+       
+
+       
+
+        private void dataGridView_workers_DB_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = dataGridView_workers_DB.CurrentCell.RowIndex;
+
+            id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value; ;
+            var surname = dataGridView_workers_DB.Rows[row].Cells[2].Value;
+            var position = dataGridView_workers_DB.Rows[row].Cells[3].Value;
+            var number = dataGridView_workers_DB.Rows[row].Cells[7].Value.ToString();
+
+
+            label_name.Text = dataGridView_workers_DB.Rows[row].Cells[1].Value.ToString();
+
+
+
+            textBox_edit_surname.Text = surname.ToString();
+            textBox_edit_position.Text = position.ToString();
+            textBox_edit_number.Text = number.ToString();
+
+
+
         }
     }
 }
