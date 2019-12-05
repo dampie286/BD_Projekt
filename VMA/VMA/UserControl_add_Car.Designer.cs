@@ -375,7 +375,6 @@
             "Kombi",
             "Coupé",
             "Kabriolet",
-            "VAN",
             "Pickup",
             "Terenowy",
             "MiniVan",
@@ -419,7 +418,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserControl_add_Car";
             this.Size = new System.Drawing.Size(941, 656);
-            this.Load += new System.EventHandler(this.UserControl_add_Car_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
