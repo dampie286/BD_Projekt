@@ -344,24 +344,25 @@ namespace VMA
             }
         }
 
-        private void dataGridView_veh_DB_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+      
 
+        private void dataGridView_veh_DB_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             int row = dataGridView_veh_DB.CurrentCell.RowIndex;
 
             id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value; ;
             var lic = dataGridView_veh_DB.Rows[row].Cells[5].Value;
-           var  avg = (double)dataGridView_veh_DB.Rows[row].Cells[6].Value;
+            var avg = (double)dataGridView_veh_DB.Rows[row].Cells[6].Value;
             var fuel = dataGridView_veh_DB.Rows[row].Cells[7].Value.ToString();
-            
 
-                label_brand.Text= dataGridView_veh_DB.Rows[row].Cells[1].Value.ToString();
+
+            label_brand.Text = dataGridView_veh_DB.Rows[row].Cells[1].Value.ToString();
             label_model.Text = dataGridView_veh_DB.Rows[row].Cells[2].Value.ToString();
             label_version.Text = (dataGridView_veh_DB.Rows[row].Cells[3].Value).ToString();
 
 
             textBox_edit_avg.Text = avg.ToString();
-            textBox_edit_fuel.Text =fuel.ToString();
+            textBox_edit_fuel.Text = fuel.ToString();
             textBox_edit_lic.Text = lic.ToString();
         }
     }

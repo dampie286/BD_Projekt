@@ -248,7 +248,8 @@
             this.dataGridView_veh_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_veh_DB.Size = new System.Drawing.Size(897, 333);
             this.dataGridView_veh_DB.TabIndex = 58;
-            this.dataGridView_veh_DB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_veh_DB_CellContentClick);
+            this.dataGridView_veh_DB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_veh_DB_CellClick);
+            
             // 
             // button_modified
             // 
