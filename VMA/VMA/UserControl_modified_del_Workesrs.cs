@@ -18,6 +18,10 @@ namespace VMA
             InitializeComponent();
         }
 
+        public void panelHide()
+        {
+            panel_modified.Hide();
+        }
 
         private void Grid_edit()
         {
@@ -68,6 +72,8 @@ namespace VMA
 
         private void button_modified_Click(object sender, EventArgs e)
         {
+            panel_modified.Show();
+            /*
             //modyfikowanie pracownika
             DataBaseDataContext db = new DataBaseDataContext();
             bool confirm = false;
@@ -82,7 +88,7 @@ namespace VMA
             foreach (WorkerSet x in query)
             {
                 x.surname = textBox_edit_surname.Text.ToString();
-                x.position = textBox_edit_position.Text.ToString();
+                //x.position = textBox_edit_position.Text.ToString();
                 x.phone_nr = textBox_edit_number.Text.ToString();
 
             }
@@ -100,7 +106,7 @@ namespace VMA
             if (confirm)
             {
                 MessageBox.Show("Zmieniono dane", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
+            }*/
 
         }
 
@@ -249,6 +255,7 @@ namespace VMA
 
         private void dataGridView_workers_DB_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            /*
             int row = dataGridView_workers_DB.CurrentCell.RowIndex;
 
             id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value; ;
@@ -262,11 +269,13 @@ namespace VMA
 
 
             textBox_edit_surname.Text = surname.ToString();
-            textBox_edit_position.Text = position.ToString();
+            //textBox_edit_position.Text = position.ToString();
             textBox_edit_number.Text = number.ToString();
-
+            */
 
 
         }
+
+    
     }
 }

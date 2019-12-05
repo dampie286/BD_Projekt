@@ -49,6 +49,7 @@ namespace VMA
         private void userControl_menage_Button_menAndDelWorker_Click(object sender, EventArgs e)
         {
             userControl_modified_del_Workesrs1.fillDataGridView();
+            userControl_modified_del_Workesrs1.panelHide();
             userControl_modified_del_Workesrs1.BringToFront();
         }
 
