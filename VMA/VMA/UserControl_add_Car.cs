@@ -35,10 +35,10 @@ namespace VMA
                 {
                     brand = Convert.ToString(textBox_brand.Text),
                     model = Convert.ToString(textBox_model.Text),
-                    version = Convert.ToString(textBox_fuel_type.Text),
-                    equipment = Convert.ToString(textBox_version.Text),
+                    version = Convert.ToString(comboBox_car_version.Text),
+                    equipment="",
                     licence_plate = Convert.ToString(textBox_license.Text),
-                    fuel_type = Convert.ToString(textBox_fuel_type.Text),
+                    fuel_type = Convert.ToString(comboBox_type_of_fuel.Text),
                     avg_consumption = Convert.ToDouble(consump),
                     available = "yes"
                 };
@@ -65,12 +65,12 @@ namespace VMA
 
         private void textBox_version_Click(object sender, EventArgs e)
         {
-            textBox_version.Clear();
+            //textBox_version.Clear();
         }
 
         private void textBox_fuel_type_Click(object sender, EventArgs e)
         {
-            textBox_fuel_type.Clear();
+          //  textBox_fuel_type.Clear();
         }
 
         private void textBox_license_Click(object sender, EventArgs e)

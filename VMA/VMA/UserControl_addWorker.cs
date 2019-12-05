@@ -29,10 +29,10 @@ namespace VMA
                     {
                         name = Convert.ToString(textBox_name.Text),
                         surname = Convert.ToString(textBox_surrname.Text),
-                       // position = Convert.ToString(textBox_position.Text),
+                       position = Convert.ToString(comboBox_position.Text),
                         PESEL = Convert.ToString(textBox_id_worker.Text),
 
-                      //  date_of_birth = Convert.ToDateTime(textBox_equipment.Text),
+                       date_of_birth = Convert.ToDateTime(dateTimePicker_date_birth.Text),
 
 
                         password = Convert.ToString(textBox_tmp_pass.Text),
