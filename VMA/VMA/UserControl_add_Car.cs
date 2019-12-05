@@ -35,10 +35,10 @@ namespace VMA
                 {
                     brand = Convert.ToString(textBox_brand.Text),
                     model = Convert.ToString(textBox_model.Text),
-                    version = Convert.ToString(textBox_fuel_type.Text),
-                    equipment = Convert.ToString(textBox_version.Text),
+                    //version = Convert.ToString(textBox_fuel_type.Text),
+                    //equipment = Convert.ToString(textBox_version.Text),
                     licence_plate = Convert.ToString(textBox_license.Text),
-                    fuel_type = Convert.ToString(textBox_fuel_type.Text),
+                   // fuel_type = Convert.ToString(textBox_fuel_type.Text),
                     avg_consumption = Convert.ToDouble(consump),
                     available = "yes"
                 };
@@ -63,15 +63,9 @@ namespace VMA
             textBox_age.Clear();
         }
 
-        private void textBox_version_Click(object sender, EventArgs e)
-        {
-            textBox_version.Clear();
-        }
+      
 
-        private void textBox_fuel_type_Click(object sender, EventArgs e)
-        {
-            textBox_fuel_type.Clear();
-        }
+       
 
         private void textBox_license_Click(object sender, EventArgs e)
         {
@@ -88,10 +82,7 @@ namespace VMA
             textBox_avg_fuel.Clear();
         }
 
-        private void UserControl_add_Car_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
 
