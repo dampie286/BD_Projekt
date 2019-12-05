@@ -189,7 +189,7 @@ namespace VMA
             }
             else
             {
-                double avg = Double.Parse(filtr_avg, CultureInfo.InvariantCulture);// wymaga zabezpieczenia przed złym formatem i stringiem 
+                double avg = Double.Parse(filtr_avg, CultureInfo.InvariantCulture);
                     query = from x in query where x.avg_consumption <= avg select x;
 
             }
@@ -206,18 +206,18 @@ namespace VMA
 
 
 
-            var query1 = from x in query select new {I_auta=x.vehicle_id, MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type };
+            var query1 = from x in query select x; 
 
             dataGridView_veh_DB.DataSource = query1;
-
             gridedit();
-        }
-            catch
-            {
+            
+       }
+           catch
+           {
 
 
                 MessageBox.Show("Zły format danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+           }
 
 
 
@@ -228,14 +228,21 @@ namespace VMA
         private void button_modified_Click(object sender, EventArgs e)
         {
             panel_modified.Show();
+           
+
             int row = dataGridView_veh_DB.CurrentCell.RowIndex;
 
             id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
             label_brand.Text = dataGridView_veh_DB.Rows[row].Cells[1].Value.ToString();
             label_model.Text = dataGridView_veh_DB.Rows[row].Cells[2].Value.ToString();
-            textBox_combustion.Text = dataGridView_veh_DB.Rows[row].Cells[6].Value.ToString();
-          
 
+         string x = dataGridView_veh_DB.Rows[row].Cells[6].Value.ToString();
+
+           string y= x.Replace(",", ".");
+
+            textBox_combustion.Text = y;
+
+            
             comboBox_car_version.Text = dataGridView_veh_DB.Rows[row].Cells[3].Value.ToString();
           
             textBox_edit_lic.Text = dataGridView_veh_DB.Rows[row].Cells[5].Value.ToString();
@@ -260,6 +267,8 @@ namespace VMA
                 var query = from x in db.VehicleSets where x.vehicle_id == id select x;
 
                 double avg = Double.Parse(textBox_combustion.Text, CultureInfo.InvariantCulture);
+
+              
 
                 foreach (VehicleSet x in query)
                 {

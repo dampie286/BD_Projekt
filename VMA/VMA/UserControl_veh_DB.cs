@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Globalization;
 
 namespace VMA
 {
@@ -46,7 +46,7 @@ namespace VMA
 
         private void button_filter_Click(object sender, EventArgs e)
         {
-            // dtSpecifficCliniDoctors = dtDoctor.Select("CID = " + dtClinic.Rows[comboBox_clinic.SelectedIndex]["CID"]).CopyToDataTable();
+            
             string filtr_brand = textBox_brand.Text;
             string filtr_model = textBox_model.Text;
             string filtr_version = textBox_version.Text;
@@ -106,7 +106,7 @@ namespace VMA
                 }
                 else
                 {
-                    double avg = Convert.ToDouble(filtr_avg);// wymaga zabezpieczenia przed złym formatem i stringiem 
+                    double avg = Double.Parse(filtr_avg, CultureInfo.InvariantCulture); ;// wymaga zabezpieczenia przed złym formatem i stringiem 
                     query = from x in query where x.avg_consumption <= avg select x;
 
                 }
@@ -150,6 +150,23 @@ namespace VMA
             
 
         }
+
+        private void textBox_equipment_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && textBox_equipment.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+
+
 
         private void textBox_brand_TextChanged(object sender, EventArgs e)
         {
@@ -263,5 +280,7 @@ namespace VMA
                 textBox_license.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
+
+        
     }
 }
