@@ -21,13 +21,7 @@ namespace VMA
         public void fillDataGridView() //uzupełnienie tabeli 
         {
 
-            // obecni opiekunowie
-
-
-
-
-
-
+       
             //pracownicy którzy mogą stać się opiekunami
 
 

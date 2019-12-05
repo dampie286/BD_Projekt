@@ -61,8 +61,8 @@ namespace VMA
 
 
 
-            var query = from x in db.WorkerSets join y in db.CareSets on x.worker_id equals y.Keeper_worker_id join z in db.VehicleSets on y.Vehicle_vehicle_id equals z.vehicle_id select new {IMIE = x.name, NAZWISKO = x.surname, OPIEKA = z.model, REJESTRACJA = z.licence_plate };
-
+         
+          var query = from x in db.CareSets select new { IMIE = x.WorkerSet_Keeper.WorkerSet.name, NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname, OPIEKA = x.VehicleSet.model, REJESTRACJA = x.VehicleSet.licence_plate };
             dataGridView_keepers_DB.DataSource = query;
             Grid_edit();
 
@@ -114,6 +114,11 @@ namespace VMA
             {
                 textBox_position.Text = "Stanowisko";
             }
+        }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
