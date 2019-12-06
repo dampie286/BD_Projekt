@@ -41,14 +41,7 @@ namespace VMA
 
            
             
-            dataGridView_veh_DB.Columns[1].Width = 60;///marka
-            dataGridView_veh_DB.Columns[2].Width = 60;//model
-            dataGridView_veh_DB.Columns[3].Width = 70;//wersja
-            dataGridView_veh_DB.Columns[5].Width = 85;//rejestracja
-            dataGridView_veh_DB.Columns[6].Width = 66;//spalanie
-            dataGridView_veh_DB.Columns[7].Width = 55;//paliwo
-            //dataGridView_veh_DB.Columns[7].Width = 55;//przebieg 
-
+        
 
 
           

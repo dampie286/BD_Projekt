@@ -38,33 +38,43 @@ namespace VMA
 
                 if (user != null)
                 {
-                    if (user.position == "kierownik")
+                    if (user.position != "fired")
+
                     {
-                        textBox_login_name.Clear();
-                        textBox_login_password.Clear();
-                        adminapp = new Form_panel_admin(this);
-                        adminapp.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        var keeeper = db.WorkerSet_Keepers.Where(i => i.worker_id == user.worker_id);
-                        if (keeeper != null)
+                        if (user.position == "kierownik" || user.position == "Kierownik")
                         {
                             textBox_login_name.Clear();
                             textBox_login_password.Clear();
-                            mainapp = new MainApp(this, user.name, user.surname, user.worker_id,true);
-                            mainapp.Show();
+                            adminapp = new Form_panel_admin(this);
+                            adminapp.Show();
                             this.Hide();
                         }
                         else
+
+
                         {
-                            textBox_login_name.Clear();
-                            textBox_login_password.Clear();
-                            mainapp = new MainApp(this, user.name, user.surname, user.worker_id,false);
-                            mainapp.Show();
-                            this.Hide();
+                            var keeeper = db.WorkerSet_Keepers.Where(i => i.worker_id == user.worker_id);
+                            if (keeeper != null)
+                            {
+                                textBox_login_name.Clear();
+                                textBox_login_password.Clear();
+                                mainapp = new MainApp(this, user.name, user.surname, user.worker_id, true);
+                                mainapp.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                textBox_login_name.Clear();
+                                textBox_login_password.Clear();
+                                mainapp = new MainApp(this, user.name, user.surname, user.worker_id, false);
+                                mainapp.Show();
+                                this.Hide();
+                            }
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Zablokowany dostęp ", "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

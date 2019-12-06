@@ -11,8 +11,9 @@ using System.Windows.Forms;
 namespace VMA
 {
     public partial class UserControl_modified_del_Workesrs : UserControl
-    { int id;
+    {
 
+        int id;
         public UserControl_modified_del_Workesrs()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace VMA
             //  dataGridView_workers_DB.Columns[1].Visible = false;
             // dataGridView_workers_DB.Columns[2].Visible = false;
             //dataGridView_workers_DB.Columns[3].Visible = false;
-            //dataGridView_workers_DB.Columns[4].Visible = false;
+            dataGridView_workers_DB.Columns[4].Visible = false;
             dataGridView_workers_DB.Columns[5].Visible = false;
             dataGridView_workers_DB.Columns[6].Visible = false;
             // dataGridView_workers_DB.Columns[7].Visible = false;
@@ -42,14 +43,9 @@ namespace VMA
           
 
 
+            
 
-            //rozmiary kolumn
-
-            dataGridView_workers_DB.Columns[1].Width = 100;
-            dataGridView_workers_DB.Columns[2].Width = 150;
-            dataGridView_workers_DB.Columns[3].Width = 100;
-            dataGridView_workers_DB.Columns[4].Width = 100;
-            dataGridView_workers_DB.Columns[7].Width = 100;
+          
 
         }
 
@@ -58,8 +54,8 @@ namespace VMA
 
 
             DataBaseDataContext db = new DataBaseDataContext();
-            var query = from x in db.WorkerSets select x;
-
+            var query = from x in db.WorkerSets where x.position!="fired" select x;
+           
             dataGridView_workers_DB.DataSource = query;
             Grid_edit();
 
@@ -73,49 +69,45 @@ namespace VMA
         private void button_modified_Click(object sender, EventArgs e)
         {
             panel_modified.Show();
-            /*
-            //modyfikowanie pracownika
-            DataBaseDataContext db = new DataBaseDataContext();
-            bool confirm = false;
-
 
 
 
             
+           int row = dataGridView_workers_DB.CurrentCell.RowIndex;
 
-            var query = from x in db.WorkerSets where x.worker_id == id select x;
+            id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value; ;
+           
+            var surname = dataGridView_workers_DB.Rows[row].Cells[2].Value;
+           var position = dataGridView_workers_DB.Rows[row].Cells[3].Value;
+           var number = dataGridView_workers_DB.Rows[row].Cells[7].Value.ToString();
+            var code = "KOD";
+            var city = "Miasto";
+            var street = "ulica";
+            var home = "98/5";
 
-            foreach (WorkerSet x in query)
-            {
-                x.surname = textBox_edit_surname.Text.ToString();
-                //x.position = textBox_edit_position.Text.ToString();
-                x.phone_nr = textBox_edit_number.Text.ToString();
 
-            }
-            try
-            {
-                db.SubmitChanges();
-                confirm = true;
-            }
-            catch
-            {
-                MessageBox.Show("Nie udało się zmienić danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            }
 
-            if (confirm)
-            {
-                MessageBox.Show("Zmieniono dane", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }*/
+            label_name_with_choice.Text = dataGridView_workers_DB.Rows[row].Cells[1].Value.ToString();
+            textBox_edit_surname.Text = surname.ToString();
+           comboBox_position.Text = position.ToString();
+           textBox_edit_number.Text = number.ToString();
+            textBox_city_cod.Text = code;
+            textBox_city.Text = city;
+            textBox_street.Text = street;
+            textBox1_number_home.Text = home;
 
-        }
 
-        
+
+
+        }//dodac gdy w bazie bedzie adres
+
+
 
         private void button_filter_Click(object sender, EventArgs e)
         {
             DataBaseDataContext db = new DataBaseDataContext();
-            var query = from x in db.WorkerSets select x;
+            var query = from x in db.WorkerSets where x.position!="fired"  select x;
             string filtr_name=textBox_name.Text;
             string filtr_surname=textBox_surrname.Text;
             string filtr_position=textBox_position.Text;
@@ -162,43 +154,56 @@ namespace VMA
         {
 
 
-            //usuwanie pracownika
-            DataBaseDataContext db = new DataBaseDataContext();
-
-            bool confirm = false;
-           
 
 
+            var result = MessageBox.Show("Czy napewno chcesz usunąć pracownika?", "Potwierdzenie",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question);
 
-
-            var delete_list = (from x in db.WorkerSets where x.worker_id == id select x).ToList();
-
-            db.WorkerSets.DeleteAllOnSubmit(delete_list);
-
-
-            try
-            {
-                db.SubmitChanges();
-                confirm = true;
-            }
-            catch
+            if (result == DialogResult.Yes)
             {
 
-                MessageBox.Show("Nie można usunąć pracownika będącego opiekunem", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DataBaseDataContext db = new DataBaseDataContext();
+
+                bool confirm = false;
+
+
+                int row = dataGridView_workers_DB.CurrentCell.RowIndex;
+
+               var idd = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value; ;
+
+
+                var delete_worker = from x in db.WorkerSets where x.worker_id == idd  select x;
+
+                foreach (WorkerSet x in delete_worker)
+                {
+                    x.position = "fired";
+
+
+                }
+
+
+                try
+                {
+                    db.SubmitChanges();
+                    confirm = true;
+                }
+                catch
+                {
+
+                    MessageBox.Show("Nie udało się usunąć pracownika", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                if (confirm)
+                    MessageBox.Show("Usunięto pracownika", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                fillDataGridView();
             }
-            if (confirm)
-                MessageBox.Show("Usunięto pracownika", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            else
+            {
+                MessageBox.Show("Anulowano usunięcie pracownika", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
-            var Selectquery = from x in db.WorkerSets select x;
-
-
-
-
-            dataGridView_workers_DB.DataSource = Selectquery;
-            Grid_edit();
-
-
-        }
+        }//zmodyfikować gdy usuniecie bedzie jako przeniesienie na stanowisko nie pracuje
 
 
         private void textBox_name_Enter_1(object sender, EventArgs e)
@@ -253,29 +258,52 @@ namespace VMA
 
        
 
-        private void dataGridView_workers_DB_CellClick(object sender, DataGridViewCellEventArgs e)
+        
+
+        private void button_confirm_modification_Click(object sender, EventArgs e)
         {
-            /*
-            int row = dataGridView_workers_DB.CurrentCell.RowIndex;
 
-            id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value; ;
-            var surname = dataGridView_workers_DB.Rows[row].Cells[2].Value;
-            var position = dataGridView_workers_DB.Rows[row].Cells[3].Value;
-            var number = dataGridView_workers_DB.Rows[row].Cells[7].Value.ToString();
-
-
-            label_name.Text = dataGridView_workers_DB.Rows[row].Cells[1].Value.ToString();
+            
+           
+           DataBaseDataContext db = new DataBaseDataContext();
+           bool confirm = false;
 
 
 
-            textBox_edit_surname.Text = surname.ToString();
-            //textBox_edit_position.Text = position.ToString();
-            textBox_edit_number.Text = number.ToString();
-            */
 
+
+
+           var query = from x in db.WorkerSets where x.worker_id == id select x;
+
+           foreach (WorkerSet x in query)
+           {
+            
+              x.surname=textBox_edit_surname.Text.ToString();
+               x.position=comboBox_position.Text.ToString();
+               x.phone_nr=textBox_edit_number.Text.ToString();
+              //  textBox_city_cod.Text.ToString();
+               // textBox_city.Text.ToString();
+                //textBox_street.Text.ToString();
+               // textBox1_number_home.Text.ToString();
+
+            }
+           try
+           {
+               db.SubmitChanges();
+               confirm = true;
+           }
+           catch
+           {
+               MessageBox.Show("Nie udało się zmienić danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+           }
+
+           if (confirm)
+           {
+                fillDataGridView();
+               MessageBox.Show("Zmieniono dane", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+           }
 
         }
-
-    
     }
 }

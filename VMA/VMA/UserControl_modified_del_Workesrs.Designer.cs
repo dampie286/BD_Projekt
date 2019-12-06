@@ -42,20 +42,20 @@
             this.textBox_edit_number = new System.Windows.Forms.TextBox();
             this.label_name = new System.Windows.Forms.Label();
             this.panel_modified = new System.Windows.Forms.Panel();
-            this.label_name_with_choice = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_position = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox_city_cod = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox_city = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox_street = new System.Windows.Forms.TextBox();
+            this.button_confirm_modification = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1_number_home = new System.Windows.Forms.TextBox();
-            this.button_confirm_modification = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox_street = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox_city = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox_city_cod = new System.Windows.Forms.TextBox();
+            this.comboBox_position = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label_name_with_choice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_workers_DB)).BeginInit();
             this.panel_modified.SuspendLayout();
             this.SuspendLayout();
@@ -109,7 +109,7 @@
             this.dataGridView_workers_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_workers_DB.Size = new System.Drawing.Size(634, 255);
             this.dataGridView_workers_DB.TabIndex = 74;
-            this.dataGridView_workers_DB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_workers_DB_CellClick);
+            
             // 
             // panel3
             // 
@@ -275,145 +275,21 @@
             this.panel_modified.Size = new System.Drawing.Size(914, 236);
             this.panel_modified.TabIndex = 81;
             // 
-            // label_name_with_choice
+            // button_confirm_modification
             // 
-            this.label_name_with_choice.AutoSize = true;
-            this.label_name_with_choice.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label_name_with_choice.ForeColor = System.Drawing.Color.Yellow;
-            this.label_name_with_choice.Location = new System.Drawing.Point(151, 33);
-            this.label_name_with_choice.Name = "label_name_with_choice";
-            this.label_name_with_choice.Size = new System.Drawing.Size(99, 19);
-            this.label_name_with_choice.TabIndex = 81;
-            this.label_name_with_choice.Text = "Imięwpisane";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(30, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 19);
-            this.label1.TabIndex = 82;
-            this.label1.Text = "Nazwisko";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(30, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 19);
-            this.label2.TabIndex = 83;
-            this.label2.Text = "Numer telefonu";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(30, 145);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 19);
-            this.label3.TabIndex = 84;
-            this.label3.Text = "Stanowisko";
-            // 
-            // comboBox_position
-            // 
-            this.comboBox_position.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.comboBox_position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_position.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox_position.ForeColor = System.Drawing.Color.Yellow;
-            this.comboBox_position.Items.AddRange(new object[] {
-            "Kierownik",
-            "Pracownik",
-            "Stażysta"});
-            this.comboBox_position.Location = new System.Drawing.Point(155, 144);
-            this.comboBox_position.Name = "comboBox_position";
-            this.comboBox_position.Size = new System.Drawing.Size(173, 24);
-            this.comboBox_position.TabIndex = 89;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(359, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 19);
-            this.label4.TabIndex = 91;
-            this.label4.Text = "Kod pocztowy";
-            // 
-            // textBox_city_cod
-            // 
-            this.textBox_city_cod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBox_city_cod.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_city_cod.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_city_cod.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_city_cod.Location = new System.Drawing.Point(534, 33);
-            this.textBox_city_cod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_city_cod.MaximumSize = new System.Drawing.Size(120, 25);
-            this.textBox_city_cod.MinimumSize = new System.Drawing.Size(5, 15);
-            this.textBox_city_cod.Name = "textBox_city_cod";
-            this.textBox_city_cod.Size = new System.Drawing.Size(120, 19);
-            this.textBox_city_cod.TabIndex = 90;
-            this.textBox_city_cod.Text = "Kodzik";
-            this.textBox_city_cod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label5.ForeColor = System.Drawing.Color.Yellow;
-            this.label5.Location = new System.Drawing.Point(359, 72);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 19);
-            this.label5.TabIndex = 93;
-            this.label5.Text = "Miasto";
-            // 
-            // textBox_city
-            // 
-            this.textBox_city.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBox_city.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_city.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_city.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_city.Location = new System.Drawing.Point(534, 72);
-            this.textBox_city.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_city.MaximumSize = new System.Drawing.Size(120, 25);
-            this.textBox_city.MinimumSize = new System.Drawing.Size(5, 15);
-            this.textBox_city.Name = "textBox_city";
-            this.textBox_city.Size = new System.Drawing.Size(120, 19);
-            this.textBox_city.TabIndex = 92;
-            this.textBox_city.Text = "miasteczko";
-            this.textBox_city.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label6.ForeColor = System.Drawing.Color.Yellow;
-            this.label6.Location = new System.Drawing.Point(359, 104);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 19);
-            this.label6.TabIndex = 95;
-            this.label6.Text = "Ulica";
-            // 
-            // textBox_street
-            // 
-            this.textBox_street.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBox_street.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_street.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_street.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_street.Location = new System.Drawing.Point(534, 104);
-            this.textBox_street.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_street.MaximumSize = new System.Drawing.Size(120, 25);
-            this.textBox_street.MinimumSize = new System.Drawing.Size(5, 15);
-            this.textBox_street.Name = "textBox_street";
-            this.textBox_street.Size = new System.Drawing.Size(120, 19);
-            this.textBox_street.TabIndex = 94;
-            this.textBox_street.Text = "uliczka";
-            this.textBox_street.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.button_confirm_modification.BackColor = System.Drawing.Color.Yellow;
+            this.button_confirm_modification.FlatAppearance.BorderSize = 0;
+            this.button_confirm_modification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_confirm_modification.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_confirm_modification.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.button_confirm_modification.Location = new System.Drawing.Point(676, 138);
+            this.button_confirm_modification.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_confirm_modification.Name = "button_confirm_modification";
+            this.button_confirm_modification.Size = new System.Drawing.Size(221, 31);
+            this.button_confirm_modification.TabIndex = 98;
+            this.button_confirm_modification.Text = "Potwierdź modyfikacje";
+            this.button_confirm_modification.UseVisualStyleBackColor = false;
+            this.button_confirm_modification.Click += new System.EventHandler(this.button_confirm_modification_Click);
             // 
             // label7
             // 
@@ -442,20 +318,145 @@
             this.textBox1_number_home.Text = "9/17";
             this.textBox1_number_home.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button_confirm_modification
+            // label6
             // 
-            this.button_confirm_modification.BackColor = System.Drawing.Color.Yellow;
-            this.button_confirm_modification.FlatAppearance.BorderSize = 0;
-            this.button_confirm_modification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_confirm_modification.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_confirm_modification.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_confirm_modification.Location = new System.Drawing.Point(676, 138);
-            this.button_confirm_modification.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_confirm_modification.Name = "button_confirm_modification";
-            this.button_confirm_modification.Size = new System.Drawing.Size(221, 31);
-            this.button_confirm_modification.TabIndex = 98;
-            this.button_confirm_modification.Text = "Potwierdź modyfikacje";
-            this.button_confirm_modification.UseVisualStyleBackColor = false;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.label6.ForeColor = System.Drawing.Color.Yellow;
+            this.label6.Location = new System.Drawing.Point(359, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 19);
+            this.label6.TabIndex = 95;
+            this.label6.Text = "Ulica";
+            // 
+            // textBox_street
+            // 
+            this.textBox_street.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.textBox_street.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_street.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_street.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_street.Location = new System.Drawing.Point(534, 104);
+            this.textBox_street.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_street.MaximumSize = new System.Drawing.Size(120, 25);
+            this.textBox_street.MinimumSize = new System.Drawing.Size(5, 15);
+            this.textBox_street.Name = "textBox_street";
+            this.textBox_street.Size = new System.Drawing.Size(120, 19);
+            this.textBox_street.TabIndex = 94;
+            this.textBox_street.Text = "uliczka";
+            this.textBox_street.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.label5.ForeColor = System.Drawing.Color.Yellow;
+            this.label5.Location = new System.Drawing.Point(359, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 19);
+            this.label5.TabIndex = 93;
+            this.label5.Text = "Miasto";
+            // 
+            // textBox_city
+            // 
+            this.textBox_city.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.textBox_city.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_city.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_city.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_city.Location = new System.Drawing.Point(534, 72);
+            this.textBox_city.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_city.MaximumSize = new System.Drawing.Size(120, 25);
+            this.textBox_city.MinimumSize = new System.Drawing.Size(5, 15);
+            this.textBox_city.Name = "textBox_city";
+            this.textBox_city.Size = new System.Drawing.Size(120, 19);
+            this.textBox_city.TabIndex = 92;
+            this.textBox_city.Text = "miasteczko";
+            this.textBox_city.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.label4.ForeColor = System.Drawing.Color.Yellow;
+            this.label4.Location = new System.Drawing.Point(359, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 19);
+            this.label4.TabIndex = 91;
+            this.label4.Text = "Kod pocztowy";
+            // 
+            // textBox_city_cod
+            // 
+            this.textBox_city_cod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.textBox_city_cod.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_city_cod.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_city_cod.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_city_cod.Location = new System.Drawing.Point(534, 33);
+            this.textBox_city_cod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_city_cod.MaximumSize = new System.Drawing.Size(120, 25);
+            this.textBox_city_cod.MinimumSize = new System.Drawing.Size(5, 15);
+            this.textBox_city_cod.Name = "textBox_city_cod";
+            this.textBox_city_cod.Size = new System.Drawing.Size(120, 19);
+            this.textBox_city_cod.TabIndex = 90;
+            this.textBox_city_cod.Text = "Kodzik";
+            this.textBox_city_cod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // comboBox_position
+            // 
+            this.comboBox_position.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.comboBox_position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_position.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_position.ForeColor = System.Drawing.Color.Yellow;
+            this.comboBox_position.Items.AddRange(new object[] {
+            "Kierownik",
+            "Pracownik",
+            "Stażysta"});
+            this.comboBox_position.Location = new System.Drawing.Point(155, 144);
+            this.comboBox_position.Name = "comboBox_position";
+            this.comboBox_position.Size = new System.Drawing.Size(173, 24);
+            this.comboBox_position.TabIndex = 89;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.label3.ForeColor = System.Drawing.Color.Yellow;
+            this.label3.Location = new System.Drawing.Point(30, 145);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 19);
+            this.label3.TabIndex = 84;
+            this.label3.Text = "Stanowisko";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.label2.ForeColor = System.Drawing.Color.Yellow;
+            this.label2.Location = new System.Drawing.Point(30, 104);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 19);
+            this.label2.TabIndex = 83;
+            this.label2.Text = "Numer telefonu";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(30, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 19);
+            this.label1.TabIndex = 82;
+            this.label1.Text = "Nazwisko";
+            // 
+            // label_name_with_choice
+            // 
+            this.label_name_with_choice.AutoSize = true;
+            this.label_name_with_choice.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.label_name_with_choice.ForeColor = System.Drawing.Color.Yellow;
+            this.label_name_with_choice.Location = new System.Drawing.Point(151, 33);
+            this.label_name_with_choice.Name = "label_name_with_choice";
+            this.label_name_with_choice.Size = new System.Drawing.Size(99, 19);
+            this.label_name_with_choice.TabIndex = 81;
+            this.label_name_with_choice.Text = "Imięwpisane";
             // 
             // UserControl_modified_del_Workesrs
             // 
