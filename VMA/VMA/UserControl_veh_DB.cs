@@ -34,12 +34,7 @@ namespace VMA
          dataGridView_veh_DB.RowHeadersVisible = false;
             dataGridView_veh_DB.ReadOnly = true;        //nie moze edytować kolumn
 
-            dataGridView_veh_DB.Columns[0].Width = 70;
-            dataGridView_veh_DB.Columns[1].Width = 70;
-           dataGridView_veh_DB.Columns[2].Width = 90;
-            dataGridView_veh_DB.Columns[3].Width = 100;
-          dataGridView_veh_DB.Columns[4].Width = 90;
-            dataGridView_veh_DB.Columns[5].Width = 90;
+            
         
 
         }
@@ -141,12 +136,7 @@ namespace VMA
                         dataGridView_veh_DB.RowHeadersVisible = false;
                         dataGridView_veh_DB.ReadOnly = true;        //nie moze edytować kolumn
 
-                      dataGridView_veh_DB.Columns[0].Width = 70;
-                        dataGridView_veh_DB.Columns[1].Width = 70;
-                       dataGridView_veh_DB.Columns[2].Width = 90;
-                        dataGridView_veh_DB.Columns[3].Width = 100;
-                        dataGridView_veh_DB.Columns[4].Width = 90;
-                        dataGridView_veh_DB.Columns[5].Width = 90;
+                    
             
 
         }
