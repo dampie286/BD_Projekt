@@ -76,11 +76,46 @@ namespace VMA
 
         private void button_send_to_service_Click(object sender, EventArgs e)
         {
-            int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
+            try
+            {
+                int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
+                car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
+                VehicleSet vechicle = db.VehicleSets.Where(x => x.vehicle_id == car_id).First();
 
-            car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
-            VehicleSet vechicle = db.VehicleSets.Where(x => x.vehicle_id ==  car_id).First();
-           // vechicle.available = "no";
+                //vechicle.available = "no"; //Auto nie dostępne
+
+                CareSet care_id = db.CareSets.Where(x => x.Vehicle_vehicle_id == car_id).First();
+
+                //Care_serviceSet newservice = new Care_serviceSet()
+                //{
+                //    date_from = DateTime.Today,
+                //    price = ,
+                //    Care_care_id = care_id.care_id,
+
+                    
+                //};
+                //WorkerSet worker = new WorkerSet()
+                //{
+                //    name = Convert.ToString(textBox_name.Text),
+                //    surname = Convert.ToString(textBox_surrname.Text),
+                //    position = Convert.ToString(comboBox_position.Text),
+                //    PESEL = Convert.ToString(textBox_id_worker.Text),
+
+                //    date_of_birth = Convert.ToDateTime(dateTimePicker_date_birth.Text),
+
+
+                //    password = Convert.ToString(textBox_tmp_pass.Text),
+                //    phone_nr = Convert.ToString(textBox_phone_number.Text)
+                //};
+                //db.WorkerSets.InsertOnSubmit(worker);
+                //db.SubmitChanges();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Zaznacz samochód", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //vechicle.available = "no";
            
         }
     }
