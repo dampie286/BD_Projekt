@@ -109,7 +109,6 @@
             this.dataGridView_workers_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_workers_DB.Size = new System.Drawing.Size(634, 255);
             this.dataGridView_workers_DB.TabIndex = 74;
-            
             // 
             // panel3
             // 
@@ -239,6 +238,7 @@
             this.textBox_edit_number.TabIndex = 79;
             this.textBox_edit_number.Text = "Numer";
             this.textBox_edit_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_edit_number.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_edit_number_KeyPress);
             // 
             // label_name
             // 

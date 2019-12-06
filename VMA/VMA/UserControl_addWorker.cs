@@ -57,6 +57,24 @@ namespace VMA
             }
         }
 
-     
+        private void textBox_phone_number_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chh = e.KeyChar;
+
+            if (!Char.IsDigit(chh) && chh != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_id_worker_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chh = e.KeyChar;
+
+            if (!Char.IsDigit(chh) && chh != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

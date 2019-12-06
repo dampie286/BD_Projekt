@@ -181,7 +181,15 @@ namespace VMA
 
 
                 }
+               
+                var query = from x in db.CareSets where x.Keeper_worker_id == idd select x;
 
+                foreach (CareSet x in query)
+                {
+                    x.date_to = DateTime.Today;
+
+                }
+               
 
                 try
                 {
@@ -304,6 +312,16 @@ namespace VMA
                MessageBox.Show("Zmieniono dane", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
            }
 
+        }
+
+        private void textBox_edit_number_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chh = e.KeyChar;
+
+            if (!Char.IsDigit(chh) && chh != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

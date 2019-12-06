@@ -26,7 +26,7 @@ namespace VMA
 
 
 
-            var query = from x in db.CareSets where x.date_to==null select new { ID=x.care_id,IMIE = x.WorkerSet_Keeper.WorkerSet.name, NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname, OPIEKA = x.VehicleSet.model, REJESTRACJA = x.VehicleSet.licence_plate };
+            var query = from x in db.CareSets where x.date_to == null select new { ID = x.care_id, IMIE = x.WorkerSet_Keeper.WorkerSet.name, NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname, OPIEKA = x.VehicleSet.model, REJESTRACJA = x.VehicleSet.licence_plate };
             dataGridView_keepers_DB.DataSource = query;
             dataGridView_keepers_DB.Columns[0].Visible = false;
 
@@ -43,13 +43,13 @@ namespace VMA
             int row = dataGridView_keepers_DB.CurrentCell.RowIndex;
 
             var edit_id = (int)dataGridView_keepers_DB.Rows[row].Cells[0].Value;
-            
-            var query = from x in db.CareSets where x.care_id== edit_id select x;
+
+            var query = from x in db.CareSets where x.care_id == edit_id select x;
 
             foreach (CareSet x in query)
             {
                 x.date_to = DateTime.Today;
-                
+
             }
             try
             {
@@ -70,7 +70,7 @@ namespace VMA
             fillDataGridView2();
 
 
-          
+
         }
 
 
@@ -125,6 +125,52 @@ namespace VMA
             }
         }
 
+        private void button_filter_Click(object sender, EventArgs e)
+        {
 
+
+            DataBaseDataContext db = new DataBaseDataContext();
+            var query = from x in db.CareSets where x.date_to == null select new { ID = x.care_id, IMIE = x.WorkerSet_Keeper.WorkerSet.name, NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname, OPIEKA = x.VehicleSet.model, REJESTRACJA = x.VehicleSet.licence_plate, STANOWISKO = x.WorkerSet_Keeper.WorkerSet.position };
+            string filtr_name = textBox_name.Text;
+            string filtr_surname = textBox_surrname.Text;
+            string filtr_position = textBox_position.Text;
+            try
+            {
+                if (filtr_name == "Imię" || filtr_name == "")
+                {
+
+                }
+                else
+                {
+                    query = from x in query where x.IMIE == filtr_name select x;
+
+                }
+                if (filtr_surname == "Nazwisko" || filtr_surname == "")
+                {
+                }
+                else
+                {
+                    query = from x in query where x.NAZWISKO == filtr_surname select x;
+
+                }
+                if (filtr_position == "Stanowisko" || filtr_position == "")
+                {
+
+                }
+                else
+                {
+                    query = from x in query where x.STANOWISKO == filtr_position select x;
+                }
+
+                var query1 = from x in query select x;
+                dataGridView_keepers_DB.DataSource = query;
+                dataGridView_keepers_DB.Columns[0].Visible = false;
+                dataGridView_keepers_DB.Columns[5].Visible = false;
+
+
+
+            }
+            catch { }
+        }
     }
 }

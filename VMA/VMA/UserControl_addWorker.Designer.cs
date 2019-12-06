@@ -139,6 +139,7 @@
             this.textBox_phone_number.Size = new System.Drawing.Size(173, 19);
             this.textBox_phone_number.TabIndex = 68;
             this.textBox_phone_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_phone_number.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_phone_number_KeyPress);
             // 
             // panel2
             // 
@@ -163,6 +164,7 @@
             this.textBox_id_worker.Size = new System.Drawing.Size(173, 19);
             this.textBox_id_worker.TabIndex = 64;
             this.textBox_id_worker.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_id_worker.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_id_worker_KeyPress);
             // 
             // panel1
             // 

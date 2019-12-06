@@ -26,11 +26,9 @@ namespace VMA
 
 
 
-            var query1 = from x in db.WorkerSets
-                         where !(from o in db.WorkerSet_Keepers select o.worker_id).Contains(x.worker_id)
-                         select new { Id = x.worker_id, Imie = x.name, Nawisko = x.surname, Stanowsiko = x.position };
+        
 
-            var query = from x in db.WorkerSets select new { Id_opiekuna = x.worker_id, Imie = x.name, Nawisko = x.surname, Stanowsiko = x.position };
+            var query = from x in db.WorkerSets where x.position!="fired" select new { Id_opiekuna = x.worker_id, Imie = x.name, Nawisko = x.surname, Stanowsiko = x.position };
 
             dataGridView_Worker.DataSource = query;
             dataGridView_Worker.Columns[0].Visible = false;
@@ -38,14 +36,12 @@ namespace VMA
             ///auta bez opiekuna
 
             var query2 = from x in db.VehicleSets
-                         where !(from o in db.CareSets where o.date_to==null select o.Vehicle_vehicle_id).Contains(x.vehicle_id)
-                         select new { Id = x.vehicle_id, Marka = x.brand, Model = x.model, Rejestracja = x.licence_plate };
+                         where (!(from o in db.CareSets where o.date_to==null select o.Vehicle_vehicle_id).Contains(x.vehicle_id)) && x.available!="deleted" select new { Id = x.vehicle_id, Marka = x.brand, Model = x.model, Rejestracja = x.licence_plate };
 
 
             dataGridView_veh.DataSource = query2;
             dataGridView_veh.Columns[0].Visible = false;
-            dataGridView_veh.Columns[1].Width = 70;
-            dataGridView_veh.Columns[2].Width = 70;
+           
 
 
 

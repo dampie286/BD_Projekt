@@ -92,6 +92,15 @@ namespace VMA
 
 
                 }
+
+
+                var query1 = from x in db.CareSets where x.Vehicle_vehicle_id == id_del && x.date_to==null select x;
+
+                foreach (CareSet x in query1)
+                {
+                    x.date_to = DateTime.Today;
+
+                }
                 try
                 {
                     db.SubmitChanges();

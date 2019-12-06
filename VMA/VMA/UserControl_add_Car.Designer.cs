@@ -104,6 +104,7 @@
             this.textBox_age.Size = new System.Drawing.Size(173, 19);
             this.textBox_age.TabIndex = 42;
             this.textBox_age.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_age_KeyPress);
             // 
             // panel5
             // 
@@ -152,6 +153,7 @@
             this.textBox_mileage.Size = new System.Drawing.Size(173, 19);
             this.textBox_mileage.TabIndex = 50;
             this.textBox_mileage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_mileage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_mileage_KeyPress);
             // 
             // panel7
             // 
@@ -200,6 +202,7 @@
             this.textBox_avg_fuel.Size = new System.Drawing.Size(173, 19);
             this.textBox_avg_fuel.TabIndex = 54;
             this.textBox_avg_fuel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_avg_fuel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_avg_fuel_KeyPress);
             // 
             // panel10
             // 

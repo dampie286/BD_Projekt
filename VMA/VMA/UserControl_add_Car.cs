@@ -105,6 +105,45 @@ namespace VMA
         {
 
         }
+
+        private void textBox_avg_fuel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+
+            char chh = e.KeyChar;
+            if (chh == 46 && textBox_avg_fuel.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(chh) && chh != 8 && chh != 46)
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void textBox_age_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            char chh = e.KeyChar;
+           
+            if (!Char.IsDigit(chh) && chh != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_mileage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chh = e.KeyChar;
+
+            if (!Char.IsDigit(chh) && chh != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
 
