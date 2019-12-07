@@ -33,10 +33,15 @@
             this.button_send_to_service = new System.Windows.Forms.Button();
             this.button_blocked = new System.Windows.Forms.Button();
             this.button_unblocking = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Combobox_service = new System.Windows.Forms.ComboBox();
+            this.textBox_other_service = new System.Windows.Forms.TextBox();
+            this.textBox_description = new System.Windows.Forms.TextBox();
+            this.dataGridView_cars_on_service = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_care_car_DB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_cars_on_service)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView_care_car_DB
@@ -51,7 +56,7 @@
             this.dataGridView_care_car_DB.Name = "dataGridView_care_car_DB";
             this.dataGridView_care_car_DB.RowTemplate.Height = 24;
             this.dataGridView_care_car_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_care_car_DB.Size = new System.Drawing.Size(667, 136);
+            this.dataGridView_care_car_DB.Size = new System.Drawing.Size(254, 119);
             this.dataGridView_care_car_DB.TabIndex = 21;
             // 
             // label_your_cars_care
@@ -112,9 +117,9 @@
             this.button_unblocking.Text = "Odblokuj";
             this.button_unblocking.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // Combobox_service
             // 
-            this.comboBox1.Items.AddRange(new object[] {
+            this.Combobox_service.Items.AddRange(new object[] {
             "Wymiana oleju",
             "Wymiana oleju + filtry",
             "Przegląd",
@@ -122,40 +127,74 @@
             "Wymiana rozrzadu ",
             "Naprawa",
             "INNA"});
-            this.comboBox1.Location = new System.Drawing.Point(45, 396);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 35;
-            this.comboBox1.Text = "Rodzaj serwisu";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.Combobox_service.Location = new System.Drawing.Point(45, 396);
+            this.Combobox_service.Name = "Combobox_service";
+            this.Combobox_service.Size = new System.Drawing.Size(121, 21);
+            this.Combobox_service.TabIndex = 35;
+            this.Combobox_service.Text = "Rodzaj serwisu";
+            this.Combobox_service.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // textBox1
+            // textBox_other_service
             // 
-            this.textBox1.Location = new System.Drawing.Point(179, 397);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 36;
-            this.textBox1.Text = "Rodzaj serwisu";
-            this.textBox1.Visible = false;
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.textBox_other_service.Location = new System.Drawing.Point(179, 397);
+            this.textBox_other_service.Name = "textBox_other_service";
+            this.textBox_other_service.Size = new System.Drawing.Size(100, 20);
+            this.textBox_other_service.TabIndex = 36;
+            this.textBox_other_service.Text = "Przyczyna serwisu";
+            this.textBox_other_service.Visible = false;
+            this.textBox_other_service.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBox_other_service.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
-            // textBox2
+            // textBox_description
             // 
-            this.textBox2.Location = new System.Drawing.Point(45, 434);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 37;
-            this.textBox2.Text = "Opi";
+            this.textBox_description.Location = new System.Drawing.Point(45, 434);
+            this.textBox_description.Name = "textBox_description";
+            this.textBox_description.Size = new System.Drawing.Size(100, 20);
+            this.textBox_description.TabIndex = 37;
+            this.textBox_description.Text = "Opis problemu";
+            // 
+            // dataGridView_cars_on_service
+            // 
+            this.dataGridView_cars_on_service.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.dataGridView_cars_on_service.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_cars_on_service.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_cars_on_service.Location = new System.Drawing.Point(317, 103);
+            this.dataGridView_cars_on_service.Name = "dataGridView_cars_on_service";
+            this.dataGridView_cars_on_service.Size = new System.Drawing.Size(355, 119);
+            this.dataGridView_cars_on_service.TabIndex = 38;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(463, 383);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.TabIndex = 39;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(380, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(212, 22);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Twoje auta w serwisie";
             // 
             // UserControl_menage_care_cars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView_cars_on_service);
+            this.Controls.Add(this.textBox_description);
+            this.Controls.Add(this.textBox_other_service);
+            this.Controls.Add(this.Combobox_service);
             this.Controls.Add(this.button_unblocking);
             this.Controls.Add(this.button_blocked);
             this.Controls.Add(this.button_send_to_service);
@@ -165,6 +204,8 @@
             this.Name = "UserControl_menage_care_cars";
             this.Size = new System.Drawing.Size(706, 533);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_care_car_DB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_cars_on_service)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,8 +218,11 @@
         private System.Windows.Forms.Button button_send_to_service;
         private System.Windows.Forms.Button button_blocked;
         private System.Windows.Forms.Button button_unblocking;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox Combobox_service;
+        private System.Windows.Forms.TextBox textBox_other_service;
+        private System.Windows.Forms.TextBox textBox_description;
+        private System.Windows.Forms.DataGridView dataGridView_cars_on_service;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label1;
     }
 }

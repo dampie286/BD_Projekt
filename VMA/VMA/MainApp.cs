@@ -159,6 +159,7 @@ namespace VMA
             userControl_menage_care_cars1.BringToFront();
             userControl_menage_care_cars1.setUserID(log);
             userControl_menage_care_cars1.fillDataGridView();
+            userControl_menage_care_cars1.fillDataGridView2();
         }
 
         private void button_settings_Click(object sender, EventArgs e)

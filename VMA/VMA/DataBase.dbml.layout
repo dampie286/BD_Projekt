@@ -103,7 +103,7 @@
         <classShapeMoniker Id="f9d647c3-3c23-4019-9ef0-5420e1a4ea7e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.76044840494792); (3.22916666666667 : 7.76044840494792 : JumpStart); (3.39583333333333 : 7.76044840494792 : JumpEnd); (3.5 : 7.76044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 7.76044840494792); (3.5 : 7.76044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataBaseDataContext/VehicleSet/VehicleSet_CareSet" />
       <nodes>
         <classShapeMoniker Id="ba581ab1-ce0a-4c74-a1d4-049fe9c9b360" />
@@ -117,7 +117,7 @@
         <classShapeMoniker Id="6c4c8b96-f56c-4ba0-a190-419e19bcbe22" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.68827123076923); (3.22916666666667 : 6.68827123076923 : JumpStart); (3.39583333333333 : 6.68827123076923 : JumpEnd); (6.25 : 6.68827123076923)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.68827123076923); (6.25 : 6.68827123076923)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataBaseDataContext/VehicleSet/VehicleSet_RentSet" />
       <nodes>
         <classShapeMoniker Id="ba581ab1-ce0a-4c74-a1d4-049fe9c9b360" />
@@ -152,7 +152,7 @@
         <classShapeMoniker Id="16cff30a-5845-4650-9e52-591852fc8fca" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.91126164523237); (3.06607443490112 : 5.22733608013349 : JumpStart); (3.18392556509888 : 5.34518721033125 : JumpEnd); (3.3125 : 5.47376164523237); (3.3125 : 9.6875); (3.18392556509888 : 9.81607443490112 : JumpStart); (3.06607443490112 : 9.93392556509888 : JumpEnd); (2.75 : 10.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 4.91126164523237); (3.3125 : 5.47376164523237); (3.3125 : 9.6875); (3.18392556509888 : 9.81607443490112 : JumpStart); (3.06607443490112 : 9.93392556509888 : JumpEnd); (2.75 : 10.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataBaseDataContext/WorkerSet/WorkerSet_WorkerSet_Keeper" />
       <nodes>
         <classShapeMoniker Id="1d2f9b6f-e6e6-435c-b490-415e54328aad" />

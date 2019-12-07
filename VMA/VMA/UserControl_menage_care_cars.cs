@@ -15,10 +15,11 @@ namespace VMA
         DataBaseDataContext db = new DataBaseDataContext();
         private int user_id;
         int car_id;
+        int servise_id;
         public UserControl_menage_care_cars()
         {
             InitializeComponent();
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            Combobox_service.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public void setUserID(int id)
@@ -39,38 +40,67 @@ namespace VMA
                             REJESTRACJA = y.licence_plate
 
                         };
+            
             dataGridView_care_car_DB.DataSource = query;
 
             dataGridView_care_car_DB.Columns[0].Visible = false;
 
         }
 
-        
+        public void fillDataGridView2()    //Auta na serwisie
+        {
+            try
+            {
+                var query = from x in db.ServiceSets
+                            join y in db.Care_serviceSets on x.service_id equals y.Service_service_id
+                            join z in db.CareSets on y.Care_care_id equals z.care_id
+                            join q in db.VehicleSets on z.Vehicle_vehicle_id equals q.vehicle_id
+                            where z.Keeper_worker_id == user_id
+                            select new
+                            {
+                                AUTO = q.model,
+                                REJESTRACJA = q.licence_plate,
+                                PRZYCZYNA = x.name,
+                                OD = y.date_from
+                            };
+              
+
+                dataGridView_cars_on_service.DataSource = query;
+           
+
+            }
+            catch (Exception) {
+                MessageBox.Show("Nie masz aut na serwisie", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                
+            };
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "INNA")
+            if (Combobox_service.Text == "INNA")
             {
-                textBox1.Visible = true;
+                textBox_other_service.Visible = true;
             }
             else
             {
-                textBox1.Visible = false;
+                textBox_other_service.Visible = false;
             }
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            if (textBox1.Text == "Rodzaj serwisu")
+            if (textBox_other_service.Text == "Rodzaj serwisu")
             {
-                textBox1.Text = "";
+                textBox_other_service.Text = "";
             }
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (textBox_other_service.Text == "")
             {
-                textBox1.Text = "Rodzaj serwisu";
+                textBox_other_service.Text = "Rodzaj serwisu";
             }
         }
 
@@ -82,41 +112,64 @@ namespace VMA
                 car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
                 VehicleSet vechicle = db.VehicleSets.Where(x => x.vehicle_id == car_id).First();
 
-                //vechicle.available = "no"; //Auto nie dostępne
+                vechicle.available = "no"; //Auto nie dostępne
 
                 CareSet care_id = db.CareSets.Where(x => x.Vehicle_vehicle_id == car_id).First();
+                CompanySet company_id = db.CompanySets.Where(x => x.name == "AutoRIP").First();
 
-                //Care_serviceSet newservice = new Care_serviceSet()
-                //{
-                //    date_from = DateTime.Today,
-                //    price = ,
-                //    Care_care_id = care_id.care_id,
+                try
+                {
+                    ServiceSet service = new ServiceSet()
+                    {
 
-                    
-                //};
-                //WorkerSet worker = new WorkerSet()
-                //{
-                //    name = Convert.ToString(textBox_name.Text),
-                //    surname = Convert.ToString(textBox_surrname.Text),
-                //    position = Convert.ToString(comboBox_position.Text),
-                //    PESEL = Convert.ToString(textBox_id_worker.Text),
-
-                //    date_of_birth = Convert.ToDateTime(dateTimePicker_date_birth.Text),
+                        is_repair = false,
+                        name = Combobox_service.Text,
+                        description = textBox_description.Text
+                    };
 
 
-                //    password = Convert.ToString(textBox_tmp_pass.Text),
-                //    phone_nr = Convert.ToString(textBox_phone_number.Text)
-                //};
-                //db.WorkerSets.InsertOnSubmit(worker);
-                //db.SubmitChanges();
+                    db.ServiceSets.InsertOnSubmit(service);
+                    db.SubmitChanges();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Nie dodało się do seris", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
+                try
+                {
+                    ServiceSet service = db.ServiceSets.Where(x => x.name == Combobox_service.Text && x.description == textBox_description.Text).First();
+                    Care_serviceSet newservice = new Care_serviceSet()
+                    {
+                        date_from = DateTime.Today,
+                        Care_care_id = care_id.care_id,
+                        Service_service_id = service.service_id,
+                        price = 500,
+                        Company_company_id = company_id.company_id
+                        
+                    };
+
+                    db.Care_serviceSets.InsertOnSubmit(newservice);
+
+                    db.SubmitChanges();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Nie dodało się do bazy care_service", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                
             }
+
+         
             catch (Exception)
             {
                 MessageBox.Show("Zaznacz samochód", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+            
             //vechicle.available = "no";
            
         }
     }
-}
+
