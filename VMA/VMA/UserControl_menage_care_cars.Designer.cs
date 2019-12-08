@@ -51,12 +51,12 @@
             this.dataGridView_care_car_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_care_car_DB.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView_care_car_DB.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.dataGridView_care_car_DB.Location = new System.Drawing.Point(25, 103);
+            this.dataGridView_care_car_DB.Location = new System.Drawing.Point(13, 103);
             this.dataGridView_care_car_DB.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView_care_car_DB.Name = "dataGridView_care_car_DB";
             this.dataGridView_care_car_DB.RowTemplate.Height = 24;
             this.dataGridView_care_car_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_care_car_DB.Size = new System.Drawing.Size(254, 119);
+            this.dataGridView_care_car_DB.Size = new System.Drawing.Size(322, 119);
             this.dataGridView_care_car_DB.TabIndex = 21;
             // 
             // label_your_cars_care
@@ -158,9 +158,9 @@
             this.dataGridView_cars_on_service.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_cars_on_service.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_cars_on_service.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_cars_on_service.Location = new System.Drawing.Point(317, 103);
+            this.dataGridView_cars_on_service.Location = new System.Drawing.Point(338, 103);
             this.dataGridView_cars_on_service.Name = "dataGridView_cars_on_service";
-            this.dataGridView_cars_on_service.Size = new System.Drawing.Size(355, 119);
+            this.dataGridView_cars_on_service.Size = new System.Drawing.Size(334, 119);
             this.dataGridView_cars_on_service.TabIndex = 38;
             // 
             // dataGridView2
