@@ -289,11 +289,11 @@ namespace VMA
               x.surname=textBox_edit_surname.Text.ToString();
                x.position=comboBox_position.Text.ToString();
                x.phone_nr=textBox_edit_number.Text.ToString();
-              //  textBox_city_cod.Text.ToString();
-               // textBox_city.Text.ToString();
+                //  textBox_city_cod.Text.ToString();
+                // textBox_city.Text.ToString();
                 //textBox_street.Text.ToString();
-               // textBox1_number_home.Text.ToString();
-
+                // textBox1_number_home.Text.ToString();
+                x.city="miasto";
             }
            try
            {
