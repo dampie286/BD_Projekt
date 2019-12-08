@@ -72,7 +72,7 @@ namespace VMA
             userControl_veh_DB2.fillDataGridView();      //dodanie danych do tabeli
 
             userControl_veh_DB2.BringToFront();
-            
+            userControl_veh_DB2.auto_Complete_textBox();
         }
 
         private void button_logout_Click(object sender, EventArgs e)
