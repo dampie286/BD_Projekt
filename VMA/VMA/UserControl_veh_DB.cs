@@ -13,6 +13,14 @@ namespace VMA
 {
     public partial class UserControl_veh_DB : UserControl
     {
+        AutoCompleteStringCollection instcol = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection instcol1 = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection instcol2 = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection instcol3 = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection instcol4 = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection instcol5 = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection instcol6 = new AutoCompleteStringCollection();
+
         private DataTable veh_DB = new DataTable();
         public UserControl_veh_DB()
         {
@@ -25,7 +33,7 @@ namespace VMA
         public void fillDataGridView()
         {
             DataBaseDataContext db = new DataBaseDataContext();
-            var Selectquery = from x in db.VehicleSets  where x.available=="yes " &&x.available!="deleted"select new { MARKA=x.brand,MODEL=x.model,WERSJA=x.version,REJESTRACJA=x.licence_plate,SPALANIE=x.avg_consumption,PALIWO=x.fuel_type };
+            var Selectquery = from x in db.VehicleSets  where x.available!="deleted"select new { MARKA=x.brand,MODEL=x.model,WERSJA=x.version,REJESTRACJA=x.licence_plate,SPALANIE=x.avg_consumption,PALIWO=x.fuel_type };
 
             dataGridView_veh_DB.DataSource = Selectquery;
             
@@ -33,12 +41,25 @@ namespace VMA
            
          dataGridView_veh_DB.RowHeadersVisible = false;
             dataGridView_veh_DB.ReadOnly = true;        //nie moze edytować kolumn
-
-            
-        
-
         }
 
+        public void auto_Complete_textBox()     // Automatyczne podpowiedzi
+        {
+            using (DataBaseDataContext db = new DataBaseDataContext())
+            {
+                // Modele
+                var brands = db.VehicleSets.Where(y => y.available != "deleted").Select(x => x.brand).Distinct().ToArray();
+                instcol.AddRange(brands);
+
+                // Marki
+                var models = db.VehicleSets.Where(y => y.available != "deleted").Select(x => x.model).Distinct().ToArray();
+                instcol1.AddRange(models);
+
+                // Rejestracje
+                var licence_plate = db.VehicleSets.Where(y => y.available != "deleted").Select(x => x.licence_plate).Distinct().ToArray();
+                instcol2.AddRange(licence_plate);
+            }
+        }
         private void button_filter_Click(object sender, EventArgs e)
         {
             
@@ -170,6 +191,7 @@ namespace VMA
                 textBox_brand.Text = "Marka";
                 textBox_brand.ForeColor = Color.FromArgb(120, 120, 0);
             }
+           
         }
 
         private void textBox_brand_Enter(object sender, EventArgs e)
@@ -179,6 +201,7 @@ namespace VMA
                 textBox_brand.ForeColor = Color.FromArgb(255, 255, 0);
                 textBox_brand.Text = "";
             }
+            textBox_brand.AutoCompleteCustomSource = instcol;
         }
 
         private void textBox_model_Enter(object sender, EventArgs e)
@@ -188,6 +211,9 @@ namespace VMA
                 textBox_model.Text = "";
                 textBox_model.ForeColor = Color.FromArgb(255, 255, 0);
             }
+            
+                textBox_model.AutoCompleteCustomSource = instcol1;
+            
         }
 
         private void textBox_model_Leave(object sender, EventArgs e)
@@ -260,6 +286,7 @@ namespace VMA
                 textBox_license.Text = "";
                 textBox_license.ForeColor = Color.FromArgb(255, 255, 0);
             }
+            textBox_license.AutoCompleteCustomSource = instcol2;
         }
 
         private void textBox_license_Leave(object sender, EventArgs e)
