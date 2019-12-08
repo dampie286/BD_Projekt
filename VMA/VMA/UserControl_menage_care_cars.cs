@@ -15,7 +15,6 @@ namespace VMA
         DataBaseDataContext db = new DataBaseDataContext();
         private int user_id;
         int car_id;
-        int servise_id;
         public UserControl_menage_care_cars()
         {
             InitializeComponent();
@@ -28,8 +27,6 @@ namespace VMA
         }
         public void fillDataGridView()
         {
-           
-
             var query = from x in db.CareSets
                         join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
                         where x.Keeper_worker_id == user_id
@@ -37,8 +34,8 @@ namespace VMA
                         {
                             ID = y.vehicle_id,
                             AUTO = y.model,
-                            REJESTRACJA = y.licence_plate
-
+                            REJESTRACJA = y.licence_plate,
+                            DOSTĘPNOSC = y.available
                         };
             
             dataGridView_care_car_DB.DataSource = query;
@@ -58,16 +55,14 @@ namespace VMA
                             where z.Keeper_worker_id == user_id
                             select new
                             {
+                                Naprawiony = x.is_repair,
                                 AUTO = q.model,
                                 REJESTRACJA = q.licence_plate,
+                                OD = y.date_from,
                                 PRZYCZYNA = x.name,
-                                OD = y.date_from
+                                OPIS = x.description
                             };
-              
-
                 dataGridView_cars_on_service.DataSource = query;
-           
-
             }
             catch (Exception) {
                 MessageBox.Show("Nie masz aut na serwisie", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -116,18 +111,14 @@ namespace VMA
 
                 CareSet care_id = db.CareSets.Where(x => x.Vehicle_vehicle_id == car_id).First();
                 CompanySet company_id = db.CompanySets.Where(x => x.name == "AutoRIP").First();
-
                 try
                 {
                     ServiceSet service = new ServiceSet()
                     {
-
                         is_repair = false,
                         name = Combobox_service.Text,
                         description = textBox_description.Text
                     };
-
-
                     db.ServiceSets.InsertOnSubmit(service);
                     db.SubmitChanges();
                 }
@@ -135,7 +126,6 @@ namespace VMA
                 {
                     MessageBox.Show("Nie dodało się do seris", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
                 try
                 {
                     ServiceSet service = db.ServiceSets.Where(x => x.name == Combobox_service.Text && x.description == textBox_description.Text).First();
@@ -146,30 +136,21 @@ namespace VMA
                         Service_service_id = service.service_id,
                         price = 500,
                         Company_company_id = company_id.company_id
-                        
                     };
-
                     db.Care_serviceSets.InsertOnSubmit(newservice);
-
                     db.SubmitChanges();
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Nie dodało się do bazy care_service", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                
             }
-
-         
             catch (Exception)
             {
                 MessageBox.Show("Zaznacz samochód", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-            
             //vechicle.available = "no";
-           
         }
     }
 
