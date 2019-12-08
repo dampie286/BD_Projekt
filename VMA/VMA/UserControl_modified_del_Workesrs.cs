@@ -38,14 +38,18 @@ namespace VMA
             dataGridView_workers_DB.Columns[6].Visible = false;
             // dataGridView_workers_DB.Columns[7].Visible = false;
             dataGridView_workers_DB.Columns[8].Visible = false;
+            dataGridView_workers_DB.Columns[9].Visible = false;
+            dataGridView_workers_DB.Columns[10].Visible = false;
+            dataGridView_workers_DB.Columns[11].Visible = false;
+            dataGridView_workers_DB.Columns[12].Visible = false;
             //opcje kolumn w edycji
 
-          
 
 
-            
 
-          
+
+
+
 
         }
 
@@ -80,10 +84,10 @@ namespace VMA
             var surname = dataGridView_workers_DB.Rows[row].Cells[2].Value;
            var position = dataGridView_workers_DB.Rows[row].Cells[3].Value;
            var number = dataGridView_workers_DB.Rows[row].Cells[7].Value.ToString();
-            var code = "KOD";
-            var city = "Miasto";
-            var street = "ulica";
-            var home = "98/5";
+            var code = dataGridView_workers_DB.Rows[row].Cells[8].Value.ToString();
+            var city = dataGridView_workers_DB.Rows[row].Cells[9].Value.ToString();
+            var street = dataGridView_workers_DB.Rows[row].Cells[10].Value.ToString();
+            var home = dataGridView_workers_DB.Rows[row].Cells[11].Value.ToString();
 
 
 
@@ -100,7 +104,7 @@ namespace VMA
 
 
 
-        }//dodac gdy w bazie bedzie adres
+        }
 
 
 
@@ -211,7 +215,7 @@ namespace VMA
                 MessageBox.Show("Anulowano usunięcie pracownika", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-        }//zmodyfikować gdy usuniecie bedzie jako przeniesienie na stanowisko nie pracuje
+        }
 
 
         private void textBox_name_Enter_1(object sender, EventArgs e)
@@ -289,11 +293,11 @@ namespace VMA
               x.surname=textBox_edit_surname.Text.ToString();
                x.position=comboBox_position.Text.ToString();
                x.phone_nr=textBox_edit_number.Text.ToString();
-                //  textBox_city_cod.Text.ToString();
-                // textBox_city.Text.ToString();
-                //textBox_street.Text.ToString();
-                // textBox1_number_home.Text.ToString();
-                x.city="miasto";
+                x.city_code= textBox_city_cod.Text.ToString();
+                x.city=textBox_city.Text.ToString();
+                x.street=textBox_street.Text.ToString();
+                x.house=textBox1_number_home.Text.ToString();
+               
             }
            try
            {

@@ -33,7 +33,10 @@ namespace VMA
                         PESEL = Convert.ToString(textBox_id_worker.Text),
 
                        date_of_birth = Convert.ToDateTime(dateTimePicker_date_birth.Text),
-
+                       city= Convert.ToString(textBox_city.Text),
+                       city_code= Convert.ToString(textBox_code.Text),
+                        street=Convert.ToString(textBox_street.Text),
+                        house=Convert.ToString(textBox_house.Text),
 
                         password = Convert.ToString(textBox_tmp_pass.Text),
                         phone_nr = Convert.ToString(textBox_phone_number.Text)
@@ -76,5 +79,7 @@ namespace VMA
                 e.Handled = true;
             }
         }
+
+      
     }
 }

@@ -33,10 +33,7 @@ namespace VMA
 
 
 
-        private void textBox_new_passwor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -79,6 +76,48 @@ namespace VMA
                 MessageBox.Show("Hasło zostało zmienione", "Zmiana hasła", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             textBox_new_passwor.Clear();
             textBox_new_repeat_password.Clear();
+
+        }
+
+        private void button_check_adress_Click(object sender, EventArgs e)
+        {
+
+            DataBaseDataContext db = new DataBaseDataContext();
+            bool confirm = false;
+
+                var query = from x in db.WorkerSets where x.worker_id == id_worker select x;
+
+                foreach (WorkerSet x in query)
+                {
+                x.city = textBox_new_city.Text.ToString();
+                x.city_code = textBox_new_code.Text.ToString();
+                x.street = textBox_new_street.Text.ToString();
+                x.house = textBox_new_house.Text.ToString();
+
+                }
+
+                try
+                {
+                    db.SubmitChanges();
+                    confirm = true;
+                }
+                catch
+                {
+                    MessageBox.Show("Nie udało się zmienić danych ", "Zmiana danych", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    confirm = false;
+                }
+        
+            
+             
+            
+
+            if (confirm)
+                MessageBox.Show("Dane zostały zmienione", "Zmiana danych", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            
+          
+
+
+
 
         }
     }

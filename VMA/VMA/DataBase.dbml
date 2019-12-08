@@ -125,6 +125,10 @@
       <Column Name="date_of_birth" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="password" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="phone_nr" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="city" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="city_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="street" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="house" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="WorkerSet_RentSet" Member="RentSets" ThisKey="worker_id" OtherKey="Worker_worker_id" Type="RentSet" />
       <Association Name="WorkerSet_ReservationSet" Member="ReservationSets" ThisKey="worker_id" OtherKey="Worker_worker_id" Type="ReservationSet" />
       <Association Name="WorkerSet_WorkerSet_Keeper" Member="WorkerSet_Keeper" ThisKey="worker_id" OtherKey="worker_id" Type="WorkerSet_Keeper" Cardinality="One" />

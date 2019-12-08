@@ -44,6 +44,12 @@
             this.textBox_new_repeat_password = new System.Windows.Forms.TextBox();
             this.button_check_adress = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.textBox_new_code = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.textBox_new_house = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label_change_address
@@ -63,7 +69,7 @@
             this.label_street.AutoSize = true;
             this.label_street.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_street.ForeColor = System.Drawing.Color.LightGray;
-            this.label_street.Location = new System.Drawing.Point(328, 98);
+            this.label_street.Location = new System.Drawing.Point(521, 105);
             this.label_street.Name = "label_street";
             this.label_street.Size = new System.Drawing.Size(47, 20);
             this.label_street.TabIndex = 50;
@@ -74,7 +80,7 @@
             this.label_city.AutoSize = true;
             this.label_city.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_city.ForeColor = System.Drawing.Color.LightGray;
-            this.label_city.Location = new System.Drawing.Point(328, 170);
+            this.label_city.Location = new System.Drawing.Point(59, 104);
             this.label_city.Name = "label_city";
             this.label_city.Size = new System.Drawing.Size(59, 20);
             this.label_city.TabIndex = 51;
@@ -117,7 +123,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Yellow;
-            this.panel1.Location = new System.Drawing.Point(491, 127);
+            this.panel1.Location = new System.Drawing.Point(684, 134);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(120, 1);
@@ -129,7 +135,7 @@
             this.textBox_new_street.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_new_street.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_new_street.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_new_street.Location = new System.Drawing.Point(493, 100);
+            this.textBox_new_street.Location = new System.Drawing.Point(686, 107);
             this.textBox_new_street.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_new_street.MaximumSize = new System.Drawing.Size(120, 25);
             this.textBox_new_street.MinimumSize = new System.Drawing.Size(5, 18);
@@ -141,7 +147,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Yellow;
-            this.panel2.Location = new System.Drawing.Point(487, 198);
+            this.panel2.Location = new System.Drawing.Point(218, 132);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(120, 1);
@@ -153,7 +159,7 @@
             this.textBox_new_city.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_new_city.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_new_city.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_new_city.Location = new System.Drawing.Point(491, 171);
+            this.textBox_new_city.Location = new System.Drawing.Point(222, 105);
             this.textBox_new_city.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_new_city.MaximumSize = new System.Drawing.Size(120, 25);
             this.textBox_new_city.MinimumSize = new System.Drawing.Size(5, 18);
@@ -186,7 +192,7 @@
             this.textBox_new_passwor.Size = new System.Drawing.Size(120, 19);
             this.textBox_new_passwor.TabIndex = 59;
             this.textBox_new_passwor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_new_passwor.TextChanged += new System.EventHandler(this.textBox_new_passwor_TextChanged);
+           
             // 
             // panel4
             // 
@@ -227,6 +233,7 @@
             this.button_check_adress.TabIndex = 63;
             this.button_check_adress.Text = "Zatwierdź zmiany";
             this.button_check_adress.UseVisualStyleBackColor = false;
+            this.button_check_adress.Click += new System.EventHandler(this.button_check_adress_Click);
             // 
             // button2
             // 
@@ -244,15 +251,91 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Yellow;
+            this.panel5.Location = new System.Drawing.Point(218, 193);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(120, 1);
+            this.panel5.TabIndex = 64;
+            // 
+            // textBox_new_code
+            // 
+            this.textBox_new_code.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.textBox_new_code.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_new_code.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_new_code.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_new_code.Location = new System.Drawing.Point(222, 166);
+            this.textBox_new_code.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_new_code.MaximumSize = new System.Drawing.Size(120, 25);
+            this.textBox_new_code.MinimumSize = new System.Drawing.Size(5, 18);
+            this.textBox_new_code.Name = "textBox_new_code";
+            this.textBox_new_code.Size = new System.Drawing.Size(120, 19);
+            this.textBox_new_code.TabIndex = 63;
+            this.textBox_new_code.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Yellow;
+            this.panel6.Location = new System.Drawing.Point(684, 195);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(120, 1);
+            this.panel6.TabIndex = 62;
+            // 
+            // textBox_new_house
+            // 
+            this.textBox_new_house.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.textBox_new_house.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_new_house.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_new_house.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_new_house.Location = new System.Drawing.Point(686, 168);
+            this.textBox_new_house.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_new_house.MaximumSize = new System.Drawing.Size(120, 25);
+            this.textBox_new_house.MinimumSize = new System.Drawing.Size(5, 18);
+            this.textBox_new_house.Name = "textBox_new_house";
+            this.textBox_new_house.Size = new System.Drawing.Size(120, 19);
+            this.textBox_new_house.TabIndex = 61;
+            this.textBox_new_house.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(59, 165);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 20);
+            this.label1.TabIndex = 60;
+            this.label1.Text = "Kod miasta";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.LightGray;
+            this.label2.Location = new System.Drawing.Point(521, 166);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 20);
+            this.label2.TabIndex = 59;
+            this.label2.Text = "Numer domu";
+            // 
             // UserControl_settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBox_new_code);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.button_check_adress);
+            this.Controls.Add(this.textBox_new_house);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_new_repeat_password);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.textBox_new_passwor);
             this.Controls.Add(this.panel2);
@@ -291,5 +374,11 @@
         private System.Windows.Forms.TextBox textBox_new_repeat_password;
         private System.Windows.Forms.Button button_check_adress;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox textBox_new_code;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox textBox_new_house;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
