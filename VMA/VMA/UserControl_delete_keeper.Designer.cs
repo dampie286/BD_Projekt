@@ -136,6 +136,8 @@
             // 
             // textBox_surrname
             // 
+            this.textBox_surrname.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.textBox_surrname.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox_surrname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_surrname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_surrname.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -154,6 +156,8 @@
             // 
             // textBox_name
             // 
+            this.textBox_name.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.textBox_name.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_name.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));

@@ -16,6 +16,7 @@ namespace VMA
         public event EventHandler Button_menANDDelKeeper_Click;
         public UserControl_manage_keeper()
         {
+
             InitializeComponent();
         }
 
@@ -32,6 +33,7 @@ namespace VMA
             if (Button_menANDDelKeeper_Click != null)
             {
                 Button_menANDDelKeeper_Click(this, e);
+                
             }
         }
     }

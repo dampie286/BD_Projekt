@@ -16,10 +16,7 @@ namespace VMA
         AutoCompleteStringCollection instcol = new AutoCompleteStringCollection();
         AutoCompleteStringCollection instcol1 = new AutoCompleteStringCollection();
         AutoCompleteStringCollection instcol2 = new AutoCompleteStringCollection();
-        AutoCompleteStringCollection instcol3 = new AutoCompleteStringCollection();
-        AutoCompleteStringCollection instcol4 = new AutoCompleteStringCollection();
-        AutoCompleteStringCollection instcol5 = new AutoCompleteStringCollection();
-        AutoCompleteStringCollection instcol6 = new AutoCompleteStringCollection();
+       
 
         private DataTable veh_DB = new DataTable();
         public UserControl_veh_DB()
@@ -76,7 +73,7 @@ namespace VMA
             {
 
 
-                var query = from x in db.VehicleSets where x.available == "yes " &&x.available!="deleted" select x;
+                var query = from x in db.VehicleSets where x.available!="deleted" select x;
 
                 if (filtr_brand == "Marka" || filtr_brand == "")
                 {

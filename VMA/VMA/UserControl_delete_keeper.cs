@@ -13,31 +13,38 @@ namespace VMA
     public partial class UserControl_delete_keeper : UserControl
     {
         DataBaseDataContext db = new DataBaseDataContext();
+        AutoCompleteStringCollection instcol = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection instcol1 = new AutoCompleteStringCollection();
         public UserControl_delete_keeper()
         {
+            autoComplite_textBox();
             InitializeComponent();
         }
 
+        public void autoComplite_textBox() //Autopodpowiedź
+        {
+            // Imię
+            var names = db.CareSets.Join(db.WorkerSets, x => x.Keeper_worker_id, y => y.worker_id, (x,y) =>  y.name).Distinct().ToArray();
+            instcol.AddRange(names);
+
+            //Nazwisko
+            var surnames = db.CareSets.Join(db.WorkerSets, x => x.Keeper_worker_id, y => y.worker_id, (x, y) => y.surname).Distinct().ToArray();
+            instcol1.AddRange(surnames);
+
+            // Stanowisko
+        }
 
 
         public void fillDataGridView2()
         {
-
-
-
-
             var query = from x in db.CareSets where x.date_to == null select new { ID = x.care_id, IMIE = x.WorkerSet_Keeper.WorkerSet.name, NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname, OPIEKA = x.VehicleSet.model, REJESTRACJA = x.VehicleSet.licence_plate };
             dataGridView_keepers_DB.DataSource = query;
             dataGridView_keepers_DB.Columns[0].Visible = false;
-
         }
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-
-
-
-            DataBaseDataContext db = new DataBaseDataContext();
+            
             bool confirm = false;
 
             int row = dataGridView_keepers_DB.CurrentCell.RowIndex;
@@ -68,14 +75,8 @@ namespace VMA
             }
 
             fillDataGridView2();
-
-
-
         }
-
-
-
-
+        
 
         private void textBox_name_Enter(object sender, EventArgs e)
         {
@@ -83,6 +84,7 @@ namespace VMA
             {
                 textBox_name.Text = "";
             }
+            textBox_name.AutoCompleteCustomSource = instcol;
         }
 
         private void textBox_name_Leave(object sender, EventArgs e)
@@ -99,6 +101,7 @@ namespace VMA
             {
                 textBox_surrname.Text = "";
             }
+            textBox_surrname.AutoCompleteCustomSource = instcol1;
         }
 
         private void textBox_surrname_Leave(object sender, EventArgs e)
@@ -127,8 +130,6 @@ namespace VMA
 
         private void button_filter_Click(object sender, EventArgs e)
         {
-
-
             DataBaseDataContext db = new DataBaseDataContext();
             var query = from x in db.CareSets where x.date_to == null select new { ID = x.care_id, IMIE = x.WorkerSet_Keeper.WorkerSet.name, NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname, OPIEKA = x.VehicleSet.model, REJESTRACJA = x.VehicleSet.licence_plate, STANOWISKO = x.WorkerSet_Keeper.WorkerSet.position };
             string filtr_name = textBox_name.Text;

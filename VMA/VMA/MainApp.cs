@@ -17,7 +17,7 @@ namespace VMA
         public DataTable tmp2;          //przykładowe zmienne do rezerwacji
         private bool close = false;     //sprawdzamy czy wylogowywaliśmy się
         private string name, surrname;
-        public int log;//id zalogowanego
+        public int log;                 //id zalogowanego
        
 
 
@@ -28,6 +28,7 @@ namespace VMA
             windLog = login;        //przenoszenie adresu do zmiennej
             log = id_log;
             userControl_Welcome2.BringToFront();
+            
             label_who_online.Text = "Zalogowany jako " + nameWork + " " + surrnameWork;
             if( if_keeper)
             {
@@ -44,8 +45,6 @@ namespace VMA
                 button_manag_care_car.Hide();
                 this.Controls.Remove(userControl_menage_care_cars1);
             }
-
-
         }
 
         private void MainApp_Load(object sender, EventArgs e)
@@ -135,10 +134,8 @@ namespace VMA
         //zdarzenie, które robi, gdy klikniemy na bazie danych
         private void userControl_rent_Button_rentDB_Click(object sender, EventArgs e)
         {
-
             userControl_rent_with_DB1.BringToFront();
             userControl_rent_with_DB1.fillDataGridView(tmp);
-               
         }
 
         private void userControl_rent_Button_rentResev_Click(object sender, EventArgs e)    //zdarzenie kiedy naciśnie się przycisk wypożyczenie z baz danyuch
@@ -146,7 +143,6 @@ namespace VMA
             userControl_my_reservation1.BringToFront();
             userControl_my_reservation1.setID(log);
             userControl_my_reservation1.fillDataGridView(tmp2);
-            
         }
 
         private void button_statistic_Click(object sender, EventArgs e)
@@ -160,6 +156,7 @@ namespace VMA
             userControl_menage_care_cars1.setUserID(log);
             userControl_menage_care_cars1.fillDataGridView();
             userControl_menage_care_cars1.fillDataGridView2();
+            
         }
 
         private void button_settings_Click(object sender, EventArgs e)
