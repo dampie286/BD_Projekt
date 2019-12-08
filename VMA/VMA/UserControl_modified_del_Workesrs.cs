@@ -72,35 +72,40 @@ namespace VMA
 
         private void button_modified_Click(object sender, EventArgs e)
         {
-            panel_modified.Show();
-
-
-
             
-           int row = dataGridView_workers_DB.CurrentCell.RowIndex;
-
-            id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value; ;
-           
-            var surname = dataGridView_workers_DB.Rows[row].Cells[2].Value;
-           var position = dataGridView_workers_DB.Rows[row].Cells[3].Value;
-           var number = dataGridView_workers_DB.Rows[row].Cells[7].Value.ToString();
-            var code = dataGridView_workers_DB.Rows[row].Cells[8].Value.ToString();
-            var city = dataGridView_workers_DB.Rows[row].Cells[9].Value.ToString();
-            var street = dataGridView_workers_DB.Rows[row].Cells[10].Value.ToString();
-            var home = dataGridView_workers_DB.Rows[row].Cells[11].Value.ToString();
 
 
+            try
+            {
+
+                int row = dataGridView_workers_DB.CurrentCell.RowIndex;
+
+                id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value; ;
+
+                var surname = dataGridView_workers_DB.Rows[row].Cells[2].Value;
+                var position = dataGridView_workers_DB.Rows[row].Cells[3].Value;
+                var number = dataGridView_workers_DB.Rows[row].Cells[7].Value.ToString();
+                var code = dataGridView_workers_DB.Rows[row].Cells[8].Value.ToString();
+                var city = dataGridView_workers_DB.Rows[row].Cells[9].Value.ToString();
+                var street = dataGridView_workers_DB.Rows[row].Cells[10].Value.ToString();
+                var home = dataGridView_workers_DB.Rows[row].Cells[11].Value.ToString();
 
 
-            label_name_with_choice.Text = dataGridView_workers_DB.Rows[row].Cells[1].Value.ToString();
-            textBox_edit_surname.Text = surname.ToString();
-           comboBox_position.Text = position.ToString();
-           textBox_edit_number.Text = number.ToString();
-            textBox_city_cod.Text = code;
-            textBox_city.Text = city;
-            textBox_street.Text = street;
-            textBox1_number_home.Text = home;
 
+
+                label_name_with_choice.Text = dataGridView_workers_DB.Rows[row].Cells[1].Value.ToString();
+                textBox_edit_surname.Text = surname.ToString();
+                comboBox_position.Text = position.ToString();
+                textBox_edit_number.Text = number.ToString();
+                textBox_city_cod.Text = code;
+                textBox_city.Text = city;
+                textBox_street.Text = street;
+                textBox1_number_home.Text = home;
+                panel_modified.Show();
+            }
+            catch {
+                MessageBox.Show("Nie wybrano prcownika", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
 
