@@ -15,6 +15,7 @@ namespace VMA
         DataBaseDataContext db = new DataBaseDataContext();
         AutoCompleteStringCollection instcol = new AutoCompleteStringCollection();
         AutoCompleteStringCollection instcol1 = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection instcol2 = new AutoCompleteStringCollection();
         public UserControl_delete_keeper()
         {
             autoComplite_textBox();
@@ -31,7 +32,9 @@ namespace VMA
             var surnames = db.CareSets.Join(db.WorkerSets, x => x.Keeper_worker_id, y => y.worker_id, (x, y) => y.surname).Distinct().ToArray();
             instcol1.AddRange(surnames);
 
-            // Stanowisko
+            // Rejestracja
+            var plate = db.CareSets.Join(db.VehicleSets, x => x.Vehicle_vehicle_id, y => y.vehicle_id, (x, y) => y.licence_plate).Distinct().ToArray();
+            instcol2.AddRange(plate);
         }
 
 
@@ -114,17 +117,18 @@ namespace VMA
 
         private void textBox_position_Enter(object sender, EventArgs e)
         {
-            if (textBox_position.Text.Equals(@"Stanowisko"))
+            if (textBox_licence_plate.Text.Equals(@"Rejestracja"))
             {
-                textBox_position.Text = "";
+                textBox_licence_plate.Text = "";
             }
+            textBox_licence_plate.AutoCompleteCustomSource = instcol2;
         }
 
         private void textBox_position_Leave(object sender, EventArgs e)
         {
-            if (textBox_position.Text.Equals(""))
+            if (textBox_licence_plate.Text.Equals(""))
             {
-                textBox_position.Text = "Stanowisko";
+                textBox_licence_plate.Text = "Rejestracja";
             }
         }
 
@@ -134,7 +138,7 @@ namespace VMA
             var query = from x in db.CareSets where x.date_to == null select new { ID = x.care_id, IMIE = x.WorkerSet_Keeper.WorkerSet.name, NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname, OPIEKA = x.VehicleSet.model, REJESTRACJA = x.VehicleSet.licence_plate, STANOWISKO = x.WorkerSet_Keeper.WorkerSet.position };
             string filtr_name = textBox_name.Text;
             string filtr_surname = textBox_surrname.Text;
-            string filtr_position = textBox_position.Text;
+            string filtr_position = textBox_licence_plate.Text;
             try
             {
                 if (filtr_name == "Imię" || filtr_name == "")
@@ -154,22 +158,19 @@ namespace VMA
                     query = from x in query where x.NAZWISKO == filtr_surname select x;
 
                 }
-                if (filtr_position == "Stanowisko" || filtr_position == "")
+                if (filtr_position == "Rejestracja" || filtr_position == "")
                 {
 
                 }
                 else
                 {
-                    query = from x in query where x.STANOWISKO == filtr_position select x;
+                    query = from x in query where x.REJESTRACJA == filtr_position select x;
                 }
 
                 var query1 = from x in query select x;
                 dataGridView_keepers_DB.DataSource = query;
                 dataGridView_keepers_DB.Columns[0].Visible = false;
                 dataGridView_keepers_DB.Columns[5].Visible = false;
-
-
-
             }
             catch { }
         }

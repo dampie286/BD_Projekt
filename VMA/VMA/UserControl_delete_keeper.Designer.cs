@@ -34,7 +34,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_filter = new System.Windows.Forms.Button();
-            this.textBox_position = new System.Windows.Forms.TextBox();
+            this.textBox_licence_plate = new System.Windows.Forms.TextBox();
             this.textBox_surrname = new System.Windows.Forms.TextBox();
             this.textBox_name = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_keepers_DB)).BeginInit();
@@ -116,23 +116,25 @@
             this.button_filter.UseVisualStyleBackColor = false;
             this.button_filter.Click += new System.EventHandler(this.button_filter_Click);
             // 
-            // textBox_position
+            // textBox_licence_plate
             // 
-            this.textBox_position.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBox_position.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_position.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_position.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_position.Location = new System.Drawing.Point(328, 22);
-            this.textBox_position.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_position.MaximumSize = new System.Drawing.Size(120, 25);
-            this.textBox_position.MinimumSize = new System.Drawing.Size(5, 15);
-            this.textBox_position.Name = "textBox_position";
-            this.textBox_position.Size = new System.Drawing.Size(120, 19);
-            this.textBox_position.TabIndex = 79;
-            this.textBox_position.Text = "Stanowisko";
-            this.textBox_position.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_position.Enter += new System.EventHandler(this.textBox_position_Enter);
-            this.textBox_position.Leave += new System.EventHandler(this.textBox_position_Leave);
+            this.textBox_licence_plate.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBox_licence_plate.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBox_licence_plate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.textBox_licence_plate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_licence_plate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_licence_plate.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_licence_plate.Location = new System.Drawing.Point(328, 22);
+            this.textBox_licence_plate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_licence_plate.MaximumSize = new System.Drawing.Size(120, 25);
+            this.textBox_licence_plate.MinimumSize = new System.Drawing.Size(5, 15);
+            this.textBox_licence_plate.Name = "textBox_licence_plate";
+            this.textBox_licence_plate.Size = new System.Drawing.Size(120, 19);
+            this.textBox_licence_plate.TabIndex = 79;
+            this.textBox_licence_plate.Text = "Rejestracja";
+            this.textBox_licence_plate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_licence_plate.Enter += new System.EventHandler(this.textBox_position_Enter);
+            this.textBox_licence_plate.Leave += new System.EventHandler(this.textBox_position_Leave);
             // 
             // textBox_surrname
             // 
@@ -185,7 +187,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button_filter);
-            this.Controls.Add(this.textBox_position);
+            this.Controls.Add(this.textBox_licence_plate);
             this.Controls.Add(this.textBox_surrname);
             this.Controls.Add(this.textBox_name);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -205,7 +207,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button_filter;
-        private System.Windows.Forms.TextBox textBox_position;
+        private System.Windows.Forms.TextBox textBox_licence_plate;
         private System.Windows.Forms.TextBox textBox_surrname;
         private System.Windows.Forms.TextBox textBox_name;
     }

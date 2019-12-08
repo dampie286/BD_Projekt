@@ -22,8 +22,6 @@ namespace VMA
         public UserControl_veh_DB()
         {
             InitializeComponent();
-
-           
         }
 
 
@@ -34,9 +32,7 @@ namespace VMA
 
             dataGridView_veh_DB.DataSource = Selectquery;
             
-  
-           
-         dataGridView_veh_DB.RowHeadersVisible = false;
+            dataGridView_veh_DB.RowHeadersVisible = false;
             dataGridView_veh_DB.ReadOnly = true;        //nie moze edytować kolumn
         }
 
