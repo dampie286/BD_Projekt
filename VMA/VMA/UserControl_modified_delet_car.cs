@@ -231,7 +231,7 @@ namespace VMA
         {
             try
             {
-                panel_modified.Show();
+               
 
                 int row = dataGridView_veh_DB.CurrentCell.RowIndex;
 
@@ -250,7 +250,7 @@ namespace VMA
 
                 textBox_edit_lic.Text = dataGridView_veh_DB.Rows[row].Cells[5].Value.ToString();
                 comboBox_type_of_fuel.Text = dataGridView_veh_DB.Rows[row].Cells[7].Value.ToString();
-
+                panel_modified.Show();
             }
             catch {
 
