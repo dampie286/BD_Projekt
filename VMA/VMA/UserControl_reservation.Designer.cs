@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button_filter = new System.Windows.Forms.Button();
             this.textBox_license = new System.Windows.Forms.TextBox();
             this.textBox_mileage = new System.Windows.Forms.TextBox();
@@ -72,6 +72,7 @@
             this.button_filter.TabIndex = 13;
             this.button_filter.Text = "Filtruj";
             this.button_filter.UseVisualStyleBackColor = false;
+            this.button_filter.Click += new System.EventHandler(this.button_filter_Click);
             // 
             // textBox_license
             // 
@@ -79,7 +80,7 @@
             this.textBox_license.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_license.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_license.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            this.textBox_license.Location = new System.Drawing.Point(657, 23);
+            this.textBox_license.Location = new System.Drawing.Point(278, 22);
             this.textBox_license.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_license.MaximumSize = new System.Drawing.Size(133, 25);
             this.textBox_license.MinimumSize = new System.Drawing.Size(5, 15);
@@ -133,7 +134,7 @@
             this.textBox_equipment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_equipment.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_equipment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            this.textBox_equipment.Location = new System.Drawing.Point(277, 23);
+            this.textBox_equipment.Location = new System.Drawing.Point(657, 23);
             this.textBox_equipment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_equipment.MaximumSize = new System.Drawing.Size(133, 25);
             this.textBox_equipment.MinimumSize = new System.Drawing.Size(5, 15);
@@ -242,14 +243,14 @@
             this.dataGridView_veh_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_veh_DB.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_veh_DB.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_veh_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_veh_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_veh_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_veh_DB.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView_veh_DB.EnableHeadersVisualStyles = false;
@@ -345,6 +346,7 @@
             this.dateTimePicker_from_date_reserv.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimePicker_from_date_reserv.Location = new System.Drawing.Point(197, 71);
             this.dateTimePicker_from_date_reserv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker_from_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
             this.dateTimePicker_from_date_reserv.Name = "dateTimePicker_from_date_reserv";
             this.dateTimePicker_from_date_reserv.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker_from_date_reserv.TabIndex = 26;
@@ -384,6 +386,7 @@
             this.dateTimePicker_to_date_reserv.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimePicker_to_date_reserv.Location = new System.Drawing.Point(197, 123);
             this.dateTimePicker_to_date_reserv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker_to_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
             this.dateTimePicker_to_date_reserv.Name = "dateTimePicker_to_date_reserv";
             this.dateTimePicker_to_date_reserv.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker_to_date_reserv.TabIndex = 29;

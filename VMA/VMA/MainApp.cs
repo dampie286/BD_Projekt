@@ -129,6 +129,7 @@ namespace VMA
         private void button_rent_Click(object sender, EventArgs e)
         {
             userControl_rent1.BringToFront();
+            
         }
 
         //zdarzenie, które robi, gdy klikniemy na bazie danych
@@ -136,6 +137,7 @@ namespace VMA
         {
             userControl_rent_with_DB1.BringToFront();
             userControl_rent_with_DB1.fillDataGridView(tmp);
+            userControl_rent_with_DB1.user_ID_Set(log);
         }
 
         private void userControl_rent_Button_rentResev_Click(object sender, EventArgs e)    //zdarzenie kiedy naciśnie się przycisk wypożyczenie z baz danyuch

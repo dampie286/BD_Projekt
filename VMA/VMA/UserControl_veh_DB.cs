@@ -27,7 +27,17 @@ namespace VMA
         public void fillDataGridView()
         {
             
-            var Selectquery = from x in db.VehicleSets  where x.available!="deleted"select new { MARKA=x.brand,MODEL=x.model,WERSJA=x.version,REJESTRACJA=x.licence_plate,SPALANIE=x.avg_consumption,PALIWO=x.fuel_type };
+            var Selectquery = from x in db.VehicleSets
+                              where x.available!="deleted"
+                              select new
+                              {
+                                  MARKA =x.brand,
+                                  MODEL =x.model,
+                                  WERSJA =x.version,
+                                  REJESTRACJA =x.licence_plate,
+                                  SPALANIE =x.avg_consumption,
+                                  PALIWO =x.fuel_type
+                              };
 
             dataGridView_veh_DB.DataSource = Selectquery;
             

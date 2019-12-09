@@ -18,7 +18,7 @@ namespace VMA
         private DateTime time_from;
         private DateTime time_to;
         private int car_id;
-        private bool confirm = false;
+        private bool confirm = false;   // czy użytkownik sprawdził dostępne auta
 
         public UserControl_reservation()
         {
@@ -34,13 +34,20 @@ namespace VMA
             var Selectquery = from x in db.VehicleSets
                               join y in db.ReservationSets on x.vehicle_id equals y.Vehicle_vehicle_id
                               join z in db.WorkerSets on y.Worker_worker_id equals z.worker_id
-                              select new { ID = x.vehicle_id, REJESTRACJA = x.licence_plate, MARKA = x.brand, MODEL = x.model,OD = y.date_from,
-                                  DO = y.date_to, REZERWUJACY = z.surname, CEL = y.purpose};
+                              select new
+                              {
+                                  ID = x.vehicle_id,
+                                  REJESTRACJA = x.licence_plate,
+                                  MARKA = x.brand,
+                                  MODEL = x.model,
+                                  OD = y.date_from,
+                                  DO = y.date_to,
+                                  REZERWUJACY = z.surname,
+                                  CEL = y.purpose
+                              };
             
             dataGridView_veh_DB.DataSource = Selectquery;
-
-
-
+            
             //dataGridView_veh_DB.Columns[0].Visible = false;
             dataGridView_veh_DB.RowHeadersVisible = false;
             dataGridView_veh_DB.ReadOnly = true;        //nie moze edytować kolumn
@@ -51,20 +58,18 @@ namespace VMA
             dataGridView_veh_DB.Columns[4].Width = 90;
             dataGridView_veh_DB.Columns[5].Width = 90;
             //dataGridView_veh_DB.Columns[6].Width = 90;
-
         }
 
         private void dateTimePicker_from_date_reserv_ValueChanged(object sender, EventArgs e)
         {
-
             dateTimePicker_to_date_reserv.MinDate = dateTimePicker_from_date_reserv.Value;
         }
 
         private void UserControl_reservation_Load(object sender, EventArgs e)
         {
             dateTimePicker_from_date_reserv.MinDate = DateTime.Today;
-
         }
+
         public void setWorkerID(int worker_idB)
         {
            id_user = worker_idB;
@@ -93,12 +98,10 @@ namespace VMA
                             };
                             db.ReservationSets.InsertOnSubmit(newReservation);
                             db.SubmitChanges();
-
                         }
                         catch (Exception)
                         {
                             MessageBox.Show("Nie udało się dokonać rezerwacji pojazdu", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                         }
                     }
                     else
@@ -133,18 +136,47 @@ namespace VMA
             }
             else
             {
-                    licence_plate = textBox_reser_license.Text;
-                    var Selectquery = from x in db.VehicleSets
-                                      join y in db.ReservationSets on x.vehicle_id equals y.Vehicle_vehicle_id
-                                      join z in db.WorkerSets on y.Worker_worker_id equals z.worker_id
-                                      where x.licence_plate == licence_plate
-                                      select new { REJESTRACJA = x.licence_plate, MARKA = x.brand, MODEL = x.model,
-                                          OD = y.date_from, DO = y.date_to, REZERWUJACY = z.surname, CEL = y.purpose };
+                licence_plate = textBox_reser_license.Text;
+                var Selectquery = from x in db.VehicleSets
+                                  join y in db.ReservationSets on x.vehicle_id equals y.Vehicle_vehicle_id
+                                  join z in db.WorkerSets on y.Worker_worker_id equals z.worker_id
+                                  where x.licence_plate == licence_plate
+                                  select new
+                                  {
+                                      ID = x.vehicle_id,
+                                      REJESTRACJA = x.licence_plate,
+                                      MARKA = x.brand,
+                                      MODEL = x.model,
+                                      OD = y.date_from,
+                                      DO = y.date_to,
+                                      REZERWUJACY = z.surname,
+                                      CEL = y.purpose
+                                  };
 
-                    
                     dataGridView_veh_DB.DataSource = Selectquery;
-                    
             }
+        }
+
+        private void button_check_available_cars_Click(object sender, EventArgs e)
+        {
+            var not_Available_Cars = db.ReservationSets
+                .Where(x => (x.date_from < time_from && x.date_to > time_from)
+                       || (x.date_to > time_to && x.date_from < time_to)
+                       || (x.date_from > time_from && x.date_to < time_to))
+                           .Select(x => x.Vehicle_vehicle_id);
+
+            var not_Available_Rented_Cars = db.RentSets
+                .Where(x => (x.date_from < time_from && x.date_to > time_from))
+                            .Select(x => x.Vehicle_vehicle_id);
+
+            var available_Cars = db.VehicleSets
+                .Where(x => !not_Available_Cars.Contains(x.vehicle_id) 
+                       && x.available == "yes" 
+                       && !not_Available_Rented_Cars.Contains(x.vehicle_id));
+
+            dataGridView_veh_DB.DataSource = available_Cars;
+            dataGridView_veh_DB.Columns[0].Visible = false; 
+            confirm = true;
         }
 
         private void textBox_reserv_purpose_Leave(object sender, EventArgs e)
@@ -188,7 +220,6 @@ namespace VMA
             {
                 textBox_brand.Text = "Marka";
                 textBox_brand.ForeColor = Color.FromArgb(120, 120, 0);
-
             }
         }
 
@@ -263,7 +294,6 @@ namespace VMA
             {
                 textBox_license.Text = "Rejestracja";
                 textBox_license.ForeColor = Color.FromArgb(120, 120, 0);
-
             }
         }
 
@@ -287,19 +317,8 @@ namespace VMA
             }
         }
 
-        private void button_check_available_cars_Click(object sender, EventArgs e)
+        private void button_filter_Click(object sender, EventArgs e)
         {
-            
-            var not_Available_Cars = db.ReservationSets.Where(x => (x.date_from < time_from && x.date_to > time_from) 
-                    || (x.date_to > time_to && x.date_from < time_to) || (x.date_from > time_from && x.date_to < time_to)).Select(x=> x.Vehicle_vehicle_id);
-            
-
-            var available_Cars = db.VehicleSets.Where(x => !not_Available_Cars.Contains(x.vehicle_id) && x.available != "deleted");
-
-            dataGridView_veh_DB.DataSource = available_Cars;
-
-
-            confirm = true;
            
         }
     }
