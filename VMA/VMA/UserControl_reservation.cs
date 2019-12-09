@@ -17,7 +17,8 @@ namespace VMA
         DataBaseDataContext db = new DataBaseDataContext();
         private DateTime time_from;
         private DateTime time_to;
-         
+        private int car_id;
+        private bool confirm = false;
 
         public UserControl_reservation()
         {
@@ -33,17 +34,17 @@ namespace VMA
             var Selectquery = from x in db.VehicleSets
                               join y in db.ReservationSets on x.vehicle_id equals y.Vehicle_vehicle_id
                               join z in db.WorkerSets on y.Worker_worker_id equals z.worker_id
-                              select new { REJESTRACJA = x.licence_plate, MARKA = x.brand, MODEL = x.model,OD = y.date_from,
+                              select new { ID = x.vehicle_id, REJESTRACJA = x.licence_plate, MARKA = x.brand, MODEL = x.model,OD = y.date_from,
                                   DO = y.date_to, REZERWUJACY = z.surname, CEL = y.purpose};
-
+            
             dataGridView_veh_DB.DataSource = Selectquery;
 
-            
+
 
             //dataGridView_veh_DB.Columns[0].Visible = false;
             dataGridView_veh_DB.RowHeadersVisible = false;
             dataGridView_veh_DB.ReadOnly = true;        //nie moze edytować kolumn
-            
+            dataGridView_veh_DB.Columns[0].Visible = false;  // id pojazdu
             dataGridView_veh_DB.Columns[1].Width = 60;
             dataGridView_veh_DB.Columns[2].Width = 60;
             dataGridView_veh_DB.Columns[3].Width = 60;
@@ -71,72 +72,49 @@ namespace VMA
 
         private void button_reserv_Click(object sender, EventArgs e)
         {
-            try
+            if (confirm)
             {
-                var vechicle_id = db.VehicleSets.Where(i => i.licence_plate == Convert.ToString(textBox_reser_license.Text)).Single();
-
-                var worker_id = db.WorkerSets.Where(j => j.worker_id == id_user).Single();
-
-                var Selectquery = from x in db.VehicleSets
-                                  join y in db.ReservationSets on x.vehicle_id equals y.Vehicle_vehicle_id
-                                  join z in db.WorkerSets on y.Worker_worker_id equals z.worker_id
-                                  select new
-                                  {
-                                      REJESTRACJA = x.licence_plate,
-                                      MARKA = x.brand,
-                                      MODEL = x.model,
-                                      OD = y.date_from,
-                                      DO = y.date_to,
-                                      REZERWUJACY = z.surname,
-                                      CEL = y.purpose
-                                  };
-
-                var check_date = from x in Selectquery
-                                 where x.REJESTRACJA == licence_plate
-                                 where (x.OD <= time_from && time_from <= x.DO) || (x.OD <= time_to && time_to <= x.DO)
-                                 select new
-                                 {
-                                     REJESTRACJA = x.REJESTRACJA,
-                                     MARKA = x.MARKA,
-                                     MODEL = x.MODEL,
-                                     OD = x.OD,
-                                     DO = x.DO,
-                                     REZERWUJACY = x.REZERWUJACY,
-                                     CEL = x.CEL
-                                 };
-                if (!check_date.Any())
+                try
                 {
-                    ReservationSet reserv = new ReservationSet()
+                    int row = dataGridView_veh_DB.CurrentCell.RowIndex;
+                    car_id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
+
+                    if (comboBox_purpose_of_reservation.Text == "Służbowy" || comboBox_purpose_of_reservation.Text == "Prywatny")
                     {
-                        purpose = Convert.ToString(textBox_reserv_purpose.Text),
-                        date_from = dateTimePicker_from_date_reserv.Value,
-                        date_to = dateTimePicker_to_date_reserv.Value,
-                        Worker_worker_id = worker_id.worker_id,
-                        Vehicle_vehicle_id = vechicle_id.vehicle_id
-                    };
+                        try
+                        {
+                            ReservationSet newReservation = new ReservationSet()
+                            {
+                                purpose = comboBox_purpose_of_reservation.Text,
+                                date_from = time_from,
+                                date_to = time_to,
+                                Worker_worker_id = id_user,
+                                Vehicle_vehicle_id = car_id
+                            };
+                            db.ReservationSets.InsertOnSubmit(newReservation);
+                            db.SubmitChanges();
 
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Nie udało się dokonać rezerwacji pojazdu", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    db.ReservationSets.InsertOnSubmit(reserv);
-                    db.SubmitChanges();
-
-
-
-                    dataGridView_veh_DB.DataSource = check_date;
-
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wybierz cel rezerwacji", "Error Car", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show("KURWA CHYBA DZIAŁA", "Error license plate", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Zaznacz auto które chcesz zarezerwować", "Error Car", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception)
+            else
             {
-                textBox_reserv_purpose.Text = "Cel rezerwacji";
-                textBox_reser_license.Text = "Nr rejestracyjny";
-
-                MessageBox.Show("Nie ma samochodu z takim numerem rejestracyjnym", "Error license plate", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wybierz datę", "Error Car", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
         }
 
         private void textBox_reser_license_Enter(object sender, EventArgs e)
@@ -307,6 +285,22 @@ namespace VMA
                 textBox_version.ForeColor = Color.FromArgb(120, 120, 0);
 
             }
+        }
+
+        private void button_check_available_cars_Click(object sender, EventArgs e)
+        {
+            
+            var not_Available_Cars = db.ReservationSets.Where(x => (x.date_from < time_from && x.date_to > time_from) 
+                    || (x.date_to > time_to && x.date_from < time_to) || (x.date_from > time_from && x.date_to < time_to)).Select(x=> x.Vehicle_vehicle_id);
+            
+
+            var available_Cars = db.VehicleSets.Where(x => !not_Available_Cars.Contains(x.vehicle_id) && x.available != "deleted");
+
+            dataGridView_veh_DB.DataSource = available_Cars;
+
+
+            confirm = true;
+           
         }
     }
 }

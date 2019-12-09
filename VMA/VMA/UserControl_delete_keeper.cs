@@ -35,6 +35,7 @@ namespace VMA
             // Rejestracja
             var plate = db.CareSets.Join(db.VehicleSets, x => x.Vehicle_vehicle_id, y => y.vehicle_id, (x, y) => y.licence_plate).Distinct().ToArray();
             instcol2.AddRange(plate);
+                
         }
 
 

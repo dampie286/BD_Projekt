@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button_filter = new System.Windows.Forms.Button();
             this.textBox_license = new System.Windows.Forms.TextBox();
             this.textBox_mileage = new System.Windows.Forms.TextBox();
@@ -53,6 +53,8 @@
             this.label_to_date_reserv = new System.Windows.Forms.Label();
             this.dateTimePicker_to_date_reserv = new System.Windows.Forms.DateTimePicker();
             this.button_reserv = new System.Windows.Forms.Button();
+            this.button_check_available_cars = new System.Windows.Forms.Button();
+            this.comboBox_purpose_of_reservation = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_veh_DB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,7 +185,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.Yellow;
             this.panel6.Location = new System.Drawing.Point(657, 47);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(120, 1);
             this.panel6.TabIndex = 15;
@@ -192,7 +194,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Yellow;
             this.panel5.Location = new System.Drawing.Point(531, 47);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(120, 1);
             this.panel5.TabIndex = 16;
@@ -201,7 +203,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Yellow;
             this.panel4.Location = new System.Drawing.Point(404, 47);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(120, 1);
             this.panel4.TabIndex = 17;
@@ -210,7 +212,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Yellow;
             this.panel3.Location = new System.Drawing.Point(277, 47);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(120, 1);
             this.panel3.TabIndex = 18;
@@ -219,7 +221,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Yellow;
             this.panel2.Location = new System.Drawing.Point(151, 47);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(120, 1);
             this.panel2.TabIndex = 19;
@@ -228,7 +230,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Yellow;
             this.panel1.Location = new System.Drawing.Point(24, 47);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(120, 1);
             this.panel1.TabIndex = 14;
@@ -240,19 +242,19 @@
             this.dataGridView_veh_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_veh_DB.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_veh_DB.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_veh_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_veh_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_veh_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_veh_DB.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView_veh_DB.EnableHeadersVisualStyles = false;
             this.dataGridView_veh_DB.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.dataGridView_veh_DB.Location = new System.Drawing.Point(27, 70);
+            this.dataGridView_veh_DB.Location = new System.Drawing.Point(15, 199);
             this.dataGridView_veh_DB.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView_veh_DB.MultiSelect = false;
             this.dataGridView_veh_DB.Name = "dataGridView_veh_DB";
@@ -265,7 +267,7 @@
             this.dataGridView_veh_DB.RowTemplate.Height = 24;
             this.dataGridView_veh_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_veh_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_veh_DB.Size = new System.Drawing.Size(889, 167);
+            this.dataGridView_veh_DB.Size = new System.Drawing.Size(889, 218);
             this.dataGridView_veh_DB.TabIndex = 20;
             // 
             // label_reservation
@@ -273,7 +275,7 @@
             this.label_reservation.AutoSize = true;
             this.label_reservation.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_reservation.ForeColor = System.Drawing.Color.Yellow;
-            this.label_reservation.Location = new System.Drawing.Point(27, 290);
+            this.label_reservation.Location = new System.Drawing.Point(501, 466);
             this.label_reservation.Margin = new System.Windows.Forms.Padding(0);
             this.label_reservation.Name = "label_reservation";
             this.label_reservation.Size = new System.Drawing.Size(297, 29);
@@ -284,7 +286,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.Yellow;
             this.panel7.Location = new System.Drawing.Point(91, 370);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(173, 1);
             this.panel7.TabIndex = 23;
@@ -295,7 +297,7 @@
             this.textBox_reser_license.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_reser_license.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_reser_license.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            this.textBox_reser_license.Location = new System.Drawing.Point(91, 346);
+            this.textBox_reser_license.Location = new System.Drawing.Point(81, 495);
             this.textBox_reser_license.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_reser_license.MaximumSize = new System.Drawing.Size(200, 25);
             this.textBox_reser_license.MinimumSize = new System.Drawing.Size(5, 18);
@@ -311,7 +313,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.Yellow;
             this.panel8.Location = new System.Drawing.Point(91, 466);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(173, 1);
             this.panel8.TabIndex = 25;
@@ -322,7 +324,7 @@
             this.textBox_reserv_purpose.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_reserv_purpose.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_reserv_purpose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            this.textBox_reserv_purpose.Location = new System.Drawing.Point(91, 442);
+            this.textBox_reserv_purpose.Location = new System.Drawing.Point(81, 556);
             this.textBox_reserv_purpose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_reserv_purpose.MaximumSize = new System.Drawing.Size(200, 25);
             this.textBox_reserv_purpose.MinimumSize = new System.Drawing.Size(5, 18);
@@ -341,7 +343,7 @@
             this.dateTimePicker_from_date_reserv.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dateTimePicker_from_date_reserv.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_from_date_reserv.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker_from_date_reserv.Location = new System.Drawing.Point(567, 343);
+            this.dateTimePicker_from_date_reserv.Location = new System.Drawing.Point(197, 71);
             this.dateTimePicker_from_date_reserv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker_from_date_reserv.Name = "dateTimePicker_from_date_reserv";
             this.dateTimePicker_from_date_reserv.Size = new System.Drawing.Size(200, 23);
@@ -354,7 +356,7 @@
             this.label_from_date.AutoSize = true;
             this.label_from_date.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_from_date.ForeColor = System.Drawing.Color.Yellow;
-            this.label_from_date.Location = new System.Drawing.Point(463, 346);
+            this.label_from_date.Location = new System.Drawing.Point(87, 71);
             this.label_from_date.Margin = new System.Windows.Forms.Padding(0);
             this.label_from_date.Name = "label_from_date";
             this.label_from_date.Size = new System.Drawing.Size(89, 23);
@@ -366,7 +368,7 @@
             this.label_to_date_reserv.AutoSize = true;
             this.label_to_date_reserv.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_to_date_reserv.ForeColor = System.Drawing.Color.Yellow;
-            this.label_to_date_reserv.Location = new System.Drawing.Point(463, 442);
+            this.label_to_date_reserv.Location = new System.Drawing.Point(87, 123);
             this.label_to_date_reserv.Margin = new System.Windows.Forms.Padding(0);
             this.label_to_date_reserv.Name = "label_to_date_reserv";
             this.label_to_date_reserv.Size = new System.Drawing.Size(87, 23);
@@ -380,7 +382,7 @@
             this.dateTimePicker_to_date_reserv.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dateTimePicker_to_date_reserv.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_to_date_reserv.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker_to_date_reserv.Location = new System.Drawing.Point(567, 439);
+            this.dateTimePicker_to_date_reserv.Location = new System.Drawing.Point(197, 123);
             this.dateTimePicker_to_date_reserv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker_to_date_reserv.Name = "dateTimePicker_to_date_reserv";
             this.dateTimePicker_to_date_reserv.Size = new System.Drawing.Size(200, 23);
@@ -394,7 +396,7 @@
             this.button_reserv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_reserv.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_reserv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_reserv.Location = new System.Drawing.Point(345, 533);
+            this.button_reserv.Location = new System.Drawing.Point(518, 514);
             this.button_reserv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_reserv.Name = "button_reserv";
             this.button_reserv.Size = new System.Drawing.Size(237, 42);
@@ -403,11 +405,38 @@
             this.button_reserv.UseVisualStyleBackColor = false;
             this.button_reserv.Click += new System.EventHandler(this.button_reserv_Click);
             // 
+            // button_check_available_cars
+            // 
+            this.button_check_available_cars.BackColor = System.Drawing.Color.Yellow;
+            this.button_check_available_cars.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_check_available_cars.Font = new System.Drawing.Font("Arial", 12F);
+            this.button_check_available_cars.Location = new System.Drawing.Point(497, 71);
+            this.button_check_available_cars.Name = "button_check_available_cars";
+            this.button_check_available_cars.Size = new System.Drawing.Size(203, 57);
+            this.button_check_available_cars.TabIndex = 32;
+            this.button_check_available_cars.Text = "Sprawdź dostępne samochody";
+            this.button_check_available_cars.UseVisualStyleBackColor = false;
+            this.button_check_available_cars.Click += new System.EventHandler(this.button_check_available_cars_Click);
+            // 
+            // comboBox_purpose_of_reservation
+            // 
+            this.comboBox_purpose_of_reservation.FormattingEnabled = true;
+            this.comboBox_purpose_of_reservation.Items.AddRange(new object[] {
+            "Służbowy",
+            "Prywatny"});
+            this.comboBox_purpose_of_reservation.Location = new System.Drawing.Point(277, 488);
+            this.comboBox_purpose_of_reservation.Name = "comboBox_purpose_of_reservation";
+            this.comboBox_purpose_of_reservation.Size = new System.Drawing.Size(121, 24);
+            this.comboBox_purpose_of_reservation.TabIndex = 33;
+            this.comboBox_purpose_of_reservation.Text = "Cel rezerwacji";
+            // 
             // UserControl_reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.Controls.Add(this.comboBox_purpose_of_reservation);
+            this.Controls.Add(this.button_check_available_cars);
             this.Controls.Add(this.button_reserv);
             this.Controls.Add(this.label_to_date_reserv);
             this.Controls.Add(this.dateTimePicker_to_date_reserv);
@@ -468,5 +497,7 @@
         private System.Windows.Forms.Label label_to_date_reserv;
         private System.Windows.Forms.DateTimePicker dateTimePicker_to_date_reserv;
         private System.Windows.Forms.Button button_reserv;
+        private System.Windows.Forms.Button button_check_available_cars;
+        private System.Windows.Forms.ComboBox comboBox_purpose_of_reservation;
     }
 }
