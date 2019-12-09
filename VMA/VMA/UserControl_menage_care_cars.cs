@@ -128,7 +128,9 @@ namespace VMA
                 }
                 try
                 {
-                    ServiceSet service = db.ServiceSets.Where(x => x.name == Combobox_service.Text && x.description == textBox_description.Text).First();
+                    ServiceSet service = db.ServiceSets
+                                        .Where(x => x.name == Combobox_service.Text && x.description == textBox_description.Text)
+                                        .First();
                     Care_serviceSet newservice = new Care_serviceSet()
                     {
                         date_from = DateTime.Today,

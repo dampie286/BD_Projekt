@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Baza_projekt" Class="DataBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Baza_projekt;Integrated Security=True" SettingsObjectName="VMA.Properties.Settings" SettingsPropertyName="Baza_projektConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=nowabaza;Integrated Security=True" SettingsObjectName="VMA.Properties.Settings" SettingsPropertyName="Baza_projektConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Care_serviceSet" Member="Care_serviceSets">
     <Type Name="Care_serviceSet">
       <Column Name="care_service_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -68,7 +68,7 @@
       <Column Name="date_to" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="mileage_start" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Worker_worker_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Reservation_reservation_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reservation_reservation_id" Type="System.Int32" DbType="Int ALLOW NULL" CanBeNull="false" />
       <Column Name="Vehicle_vehicle_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="RentSet_PurchaseSet" Member="PurchaseSets" ThisKey="rent_id" OtherKey="Rent_rent_id" Type="PurchaseSet" />
       <Association Name="ReservationSet_RentSet" Member="ReservationSet" ThisKey="Reservation_reservation_id" OtherKey="reservation_id" Type="ReservationSet" IsForeignKey="true" />

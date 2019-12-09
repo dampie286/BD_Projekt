@@ -18,6 +18,7 @@ namespace VMA
         private bool confirm = false;  //czy użytkownik sprawdził dostępne auta
         private int car_id;
         private int user_id;
+        private int mileage_start;
 
         public UserControl_rent_with_DB()
         {
@@ -91,7 +92,7 @@ namespace VMA
                 {
                     try
                     {
-                        RentSet newRent = new RentSet()
+                        ReservationSet newReserv = new ReservationSet()
                         {
                             purpose = comboBox_purpose_of_rent.Text,
                             date_from = time_from,
@@ -99,12 +100,37 @@ namespace VMA
                             Worker_worker_id = user_id,
                             Vehicle_vehicle_id = car_id
                         };
-                        db.RentSets.InsertOnSubmit(newRent);
+                        db.ReservationSets.InsertOnSubmit(newReserv);
                         db.SubmitChanges();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("Nie udało się dokonać rezerwacji pojazdu", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    try
+                    {
+                    ReservationSet reserv = db.ReservationSets
+                                            .Where(x => x.date_to == time_to 
+                                                    && x.date_from == time_from 
+                                                    && x.Vehicle_vehicle_id == car_id)
+                                                    .First();
+                    RentSet newRent = new RentSet()
+                        {
+                            purpose = comboBox_purpose_of_rent.Text,
+                            date_from = time_from,
+                            date_to = time_to,
+                            mileage_start = 1,
+                            Worker_worker_id = user_id,
+                            Reservation_reservation_id = reserv.reservation_id,
+                            Vehicle_vehicle_id = car_id
+                        };
+                        db.RentSets.InsertOnSubmit(newRent);
+                        db.SubmitChanges();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Nie udało się dokonać wypożyczenia pojazdu", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
