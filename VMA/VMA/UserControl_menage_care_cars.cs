@@ -109,8 +109,13 @@ namespace VMA
 
                 vechicle.available = "no"; 
 
-                CareSet care_id = db.CareSets.Where(x => x.Vehicle_vehicle_id == car_id).First();
-                CompanySet company_id = db.CompanySets.Where(x => x.name == "AutoRIP").First();
+                CareSet care_id = db.CareSets
+                                  .Where(x => x.Vehicle_vehicle_id == car_id)
+                                  .First();
+
+                CompanySet company_id = db.CompanySets
+                                        .Where(x => x.name == "AutoRIP")
+                                        .First();
                 try
                 {
                     ServiceSet service = new ServiceSet()
@@ -129,8 +134,10 @@ namespace VMA
                 try
                 {
                     ServiceSet service = db.ServiceSets
-                                        .Where(x => x.name == Combobox_service.Text && x.description == textBox_description.Text)
-                                        .First();
+                                        .Where(x => x.name == Combobox_service.Text 
+                                                && x.description == textBox_description.Text)
+                                                .First();
+
                     Care_serviceSet newservice = new Care_serviceSet()
                     {
                         date_from = DateTime.Today,

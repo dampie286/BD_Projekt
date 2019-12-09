@@ -25,15 +25,34 @@ namespace VMA
         public void autoComplite_textBox() //Autopodpowiedź
         {
             // Imię
-            var names = db.CareSets.Join(db.WorkerSets, x => x.Keeper_worker_id, y => y.worker_id, (x,y) =>  y.name).Distinct().ToArray();
+            var names = db.CareSets
+                        .Join(db.WorkerSets, 
+                              x => x.Keeper_worker_id, 
+                              y => y.worker_id, 
+                              (x,y) =>  y.name)
+                                .Distinct()
+                                    .ToArray();
+
             instcol.AddRange(names);
 
             //Nazwisko
-            var surnames = db.CareSets.Join(db.WorkerSets, x => x.Keeper_worker_id, y => y.worker_id, (x, y) => y.surname).Distinct().ToArray();
+            var surnames = db.CareSets
+                           .Join(db.WorkerSets, 
+                                 x => x.Keeper_worker_id, 
+                                 y => y.worker_id, 
+                                 (x, y) => y.surname)
+                                    .Distinct()
+                                        .ToArray();
             instcol1.AddRange(surnames);
 
             // Rejestracja
-            var plate = db.CareSets.Join(db.VehicleSets, x => x.Vehicle_vehicle_id, y => y.vehicle_id, (x, y) => y.licence_plate).Distinct().ToArray();
+            var plate = db.CareSets
+                        .Join(db.VehicleSets, 
+                              x => x.Vehicle_vehicle_id, 
+                              y => y.vehicle_id, 
+                              (x, y) => y.licence_plate)
+                                .Distinct()
+                                    .ToArray();
             instcol2.AddRange(plate);
                 
         }
@@ -41,7 +60,17 @@ namespace VMA
 
         public void fillDataGridView2()
         {
-            var query = from x in db.CareSets where x.date_to == null select new { ID = x.care_id, IMIE = x.WorkerSet_Keeper.WorkerSet.name, NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname, OPIEKA = x.VehicleSet.model, REJESTRACJA = x.VehicleSet.licence_plate };
+            var query = from x in db.CareSets
+                        where x.date_to == null
+                        select new
+                        {
+                            ID = x.care_id,
+                            IMIE = x.WorkerSet_Keeper.WorkerSet.name,
+                            NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname,
+                            OPIEKA = x.VehicleSet.model,
+                            REJESTRACJA = x.VehicleSet.licence_plate
+                        };
+
             dataGridView_keepers_DB.DataSource = query;
             dataGridView_keepers_DB.Columns[0].Visible = false;
         }
@@ -135,8 +164,18 @@ namespace VMA
 
         private void button_filter_Click(object sender, EventArgs e)
         {
-            DataBaseDataContext db = new DataBaseDataContext();
-            var query = from x in db.CareSets where x.date_to == null select new { ID = x.care_id, IMIE = x.WorkerSet_Keeper.WorkerSet.name, NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname, OPIEKA = x.VehicleSet.model, REJESTRACJA = x.VehicleSet.licence_plate, STANOWISKO = x.WorkerSet_Keeper.WorkerSet.position };
+            var query = from x in db.CareSets
+                        where x.date_to == null
+                        select new
+                        {
+                            ID = x.care_id,
+                            IMIE = x.WorkerSet_Keeper.WorkerSet.name,
+                            NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname,
+                            OPIEKA = x.VehicleSet.model,
+                            REJESTRACJA = x.VehicleSet.licence_plate,
+                            STANOWISKO = x.WorkerSet_Keeper.WorkerSet.position
+                        };
+
             string filtr_name = textBox_name.Text;
             string filtr_surname = textBox_surrname.Text;
             string filtr_position = textBox_licence_plate.Text;
@@ -173,7 +212,8 @@ namespace VMA
                 dataGridView_keepers_DB.Columns[0].Visible = false;
                 dataGridView_keepers_DB.Columns[5].Visible = false;
             }
-            catch { }
+            catch(Exception)
+            { }
         }
     }
 }

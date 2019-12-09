@@ -70,8 +70,7 @@ namespace VMA
                        || (x.date_to > time_to && x.date_from < time_to)
                        || (x.date_from > time_from && x.date_to < time_to))
                            .Select(x => x.Vehicle_vehicle_id);
-
-
+            
             var available_Cars = db.VehicleSets
                 .Where(x => !not_Available_Cars
                 .Contains(x.vehicle_id) && x.available == "yes");
