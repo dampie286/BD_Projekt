@@ -124,6 +124,7 @@ namespace VMA
         {
             if (textBox_reser_license.Text.Equals(@"Nr rejestracyjny"))
             {
+                textBox_reser_license.ForeColor = Color.FromArgb(255, 255, 0);
                 textBox_reser_license.Text = "";
             }
         }
@@ -132,7 +133,9 @@ namespace VMA
         {
             if (textBox_reser_license.Text.Equals(""))
             {
+                
                 textBox_reser_license.Text = "Nr rejestracyjny";
+                textBox_reser_license.ForeColor = Color.FromArgb(120, 120, 0);
             }
             else
             {
@@ -179,21 +182,7 @@ namespace VMA
             confirm = true;
         }
 
-        private void textBox_reserv_purpose_Leave(object sender, EventArgs e)
-        {
-            if (textBox_reserv_purpose.Text.Equals(""))
-            {
-                textBox_reserv_purpose.Text = "Cel rezerwacji";
-            }
-        }
-
-        private void textBox_reserv_purpose_Enter(object sender, EventArgs e)
-        {
-            if (textBox_reserv_purpose.Text.Equals(@"Cel rezerwacji"))
-            {
-                textBox_reserv_purpose.Text = "";
-            }
-        }
+      
 
         private void dateTimePicker_from_date_reserv_Leave(object sender, EventArgs e)
         {

@@ -269,23 +269,7 @@ namespace VMA
             }
         }
 
-        private void textBox_reserv_purpose_Enter(object sender, EventArgs e)
-        {
-            if (textBox_reserv_purpose.Text.Equals(@"Cel rezerwacji"))
-            {
-                textBox_reserv_purpose.ForeColor = Color.FromArgb(255, 255, 0);
-                textBox_reserv_purpose.Text = "";
-            }
-        }
-
-        private void textBox_reserv_purpose_Leave(object sender, EventArgs e)
-        {
-            if (textBox_reserv_purpose.Text.Equals(""))
-            {
-                textBox_reserv_purpose.Text = "Cel rezerwacji";
-                textBox_reserv_purpose.ForeColor = Color.FromArgb(120, 120, 0);
-            }
-        }
+        
         
         private void dateTimePicker_to_date_rent_Leave(object sender, EventArgs e)
         {
