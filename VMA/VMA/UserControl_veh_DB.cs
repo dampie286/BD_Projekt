@@ -36,7 +36,8 @@ namespace VMA
                                   WERSJA =x.version,
                                   REJESTRACJA =x.licence_plate,
                                   SPALANIE =x.avg_consumption,
-                                  PALIWO =x.fuel_type
+                                  PALIWO =x.fuel_type,
+                                  PRZEBIEG=x.mileage
                               };
 
             dataGridView_veh_DB.DataSource = Selectquery;

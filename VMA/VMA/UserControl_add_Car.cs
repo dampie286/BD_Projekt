@@ -36,15 +36,15 @@ namespace VMA
                 {
                     VehicleSet car = new VehicleSet()
                     {
-                        brand = Convert.ToString(textBox_brand.Text),
-                        model = Convert.ToString(textBox_model.Text),
-                        version = Convert.ToString(comboBox_car_version.Text),
+                        brand = textBox_brand.Text,
+                        model =textBox_model.Text,
+                        version = comboBox_car_version.Text,
                         equipment = "",
-                        licence_plate = Convert.ToString(textBox_license.Text),
-                        fuel_type = Convert.ToString(comboBox_type_of_fuel.Text),
+                        licence_plate = textBox_license.Text,
+                        fuel_type = comboBox_type_of_fuel.Text,
                         avg_consumption = Convert.ToDouble(consump),
                         available = "yes",
-                        //
+                        mileage=Convert.ToInt32(textBox_mileage.Text)
                     };
                     db.VehicleSets.InsertOnSubmit(car);
                     db.SubmitChanges();
