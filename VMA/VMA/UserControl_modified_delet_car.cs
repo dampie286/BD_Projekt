@@ -283,7 +283,7 @@ namespace VMA
                     x.fuel_type = comboBox_type_of_fuel.Text.ToString();
                     x.licence_plate = textBox_edit_lic.Text.ToString();
                     x.version = comboBox_car_version.Text.ToString();
-
+                    
 
                 }
 

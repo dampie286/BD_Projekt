@@ -70,6 +70,7 @@
       <Column Name="Worker_worker_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Reservation_reservation_id" Type="System.Int32" DbType="Int ALLOW NULL" CanBeNull="false" />
       <Column Name="Vehicle_vehicle_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="mileage_end" Type="System.Int32" DbType="Int " CanBeNull="true" />
       <Association Name="RentSet_PurchaseSet" Member="PurchaseSets" ThisKey="rent_id" OtherKey="Rent_rent_id" Type="PurchaseSet" />
       <Association Name="ReservationSet_RentSet" Member="ReservationSet" ThisKey="Reservation_reservation_id" OtherKey="reservation_id" Type="ReservationSet" IsForeignKey="true" />
       <Association Name="VehicleSet_RentSet" Member="VehicleSet" ThisKey="Vehicle_vehicle_id" OtherKey="vehicle_id" Type="VehicleSet" IsForeignKey="true" />
@@ -109,6 +110,7 @@
       <Column Name="avg_consumption" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="fuel_type" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="available" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="mileage" Type="System.Int32" DbType="Int " CanBeNull="true" />
       <Association Name="VehicleSet_CareSet" Member="CareSets" ThisKey="vehicle_id" OtherKey="Vehicle_vehicle_id" Type="CareSet" />
       <Association Name="VehicleSet_Check_vehicleSet" Member="Check_vehicleSets" ThisKey="vehicle_id" OtherKey="Vehicle_vehicle_id" Type="Check_vehicleSet" />
       <Association Name="VehicleSet_RentSet" Member="RentSets" ThisKey="vehicle_id" OtherKey="Vehicle_vehicle_id" Type="RentSet" />

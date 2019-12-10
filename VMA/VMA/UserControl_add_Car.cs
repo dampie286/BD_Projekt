@@ -43,7 +43,8 @@ namespace VMA
                         licence_plate = Convert.ToString(textBox_license.Text),
                         fuel_type = Convert.ToString(comboBox_type_of_fuel.Text),
                         avg_consumption = Convert.ToDouble(consump),
-                        available = "yes"
+                        available = "yes",
+                        //
                     };
                     db.VehicleSets.InsertOnSubmit(car);
                     db.SubmitChanges();

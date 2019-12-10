@@ -1482,6 +1482,8 @@ namespace VMA
 		private int _Reservation_reservation_id;
 		
 		private int _Vehicle_vehicle_id;
+
+        private int _mileage_end;
 		
 		private EntitySet<PurchaseSet> _PurchaseSets;
 		
@@ -1511,9 +1513,11 @@ namespace VMA
     partial void OnReservation_reservation_idChanged();
     partial void OnVehicle_vehicle_idChanging(int value);
     partial void OnVehicle_vehicle_idChanged();
-    #endregion
-		
-		public RentSet()
+        partial void Onmileage_endChanging(int value);
+        partial void Onmileage_endChanged();
+        #endregion
+
+        public RentSet()
 		{
 			this._PurchaseSets = new EntitySet<PurchaseSet>(new Action<PurchaseSet>(this.attach_PurchaseSets), new Action<PurchaseSet>(this.detach_PurchaseSets));
 			this._ReservationSet = default(EntityRef<ReservationSet>);
@@ -1621,8 +1625,30 @@ namespace VMA
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Worker_worker_id", DbType="Int NOT NULL")]
+
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_mileage_end", DbType = "Int")]
+        public int mileage_end
+        {
+            get
+            {
+                return this._mileage_end;
+            }
+            set
+            {
+                if ((this._mileage_end != value))
+                {
+                    this.Onmileage_endChanging(value);
+                    this.SendPropertyChanging();
+                    this._mileage_end = value;
+                    this.SendPropertyChanged("mileage_end");
+                    this.Onmileage_endChanged();
+                }
+            }
+        }
+
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Worker_worker_id", DbType="Int NOT NULL")]
 		public int Worker_worker_id
 		{
 			get
@@ -2319,8 +2345,10 @@ namespace VMA
 		private string _fuel_type;
 		
 		private string _available;
-		
-		private EntitySet<CareSet> _CareSets;
+
+        private int _mileage;
+
+        private EntitySet<CareSet> _CareSets;
 		
 		private EntitySet<Check_vehicleSet> _Check_vehicleSets;
 		
@@ -2350,9 +2378,11 @@ namespace VMA
     partial void Onfuel_typeChanged();
     partial void OnavailableChanging(string value);
     partial void OnavailableChanged();
-    #endregion
-		
-		public VehicleSet()
+        partial void OnmileageChanging(int value);
+        partial void OnmileageChanged();
+        #endregion
+
+        public VehicleSet()
 		{
 			this._CareSets = new EntitySet<CareSet>(new Action<CareSet>(this.attach_CareSets), new Action<CareSet>(this.detach_CareSets));
 			this._Check_vehicleSets = new EntitySet<Check_vehicleSet>(new Action<Check_vehicleSet>(this.attach_Check_vehicleSets), new Action<Check_vehicleSet>(this.detach_Check_vehicleSets));
@@ -2400,8 +2430,31 @@ namespace VMA
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_model", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_mileage", DbType = "INT", CanBeNull = true)]
+        public int mileage
+        {
+            get
+            {
+                return this._mileage;
+            }
+            set
+            {
+                if ((this._mileage != value))
+                {
+                    this.OnmileageChanging(value);
+                    this.SendPropertyChanging();
+                    this._mileage = value;
+                    this.SendPropertyChanged("mileage");
+                    this.OnmileageChanged();
+                }
+            }
+        }
+
+
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_model", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
 		public string model
 		{
 			get
