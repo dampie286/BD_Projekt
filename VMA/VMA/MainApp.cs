@@ -54,8 +54,7 @@ namespace VMA
             //dodanie zdarzenia klikniecia wypozyczenia z rezerwacji
             userControl_rent1.Button_rentReserv_Click+= new System.EventHandler(this.userControl_rent_Button_rentResev_Click);
             userControl_rent1.Button_my_rents_Click += new System.EventHandler(this.userControl_rent_Button_my_rents_Click);
-            FillTmpDataTable();         //uzupełnienie przykładowych wartości
-            FillTmp2DataTable();
+           
           
         }
 
@@ -89,41 +88,7 @@ namespace VMA
             windLog.Show();
         }
 
-        private void FillTmpDataTable()     //dodanie danych
-        {
-            tmp = new DataTable();
-            tmp.Columns.Add("VehID", typeof(int));
-            tmp.Columns.Add("BrandName");
-            tmp.Columns.Add("Model");
-            tmp.Columns.Add("Equipment");
-            tmp.Columns.Add("Version");
-            tmp.Columns.Add("Mileage");
-            tmp.Columns.Add("License");
-            for(int i=0;i<50;i++)
-            {
-                tmp.Rows.Add(i+1, "Audi", "A3", "VIP", "Hatchback", "34 315 km", "WE 123BD");
-                i++;
-                tmp.Rows.Add(i + 1, "BMW", "X3", "LUX", "SUV", "12 131 km", "WE 567BD");
-            }    
-        }
-
-
-        private void FillTmp2DataTable()        //dodanie danych
-        {
-            tmp2 = new DataTable();
-            tmp2.Columns.Add("ResID", typeof(int));
-            tmp2.Columns.Add("Data rezerwacji");
-            tmp2.Columns.Add("Nr Rejestracyjny");
-            tmp2.Columns.Add("Cel rezerwacji");
-            tmp2.Columns.Add("Data rozpoczęcia");
-            tmp2.Columns.Add("Data zakończenia");
-            for (int i = 0; i < 4; i++)
-            {
-                tmp2.Rows.Add(i + 1, "26.11.2019", "WE 1234BD", "Prywatnie", "29.11.2019", "29.11.2019");
-                i++;
-                tmp2.Rows.Add(i + 1, "26.11.2019", "WE 1235BD", "Slużbowo", "30.11.2019", "2.12.2019");
-            }
-        }
+        
 
      
 
@@ -157,7 +122,9 @@ namespace VMA
 
         private void button_statistic_Click(object sender, EventArgs e)
         {
+            userControl_myStatics1.statistic(log);
             userControl_myStatics1.BringToFront();
+           
         }
 
         private void button_manag_care_car_Click(object sender, EventArgs e)
