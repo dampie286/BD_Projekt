@@ -168,13 +168,13 @@ namespace VMA
         private void button_check_available_cars_Click(object sender, EventArgs e)
         {
             var not_Available_Cars = db.ReservationSets
-                .Where(x => (x.date_from < time_from && x.date_to > time_from)
-                       || (x.date_to > time_to && x.date_from < time_to)
-                       || (x.date_from > time_from && x.date_to < time_to))
+                .Where(x => (x.date_from <= time_from && x.date_to >= time_from)
+                       || (x.date_to >= time_to && x.date_from <= time_to)
+                       || (x.date_from >= time_from && x.date_to <= time_to))
                            .Select(x => x.Vehicle_vehicle_id);
 
             var not_Available_Rented_Cars = db.RentSets
-                .Where(x => (x.date_from < time_from && x.date_to > time_from))
+                .Where(x => (x.date_from <= time_from && x.date_to >= time_from))
                             .Select(x => x.Vehicle_vehicle_id);
 
             var available_Cars = db.VehicleSets

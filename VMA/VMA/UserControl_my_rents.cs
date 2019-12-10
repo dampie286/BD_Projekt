@@ -33,7 +33,7 @@ namespace VMA
             var Selectquery = from x in db.VehicleSets
                               join y in db.RentSets on x.vehicle_id equals y.Vehicle_vehicle_id
                               join z in db.WorkerSets on y.Worker_worker_id equals z.worker_id
-                              where z.worker_id == user_id
+                              where z.worker_id == user_id && y.mileage_end == 0
                               select new
                               {
                                   ID = x.vehicle_id,
@@ -60,7 +60,7 @@ namespace VMA
             dataGridView_my_rents.Columns[4].Width = 90;
             dataGridView_my_rents.Columns[5].Width = 90;
 
-
+              
         }
 
         private void dataGridView_my_rents_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -111,9 +111,6 @@ namespace VMA
                         MessageBox.Show("Przebieg po jest mniejszy niż przed", "Error Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
-                
-               
-
             }
             catch (Exception)
             {
