@@ -165,9 +165,11 @@ namespace VMA
            
         }
 
-        private void button_unblocking_Click(object sender, EventArgs e)
+        private void dataGridView_care_car_DB_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-       
+            int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
+            label_brand.Text = (string)dataGridView_care_car_DB.Rows[row].Cells[1].Value;
+            label_model.Text = (string)dataGridView_care_car_DB.Rows[row].Cells[2].Value;
         }
     }
     }

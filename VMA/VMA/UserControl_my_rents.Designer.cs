@@ -228,7 +228,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.Yellow;
-            this.panel10.Location = new System.Drawing.Point(313, 207);
+            this.panel10.Location = new System.Drawing.Point(315, 206);
             this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(173, 1);
@@ -240,7 +240,7 @@
             this.textBox_mileage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_mileage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_mileage.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_mileage.Location = new System.Drawing.Point(313, 187);
+            this.textBox_mileage.Location = new System.Drawing.Point(315, 186);
             this.textBox_mileage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_mileage.MaximumSize = new System.Drawing.Size(200, 25);
             this.textBox_mileage.MinimumSize = new System.Drawing.Size(5, 18);
