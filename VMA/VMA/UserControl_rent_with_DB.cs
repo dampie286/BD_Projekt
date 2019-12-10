@@ -112,7 +112,8 @@ namespace VMA
                     {
                         var mileage_st = (from x in db.VehicleSets
                                          where x.vehicle_id == car_id
-                                         select x.mileage).Single();
+                                         select x.mileage)
+                                            .Single();
 
                         ReservationSet reserv = db.ReservationSets
                                             .Where(x => x.date_to == time_to 
@@ -131,6 +132,9 @@ namespace VMA
                         };
                         db.RentSets.InsertOnSubmit(newRent);
                         db.SubmitChanges();
+
+                        MessageBox.Show("Wypożyczyłeś pojazd od dzisiaj do" + time_to.ToString(), "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     }
                     catch (Exception)
                     {

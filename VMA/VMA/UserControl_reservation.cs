@@ -98,6 +98,8 @@ namespace VMA
                             };
                             db.ReservationSets.InsertOnSubmit(newReservation);
                             db.SubmitChanges();
+                            MessageBox.Show("Zarezerwowałeś pojazd od " + time_from.ToString() + "do" + time_to.ToString(), "Good Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         }
                         catch (Exception)
                         {
