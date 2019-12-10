@@ -34,6 +34,7 @@ namespace VMA
             var Selectquery = from x in db.VehicleSets
                               join y in db.ReservationSets on x.vehicle_id equals y.Vehicle_vehicle_id
                               join z in db.WorkerSets on y.Worker_worker_id equals z.worker_id
+                              where y.date_to >= DateTime.Today
                               select new
                               {
                                   ID = x.vehicle_id,
@@ -45,7 +46,9 @@ namespace VMA
                                   REZERWUJACY = z.surname,
                                   CEL = y.purpose
                               };
+
             
+
             dataGridView_veh_DB.DataSource = Selectquery;
             
             //dataGridView_veh_DB.Columns[0].Visible = false;
