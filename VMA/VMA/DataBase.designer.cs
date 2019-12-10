@@ -2432,25 +2432,7 @@ namespace VMA
 		}
 
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_mileage", DbType = "INT", CanBeNull = true)]
-        public int mileage
-        {
-            get
-            {
-                return this._mileage;
-            }
-            set
-            {
-                if ((this._mileage != value))
-                {
-                    this.OnmileageChanging(value);
-                    this.SendPropertyChanging();
-                    this._mileage = value;
-                    this.SendPropertyChanged("mileage");
-                    this.OnmileageChanged();
-                }
-            }
-        }
+       
 
 
 
@@ -2645,8 +2627,30 @@ namespace VMA
 				this._ReservationSets.Assign(value);
 			}
 		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_mileage", DbType = "INT", CanBeNull = true)]
+        public int mileage
+        {
+            get
+            {
+                return this._mileage;
+            }
+            set
+            {
+                if ((this._mileage != value))
+                {
+                    this.OnmileageChanging(value);
+                    this.SendPropertyChanging();
+                    this._mileage = value;
+                    this.SendPropertyChanged("mileage");
+                    this.OnmileageChanged();
+                }
+            }
+        }
+
+
+
+        public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
 		
