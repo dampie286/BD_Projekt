@@ -64,10 +64,9 @@ namespace VMA
                             };
                 dataGridView_cars_on_service.DataSource = query;
             }
-            catch (Exception) {
+            catch (Exception)
+            {
                 MessageBox.Show("Nie masz aut na serwisie", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                
             };
         }
 

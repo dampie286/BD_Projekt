@@ -115,6 +115,7 @@
             this.dateTimePicker_from_date_rent.CalendarFont = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimePicker_from_date_rent.CalendarForeColor = System.Drawing.Color.Yellow;
             this.dateTimePicker_from_date_rent.CalendarMonthBackground = System.Drawing.Color.Transparent;
+            this.dateTimePicker_from_date_rent.Enabled = false;
             this.dateTimePicker_from_date_rent.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimePicker_from_date_rent.Location = new System.Drawing.Point(128, 106);
             this.dateTimePicker_from_date_rent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

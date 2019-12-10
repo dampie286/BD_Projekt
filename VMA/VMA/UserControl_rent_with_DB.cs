@@ -18,7 +18,6 @@ namespace VMA
         private bool confirm = false;  //czy użytkownik sprawdził dostępne auta
         private int car_id;
         private int user_id;
-        private int mileage_start;
 
         public UserControl_rent_with_DB()
         {
@@ -87,6 +86,8 @@ namespace VMA
             {
                 int row = dataGridView_veh_DB.CurrentCell.RowIndex;
                 car_id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
+                
+
                 if (comboBox_purpose_of_rent.Text == "Służbowy" || comboBox_purpose_of_rent.Text == "Prywatny")
                 {
                     try
@@ -109,7 +110,11 @@ namespace VMA
 
                     try
                     {
-                    ReservationSet reserv = db.ReservationSets
+                        var mileage_st = (from x in db.VehicleSets
+                                         where x.vehicle_id == car_id
+                                         select x.mileage).Single();
+
+                        ReservationSet reserv = db.ReservationSets
                                             .Where(x => x.date_to == time_to 
                                                     && x.date_from == time_from 
                                                     && x.Vehicle_vehicle_id == car_id)
@@ -119,7 +124,7 @@ namespace VMA
                             purpose = comboBox_purpose_of_rent.Text,
                             date_from = time_from,
                             date_to = time_to,
-                            mileage_start = 1,
+                            mileage_start = mileage_st,
                             Worker_worker_id = user_id,
                             Reservation_reservation_id = reserv.reservation_id,
                             Vehicle_vehicle_id = car_id

@@ -55,5 +55,10 @@ namespace VMA
             label_to.Text = (string)dataGridView_my_rents.Rows[row].Cells[4].Value.ToString();
             label_purpose.Text = dataGridView_my_rents.Rows[row].Cells[6].Value.ToString();
         }
+
+        private void button_confirm_end_rent_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

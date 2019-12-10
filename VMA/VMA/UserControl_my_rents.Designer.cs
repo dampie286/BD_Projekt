@@ -31,6 +31,10 @@
             this.label_rent = new System.Windows.Forms.Label();
             this.dataGridView_my_rents = new System.Windows.Forms.DataGridView();
             this.panel_end_rent = new System.Windows.Forms.Panel();
+            this.button_confirm_end_rent = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.textBox_mileage = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label_to = new System.Windows.Forms.Label();
             this.label_from = new System.Windows.Forms.Label();
             this.label_purpose = new System.Windows.Forms.Label();
@@ -41,10 +45,6 @@
             this.label_desc_from = new System.Windows.Forms.Label();
             this.label_desc_model = new System.Windows.Forms.Label();
             this.label_desc_brand = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox_mileage = new System.Windows.Forms.TextBox();
-            this.button_confirm_end_rent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_my_rents)).BeginInit();
             this.panel_end_rent.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +97,57 @@
             this.panel_end_rent.Name = "panel_end_rent";
             this.panel_end_rent.Size = new System.Drawing.Size(904, 258);
             this.panel_end_rent.TabIndex = 58;
+            // 
+            // button_confirm_end_rent
+            // 
+            this.button_confirm_end_rent.BackColor = System.Drawing.Color.Yellow;
+            this.button_confirm_end_rent.FlatAppearance.BorderSize = 0;
+            this.button_confirm_end_rent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_confirm_end_rent.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.button_confirm_end_rent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.button_confirm_end_rent.Location = new System.Drawing.Point(682, 169);
+            this.button_confirm_end_rent.Name = "button_confirm_end_rent";
+            this.button_confirm_end_rent.Size = new System.Drawing.Size(207, 57);
+            this.button_confirm_end_rent.TabIndex = 81;
+            this.button_confirm_end_rent.Text = "Potwierdź zakończenie wypożyczenia";
+            this.button_confirm_end_rent.UseVisualStyleBackColor = false;
+            this.button_confirm_end_rent.Click += new System.EventHandler(this.button_confirm_end_rent_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Yellow;
+            this.panel10.Location = new System.Drawing.Point(315, 206);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(173, 1);
+            this.panel10.TabIndex = 80;
+            // 
+            // textBox_mileage
+            // 
+            this.textBox_mileage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.textBox_mileage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_mileage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_mileage.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_mileage.Location = new System.Drawing.Point(315, 186);
+            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_mileage.MaximumSize = new System.Drawing.Size(200, 25);
+            this.textBox_mileage.MinimumSize = new System.Drawing.Size(5, 18);
+            this.textBox_mileage.Name = "textBox_mileage";
+            this.textBox_mileage.Size = new System.Drawing.Size(173, 19);
+            this.textBox_mileage.TabIndex = 79;
+            this.textBox_mileage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F);
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(47, 184);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(264, 23);
+            this.label1.TabIndex = 78;
+            this.label1.Text = "Przebieg po wypożyczeniem:";
             // 
             // label_to
             // 
@@ -212,56 +263,6 @@
             this.label_desc_brand.Size = new System.Drawing.Size(72, 23);
             this.label_desc_brand.TabIndex = 68;
             this.label_desc_brand.Text = "Marka:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F);
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(47, 184);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 23);
-            this.label1.TabIndex = 78;
-            this.label1.Text = "Przebieg po wypożyczeniem:";
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.Yellow;
-            this.panel10.Location = new System.Drawing.Point(315, 206);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(173, 1);
-            this.panel10.TabIndex = 80;
-            // 
-            // textBox_mileage
-            // 
-            this.textBox_mileage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBox_mileage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_mileage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_mileage.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_mileage.Location = new System.Drawing.Point(315, 186);
-            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_mileage.MaximumSize = new System.Drawing.Size(200, 25);
-            this.textBox_mileage.MinimumSize = new System.Drawing.Size(5, 18);
-            this.textBox_mileage.Name = "textBox_mileage";
-            this.textBox_mileage.Size = new System.Drawing.Size(173, 19);
-            this.textBox_mileage.TabIndex = 79;
-            this.textBox_mileage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button_confirm_end_rent
-            // 
-            this.button_confirm_end_rent.BackColor = System.Drawing.Color.Yellow;
-            this.button_confirm_end_rent.FlatAppearance.BorderSize = 0;
-            this.button_confirm_end_rent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_confirm_end_rent.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.button_confirm_end_rent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_confirm_end_rent.Location = new System.Drawing.Point(682, 169);
-            this.button_confirm_end_rent.Name = "button_confirm_end_rent";
-            this.button_confirm_end_rent.Size = new System.Drawing.Size(207, 57);
-            this.button_confirm_end_rent.TabIndex = 81;
-            this.button_confirm_end_rent.Text = "Potwierdź zakończenie wypożyczenia";
-            this.button_confirm_end_rent.UseVisualStyleBackColor = false;
             // 
             // UserControl_my_rents
             // 
