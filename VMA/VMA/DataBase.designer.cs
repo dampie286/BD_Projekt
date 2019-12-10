@@ -1646,7 +1646,7 @@ namespace VMA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Reservation_reservation_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Reservation_reservation_id", DbType="Int ALLOW NULL")]
 		public int Reservation_reservation_id
 		{
 			get
@@ -2683,16 +2683,16 @@ namespace VMA
 		private string _password;
 		
 		private string _phone_nr;
-
-        private string _city;
-
-        private string _city_code;
-
-        private string _street;
-
-        private string _house;
-
-        private EntitySet<RentSet> _RentSets;
+		
+		private string _city;
+		
+		private string _city_code;
+		
+		private string _street;
+		
+		private string _house;
+		
+		private EntitySet<RentSet> _RentSets;
 		
 		private EntitySet<ReservationSet> _ReservationSets;
 		
@@ -2718,17 +2718,17 @@ namespace VMA
     partial void OnpasswordChanged();
     partial void Onphone_nrChanging(string value);
     partial void Onphone_nrChanged();
-        partial void OncityChanging(string value);
-        partial void OncityChanged();
-        partial void Oncity_codeChanging(string value);
-        partial void Oncity_codeChanged();
-        partial void OnstreetChanging(string value);
-        partial void OnstreetChanged();
-        partial void OnhouseChanging(string value);
-        partial void OnhouseChanged();
-        #endregion
-
-        public WorkerSet()
+    partial void OncityChanging(string value);
+    partial void OncityChanged();
+    partial void Oncity_codeChanging(string value);
+    partial void Oncity_codeChanged();
+    partial void OnstreetChanging(string value);
+    partial void OnstreetChanged();
+    partial void OnhouseChanging(string value);
+    partial void OnhouseChanged();
+    #endregion
+		
+		public WorkerSet()
 		{
 			this._RentSets = new EntitySet<RentSet>(new Action<RentSet>(this.attach_RentSets), new Action<RentSet>(this.detach_RentSets));
 			this._ReservationSets = new EntitySet<ReservationSet>(new Action<ReservationSet>(this.attach_ReservationSets), new Action<ReservationSet>(this.detach_ReservationSets));
@@ -2895,87 +2895,88 @@ namespace VMA
 				}
 			}
 		}
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_city", DbType = "NVarChar(MAX)", CanBeNull = true)]
-        public string city
-        {
-            get
-            {
-                return this._city;
-            }
-            set
-            {
-                if ((this._city != value))
-                {
-                    this.OncityChanging(value);
-                    this.SendPropertyChanging();
-                    this._city = value;
-                    this.SendPropertyChanged("city");
-                    this.OncityChanged();
-                }
-            }
-        }
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_city_code", DbType = "NVarChar(MAX)", CanBeNull = true)]
-        public string city_code
-        {
-            get
-            {
-                return this._city_code;
-            }
-            set
-            {
-                if ((this._city_code != value))
-                {
-                    this.Oncity_codeChanging(value);
-                    this.SendPropertyChanging();
-                    this._city_code = value;
-                    this.SendPropertyChanged("city_code");
-                    this.Oncity_codeChanged();
-                }
-            }
-        }
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_street", DbType = "NVarChar(MAX)", CanBeNull = true)]
-        public string street
-        {
-            get
-            {
-                return this._street;
-            }
-            set
-            {
-                if ((this._street != value))
-                {
-                    this.OnstreetChanging(value);
-                    this.SendPropertyChanging();
-                    this._street = value;
-                    this.SendPropertyChanged("street");
-                    this.OnstreetChanged();
-                }
-            }
-        }
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_house", DbType = "NVarChar(MAX)", CanBeNull = true)]
-        public string house
-        {
-            get
-            {
-                return this._house;
-            }
-            set
-            {
-                if ((this._house != value))
-                {
-                    this.OnhouseChanging(value);
-                    this.SendPropertyChanging();
-                    this._house = value;
-                    this.SendPropertyChanged("house");
-                    this.OnhouseChanged();
-                }
-            }
-        }
-
-
-
-
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name="WorkerSet_RentSet", Storage="_RentSets", ThisKey="worker_id", OtherKey="Worker_worker_id")]
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city", DbType="NVarChar(MAX)")]
+		public string city
+		{
+			get
+			{
+				return this._city;
+			}
+			set
+			{
+				if ((this._city != value))
+				{
+					this.OncityChanging(value);
+					this.SendPropertyChanging();
+					this._city = value;
+					this.SendPropertyChanged("city");
+					this.OncityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city_code", DbType="NVarChar(MAX)")]
+		public string city_code
+		{
+			get
+			{
+				return this._city_code;
+			}
+			set
+			{
+				if ((this._city_code != value))
+				{
+					this.Oncity_codeChanging(value);
+					this.SendPropertyChanging();
+					this._city_code = value;
+					this.SendPropertyChanged("city_code");
+					this.Oncity_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_street", DbType="NVarChar(MAX)")]
+		public string street
+		{
+			get
+			{
+				return this._street;
+			}
+			set
+			{
+				if ((this._street != value))
+				{
+					this.OnstreetChanging(value);
+					this.SendPropertyChanging();
+					this._street = value;
+					this.SendPropertyChanged("street");
+					this.OnstreetChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_house", DbType="NVarChar(MAX)")]
+		public string house
+		{
+			get
+			{
+				return this._house;
+			}
+			set
+			{
+				if ((this._house != value))
+				{
+					this.OnhouseChanging(value);
+					this.SendPropertyChanging();
+					this._house = value;
+					this.SendPropertyChanged("house");
+					this.OnhouseChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="WorkerSet_RentSet", Storage="_RentSets", ThisKey="worker_id", OtherKey="Worker_worker_id")]
 		public EntitySet<RentSet> RentSets
 		{
 			get

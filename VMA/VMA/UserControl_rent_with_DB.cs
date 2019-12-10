@@ -12,29 +12,135 @@ namespace VMA
 {
     public partial class UserControl_rent_with_DB : UserControl
     {
+        DataBaseDataContext db = new DataBaseDataContext();
+        private DateTime time_from = DateTime.Today;
+        private DateTime time_to;
+        private bool confirm = false;  //czy użytkownik sprawdził dostępne auta
+        private int car_id;
+        private int user_id;
+        private int mileage_start;
+
         public UserControl_rent_with_DB()
         {
             InitializeComponent();
         }
 
+        public void user_ID_Set(int id)
+        {
+            user_id = id;
+        }
+
         public void fillDataGridView(DataTable tmp) //uzupełnienie tabeli
         {
-            dataGridView_veh_DB.DataSource = tmp;
+            dateTimePicker_from_date_rent.MinDate = DateTime.Today;
+            dateTimePicker_to_date_rent.MinDate = dateTimePicker_from_date_rent.Value;
+            time_to = dateTimePicker_to_date_rent.Value;
 
+            var query = from x in db.VehicleSets
+                        where x.available == "yes"
+                        select new
+                        {
+                            ID = x.vehicle_id,
+                            MARKA = x.brand,
+                            MODEL = x.model,
+                            WERSJA = x.version,
+                            REJESTRACJA = x.licence_plate,
+                            SPALANIE = x.avg_consumption,
+                            PALIWO = x.fuel_type
+                        };
 
-
-            dataGridView_veh_DB.Columns[0].Visible = false;
+            dataGridView_veh_DB.DataSource = query;
+            
             dataGridView_veh_DB.RowHeadersVisible = false;
             dataGridView_veh_DB.ReadOnly = true;        //nie moze edytować kolumn
 
-
+            dataGridView_veh_DB.Columns[0].Visible = false;
             dataGridView_veh_DB.Columns[1].Width = 60;
             dataGridView_veh_DB.Columns[2].Width = 60;
             dataGridView_veh_DB.Columns[3].Width = 60;
             dataGridView_veh_DB.Columns[4].Width = 90;
             dataGridView_veh_DB.Columns[5].Width = 90;
             dataGridView_veh_DB.Columns[6].Width = 90;
+        }
 
+        private void button_show_available_cars_Click(object sender, EventArgs e)
+        {
+            var not_Available_Cars = db.ReservationSets
+                .Where(x => (x.date_from < time_from && x.date_to > time_from)
+                       || (x.date_to > time_to && x.date_from < time_to)
+                       || (x.date_from > time_from && x.date_to < time_to))
+                           .Select(x => x.Vehicle_vehicle_id);
+            
+            var available_Cars = db.VehicleSets
+                .Where(x => !not_Available_Cars
+                .Contains(x.vehicle_id) && x.available == "yes");
+
+            dataGridView_veh_DB.DataSource = available_Cars;
+            dataGridView_veh_DB.Columns[0].Visible = false;
+
+            confirm = true;
+        }
+
+        private void button_rent_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int row = dataGridView_veh_DB.CurrentCell.RowIndex;
+                car_id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
+                if (comboBox_purpose_of_rent.Text == "Służbowy" || comboBox_purpose_of_rent.Text == "Prywatny")
+                {
+                    try
+                    {
+                        ReservationSet newReserv = new ReservationSet()
+                        {
+                            purpose = comboBox_purpose_of_rent.Text,
+                            date_from = time_from,
+                            date_to = time_to,
+                            Worker_worker_id = user_id,
+                            Vehicle_vehicle_id = car_id
+                        };
+                        db.ReservationSets.InsertOnSubmit(newReserv);
+                        db.SubmitChanges();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Nie udało się dokonać rezerwacji pojazdu", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    try
+                    {
+                    ReservationSet reserv = db.ReservationSets
+                                            .Where(x => x.date_to == time_to 
+                                                    && x.date_from == time_from 
+                                                    && x.Vehicle_vehicle_id == car_id)
+                                                    .First();
+                    RentSet newRent = new RentSet()
+                        {
+                            purpose = comboBox_purpose_of_rent.Text,
+                            date_from = time_from,
+                            date_to = time_to,
+                            mileage_start = 1,
+                            Worker_worker_id = user_id,
+                            Reservation_reservation_id = reserv.reservation_id,
+                            Vehicle_vehicle_id = car_id
+                        };
+                        db.RentSets.InsertOnSubmit(newRent);
+                        db.SubmitChanges();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Nie udało się dokonać wypożyczenia pojazdu", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Wybierz cel rezerwacji", "Error Car", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Zaznacz auto które chcesz zarezerwować", "Error Car", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void textBox_brand_Enter(object sender, EventArgs e)
@@ -163,22 +269,16 @@ namespace VMA
             }
         }
 
-        private void textBox_reserv_purpose_Enter(object sender, EventArgs e)
+        
+        
+        private void dateTimePicker_to_date_rent_Leave(object sender, EventArgs e)
         {
-            if (textBox_reserv_purpose.Text.Equals(@"Cel rezerwacji"))
-            {
-                textBox_reserv_purpose.ForeColor = Color.FromArgb(255, 255, 0);
-                textBox_reserv_purpose.Text = "";
-            }
+            time_to = dateTimePicker_to_date_rent.Value;
         }
 
-        private void textBox_reserv_purpose_Leave(object sender, EventArgs e)
+        private void dateTimePicker_from_date_rent_ValueChanged(object sender, EventArgs e) // mozna wywalic
         {
-            if (textBox_reserv_purpose.Text.Equals(""))
-            {
-                textBox_reserv_purpose.Text = "Cel rezerwacji";
-                textBox_reserv_purpose.ForeColor = Color.FromArgb(120, 120, 0);
-            }
+            
         }
     }
 }

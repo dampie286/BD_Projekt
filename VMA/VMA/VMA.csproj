@@ -141,6 +141,12 @@
     <Compile Include="UserControl_myStatics.Designer.cs">
       <DependentUpon>UserControl_myStatics.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_my_rents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_my_rents.Designer.cs">
+      <DependentUpon>UserControl_my_rents.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_my_reservation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_myStatics.resx">
       <DependentUpon>UserControl_myStatics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_my_rents.resx">
+      <DependentUpon>UserControl_my_rents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_my_reservation.resx">
       <DependentUpon>UserControl_my_reservation.cs</DependentUpon>

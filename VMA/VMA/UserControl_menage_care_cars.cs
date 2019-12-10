@@ -107,10 +107,15 @@ namespace VMA
                 car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
                 VehicleSet vechicle = db.VehicleSets.Where(x => x.vehicle_id == car_id).First();
 
-                vechicle.available = "no"; //Auto nie dostępne
+                vechicle.available = "no"; 
 
-                CareSet care_id = db.CareSets.Where(x => x.Vehicle_vehicle_id == car_id).First();
-                CompanySet company_id = db.CompanySets.Where(x => x.name == "AutoRIP").First();
+                CareSet care_id = db.CareSets
+                                  .Where(x => x.Vehicle_vehicle_id == car_id)
+                                  .First();
+
+                CompanySet company_id = db.CompanySets
+                                        .Where(x => x.name == "AutoRIP")
+                                        .First();
                 try
                 {
                     ServiceSet service = new ServiceSet()
@@ -128,7 +133,11 @@ namespace VMA
                 }
                 try
                 {
-                    ServiceSet service = db.ServiceSets.Where(x => x.name == Combobox_service.Text && x.description == textBox_description.Text).First();
+                    ServiceSet service = db.ServiceSets
+                                        .Where(x => x.name == Combobox_service.Text 
+                                                && x.description == textBox_description.Text)
+                                                .First();
+
                     Care_serviceSet newservice = new Care_serviceSet()
                     {
                         date_from = DateTime.Today,
@@ -150,7 +159,16 @@ namespace VMA
                 MessageBox.Show("Zaznacz samochód", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-            //vechicle.available = "no";
+
+        private void button_blocked_Click(object sender, EventArgs e)
+        {
+           
         }
+
+        private void button_unblocking_Click(object sender, EventArgs e)
+        {
+       
+        }
+    }
     }
 

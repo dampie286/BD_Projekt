@@ -53,9 +53,17 @@ namespace VMA
             userControl_rent1.Button_rentDB_Click += new System.EventHandler(this.userControl_rent_Button_rentDB_Click);
             //dodanie zdarzenia klikniecia wypozyczenia z rezerwacji
             userControl_rent1.Button_rentReserv_Click+= new System.EventHandler(this.userControl_rent_Button_rentResev_Click);
+            userControl_rent1.Button_my_rents_Click += new System.EventHandler(this.userControl_rent_Button_my_rents_Click);
             FillTmpDataTable();         //uzupełnienie przykładowych wartości
             FillTmp2DataTable();
           
+        }
+
+        private void userControl_rent_Button_my_rents_Click(object sender, EventArgs e)
+        {
+            userControl_my_rents1.setID(log);
+            userControl_my_rents1.fillDataGridView(tmp);
+            userControl_my_rents1.BringToFront();
         }
 
         private void MainApp_FormClosed(object sender, FormClosedEventArgs e)
@@ -129,6 +137,7 @@ namespace VMA
         private void button_rent_Click(object sender, EventArgs e)
         {
             userControl_rent1.BringToFront();
+            
         }
 
         //zdarzenie, które robi, gdy klikniemy na bazie danych
@@ -136,6 +145,7 @@ namespace VMA
         {
             userControl_rent_with_DB1.BringToFront();
             userControl_rent_with_DB1.fillDataGridView(tmp);
+            userControl_rent_with_DB1.user_ID_Set(log);
         }
 
         private void userControl_rent_Button_rentResev_Click(object sender, EventArgs e)    //zdarzenie kiedy naciśnie się przycisk wypożyczenie z baz danyuch

@@ -15,6 +15,7 @@ namespace VMA
         
         public event EventHandler Button_rentDB_Click;
         public event EventHandler Button_rentReserv_Click;
+        public event EventHandler Button_my_rents_Click;
         public UserControl_rent()
         {
             InitializeComponent();
@@ -27,6 +28,8 @@ namespace VMA
                 Button_rentDB_Click(this, e);
             }
         }
+
+
        
 
         private void button1_rent_with_reservation_Click(object sender, EventArgs e)    //zdarzenie, gdy klikniemy  wypożyczenie z rezerwacji
@@ -34,6 +37,14 @@ namespace VMA
             if (Button_rentReserv_Click != null)
             {
                 Button_rentReserv_Click(this, e);
+            }
+        }
+
+        private void button_my_rent_Click(object sender, EventArgs e)
+        {
+            if (Button_my_rents_Click != null)
+            {
+                Button_my_rents_Click(this, e);
             }
         }
     }
