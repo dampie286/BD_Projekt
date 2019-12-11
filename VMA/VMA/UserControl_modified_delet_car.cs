@@ -26,8 +26,6 @@ namespace VMA
         private void gridedit()
         {
 
-
-
             dataGridView_veh_DB.RowHeadersVisible = false;
             dataGridView_veh_DB.Columns[0].Visible = false;
             dataGridView_veh_DB.Columns[1].Visible = true;
@@ -38,15 +36,6 @@ namespace VMA
             dataGridView_veh_DB.Columns[6].Visible = true;
             dataGridView_veh_DB.Columns[7].Visible = true;
             dataGridView_veh_DB.Columns[8].Visible = false;
-
-           
-            
-        
-
-
-          
-
-
 
         }
 

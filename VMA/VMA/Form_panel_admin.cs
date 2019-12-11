@@ -26,11 +26,18 @@ namespace VMA
             userControl_menage_workers1.Button_menANDDelWorker_Click += new System.EventHandler(this.userControl_menage_Button_menAndDelWorker_Click);
             userControl_manage_keeper1.Button_addKeeper_Click += new System.EventHandler(this.userControl_menage_Button_addKeeper_Click);
             userControl_manage_keeper1.Button_menANDDelKeeper_Click += new System.EventHandler(this.userControl_meange_Button_modAndDelKeeper_Click);
+            userControl_raports_stats1.Button_cars_Click += new System.EventHandler(this.userControl_raports_Button_cars_Click);
             FillTmpDataTable();
             FillTmp2DataTable();
             userControl_veh_DB1.fillDataGridView();
             userControl_veh_DB1.auto_Complete_textBox();
             userControl_veh_DB1.BringToFront();
+        }
+
+        private void userControl_raports_Button_cars_Click(object sender, EventArgs e)
+        {
+            userControl_raports_stats_cars1.fillDataGridView();
+            userControl_raports_stats_cars1.BringToFront();
         }
 
         private void userControl_meange_Button_modAndDelKeeper_Click(object sender, EventArgs e)
@@ -139,6 +146,11 @@ namespace VMA
         private void button_manage_ceeper_Click(object sender, EventArgs e)
         {
             userControl_manage_keeper1.BringToFront();
+        }
+
+        private void button_raports_stats_Click(object sender, EventArgs e)
+        {
+            userControl_raports_stats1.BringToFront();
         }
     }
 }

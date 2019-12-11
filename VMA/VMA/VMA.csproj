@@ -153,6 +153,18 @@
     <Compile Include="UserControl_my_reservation.Designer.cs">
       <DependentUpon>UserControl_my_reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_raports_stats.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_raports_stats.Designer.cs">
+      <DependentUpon>UserControl_raports_stats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_raports_stats_cars.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_raports_stats_cars.Designer.cs">
+      <DependentUpon>UserControl_raports_stats_cars.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_rent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -249,6 +261,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_my_reservation.resx">
       <DependentUpon>UserControl_my_reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_raports_stats.resx">
+      <DependentUpon>UserControl_raports_stats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_raports_stats_cars.resx">
+      <DependentUpon>UserControl_raports_stats_cars.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_rent.resx">
       <DependentUpon>UserControl_rent.cs</DependentUpon>
