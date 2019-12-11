@@ -40,10 +40,10 @@
             this.button_meng_or_del_keeper.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_meng_or_del_keeper.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_meng_or_del_keeper.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_meng_or_del_keeper.Location = new System.Drawing.Point(287, 325);
-            this.button_meng_or_del_keeper.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_meng_or_del_keeper.Location = new System.Drawing.Point(225, 281);
+            this.button_meng_or_del_keeper.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_meng_or_del_keeper.Name = "button_meng_or_del_keeper";
-            this.button_meng_or_del_keeper.Size = new System.Drawing.Size(310, 64);
+            this.button_meng_or_del_keeper.Size = new System.Drawing.Size(232, 52);
             this.button_meng_or_del_keeper.TabIndex = 42;
             this.button_meng_or_del_keeper.Text = "Modyfikuj lub usuń opiekuna";
             this.button_meng_or_del_keeper.UseVisualStyleBackColor = false;
@@ -56,10 +56,10 @@
             this.button_add_keeper.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add_keeper.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_add_keeper.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_add_keeper.Location = new System.Drawing.Point(287, 220);
-            this.button_add_keeper.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_add_keeper.Location = new System.Drawing.Point(225, 183);
+            this.button_add_keeper.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_add_keeper.Name = "button_add_keeper";
-            this.button_add_keeper.Size = new System.Drawing.Size(310, 64);
+            this.button_add_keeper.Size = new System.Drawing.Size(232, 52);
             this.button_add_keeper.TabIndex = 41;
             this.button_add_keeper.Text = "Dodaj opiekuna";
             this.button_add_keeper.UseVisualStyleBackColor = false;
@@ -70,24 +70,25 @@
             this.label_menage_keepers.AutoSize = true;
             this.label_menage_keepers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
             this.label_menage_keepers.ForeColor = System.Drawing.Color.Yellow;
-            this.label_menage_keepers.Location = new System.Drawing.Point(312, 157);
+            this.label_menage_keepers.Location = new System.Drawing.Point(234, 127);
             this.label_menage_keepers.Margin = new System.Windows.Forms.Padding(0);
             this.label_menage_keepers.Name = "label_menage_keepers";
-            this.label_menage_keepers.Size = new System.Drawing.Size(267, 29);
+            this.label_menage_keepers.Size = new System.Drawing.Size(214, 24);
             this.label_menage_keepers.TabIndex = 40;
             this.label_menage_keepers.Text = "Zarządzaj opiekunami";
             // 
             // UserControl_manage_keeper
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.Controls.Add(this.button_meng_or_del_keeper);
             this.Controls.Add(this.button_add_keeper);
             this.Controls.Add(this.label_menage_keepers);
             this.ForeColor = System.Drawing.Color.Black;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserControl_manage_keeper";
-            this.Size = new System.Drawing.Size(941, 656);
+            this.Size = new System.Drawing.Size(706, 533);
             this.ResumeLayout(false);
             this.PerformLayout();
 
