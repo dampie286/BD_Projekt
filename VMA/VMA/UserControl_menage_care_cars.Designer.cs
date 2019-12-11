@@ -44,6 +44,7 @@
             this.label_desc_model = new System.Windows.Forms.Label();
             this.label_desc_brand = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_care_car_DB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_cars_on_service)).BeginInit();
             this.SuspendLayout();
@@ -122,6 +123,7 @@
             this.button_unblocking.TabIndex = 34;
             this.button_unblocking.Text = "Odblokuj";
             this.button_unblocking.UseVisualStyleBackColor = false;
+            this.button_unblocking.Click += new System.EventHandler(this.button_unblocking_Click);
             // 
             // Combobox_service
             // 
@@ -160,7 +162,7 @@
             this.textBox_description.Name = "textBox_description";
             this.textBox_description.Size = new System.Drawing.Size(132, 22);
             this.textBox_description.TabIndex = 37;
-            this.textBox_description.Text = "Opis problemu";
+            
             // 
             // dataGridView_cars_on_service
             // 
@@ -199,6 +201,7 @@
             this.button_repaired.TabIndex = 41;
             this.button_repaired.Text = "Naprawiony";
             this.button_repaired.UseVisualStyleBackColor = false;
+            this.button_repaired.Click += new System.EventHandler(this.button_repaired_Click);
             // 
             // label_model
             // 
@@ -258,11 +261,23 @@
             this.label2.TabIndex = 79;
             this.label2.Text = "Rodzaj serwisu:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F);
+            this.label3.ForeColor = System.Drawing.Color.Yellow;
+            this.label3.Location = new System.Drawing.Point(263, 513);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 23);
+            this.label3.TabIndex = 80;
+            this.label3.Text = "Opisz problem";
+            // 
             // UserControl_menage_care_cars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label_model);
             this.Controls.Add(this.label_brand);
@@ -307,5 +322,6 @@
         private System.Windows.Forms.Label label_desc_model;
         private System.Windows.Forms.Label label_desc_brand;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

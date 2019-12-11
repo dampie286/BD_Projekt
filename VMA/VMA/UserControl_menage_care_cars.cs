@@ -52,9 +52,11 @@ namespace VMA
                             join y in db.Care_serviceSets on x.service_id equals y.Service_service_id
                             join z in db.CareSets on y.Care_care_id equals z.care_id
                             join q in db.VehicleSets on z.Vehicle_vehicle_id equals q.vehicle_id
-                            where z.Keeper_worker_id == user_id
+                            where z.Keeper_worker_id == user_id && x.is_repair == false
                             select new
                             {
+                                ID_car = q.vehicle_id,
+                                ID_Service = x.service_id,
                                 Naprawiony = x.is_repair,
                                 AUTO = q.model,
                                 REJESTRACJA = q.licence_plate,
@@ -63,6 +65,9 @@ namespace VMA
                                 OPIS = x.description
                             };
                 dataGridView_cars_on_service.DataSource = query;
+                dataGridView_cars_on_service.Columns[0].Visible = false;
+                dataGridView_cars_on_service.Columns[1].Visible = false;
+
             }
             catch (Exception)
             {
@@ -100,68 +105,76 @@ namespace VMA
 
         private void button_send_to_service_Click(object sender, EventArgs e)
         {
-            try
+            if (Combobox_service.SelectedIndex == -1 || string.IsNullOrEmpty(textBox_description.Text))
             {
-                int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
-                car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
-                VehicleSet vechicle = db.VehicleSets.Where(x => x.vehicle_id == car_id).First();
-
-                vechicle.available = "no"; 
-
-                CareSet care_id = db.CareSets
-                                  .Where(x => x.Vehicle_vehicle_id == car_id)
-                                  .First();
-
-                CompanySet company_id = db.CompanySets
-                                        .Where(x => x.name == "AutoRIP")
-                                        .First();
+                MessageBox.Show("Wybierz przyczynę serwisu i opisz problem", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
                 try
                 {
-                    ServiceSet service = new ServiceSet()
+                    int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
+                    car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
+                    VehicleSet vechicle = db.VehicleSets.Where(x => x.vehicle_id == car_id).First();
+
+                    vechicle.available = "no";
+
+                    CareSet care_id = db.CareSets
+                                      .Where(x => x.Vehicle_vehicle_id == car_id)
+                                      .First();
+
+                    CompanySet company_id = db.CompanySets
+                                            .Where(x => x.name == "AutoRIP")
+                                            .First();
+                    try
                     {
-                        is_repair = false,
-                        name = Combobox_service.Text,
-                        description = textBox_description.Text
-                    };
-                    db.ServiceSets.InsertOnSubmit(service);
-                    db.SubmitChanges();
+
+
+                        ServiceSet service = new ServiceSet()
+                        {
+                            is_repair = false,
+                            name = Combobox_service.Text,
+                            description = textBox_description.Text
+                        };
+                        db.ServiceSets.InsertOnSubmit(service);
+                        db.SubmitChanges();
+
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Nie dodało się do seris", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    try
+                    {
+                        ServiceSet service = db.ServiceSets
+                                            .Where(x => x.name == Combobox_service.Text
+                                                    && x.description == textBox_description.Text)
+                                                    .First();
+
+                        Care_serviceSet newservice = new Care_serviceSet()
+                        {
+                            date_from = DateTime.Today,
+                            Care_care_id = care_id.care_id,
+                            Service_service_id = service.service_id,
+                            price = 500,
+                            Company_company_id = company_id.company_id
+                        };
+                        db.Care_serviceSets.InsertOnSubmit(newservice);
+                        db.SubmitChanges();
+
+                        fillDataGridView();
+                        fillDataGridView2();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Nie dodało się do bazy care_service", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Nie dodało się do seris", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                try
-                {
-                    ServiceSet service = db.ServiceSets
-                                        .Where(x => x.name == Combobox_service.Text 
-                                                && x.description == textBox_description.Text)
-                                                .First();
-
-                    Care_serviceSet newservice = new Care_serviceSet()
-                    {
-                        date_from = DateTime.Today,
-                        Care_care_id = care_id.care_id,
-                        Service_service_id = service.service_id,
-                        price = 500,
-                        Company_company_id = company_id.company_id
-                    };
-                    db.Care_serviceSets.InsertOnSubmit(newservice);
-                    db.SubmitChanges();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Nie dodało się do bazy care_service", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Zaznacz samochód", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Zaznacz samochód", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void button_blocked_Click(object sender, EventArgs e)
-        {
-           
         }
 
         private void dataGridView_care_car_DB_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -170,6 +183,44 @@ namespace VMA
             label_brand.Text = (string)dataGridView_care_car_DB.Rows[row].Cells[1].Value;
             label_model.Text = (string)dataGridView_care_car_DB.Rows[row].Cells[2].Value;
         }
+
+        private void button_blocked_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button_unblocking_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_repaired_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int row = dataGridView_cars_on_service.CurrentCell.RowIndex;
+                int car_id = (int)dataGridView_cars_on_service.Rows[row].Cells[0].Value;
+                int service_id = (int)dataGridView_cars_on_service.Rows[row].Cells[1].Value;
+
+                ServiceSet service = db.ServiceSets.Where(p => p.service_id == service_id).First();
+                service.is_repair = true;
+
+                VehicleSet veh = db.VehicleSets.Where(p => p.vehicle_id == car_id).First();
+                veh.available = "yes";
+
+                db.SubmitChanges();
+                fillDataGridView();
+                fillDataGridView2();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Zaznacz samochód, który został naprawiony", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+       
+
+        
     }
     }
 

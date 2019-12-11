@@ -51,10 +51,21 @@ namespace VMA
 
                 }
 
-                
+
 
                 if (confirm)
+                {
                     MessageBox.Show("Dodano pracownika", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    textBox_city.Clear();
+                    textBox_code.Clear();
+                    textBox_house.Clear();
+                    textBox_id_worker.Clear();
+                    textBox_name.Clear();
+                    textBox_street.Clear();
+                    textBox_phone_number.Clear();
+                    textBox_surrname.Clear();
+                    textBox_tmp_pass.Clear();
+                }
 
                
             }

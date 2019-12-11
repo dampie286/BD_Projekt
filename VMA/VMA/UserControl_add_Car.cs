@@ -57,7 +57,15 @@ namespace VMA
                 }
 
                 if (confirm)
+                {
                     MessageBox.Show("Dodano auto", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    textBox_age.Clear();
+                    textBox_avg_fuel.Clear();
+                    textBox_brand.Clear();
+                    textBox_license.Clear();
+                    textBox_mileage.Clear();
+                    textBox_model.Clear();
+                }
             }
         }
        
@@ -109,9 +117,6 @@ namespace VMA
 
         private void textBox_avg_fuel_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-
-
             char chh = e.KeyChar;
             if (chh == 46 && textBox_avg_fuel.Text.IndexOf('.') != -1)
             {

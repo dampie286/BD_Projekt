@@ -138,7 +138,7 @@
             this.textBox_license.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_license.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_license.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_license.Location = new System.Drawing.Point(671, 25);
+            this.textBox_license.Location = new System.Drawing.Point(285, 23);
             this.textBox_license.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_license.MaximumSize = new System.Drawing.Size(120, 25);
             this.textBox_license.MinimumSize = new System.Drawing.Size(5, 15);
@@ -192,7 +192,7 @@
             this.textBox_equipment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_equipment.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_equipment.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_equipment.Location = new System.Drawing.Point(283, 25);
+            this.textBox_equipment.Location = new System.Drawing.Point(667, 23);
             this.textBox_equipment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_equipment.MaximumSize = new System.Drawing.Size(120, 25);
             this.textBox_equipment.MinimumSize = new System.Drawing.Size(5, 15);
