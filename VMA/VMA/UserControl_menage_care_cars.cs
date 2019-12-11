@@ -57,7 +57,6 @@ namespace VMA
                             {
                                 ID_car = q.vehicle_id,
                                 ID_Service = x.service_id,
-                                Naprawiony = x.is_repair,
                                 AUTO = q.model,
                                 REJESTRACJA = q.licence_plate,
                                 OD = y.date_from,
@@ -128,8 +127,6 @@ namespace VMA
                                             .First();
                     try
                     {
-
-
                         ServiceSet service = new ServiceSet()
                         {
                             is_repair = false,
@@ -146,10 +143,7 @@ namespace VMA
                     }
                     try
                     {
-                        ServiceSet service = db.ServiceSets
-                                            .Where(x => x.name == Combobox_service.Text
-                                                    && x.description == textBox_description.Text)
-                                                    .First();
+                        ServiceSet service = db.ServiceSets.OrderByDescending(p => p.service_id).First();
 
                         Care_serviceSet newservice = new Care_serviceSet()
                         {
@@ -183,15 +177,84 @@ namespace VMA
             label_brand.Text = (string)dataGridView_care_car_DB.Rows[row].Cells[1].Value;
             label_model.Text = (string)dataGridView_care_car_DB.Rows[row].Cells[2].Value;
         }
+        private int if_car_is_in_service()
+        {
+
+
+
+            return 0;
+        }
 
         private void button_blocked_Click(object sender, EventArgs e)
         {
-           
+            //if car is in service
+            
+
+            try
+            {
+                
+                int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
+                int car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
+
+                //var care_d = db.VehicleSets
+                //             .Join(db.CareSets,
+                //                   x => x.vehicle_id,
+                //                   y => y.Vehicle_vehicle_id, 
+                //                   (x, y) => y.care_id)
+                //                    .Where(x => x.Equals(car_id))
+                //                    .First();
+
+                //var if_on_service = db.Care_serviceSets
+                //                    .Where(x => x.Care_care_id == care_d)
+                //                        .First();
+                //if ()
+                //{
+
+                //}
+                VehicleSet veh = db.VehicleSets.Where(v => v.vehicle_id == car_id).First();
+                if (veh.available == "yes")
+                {
+                    veh.available = "no";
+
+                    db.SubmitChanges();
+                    fillDataGridView();
+                }
+                else
+                {
+                    MessageBox.Show("Auto jest juz niedostępne", "Information available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Zaznacz samochód, który chcesz blokować", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button_unblocking_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
+                int car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
 
+                VehicleSet veh = db.VehicleSets.Where(v => v.vehicle_id == car_id).First();
+                if (veh.available == "no")
+                {
+                    veh.available = "yes";
+
+                    db.SubmitChanges();
+                    fillDataGridView();
+                }
+                else
+                {
+                    MessageBox.Show("Auto jest juz dostępne", "Information available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Zaznacz samochód, który chcesz blokować", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button_repaired_Click(object sender, EventArgs e)
