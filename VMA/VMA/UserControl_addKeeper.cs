@@ -117,6 +117,22 @@ namespace VMA
 
 
         }
+
+        private void dataGridView_Worker_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = dataGridView_Worker.CurrentCell.RowIndex;
+            label_name.Text = (string)dataGridView_Worker.Rows[row].Cells[1].Value;
+            label_surrname.Text = (string)dataGridView_Worker.Rows[row].Cells[2].Value;
+            label_postion.Text = (string)dataGridView_Worker.Rows[row].Cells[3].Value;
+        }
+
+        private void dataGridView_veh_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = dataGridView_veh.CurrentCell.RowIndex;
+            label_brand.Text = (string)dataGridView_veh.Rows[row].Cells[1].Value;
+            label_model.Text = (string)dataGridView_veh.Rows[row].Cells[2].Value;
+            label_license.Text = (string)dataGridView_veh.Rows[row].Cells[3].Value;
+        }
     }
 }
 
