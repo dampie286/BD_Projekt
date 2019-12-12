@@ -34,7 +34,6 @@
             this.label_from_date = new System.Windows.Forms.Label();
             this.dateTimePicker_from_date_rent = new System.Windows.Forms.DateTimePicker();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox_reser_license = new System.Windows.Forms.TextBox();
             this.label_rent = new System.Windows.Forms.Label();
             this.dataGridView_veh_DB = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -53,7 +52,6 @@
             this.button_show_available_cars = new System.Windows.Forms.Button();
             this.comboBox_purpose_of_rent = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_veh_DB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +62,7 @@
             this.button_rent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_rent.Font = new System.Drawing.Font("Arial", 9.75F);
             this.button_rent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_rent.Location = new System.Drawing.Point(676, 498);
+            this.button_rent.Location = new System.Drawing.Point(612, 468);
             this.button_rent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_rent.Name = "button_rent";
             this.button_rent.Size = new System.Drawing.Size(237, 42);
@@ -132,24 +130,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(173, 1);
             this.panel7.TabIndex = 48;
-            // 
-            // textBox_reser_license
-            // 
-            this.textBox_reser_license.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBox_reser_license.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_reser_license.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_reser_license.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            this.textBox_reser_license.Location = new System.Drawing.Point(305, 474);
-            this.textBox_reser_license.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_reser_license.MaximumSize = new System.Drawing.Size(200, 25);
-            this.textBox_reser_license.MinimumSize = new System.Drawing.Size(5, 18);
-            this.textBox_reser_license.Name = "textBox_reser_license";
-            this.textBox_reser_license.Size = new System.Drawing.Size(173, 19);
-            this.textBox_reser_license.TabIndex = 47;
-            this.textBox_reser_license.Text = "Nr rejestracyjny";
-            this.textBox_reser_license.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_reser_license.Enter += new System.EventHandler(this.textBox_reser_license_Enter);
-            this.textBox_reser_license.Leave += new System.EventHandler(this.textBox_reser_license_Leave);
             // 
             // label_rent
             // 
@@ -378,7 +358,7 @@
             "Delegacja",
             "Służbowy",
             "Prywatny"});
-            this.comboBox_purpose_of_rent.Location = new System.Drawing.Point(305, 533);
+            this.comboBox_purpose_of_rent.Location = new System.Drawing.Point(305, 479);
             this.comboBox_purpose_of_rent.Name = "comboBox_purpose_of_rent";
             this.comboBox_purpose_of_rent.Size = new System.Drawing.Size(173, 24);
             this.comboBox_purpose_of_rent.TabIndex = 57;
@@ -388,24 +368,12 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F);
             this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(124, 534);
+            this.label2.Location = new System.Drawing.Point(124, 480);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 19);
             this.label2.TabIndex = 59;
             this.label2.Text = "Cel wypożyczenia";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(124, 474);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 19);
-            this.label1.TabIndex = 58;
-            this.label1.Text = "Numer rejestracyjny";
             // 
             // UserControl_rent_with_DB
             // 
@@ -413,7 +381,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox_purpose_of_rent);
             this.Controls.Add(this.button_show_available_cars);
             this.Controls.Add(this.button_rent);
@@ -422,7 +389,6 @@
             this.Controls.Add(this.label_from_date);
             this.Controls.Add(this.dateTimePicker_from_date_rent);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.textBox_reser_license);
             this.Controls.Add(this.label_rent);
             this.Controls.Add(this.dataGridView_veh_DB);
             this.Controls.Add(this.panel6);
@@ -455,7 +421,6 @@
         private System.Windows.Forms.Label label_from_date;
         private System.Windows.Forms.DateTimePicker dateTimePicker_from_date_rent;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox_reser_license;
         private System.Windows.Forms.Label label_rent;
         private System.Windows.Forms.DataGridView dataGridView_veh_DB;
         private System.Windows.Forms.Panel panel6;
@@ -474,6 +439,5 @@
         private System.Windows.Forms.Button button_show_available_cars;
         private System.Windows.Forms.ComboBox comboBox_purpose_of_rent;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
     }
 }
