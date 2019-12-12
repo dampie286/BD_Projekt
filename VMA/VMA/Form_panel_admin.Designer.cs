@@ -49,6 +49,7 @@
             this.userControl_modified_delet_car1 = new VMA.UserControl_modified_delet_car();
             this.userControl_add_Car1 = new VMA.UserControl_add_Car();
             this.userControl_raports_stats_cars1 = new VMA.UserControl_raports_stats_cars();
+            this.userControl_raports_stats_workers1 = new VMA.UserControl_raports_stats_workers();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -240,6 +241,7 @@
             // 
             this.userControl_addKeeper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_addKeeper1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_addKeeper1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControl_addKeeper1.Name = "userControl_addKeeper1";
             this.userControl_addKeeper1.Size = new System.Drawing.Size(941, 656);
             this.userControl_addKeeper1.TabIndex = 27;
@@ -249,6 +251,7 @@
             this.userControl_manage_keeper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_manage_keeper1.ForeColor = System.Drawing.Color.Black;
             this.userControl_manage_keeper1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_manage_keeper1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControl_manage_keeper1.Name = "userControl_manage_keeper1";
             this.userControl_manage_keeper1.Size = new System.Drawing.Size(941, 656);
             this.userControl_manage_keeper1.TabIndex = 26;
@@ -302,15 +305,25 @@
             // 
             this.userControl_raports_stats_cars1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_raports_stats_cars1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_raports_stats_cars1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControl_raports_stats_cars1.Name = "userControl_raports_stats_cars1";
             this.userControl_raports_stats_cars1.Size = new System.Drawing.Size(941, 656);
             this.userControl_raports_stats_cars1.TabIndex = 31;
+            // 
+            // userControl_raports_stats_workers1
+            // 
+            this.userControl_raports_stats_workers1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_raports_stats_workers1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_raports_stats_workers1.Name = "userControl_raports_stats_workers1";
+            this.userControl_raports_stats_workers1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_raports_stats_workers1.TabIndex = 32;
             // 
             // Form_panel_admin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.userControl_raports_stats_workers1);
             this.Controls.Add(this.userControl_raports_stats_cars1);
             this.Controls.Add(this.userControl_raports_stats1);
             this.Controls.Add(this.button_raports_stats);
@@ -367,5 +380,6 @@
         private System.Windows.Forms.Button button_raports_stats;
         private UserControl_raports_stats userControl_raports_stats1;
         private UserControl_raports_stats_cars userControl_raports_stats_cars1;
+        private UserControl_raports_stats_workers userControl_raports_stats_workers1;
     }
 }
