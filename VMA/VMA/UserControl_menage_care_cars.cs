@@ -196,21 +196,6 @@ namespace VMA
                 int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
                 int car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
 
-                //var care_d = db.VehicleSets
-                //             .Join(db.CareSets,
-                //                   x => x.vehicle_id,
-                //                   y => y.Vehicle_vehicle_id, 
-                //                   (x, y) => y.care_id)
-                //                    .Where(x => x.Equals(car_id))
-                //                    .First();
-
-                //var if_on_service = db.Care_serviceSets
-                //                    .Where(x => x.Care_care_id == care_d)
-                //                        .First();
-                //if ()
-                //{
-
-                //}
                 VehicleSet veh = db.VehicleSets.Where(v => v.vehicle_id == car_id).First();
                 if (veh.available == "yes")
                 {
@@ -280,10 +265,6 @@ namespace VMA
                 MessageBox.Show("Zaznacz samochód, który został naprawiony", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-       
-
-        
     }
     }
 

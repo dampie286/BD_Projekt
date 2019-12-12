@@ -129,18 +129,31 @@ namespace VMA
 
         private void button_manag_care_car_Click(object sender, EventArgs e)
         {
-            userControl_menage_care_cars1.BringToFront();
-            userControl_menage_care_cars1.setUserID(log);
-            userControl_menage_care_cars1.fillDataGridView();
-            userControl_menage_care_cars1.fillDataGridView2();
-            
+            using (DataBaseDataContext db = new DataBaseDataContext())
+            {
+                var if_keeper = db.CareSets.Where(x => x.Keeper_worker_id == log).FirstOrDefault();
+                if (if_keeper == null)
+                {
+                    MessageBox.Show("Nie jesteś opiekunem", "Error Care", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+                    userControl_menage_care_cars1.BringToFront();
+                    userControl_menage_care_cars1.setUserID(log);
+                    userControl_menage_care_cars1.fillDataGridView();
+                    userControl_menage_care_cars1.fillDataGridView2();
+                }
+            }
         }
 
         private void button_settings_Click(object sender, EventArgs e)
         {
-            userControl_settings1.workersettings(log);//przekazanie id pracownika
-            userControl_settings1.BringToFront();
-           
+            
+                    userControl_settings1.workersettings(log);//przekazanie id pracownika
+                    userControl_settings1.BringToFront();
+             
+            
         }
     }
 }

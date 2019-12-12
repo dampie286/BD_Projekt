@@ -125,45 +125,7 @@ namespace VMA
             }
         }
 
-        private void textBox_reser_license_Enter(object sender, EventArgs e)
-        {
-            if (textBox_reser_license.Text.Equals(@"Nr rejestracyjny"))
-            {
-                textBox_reser_license.ForeColor = Color.FromArgb(255, 255, 0);
-                textBox_reser_license.Text = "";
-            }
-        }
-
-        private void textBox_reser_license_Leave(object sender, EventArgs e)
-        {
-            if (textBox_reser_license.Text.Equals(""))
-            {
-                
-                textBox_reser_license.Text = "Nr rejestracyjny";
-                textBox_reser_license.ForeColor = Color.FromArgb(120, 120, 0);
-            }
-            else
-            {
-                licence_plate = textBox_reser_license.Text;
-                var Selectquery = from x in db.VehicleSets
-                                  join y in db.ReservationSets on x.vehicle_id equals y.Vehicle_vehicle_id
-                                  join z in db.WorkerSets on y.Worker_worker_id equals z.worker_id
-                                  where x.licence_plate == licence_plate
-                                  select new
-                                  {
-                                      ID = x.vehicle_id,
-                                      REJESTRACJA = x.licence_plate,
-                                      MARKA = x.brand,
-                                      MODEL = x.model,
-                                      OD = y.date_from,
-                                      DO = y.date_to,
-                                      REZERWUJACY = z.surname,
-                                      CEL = y.purpose
-                                  };
-
-                    dataGridView_veh_DB.DataSource = Selectquery;
-            }
-        }
+    
 
         private void button_check_available_cars_Click(object sender, EventArgs e)
         {
