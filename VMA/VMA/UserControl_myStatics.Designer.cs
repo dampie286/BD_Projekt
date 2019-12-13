@@ -58,9 +58,9 @@
             this.label_how_many_kilometers.ForeColor = System.Drawing.Color.LightGray;
             this.label_how_many_kilometers.Location = new System.Drawing.Point(21, 150);
             this.label_how_many_kilometers.Name = "label_how_many_kilometers";
-            this.label_how_many_kilometers.Size = new System.Drawing.Size(272, 22);
+            this.label_how_many_kilometers.Size = new System.Drawing.Size(286, 22);
             this.label_how_many_kilometers.TabIndex = 49;
-            this.label_how_many_kilometers.Text = "Ilość przejechanych kilometrów";
+            this.label_how_many_kilometers.Text = "Liczba przejechanych kilometrów";
             // 
             // label_descr_favourite_car
             // 
@@ -80,9 +80,9 @@
             this.label_used_cars.ForeColor = System.Drawing.Color.LightGray;
             this.label_used_cars.Location = new System.Drawing.Point(21, 215);
             this.label_used_cars.Name = "label_used_cars";
-            this.label_used_cars.Size = new System.Drawing.Size(231, 22);
+            this.label_used_cars.Size = new System.Drawing.Size(245, 22);
             this.label_used_cars.TabIndex = 51;
-            this.label_used_cars.Text = "Ilość używanych pojazdów";
+            this.label_used_cars.Text = "Liczba używanych pojazdów";
             // 
             // label_desc_how_care_cars
             // 

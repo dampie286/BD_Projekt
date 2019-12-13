@@ -61,7 +61,7 @@ namespace VMA
         private void userControl_rent_Button_my_rents_Click(object sender, EventArgs e)
         {
             userControl_my_rents1.setID(log);
-            userControl_my_rents1.fillDataGridView(tmp);
+            userControl_my_rents1.fillDataGridView();
             userControl_my_rents1.BringToFront();
         }
 
@@ -117,7 +117,7 @@ namespace VMA
         {
             userControl_my_reservation1.BringToFront();
             userControl_my_reservation1.setID(log);
-            userControl_my_reservation1.fillDataGridView(tmp2);
+            userControl_my_reservation1.fillDataGridView();
         }
 
         private void button_statistic_Click(object sender, EventArgs e)

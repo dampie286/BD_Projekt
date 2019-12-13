@@ -32,6 +32,7 @@
             this.dataGridView_my_reservation = new System.Windows.Forms.DataGridView();
             this.button_rent = new System.Windows.Forms.Button();
             this.panel_with_myreservation = new System.Windows.Forms.Panel();
+            this.button_delete_res = new System.Windows.Forms.Button();
             this.label_to = new System.Windows.Forms.Label();
             this.label_from = new System.Windows.Forms.Label();
             this.label_purpose = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.label_desc_from = new System.Windows.Forms.Label();
             this.label_desc_model = new System.Windows.Forms.Label();
             this.label_desc_brand = new System.Windows.Forms.Label();
-            this.button_delete_res = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_my_reservation)).BeginInit();
             this.panel_with_myreservation.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +95,7 @@
             this.button_rent.TabIndex = 56;
             this.button_rent.Text = "Wypożycz";
             this.button_rent.UseVisualStyleBackColor = false;
+            this.button_rent.Click += new System.EventHandler(this.button_rent_Click);
             // 
             // panel_with_myreservation
             // 
@@ -115,6 +116,22 @@
             this.panel_with_myreservation.Name = "panel_with_myreservation";
             this.panel_with_myreservation.Size = new System.Drawing.Size(889, 267);
             this.panel_with_myreservation.TabIndex = 57;
+            // 
+            // button_delete_res
+            // 
+            this.button_delete_res.BackColor = System.Drawing.Color.Yellow;
+            this.button_delete_res.FlatAppearance.BorderSize = 0;
+            this.button_delete_res.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_delete_res.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_delete_res.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.button_delete_res.Location = new System.Drawing.Point(649, 213);
+            this.button_delete_res.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_delete_res.Name = "button_delete_res";
+            this.button_delete_res.Size = new System.Drawing.Size(237, 42);
+            this.button_delete_res.TabIndex = 68;
+            this.button_delete_res.Text = "Usuń rezerwacje";
+            this.button_delete_res.UseVisualStyleBackColor = false;
+            this.button_delete_res.Click += new System.EventHandler(this.button_delete_res_Click);
             // 
             // label_to
             // 
@@ -242,21 +259,6 @@
             this.label_desc_brand.Size = new System.Drawing.Size(72, 23);
             this.label_desc_brand.TabIndex = 57;
             this.label_desc_brand.Text = "Marka:";
-            // 
-            // button_delete_res
-            // 
-            this.button_delete_res.BackColor = System.Drawing.Color.Yellow;
-            this.button_delete_res.FlatAppearance.BorderSize = 0;
-            this.button_delete_res.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_delete_res.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_delete_res.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_delete_res.Location = new System.Drawing.Point(649, 213);
-            this.button_delete_res.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_delete_res.Name = "button_delete_res";
-            this.button_delete_res.Size = new System.Drawing.Size(237, 42);
-            this.button_delete_res.TabIndex = 68;
-            this.button_delete_res.Text = "Usuń rezerwacje";
-            this.button_delete_res.UseVisualStyleBackColor = false;
             // 
             // UserControl_my_reservation
             // 
