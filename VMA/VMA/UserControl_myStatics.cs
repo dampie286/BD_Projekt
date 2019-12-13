@@ -16,43 +16,29 @@ namespace VMA
         DataBaseDataContext db = new DataBaseDataContext();
 
         private DataTable veh_DB = new DataTable();
-        int max = 0;
-        int res_id;
-        int user_id;
         public UserControl_myStatics()
         {
             InitializeComponent();
         }
 
-        public void setUserID(int val)
-        {
-            user_id = val;
-        }
         
-        
-
-
-
         public void statistic(int worker_id)
         {
             //ilosc aut w opiece
-
             var query = (from x in db.CareSets
                                where x.WorkerSet_Keeper.worker_id == worker_id
                                select x).Count();
 
             label_how_much_care_cars.Text = query.ToString();
+
             // ilosc uzywanych aut
             var query1 = ((from x in db.RentSets
                                where x.Worker_worker_id == worker_id
                                select  x.Vehicle_vehicle_id).Distinct()).Count();
-
-
+            
             label_how_much_cars.Text = query1.ToString();
-            //ilosc kilometrow
 
-            // najczesciej uzywane aut
-        
+            // najczesciej uzywane auto
             try
             {
                 var worker_rent = from x in db.RentSets
@@ -71,22 +57,27 @@ namespace VMA
             }
             catch (Exception)
             {
-                MessageBox.Show("Coś się popsuło i nie było mnie słychać", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                label_your_favourite_car.Text = "----";
+            }
 
+            // najwięcej km
+            try
+            {
+                var worker_rent2 = from x in db.RentSets
+                                   where x.Worker_worker_id == worker_id
+                                   select x;
+
+                var count_km = worker_rent2
+                                .Where(x => x.mileage_end != 0)
+                                    .Sum(x => x.mileage_end - x.mileage_start);
+
+                label_kilometers.Text = count_km.ToString() + " km";
+            }
+            catch (Exception)
+            {
+                label_kilometers.Text = "----";
             }
         }
-
-
-
-
-
-
-
-
-
     }
-
-
-
     }
 

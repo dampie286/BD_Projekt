@@ -37,8 +37,6 @@
             this.label_your_favourite_car = new System.Windows.Forms.Label();
             this.label_how_much_care_cars = new System.Windows.Forms.Label();
             this.label_how_much_cars = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label_myStatics
@@ -145,21 +143,11 @@
             this.label_how_much_cars.TabIndex = 56;
             this.label_how_much_cars.Text = "13";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(174, 468);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 57;
-            // 
             // UserControl_myStatics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label_how_much_cars);
             this.Controls.Add(this.label_how_much_care_cars);
             this.Controls.Add(this.label_your_favourite_car);
@@ -172,7 +160,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserControl_myStatics";
             this.Size = new System.Drawing.Size(941, 656);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,6 +176,5 @@
         private System.Windows.Forms.Label label_your_favourite_car;
         private System.Windows.Forms.Label label_how_much_care_cars;
         private System.Windows.Forms.Label label_how_much_cars;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
