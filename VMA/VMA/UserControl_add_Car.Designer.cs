@@ -59,7 +59,7 @@
             this.label_information_about_car.AutoSize = true;
             this.label_information_about_car.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_information_about_car.ForeColor = System.Drawing.Color.Yellow;
-            this.label_information_about_car.Location = new System.Drawing.Point(231, 45);
+            this.label_information_about_car.Location = new System.Drawing.Point(244, 45);
             this.label_information_about_car.Margin = new System.Windows.Forms.Padding(0);
             this.label_information_about_car.Name = "label_information_about_car";
             this.label_information_about_car.Size = new System.Drawing.Size(218, 22);
@@ -69,7 +69,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Yellow;
-            this.panel1.Location = new System.Drawing.Point(335, 110);
+            this.panel1.Location = new System.Drawing.Point(334, 124);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(130, 1);
             this.panel1.TabIndex = 41;
@@ -78,14 +78,14 @@
             // 
             this.textBox_brand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_brand.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_brand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_brand.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_brand.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_brand.Location = new System.Drawing.Point(335, 91);
-            this.textBox_brand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_brand.Location = new System.Drawing.Point(334, 103);
+            this.textBox_brand.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_brand.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_brand.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_brand.Name = "textBox_brand";
-            this.textBox_brand.Size = new System.Drawing.Size(130, 15);
+            this.textBox_brand.Size = new System.Drawing.Size(130, 18);
             this.textBox_brand.TabIndex = 40;
             this.textBox_brand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -93,14 +93,14 @@
             // 
             this.textBox_age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_age.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_age.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_age.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_age.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_age.Location = new System.Drawing.Point(335, 171);
-            this.textBox_age.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_age.Location = new System.Drawing.Point(334, 183);
+            this.textBox_age.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_age.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_age.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_age.Name = "textBox_age";
-            this.textBox_age.Size = new System.Drawing.Size(130, 15);
+            this.textBox_age.Size = new System.Drawing.Size(130, 18);
             this.textBox_age.TabIndex = 42;
             this.textBox_age.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_age_KeyPress);
@@ -108,7 +108,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Yellow;
-            this.panel5.Location = new System.Drawing.Point(335, 310);
+            this.panel5.Location = new System.Drawing.Point(334, 324);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(130, 1);
             this.panel5.TabIndex = 49;
@@ -117,21 +117,21 @@
             // 
             this.textBox_license.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_license.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_license.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_license.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_license.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_license.Location = new System.Drawing.Point(335, 294);
-            this.textBox_license.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_license.Location = new System.Drawing.Point(334, 303);
+            this.textBox_license.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_license.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_license.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_license.Name = "textBox_license";
-            this.textBox_license.Size = new System.Drawing.Size(130, 15);
+            this.textBox_license.Size = new System.Drawing.Size(130, 18);
             this.textBox_license.TabIndex = 48;
             this.textBox_license.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Yellow;
-            this.panel6.Location = new System.Drawing.Point(335, 390);
+            this.panel6.Location = new System.Drawing.Point(335, 404);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(130, 1);
             this.panel6.TabIndex = 51;
@@ -140,14 +140,14 @@
             // 
             this.textBox_mileage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_mileage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_mileage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_mileage.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_mileage.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_mileage.Location = new System.Drawing.Point(335, 334);
-            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_mileage.Location = new System.Drawing.Point(334, 343);
+            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_mileage.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_mileage.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_mileage.Name = "textBox_mileage";
-            this.textBox_mileage.Size = new System.Drawing.Size(130, 15);
+            this.textBox_mileage.Size = new System.Drawing.Size(130, 18);
             this.textBox_mileage.TabIndex = 50;
             this.textBox_mileage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_mileage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_mileage_KeyPress);
@@ -155,7 +155,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Yellow;
-            this.panel7.Location = new System.Drawing.Point(335, 150);
+            this.panel7.Location = new System.Drawing.Point(334, 164);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(130, 1);
             this.panel7.TabIndex = 53;
@@ -164,21 +164,21 @@
             // 
             this.textBox_model.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_model.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_model.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_model.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_model.Location = new System.Drawing.Point(335, 131);
-            this.textBox_model.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_model.Location = new System.Drawing.Point(334, 143);
+            this.textBox_model.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_model.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_model.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_model.Name = "textBox_model";
-            this.textBox_model.Size = new System.Drawing.Size(130, 15);
+            this.textBox_model.Size = new System.Drawing.Size(130, 18);
             this.textBox_model.TabIndex = 52;
             this.textBox_model.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Yellow;
-            this.panel8.Location = new System.Drawing.Point(335, 190);
+            this.panel8.Location = new System.Drawing.Point(334, 204);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(130, 1);
             this.panel8.TabIndex = 55;
@@ -187,14 +187,14 @@
             // 
             this.textBox_avg_fuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_avg_fuel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_avg_fuel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_avg_fuel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_avg_fuel.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_avg_fuel.Location = new System.Drawing.Point(335, 371);
-            this.textBox_avg_fuel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_avg_fuel.Location = new System.Drawing.Point(334, 383);
+            this.textBox_avg_fuel.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_avg_fuel.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_avg_fuel.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_avg_fuel.Name = "textBox_avg_fuel";
-            this.textBox_avg_fuel.Size = new System.Drawing.Size(130, 15);
+            this.textBox_avg_fuel.Size = new System.Drawing.Size(130, 18);
             this.textBox_avg_fuel.TabIndex = 54;
             this.textBox_avg_fuel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_avg_fuel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_avg_fuel_KeyPress);
@@ -202,7 +202,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.Yellow;
-            this.panel10.Location = new System.Drawing.Point(335, 350);
+            this.panel10.Location = new System.Drawing.Point(334, 364);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(130, 1);
             this.panel10.TabIndex = 59;
@@ -214,8 +214,8 @@
             this.button_add_car.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add_car.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_add_car.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_add_car.Location = new System.Drawing.Point(267, 441);
-            this.button_add_car.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_add_car.Location = new System.Drawing.Point(288, 441);
+            this.button_add_car.Margin = new System.Windows.Forms.Padding(2);
             this.button_add_car.Name = "button_add_car";
             this.button_add_car.Size = new System.Drawing.Size(130, 25);
             this.button_add_car.TabIndex = 60;
@@ -228,7 +228,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label1.Location = new System.Drawing.Point(198, 93);
+            this.label1.Location = new System.Drawing.Point(197, 103);
             this.label1.MaximumSize = new System.Drawing.Size(200, 100);
             this.label1.MinimumSize = new System.Drawing.Size(10, 10);
             this.label1.Name = "label1";
@@ -242,7 +242,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label2.Location = new System.Drawing.Point(198, 133);
+            this.label2.Location = new System.Drawing.Point(197, 143);
             this.label2.MaximumSize = new System.Drawing.Size(200, 100);
             this.label2.MinimumSize = new System.Drawing.Size(10, 10);
             this.label2.Name = "label2";
@@ -256,7 +256,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label3.Location = new System.Drawing.Point(198, 173);
+            this.label3.Location = new System.Drawing.Point(197, 183);
             this.label3.MaximumSize = new System.Drawing.Size(200, 100);
             this.label3.MinimumSize = new System.Drawing.Size(10, 10);
             this.label3.Name = "label3";
@@ -270,7 +270,7 @@
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label4.Location = new System.Drawing.Point(198, 213);
+            this.label4.Location = new System.Drawing.Point(197, 223);
             this.label4.MaximumSize = new System.Drawing.Size(200, 100);
             this.label4.MinimumSize = new System.Drawing.Size(10, 10);
             this.label4.Name = "label4";
@@ -284,7 +284,7 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label5.Location = new System.Drawing.Point(198, 253);
+            this.label5.Location = new System.Drawing.Point(197, 263);
             this.label5.MaximumSize = new System.Drawing.Size(200, 100);
             this.label5.MinimumSize = new System.Drawing.Size(10, 10);
             this.label5.Name = "label5";
@@ -298,7 +298,7 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label6.Location = new System.Drawing.Point(198, 294);
+            this.label6.Location = new System.Drawing.Point(197, 303);
             this.label6.MaximumSize = new System.Drawing.Size(200, 100);
             this.label6.MinimumSize = new System.Drawing.Size(10, 10);
             this.label6.Name = "label6";
@@ -312,7 +312,7 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label7.Location = new System.Drawing.Point(198, 334);
+            this.label7.Location = new System.Drawing.Point(197, 343);
             this.label7.MaximumSize = new System.Drawing.Size(200, 100);
             this.label7.MinimumSize = new System.Drawing.Size(10, 10);
             this.label7.Name = "label7";
@@ -326,7 +326,7 @@
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label8.Location = new System.Drawing.Point(198, 373);
+            this.label8.Location = new System.Drawing.Point(197, 383);
             this.label8.MaximumSize = new System.Drawing.Size(200, 100);
             this.label8.MinimumSize = new System.Drawing.Size(10, 10);
             this.label8.Name = "label8";
@@ -340,6 +340,7 @@
             this.comboBox_type_of_fuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.comboBox_type_of_fuel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_type_of_fuel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_type_of_fuel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox_type_of_fuel.ForeColor = System.Drawing.Color.Yellow;
             this.comboBox_type_of_fuel.Items.AddRange(new object[] {
             "Benzyna",
@@ -347,16 +348,17 @@
             "LPG",
             "CNG i Hybryda",
             "Elektryczny"});
-            this.comboBox_type_of_fuel.Location = new System.Drawing.Point(335, 254);
-            this.comboBox_type_of_fuel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_type_of_fuel.Location = new System.Drawing.Point(334, 261);
+            this.comboBox_type_of_fuel.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_type_of_fuel.Name = "comboBox_type_of_fuel";
-            this.comboBox_type_of_fuel.Size = new System.Drawing.Size(131, 21);
+            this.comboBox_type_of_fuel.Size = new System.Drawing.Size(131, 24);
             this.comboBox_type_of_fuel.TabIndex = 89;
             // 
             // comboBox_car_version
             // 
             this.comboBox_car_version.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.comboBox_car_version.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_car_version.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox_car_version.ForeColor = System.Drawing.Color.Yellow;
             this.comboBox_car_version.Items.AddRange(new object[] {
             "Sedan",
@@ -370,10 +372,10 @@
             "SUV",
             "VAN",
             "Dostawcze"});
-            this.comboBox_car_version.Location = new System.Drawing.Point(335, 214);
-            this.comboBox_car_version.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_car_version.Location = new System.Drawing.Point(334, 221);
+            this.comboBox_car_version.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_car_version.Name = "comboBox_car_version";
-            this.comboBox_car_version.Size = new System.Drawing.Size(131, 21);
+            this.comboBox_car_version.Size = new System.Drawing.Size(131, 24);
             this.comboBox_car_version.TabIndex = 90;
             // 
             // UserControl_add_Car
@@ -405,7 +407,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox_brand);
             this.Controls.Add(this.label_information_about_car);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl_add_Car";
             this.Size = new System.Drawing.Size(706, 533);
             this.ResumeLayout(false);

@@ -55,10 +55,10 @@
             // 
             this.label_who_online.AutoSize = true;
             this.label_who_online.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_who_online.ForeColor = System.Drawing.Color.Yellow;
+            this.label_who_online.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.label_who_online.Location = new System.Drawing.Point(429, 7);
             this.label_who_online.Name = "label_who_online";
-            this.label_who_online.Size = new System.Drawing.Size(220, 17);
+            this.label_who_online.Size = new System.Drawing.Size(188, 15);
             this.label_who_online.TabIndex = 0;
             this.label_who_online.Text = "Zalogowany jako Imię i Nazwisko";
             // 
@@ -72,7 +72,7 @@
             this.button_databaseVeh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_databaseVeh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_databaseVeh.ForeColor = System.Drawing.Color.Yellow;
-            this.button_databaseVeh.Location = new System.Drawing.Point(0, 173);
+            this.button_databaseVeh.Location = new System.Drawing.Point(0, 158);
             this.button_databaseVeh.Margin = new System.Windows.Forms.Padding(0);
             this.button_databaseVeh.MaximumSize = new System.Drawing.Size(177, 35);
             this.button_databaseVeh.MinimumSize = new System.Drawing.Size(177, 35);
@@ -93,7 +93,7 @@
             this.button_reservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_reservation.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_reservation.ForeColor = System.Drawing.Color.Yellow;
-            this.button_reservation.Location = new System.Drawing.Point(0, 224);
+            this.button_reservation.Location = new System.Drawing.Point(0, 209);
             this.button_reservation.Margin = new System.Windows.Forms.Padding(0);
             this.button_reservation.MaximumSize = new System.Drawing.Size(177, 35);
             this.button_reservation.MinimumSize = new System.Drawing.Size(177, 35);
@@ -114,7 +114,7 @@
             this.button_rent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_rent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_rent.ForeColor = System.Drawing.Color.Yellow;
-            this.button_rent.Location = new System.Drawing.Point(0, 275);
+            this.button_rent.Location = new System.Drawing.Point(0, 260);
             this.button_rent.Margin = new System.Windows.Forms.Padding(0);
             this.button_rent.MaximumSize = new System.Drawing.Size(177, 35);
             this.button_rent.MinimumSize = new System.Drawing.Size(177, 35);
@@ -135,7 +135,7 @@
             this.button_statistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_statistic.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_statistic.ForeColor = System.Drawing.Color.Yellow;
-            this.button_statistic.Location = new System.Drawing.Point(0, 326);
+            this.button_statistic.Location = new System.Drawing.Point(0, 311);
             this.button_statistic.Margin = new System.Windows.Forms.Padding(0);
             this.button_statistic.MaximumSize = new System.Drawing.Size(177, 35);
             this.button_statistic.MinimumSize = new System.Drawing.Size(177, 35);
@@ -156,7 +156,7 @@
             this.button_settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_settings.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_settings.ForeColor = System.Drawing.Color.Yellow;
-            this.button_settings.Location = new System.Drawing.Point(0, 377);
+            this.button_settings.Location = new System.Drawing.Point(0, 362);
             this.button_settings.Margin = new System.Windows.Forms.Padding(0);
             this.button_settings.MaximumSize = new System.Drawing.Size(177, 35);
             this.button_settings.MinimumSize = new System.Drawing.Size(177, 35);
@@ -198,7 +198,7 @@
             this.button_manag_care_car.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_manag_care_car.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_manag_care_car.ForeColor = System.Drawing.Color.Yellow;
-            this.button_manag_care_car.Location = new System.Drawing.Point(0, 428);
+            this.button_manag_care_car.Location = new System.Drawing.Point(0, 413);
             this.button_manag_care_car.Margin = new System.Windows.Forms.Padding(0);
             this.button_manag_care_car.MaximumSize = new System.Drawing.Size(177, 35);
             this.button_manag_care_car.MinimumSize = new System.Drawing.Size(177, 35);
@@ -215,7 +215,7 @@
             this.pictureBox_main_logo.ErrorImage = null;
             this.pictureBox_main_logo.Image = global::VMA.Properties.Resources.LogoVMA;
             this.pictureBox_main_logo.InitialImage = null;
-            this.pictureBox_main_logo.Location = new System.Drawing.Point(36, 46);
+            this.pictureBox_main_logo.Location = new System.Drawing.Point(35, 27);
             this.pictureBox_main_logo.Name = "pictureBox_main_logo";
             this.pictureBox_main_logo.Size = new System.Drawing.Size(100, 100);
             this.pictureBox_main_logo.TabIndex = 20;
@@ -225,7 +225,7 @@
             // 
             this.userControl_settings1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_settings1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_settings1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_settings1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_settings1.Name = "userControl_settings1";
             this.userControl_settings1.Size = new System.Drawing.Size(941, 656);
             this.userControl_settings1.TabIndex = 19;
@@ -234,7 +234,7 @@
             // 
             this.userControl_myStatics1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_myStatics1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_myStatics1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_myStatics1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_myStatics1.Name = "userControl_myStatics1";
             this.userControl_myStatics1.Size = new System.Drawing.Size(941, 656);
             this.userControl_myStatics1.TabIndex = 18;
@@ -243,7 +243,7 @@
             // 
             this.userControl_my_reservation1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_my_reservation1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_my_reservation1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_my_reservation1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_my_reservation1.Name = "userControl_my_reservation1";
             this.userControl_my_reservation1.Size = new System.Drawing.Size(941, 656);
             this.userControl_my_reservation1.TabIndex = 17;
@@ -252,7 +252,7 @@
             // 
             this.userControl_rent_with_DB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_rent_with_DB1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_rent_with_DB1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_rent_with_DB1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_rent_with_DB1.Name = "userControl_rent_with_DB1";
             this.userControl_rent_with_DB1.Size = new System.Drawing.Size(941, 656);
             this.userControl_rent_with_DB1.TabIndex = 16;
@@ -261,7 +261,7 @@
             // 
             this.userControl_rent1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_rent1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_rent1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_rent1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_rent1.Name = "userControl_rent1";
             this.userControl_rent1.Size = new System.Drawing.Size(941, 656);
             this.userControl_rent1.TabIndex = 15;
@@ -306,6 +306,7 @@
             // 
             this.userControl_my_rents1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_my_rents1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_my_rents1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_my_rents1.Name = "userControl_my_rents1";
             this.userControl_my_rents1.Size = new System.Drawing.Size(941, 656);
             this.userControl_my_rents1.TabIndex = 23;
@@ -314,7 +315,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(882, 553);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.userControl_my_rents1);
             this.Controls.Add(this.button_manag_care_car);
             this.Controls.Add(this.pictureBox_main_logo);

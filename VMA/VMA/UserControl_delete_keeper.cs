@@ -116,6 +116,7 @@ namespace VMA
             if (textBox_name.Text.Equals(@"Imię"))
             {
                 textBox_name.Text = "";
+                textBox_name.ForeColor = Color.FromArgb(255, 255, 0);
             }
             textBox_name.AutoCompleteCustomSource = instcol;
         }
@@ -125,6 +126,7 @@ namespace VMA
             if (textBox_name.Text.Equals(""))
             {
                 textBox_name.Text = "Imię";
+                textBox_name.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
 
@@ -133,6 +135,7 @@ namespace VMA
             if (textBox_surrname.Text.Equals(@"Nazwisko"))
             {
                 textBox_surrname.Text = "";
+                textBox_surrname.ForeColor = Color.FromArgb(255, 255, 0);
             }
             textBox_surrname.AutoCompleteCustomSource = instcol1;
         }
@@ -142,6 +145,7 @@ namespace VMA
             if (textBox_surrname.Text.Equals(""))
             {
                 textBox_surrname.Text = "Nazwisko";
+                textBox_surrname.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
 
@@ -150,6 +154,7 @@ namespace VMA
             if (textBox_licence_plate.Text.Equals(@"Rejestracja"))
             {
                 textBox_licence_plate.Text = "";
+                textBox_licence_plate.ForeColor = Color.FromArgb(255, 255, 0);
             }
             textBox_licence_plate.AutoCompleteCustomSource = instcol2;
         }
@@ -159,6 +164,7 @@ namespace VMA
             if (textBox_licence_plate.Text.Equals(""))
             {
                 textBox_licence_plate.Text = "Rejestracja";
+                textBox_licence_plate.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
 
