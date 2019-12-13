@@ -124,6 +124,7 @@ namespace VMA
         {
             userControl_myStatics1.statistic(log);
             userControl_myStatics1.BringToFront();
+            userControl_myStatics1.setUserID(log);
            
         }
 
