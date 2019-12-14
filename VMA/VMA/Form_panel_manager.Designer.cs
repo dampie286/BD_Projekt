@@ -31,14 +31,25 @@
             this.label_who_online = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_logout = new System.Windows.Forms.Button();
-            this.userControl_veh_DB1 = new VMA.UserControl_veh_DB();
             this.button_settings = new System.Windows.Forms.Button();
             this.button_statistic = new System.Windows.Forms.Button();
             this.button_rent = new System.Windows.Forms.Button();
             this.button_reservation = new System.Windows.Forms.Button();
             this.button_veh_DB = new System.Windows.Forms.Button();
             this.button_raports_stats = new System.Windows.Forms.Button();
+            this.userControl_manage_keeper1 = new VMA.UserControl_manage_keeper();
+            this.userControl_raports_stats1 = new VMA.UserControl_raports_stats();
+            this.userControl_menage_all1 = new VMA.UserControl_menage_all();
+            this.userControl_settings1 = new VMA.UserControl_settings();
+            this.userControl_myStatics1 = new VMA.UserControl_myStatics();
+            this.userControl_rent1 = new VMA.UserControl_rent();
+            this.userControl_reservation1 = new VMA.UserControl_reservation();
             this.userControl_Welcome1 = new VMA.UserControl_Welcome();
+            this.userControl_veh_DB1 = new VMA.UserControl_veh_DB();
+            this.userControl_addKeeper1 = new VMA.UserControl_addKeeper();
+            this.userControl_delete_keeper1 = new VMA.UserControl_delete_keeper();
+            this.userControl_raports_stats_cars1 = new VMA.UserControl_raports_stats_cars();
+            this.userControl_raports_stats_workers1 = new VMA.UserControl_raports_stats_workers();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,15 +94,7 @@
             this.button_logout.TabIndex = 24;
             this.button_logout.Text = "Wyloguj się";
             this.button_logout.UseVisualStyleBackColor = false;
-            // 
-            // userControl_veh_DB1
-            // 
-            this.userControl_veh_DB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_veh_DB1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_veh_DB1.Margin = new System.Windows.Forms.Padding(0);
-            this.userControl_veh_DB1.Name = "userControl_veh_DB1";
-            this.userControl_veh_DB1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_veh_DB1.TabIndex = 25;
+            this.button_logout.Click += new System.EventHandler(this.button_logout_Click_1);
             // 
             // button_settings
             // 
@@ -103,7 +106,7 @@
             this.button_settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_settings.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_settings.ForeColor = System.Drawing.Color.Yellow;
-            this.button_settings.Location = new System.Drawing.Point(0, 362);
+            this.button_settings.Location = new System.Drawing.Point(0, 431);
             this.button_settings.Margin = new System.Windows.Forms.Padding(0);
             this.button_settings.MaximumSize = new System.Drawing.Size(177, 35);
             this.button_settings.MinimumSize = new System.Drawing.Size(177, 35);
@@ -112,6 +115,7 @@
             this.button_settings.TabIndex = 30;
             this.button_settings.Text = "Ustawienia";
             this.button_settings.UseVisualStyleBackColor = false;
+            this.button_settings.Click += new System.EventHandler(this.button_settings_Click);
             // 
             // button_statistic
             // 
@@ -123,7 +127,7 @@
             this.button_statistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_statistic.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_statistic.ForeColor = System.Drawing.Color.Yellow;
-            this.button_statistic.Location = new System.Drawing.Point(0, 311);
+            this.button_statistic.Location = new System.Drawing.Point(0, 380);
             this.button_statistic.Margin = new System.Windows.Forms.Padding(0);
             this.button_statistic.MaximumSize = new System.Drawing.Size(177, 35);
             this.button_statistic.MinimumSize = new System.Drawing.Size(177, 35);
@@ -132,6 +136,7 @@
             this.button_statistic.TabIndex = 29;
             this.button_statistic.Text = "Statystyki";
             this.button_statistic.UseVisualStyleBackColor = false;
+            this.button_statistic.Click += new System.EventHandler(this.button_statistic_Click);
             // 
             // button_rent
             // 
@@ -152,6 +157,7 @@
             this.button_rent.TabIndex = 27;
             this.button_rent.Text = "Wypożyczenia";
             this.button_rent.UseVisualStyleBackColor = false;
+            this.button_rent.Click += new System.EventHandler(this.button_rent_Click);
             // 
             // button_reservation
             // 
@@ -172,6 +178,7 @@
             this.button_reservation.TabIndex = 28;
             this.button_reservation.Text = "Rezerwacje";
             this.button_reservation.UseVisualStyleBackColor = false;
+            this.button_reservation.Click += new System.EventHandler(this.button_reservation_Click);
             // 
             // button_veh_DB
             // 
@@ -204,15 +211,79 @@
             this.button_raports_stats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_raports_stats.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_raports_stats.ForeColor = System.Drawing.Color.Yellow;
-            this.button_raports_stats.Location = new System.Drawing.Point(0, 406);
+            this.button_raports_stats.Location = new System.Drawing.Point(0, 301);
             this.button_raports_stats.Margin = new System.Windows.Forms.Padding(0);
             this.button_raports_stats.MaximumSize = new System.Drawing.Size(177, 70);
             this.button_raports_stats.MinimumSize = new System.Drawing.Size(177, 70);
             this.button_raports_stats.Name = "button_raports_stats";
             this.button_raports_stats.Size = new System.Drawing.Size(177, 70);
             this.button_raports_stats.TabIndex = 31;
-            this.button_raports_stats.Text = "Raporty i statystyki";
+            this.button_raports_stats.Text = "Funkcje kierownicze";
             this.button_raports_stats.UseVisualStyleBackColor = false;
+            this.button_raports_stats.Click += new System.EventHandler(this.button_raports_stats_Click);
+            // 
+            // userControl_manage_keeper1
+            // 
+            this.userControl_manage_keeper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_manage_keeper1.ForeColor = System.Drawing.Color.Black;
+            this.userControl_manage_keeper1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_manage_keeper1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControl_manage_keeper1.Name = "userControl_manage_keeper1";
+            this.userControl_manage_keeper1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_manage_keeper1.TabIndex = 39;
+            // 
+            // userControl_raports_stats1
+            // 
+            this.userControl_raports_stats1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_raports_stats1.ForeColor = System.Drawing.Color.Black;
+            this.userControl_raports_stats1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_raports_stats1.Name = "userControl_raports_stats1";
+            this.userControl_raports_stats1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_raports_stats1.TabIndex = 38;
+            // 
+            // userControl_menage_all1
+            // 
+            this.userControl_menage_all1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_menage_all1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_menage_all1.Name = "userControl_menage_all1";
+            this.userControl_menage_all1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_menage_all1.TabIndex = 37;
+            // 
+            // userControl_settings1
+            // 
+            this.userControl_settings1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_settings1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_settings1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControl_settings1.Name = "userControl_settings1";
+            this.userControl_settings1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_settings1.TabIndex = 36;
+            // 
+            // userControl_myStatics1
+            // 
+            this.userControl_myStatics1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_myStatics1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_myStatics1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControl_myStatics1.Name = "userControl_myStatics1";
+            this.userControl_myStatics1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_myStatics1.TabIndex = 35;
+            // 
+            // userControl_rent1
+            // 
+            this.userControl_rent1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_rent1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_rent1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControl_rent1.Name = "userControl_rent1";
+            this.userControl_rent1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_rent1.TabIndex = 34;
+            // 
+            // userControl_reservation1
+            // 
+            this.userControl_reservation1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_reservation1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_reservation1.Margin = new System.Windows.Forms.Padding(0);
+            this.userControl_reservation1.Name = "userControl_reservation1";
+            this.userControl_reservation1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_reservation1.TabIndex = 33;
             // 
             // userControl_Welcome1
             // 
@@ -223,11 +294,66 @@
             this.userControl_Welcome1.Size = new System.Drawing.Size(941, 656);
             this.userControl_Welcome1.TabIndex = 32;
             // 
+            // userControl_veh_DB1
+            // 
+            this.userControl_veh_DB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_veh_DB1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_veh_DB1.Margin = new System.Windows.Forms.Padding(0);
+            this.userControl_veh_DB1.Name = "userControl_veh_DB1";
+            this.userControl_veh_DB1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_veh_DB1.TabIndex = 25;
+            // 
+            // userControl_addKeeper1
+            // 
+            this.userControl_addKeeper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_addKeeper1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_addKeeper1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControl_addKeeper1.Name = "userControl_addKeeper1";
+            this.userControl_addKeeper1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_addKeeper1.TabIndex = 40;
+            // 
+            // userControl_delete_keeper1
+            // 
+            this.userControl_delete_keeper1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_delete_keeper1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_delete_keeper1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControl_delete_keeper1.Name = "userControl_delete_keeper1";
+            this.userControl_delete_keeper1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_delete_keeper1.TabIndex = 41;
+            // 
+            // userControl_raports_stats_cars1
+            // 
+            this.userControl_raports_stats_cars1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_raports_stats_cars1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_raports_stats_cars1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControl_raports_stats_cars1.Name = "userControl_raports_stats_cars1";
+            this.userControl_raports_stats_cars1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_raports_stats_cars1.TabIndex = 42;
+            // 
+            // userControl_raports_stats_workers1
+            // 
+            this.userControl_raports_stats_workers1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_raports_stats_workers1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_raports_stats_workers1.Name = "userControl_raports_stats_workers1";
+            this.userControl_raports_stats_workers1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_raports_stats_workers1.TabIndex = 43;
+            // 
             // Form_panel_manager
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.userControl_raports_stats_workers1);
+            this.Controls.Add(this.userControl_raports_stats_cars1);
+            this.Controls.Add(this.userControl_delete_keeper1);
+            this.Controls.Add(this.userControl_addKeeper1);
+            this.Controls.Add(this.userControl_manage_keeper1);
+            this.Controls.Add(this.userControl_raports_stats1);
+            this.Controls.Add(this.userControl_menage_all1);
+            this.Controls.Add(this.userControl_settings1);
+            this.Controls.Add(this.userControl_myStatics1);
+            this.Controls.Add(this.userControl_rent1);
+            this.Controls.Add(this.userControl_reservation1);
             this.Controls.Add(this.userControl_Welcome1);
             this.Controls.Add(this.button_raports_stats);
             this.Controls.Add(this.button_settings);
@@ -263,5 +389,16 @@
         private System.Windows.Forms.Button button_veh_DB;
         private System.Windows.Forms.Button button_raports_stats;
         private UserControl_Welcome userControl_Welcome1;
+        private UserControl_reservation userControl_reservation1;
+        private UserControl_rent userControl_rent1;
+        private UserControl_myStatics userControl_myStatics1;
+        private UserControl_settings userControl_settings1;
+        private UserControl_menage_all userControl_menage_all1;
+        private UserControl_raports_stats userControl_raports_stats1;
+        private UserControl_manage_keeper userControl_manage_keeper1;
+        private UserControl_addKeeper userControl_addKeeper1;
+        private UserControl_delete_keeper userControl_delete_keeper1;
+        private UserControl_raports_stats_cars userControl_raports_stats_cars1;
+        private UserControl_raports_stats_workers userControl_raports_stats_workers1;
     }
 }

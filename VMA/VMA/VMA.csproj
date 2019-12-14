@@ -111,6 +111,12 @@
     <Compile Include="UserControl_manage_keeper.Designer.cs">
       <DependentUpon>UserControl_manage_keeper.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_menage_all.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_menage_all.Designer.cs">
+      <DependentUpon>UserControl_menage_all.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_menage_care_cars.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_manage_keeper.resx">
       <DependentUpon>UserControl_manage_keeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_menage_all.resx">
+      <DependentUpon>UserControl_menage_all.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_menage_care_cars.resx">
       <DependentUpon>UserControl_menage_care_cars.cs</DependentUpon>

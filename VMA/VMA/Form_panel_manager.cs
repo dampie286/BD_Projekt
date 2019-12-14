@@ -18,6 +18,48 @@ namespace VMA
         {
             windLog = add_tmp;
             InitializeComponent();
+            userControl_menage_all1.Button_manage_services_Click += new System.EventHandler(this.userControl_services_Click);
+            userControl_menage_all1.Button_raports_statistics_Click += new System.EventHandler(this.userControl_raports_statistic_Click);
+            userControl_menage_all1.Button_manage_keeper_Click += new System.EventHandler(this.userControl_menage_keeper_Click);
+            userControl_manage_keeper1.Button_addKeeper_Click += new System.EventHandler(this.userControl_menage_Button_addKeeper_Click);
+            userControl_manage_keeper1.Button_menANDDelKeeper_Click += new System.EventHandler(this.userControl_meange_Button_modAndDelKeeper_Click);
+            userControl_raports_stats1.Button_cars_Click += new System.EventHandler(this.userControl_raports_Button_cars_Click);
+            userControl_raports_stats1.Button_workers_Click += new System.EventHandler(this.userControl_raports_Button_workers_Click);
+        }
+
+        private void userControl_raports_Button_workers_Click(object sender, EventArgs e)
+        {
+            userControl_raports_stats_workers1.BringToFront();
+        }
+
+        private void userControl_raports_Button_cars_Click(object sender, EventArgs e)
+        {
+            userControl_raports_stats_cars1.BringToFront();
+        }
+
+        private void userControl_meange_Button_modAndDelKeeper_Click(object sender, EventArgs e)
+        {
+            userControl_delete_keeper1.BringToFront();
+        }
+
+        private void userControl_menage_Button_addKeeper_Click(object sender, EventArgs e)
+        {
+            userControl_addKeeper1.BringToFront();
+        }
+
+        private void userControl_menage_keeper_Click(object sender, EventArgs e)
+        {
+            userControl_manage_keeper1.BringToFront();
+        }
+
+        private void userControl_raports_statistic_Click(object sender, EventArgs e)
+        {
+            userControl_raports_stats1.BringToFront();
+        }
+
+        private void userControl_services_Click(object sender, EventArgs e)
+        {
+           
         }
 
         private void Form_panel_manager_Load(object sender, EventArgs e)
@@ -30,16 +72,43 @@ namespace VMA
             if (!close)
                 Application.Exit();
         }
-        private void button_logout_Click(object sender, EventArgs e)
+ 
+
+        private void button_veh_DB_Click(object sender, EventArgs e)
+        {
+            userControl_veh_DB1.BringToFront();
+        }
+
+        private void button_reservation_Click(object sender, EventArgs e)
+        {
+            userControl_reservation1.BringToFront();
+        }
+
+        private void button_rent_Click(object sender, EventArgs e)
+        {
+            userControl_rent1.BringToFront();
+        }
+
+        private void button_statistic_Click(object sender, EventArgs e)
+        {
+            userControl_myStatics1.BringToFront();
+        }
+
+        private void button_settings_Click(object sender, EventArgs e)
+        {
+            userControl_settings1.BringToFront();
+        }
+
+        private void button_logout_Click_1(object sender, EventArgs e)
         {
             close = true;
             this.Close();
             windLog.Show();
         }
 
-        private void button_veh_DB_Click(object sender, EventArgs e)
+        private void button_raports_stats_Click(object sender, EventArgs e)
         {
-            userControl_veh_DB1.BringToFront();
+            userControl_menage_all1.BringToFront();
         }
     }
 }
