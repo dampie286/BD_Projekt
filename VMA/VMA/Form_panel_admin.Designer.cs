@@ -323,7 +323,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.Controls.Add(this.userControl_raports_stats_workers1);
 >>>>>>> parent of 6149cb7... 14.12
             this.Controls.Add(this.userControl_raports_stats_cars1);

@@ -63,10 +63,17 @@
             this.label_menage_keepers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
             this.label_menage_keepers.ForeColor = System.Drawing.Color.Yellow;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_menage_keepers.Location = new System.Drawing.Point(20, 14);
             this.label_menage_keepers.Margin = new System.Windows.Forms.Padding(0);
             this.label_menage_keepers.Name = "label_menage_keepers";
             this.label_menage_keepers.Size = new System.Drawing.Size(368, 24);
+=======
+            this.label_menage_keepers.Location = new System.Drawing.Point(27, 17);
+            this.label_menage_keepers.Margin = new System.Windows.Forms.Padding(0);
+            this.label_menage_keepers.Name = "label_menage_keepers";
+            this.label_menage_keepers.Size = new System.Drawing.Size(465, 29);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label_menage_keepers.Location = new System.Drawing.Point(27, 17);
             this.label_menage_keepers.Margin = new System.Windows.Forms.Padding(0);
@@ -84,15 +91,21 @@
             this.button_show.Font = new System.Drawing.Font("Arial", 12F);
             this.button_show.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.button_show.Location = new System.Drawing.Point(539, 44);
             this.button_show.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_show.Name = "button_show";
             this.button_show.Size = new System.Drawing.Size(152, 33);
 =======
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.button_show.Location = new System.Drawing.Point(719, 54);
             this.button_show.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_show.Name = "button_show";
             this.button_show.Size = new System.Drawing.Size(203, 41);
+<<<<<<< HEAD
+>>>>>>> parent of 6149cb7... 14.12
+=======
 >>>>>>> parent of 6149cb7... 14.12
             this.button_show.TabIndex = 49;
             this.button_show.Text = "Pokaż";
@@ -104,10 +117,17 @@
             this.label_to_date_reserv.Font = new System.Drawing.Font("Arial", 9.75F);
             this.label_to_date_reserv.ForeColor = System.Drawing.Color.Yellow;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_to_date_reserv.Location = new System.Drawing.Point(279, 53);
             this.label_to_date_reserv.Margin = new System.Windows.Forms.Padding(0);
             this.label_to_date_reserv.Name = "label_to_date_reserv";
             this.label_to_date_reserv.Size = new System.Drawing.Size(59, 16);
+=======
+            this.label_to_date_reserv.Location = new System.Drawing.Point(372, 65);
+            this.label_to_date_reserv.Margin = new System.Windows.Forms.Padding(0);
+            this.label_to_date_reserv.Name = "label_to_date_reserv";
+            this.label_to_date_reserv.Size = new System.Drawing.Size(74, 19);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label_to_date_reserv.Location = new System.Drawing.Point(372, 65);
             this.label_to_date_reserv.Margin = new System.Windows.Forms.Padding(0);
@@ -125,11 +145,19 @@
             this.dateTimePicker_to_date_reserv.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_to_date_reserv.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.dateTimePicker_to_date_reserv.Location = new System.Drawing.Point(342, 49);
             this.dateTimePicker_to_date_reserv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker_to_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
             this.dateTimePicker_to_date_reserv.Name = "dateTimePicker_to_date_reserv";
             this.dateTimePicker_to_date_reserv.Size = new System.Drawing.Size(186, 22);
+=======
+            this.dateTimePicker_to_date_reserv.Location = new System.Drawing.Point(456, 60);
+            this.dateTimePicker_to_date_reserv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker_to_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
+            this.dateTimePicker_to_date_reserv.Name = "dateTimePicker_to_date_reserv";
+            this.dateTimePicker_to_date_reserv.Size = new System.Drawing.Size(247, 26);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.dateTimePicker_to_date_reserv.Location = new System.Drawing.Point(456, 60);
             this.dateTimePicker_to_date_reserv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -145,15 +173,21 @@
             this.label_from_date.Font = new System.Drawing.Font("Arial", 9.75F);
             this.label_from_date.ForeColor = System.Drawing.Color.Yellow;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_from_date.Location = new System.Drawing.Point(20, 53);
             this.label_from_date.Margin = new System.Windows.Forms.Padding(0);
             this.label_from_date.Name = "label_from_date";
             this.label_from_date.Size = new System.Drawing.Size(60, 16);
 =======
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.label_from_date.Location = new System.Drawing.Point(27, 65);
             this.label_from_date.Margin = new System.Windows.Forms.Padding(0);
             this.label_from_date.Name = "label_from_date";
             this.label_from_date.Size = new System.Drawing.Size(74, 19);
+<<<<<<< HEAD
+>>>>>>> parent of 6149cb7... 14.12
+=======
 >>>>>>> parent of 6149cb7... 14.12
             this.label_from_date.TabIndex = 46;
             this.label_from_date.Text = "Od kiedy";
@@ -166,17 +200,23 @@
             this.dateTimePicker_from_date_reserv.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_from_date_reserv.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.dateTimePicker_from_date_reserv.Location = new System.Drawing.Point(82, 49);
             this.dateTimePicker_from_date_reserv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker_from_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
             this.dateTimePicker_from_date_reserv.Name = "dateTimePicker_from_date_reserv";
             this.dateTimePicker_from_date_reserv.Size = new System.Drawing.Size(186, 22);
 =======
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.dateTimePicker_from_date_reserv.Location = new System.Drawing.Point(109, 60);
             this.dateTimePicker_from_date_reserv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker_from_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
             this.dateTimePicker_from_date_reserv.Name = "dateTimePicker_from_date_reserv";
             this.dateTimePicker_from_date_reserv.Size = new System.Drawing.Size(247, 26);
+<<<<<<< HEAD
+>>>>>>> parent of 6149cb7... 14.12
+=======
 >>>>>>> parent of 6149cb7... 14.12
             this.dateTimePicker_from_date_reserv.TabIndex = 45;
             // 
@@ -200,7 +240,11 @@
             this.dataGridView_veh_DB.EnableHeadersVisualStyles = false;
             this.dataGridView_veh_DB.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.dataGridView_veh_DB.Location = new System.Drawing.Point(24, 80);
+=======
+            this.dataGridView_veh_DB.Location = new System.Drawing.Point(32, 97);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.dataGridView_veh_DB.Location = new System.Drawing.Point(32, 97);
 >>>>>>> parent of 6149cb7... 14.12
@@ -217,7 +261,11 @@
             this.dataGridView_veh_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_veh_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.dataGridView_veh_DB.Size = new System.Drawing.Size(667, 201);
+=======
+            this.dataGridView_veh_DB.Size = new System.Drawing.Size(889, 247);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.dataGridView_veh_DB.Size = new System.Drawing.Size(889, 247);
 >>>>>>> parent of 6149cb7... 14.12
@@ -230,10 +278,17 @@
             this.label_license.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_license.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_license.Location = new System.Drawing.Point(117, 390);
             this.label_license.Margin = new System.Windows.Forms.Padding(0);
             this.label_license.Name = "label_license";
             this.label_license.Size = new System.Drawing.Size(0, 20);
+=======
+            this.label_license.Location = new System.Drawing.Point(156, 480);
+            this.label_license.Margin = new System.Windows.Forms.Padding(0);
+            this.label_license.Name = "label_license";
+            this.label_license.Size = new System.Drawing.Size(0, 25);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label_license.Location = new System.Drawing.Point(156, 480);
             this.label_license.Margin = new System.Windows.Forms.Padding(0);
@@ -248,15 +303,21 @@
             this.label_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_model.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_model.Location = new System.Drawing.Point(117, 358);
             this.label_model.Margin = new System.Windows.Forms.Padding(0);
             this.label_model.Name = "label_model";
             this.label_model.Size = new System.Drawing.Size(0, 20);
 =======
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.label_model.Location = new System.Drawing.Point(156, 441);
             this.label_model.Margin = new System.Windows.Forms.Padding(0);
             this.label_model.Name = "label_model";
             this.label_model.Size = new System.Drawing.Size(0, 25);
+<<<<<<< HEAD
+>>>>>>> parent of 6149cb7... 14.12
+=======
 >>>>>>> parent of 6149cb7... 14.12
             this.label_model.TabIndex = 73;
             // 
@@ -266,15 +327,21 @@
             this.label_brand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_brand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_brand.Location = new System.Drawing.Point(116, 327);
             this.label_brand.Margin = new System.Windows.Forms.Padding(0);
             this.label_brand.Name = "label_brand";
             this.label_brand.Size = new System.Drawing.Size(0, 20);
 =======
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.label_brand.Location = new System.Drawing.Point(155, 402);
             this.label_brand.Margin = new System.Windows.Forms.Padding(0);
             this.label_brand.Name = "label_brand";
             this.label_brand.Size = new System.Drawing.Size(0, 25);
+<<<<<<< HEAD
+>>>>>>> parent of 6149cb7... 14.12
+=======
 >>>>>>> parent of 6149cb7... 14.12
             this.label_brand.TabIndex = 72;
             // 
@@ -284,7 +351,11 @@
             this.label_desc_my_choice.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_desc_my_choice.ForeColor = System.Drawing.Color.Yellow;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_desc_my_choice.Location = new System.Drawing.Point(20, 294);
+=======
+            this.label_desc_my_choice.Location = new System.Drawing.Point(27, 362);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label_desc_my_choice.Location = new System.Drawing.Point(27, 362);
 >>>>>>> parent of 6149cb7... 14.12
@@ -300,10 +371,17 @@
             this.label_desc_purpose.Font = new System.Drawing.Font("Arial", 12F);
             this.label_desc_purpose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_desc_purpose.Location = new System.Drawing.Point(21, 390);
             this.label_desc_purpose.Margin = new System.Windows.Forms.Padding(0);
             this.label_desc_purpose.Name = "label_desc_purpose";
             this.label_desc_purpose.Size = new System.Drawing.Size(99, 18);
+=======
+            this.label_desc_purpose.Location = new System.Drawing.Point(28, 480);
+            this.label_desc_purpose.Margin = new System.Windows.Forms.Padding(0);
+            this.label_desc_purpose.Name = "label_desc_purpose";
+            this.label_desc_purpose.Size = new System.Drawing.Size(127, 23);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label_desc_purpose.Location = new System.Drawing.Point(28, 480);
             this.label_desc_purpose.Margin = new System.Windows.Forms.Padding(0);
@@ -319,10 +397,17 @@
             this.label_desc_model.Font = new System.Drawing.Font("Arial", 12F);
             this.label_desc_model.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_desc_model.Location = new System.Drawing.Point(65, 359);
             this.label_desc_model.Margin = new System.Windows.Forms.Padding(0);
             this.label_desc_model.Name = "label_desc_model";
             this.label_desc_model.Size = new System.Drawing.Size(55, 18);
+=======
+            this.label_desc_model.Location = new System.Drawing.Point(87, 442);
+            this.label_desc_model.Margin = new System.Windows.Forms.Padding(0);
+            this.label_desc_model.Name = "label_desc_model";
+            this.label_desc_model.Size = new System.Drawing.Size(70, 23);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label_desc_model.Location = new System.Drawing.Point(87, 442);
             this.label_desc_model.Margin = new System.Windows.Forms.Padding(0);
@@ -338,10 +423,17 @@
             this.label_desc_brand.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_desc_brand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_desc_brand.Location = new System.Drawing.Point(62, 327);
             this.label_desc_brand.Margin = new System.Windows.Forms.Padding(0);
             this.label_desc_brand.Name = "label_desc_brand";
             this.label_desc_brand.Size = new System.Drawing.Size(56, 18);
+=======
+            this.label_desc_brand.Location = new System.Drawing.Point(83, 402);
+            this.label_desc_brand.Margin = new System.Windows.Forms.Padding(0);
+            this.label_desc_brand.Name = "label_desc_brand";
+            this.label_desc_brand.Size = new System.Drawing.Size(72, 23);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label_desc_brand.Location = new System.Drawing.Point(83, 402);
             this.label_desc_brand.Margin = new System.Windows.Forms.Padding(0);
@@ -357,15 +449,21 @@
             this.label_current_mileage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_current_mileage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_current_mileage.Location = new System.Drawing.Point(117, 424);
             this.label_current_mileage.Margin = new System.Windows.Forms.Padding(0);
             this.label_current_mileage.Name = "label_current_mileage";
             this.label_current_mileage.Size = new System.Drawing.Size(0, 20);
 =======
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.label_current_mileage.Location = new System.Drawing.Point(156, 522);
             this.label_current_mileage.Margin = new System.Windows.Forms.Padding(0);
             this.label_current_mileage.Name = "label_current_mileage";
             this.label_current_mileage.Size = new System.Drawing.Size(0, 25);
+<<<<<<< HEAD
+>>>>>>> parent of 6149cb7... 14.12
+=======
 >>>>>>> parent of 6149cb7... 14.12
             this.label_current_mileage.TabIndex = 76;
             // 
@@ -375,10 +473,17 @@
             this.label2.Font = new System.Drawing.Font("Arial", 12F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(46, 424);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 18);
+=======
+            this.label2.Location = new System.Drawing.Point(61, 522);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 23);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label2.Location = new System.Drawing.Point(61, 522);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
@@ -394,10 +499,17 @@
             this.label_cost_car.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_cost_car.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_cost_car.Location = new System.Drawing.Point(415, 424);
             this.label_cost_car.Margin = new System.Windows.Forms.Padding(0);
             this.label_cost_car.Name = "label_cost_car";
             this.label_cost_car.Size = new System.Drawing.Size(0, 20);
+=======
+            this.label_cost_car.Location = new System.Drawing.Point(553, 522);
+            this.label_cost_car.Margin = new System.Windows.Forms.Padding(0);
+            this.label_cost_car.Name = "label_cost_car";
+            this.label_cost_car.Size = new System.Drawing.Size(0, 25);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label_cost_car.Location = new System.Drawing.Point(553, 522);
             this.label_cost_car.Margin = new System.Windows.Forms.Padding(0);
@@ -412,15 +524,21 @@
             this.label3.Font = new System.Drawing.Font("Arial", 12F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label3.Location = new System.Drawing.Point(310, 424);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 18);
 =======
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.label3.Location = new System.Drawing.Point(413, 522);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 23);
+<<<<<<< HEAD
+>>>>>>> parent of 6149cb7... 14.12
+=======
 >>>>>>> parent of 6149cb7... 14.12
             this.label3.TabIndex = 83;
             this.label3.Text = "Koszt pojazdu:";
@@ -431,15 +549,21 @@
             this.label_count_services.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_count_services.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_count_services.Location = new System.Drawing.Point(415, 390);
             this.label_count_services.Margin = new System.Windows.Forms.Padding(0);
             this.label_count_services.Name = "label_count_services";
             this.label_count_services.Size = new System.Drawing.Size(0, 20);
 =======
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.label_count_services.Location = new System.Drawing.Point(553, 480);
             this.label_count_services.Margin = new System.Windows.Forms.Padding(0);
             this.label_count_services.Name = "label_count_services";
             this.label_count_services.Size = new System.Drawing.Size(0, 25);
+<<<<<<< HEAD
+>>>>>>> parent of 6149cb7... 14.12
+=======
 >>>>>>> parent of 6149cb7... 14.12
             this.label_count_services.TabIndex = 82;
             // 
@@ -449,10 +573,17 @@
             this.label_all_combustion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_all_combustion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_all_combustion.Location = new System.Drawing.Point(415, 358);
             this.label_all_combustion.Margin = new System.Windows.Forms.Padding(0);
             this.label_all_combustion.Name = "label_all_combustion";
             this.label_all_combustion.Size = new System.Drawing.Size(0, 20);
+=======
+            this.label_all_combustion.Location = new System.Drawing.Point(553, 441);
+            this.label_all_combustion.Margin = new System.Windows.Forms.Padding(0);
+            this.label_all_combustion.Name = "label_all_combustion";
+            this.label_all_combustion.Size = new System.Drawing.Size(0, 25);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label_all_combustion.Location = new System.Drawing.Point(553, 441);
             this.label_all_combustion.Margin = new System.Windows.Forms.Padding(0);
@@ -467,10 +598,17 @@
             this.label_mileage_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_mileage_time.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_mileage_time.Location = new System.Drawing.Point(413, 327);
             this.label_mileage_time.Margin = new System.Windows.Forms.Padding(0);
             this.label_mileage_time.Name = "label_mileage_time";
             this.label_mileage_time.Size = new System.Drawing.Size(0, 20);
+=======
+            this.label_mileage_time.Location = new System.Drawing.Point(551, 402);
+            this.label_mileage_time.Margin = new System.Windows.Forms.Padding(0);
+            this.label_mileage_time.Name = "label_mileage_time";
+            this.label_mileage_time.Size = new System.Drawing.Size(0, 25);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label_mileage_time.Location = new System.Drawing.Point(551, 402);
             this.label_mileage_time.Margin = new System.Windows.Forms.Padding(0);
@@ -485,15 +623,21 @@
             this.label7.Font = new System.Drawing.Font("Arial", 12F);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label7.Location = new System.Drawing.Point(304, 391);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 18);
 =======
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.label7.Location = new System.Drawing.Point(405, 481);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(146, 23);
+<<<<<<< HEAD
+>>>>>>> parent of 6149cb7... 14.12
+=======
 >>>>>>> parent of 6149cb7... 14.12
             this.label7.TabIndex = 79;
             this.label7.Text = "Ilość serwisów:";
@@ -504,15 +648,21 @@
             this.label8.Font = new System.Drawing.Font("Arial", 12F);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label8.Location = new System.Drawing.Point(252, 359);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(169, 18);
 =======
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.label8.Location = new System.Drawing.Point(336, 442);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(215, 23);
+<<<<<<< HEAD
+>>>>>>> parent of 6149cb7... 14.12
+=======
 >>>>>>> parent of 6149cb7... 14.12
             this.label8.TabIndex = 78;
             this.label8.Text = "Ilość spalonego paliwa:";
@@ -523,15 +673,21 @@
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label9.Location = new System.Drawing.Point(247, 327);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(175, 18);
 =======
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.label9.Location = new System.Drawing.Point(329, 402);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(222, 23);
+<<<<<<< HEAD
+>>>>>>> parent of 6149cb7... 14.12
+=======
 >>>>>>> parent of 6149cb7... 14.12
             this.label9.TabIndex = 77;
             this.label9.Text = "Przebieg za dany okres:";
@@ -544,8 +700,13 @@
             this.button_generate_to_pdf.Font = new System.Drawing.Font("Arial", 12F);
             this.button_generate_to_pdf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.button_generate_to_pdf.Location = new System.Drawing.Point(539, 459);
             this.button_generate_to_pdf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.button_generate_to_pdf.Location = new System.Drawing.Point(719, 565);
+            this.button_generate_to_pdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.button_generate_to_pdf.Location = new System.Drawing.Point(719, 565);
             this.button_generate_to_pdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -587,7 +748,11 @@
             this.Controls.Add(this.dateTimePicker_from_date_reserv);
             this.Controls.Add(this.label_menage_keepers);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 >>>>>>> parent of 6149cb7... 14.12

@@ -35,7 +35,10 @@
             this.dateTimePicker_from_date_rent = new System.Windows.Forms.DateTimePicker();
             this.panel7 = new System.Windows.Forms.Panel();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.textBox_reser_license = new System.Windows.Forms.TextBox();
+=======
+>>>>>>> parent of 6149cb7... 14.12
 =======
 >>>>>>> parent of 6149cb7... 14.12
             this.label_rent = new System.Windows.Forms.Label();
@@ -68,7 +71,11 @@
             this.button_rent.Font = new System.Drawing.Font("Arial", 9.75F);
             this.button_rent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.button_rent.Location = new System.Drawing.Point(676, 498);
+=======
+            this.button_rent.Location = new System.Drawing.Point(612, 468);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.button_rent.Location = new System.Drawing.Point(612, 468);
 >>>>>>> parent of 6149cb7... 14.12
@@ -141,6 +148,7 @@
             this.panel7.TabIndex = 48;
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             // textBox_reser_license
             // 
             this.textBox_reser_license.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
@@ -159,6 +167,8 @@
             this.textBox_reser_license.Enter += new System.EventHandler(this.textBox_reser_license_Enter);
             this.textBox_reser_license.Leave += new System.EventHandler(this.textBox_reser_license_Leave);
             // 
+=======
+>>>>>>> parent of 6149cb7... 14.12
 =======
 >>>>>>> parent of 6149cb7... 14.12
             // label_rent
@@ -389,7 +399,11 @@
             "Służbowy",
             "Prywatny"});
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.comboBox_purpose_of_rent.Location = new System.Drawing.Point(305, 533);
+=======
+            this.comboBox_purpose_of_rent.Location = new System.Drawing.Point(305, 479);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.comboBox_purpose_of_rent.Location = new System.Drawing.Point(305, 479);
 >>>>>>> parent of 6149cb7... 14.12
@@ -403,7 +417,11 @@
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F);
             this.label2.ForeColor = System.Drawing.Color.Yellow;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(124, 534);
+=======
+            this.label2.Location = new System.Drawing.Point(124, 480);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label2.Location = new System.Drawing.Point(124, 480);
 >>>>>>> parent of 6149cb7... 14.12
@@ -441,7 +459,10 @@
             this.Controls.Add(this.dateTimePicker_from_date_rent);
             this.Controls.Add(this.panel7);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Controls.Add(this.textBox_reser_license);
+=======
+>>>>>>> parent of 6149cb7... 14.12
 =======
 >>>>>>> parent of 6149cb7... 14.12
             this.Controls.Add(this.label_rent);
@@ -477,7 +498,10 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker_from_date_rent;
         private System.Windows.Forms.Panel panel7;
 <<<<<<< HEAD
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox textBox_reser_license;
+=======
+>>>>>>> parent of 6149cb7... 14.12
 =======
 >>>>>>> parent of 6149cb7... 14.12
         private System.Windows.Forms.Label label_rent;

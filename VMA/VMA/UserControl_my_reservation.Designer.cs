@@ -44,7 +44,10 @@
             this.label_desc_model = new System.Windows.Forms.Label();
             this.label_desc_brand = new System.Windows.Forms.Label();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.button_delete_res = new System.Windows.Forms.Button();
+=======
+>>>>>>> parent of 6149cb7... 14.12
 =======
 >>>>>>> parent of 6149cb7... 14.12
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_my_reservation)).BeginInit();
@@ -265,6 +268,7 @@
             this.label_desc_brand.TabIndex = 57;
             this.label_desc_brand.Text = "Marka:";
 <<<<<<< HEAD
+<<<<<<< HEAD
             // 
             // button_delete_res
             // 
@@ -280,6 +284,8 @@
             this.button_delete_res.TabIndex = 68;
             this.button_delete_res.Text = "Usuń rezerwacje";
             this.button_delete_res.UseVisualStyleBackColor = false;
+=======
+>>>>>>> parent of 6149cb7... 14.12
 =======
 >>>>>>> parent of 6149cb7... 14.12
             // 

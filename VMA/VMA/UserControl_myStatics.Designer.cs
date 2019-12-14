@@ -59,7 +59,11 @@
             this.label_how_many_kilometers.Location = new System.Drawing.Point(21, 150);
             this.label_how_many_kilometers.Name = "label_how_many_kilometers";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_how_many_kilometers.Size = new System.Drawing.Size(272, 22);
+=======
+            this.label_how_many_kilometers.Size = new System.Drawing.Size(286, 22);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label_how_many_kilometers.Size = new System.Drawing.Size(286, 22);
 >>>>>>> parent of 6149cb7... 14.12
@@ -85,7 +89,11 @@
             this.label_used_cars.Location = new System.Drawing.Point(21, 215);
             this.label_used_cars.Name = "label_used_cars";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label_used_cars.Size = new System.Drawing.Size(231, 22);
+=======
+            this.label_used_cars.Size = new System.Drawing.Size(245, 22);
+>>>>>>> parent of 6149cb7... 14.12
 =======
             this.label_used_cars.Size = new System.Drawing.Size(245, 22);
 >>>>>>> parent of 6149cb7... 14.12
