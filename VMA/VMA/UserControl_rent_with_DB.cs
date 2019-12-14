@@ -132,8 +132,8 @@ namespace VMA
                         };
                         db.RentSets.InsertOnSubmit(newRent);
                         db.SubmitChanges();
-                        
-                        MessageBox.Show("Wypożyczyłeś pojazd od dzisiaj do " + time_to.Date.ToString(), "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        MessageBox.Show("Wypożyczyłeś pojazd od dzisiaj do" + time_to.ToString(), "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                     catch (Exception)
@@ -257,6 +257,24 @@ namespace VMA
             {
                 textBox_license.Text = "Rejestracja";
                 textBox_license.ForeColor = Color.FromArgb(120, 120, 0);
+            }
+        }
+
+        private void textBox_reser_license_Enter(object sender, EventArgs e)
+        {
+            if (textBox_reser_license.Text.Equals(@"Nr rejestracyjny"))
+            {
+                textBox_reser_license.ForeColor = Color.FromArgb(255, 255, 0);
+                textBox_reser_license.Text = "";
+            }
+        }
+
+        private void textBox_reser_license_Leave(object sender, EventArgs e)
+        {
+            if (textBox_reser_license.Text.Equals(""))
+            {
+                textBox_reser_license.Text = "Nr rejestracyjny";
+                textBox_reser_license.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
 
