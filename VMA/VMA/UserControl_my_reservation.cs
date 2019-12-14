@@ -49,7 +49,7 @@ namespace VMA
 
             var select = Selectquery.Where(x => !rents.Contains(x.Reserv_id));
 
-            dataGridView_my_reservation.DataSource = select;
+            dataGridView_my_reservation.DataSource = select; //komentarz
             
             dataGridView_my_reservation.Columns[0].Visible = false; // veh_id
             dataGridView_my_reservation.Columns[8].Visible = false; // przebieg
