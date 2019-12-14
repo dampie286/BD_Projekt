@@ -306,11 +306,26 @@
             this.userControl_raports_stats_cars1.Size = new System.Drawing.Size(941, 656);
             this.userControl_raports_stats_cars1.TabIndex = 31;
             // 
+<<<<<<< HEAD
+=======
+            // userControl_raports_stats_workers1
+            // 
+            this.userControl_raports_stats_workers1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_raports_stats_workers1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_raports_stats_workers1.Name = "userControl_raports_stats_workers1";
+            this.userControl_raports_stats_workers1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_raports_stats_workers1.TabIndex = 32;
+            // 
+>>>>>>> parent of 6149cb7... 14.12
             // Form_panel_admin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
+<<<<<<< HEAD
+=======
+            this.Controls.Add(this.userControl_raports_stats_workers1);
+>>>>>>> parent of 6149cb7... 14.12
             this.Controls.Add(this.userControl_raports_stats_cars1);
             this.Controls.Add(this.userControl_raports_stats1);
             this.Controls.Add(this.button_raports_stats);

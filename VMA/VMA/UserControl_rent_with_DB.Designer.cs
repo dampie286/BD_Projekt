@@ -34,7 +34,10 @@
             this.label_from_date = new System.Windows.Forms.Label();
             this.dateTimePicker_from_date_rent = new System.Windows.Forms.DateTimePicker();
             this.panel7 = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
             this.textBox_reser_license = new System.Windows.Forms.TextBox();
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.label_rent = new System.Windows.Forms.Label();
             this.dataGridView_veh_DB = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -64,7 +67,11 @@
             this.button_rent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_rent.Font = new System.Drawing.Font("Arial", 9.75F);
             this.button_rent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+<<<<<<< HEAD
             this.button_rent.Location = new System.Drawing.Point(676, 498);
+=======
+            this.button_rent.Location = new System.Drawing.Point(612, 468);
+>>>>>>> parent of 6149cb7... 14.12
             this.button_rent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_rent.Name = "button_rent";
             this.button_rent.Size = new System.Drawing.Size(237, 42);
@@ -133,6 +140,7 @@
             this.panel7.Size = new System.Drawing.Size(173, 1);
             this.panel7.TabIndex = 48;
             // 
+<<<<<<< HEAD
             // textBox_reser_license
             // 
             this.textBox_reser_license.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
@@ -151,6 +159,8 @@
             this.textBox_reser_license.Enter += new System.EventHandler(this.textBox_reser_license_Enter);
             this.textBox_reser_license.Leave += new System.EventHandler(this.textBox_reser_license_Leave);
             // 
+=======
+>>>>>>> parent of 6149cb7... 14.12
             // label_rent
             // 
             this.label_rent.AutoSize = true;
@@ -378,7 +388,11 @@
             "Delegacja",
             "Służbowy",
             "Prywatny"});
+<<<<<<< HEAD
             this.comboBox_purpose_of_rent.Location = new System.Drawing.Point(305, 533);
+=======
+            this.comboBox_purpose_of_rent.Location = new System.Drawing.Point(305, 479);
+>>>>>>> parent of 6149cb7... 14.12
             this.comboBox_purpose_of_rent.Name = "comboBox_purpose_of_rent";
             this.comboBox_purpose_of_rent.Size = new System.Drawing.Size(173, 24);
             this.comboBox_purpose_of_rent.TabIndex = 57;
@@ -388,7 +402,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F);
             this.label2.ForeColor = System.Drawing.Color.Yellow;
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(124, 534);
+=======
+            this.label2.Location = new System.Drawing.Point(124, 480);
+>>>>>>> parent of 6149cb7... 14.12
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 19);
@@ -422,7 +440,10 @@
             this.Controls.Add(this.label_from_date);
             this.Controls.Add(this.dateTimePicker_from_date_rent);
             this.Controls.Add(this.panel7);
+<<<<<<< HEAD
             this.Controls.Add(this.textBox_reser_license);
+=======
+>>>>>>> parent of 6149cb7... 14.12
             this.Controls.Add(this.label_rent);
             this.Controls.Add(this.dataGridView_veh_DB);
             this.Controls.Add(this.panel6);
@@ -455,7 +476,10 @@
         private System.Windows.Forms.Label label_from_date;
         private System.Windows.Forms.DateTimePicker dateTimePicker_from_date_rent;
         private System.Windows.Forms.Panel panel7;
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox textBox_reser_license;
+=======
+>>>>>>> parent of 6149cb7... 14.12
         private System.Windows.Forms.Label label_rent;
         private System.Windows.Forms.DataGridView dataGridView_veh_DB;
         private System.Windows.Forms.Panel panel6;
