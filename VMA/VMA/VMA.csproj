@@ -201,6 +201,12 @@
     <Compile Include="UserControl_reservation.Designer.cs">
       <DependentUpon>UserControl_reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_services.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_services.Designer.cs">
+      <DependentUpon>UserControl_services.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -304,6 +310,9 @@
     <EmbeddedResource Include="UserControl_reservation.resx">
       <DependentUpon>UserControl_reservation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_services.resx">
+      <DependentUpon>UserControl_services.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_settings.resx">
       <DependentUpon>UserControl_settings.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,7 +338,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="img\user-alt.png" />
