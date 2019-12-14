@@ -49,14 +49,107 @@ namespace VMA
 
         }
 
-        private void dataGridView_workers_DB_CellClick(object sender, DataGridViewCellEventArgs e)
+     
+
+        private void button_show_Click(object sender, EventArgs e)
         {
-            int row = dataGridView_workers_DB.CurrentCell.RowIndex;
-            //label_brand.Text = (string)dataGridView_veh_DB.Rows[row].Cells[1].Value;
-            label_name_with_choice.Text = dataGridView_workers_DB.Rows[row].Cells[1].Value.ToString();
-            label_surrname.Text = dataGridView_workers_DB.Rows[row].Cells[2].Value.ToString();
-            label_number.Text = dataGridView_workers_DB.Rows[row].Cells[7].Value.ToString();
-            label_position.Text = dataGridView_workers_DB.Rows[row].Cells[3].Value.ToString();
+
+
+
+
+            int id =0;
+
+            var date_from = dateTimePicker_from_date_reserv.Value;
+            var date_to = dateTimePicker_to_date_reserv.Value;
+            DataBaseDataContext db = new DataBaseDataContext();
+            try
+            {
+                int row = dataGridView_workers_DB.CurrentCell.RowIndex;
+
+                label_name_with_choice.Text = dataGridView_workers_DB.Rows[row].Cells[1].Value.ToString();
+                label_surrname.Text = dataGridView_workers_DB.Rows[row].Cells[2].Value.ToString();
+                label_number.Text = dataGridView_workers_DB.Rows[row].Cells[7].Value.ToString();
+                label_position.Text = dataGridView_workers_DB.Rows[row].Cells[3].Value.ToString();
+
+                 id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value;
+            }
+            catch
+            {
+                MessageBox.Show("Nie wybrano prcownika", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+
+          
+                // ilość wyporzyczonych aut
+               
+
+
+                var query1 = ((from x in db.RentSets
+                               where x.Worker_worker_id == id && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
+                               select x.Vehicle_vehicle_id)).Count();
+
+                label_time.Text = query1.ToString();
+            
+          
+
+
+
+          //ilosc kilometrów
+                try { 
+                var worker_rent2 = from x in db.RentSets
+                                   where x.Worker_worker_id == id && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
+                                   select x;
+
+                var count_km = worker_rent2
+                                .Where(x => x.mileage_end != 0)
+                                    .Sum(x => x.mileage_end - x.mileage_start);
+
+
+             
+                label_count_kilometers.Text = count_km.ToString() + " km";       }
+            catch
+            {
+                label_count_kilometers.Text = " ----";
+            }
+
+
+
+            //koszt w daynm okresie
+            try
+            {
+               
+
+
+                var count_cost = db.PurchaseSets
+                                .Where(x => x.RentSet.Worker_worker_id == id &&x.RentSet.date_from.Date>=date_from.Date&&x.RentSet.date_to.Date<=date_to.Date)
+                                    .Sum(x => x.price);
+
+
+
+                label_cost.Text = count_cost.ToString() + "  zł";
+
+
+
+
+            }
+            catch
+            {
+                label_cost.Text = " ----";
+
+            }
+
+
+
+          
+            }
+
+        private void button_generate_to_pdf_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Robie PDF dla wszystkich pracowników w danym okresie :)", "PDF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
     }
 }

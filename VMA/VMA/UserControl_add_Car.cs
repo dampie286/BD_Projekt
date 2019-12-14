@@ -19,21 +19,37 @@ namespace VMA
 
         private void button_add_car_Click(object sender, EventArgs e)
         {
-            double consump;
+            double consump=0;
             bool confirm=false;
-            if (textBox_avg_fuel.Text.Contains("."))
+            try
             {
-                consump = Convert.ToDouble(textBox_avg_fuel.Text.Replace('.', ','));
+                if (textBox_avg_fuel.Text.Contains("."))
+                {
+                    consump = Convert.ToDouble(textBox_avg_fuel.Text.Replace('.', ','));
+                }
+                else
+                {
+                    consump = Convert.ToDouble(textBox_avg_fuel.Text);
+                }
             }
-            else
-            {
-                consump = Convert.ToDouble(textBox_avg_fuel.Text);
-            }
+            catch {
 
+                MessageBox.Show("Bład dodania auta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             using (DataBaseDataContext db = new DataBaseDataContext())
             {
                 try
                 {
+
+
+
+
+
+
+
+
+
+
                     VehicleSet car = new VehicleSet()
                     {
                         brand = textBox_brand.Text,
@@ -47,6 +63,32 @@ namespace VMA
                         mileage=Convert.ToInt32(textBox_mileage.Text)
                     };
                     db.VehicleSets.InsertOnSubmit(car);
+                  
+                    db.SubmitChanges();
+
+                    VehicleSet newcar = db.VehicleSets.OrderByDescending(p => p.vehicle_id).First();
+
+                    Check_vehicleSet check = new Check_vehicleSet()
+                    {
+
+                        tech_review = dateTimePicker_date_tech.Value,
+                        oil_change=dateTimePicker_oil_date.Value,
+                        oil_change_mileage= Convert.ToInt32(textBox_oil_km.Text),
+                        timing_gear= dateTimePicker_gear_date.Value,
+                        timing_gear_mileage=Convert.ToInt32(textBox_gear_km.Text),
+                        Vehicle_vehicle_id=newcar.vehicle_id,
+
+
+
+                    };
+
+
+
+
+
+
+                    
+                    db.Check_vehicleSets.InsertOnSubmit(check);
                     db.SubmitChanges();
                     confirm = true;
                 }
@@ -69,6 +111,10 @@ namespace VMA
             }
         }
        
+
+
+
+
 
         private void textBox_brand_Click(object sender, EventArgs e)
         {
@@ -150,6 +196,28 @@ namespace VMA
                 e.Handled = true;
             }
         }
+
+        private void UserControl_add_Car_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chh = e.KeyChar;
+
+            if (!Char.IsDigit(chh) && chh != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_gear_km_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chh = e.KeyChar;
+
+            if (!Char.IsDigit(chh) && chh != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
-}
+    }
+    
+
 

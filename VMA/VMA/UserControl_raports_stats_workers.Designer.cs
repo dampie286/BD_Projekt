@@ -80,6 +80,7 @@
             this.button_show.TabIndex = 54;
             this.button_show.Text = "Pokaż";
             this.button_show.UseVisualStyleBackColor = false;
+            this.button_show.Click += new System.EventHandler(this.button_show_Click);
             // 
             // label_to_date_reserv
             // 
@@ -150,7 +151,6 @@
             this.dataGridView_workers_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_workers_DB.Size = new System.Drawing.Size(909, 255);
             this.dataGridView_workers_DB.TabIndex = 75;
-            this.dataGridView_workers_DB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_workers_DB_CellClick);
             // 
             // label_desc_my_choice
             // 
@@ -182,9 +182,8 @@
             this.label_name_with_choice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.label_name_with_choice.Location = new System.Drawing.Point(176, 459);
             this.label_name_with_choice.Name = "label_name_with_choice";
-            this.label_name_with_choice.Size = new System.Drawing.Size(99, 19);
+            this.label_name_with_choice.Size = new System.Drawing.Size(0, 19);
             this.label_name_with_choice.TabIndex = 85;
-            this.label_name_with_choice.Text = "Imięwpisane";
             // 
             // label_name
             // 
@@ -226,9 +225,8 @@
             this.label_surrname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.label_surrname.Location = new System.Drawing.Point(176, 498);
             this.label_surrname.Name = "label_surrname";
-            this.label_surrname.Size = new System.Drawing.Size(99, 19);
+            this.label_surrname.Size = new System.Drawing.Size(0, 19);
             this.label_surrname.TabIndex = 91;
-            this.label_surrname.Text = "Imięwpisane";
             // 
             // label_number
             // 
@@ -237,9 +235,8 @@
             this.label_number.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.label_number.Location = new System.Drawing.Point(176, 531);
             this.label_number.Name = "label_number";
-            this.label_number.Size = new System.Drawing.Size(99, 19);
+            this.label_number.Size = new System.Drawing.Size(0, 19);
             this.label_number.TabIndex = 92;
-            this.label_number.Text = "Imięwpisane";
             // 
             // label_position
             // 
@@ -248,9 +245,8 @@
             this.label_position.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.label_position.Location = new System.Drawing.Point(176, 566);
             this.label_position.Name = "label_position";
-            this.label_position.Size = new System.Drawing.Size(99, 19);
+            this.label_position.Size = new System.Drawing.Size(0, 19);
             this.label_position.TabIndex = 93;
-            this.label_position.Text = "Imięwpisane";
             // 
             // label9
             // 
@@ -271,9 +267,8 @@
             this.label_count_kilometers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.label_count_kilometers.Location = new System.Drawing.Point(615, 459);
             this.label_count_kilometers.Name = "label_count_kilometers";
-            this.label_count_kilometers.Size = new System.Drawing.Size(99, 19);
+            this.label_count_kilometers.Size = new System.Drawing.Size(0, 19);
             this.label_count_kilometers.TabIndex = 95;
-            this.label_count_kilometers.Text = "Imięwpisane";
             // 
             // label_time
             // 
@@ -282,9 +277,8 @@
             this.label_time.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.label_time.Location = new System.Drawing.Point(615, 498);
             this.label_time.Name = "label_time";
-            this.label_time.Size = new System.Drawing.Size(99, 19);
+            this.label_time.Size = new System.Drawing.Size(0, 19);
             this.label_time.TabIndex = 97;
-            this.label_time.Text = "Imięwpisane";
             // 
             // label5
             // 
@@ -294,9 +288,9 @@
             this.label5.Location = new System.Drawing.Point(310, 494);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(254, 23);
+            this.label5.Size = new System.Drawing.Size(252, 23);
             this.label5.TabIndex = 96;
-            this.label5.Text = "Czas wypożyczenia pojazdu";
+            this.label5.Text = "Ilość wypożyczeń pojazdów";
             // 
             // label_cost
             // 
@@ -305,9 +299,8 @@
             this.label_cost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.label_cost.Location = new System.Drawing.Point(615, 531);
             this.label_cost.Name = "label_cost";
-            this.label_cost.Size = new System.Drawing.Size(99, 19);
+            this.label_cost.Size = new System.Drawing.Size(0, 19);
             this.label_cost.TabIndex = 99;
-            this.label_cost.Text = "Imięwpisane";
             // 
             // label7
             // 
@@ -335,6 +328,7 @@
             this.button_generate_to_pdf.TabIndex = 100;
             this.button_generate_to_pdf.Text = "Generuj do PDF";
             this.button_generate_to_pdf.UseVisualStyleBackColor = false;
+            this.button_generate_to_pdf.Click += new System.EventHandler(this.button_generate_to_pdf_Click);
             // 
             // UserControl_raports_stats_workers
             // 

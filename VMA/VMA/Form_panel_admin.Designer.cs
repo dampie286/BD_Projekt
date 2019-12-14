@@ -336,7 +336,7 @@
             this.Controls.Add(this.button_reservation);
             this.Controls.Add(this.button_databaseVeh);
             this.Controls.Add(this.label_admin_is_online);
-            this.Controls.Add(this.userControl_delete_keeper1);
+//            this.Controls.Add(this.userControl_delete_keeper1);
             this.Controls.Add(this.userControl_addKeeper1);
             this.Controls.Add(this.userControl_manage_keeper1);
             this.Controls.Add(this.userControl_modified_del_Workesrs1);
