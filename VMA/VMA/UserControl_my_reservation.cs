@@ -17,9 +17,7 @@ namespace VMA
         DataBaseDataContext db = new DataBaseDataContext();
         public UserControl_my_reservation()
         {
-           
             InitializeComponent();
-            //panel_with_myreservation.Hide();
         }
 
         public void setID(int id)
@@ -29,9 +27,6 @@ namespace VMA
 
         public void fillDataGridView() //funkcja do wypłenienia tabeli
         {
-
-            
-
             var Selectquery = from x in db.VehicleSets
                               join y in db.ReservationSets on x.vehicle_id equals y.Vehicle_vehicle_id
                               join z in db.WorkerSets on y.Worker_worker_id equals z.worker_id
@@ -49,17 +44,16 @@ namespace VMA
                                   Reserv_id = y.reservation_id
                               };
 
-            //  var available_Cars = db.VehicleSets
-            //.Where(x => !not_Available_Cars.Contains(x.vehicle_id)
             var rents = from x in db.RentSets
                         select x.Reservation_reservation_id;
+
             var select = Selectquery.Where(x => !rents.Contains(x.Reserv_id));
 
             dataGridView_my_reservation.DataSource = select;
             
-            dataGridView_my_reservation.Columns[0].Visible = false;
-            dataGridView_my_reservation.Columns[8].Visible = false;
-            dataGridView_my_reservation.Columns[9].Visible = false;
+            dataGridView_my_reservation.Columns[0].Visible = false; // veh_id
+            dataGridView_my_reservation.Columns[8].Visible = false; // przebieg
+            dataGridView_my_reservation.Columns[9].Visible = false; // reservation_id
             dataGridView_my_reservation.RowHeadersVisible = false;
             dataGridView_my_reservation.ReadOnly = true;        //nie moze edytować kolumn
             
@@ -71,9 +65,7 @@ namespace VMA
             dataGridView_my_reservation.Columns[6].Width = 90;
             dataGridView_my_reservation.Columns[7].Width = 90;
         }
-
-      
-
+        
         private void dataGridView_my_reservation_CellClick(object sender, DataGridViewCellEventArgs e)
         {
            // panel_with_myreservation.Show();
@@ -117,7 +109,6 @@ namespace VMA
             catch (Exception)
             {
                 MessageBox.Show("Coś się popsuło i nie było mnie słychać", "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
 
@@ -127,7 +118,7 @@ namespace VMA
             {
                 if (row == -1)
                 {
-                    MessageBox.Show("Zaznacz rezerwację", "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Zaznacz rezerwację", "Bad delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -137,14 +128,15 @@ namespace VMA
                                             .FirstOrDefault();
                     db.ReservationSets.DeleteOnSubmit(row_To_Delete);
                     db.SubmitChanges();
-                    fillDataGridView();
-                    MessageBox.Show("Rezerwacja usunięta", "Good delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    fillDataGridView();
+
+                    MessageBox.Show("Rezerwacja usunięta", "Good delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Coś się popsuło i nie było mnie słychać", "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Coś się popsuło i nie było mnie słychać", "Bad delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
