@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace VMA
 {
@@ -144,24 +145,102 @@ namespace VMA
 
         private void button_check_available_cars_Click(object sender, EventArgs e)
         {
-            var not_Available_Cars = db.ReservationSets
+            string filtr_brand = textBox_brand.Text;
+            string filtr_model = textBox_model.Text;
+            string filtr_version = textBox_version.Text;
+
+            string filtr_avg = textBox_equipment.Text;
+            string filtr_fuel = textBox_mileage.Text;
+
+            try
+            {
+
+
+
+                var not_Available_Cars = db.ReservationSets
                 .Where(x => (x.date_from <= time_from && x.date_to >= time_from)
                        || (x.date_to >= time_to && x.date_from <= time_to)
                        || (x.date_from >= time_from && x.date_to <= time_to))
                            .Select(x => x.Vehicle_vehicle_id);
 
-            var not_Available_Rented_Cars = db.RentSets
-                .Where(x => (x.date_from <= time_from && x.date_to >= time_from))
-                            .Select(x => x.Vehicle_vehicle_id);
+                var not_Available_Rented_Cars = db.RentSets
+                    .Where(x => (x.date_from <= time_from && x.date_to >= time_from))
+                                .Select(x => x.Vehicle_vehicle_id);
 
-            var available_Cars = db.VehicleSets
-                .Where(x => !not_Available_Cars.Contains(x.vehicle_id) 
-                       && x.available == "yes" 
-                       && !not_Available_Rented_Cars.Contains(x.vehicle_id));
+                var available_Cars = db.VehicleSets
+                    .Where(x => !not_Available_Cars.Contains(x.vehicle_id)
+                           && x.available == "yes"
+                           && !not_Available_Rented_Cars.Contains(x.vehicle_id));
 
-            dataGridView_veh_DB.DataSource = available_Cars;
-            dataGridView_veh_DB.Columns[0].Visible = false; 
-            confirm = true;
+
+
+
+
+
+
+
+
+                if (filtr_brand == "Marka" || filtr_brand == "")
+                { }
+                else
+                {
+                    available_Cars = from x in available_Cars where x.brand == filtr_brand select x;
+
+                }
+
+                if (filtr_model == "Model" || filtr_model == "")
+                { }
+                else
+                {
+                    available_Cars = from x in available_Cars where x.model == filtr_model select x;
+
+                }
+
+                if (filtr_version == "Wersja" || filtr_version == "")
+                { }
+                else
+                {
+                    available_Cars = from x in available_Cars where x.version == filtr_version select x;
+
+                }
+
+
+                if (filtr_avg == "Spalanie" || filtr_avg == "")
+                { }
+                else
+                {
+                    double avg = Double.Parse(filtr_avg, CultureInfo.InvariantCulture); ;
+                    available_Cars = from x in available_Cars where x.avg_consumption <= avg select x;
+
+                }
+
+                if (filtr_fuel == "Typ paliwa" || filtr_fuel == "")
+                { }
+                else
+                {
+                    available_Cars = from x in available_Cars where x.fuel_type == filtr_fuel select x;
+
+                }
+
+                var query1 = from x in available_Cars select new { ID = x.vehicle_id, MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type, };
+
+                dataGridView_veh_DB.DataSource = query1;
+
+
+                dataGridView_veh_DB.Columns[0].Visible = false;
+                confirm = true;
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Zły format danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            dataGridView_veh_DB.RowHeadersVisible = false;
+            dataGridView_veh_DB.ReadOnly = true;        //nie moze edytować kolumn
+
+            button_reserv.Visible = true;
+
         }
 
         private void dateTimePicker_from_date_reserv_Leave(object sender, EventArgs e)
@@ -247,24 +326,7 @@ namespace VMA
             }
         }
 
-        private void textBox_license_Enter(object sender, EventArgs e)
-        {
-            if (textBox_license.Text.Equals(@"Rejestracja"))
-            {
-                textBox_license.ForeColor = Color.FromArgb(255, 255, 0);
-
-                textBox_license.Text = "";
-            }
-        }
-
-        private void textBox_license_Leave(object sender, EventArgs e)
-        {
-            if (textBox_license.Text.Equals(""))
-            {
-                textBox_license.Text = "Rejestracja";
-                textBox_license.ForeColor = Color.FromArgb(120, 120, 0);
-            }
-        }
+    
 
         private void textBox_version_Enter(object sender, EventArgs e)
         {
@@ -286,9 +348,6 @@ namespace VMA
             }
         }
 
-        private void button_filter_Click(object sender, EventArgs e)
-        {
-           
-        }
+       
     }
 }

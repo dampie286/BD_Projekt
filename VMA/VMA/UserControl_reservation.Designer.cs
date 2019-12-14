@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button_filter = new System.Windows.Forms.Button();
-            this.textBox_license = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox_mileage = new System.Windows.Forms.TextBox();
             this.textBox_version = new System.Windows.Forms.TextBox();
             this.textBox_equipment = new System.Windows.Forms.TextBox();
@@ -39,7 +37,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView_veh_DB = new System.Windows.Forms.DataGridView();
@@ -56,47 +53,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_veh_DB)).BeginInit();
             this.SuspendLayout();
             // 
-            // button_filter
-            // 
-            this.button_filter.BackColor = System.Drawing.Color.Yellow;
-            this.button_filter.FlatAppearance.BorderSize = 0;
-            this.button_filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_filter.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_filter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_filter.Location = new System.Drawing.Point(813, 18);
-            this.button_filter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_filter.Name = "button_filter";
-            this.button_filter.Size = new System.Drawing.Size(100, 31);
-            this.button_filter.TabIndex = 13;
-            this.button_filter.Text = "Filtruj";
-            this.button_filter.UseVisualStyleBackColor = false;
-            this.button_filter.Click += new System.EventHandler(this.button_filter_Click);
-            // 
-            // textBox_license
-            // 
-            this.textBox_license.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBox_license.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_license.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_license.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            this.textBox_license.Location = new System.Drawing.Point(278, 22);
-            this.textBox_license.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_license.MaximumSize = new System.Drawing.Size(133, 25);
-            this.textBox_license.MinimumSize = new System.Drawing.Size(5, 15);
-            this.textBox_license.Name = "textBox_license";
-            this.textBox_license.Size = new System.Drawing.Size(120, 19);
-            this.textBox_license.TabIndex = 12;
-            this.textBox_license.Text = "Rejestracja";
-            this.textBox_license.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_license.Enter += new System.EventHandler(this.textBox_license_Enter);
-            this.textBox_license.Leave += new System.EventHandler(this.textBox_license_Leave);
-            // 
             // textBox_mileage
             // 
             this.textBox_mileage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_mileage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_mileage.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_mileage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            this.textBox_mileage.Location = new System.Drawing.Point(531, 23);
+            this.textBox_mileage.Location = new System.Drawing.Point(404, 23);
             this.textBox_mileage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_mileage.MaximumSize = new System.Drawing.Size(133, 25);
             this.textBox_mileage.MinimumSize = new System.Drawing.Size(5, 15);
@@ -114,7 +77,7 @@
             this.textBox_version.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_version.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            this.textBox_version.Location = new System.Drawing.Point(404, 23);
+            this.textBox_version.Location = new System.Drawing.Point(277, 23);
             this.textBox_version.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_version.MaximumSize = new System.Drawing.Size(133, 25);
             this.textBox_version.MinimumSize = new System.Drawing.Size(5, 15);
@@ -132,7 +95,7 @@
             this.textBox_equipment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_equipment.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_equipment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            this.textBox_equipment.Location = new System.Drawing.Point(657, 23);
+            this.textBox_equipment.Location = new System.Drawing.Point(530, 23);
             this.textBox_equipment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_equipment.MaximumSize = new System.Drawing.Size(133, 25);
             this.textBox_equipment.MinimumSize = new System.Drawing.Size(5, 15);
@@ -183,7 +146,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Yellow;
-            this.panel6.Location = new System.Drawing.Point(657, 47);
+            this.panel6.Location = new System.Drawing.Point(530, 47);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(120, 1);
@@ -192,7 +155,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Yellow;
-            this.panel5.Location = new System.Drawing.Point(531, 47);
+            this.panel5.Location = new System.Drawing.Point(404, 47);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(120, 1);
@@ -201,20 +164,11 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Yellow;
-            this.panel4.Location = new System.Drawing.Point(404, 47);
+            this.panel4.Location = new System.Drawing.Point(277, 47);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(120, 1);
             this.panel4.TabIndex = 17;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Yellow;
-            this.panel3.Location = new System.Drawing.Point(277, 47);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(120, 1);
-            this.panel3.TabIndex = 18;
             // 
             // panel2
             // 
@@ -241,14 +195,14 @@
             this.dataGridView_veh_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_veh_DB.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_veh_DB.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_veh_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_veh_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_veh_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_veh_DB.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView_veh_DB.EnableHeadersVisualStyles = false;
@@ -350,6 +304,7 @@
             this.button_reserv.TabIndex = 31;
             this.button_reserv.Text = "Rezerwuj";
             this.button_reserv.UseVisualStyleBackColor = false;
+            this.button_reserv.Visible = false;
             this.button_reserv.Click += new System.EventHandler(this.button_reserv_Click);
             // 
             // button_check_available_cars
@@ -422,11 +377,8 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button_filter);
-            this.Controls.Add(this.textBox_license);
             this.Controls.Add(this.textBox_mileage);
             this.Controls.Add(this.textBox_version);
             this.Controls.Add(this.textBox_equipment);
@@ -443,9 +395,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button_filter;
-        private System.Windows.Forms.TextBox textBox_license;
         private System.Windows.Forms.TextBox textBox_mileage;
         private System.Windows.Forms.TextBox textBox_version;
         private System.Windows.Forms.TextBox textBox_equipment;
@@ -454,7 +403,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView_veh_DB;
