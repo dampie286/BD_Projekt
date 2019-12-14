@@ -26,7 +26,7 @@ namespace VMA
             user_id = id;
         }
 
-        public void fillDataGridView() //funkcja do wypłenienia tabeli
+        public void fillDataGridView(DataTable tmp) //funkcja do wypłenienia tabeli
         {
 
 
@@ -96,7 +96,6 @@ namespace VMA
                                               select x).Single();
                             veh.mileage = Convert.ToInt32(textBox_mileage.Text);
                             db.SubmitChanges();
-                        fillDataGridView();
 
                         MessageBox.Show("Zakończenie rezerwacji zakończyło się powodzeniem", "Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
