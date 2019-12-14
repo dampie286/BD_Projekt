@@ -46,10 +46,10 @@
             // 
             this.label_who_online.AutoSize = true;
             this.label_who_online.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_who_online.ForeColor = System.Drawing.Color.Yellow;
+            this.label_who_online.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.label_who_online.Location = new System.Drawing.Point(429, 7);
             this.label_who_online.Name = "label_who_online";
-            this.label_who_online.Size = new System.Drawing.Size(220, 17);
+            this.label_who_online.Size = new System.Drawing.Size(188, 15);
             this.label_who_online.TabIndex = 1;
             this.label_who_online.Text = "Zalogowany jako Imię i Nazwisko";
             // 
@@ -204,12 +204,11 @@
             this.button_raports_stats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_raports_stats.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_raports_stats.ForeColor = System.Drawing.Color.Yellow;
-            this.button_raports_stats.Location = new System.Drawing.Point(0, 406);
+            this.button_raports_stats.Location = new System.Drawing.Point(0, 413);
             this.button_raports_stats.Margin = new System.Windows.Forms.Padding(0);
             this.button_raports_stats.MaximumSize = new System.Drawing.Size(177, 70);
-            this.button_raports_stats.MinimumSize = new System.Drawing.Size(177, 70);
             this.button_raports_stats.Name = "button_raports_stats";
-            this.button_raports_stats.Size = new System.Drawing.Size(177, 70);
+            this.button_raports_stats.Size = new System.Drawing.Size(177, 35);
             this.button_raports_stats.TabIndex = 31;
             this.button_raports_stats.Text = "Raporty i statystyki";
             this.button_raports_stats.UseVisualStyleBackColor = false;
@@ -227,7 +226,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(882, 553);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.userControl_Welcome1);
             this.Controls.Add(this.button_raports_stats);
             this.Controls.Add(this.button_settings);
@@ -239,7 +238,7 @@
             this.Controls.Add(this.button_logout);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label_who_online);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Form_panel_manager";
             this.Text = "Vehicles Management App";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_panel_manager_FormClosed);

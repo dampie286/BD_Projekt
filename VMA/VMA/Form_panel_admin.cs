@@ -27,11 +27,19 @@ namespace VMA
             userControl_manage_keeper1.Button_addKeeper_Click += new System.EventHandler(this.userControl_menage_Button_addKeeper_Click);
             userControl_manage_keeper1.Button_menANDDelKeeper_Click += new System.EventHandler(this.userControl_meange_Button_modAndDelKeeper_Click);
             userControl_raports_stats1.Button_cars_Click += new System.EventHandler(this.userControl_raports_Button_cars_Click);
+            userControl_raports_stats1.Button_workers_Click += new System.EventHandler(this.userControl_raports_Button_workers_Click);
+
             FillTmpDataTable();
             FillTmp2DataTable();
             userControl_veh_DB1.fillDataGridView();
             userControl_veh_DB1.auto_Complete_textBox();
             userControl_veh_DB1.BringToFront();
+        }
+
+        private void userControl_raports_Button_workers_Click(object sender, EventArgs e)
+        {
+            userControl_raports_stats_workers1.fillDataGridView();
+            userControl_raports_stats_workers1.BringToFront();
         }
 
         private void userControl_raports_Button_cars_Click(object sender, EventArgs e)

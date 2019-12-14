@@ -67,6 +67,12 @@
     <Compile Include="Form_panel_admin.Designer.cs">
       <DependentUpon>Form_panel_admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_panel_manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_panel_manager.Designer.cs">
+      <DependentUpon>Form_panel_manager.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,12 @@
     <Compile Include="UserControl_raports_stats_cars.Designer.cs">
       <DependentUpon>UserControl_raports_stats_cars.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_raports_stats_workers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_raports_stats_workers.Designer.cs">
+      <DependentUpon>UserControl_raports_stats_workers.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_rent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -209,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_panel_admin.resx">
       <DependentUpon>Form_panel_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_panel_manager.resx">
+      <DependentUpon>Form_panel_manager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainApp.resx">
       <DependentUpon>MainApp.cs</DependentUpon>
@@ -267,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_raports_stats_cars.resx">
       <DependentUpon>UserControl_raports_stats_cars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_raports_stats_workers.resx">
+      <DependentUpon>UserControl_raports_stats_workers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_rent.resx">
       <DependentUpon>UserControl_rent.cs</DependentUpon>
