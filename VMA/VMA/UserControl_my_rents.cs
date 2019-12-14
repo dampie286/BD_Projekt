@@ -65,13 +65,18 @@ namespace VMA
 
         private void dataGridView_my_rents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            row = dataGridView_my_rents.CurrentCell.RowIndex;
-            label_brand.Text = (string)dataGridView_my_rents.Rows[row].Cells[1].Value;
-            label_model.Text = (string)dataGridView_my_rents.Rows[row].Cells[2].Value;
-            label_from.Text = dataGridView_my_rents.Rows[row].Cells[3].Value.ToString();
-            label_to.Text = (string)dataGridView_my_rents.Rows[row].Cells[4].Value.ToString();
-            label_purpose.Text = dataGridView_my_rents.Rows[row].Cells[6].Value.ToString();
-            car_id = (int)dataGridView_my_rents.Rows[row].Cells[0].Value;
+            try
+            {
+                row = dataGridView_my_rents.CurrentCell.RowIndex;
+                label_brand.Text = (string)dataGridView_my_rents.Rows[row].Cells[1].Value;
+                label_model.Text = (string)dataGridView_my_rents.Rows[row].Cells[2].Value;
+                label_from.Text = dataGridView_my_rents.Rows[row].Cells[3].Value.ToString();
+                label_to.Text = (string)dataGridView_my_rents.Rows[row].Cells[4].Value.ToString();
+                label_purpose.Text = dataGridView_my_rents.Rows[row].Cells[6].Value.ToString();
+                car_id = (int)dataGridView_my_rents.Rows[row].Cells[0].Value;
+            }
+            catch
+            { }
         }
 
         private void button_confirm_end_rent_Click(object sender, EventArgs e)

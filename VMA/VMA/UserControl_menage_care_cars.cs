@@ -139,7 +139,7 @@ namespace VMA
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Nie dodało się do seris", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Nie udało się oddać auta do serwisu", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     try
                     {
@@ -223,18 +223,37 @@ namespace VMA
                 int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
                 int car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
 
-                VehicleSet veh = db.VehicleSets.Where(v => v.vehicle_id == car_id).First();
-                if (veh.available == "no")
-                {
-                    veh.available = "yes";
+               var chceck_serv = db.Care_serviceSets.Where(v => v.CareSet.Vehicle_vehicle_id == car_id && v.ServiceSet.is_repair==false).Any();
 
-                    db.SubmitChanges();
-                    fillDataGridView();
+                if (chceck_serv)
+                {
+
+                    MessageBox.Show("Nie można odblokować auta będącego w serwsie", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
                 else
                 {
-                    MessageBox.Show("Auto jest juz dostępne", "Information available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+                    VehicleSet veh = db.VehicleSets.Where(v => v.vehicle_id == car_id).First();
+
+                    if (veh.available == "no")
+                    {
+                        veh.available = "yes";
+
+                        db.SubmitChanges();
+                        fillDataGridView();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Auto jest juz dostępne", "Information available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                 }
+
+
+
             }
             catch (Exception)
             {
@@ -250,7 +269,10 @@ namespace VMA
                 int car_id = (int)dataGridView_cars_on_service.Rows[row].Cells[0].Value;
                 int service_id = (int)dataGridView_cars_on_service.Rows[row].Cells[1].Value;
 
-                ServiceSet service = db.ServiceSets.Where(p => p.service_id == service_id).First();
+                Care_serviceSet care = db.Care_serviceSets.Where(p=>p.ServiceSet.service_id==service_id).First();
+                care.data_to = DateTime.Today;
+
+              ServiceSet service = db.ServiceSets.Where(p => p.service_id == service_id).First();
                 service.is_repair = true;
 
                 VehicleSet veh = db.VehicleSets.Where(p => p.vehicle_id == car_id).First();
