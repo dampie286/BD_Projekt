@@ -59,7 +59,7 @@ namespace VMA
 
         private void userControl_services_Click(object sender, EventArgs e)
         {
-           
+            userControl_services1.BringToFront();
         }
 
         private void Form_panel_manager_Load(object sender, EventArgs e)
