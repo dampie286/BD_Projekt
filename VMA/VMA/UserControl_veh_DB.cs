@@ -123,7 +123,7 @@ namespace VMA
 
                 }
 
-                var query1 = from x in query select new { MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type, };
+                var query1 = from x in query select new { MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type,PRZEBIEG=x.mileage };
 
                 dataGridView_veh_DB.DataSource = query1;
             }

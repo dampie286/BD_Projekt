@@ -29,21 +29,26 @@ namespace VMA
 
         private void userControl_raports_Button_workers_Click(object sender, EventArgs e)
         {
+            userControl_raports_stats_workers1.fillDataGridView();
             userControl_raports_stats_workers1.BringToFront();
         }
 
         private void userControl_raports_Button_cars_Click(object sender, EventArgs e)
         {
+            userControl_raports_stats_cars1.fillDataGridView();
             userControl_raports_stats_cars1.BringToFront();
         }
 
         private void userControl_meange_Button_modAndDelKeeper_Click(object sender, EventArgs e)
         {
+            userControl_delete_keeper1.fillDataGridView2();
             userControl_delete_keeper1.BringToFront();
         }
 
         private void userControl_menage_Button_addKeeper_Click(object sender, EventArgs e)
         {
+            userControl_addKeeper1.fillDataGridView();
+
             userControl_addKeeper1.BringToFront();
         }
 
@@ -76,12 +81,15 @@ namespace VMA
 
         private void button_veh_DB_Click(object sender, EventArgs e)
         {
+            userControl_veh_DB1.fillDataGridView();
             userControl_veh_DB1.BringToFront();
         }
 
         private void button_reservation_Click(object sender, EventArgs e)
         {
+           
             userControl_reservation1.BringToFront();
+          
         }
 
         private void button_rent_Click(object sender, EventArgs e)
