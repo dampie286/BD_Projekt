@@ -228,6 +228,7 @@ namespace VMA
             if (textBox_name.Text.Equals(@"Imię"))
             {
                 textBox_name.Text = "";
+                textBox_name.ForeColor = Color.FromArgb(255, 255, 0);
             }
         }
 
@@ -236,6 +237,7 @@ namespace VMA
             if (textBox_name.Text.Equals(""))
             {
                 textBox_name.Text = "Imię";
+                textBox_name.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
 
@@ -244,6 +246,7 @@ namespace VMA
             if (textBox_surrname.Text.Equals(@"Nazwisko"))
             {
                 textBox_surrname.Text = "";
+                textBox_surrname.ForeColor = Color.FromArgb(255, 255, 0);
             }
         }
 
@@ -252,6 +255,7 @@ namespace VMA
             if (textBox_surrname.Text.Equals(""))
             {
                 textBox_surrname.Text = "Nazwisko";
+                textBox_surrname.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
 
@@ -260,6 +264,7 @@ namespace VMA
             if (textBox_position.Text.Equals(@"Stanowisko"))
             {
                 textBox_position.Text = "";
+                textBox_position.ForeColor = Color.FromArgb(255, 255, 0);
             }
         }
 
@@ -268,6 +273,7 @@ namespace VMA
             if (textBox_position.Text.Equals(""))
             {
                 textBox_position.Text = "Stanowisko";
+                textBox_position.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
 

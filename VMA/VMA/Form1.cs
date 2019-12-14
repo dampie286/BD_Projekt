@@ -14,6 +14,7 @@ namespace VMA
     {
         MainApp mainapp;
         Form_panel_admin adminapp;
+        Form_panel_manager menagerapp;
         string name;
         string password;
         
@@ -41,12 +42,20 @@ namespace VMA
                     if (user.position != "fired")
 
                     {
-                        if (user.position == "kierownik" || user.position == "Kierownik")
+                        if (user.position == "admin" )
                         {
                             textBox_login_name.Clear();
                             textBox_login_password.Clear();
                             adminapp = new Form_panel_admin(this);
                             adminapp.Show();
+                            this.Hide();
+                        }
+                        else if(user.position == "kierownik" || user.position == "Kierownik")
+                        {
+                            textBox_login_name.Clear();
+                            textBox_login_password.Clear();
+                            menagerapp = new Form_panel_manager(this);
+                            menagerapp.Show();
                             this.Hide();
                         }
                         else
