@@ -14,10 +14,12 @@ namespace VMA
     {
         private Form_login windLog;     //przechowywanie adresu do loginy
         private bool close = false;     //sprawdzamy czy wylogowywaliśmy się
-        public Form_panel_manager(Form_login add_tmp)
+        public int log;
+        public Form_panel_manager(Form_login add_tmp ,int id_log)
         {
             windLog = add_tmp;
             InitializeComponent();
+            log = id_log;
             userControl_menage_all1.Button_manage_services_Click += new System.EventHandler(this.userControl_services_Click);
             userControl_menage_all1.Button_raports_statistics_Click += new System.EventHandler(this.userControl_raports_statistic_Click);
             userControl_menage_all1.Button_manage_keeper_Click += new System.EventHandler(this.userControl_menage_keeper_Click);
@@ -89,8 +91,11 @@ namespace VMA
         private void button_reservation_Click(object sender, EventArgs e)
         {
            
+           
+            userControl_reservation1.fillDataGridView();
             userControl_reservation1.BringToFront();
-          
+            userControl_reservation1.setWorkerID(log); //przekazanie id pracownika do rezerwacji
+
         }
 
         private void button_rent_Click(object sender, EventArgs e)

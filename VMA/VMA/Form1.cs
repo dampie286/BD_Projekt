@@ -54,7 +54,7 @@ namespace VMA
                         {
                             textBox_login_name.Clear();
                             textBox_login_password.Clear();
-                            menagerapp = new Form_panel_manager(this);
+                            menagerapp = new Form_panel_manager(this,user.worker_id);
                             menagerapp.Show();
                             this.Hide();
                         }
