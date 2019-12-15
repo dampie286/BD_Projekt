@@ -14,6 +14,7 @@ namespace VMA
     {
         public event EventHandler Button_cars_Click;
         public event EventHandler Button_workers_Click;
+        public event EventHandler Button_all_Click;
         public UserControl_raports_stats()
         {
             InitializeComponent();
@@ -32,6 +33,14 @@ namespace VMA
             if (Button_workers_Click != null)
             {
                 Button_workers_Click(this, e);
+            }
+        }
+
+        private void button_all_Click(object sender, EventArgs e)
+        {
+            if(Button_all_Click!=null)
+            {
+                Button_all_Click(this, e);
             }
         }
     }

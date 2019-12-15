@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_panel_manager));
             this.label_who_online = new System.Windows.Forms.Label();
             this.button_logout = new System.Windows.Forms.Button();
             this.button_settings = new System.Windows.Forms.Button();
@@ -37,6 +38,10 @@
             this.button_veh_DB = new System.Windows.Forms.Button();
             this.button_raports_stats = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.userControl_my_rents1 = new VMA.UserControl_my_rents();
+            this.userControl_my_reservation1 = new VMA.UserControl_my_reservation();
+            this.userControl_rent_with_DB1 = new VMA.UserControl_rent_with_DB();
+            this.userControl_services1 = new VMA.UserControl_services();
             this.userControl_raports_stats_workers1 = new VMA.UserControl_raports_stats_workers();
             this.userControl_raports_stats_cars1 = new VMA.UserControl_raports_stats_cars();
             this.userControl_delete_keeper1 = new VMA.UserControl_delete_keeper();
@@ -50,7 +55,7 @@
             this.userControl_reservation1 = new VMA.UserControl_reservation();
             this.userControl_Welcome1 = new VMA.UserControl_Welcome();
             this.userControl_veh_DB1 = new VMA.UserControl_veh_DB();
-            this.userControl_services1 = new VMA.UserControl_services();
+            this.userControl_all_raports1 = new VMA.UserControl_all_raports();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -223,6 +228,40 @@
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
+            // userControl_my_rents1
+            // 
+            this.userControl_my_rents1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_my_rents1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_my_rents1.Name = "userControl_my_rents1";
+            this.userControl_my_rents1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_my_rents1.TabIndex = 47;
+            // 
+            // userControl_my_reservation1
+            // 
+            this.userControl_my_reservation1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_my_reservation1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_my_reservation1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControl_my_reservation1.Name = "userControl_my_reservation1";
+            this.userControl_my_reservation1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_my_reservation1.TabIndex = 46;
+            // 
+            // userControl_rent_with_DB1
+            // 
+            this.userControl_rent_with_DB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_rent_with_DB1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_rent_with_DB1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControl_rent_with_DB1.Name = "userControl_rent_with_DB1";
+            this.userControl_rent_with_DB1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_rent_with_DB1.TabIndex = 45;
+            // 
+            // userControl_services1
+            // 
+            this.userControl_services1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_services1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_services1.Name = "userControl_services1";
+            this.userControl_services1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_services1.TabIndex = 44;
+            // 
             // userControl_raports_stats_workers1
             // 
             this.userControl_raports_stats_workers1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
@@ -339,19 +378,23 @@
             this.userControl_veh_DB1.Size = new System.Drawing.Size(941, 656);
             this.userControl_veh_DB1.TabIndex = 25;
             // 
-            // userControl_services1
+            // userControl_all_raports1
             // 
-            this.userControl_services1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_services1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_services1.Name = "userControl_services1";
-            this.userControl_services1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_services1.TabIndex = 44;
+            this.userControl_all_raports1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_all_raports1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_all_raports1.Name = "userControl_all_raports1";
+            this.userControl_all_raports1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_all_raports1.TabIndex = 48;
             // 
             // Form_panel_manager
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.userControl_all_raports1);
+            this.Controls.Add(this.userControl_my_rents1);
+            this.Controls.Add(this.userControl_my_reservation1);
+            this.Controls.Add(this.userControl_rent_with_DB1);
             this.Controls.Add(this.userControl_services1);
             this.Controls.Add(this.userControl_raports_stats_workers1);
             this.Controls.Add(this.userControl_raports_stats_cars1);
@@ -376,6 +419,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label_who_online);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_panel_manager";
             this.Text = "Vehicles Management App";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_panel_manager_FormClosed);
@@ -411,5 +455,9 @@
         private UserControl_raports_stats_cars userControl_raports_stats_cars1;
         private UserControl_raports_stats_workers userControl_raports_stats_workers1;
         private UserControl_services userControl_services1;
+        private UserControl_rent_with_DB userControl_rent_with_DB1;
+        private UserControl_my_reservation userControl_my_reservation1;
+        private UserControl_my_rents userControl_my_rents1;
+        private UserControl_all_raports userControl_all_raports1;
     }
 }

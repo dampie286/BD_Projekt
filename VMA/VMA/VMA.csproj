@@ -108,6 +108,12 @@
     <Compile Include="UserControl_add_Car.Designer.cs">
       <DependentUpon>UserControl_add_Car.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_all_raports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_all_raports.Designer.cs">
+      <DependentUpon>UserControl_all_raports.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_delete_keeper.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_add_Car.resx">
       <DependentUpon>UserControl_add_Car.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_all_raports.resx">
+      <DependentUpon>UserControl_all_raports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_delete_keeper.resx">
       <DependentUpon>UserControl_delete_keeper.cs</DependentUpon>

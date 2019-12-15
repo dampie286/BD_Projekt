@@ -31,6 +31,7 @@
             this.button_workers = new System.Windows.Forms.Button();
             this.button_cars = new System.Windows.Forms.Button();
             this.label_menage_keepers = new System.Windows.Forms.Label();
+            this.button_all = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_workers
@@ -77,11 +78,28 @@
             this.label_menage_keepers.TabIndex = 43;
             this.label_menage_keepers.Text = "Raporty i statystyki";
             // 
+            // button_all
+            // 
+            this.button_all.BackColor = System.Drawing.Color.Yellow;
+            this.button_all.FlatAppearance.BorderSize = 0;
+            this.button_all.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_all.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_all.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.button_all.Location = new System.Drawing.Point(301, 422);
+            this.button_all.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_all.Name = "button_all";
+            this.button_all.Size = new System.Drawing.Size(310, 64);
+            this.button_all.TabIndex = 46;
+            this.button_all.Text = "Ogólne";
+            this.button_all.UseVisualStyleBackColor = false;
+            this.button_all.Click += new System.EventHandler(this.button_all_Click);
+            // 
             // UserControl_raports_stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.Controls.Add(this.button_all);
             this.Controls.Add(this.button_workers);
             this.Controls.Add(this.button_cars);
             this.Controls.Add(this.label_menage_keepers);
@@ -98,5 +116,6 @@
         private System.Windows.Forms.Button button_workers;
         private System.Windows.Forms.Button button_cars;
         private System.Windows.Forms.Label label_menage_keepers;
+        private System.Windows.Forms.Button button_all;
     }
 }
