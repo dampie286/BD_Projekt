@@ -83,7 +83,7 @@ namespace VMA
             try
             {
                 var worker_rent2 = from x in db.RentSets
-                                   where x.Vehicle_vehicle_id == id && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
+                                   where x.Vehicle_vehicle_id == id && x.date_from.Date <= date_from.Date && x.date_to.Date >= date_to.Date
                                    select x;
 
                 var count_km = worker_rent2
@@ -154,13 +154,13 @@ namespace VMA
 
 
                 var count_cost_workers = db.PurchaseSets
-                                .Where(x => x.RentSet.Vehicle_vehicle_id == id && x.RentSet.date_from.Date >= date_from.Date && x.RentSet.date_to.Date <= date_to.Date)
+                                .Where(x => x.RentSet.Vehicle_vehicle_id == id && x.RentSet.date_from.Date >=date_from.Date && x.RentSet.date_to.Date <= date_to.Date)
                                     .Sum(x => x.price);
 
 
 
                 var count_cost_servis = db.Care_serviceSets
-                                .Where(x => x.CareSet.Vehicle_vehicle_id == id && x.date_from.Date >= date_from.Date && x.data_to.Value.Date <= date_to.Date)
+                                .Where(x => x.CareSet.Vehicle_vehicle_id == id && x.date_from.Date >= date_from.Date && x.data_to.Value.Date <=date_to.Date)
                                     .Sum(x => x.price);
 
 

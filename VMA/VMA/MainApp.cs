@@ -94,7 +94,7 @@ namespace VMA
 
         private void button_reservation_Click(object sender, EventArgs e)
         {
-            userControl_reservation1.fillDataGridView(tmp);
+            userControl_reservation1.fillDataGridView();
             userControl_reservation1.BringToFront();
             userControl_reservation1.setWorkerID(log); //przekazanie id pracownika do rezerwacji
         }

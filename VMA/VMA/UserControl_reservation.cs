@@ -26,7 +26,7 @@ namespace VMA
             InitializeComponent();
         }
 
-        public void fillDataGridView(DataTable tmp)     //uzupełnienie tabeli
+        public void fillDataGridView()     //uzupełnienie tabeli
         {
             time_from = dateTimePicker_from_date_reserv.Value.Date;
             time_to = dateTimePicker_to_date_reserv.Value.Date;
