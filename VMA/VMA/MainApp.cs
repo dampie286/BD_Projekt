@@ -60,6 +60,7 @@ namespace VMA
 
         private void userControl_rent_Button_my_rents_Click(object sender, EventArgs e)
         {
+            userControl_my_rents1.litres_and_other_hide();
             userControl_my_rents1.setID(log);
             userControl_my_rents1.fillDataGridView();
             userControl_my_rents1.BringToFront();
