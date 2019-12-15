@@ -20,6 +20,11 @@ namespace VMA
             windLog = add_tmp;
             InitializeComponent();
             log = id_log;
+            //dodanie zdarzenia klikniecia wypozyczenia  z bazy
+            userControl_rent1.Button_rentDB_Click += new System.EventHandler(this.userControl_rent_Button_rentDB_Click);
+            //dodanie zdarzenia klikniecia wypozyczenia z rezerwacji
+            userControl_rent1.Button_rentReserv_Click += new System.EventHandler(this.userControl_rent_Button_rentResev_Click);
+            userControl_rent1.Button_my_rents_Click += new System.EventHandler(this.userControl_rent_Button_my_rents_Click);
             userControl_menage_all1.Button_manage_services_Click += new System.EventHandler(this.userControl_services_Click);
             userControl_menage_all1.Button_raports_statistics_Click += new System.EventHandler(this.userControl_raports_statistic_Click);
             userControl_menage_all1.Button_manage_keeper_Click += new System.EventHandler(this.userControl_menage_keeper_Click);
@@ -27,6 +32,27 @@ namespace VMA
             userControl_manage_keeper1.Button_menANDDelKeeper_Click += new System.EventHandler(this.userControl_meange_Button_modAndDelKeeper_Click);
             userControl_raports_stats1.Button_cars_Click += new System.EventHandler(this.userControl_raports_Button_cars_Click);
             userControl_raports_stats1.Button_workers_Click += new System.EventHandler(this.userControl_raports_Button_workers_Click);
+            userControl_raports_stats1.Button_all_Click += new System.EventHandler(this.userControl_raports_Button_all_Click);
+        }
+
+        private void userControl_rent_Button_my_rents_Click(object sender, EventArgs e)
+        {
+            userControl_my_rents1.BringToFront();
+        }
+
+        private void userControl_rent_Button_rentResev_Click(object sender, EventArgs e)
+        {
+            userControl_my_reservation1.BringToFront();
+        }
+
+        private void userControl_rent_Button_rentDB_Click(object sender, EventArgs e)
+        {
+            userControl_rent_with_DB1.BringToFront();
+        }
+
+        private void userControl_raports_Button_all_Click(object sender, EventArgs e)
+        {
+            userControl_all_raports1.BringToFront();
         }
 
         private void userControl_raports_Button_workers_Click(object sender, EventArgs e)
