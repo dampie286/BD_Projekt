@@ -30,7 +30,7 @@ namespace VMA
             user_id = id;
         }
 
-        public void fillDataGridView(DataTable tmp) //uzupełnienie tabeli
+        public void fillDataGridView() //uzupełnienie tabeli
         {
             dateTimePicker_from_date_rent.MinDate = DateTime.Today;
             dateTimePicker_to_date_rent.MinDate = dateTimePicker_from_date_rent.Value;
