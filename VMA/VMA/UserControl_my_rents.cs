@@ -102,7 +102,7 @@ namespace VMA
                             veh.mileage = Convert.ToInt32(textBox_mileage.Text);
                             db.SubmitChanges();
                         fillDataGridView();
-
+                        litres_and_other_hide();
                         MessageBox.Show("Zakończenie rezerwacji zakończyło się powodzeniem", "Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
@@ -122,6 +122,62 @@ namespace VMA
             {
                 MessageBox.Show("Zaznacz wypożyczenie", "Error Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void comboBox_type_cost_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox_type_cost.SelectedIndex==0)
+            {
+                other_hide();
+                litres_fuel_show();
+            }
+            else if(comboBox_type_cost.SelectedIndex == 1)
+            {
+                other_show();
+                litres_fuel_hide();
+            }
+            else
+            {
+                litres_and_other_show();
+            }
+        }
+
+        private void other_hide()
+        {
+            label_other.Hide();
+            panel_other.Hide();
+            textBox_other.Hide();
+        }
+        private void other_show()
+        {
+            label_other.Show();
+            panel_other.Show();
+            textBox_other.Show();
+        }
+
+        private void litres_fuel_hide()
+        {
+            label_litres.Hide();
+            panel_litres.Hide();
+            textBox_litres.Hide();
+        }
+        private void litres_fuel_show()
+        {
+            label_litres.Show();
+            panel_litres.Show();
+            textBox_litres.Show();
+        }
+
+        public void litres_and_other_show()
+        {
+            other_show();
+            litres_fuel_show();
+        }
+
+        public void litres_and_other_hide()
+        {
+            other_hide();
+            litres_fuel_hide();
         }
     }
 }
