@@ -16,7 +16,7 @@ namespace VMA
         DataBaseDataContext db = new DataBaseDataContext();
         private DateTime time_from = DateTime.Today;
         private DateTime time_to;
-        private bool confirm = false;  //czy użytkownik sprawdził dostępne auta
+        //private bool confirm = false;  //czy użytkownik sprawdził dostępne auta
         private int car_id;
         private int user_id;
 
@@ -138,7 +138,7 @@ namespace VMA
                 dataGridView_veh_DB.ReadOnly = true;
                 dataGridView_veh_DB.Columns[0].Visible = false;
                 button_rent.Visible = true;
-                confirm = true;
+                //confirm = true;
 
 
             }

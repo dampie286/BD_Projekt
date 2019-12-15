@@ -29,9 +29,6 @@ namespace VMA
             }
         }
 
-
-       
-
         private void button1_rent_with_reservation_Click(object sender, EventArgs e)    //zdarzenie, gdy klikniemy  wypożyczenie z rezerwacji
         {
             if (Button_rentReserv_Click != null)

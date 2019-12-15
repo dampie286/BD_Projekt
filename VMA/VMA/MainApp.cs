@@ -16,7 +16,7 @@ namespace VMA
         public DataTable tmp;           //przykładowe zmienne do bazy danych z samochodami
         public DataTable tmp2;          //przykładowe zmienne do rezerwacji
         private bool close = false;     //sprawdzamy czy wylogowywaliśmy się
-        private string name, surrname;
+        //private string name, surrname;
         public int log;                 //id zalogowanego
        
 
