@@ -25,6 +25,11 @@ namespace VMA
             if (Button_manage_services_Click != null)
             {
                 Button_manage_services_Click(this, e);
+
+               
+
+
+
             }
         }
 

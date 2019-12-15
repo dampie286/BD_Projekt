@@ -97,6 +97,7 @@
             this.button_delete_servie.TabIndex = 57;
             this.button_delete_servie.Text = "Usuń warsztat";
             this.button_delete_servie.UseVisualStyleBackColor = false;
+            this.button_delete_servie.Click += new System.EventHandler(this.button_delete_servie_Click);
             // 
             // label1
             // 
@@ -265,6 +266,7 @@
             this.textBox_city_post.Size = new System.Drawing.Size(173, 19);
             this.textBox_city_post.TabIndex = 73;
             this.textBox_city_post.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_city_post.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_city_post_KeyPress);
             // 
             // label6
             // 
@@ -358,6 +360,7 @@
             this.textBox_number_phone.Size = new System.Drawing.Size(173, 19);
             this.textBox_number_phone.TabIndex = 78;
             this.textBox_number_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_number_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_number_phone_KeyPress);
             // 
             // panel5
             // 
@@ -396,6 +399,7 @@
             this.button_add_company.TabIndex = 85;
             this.button_add_company.Text = "Dodaj warsztat";
             this.button_add_company.UseVisualStyleBackColor = false;
+            this.button_add_company.Click += new System.EventHandler(this.button_add_company_Click);
             // 
             // UserControl_services
             // 

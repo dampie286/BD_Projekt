@@ -64,6 +64,7 @@ namespace VMA
 
         private void userControl_services_Click(object sender, EventArgs e)
         {
+            userControl_services1.fillDataGridView();
             userControl_services1.BringToFront();
         }
 
