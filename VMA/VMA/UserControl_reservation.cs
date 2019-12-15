@@ -14,7 +14,7 @@ namespace VMA
     public partial class UserControl_reservation : UserControl
     {
         private int id_user; //id usera aktualnie zalogowanego
-        private string licence_plate; //automatyczna filtracja rezerwacji dla danego pojazdu
+        //private string licence_plate; //automatyczna filtracja rezerwacji dla danego pojazdu
         DataBaseDataContext db = new DataBaseDataContext();
         private DateTime time_from;
         private DateTime time_to;
