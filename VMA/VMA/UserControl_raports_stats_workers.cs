@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace VMA
 {
@@ -147,9 +150,22 @@ namespace VMA
 
         private void button_generate_to_pdf_Click(object sender, EventArgs e)
         {
+            try
+            {
 
-            MessageBox.Show("Robie PDF dla wszystkich pracowników w danym okresie :)", "PDF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+                PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Test.pdf", FileMode.Create));
+                doc.Open();
+                Paragraph paragraph = new Paragraph("Coś się zepsuło i nie było mnie słychać");
+                doc.Add(paragraph);
+                doc.Close();
+            }
+            catch (Exception)
+            {
 
+            }
+            MessageBox.Show("Robie PDF dla wszystkich pracowników w danym okresie :)", "PDF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
     }
 }

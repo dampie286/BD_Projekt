@@ -147,11 +147,6 @@ namespace VMA
                 MessageBox.Show("Zły format danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-          
-           
-            
-            
-
         }
 
         private void button_rent_Click(object sender, EventArgs e)
@@ -207,7 +202,7 @@ namespace VMA
                         db.RentSets.InsertOnSubmit(newRent);
                         db.SubmitChanges();
                         
-                        MessageBox.Show("Wypożyczyłeś pojazd od dzisiaj do " + time_to.Date.ToString(), "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Wypożyczyłeś pojazd od dzisiaj do " + time_to.Date.ToShortDateString(), "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                     catch (Exception)

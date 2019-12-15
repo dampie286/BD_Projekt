@@ -111,7 +111,7 @@ namespace VMA
 
                                 db.ReservationSets.InsertOnSubmit(newReservation);
                                 db.SubmitChanges();
-                                MessageBox.Show("Zarezerwowałeś pojazd od " + time_from.Date.ToString() + " do " + time_to.Date.ToString(), "Good Reservation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Zarezerwowałeś pojazd od " + time_from.Date.ToShortDateString() + " do " + time_to.Date.ToShortDateString(), "Good Reservation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             }
                             catch (Exception)
@@ -172,14 +172,6 @@ namespace VMA
                            && x.available == "yes"
                            && !not_Available_Rented_Cars.Contains(x.vehicle_id));
 
-
-
-
-
-
-
-
-
                 if (filtr_brand == "Marka" || filtr_brand == "")
                 { }
                 else
@@ -225,12 +217,9 @@ namespace VMA
                 var query1 = from x in available_Cars select new { ID = x.vehicle_id, MARKA = x.brand, MODEL = x.model, WERSJA = x.version, REJESTRACJA = x.licence_plate, SPALANIE = x.avg_consumption, PALIWO = x.fuel_type, };
 
                 dataGridView_veh_DB.DataSource = query1;
-
-
+                
                 dataGridView_veh_DB.Columns[0].Visible = false;
                 confirm = true;
-
-
             }
             catch
             {
@@ -325,9 +314,7 @@ namespace VMA
 
             }
         }
-
-    
-
+        
         private void textBox_version_Enter(object sender, EventArgs e)
         {
             if (textBox_version.Text.Equals(@"Wersja"))
