@@ -110,7 +110,7 @@ namespace VMA
         private void userControl_rent_Button_rentDB_Click(object sender, EventArgs e)
         {
             userControl_rent_with_DB1.BringToFront();
-            userControl_rent_with_DB1.fillDataGridView(tmp);
+            userControl_rent_with_DB1.fillDataGridView();
             userControl_rent_with_DB1.user_ID_Set(log);
         }
 

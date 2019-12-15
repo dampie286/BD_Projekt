@@ -38,17 +38,24 @@ namespace VMA
         private void userControl_rent_Button_my_rents_Click(object sender, EventArgs e)
         {
             userControl_my_rents1.litres_and_other_hide();
+            userControl_my_rents1.setID(log);
+            userControl_my_rents1.fillDataGridView();
             userControl_my_rents1.BringToFront();
         }
 
         private void userControl_rent_Button_rentResev_Click(object sender, EventArgs e)
         {
             userControl_my_reservation1.BringToFront();
+            userControl_my_reservation1.setID(log);
+            userControl_my_reservation1.fillDataGridView();
         }
 
         private void userControl_rent_Button_rentDB_Click(object sender, EventArgs e)
         {
             userControl_rent_with_DB1.BringToFront();
+            userControl_rent_with_DB1.fillDataGridView();
+            userControl_rent_with_DB1.user_ID_Set(log);
+
         }
 
         private void userControl_raports_Button_all_Click(object sender, EventArgs e)
@@ -88,6 +95,7 @@ namespace VMA
 
         private void userControl_raports_statistic_Click(object sender, EventArgs e)
         {
+            userControl_myStatics1.statistic(log);
             userControl_raports_stats1.BringToFront();
         }
 
@@ -113,6 +121,7 @@ namespace VMA
         {
             userControl_veh_DB1.fillDataGridView();
             userControl_veh_DB1.BringToFront();
+           
         }
 
         private void button_reservation_Click(object sender, EventArgs e)
@@ -137,6 +146,7 @@ namespace VMA
 
         private void button_settings_Click(object sender, EventArgs e)
         {
+            userControl_settings1.workersettings(log);//przekazanie id pracownika
             userControl_settings1.BringToFront();
         }
 
@@ -149,6 +159,8 @@ namespace VMA
 
         private void button_raports_stats_Click(object sender, EventArgs e)
         {
+            userControl_raports_stats_workers1.fillDataGridView();
+            userControl_raports_stats_cars1.fillDataGridView();
             userControl_menage_all1.BringToFront();
         }
     }
