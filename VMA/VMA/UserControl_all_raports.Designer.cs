@@ -48,6 +48,7 @@
             this.button_rents_generate_to_pdf = new System.Windows.Forms.Button();
             this.button_services_generate_to_pdf = new System.Windows.Forms.Button();
             this.button_cost_generate_to_pdf = new System.Windows.Forms.Button();
+            this.comboBox_status_of_care = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button_cars_generate_to_pdf
@@ -249,6 +250,7 @@
             this.button_keeper_generate_to_pdf.TabIndex = 96;
             this.button_keeper_generate_to_pdf.Text = "Generuj do PDF";
             this.button_keeper_generate_to_pdf.UseVisualStyleBackColor = false;
+            this.button_keeper_generate_to_pdf.Click += new System.EventHandler(this.button_keeper_generate_to_pdf_Click);
             // 
             // button_reservation_generate_to_pdf
             // 
@@ -311,11 +313,24 @@
             this.button_cost_generate_to_pdf.Text = "Generuj do PDF";
             this.button_cost_generate_to_pdf.UseVisualStyleBackColor = false;
             // 
+            // comboBox_status_of_care
+            // 
+            this.comboBox_status_of_care.FormattingEnabled = true;
+            this.comboBox_status_of_care.Items.AddRange(new object[] {
+            "Aktualni opiekunowie",
+            "Byli opiekunowie",
+            "Historia opieki"});
+            this.comboBox_status_of_care.Location = new System.Drawing.Point(669, 335);
+            this.comboBox_status_of_care.Name = "comboBox_status_of_care";
+            this.comboBox_status_of_care.Size = new System.Drawing.Size(121, 24);
+            this.comboBox_status_of_care.TabIndex = 101;
+            // 
             // UserControl_all_raports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.Controls.Add(this.comboBox_status_of_care);
             this.Controls.Add(this.button_cost_generate_to_pdf);
             this.Controls.Add(this.button_services_generate_to_pdf);
             this.Controls.Add(this.button_rents_generate_to_pdf);
@@ -366,5 +381,6 @@
         private System.Windows.Forms.Button button_rents_generate_to_pdf;
         private System.Windows.Forms.Button button_services_generate_to_pdf;
         private System.Windows.Forms.Button button_cost_generate_to_pdf;
+        private System.Windows.Forms.ComboBox comboBox_status_of_care;
     }
 }
