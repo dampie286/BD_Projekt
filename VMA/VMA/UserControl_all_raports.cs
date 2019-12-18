@@ -329,5 +329,78 @@ namespace VMA
 
             GeneratePDF("Lista Opiekunów", description, pdftable);
         }
+
+        private void button_services_generate_to_pdf_Click(object sender, EventArgs e)
+        {
+            DataTable data = new DataTable("Stats");
+            data.Columns.Add("Marka");
+            data.Columns.Add("Model");
+            data.Columns.Add("Rejestracja");
+            data.Columns.Add("Przypadłość");
+            data.Columns.Add("Opis");
+            data.Columns.Add("Firma");
+            data.Columns.Add("Telefon");
+            data.Columns.Add("Od");
+            data.Columns.Add("Status");
+
+            Care_serviceSet Care_Service;
+            CareSet care;
+            VehicleSet vehicle;
+            ServiceSet service;
+            CompanySet company;
+            DateTime time_to_Compare = Convert.ToDateTime("1999-01-01 00:00:00.000");
+            string repaired;
+            var Cars = from x in db.Care_serviceSets
+                       select x.care_service_id;
+
+            foreach (int idw in Cars)
+            {
+                Care_Service = db.Care_serviceSets.Where(x => x.care_service_id == idw).First();
+
+                care = db.CareSets.Where(x => x.care_id == Care_Service.Care_care_id).First();
+
+                vehicle = db.VehicleSets.Where(x => x.vehicle_id == care.Vehicle_vehicle_id).First();
+
+                service = db.ServiceSets.Where(x => x.service_id == Care_Service.Service_service_id).First();
+
+                company = db.CompanySets.Where(x => x.company_id == Care_Service.Company_company_id).First();
+                if (Care_Service.data_to == time_to_Compare)
+                {
+                    repaired = "W naprawie";
+                }
+                else
+                {
+                    repaired = Care_Service.data_to.Value.ToShortDateString();
+                }
+                data.Rows.Add(vehicle.model, vehicle.brand, vehicle.licence_plate, 
+                    service.name, service.description, company.name, company.phone_nr, Care_Service.date_from.ToShortDateString(), repaired);
+            }
+            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+            PdfPTable pdftable = new PdfPTable(data.Columns.Count);
+            pdftable.DefaultCell.Padding = 3;
+            pdftable.WidthPercentage = 100;
+            pdftable.HorizontalAlignment = Element.ALIGN_MIDDLE;
+            pdftable.DefaultCell.BorderWidth = 1;
+
+            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+
+            foreach (DataColumn col in data.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(col.ColumnName, text));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                pdftable.AddCell(cell);
+            }
+
+            foreach (DataRow row in data.Rows)
+            {
+                foreach (object obj in row.ItemArray)
+                {
+                    pdftable.AddCell(new Phrase(obj.ToString(), text));
+                }
+            }
+            
+
+            GeneratePDF("Lista Serwisów", "Lista serwisow na dzien " + DateTime.Today.ToShortDateString(), pdftable);
+        }
     }
 }

@@ -297,6 +297,7 @@
             this.button_services_generate_to_pdf.TabIndex = 99;
             this.button_services_generate_to_pdf.Text = "Generuj do PDF";
             this.button_services_generate_to_pdf.UseVisualStyleBackColor = false;
+            this.button_services_generate_to_pdf.Click += new System.EventHandler(this.button_services_generate_to_pdf_Click);
             // 
             // button_cost_generate_to_pdf
             // 
