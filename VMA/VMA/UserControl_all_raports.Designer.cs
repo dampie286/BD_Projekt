@@ -57,20 +57,21 @@
             this.button_cars_generate_to_pdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_cars_generate_to_pdf.Font = new System.Drawing.Font("Arial", 12F);
             this.button_cars_generate_to_pdf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_cars_generate_to_pdf.Location = new System.Drawing.Point(460, 204);
+            this.button_cars_generate_to_pdf.Location = new System.Drawing.Point(460, 108);
             this.button_cars_generate_to_pdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_cars_generate_to_pdf.Name = "button_cars_generate_to_pdf";
             this.button_cars_generate_to_pdf.Size = new System.Drawing.Size(189, 32);
             this.button_cars_generate_to_pdf.TabIndex = 59;
             this.button_cars_generate_to_pdf.Text = "Generuj do PDF";
             this.button_cars_generate_to_pdf.UseVisualStyleBackColor = false;
+            this.button_cars_generate_to_pdf.Click += new System.EventHandler(this.button_cars_generate_to_pdf_Click);
             // 
             // label_to_date_reserv
             // 
             this.label_to_date_reserv.AutoSize = true;
             this.label_to_date_reserv.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_to_date_reserv.ForeColor = System.Drawing.Color.Yellow;
-            this.label_to_date_reserv.Location = new System.Drawing.Point(479, 74);
+            this.label_to_date_reserv.Location = new System.Drawing.Point(489, 272);
             this.label_to_date_reserv.Margin = new System.Windows.Forms.Padding(0);
             this.label_to_date_reserv.Name = "label_to_date_reserv";
             this.label_to_date_reserv.Size = new System.Drawing.Size(35, 23);
@@ -84,7 +85,7 @@
             this.dateTimePicker_to_date_reserv.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dateTimePicker_to_date_reserv.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_to_date_reserv.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker_to_date_reserv.Location = new System.Drawing.Point(531, 70);
+            this.dateTimePicker_to_date_reserv.Location = new System.Drawing.Point(542, 265);
             this.dateTimePicker_to_date_reserv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker_to_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
             this.dateTimePicker_to_date_reserv.Name = "dateTimePicker_to_date_reserv";
@@ -96,7 +97,7 @@
             this.label_from_date.AutoSize = true;
             this.label_from_date.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_from_date.ForeColor = System.Drawing.Color.Yellow;
-            this.label_from_date.Location = new System.Drawing.Point(33, 74);
+            this.label_from_date.Location = new System.Drawing.Point(34, 270);
             this.label_from_date.Margin = new System.Windows.Forms.Padding(0);
             this.label_from_date.Name = "label_from_date";
             this.label_from_date.Size = new System.Drawing.Size(37, 23);
@@ -110,7 +111,7 @@
             this.dateTimePicker_from_date_reserv.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dateTimePicker_from_date_reserv.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_from_date_reserv.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker_from_date_reserv.Location = new System.Drawing.Point(85, 70);
+            this.dateTimePicker_from_date_reserv.Location = new System.Drawing.Point(100, 265);
             this.dateTimePicker_from_date_reserv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker_from_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
             this.dateTimePicker_from_date_reserv.Name = "dateTimePicker_from_date_reserv";
@@ -145,7 +146,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F);
             this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(281, 209);
+            this.label2.Location = new System.Drawing.Point(279, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 23);
             this.label2.TabIndex = 88;
@@ -156,7 +157,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F);
             this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(248, 271);
+            this.label3.Location = new System.Drawing.Point(247, 179);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(173, 23);
             this.label3.TabIndex = 89;
@@ -200,7 +201,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.ForeColor = System.Drawing.Color.Yellow;
-            this.label7.Location = new System.Drawing.Point(33, 148);
+            this.label7.Location = new System.Drawing.Point(33, 62);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(215, 29);
@@ -225,7 +226,7 @@
             this.button_worker_generate_to_pdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_worker_generate_to_pdf.Font = new System.Drawing.Font("Arial", 12F);
             this.button_worker_generate_to_pdf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_worker_generate_to_pdf.Location = new System.Drawing.Point(460, 266);
+            this.button_worker_generate_to_pdf.Location = new System.Drawing.Point(460, 179);
             this.button_worker_generate_to_pdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_worker_generate_to_pdf.Name = "button_worker_generate_to_pdf";
             this.button_worker_generate_to_pdf.Size = new System.Drawing.Size(189, 32);
@@ -263,6 +264,7 @@
             this.button_reservation_generate_to_pdf.TabIndex = 97;
             this.button_reservation_generate_to_pdf.Text = "Generuj do PDF";
             this.button_reservation_generate_to_pdf.UseVisualStyleBackColor = false;
+            this.button_reservation_generate_to_pdf.Click += new System.EventHandler(this.button_reservation_generate_to_pdf_Click);
             // 
             // button_rents_generate_to_pdf
             // 
