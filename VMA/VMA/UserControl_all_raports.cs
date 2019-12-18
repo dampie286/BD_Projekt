@@ -47,6 +47,8 @@ namespace VMA
             data.Columns.Add("ID");
             data.Columns.Add("IMIE");
             data.Columns.Add("NAZWISKO");
+            data.Columns.Add("STANOWISKO");
+            data.Columns.Add("NUMER TELEFONU");
             WorkerSet worker;
             var Cars = from x in db.WorkerSets
                        select x.worker_id;
@@ -55,7 +57,7 @@ namespace VMA
             {
                 worker = db.WorkerSets.Where(x => x.worker_id == idw).First();
                
-                data.Rows.Add(worker.worker_id, worker.name, worker.surname);
+                data.Rows.Add(worker.worker_id, worker.name, worker.surname, worker.position, worker.phone_nr);
             }
             BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
             PdfPTable pdftable = new PdfPTable(data.Columns.Count);
@@ -80,8 +82,8 @@ namespace VMA
                     pdftable.AddCell(new Phrase(obj.ToString(), text));
                 }
             }
-
-            GeneratePDF("Lista Pracowników", "Lista pracownikow na dzien ", pdftable);
+            
+            GeneratePDF("Lista Pracowników", "Lista pracownikow na dzien " + DateTime.Today.ToShortDateString(), pdftable);
         }
 
         private void button_cars_generate_to_pdf_Click(object sender, EventArgs e)
@@ -91,7 +93,7 @@ namespace VMA
             data.Columns.Add("MARKA");
             data.Columns.Add("MODEL");
             data.Columns.Add("REJESTRACJA");
-            data.Columns.Add("PRZEBIEG");
+            data.Columns.Add("PRZEBIEG [KM]");
 
             VehicleSet worker;
             var Cars = from x in db.VehicleSets
@@ -127,7 +129,7 @@ namespace VMA
                 }
             }
 
-            GeneratePDF("Lista Pojazdów", "Lista pojazdów na dzien ", pdftable);
+            GeneratePDF("Lista Pojazdów", "Lista pojazdów na dzien " + DateTime.Today.ToShortDateString(), pdftable);
         }
 
         private void button_reservation_generate_to_pdf_Click(object sender, EventArgs e)
@@ -205,6 +207,7 @@ namespace VMA
             WorkerSet Worker;
             VehicleSet Vehicle;
             string history;
+            string description = "stan opieki";
             var Cars = from x in db.CareSets
                        select x.care_id;
             
@@ -225,6 +228,7 @@ namespace VMA
 
                         data.Rows.Add(Worker.name, Worker.surname, Vehicle.brand, Vehicle.model, Vehicle.licence_plate, Care.date_from.ToShortDateString(), "----");
                     }
+                    description = "Stan opiekunów na dzień " + DateTime.Today.ToShortDateString();
                 }
                 else if (comboBox_status_of_care.Text == "Byli opiekunowie")
                 {
@@ -241,6 +245,7 @@ namespace VMA
 
                         data.Rows.Add(Worker.name, Worker.surname, Vehicle.brand, Vehicle.model, Vehicle.licence_plate, Care.date_from.ToShortDateString(), Care.date_to.Value.ToShortDateString());
                     }
+                    description = "Opieki już zakończone, stan na dzień " + DateTime.Today.ToShortDateString();
                 }
                 else if (comboBox_status_of_care.Text == "Historia opieki")
                 {
@@ -266,6 +271,7 @@ namespace VMA
 
                         data.Rows.Add(Worker.name, Worker.surname, Vehicle.brand, Vehicle.model, Vehicle.licence_plate, Care.date_from.ToShortDateString(), history);
                     }
+                    description = "Historia opiek na dzień " + DateTime.Today.ToShortDateString();
                 }
                 else
                 {
@@ -291,6 +297,8 @@ namespace VMA
 
                         data.Rows.Add(Worker.name, Worker.surname, Vehicle.brand, Vehicle.model, Vehicle.licence_plate, Care.date_from.ToShortDateString(), history);
                     }
+
+                  description =  "Lista opiekunów od " + dateTimePicker_from_date_reserv.Value.Date.ToShortDateString() + " do " + dateTimePicker_to_date_reserv.Value.Date.ToShortDateString();
                 }
 
                
@@ -319,7 +327,7 @@ namespace VMA
                 }
             }
 
-            GeneratePDF("Lista Opiekunów", "Lista opiekunów od " + dateTimePicker_from_date_reserv.Value.Date.ToShortDateString() + " do " + dateTimePicker_to_date_reserv.Value.Date.ToShortDateString(), pdftable);
+            GeneratePDF("Lista Opiekunów", description, pdftable);
         }
     }
 }
