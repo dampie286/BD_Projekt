@@ -77,7 +77,7 @@ namespace VMA
         {
             
             userControl_veh_DB2.fillDataGridView();      //dodanie danych do tabeli
-
+            userControl_veh_DB2.clearTextbox();
             userControl_veh_DB2.BringToFront();
             userControl_veh_DB2.auto_Complete_textBox();
         }
@@ -96,8 +96,10 @@ namespace VMA
         private void button_reservation_Click(object sender, EventArgs e)
         {
             userControl_reservation1.fillDataGridView();
+            userControl_reservation1.clearTextbox();
             userControl_reservation1.BringToFront();
             userControl_reservation1.setWorkerID(log); //przekazanie id pracownika do rezerwacji
+            userControl_reservation1.auto_Complete_textBox();
         }
 
         private void button_rent_Click(object sender, EventArgs e)
@@ -110,6 +112,8 @@ namespace VMA
         private void userControl_rent_Button_rentDB_Click(object sender, EventArgs e)
         {
             userControl_rent_with_DB1.BringToFront();
+            userControl_rent_with_DB1.auto_Complete_textBox();
+            userControl_rent_with_DB1.clearTextbox();
             userControl_rent_with_DB1.fillDataGridView();
             userControl_rent_with_DB1.user_ID_Set(log);
         }

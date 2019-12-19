@@ -120,6 +120,7 @@ namespace VMA
         private void button_veh_DB_Click(object sender, EventArgs e)
         {
             userControl_veh_DB1.fillDataGridView();
+            userControl_veh_DB1.clearTextbox();
             userControl_veh_DB1.BringToFront();
            
         }

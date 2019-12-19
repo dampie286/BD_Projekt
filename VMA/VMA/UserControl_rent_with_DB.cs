@@ -14,6 +14,11 @@ namespace VMA
     public partial class UserControl_rent_with_DB : UserControl
     {
         DataBaseDataContext db = new DataBaseDataContext();
+        AutoCompleteStringCollection instcol = new AutoCompleteStringCollection();  //modele
+        AutoCompleteStringCollection instcol1 = new AutoCompleteStringCollection(); //marki
+
+        AutoCompleteStringCollection instcolVersion = new AutoCompleteStringCollection(); //wersje
+        AutoCompleteStringCollection instcolTypeFuel = new AutoCompleteStringCollection(); //typ paliwa
         private DateTime time_from = DateTime.Today;
         private DateTime time_to;
         //private bool confirm = false;  //czy użytkownik sprawdził dostępne auta
@@ -62,7 +67,28 @@ namespace VMA
             dataGridView_veh_DB.Columns[5].Width = 90;
             dataGridView_veh_DB.Columns[6].Width = 90;
         }
+        public void auto_Complete_textBox()     // Automatyczne podpowiedzi
+        {
+            // Modele
+            var brands = db.VehicleSets.Where(y => y.available != "deleted").Select(x => x.brand).Distinct().ToArray();
+            instcol.AddRange(brands);
 
+            // Marki
+            var models = db.VehicleSets.Where(y => y.available != "deleted").Select(x => x.model).Distinct().ToArray();
+            instcol1.AddRange(models);
+
+
+
+            //Wersja
+            var versions = db.VehicleSets.Where(y => y.available != "deleted").Select(x => x.version).ToArray();
+            instcolVersion.AddRange(versions);
+            //Typ paliwa
+            var typefuel = db.VehicleSets.Where(y => y.available != "deleted").Select(x => x.fuel_type).ToArray();
+            instcolTypeFuel.AddRange(typefuel);
+
+
+
+        }
         private void button_show_available_cars_Click(object sender, EventArgs e)
         {
             string filtr_brand = textBox_brand.Text;
@@ -228,6 +254,7 @@ namespace VMA
                 textBox_brand.ForeColor = Color.FromArgb(255, 255, 0);
                 textBox_brand.Text = "";
             }
+            textBox_brand.AutoCompleteCustomSource = instcol;
         }
 
         private void textBox_brand_Leave(object sender, EventArgs e)
@@ -246,6 +273,7 @@ namespace VMA
                 textBox_model.ForeColor = Color.FromArgb(255, 255, 0);
                 textBox_model.Text = "";
             }
+            textBox_model.AutoCompleteCustomSource = instcol1;
         }
 
         private void textBox_model_Leave(object sender, EventArgs e)
@@ -291,6 +319,7 @@ namespace VMA
                 textBox_version.Text = "Wersja";
                 textBox_version.ForeColor = Color.FromArgb(120, 120, 0);
             }
+            textBox_version.AutoCompleteCustomSource = instcolVersion;
         }
 
         private void textBox_mileage_Enter(object sender, EventArgs e)
@@ -300,6 +329,8 @@ namespace VMA
                 textBox_mileage.ForeColor = Color.FromArgb(255, 255, 0);
                 textBox_mileage.Text = "";
             }
+            textBox_mileage.AutoCompleteCustomSource = instcolTypeFuel;
+
         }
 
         private void textBox_mileage_Leave(object sender, EventArgs e)
@@ -324,5 +355,20 @@ namespace VMA
         {
             
         }
+        public void clearTextbox()
+        {
+            textBox_brand.Text = "Marka";
+            textBox_brand.ForeColor = Color.FromArgb(120, 120, 0);
+            textBox_model.Text = "Model";
+            textBox_model.ForeColor = Color.FromArgb(120, 120, 0);
+            textBox_equipment.Text = "Spalanie";
+            textBox_equipment.ForeColor = Color.FromArgb(120, 120, 0);
+            textBox_version.Text = "Wersja";
+            textBox_version.ForeColor = Color.FromArgb(120, 120, 0);
+            textBox_mileage.Text = "Typ paliwa";
+            textBox_mileage.ForeColor = Color.FromArgb(120, 120, 0);
+
+        }
+
     }
 }

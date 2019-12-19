@@ -77,7 +77,9 @@ namespace VMA
         {
             
             userControl_veh_DB1.fillDataGridView();
+            userControl_veh_DB1.clearTextbox();
             userControl_veh_DB1.BringToFront();
+
         }
 
         private void button_logout_Click(object sender, EventArgs e)

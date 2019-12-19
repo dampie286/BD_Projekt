@@ -13,9 +13,12 @@ namespace VMA
 {
     public partial class UserControl_veh_DB : UserControl
     {
-        AutoCompleteStringCollection instcol = new AutoCompleteStringCollection();
-        AutoCompleteStringCollection instcol1 = new AutoCompleteStringCollection();
-        AutoCompleteStringCollection instcol2 = new AutoCompleteStringCollection();
+        AutoCompleteStringCollection instcol = new AutoCompleteStringCollection();  //modele
+        AutoCompleteStringCollection instcol1 = new AutoCompleteStringCollection(); //marki
+        AutoCompleteStringCollection instcol2 = new AutoCompleteStringCollection(); //rejestracje
+        AutoCompleteStringCollection instcolVersion = new AutoCompleteStringCollection(); //wersje
+        AutoCompleteStringCollection instcolTypeFuel = new AutoCompleteStringCollection(); //typ paliwa
+
         DataBaseDataContext db = new DataBaseDataContext();
 
         private DataTable veh_DB = new DataTable();
@@ -59,6 +62,16 @@ namespace VMA
                 // Rejestracje
                 var licence_plate = db.VehicleSets.Where(y => y.available != "deleted").Select(x => x.licence_plate).Distinct().ToArray();
                 instcol2.AddRange(licence_plate);
+                
+                //Wersja
+                var versions = db.VehicleSets.Where(y => y.available != "deleted").Select(x => x.version).ToArray();
+                instcolVersion.AddRange(versions);
+                //Typ paliwa
+                var typefuel = db.VehicleSets.Where(y => y.available != "deleted").Select(x => x.fuel_type).ToArray();
+                instcolTypeFuel.AddRange(typefuel);
+                
+                
+               
         }
         private void button_filter_Click(object sender, EventArgs e)
         {
@@ -217,6 +230,7 @@ namespace VMA
                 textBox_version.Text = "";
                 textBox_version.ForeColor = Color.FromArgb(255, 255, 0);
             }
+            textBox_version.AutoCompleteCustomSource = instcolVersion;
         }
 
         private void textBox_version_Leave(object sender, EventArgs e)
@@ -235,6 +249,7 @@ namespace VMA
                 textBox_mileage.Text = "";
                 textBox_mileage.ForeColor = Color.FromArgb(255, 255, 0);
             }
+            textBox_mileage.AutoCompleteCustomSource = instcolTypeFuel;
         }
 
         private void textBox_mileage_Leave(object sender, EventArgs e)
@@ -254,6 +269,7 @@ namespace VMA
                 textBox_license.ForeColor = Color.FromArgb(255, 255, 0);
             }
             textBox_license.AutoCompleteCustomSource = instcol2;
+           // textBox_license.
         }
 
         private void textBox_license_Leave(object sender, EventArgs e)
@@ -263,6 +279,22 @@ namespace VMA
                 textBox_license.Text = "Rejestracja";
                 textBox_license.ForeColor = Color.FromArgb(120, 120, 0);
             }
+        }
+
+        public void clearTextbox()
+        {
+            textBox_brand.Text = "Marka";
+            textBox_brand.ForeColor = Color.FromArgb(120, 120, 0);
+            textBox_model.Text = "Model";
+            textBox_model.ForeColor = Color.FromArgb(120, 120, 0);
+            textBox_equipment.Text = "Spalanie";
+            textBox_equipment.ForeColor = Color.FromArgb(120, 120, 0);
+            textBox_version.Text = "Wersja";
+            textBox_version.ForeColor = Color.FromArgb(120, 120, 0);
+            textBox_mileage.Text = "Typ paliwa";
+            textBox_mileage.ForeColor = Color.FromArgb(120, 120, 0);
+            textBox_license.Text = "Rejestracja";
+            textBox_license.ForeColor = Color.FromArgb(120, 120, 0);
         }
     }
 }

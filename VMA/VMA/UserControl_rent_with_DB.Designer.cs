@@ -203,6 +203,8 @@
             // 
             // textBox_mileage
             // 
+            this.textBox_mileage.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.textBox_mileage.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox_mileage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_mileage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_mileage.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -221,6 +223,8 @@
             // 
             // textBox_version
             // 
+            this.textBox_version.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.textBox_version.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox_version.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_version.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_version.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -257,6 +261,8 @@
             // 
             // textBox_model
             // 
+            this.textBox_model.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.textBox_model.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox_model.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_model.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_model.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -275,6 +281,8 @@
             // 
             // textBox_brand
             // 
+            this.textBox_brand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.textBox_brand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox_brand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.textBox_brand.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_brand.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
