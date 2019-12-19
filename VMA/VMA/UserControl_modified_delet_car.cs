@@ -435,5 +435,40 @@ namespace VMA
 
 
         }
+
+        private void textBox_edit_lic_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+
+            int x = textBox_edit_lic.TextLength;
+
+
+            char chh = e.KeyChar;
+
+
+            if (chh != 32)
+            {
+                if (chh != 8)
+                {
+                    if (x > 8)
+                    {
+
+                        e.Handled = true;
+
+
+                    }
+
+                }
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+
+
+
+        }
     }
 }
