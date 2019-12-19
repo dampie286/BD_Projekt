@@ -15,6 +15,8 @@ namespace VMA
 {
     public partial class UserControl_raports_stats_workers : UserControl
     {
+        DataBaseDataContext db = new DataBaseDataContext();
+
         public UserControl_raports_stats_workers()
         {
             InitializeComponent();
@@ -43,28 +45,104 @@ namespace VMA
         public void fillDataGridView()
         {
 
-
-            DataBaseDataContext db = new DataBaseDataContext();
             var query = from x in db.WorkerSets where x.position != "fired" select x;
 
             dataGridView_workers_DB.DataSource = query;
             Grid_edit();
-
         }
 
+        private void Pdf_Data_Creator()
+        {
+            DataTable data = new DataTable("Stats");
+            data.Columns.Add("ID");
+            data.Columns.Add("IMIE");
+            data.Columns.Add("NAZWISKO");
+            WorkerSet worker;
+            var Cars = from x in db.WorkerSets
+                       select x.worker_id;
+
+            var date_from = dateTimePicker_from_date_reserv.Value;
+            var date_to = dateTimePicker_to_date_reserv.Value;
+
+            foreach (int idw in Cars)
+            {
+
+                worker = db.WorkerSets.Where(x => x.worker_id == idw).First();
+                //var worker_rent2 = from x in db.RentSets
+                //                   where x.Worker_worker_id == idw && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
+                //                   select x;
+
+                //var count_km = (worker_rent2
+                //                    .Where(x => x.mileage_end != 0)
+                //                        .Sum(x => x.mileage_end - x.mileage_start)); ///
+
+                //var query1 = ((from x in db.RentSets
+                //               where x.Worker_worker_id == idw && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
+                //               select x.Vehicle_vehicle_id)).Count();
+
+                //var count_cost = db.PurchaseSets
+                //                .Where(x => x.RentSet.Worker_worker_id == idw && x.RentSet.date_from.Date >= date_from.Date && x.RentSet.date_to.Date <= date_to.Date)
+                //                    .Sum(x => x.price);
+
+
+
+                data.Rows.Add(worker.worker_id, worker.name, worker.surname);//, count_km ,query1, count_cost);
+                
+               
+                
+
+            }
+
+
+            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+            PdfPTable pdftable = new PdfPTable(data.Columns.Count);
+            pdftable.DefaultCell.Padding = 3;
+            pdftable.WidthPercentage = 100;
+            pdftable.HorizontalAlignment = Element.ALIGN_MIDDLE;
+            pdftable.DefaultCell.BorderWidth = 1;
+
+            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+
+            foreach (DataColumn col in data.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(col.ColumnName, text));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                pdftable.AddCell(cell);
+            }
+
+            foreach (DataRow row in data.Rows)
+            {
+                foreach (object obj in row.ItemArray)
+                {
+                    pdftable.AddCell(new Phrase(obj.ToString(), text));
+                }
+            }
+
+            var savefiledialogue = new SaveFileDialog();
+            savefiledialogue.FileName = "Koszta Pracowników";
+            savefiledialogue.DefaultExt = ".pdf";
+            if (savefiledialogue.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream fstream = new FileStream(savefiledialogue.FileName, FileMode.Create))
+                {
+                    Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+                    PdfWriter.GetInstance(pdfdoc, fstream);
+                    pdfdoc.Open();
+                    pdfdoc.Add(pdftable);
+                    pdfdoc.Close();
+                    fstream.Close();
+                }
+            }
+        }
      
 
         private void button_show_Click(object sender, EventArgs e)
         {
-
-
-
-
             int id =0;
 
             var date_from = dateTimePicker_from_date_reserv.Value;
             var date_to = dateTimePicker_to_date_reserv.Value;
-            DataBaseDataContext db = new DataBaseDataContext();
+
             try
             {
                 int row = dataGridView_workers_DB.CurrentCell.RowIndex;
@@ -81,24 +159,14 @@ namespace VMA
                 MessageBox.Show("Nie wybrano prcownika", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
-
-
-          
                 // ilość wyporzyczonych aut
                
-
-
                 var query1 = ((from x in db.RentSets
                                where x.Worker_worker_id == id && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
                                select x.Vehicle_vehicle_id)).Count();
 
                 label_time.Text = query1.ToString();
             
-          
-
-
-
           //ilosc kilometrów
                 try { 
                 var worker_rent2 = from x in db.RentSets
@@ -108,60 +176,39 @@ namespace VMA
                 var count_km = worker_rent2
                                 .Where(x => x.mileage_end != 0)
                                     .Sum(x => x.mileage_end - x.mileage_start);
-
-
-             
+                
                 label_count_kilometers.Text = count_km.ToString() + " km";       }
             catch
             {
                 label_count_kilometers.Text = " ----";
             }
-
-
-
+            
             //koszt w daynm okresie
             try
             {
-               
-
-
                 var count_cost = db.PurchaseSets
                                 .Where(x => x.RentSet.Worker_worker_id == id &&x.RentSet.date_from.Date>=date_from.Date&&x.RentSet.date_to.Date<=date_to.Date)
                                     .Sum(x => x.price);
 
-
-
+                
                 label_cost.Text = count_cost.ToString() + "  zł";
-
-
-
-
+                
             }
             catch
             {
                 label_cost.Text = " ----";
-
             }
-
-
-
-          
-            }
+        }
 
         private void button_generate_to_pdf_Click(object sender, EventArgs e)
         {
             try
             {
-
-                Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
-                PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Test.pdf", FileMode.Create));
-                doc.Open();
-                Paragraph paragraph = new Paragraph("Coś się zepsuło i nie było mnie słychać");
-                doc.Add(paragraph);
-                doc.Close();
+                Pdf_Data_Creator();
             }
             catch (Exception)
             {
+                MessageBox.Show("Coś się zepsuło i nie było mnie słychać", "PDF.Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             MessageBox.Show("Robie PDF dla wszystkich pracowników w danym okresie :)", "PDF", MessageBoxButtons.OK, MessageBoxIcon.Information);

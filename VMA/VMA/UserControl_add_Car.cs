@@ -40,16 +40,6 @@ namespace VMA
             {
                 try
                 {
-
-
-
-
-
-
-
-
-
-
                     VehicleSet car = new VehicleSet()
                     {
                         brand = textBox_brand.Text,
@@ -77,16 +67,7 @@ namespace VMA
                         timing_gear= dateTimePicker_gear_date.Value,
                         timing_gear_mileage=Convert.ToInt32(textBox_gear_km.Text),
                         Vehicle_vehicle_id=newcar.vehicle_id,
-
-
-
                     };
-
-
-
-
-
-
                     
                     db.Check_vehicleSets.InsertOnSubmit(check);
                     db.SubmitChanges();

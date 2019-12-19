@@ -101,6 +101,7 @@ namespace VMA
                         Reservation_reservation_id = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[9].Value),
                         Vehicle_vehicle_id = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[0].Value),
                         mileage_end = 0
+                        
                     };
 
                     db.RentSets.InsertOnSubmit(newRent);

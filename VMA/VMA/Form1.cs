@@ -27,6 +27,48 @@ namespace VMA
             InitializeComponent();
         }
 
+        private void check_reservation(int user_id)
+        {
+           
+
+            var Selectquery = from x in db.VehicleSets
+                              join y in db.ReservationSets on x.vehicle_id equals y.Vehicle_vehicle_id
+                              join z in db.WorkerSets on y.Worker_worker_id equals z.worker_id
+                              where z.worker_id == user_id
+                              select new
+                              {
+                                  ID = x.vehicle_id,
+                                  REJESTRACJA = x.licence_plate,
+                                  MARKA = x.brand,
+                                  MODEL = x.model,
+                                  OD = y.date_from,
+                                  DO = y.date_to,
+                                  REZERWUJACY = z.surname,
+                                  CEL = y.purpose,
+                                  PRZEBIEG = x.mileage,
+                                  Reserv_id = y.reservation_id
+                              };
+            
+            var rents = from x in db.RentSets
+                        select x.Reservation_reservation_id;
+
+            var select = Selectquery.Where(x => !rents.Contains(x.Reserv_id));
+
+            if (select.Any(x => x.OD == DateTime.Today.Date.AddDays(1)))
+            {
+                MessageBox.Show("Masz rezerwacje na jutro", "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+            if (select.Any(x => x.OD == DateTime.Today.Date))
+            {
+                MessageBox.Show("Masz dzisiaj rezerwacje", "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+           
+        }
+
+
         private void button_sign_in_Click(object sender, EventArgs e)
         {
             name = textBox_login_name.Text.ToString();
@@ -36,7 +78,6 @@ namespace VMA
             try
             {
                 var user = db.WorkerSets.Where(i => i.password == password && i.name == name).Single();
-
                 if (user != null)
                 {
                     if (user.position != "fired")
@@ -48,6 +89,7 @@ namespace VMA
                             textBox_login_password.Clear();
                             adminapp = new Form_panel_admin(this);
                             adminapp.Show();
+                            check_reservation(user.worker_id);
                             this.Hide();
                         }
                         else if(user.position == "kierownik" || user.position == "Kierownik")
@@ -56,6 +98,7 @@ namespace VMA
                             textBox_login_password.Clear();
                             menagerapp = new Form_panel_manager(this,user.worker_id);
                             menagerapp.Show();
+                            check_reservation(user.worker_id);
                             this.Hide();
                         }
                         else
@@ -69,6 +112,7 @@ namespace VMA
                                 textBox_login_password.Clear();
                                 mainapp = new MainApp(this, user.name, user.surname, user.worker_id, true);
                                 mainapp.Show();
+                                check_reservation(user.worker_id);
                                 this.Hide();
                             }
                             else
@@ -77,6 +121,7 @@ namespace VMA
                                 textBox_login_password.Clear();
                                 mainapp = new MainApp(this, user.name, user.surname, user.worker_id, false);
                                 mainapp.Show();
+                                check_reservation(user.worker_id);
                                 this.Hide();
                             }
                         }

@@ -61,7 +61,7 @@ namespace VMA
         public void fillDataGridView2()
         {
             var query = from x in db.CareSets
-                        where x.date_to == null
+                        where x.date_to == Convert.ToDateTime("1999 - 01 - 01 00:00:00.000")
                         select new
                         {
                             ID = x.care_id,
