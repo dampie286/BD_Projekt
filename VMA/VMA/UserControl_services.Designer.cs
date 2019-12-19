@@ -295,7 +295,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(177, 22);
             this.label7.TabIndex = 83;
-            this.label7.Text = "Numer warsztatu";
+            this.label7.Text = "Numer budynku";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8

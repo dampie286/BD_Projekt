@@ -45,6 +45,7 @@ namespace VMA
 
         private void userControl_rent_Button_rentResev_Click(object sender, EventArgs e)
         {
+            userControl_reservation1.Button();
             userControl_my_reservation1.BringToFront();
             userControl_my_reservation1.setID(log);
             userControl_my_reservation1.fillDataGridView();
@@ -126,8 +127,8 @@ namespace VMA
 
         private void button_reservation_Click(object sender, EventArgs e)
         {
-           
-           
+
+            userControl_reservation1.Button();
             userControl_reservation1.fillDataGridView();
             userControl_reservation1.BringToFront();
             userControl_reservation1.setWorkerID(log); //przekazanie id pracownika do rezerwacji
