@@ -264,13 +264,14 @@ namespace VMA
 
                 double avg = Double.Parse(textBox_combustion.Text, CultureInfo.InvariantCulture);
 
-              
+                string plate = textBox_edit_lic.Text;
+                string plateV1 = plate.ToUpper();
 
                 foreach (VehicleSet x in query)
                 {
                     x.avg_consumption = avg;
                     x.fuel_type = comboBox_type_of_fuel.Text.ToString();
-                    x.licence_plate = textBox_edit_lic.Text.ToString();
+                    x.licence_plate = plateV1;
                     x.version = comboBox_car_version.Text.ToString();
                     
 
