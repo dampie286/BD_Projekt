@@ -20,8 +20,32 @@ namespace VMA
         {
             InitializeComponent();
         }
-        private void GeneratePDF(string filename, string description, PdfPTable pdftable)
+        private void GeneratePDF(string filename, string description, DataTable data)
         {
+            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+            PdfPTable pdftable = new PdfPTable(data.Columns.Count);
+            pdftable.DefaultCell.Padding = 3;
+            pdftable.WidthPercentage = 100;
+            pdftable.HorizontalAlignment = Element.ALIGN_MIDDLE;
+            pdftable.DefaultCell.BorderWidth = 1;
+
+            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+
+            foreach (DataColumn col in data.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(col.ColumnName, text));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                pdftable.AddCell(cell);
+            }
+
+            foreach (DataRow row in data.Rows)
+            {
+                foreach (object obj in row.ItemArray)
+                {
+                    pdftable.AddCell(new Phrase(obj.ToString(), text));
+                }
+            }
+            
             var savefiledialogue = new SaveFileDialog();
             savefiledialogue.FileName = filename;
             savefiledialogue.DefaultExt = ".pdf";
@@ -59,31 +83,9 @@ namespace VMA
                
                 data.Rows.Add(worker.worker_id, worker.name, worker.surname, worker.position, worker.phone_nr);
             }
-            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
-            PdfPTable pdftable = new PdfPTable(data.Columns.Count);
-            pdftable.DefaultCell.Padding = 3;
-            pdftable.WidthPercentage = 100;
-            pdftable.HorizontalAlignment = Element.ALIGN_MIDDLE;
-            pdftable.DefaultCell.BorderWidth = 1;
-
-            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
-
-            foreach (DataColumn col in data.Columns)
-            {
-                PdfPCell cell = new PdfPCell(new Phrase(col.ColumnName, text));
-                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
-                pdftable.AddCell(cell);
-            }
-
-            foreach (DataRow row in data.Rows)
-            {
-                foreach (object obj in row.ItemArray)
-                {
-                    pdftable.AddCell(new Phrase(obj.ToString(), text));
-                }
-            }
             
-            GeneratePDF("Lista Pracowników", "Lista pracownikow na dzien " + DateTime.Today.ToShortDateString(), pdftable);
+            
+            GeneratePDF("Lista Pracowników", "Lista pracownikow na dzien " + DateTime.Today.ToShortDateString(), data);
         }
 
         private void button_cars_generate_to_pdf_Click(object sender, EventArgs e)
@@ -105,31 +107,8 @@ namespace VMA
 
                 data.Rows.Add(worker.vehicle_id, worker.brand, worker.model, worker.licence_plate, worker.mileage);
             }
-            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
-            PdfPTable pdftable = new PdfPTable(data.Columns.Count);
-            pdftable.DefaultCell.Padding = 3;
-            pdftable.WidthPercentage = 100;
-            pdftable.HorizontalAlignment = Element.ALIGN_MIDDLE;
-            pdftable.DefaultCell.BorderWidth = 1;
 
-            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
-
-            foreach (DataColumn col in data.Columns)
-            {
-                PdfPCell cell = new PdfPCell(new Phrase(col.ColumnName, text));
-                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
-                pdftable.AddCell(cell);
-            }
-
-            foreach (DataRow row in data.Rows)
-            {
-                foreach (object obj in row.ItemArray)
-                {
-                    pdftable.AddCell(new Phrase(obj.ToString(), text));
-                }
-            }
-
-            GeneratePDF("Lista Pojazdów", "Lista pojazdów na dzien " + DateTime.Today.ToShortDateString(), pdftable);
+            GeneratePDF("Lista Pojazdów", "Lista pojazdów na dzien " + DateTime.Today.ToShortDateString(), data);
         }
 
         private void button_reservation_generate_to_pdf_Click(object sender, EventArgs e)
@@ -164,31 +143,8 @@ namespace VMA
 
                 data.Rows.Add(worker.name, worker.surname, vehicle.brand, vehicle.model, vehicle.licence_plate, Reservation.date_from.Date.ToShortDateString(), Reservation.date_to.Date.ToShortDateString(), Reservation.purpose);
             }
-
-            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
-            PdfPTable pdftable = new PdfPTable(data.Columns.Count);
-            pdftable.DefaultCell.Padding = 3;
-            pdftable.WidthPercentage = 100;
-            pdftable.HorizontalAlignment = Element.ALIGN_MIDDLE;
-            pdftable.DefaultCell.BorderWidth = 1;
-
-            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
-
-            foreach (DataColumn col in data.Columns)
-            {
-                PdfPCell cell = new PdfPCell(new Phrase(col.ColumnName, text));
-                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
-                pdftable.AddCell(cell);
-            }
-
-            foreach (DataRow row in data.Rows)
-            {
-                foreach (object obj in row.ItemArray)
-                {
-                    pdftable.AddCell(new Phrase(obj.ToString(), text));
-                }
-            }
-            GeneratePDF("Lista Rezerwacji", "Lista rezerwacji od " + dateTimePicker_from_date_reserv.Value.Date.ToShortDateString() + " do " + dateTimePicker_to_date_reserv.Value.Date.ToShortDateString(), pdftable);
+            
+            GeneratePDF("Lista Rezerwacji", "Lista rezerwacji od " + dateTimePicker_from_date_reserv.Value.Date.ToShortDateString() + " do " + dateTimePicker_to_date_reserv.Value.Date.ToShortDateString(), data);
         }
 
         private void button_keeper_generate_to_pdf_Click(object sender, EventArgs e)
@@ -303,31 +259,8 @@ namespace VMA
 
                
             }
-            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
-            PdfPTable pdftable = new PdfPTable(data.Columns.Count);
-            pdftable.DefaultCell.Padding = 3;
-            pdftable.WidthPercentage = 100;
-            pdftable.HorizontalAlignment = Element.ALIGN_MIDDLE;
-            pdftable.DefaultCell.BorderWidth = 1;
 
-            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
-
-            foreach (DataColumn col in data.Columns)
-            {
-                PdfPCell cell = new PdfPCell(new Phrase(col.ColumnName, text));
-                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
-                pdftable.AddCell(cell);
-            }
-
-            foreach (DataRow row in data.Rows)
-            {
-                foreach (object obj in row.ItemArray)
-                {
-                    pdftable.AddCell(new Phrase(obj.ToString(), text));
-                }
-            }
-
-            GeneratePDF("Lista Opiekunów", description, pdftable);
+            GeneratePDF("Lista Opiekunów", description, data);
         }
 
         private void button_services_generate_to_pdf_Click(object sender, EventArgs e)
@@ -375,32 +308,108 @@ namespace VMA
                 data.Rows.Add(vehicle.model, vehicle.brand, vehicle.licence_plate, 
                     service.name, service.description, company.name, company.phone_nr, Care_Service.date_from.ToShortDateString(), repaired);
             }
-            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
-            PdfPTable pdftable = new PdfPTable(data.Columns.Count);
-            pdftable.DefaultCell.Padding = 3;
-            pdftable.WidthPercentage = 100;
-            pdftable.HorizontalAlignment = Element.ALIGN_MIDDLE;
-            pdftable.DefaultCell.BorderWidth = 1;
 
-            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+            GeneratePDF("Lista Serwisów", "Lista serwisow na dzien " + DateTime.Today.ToShortDateString(), data);
+        }
 
-            foreach (DataColumn col in data.Columns)
+        private void button_rents_generate_to_pdf_Click(object sender, EventArgs e)
+        {
+            DataTable data = new DataTable("Stats");
+            data.Columns.Add("Imię");
+            data.Columns.Add("Nazwisko");
+            data.Columns.Add("Marka");
+            data.Columns.Add("Model");
+            data.Columns.Add("Rejestracja");
+            data.Columns.Add("Data od");
+            data.Columns.Add("Data do");
+            data.Columns.Add("Cel rezerwacji");
+            data.Columns.Add("Przejechana liczba km");
+
+            RentSet rent;
+            VehicleSet vehicle;
+            WorkerSet worker;
+            string km;
+            var Cars = from x in db.RentSets
+                       where (x.date_from >= dateTimePicker_from_date_reserv.Value.Date && x.date_to <= dateTimePicker_to_date_reserv.Value.Date)
+                               || (x.date_from <= dateTimePicker_from_date_reserv.Value.Date && x.date_to >= dateTimePicker_from_date_reserv.Value.Date)
+                       select x.rent_id;
+
+            foreach (int idw in Cars)
             {
-                PdfPCell cell = new PdfPCell(new Phrase(col.ColumnName, text));
-                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
-                pdftable.AddCell(cell);
-            }
 
-            foreach (DataRow row in data.Rows)
-            {
-                foreach (object obj in row.ItemArray)
+                rent = db.RentSets.Where(x => x.rent_id == idw).First();
+
+                vehicle = db.VehicleSets.Where(y => y.vehicle_id == rent.Vehicle_vehicle_id).First();
+
+                worker = db.WorkerSets.Where(z => z.worker_id == rent.Worker_worker_id).First();
+
+                if (rent.mileage_end == 0)
                 {
-                    pdftable.AddCell(new Phrase(obj.ToString(), text));
+                    km = "W trakcie";
                 }
+                else
+                {
+                    km = (rent.mileage_end - rent.mileage_start).ToString();
+                }
+                data.Rows.Add(worker.name, worker.surname, vehicle.brand, vehicle.model, vehicle.licence_plate, 
+                    rent.date_from.Date.ToShortDateString(), rent.date_to.Date.ToShortDateString(), rent.purpose, km);
             }
             
-
-            GeneratePDF("Lista Serwisów", "Lista serwisow na dzien " + DateTime.Today.ToShortDateString(), pdftable);
+            GeneratePDF("Lista Wypożyczeń", "Lista wypozyczen od " + dateTimePicker_from_date_reserv.Value.Date.ToShortDateString() + " do " + dateTimePicker_to_date_reserv.Value.Date.ToShortDateString(), data);
         }
+
+        private void button_cost_generate_to_pdf_Click(object sender, EventArgs e)
+        {
+            DataTable data = new DataTable("Stats");
+            data.Columns.Add("Imię");
+            data.Columns.Add("Nazwisko");
+            data.Columns.Add("Marka");
+            data.Columns.Add("Model");
+            data.Columns.Add("Rejestracja");
+            data.Columns.Add("Data od");
+            data.Columns.Add("Data do");
+            data.Columns.Add("Cel rezerwacji");
+            data.Columns.Add("Koszt podczas wypożyczenia");
+
+            RentSet rent;
+            VehicleSet vehicle;
+            WorkerSet worker;
+            PurchaseSet purchase;
+
+            var Cars = from x in db.RentSets
+                       where ((x.date_from >= dateTimePicker_from_date_reserv.Value.Date && x.date_to <= dateTimePicker_to_date_reserv.Value.Date)
+                               || (x.date_from <= dateTimePicker_from_date_reserv.Value.Date && x.date_to >= dateTimePicker_from_date_reserv.Value.Date))
+                               && x.mileage_end != 0
+                       select x.rent_id;
+
+            foreach (int idw in Cars)
+            {
+
+                rent = db.RentSets.Where(x => x.rent_id == idw).First();
+
+                purchase = db.PurchaseSets.Where(x => x.Rent_rent_id == rent.rent_id).SingleOrDefault();
+
+                if (purchase == null)
+                {
+
+                }
+                else
+                {
+                    vehicle = db.VehicleSets.Where(y => y.vehicle_id == rent.Vehicle_vehicle_id).First();
+
+                    worker = db.WorkerSets.Where(z => z.worker_id == rent.Worker_worker_id).First();
+
+
+                    data.Rows.Add(worker.name, worker.surname, vehicle.brand, vehicle.model, vehicle.licence_plate,
+                        rent.date_from.Date.ToShortDateString(), rent.date_to.Date.ToShortDateString(), rent.purpose, purchase.price);
+                }
+
+                
+            }
+
+            
+            GeneratePDF("Lista Kosztów", "Lista kosztow od " + dateTimePicker_from_date_reserv.Value.Date.ToShortDateString() + " do " + dateTimePicker_to_date_reserv.Value.Date.ToShortDateString(), data);
+        }
+      
     }
 }

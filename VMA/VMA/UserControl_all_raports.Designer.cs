@@ -282,6 +282,7 @@
             this.button_rents_generate_to_pdf.TabIndex = 98;
             this.button_rents_generate_to_pdf.Text = "Generuj do PDF";
             this.button_rents_generate_to_pdf.UseVisualStyleBackColor = false;
+            this.button_rents_generate_to_pdf.Click += new System.EventHandler(this.button_rents_generate_to_pdf_Click);
             // 
             // button_services_generate_to_pdf
             // 
@@ -313,6 +314,7 @@
             this.button_cost_generate_to_pdf.TabIndex = 100;
             this.button_cost_generate_to_pdf.Text = "Generuj do PDF";
             this.button_cost_generate_to_pdf.UseVisualStyleBackColor = false;
+            this.button_cost_generate_to_pdf.Click += new System.EventHandler(this.button_cost_generate_to_pdf_Click);
             // 
             // comboBox_status_of_care
             // 
