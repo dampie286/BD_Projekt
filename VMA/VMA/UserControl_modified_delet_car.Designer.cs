@@ -306,6 +306,7 @@
             this.textBox_edit_lic.TabIndex = 63;
             this.textBox_edit_lic.Text = "Rejestracja";
             this.textBox_edit_lic.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_edit_lic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_edit_lic_KeyPress);
             // 
             // label_brand
             // 

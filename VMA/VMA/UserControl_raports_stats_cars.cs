@@ -7,18 +7,66 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace VMA
 {
     public partial class UserControl_raports_stats_cars : UserControl
     {
+        DataBaseDataContext db = new DataBaseDataContext();
         public UserControl_raports_stats_cars()
         {
             InitializeComponent();
         }
+
+        private void GeneratePDF(string filename, string description, DataTable data)
+        {
+            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+            PdfPTable pdftable = new PdfPTable(data.Columns.Count);
+            pdftable.DefaultCell.Padding = 3;
+            pdftable.WidthPercentage = 100;
+            pdftable.HorizontalAlignment = Element.ALIGN_MIDDLE;
+            pdftable.DefaultCell.BorderWidth = 1;
+
+            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+
+            foreach (DataColumn col in data.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(col.ColumnName, text));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                pdftable.AddCell(cell);
+            }
+
+            foreach (DataRow row in data.Rows)
+            {
+                foreach (object obj in row.ItemArray)
+                {
+                    pdftable.AddCell(new Phrase(obj.ToString(), text));
+                }
+            }
+
+            var savefiledialogue = new SaveFileDialog();
+            savefiledialogue.FileName = filename;
+            savefiledialogue.DefaultExt = ".pdf";
+            if (savefiledialogue.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream fstream = new FileStream(savefiledialogue.FileName, FileMode.Create))
+                {
+                    Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+                    PdfWriter.GetInstance(pdfdoc, fstream);
+                    pdfdoc.Open();
+                    Phrase ph = new Phrase(description + " \n \n");
+                    pdfdoc.Add(ph);
+                    pdfdoc.Add(pdftable);
+                    pdfdoc.Close();
+                    fstream.Close();
+                }
+            }
+        }
         private void gridedit()
         {
-
             dataGridView_veh_DB.RowHeadersVisible = false;
             dataGridView_veh_DB.Columns[0].Visible = false;
             dataGridView_veh_DB.Columns[1].Visible = true;
@@ -29,20 +77,15 @@ namespace VMA
             dataGridView_veh_DB.Columns[6].Visible = true;
             dataGridView_veh_DB.Columns[7].Visible = true;
             dataGridView_veh_DB.Columns[8].Visible = false;
-
         }
         public void fillDataGridView()
         {
 
-            DataBaseDataContext db = new DataBaseDataContext();
             var Selectquery = from x in db.VehicleSets where x.available != "deleted" select x;
 
             dataGridView_veh_DB.DataSource = Selectquery;
 
             gridedit();
-
-
-
         }
 
       
@@ -77,26 +120,23 @@ namespace VMA
 
             }
 
-            DataBaseDataContext db = new DataBaseDataContext();
+           
 
             //ilosc kilometórw
             try
             {
                 var worker_rent2 = from x in db.RentSets
-                                   where x.Vehicle_vehicle_id == id && x.date_from.Date <= date_from.Date && x.date_to.Date >= date_to.Date
+                                   where x.Vehicle_vehicle_id == id && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
                                    select x;
 
                 var count_km = worker_rent2
                                 .Where(x => x.mileage_end != 0)
                                     .Sum(x => x.mileage_end - x.mileage_start);
-
-
-
+                
                 label_mileage_time.Text = count_km.ToString()+" Km";
             }
             catch
             {
-
                 label_mileage_time.Text = " ---";
             }
 
@@ -110,9 +150,7 @@ namespace VMA
                 var count_km = worker_rent2
                                 .Where(x => x.mileage_end != 0)
                                     .Sum(x => (x.mileage_end - x.mileage_start)/100*x.VehicleSet.avg_consumption);
-
-
-
+                
                 label_all_combustion.Text = count_km.ToString() + " L";
             }
             catch
@@ -121,76 +159,127 @@ namespace VMA
                 label_all_combustion.Text = " ---";
             }
 
-
             // ilosc serwisow
-
-            
-
             try
             {
                 var query1 = ((from x in db.Care_serviceSets
                                where x.CareSet.Vehicle_vehicle_id == id && x.date_from.Date >= date_from.Date && x.data_to.Value.Date<=date_to.Date
                                select x.care_service_id)).Count();
 
-
-
-
                 label_count_services.Text = query1.ToString();
-               
             }
             catch
             {
-
                 label_count_services.Text = "----";
-
             }
-
-
+            
             //koszt pojazdu
-
             try
             {
-
-
-
                 var count_cost_workers = db.PurchaseSets
                                 .Where(x => x.RentSet.Vehicle_vehicle_id == id && x.RentSet.date_from.Date >=date_from.Date && x.RentSet.date_to.Date <= date_to.Date)
                                     .Sum(x => x.price);
-
-
-
+                
                 var count_cost_servis = db.Care_serviceSets
                                 .Where(x => x.CareSet.Vehicle_vehicle_id == id && x.date_from.Date >= date_from.Date && x.data_to.Value.Date <=date_to.Date)
                                     .Sum(x => x.price);
-
-
-
-
+                
                 label_cost_car.Text = (count_cost_servis + count_cost_workers).ToString() + "zł";
-
             }
             catch
             {
-
                 label_cost_car.Text ="----";
             }
-
-
-
-
-
-
-
-
-
         }
 
         private void button_generate_to_pdf_Click(object sender, EventArgs e)
         {
+            DataTable data = new DataTable("Stats");
+            data.Columns.Add("ID");
+            data.Columns.Add("IMIE");
+            data.Columns.Add("NAZWISKO");
+            data.Columns.Add("Liczba KM");
+            data.Columns.Add("Spalone litry");
+            data.Columns.Add("Liczba wyp. pojazdów");
+            data.Columns.Add("Koszt [ZŁ]");
 
-            MessageBox.Show("Robie PDF dla wszystkich autek w danym okresie :)", "PDF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            VehicleSet worker;
+            string km, cost, count;
+
+            var Worker = from x in db.VehicleSets
+                         select x.vehicle_id;
+
+            var date_from = dateTimePicker_from_date_reserv.Value;
+            var date_to = dateTimePicker_to_date_reserv.Value;
+
+            foreach (int idw in Worker)
+            {
+
+                worker = db.VehicleSets.Where(x => x.vehicle_id == idw).First();
+                try // liczba km działa
+                {
+                    var worker_rent2 = from x in db.RentSets
+                                       where x.Vehicle_vehicle_id == idw && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
+                                       select x;
+
+                    var count_km = worker_rent2
+                                    .Where(x => x.mileage_end != 0)
+                                        .Sum(x => x.mileage_end - x.mileage_start);
+                    km = count_km.ToString();
+
+                }
+                catch (Exception)
+                {
+                    km = "---";
+                }
+                try // paliwo nie działa
+                {
+                    var worker_rent2 = from x in db.RentSets
+                                       where x.Vehicle_vehicle_id == idw && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
+                                       select x;
+                    
+                    var count_km = worker_rent2
+                                    .Where(x => x.mileage_end != 0)
+                                        .Sum(x => (x.mileage_end - x.mileage_start) / 100 * x.VehicleSet.avg_consumption);
+
+                    count = count_km.ToString();
+                }
+                catch (Exception)
+                {
+                    count = "---";
+                }
+                try // koszt nie działa
+                {
+                    var count_cost_workers = db.PurchaseSets
+                                .Where(x => x.RentSet.Vehicle_vehicle_id == idw && x.RentSet.date_from.Date >= date_from.Date && x.RentSet.date_to.Date <= date_to.Date)
+                                    .Sum(x => x.price);
+                    
+                    var count_cost_servis = db.Care_serviceSets
+                                    .Where(x => x.CareSet.Vehicle_vehicle_id == idw && x.date_from.Date >= date_from.Date && x.data_to.Value.Date <= date_to.Date)
+                                        .Sum(x => x.price);
+                    
+                    cost = count_cost_servis.ToString();
+                }
+                catch (Exception)
+                {
+                    cost = "---";
+                }
+                // liczba serwisow nie działa
+                try
+                {
+                    var query1 = ((from x in db.Care_serviceSets
+                                   where x.CareSet.Vehicle_vehicle_id == idw && x.date_from.Date >= date_from.Date && x.data_to.Value.Date <= date_to.Date
+                                   select x.care_service_id)).Count();
+
+                    label_count_services.Text = query1.ToString();
+                }
+                catch
+                {
+                    label_count_services.Text = "----";
+                }
+                data.Rows.Add(worker.brand, worker.model, worker.licence_plate, km, count, cost);
+            }
+            GeneratePDF("Koszta pojazdów", "Koszta za okres: " + dateTimePicker_from_date_reserv.Value.ToShortDateString() + " - " + dateTimePicker_to_date_reserv.Value.ToShortDateString(), data);
         }
-
-        
     }
 }

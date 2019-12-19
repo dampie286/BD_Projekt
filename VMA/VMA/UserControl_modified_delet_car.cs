@@ -264,13 +264,14 @@ namespace VMA
 
                 double avg = Double.Parse(textBox_combustion.Text, CultureInfo.InvariantCulture);
 
-              
+                string plate = textBox_edit_lic.Text;
+                string plateV1 = plate.ToUpper();
 
                 foreach (VehicleSet x in query)
                 {
                     x.avg_consumption = avg;
                     x.fuel_type = comboBox_type_of_fuel.Text.ToString();
-                    x.licence_plate = textBox_edit_lic.Text.ToString();
+                    x.licence_plate = plateV1;
                     x.version = comboBox_car_version.Text.ToString();
                     
 
@@ -431,6 +432,41 @@ namespace VMA
                 e.Handled = true;
             }
 
+
+
+
+        }
+
+        private void textBox_edit_lic_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+
+            int x = textBox_edit_lic.TextLength;
+
+
+            char chh = e.KeyChar;
+
+
+            if (chh != 32)
+            {
+                if (chh != 8)
+                {
+                    if (x > 8)
+                    {
+
+                        e.Handled = true;
+
+
+                    }
+
+                }
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
 
 
 

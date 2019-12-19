@@ -38,6 +38,13 @@ namespace VMA
             }
             using (DataBaseDataContext db = new DataBaseDataContext())
             {
+
+
+                string plate = textBox_license.Text;
+               string plateV1= plate.ToUpper();
+
+
+
                 try
                 {
                     VehicleSet car = new VehicleSet()
@@ -46,7 +53,7 @@ namespace VMA
                         model =textBox_model.Text,
                         version = comboBox_car_version.Text,
                         equipment = "",
-                        licence_plate = textBox_license.Text,
+                        licence_plate = plateV1,
                         fuel_type = comboBox_type_of_fuel.Text,
                         avg_consumption = Convert.ToDouble(consump),
                         available = "yes",
@@ -88,6 +95,9 @@ namespace VMA
                     textBox_license.Clear();
                     textBox_mileage.Clear();
                     textBox_model.Clear();
+
+                    textBox_oil_km.Clear();
+                    textBox_gear_km.Clear();
                 }
             }
         }
@@ -196,6 +206,38 @@ namespace VMA
             {
                 e.Handled = true;
             }
+        }
+
+        private void textBox_license_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+         int x= textBox_license.TextLength;
+            
+
+            char chh = e.KeyChar;
+
+
+            if (chh != 32)
+            {
+                if (chh != 8)
+                {
+                    if (x > 8)
+                    {
+
+                        e.Handled = true;
+
+
+                    }
+
+                }
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+
+
         }
     }
     }

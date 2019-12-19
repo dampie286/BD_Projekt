@@ -82,7 +82,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Yellow;
             this.panel1.Location = new System.Drawing.Point(280, 151);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(133, 1);
             this.panel1.TabIndex = 41;
@@ -124,7 +124,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Yellow;
             this.panel5.Location = new System.Drawing.Point(280, 428);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(133, 1);
             this.panel5.TabIndex = 49;
@@ -143,12 +143,13 @@
             this.textBox_license.Size = new System.Drawing.Size(133, 19);
             this.textBox_license.TabIndex = 48;
             this.textBox_license.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_license.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_license_KeyPress);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Yellow;
             this.panel6.Location = new System.Drawing.Point(280, 539);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(133, 1);
             this.panel6.TabIndex = 51;
@@ -173,7 +174,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.Yellow;
             this.panel7.Location = new System.Drawing.Point(280, 207);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(133, 1);
             this.panel7.TabIndex = 53;
@@ -197,7 +198,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.Yellow;
             this.panel8.Location = new System.Drawing.Point(280, 262);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(133, 1);
             this.panel8.TabIndex = 55;
@@ -222,7 +223,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.Yellow;
             this.panel10.Location = new System.Drawing.Point(280, 484);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(133, 1);
             this.panel10.TabIndex = 59;
@@ -470,7 +471,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Yellow;
             this.panel2.Location = new System.Drawing.Point(713, 262);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(133, 1);
             this.panel2.TabIndex = 95;
@@ -525,7 +526,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Yellow;
             this.panel3.Location = new System.Drawing.Point(713, 373);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(133, 1);
             this.panel3.TabIndex = 100;

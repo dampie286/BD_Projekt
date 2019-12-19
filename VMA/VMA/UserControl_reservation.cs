@@ -31,6 +31,12 @@ namespace VMA
             InitializeComponent();
         }
 
+        public void  Button()
+        {
+
+            button_reserv.Visible = false;
+        }
+
         public void fillDataGridView()     //uzupełnienie tabeli
         {
             time_from = dateTimePicker_from_date_reserv.Value.Date;
@@ -116,6 +122,13 @@ namespace VMA
 
                                 db.ReservationSets.InsertOnSubmit(newReservation);
                                 db.SubmitChanges();
+
+
+
+                          
+                                
+
+
                                 MessageBox.Show("Zarezerwowałeś pojazd od " + time_from.Date.ToShortDateString() + " do " + time_to.Date.ToShortDateString(), "Good Reservation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             }

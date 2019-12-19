@@ -130,13 +130,47 @@ namespace VMA
         private void textBox_number_phone_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-
+            int x = textBox_number_phone.TextLength;
             char chh = e.KeyChar;
 
-            if (!Char.IsDigit(chh) && chh != 8)
+
+
+
+
+
+
+            if (!Char.IsDigit(chh) && chh!=8)
             {
                 e.Handled = true;
             }
+            else
+            {
+                if (chh != 8)
+                {
+                    if (x > 8)
+                    {
+
+                        e.Handled = true;
+
+
+                    }
+
+                }
+
+
+            }
+
+
+
+            
+         
+
+        
+              
+            
+           
+
+
 
         }
 
@@ -192,11 +226,7 @@ namespace VMA
 
                 fillDataGridView();
             }
-            else
-            {
-
-                MessageBox.Show("Anulowano usunięcie firmy z bazy", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+           
         }
     }
 }

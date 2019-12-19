@@ -51,49 +51,8 @@ namespace VMA
             Grid_edit();
         }
 
-        private void Pdf_Data_Creator()
+        private void GeneratePDF(string filename, string description, DataTable data)
         {
-            DataTable data = new DataTable("Stats");
-            data.Columns.Add("ID");
-            data.Columns.Add("IMIE");
-            data.Columns.Add("NAZWISKO");
-            WorkerSet worker;
-            var Cars = from x in db.WorkerSets
-                       select x.worker_id;
-
-            var date_from = dateTimePicker_from_date_reserv.Value;
-            var date_to = dateTimePicker_to_date_reserv.Value;
-
-            foreach (int idw in Cars)
-            {
-
-                worker = db.WorkerSets.Where(x => x.worker_id == idw).First();
-                //var worker_rent2 = from x in db.RentSets
-                //                   where x.Worker_worker_id == idw && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
-                //                   select x;
-
-                //var count_km = (worker_rent2
-                //                    .Where(x => x.mileage_end != 0)
-                //                        .Sum(x => x.mileage_end - x.mileage_start)); ///
-
-                //var query1 = ((from x in db.RentSets
-                //               where x.Worker_worker_id == idw && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
-                //               select x.Vehicle_vehicle_id)).Count();
-
-                //var count_cost = db.PurchaseSets
-                //                .Where(x => x.RentSet.Worker_worker_id == idw && x.RentSet.date_from.Date >= date_from.Date && x.RentSet.date_to.Date <= date_to.Date)
-                //                    .Sum(x => x.price);
-
-
-
-                data.Rows.Add(worker.worker_id, worker.name, worker.surname);//, count_km ,query1, count_cost);
-                
-               
-                
-
-            }
-
-
             BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
             PdfPTable pdftable = new PdfPTable(data.Columns.Count);
             pdftable.DefaultCell.Padding = 3;
@@ -119,7 +78,7 @@ namespace VMA
             }
 
             var savefiledialogue = new SaveFileDialog();
-            savefiledialogue.FileName = "Koszta Pracowników";
+            savefiledialogue.FileName = filename;
             savefiledialogue.DefaultExt = ".pdf";
             if (savefiledialogue.ShowDialog() == DialogResult.OK)
             {
@@ -128,11 +87,81 @@ namespace VMA
                     Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
                     PdfWriter.GetInstance(pdfdoc, fstream);
                     pdfdoc.Open();
+                    Phrase ph = new Phrase(description + " \n \n");
+                    pdfdoc.Add(ph);
                     pdfdoc.Add(pdftable);
                     pdfdoc.Close();
                     fstream.Close();
                 }
             }
+        }
+
+        private void Pdf_Data_Creator()
+        {
+            DataTable data = new DataTable("Stats");
+            data.Columns.Add("ID");
+            data.Columns.Add("IMIE");
+            data.Columns.Add("NAZWISKO");
+            data.Columns.Add("Liczba KM");
+            data.Columns.Add("Liczba wyp. pojazdów");
+            data.Columns.Add("Koszt [ZŁ]");
+            WorkerSet worker;
+            string km, cost, count;
+            var Worker = from x in db.WorkerSets
+                       select x.worker_id;
+
+            var date_from = dateTimePicker_from_date_reserv.Value;
+            var date_to = dateTimePicker_to_date_reserv.Value;
+
+            foreach (int idw in Worker)
+            {
+
+                worker = db.WorkerSets.Where(x => x.worker_id == idw).First();
+                try
+                {
+                    var worker_rent2 = from x in db.RentSets
+                                       where x.Worker_worker_id == idw && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
+                                       select x;
+
+                    var count_km = (worker_rent2
+                                        .Where(x => x.mileage_end != 0)
+                                            .Sum(x => x.mileage_end - x.mileage_start)).ToString(); 
+                    km = count_km;
+
+                }
+                catch (Exception)
+                {
+                    km = "---";
+                }
+                try
+                {
+                    var query1 = ((from x in db.RentSets
+                                   where x.Worker_worker_id == idw && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
+                                   select x.Vehicle_vehicle_id)).Count();
+                    count = query1.ToString();
+                }
+                catch (Exception)
+                {
+                    count = "---";
+                }
+                try
+                {
+                    var count_cost = db.PurchaseSets
+                                        .Where(x => x.RentSet.Worker_worker_id == idw && x.RentSet.date_from.Date >= date_from.Date && x.RentSet.date_to.Date <= date_to.Date)
+                                            .Sum(x => x.price);
+                    cost = count_cost.ToString();
+                }
+                catch (Exception)
+                {
+                    cost = "---";
+                }
+                    data.Rows.Add(worker.worker_id, worker.name, worker.surname, km, count, cost);
+            }
+            //data.Rows.Add("---", "---", "---", "---", "---", "Sumaryczny koszt: ");
+
+
+            GeneratePDF("Koszta pracowników", "Koszta za okres: ", data);
+            
         }
      
 
