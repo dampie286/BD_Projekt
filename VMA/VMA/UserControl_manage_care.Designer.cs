@@ -47,6 +47,7 @@
             this.button_reserve_block_car.TabIndex = 45;
             this.button_reserve_block_car.Text = "Rezerwuj/blokuj samochód";
             this.button_reserve_block_car.UseVisualStyleBackColor = false;
+            this.button_reserve_block_car.Click += new System.EventHandler(this.button_reserve_block_car_Click);
             // 
             // button_send_receive_car
             // 
@@ -62,6 +63,7 @@
             this.button_send_receive_car.TabIndex = 44;
             this.button_send_receive_car.Text = "Wyślij pojazd do serwisu";
             this.button_send_receive_car.UseVisualStyleBackColor = false;
+            this.button_send_receive_car.Click += new System.EventHandler(this.button_send_receive_car_Click);
             // 
             // label_menage_keepers
             // 

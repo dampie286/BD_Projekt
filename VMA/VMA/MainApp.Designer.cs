@@ -49,6 +49,7 @@
             this.userControl_rent1 = new VMA.UserControl_rent();
             this.userControl_reservation1 = new VMA.UserControl_reservation();
             this.userControl_manage_care1 = new VMA.UserControl_manage_care();
+            this.userControl_send_to_service1 = new VMA.UserControl_send_to_service();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_main_logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -320,11 +321,20 @@
             this.userControl_manage_care1.Size = new System.Drawing.Size(941, 656);
             this.userControl_manage_care1.TabIndex = 24;
             // 
+            // userControl_send_to_service1
+            // 
+            this.userControl_send_to_service1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_send_to_service1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_send_to_service1.Name = "userControl_send_to_service1";
+            this.userControl_send_to_service1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_send_to_service1.TabIndex = 25;
+            // 
             // MainApp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.userControl_send_to_service1);
             this.Controls.Add(this.userControl_manage_care1);
             this.Controls.Add(this.userControl_my_rents1);
             this.Controls.Add(this.button_manag_care_car);
@@ -385,5 +395,6 @@
         private UserControl_menage_care_cars userControl_menage_care_cars1;
         private UserControl_my_rents userControl_my_rents1;
         private UserControl_manage_care userControl_manage_care1;
+        private UserControl_send_to_service userControl_send_to_service1;
     }
 }

@@ -54,8 +54,25 @@ namespace VMA
             //dodanie zdarzenia klikniecia wypozyczenia z rezerwacji
             userControl_rent1.Button_rentReserv_Click+= new System.EventHandler(this.userControl_rent_Button_rentResev_Click);
             userControl_rent1.Button_my_rents_Click += new System.EventHandler(this.userControl_rent_Button_my_rents_Click);
-           
+            userControl_manage_care1.Button_reserve_block_car_Click += new System.EventHandler(this.userControl_Button_reserve_block_carClick);
+            userControl_manage_care1.Button_send_receive_car_Click += new System.EventHandler(this.userControl_Button_send_receive_car_Click);
           
+        }
+
+        private void userControl_Button_send_receive_car_Click(object sender, EventArgs e)
+        {
+            userControl_send_to_service1.setUserID(log);
+            userControl_send_to_service1.fillDataGridView2();
+            userControl_send_to_service1.BringToFront();
+           
+        }
+
+        private void userControl_Button_reserve_block_carClick(object sender, EventArgs e)
+        {
+            userControl_menage_care_cars1.setUserID(log);
+            userControl_menage_care_cars1.fillDataGridView();
+           
+            userControl_menage_care_cars1.BringToFront();
         }
 
         private void userControl_rent_Button_my_rents_Click(object sender, EventArgs e)

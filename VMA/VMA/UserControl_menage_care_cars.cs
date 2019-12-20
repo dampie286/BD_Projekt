@@ -18,7 +18,7 @@ namespace VMA
         public UserControl_menage_care_cars()
         {
             InitializeComponent();
-            Combobox_service.DropDownStyle = ComboBoxStyle.DropDownList;
+            
         }
 
         public void setUserID(int id)
@@ -44,37 +44,9 @@ namespace VMA
 
         }
 
-        public void fillDataGridView2()    //Auta na serwisie
-        {
-            try
-            {
-                var query = from x in db.ServiceSets
-                            join y in db.Care_serviceSets on x.service_id equals y.Service_service_id
-                            join z in db.CareSets on y.Care_care_id equals z.care_id
-                            join q in db.VehicleSets on z.Vehicle_vehicle_id equals q.vehicle_id
-                            where z.Keeper_worker_id == user_id && x.is_repair == false
-                            select new
-                            {
-                                ID_car = q.vehicle_id,
-                                ID_Service = x.service_id,
-                                AUTO = q.model,
-                                REJESTRACJA = q.licence_plate,
-                                OD = y.date_from,
-                                PRZYCZYNA = x.name,
-                                OPIS = x.description
-                            };
-                dataGridView_cars_on_service.DataSource = query;
-                dataGridView_cars_on_service.Columns[0].Visible = false;
-                dataGridView_cars_on_service.Columns[1].Visible = false;
+       
 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Nie masz aut na serwisie", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            };
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        /*private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Combobox_service.Text == "INNA")
             {
@@ -84,9 +56,9 @@ namespace VMA
             {
                 textBox_other_service.Visible = false;
             }
-        }
+        }*/
 
-        private void textBox1_Enter(object sender, EventArgs e)
+       /* private void textBox1_Enter(object sender, EventArgs e)
         {
             if (textBox_other_service.Text == "Rodzaj serwisu")
             {
@@ -100,9 +72,9 @@ namespace VMA
             {
                 textBox_other_service.Text = "Rodzaj serwisu";
             }
-        }
+        }*/
 
-        private void button_send_to_service_Click(object sender, EventArgs e)
+        /*private void button_send_to_service_Click(object sender, EventArgs e)
         {
             if (Combobox_service.SelectedIndex == -1 || string.IsNullOrEmpty(textBox_description.Text))
             {
@@ -169,7 +141,7 @@ namespace VMA
                     MessageBox.Show("Zaznacz samochód", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
+        }*/
 
         private void dataGridView_care_car_DB_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -261,7 +233,7 @@ namespace VMA
             }
         }
 
-        private void button_repaired_Click(object sender, EventArgs e)
+       /* private void button_repaired_Click(object sender, EventArgs e)
         {
             try
             {
@@ -286,7 +258,7 @@ namespace VMA
             {
                 MessageBox.Show("Zaznacz samochód, który został naprawiony", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }*/
     }
     }
 
