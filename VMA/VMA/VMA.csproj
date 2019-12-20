@@ -120,6 +120,12 @@
     <Compile Include="UserControl_delete_keeper.Designer.cs">
       <DependentUpon>UserControl_delete_keeper.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_manage_care.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_manage_care.Designer.cs">
+      <DependentUpon>UserControl_manage_care.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_manage_keeper.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -216,6 +222,12 @@
     <Compile Include="UserControl_reservation.Designer.cs">
       <DependentUpon>UserControl_reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_send_to_service.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_send_to_service.Designer.cs">
+      <DependentUpon>UserControl_send_to_service.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_services.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -280,6 +292,9 @@
     <EmbeddedResource Include="UserControl_delete_keeper.resx">
       <DependentUpon>UserControl_delete_keeper.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_manage_care.resx">
+      <DependentUpon>UserControl_manage_care.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_manage_keeper.resx">
       <DependentUpon>UserControl_manage_keeper.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_reservation.resx">
       <DependentUpon>UserControl_reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_send_to_service.resx">
+      <DependentUpon>UserControl_send_to_service.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_services.resx">
       <DependentUpon>UserControl_services.cs</DependentUpon>

@@ -38,16 +38,17 @@
             this.button_logout = new System.Windows.Forms.Button();
             this.button_manag_care_car = new System.Windows.Forms.Button();
             this.pictureBox_main_logo = new System.Windows.Forms.PictureBox();
+            this.userControl_my_rents1 = new VMA.UserControl_my_rents();
+            this.userControl_Welcome2 = new VMA.UserControl_Welcome();
+            this.userControl_veh_DB2 = new VMA.UserControl_veh_DB();
+            this.userControl_menage_care_cars1 = new VMA.UserControl_menage_care_cars();
             this.userControl_settings1 = new VMA.UserControl_settings();
             this.userControl_myStatics1 = new VMA.UserControl_myStatics();
             this.userControl_my_reservation1 = new VMA.UserControl_my_reservation();
             this.userControl_rent_with_DB1 = new VMA.UserControl_rent_with_DB();
             this.userControl_rent1 = new VMA.UserControl_rent();
             this.userControl_reservation1 = new VMA.UserControl_reservation();
-            this.userControl_Welcome2 = new VMA.UserControl_Welcome();
-            this.userControl_veh_DB2 = new VMA.UserControl_veh_DB();
-            this.userControl_menage_care_cars1 = new VMA.UserControl_menage_care_cars();
-            this.userControl_my_rents1 = new VMA.UserControl_my_rents();
+            this.userControl_manage_care1 = new VMA.UserControl_manage_care();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_main_logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             this.label_who_online.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.label_who_online.Location = new System.Drawing.Point(429, 7);
             this.label_who_online.Name = "label_who_online";
-            this.label_who_online.Size = new System.Drawing.Size(188, 15);
+            this.label_who_online.Size = new System.Drawing.Size(220, 17);
             this.label_who_online.TabIndex = 0;
             this.label_who_online.Text = "Zalogowany jako Imię i Nazwisko";
             // 
@@ -221,59 +222,14 @@
             this.pictureBox_main_logo.TabIndex = 20;
             this.pictureBox_main_logo.TabStop = false;
             // 
-            // userControl_settings1
+            // userControl_my_rents1
             // 
-            this.userControl_settings1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_settings1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_settings1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.userControl_settings1.Name = "userControl_settings1";
-            this.userControl_settings1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_settings1.TabIndex = 19;
-            // 
-            // userControl_myStatics1
-            // 
-            this.userControl_myStatics1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_myStatics1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_myStatics1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.userControl_myStatics1.Name = "userControl_myStatics1";
-            this.userControl_myStatics1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_myStatics1.TabIndex = 18;
-            // 
-            // userControl_my_reservation1
-            // 
-            this.userControl_my_reservation1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_my_reservation1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_my_reservation1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.userControl_my_reservation1.Name = "userControl_my_reservation1";
-            this.userControl_my_reservation1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_my_reservation1.TabIndex = 17;
-            // 
-            // userControl_rent_with_DB1
-            // 
-            this.userControl_rent_with_DB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_rent_with_DB1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_rent_with_DB1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.userControl_rent_with_DB1.Name = "userControl_rent_with_DB1";
-            this.userControl_rent_with_DB1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_rent_with_DB1.TabIndex = 16;
-            // 
-            // userControl_rent1
-            // 
-            this.userControl_rent1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_rent1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_rent1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.userControl_rent1.Name = "userControl_rent1";
-            this.userControl_rent1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_rent1.TabIndex = 15;
-            // 
-            // userControl_reservation1
-            // 
-            this.userControl_reservation1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_reservation1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_reservation1.Margin = new System.Windows.Forms.Padding(0);
-            this.userControl_reservation1.Name = "userControl_reservation1";
-            this.userControl_reservation1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_reservation1.TabIndex = 14;
+            this.userControl_my_rents1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_my_rents1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_my_rents1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_my_rents1.Name = "userControl_my_rents1";
+            this.userControl_my_rents1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_my_rents1.TabIndex = 23;
             // 
             // userControl_Welcome2
             // 
@@ -297,25 +253,79 @@
             // 
             this.userControl_menage_care_cars1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_menage_care_cars1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_menage_care_cars1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_menage_care_cars1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_menage_care_cars1.Name = "userControl_menage_care_cars1";
             this.userControl_menage_care_cars1.Size = new System.Drawing.Size(941, 656);
             this.userControl_menage_care_cars1.TabIndex = 22;
             // 
-            // userControl_my_rents1
+            // userControl_settings1
             // 
-            this.userControl_my_rents1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_my_rents1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_my_rents1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.userControl_my_rents1.Name = "userControl_my_rents1";
-            this.userControl_my_rents1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_my_rents1.TabIndex = 23;
+            this.userControl_settings1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_settings1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_settings1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_settings1.Name = "userControl_settings1";
+            this.userControl_settings1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_settings1.TabIndex = 19;
+            // 
+            // userControl_myStatics1
+            // 
+            this.userControl_myStatics1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_myStatics1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_myStatics1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_myStatics1.Name = "userControl_myStatics1";
+            this.userControl_myStatics1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_myStatics1.TabIndex = 18;
+            // 
+            // userControl_my_reservation1
+            // 
+            this.userControl_my_reservation1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_my_reservation1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_my_reservation1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_my_reservation1.Name = "userControl_my_reservation1";
+            this.userControl_my_reservation1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_my_reservation1.TabIndex = 17;
+            // 
+            // userControl_rent_with_DB1
+            // 
+            this.userControl_rent_with_DB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_rent_with_DB1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_rent_with_DB1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_rent_with_DB1.Name = "userControl_rent_with_DB1";
+            this.userControl_rent_with_DB1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_rent_with_DB1.TabIndex = 16;
+            // 
+            // userControl_rent1
+            // 
+            this.userControl_rent1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_rent1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_rent1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_rent1.Name = "userControl_rent1";
+            this.userControl_rent1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_rent1.TabIndex = 15;
+            // 
+            // userControl_reservation1
+            // 
+            this.userControl_reservation1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_reservation1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_reservation1.Margin = new System.Windows.Forms.Padding(0);
+            this.userControl_reservation1.Name = "userControl_reservation1";
+            this.userControl_reservation1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_reservation1.TabIndex = 14;
+            // 
+            // userControl_manage_care1
+            // 
+            this.userControl_manage_care1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_manage_care1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_manage_care1.Name = "userControl_manage_care1";
+            this.userControl_manage_care1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_manage_care1.TabIndex = 24;
             // 
             // MainApp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.userControl_manage_care1);
             this.Controls.Add(this.userControl_my_rents1);
             this.Controls.Add(this.button_manag_care_car);
             this.Controls.Add(this.pictureBox_main_logo);
@@ -374,5 +384,6 @@
         private System.Windows.Forms.Button button_manag_care_car;
         private UserControl_menage_care_cars userControl_menage_care_cars1;
         private UserControl_my_rents userControl_my_rents1;
+        private UserControl_manage_care userControl_manage_care1;
     }
 }
