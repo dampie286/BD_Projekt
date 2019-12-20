@@ -70,6 +70,7 @@ namespace VMA
 
         private void userControl_menage_Button_addWorker_Click(object sender, EventArgs e)
         {
+            userControl_addWorker1.ClearUserControl();
             userControl_addWorker1.BringToFront();
         }
 
@@ -138,6 +139,7 @@ namespace VMA
 
         private void userControl_menage_Button_addCar_Click(object sender, EventArgs e)
         {
+            userControl_add_Car1.ClearUserControl();
             userControl_add_Car1.BringToFront();
         }
 
