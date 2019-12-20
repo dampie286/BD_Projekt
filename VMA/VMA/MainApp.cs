@@ -62,9 +62,10 @@ namespace VMA
         private void userControl_Button_send_receive_car_Click(object sender, EventArgs e)
         {
             userControl_send_to_service1.setUserID(log);
+            userControl_send_to_service1.fillDataGridView();
             userControl_send_to_service1.fillDataGridView2();
+            userControl_send_to_service1.fillComboBox_Company();
             userControl_send_to_service1.BringToFront();
-           
         }
 
         private void userControl_Button_reserve_block_carClick(object sender, EventArgs e)

@@ -275,6 +275,7 @@ namespace VMA
             data.Columns.Add("Telefon");
             data.Columns.Add("Od");
             data.Columns.Add("Status");
+            data.Columns.Add("Koszt naprawy");
 
             Care_serviceSet Care_Service;
             CareSet care;
@@ -283,6 +284,7 @@ namespace VMA
             CompanySet company;
             DateTime time_to_Compare = Convert.ToDateTime("1999-01-01 00:00:00.000");
             string repaired;
+            string cost;
             var Cars = from x in db.Care_serviceSets
                        select x.care_service_id;
 
@@ -300,13 +302,16 @@ namespace VMA
                 if (Care_Service.data_to == time_to_Compare)
                 {
                     repaired = "W naprawie";
+                    cost = "---";
                 }
                 else
                 {
                     repaired = Care_Service.data_to.Value.ToShortDateString();
+                    cost = Care_Service.price.ToString();
                 }
                 data.Rows.Add(vehicle.model, vehicle.brand, vehicle.licence_plate, 
-                    service.name, service.description, company.name, company.phone_nr, Care_Service.date_from.ToShortDateString(), repaired);
+                    service.name, service.description, company.name, company.phone_nr, 
+                    Care_Service.date_from.ToShortDateString(), repaired, cost);
             }
 
             GeneratePDF("Lista Serwisów", "Lista serwisow na dzien " + DateTime.Today.ToShortDateString(), data);

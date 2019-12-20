@@ -37,12 +37,14 @@
             this.label_desc_model = new System.Windows.Forms.Label();
             this.label_desc_brand = new System.Windows.Forms.Label();
             this.textBox_description = new System.Windows.Forms.TextBox();
-            this.textBox_other_service = new System.Windows.Forms.TextBox();
             this.Combobox_service = new System.Windows.Forms.ComboBox();
             this.button_send_to_service = new System.Windows.Forms.Button();
             this.dataGridView_cars_on_service = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.button_repaired = new System.Windows.Forms.Button();
+            this.textBox_price = new System.Windows.Forms.TextBox();
+            this.comboBox_Company_name = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_care_car_DB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_cars_on_service)).BeginInit();
             this.SuspendLayout();
@@ -151,16 +153,6 @@
             this.textBox_description.Size = new System.Drawing.Size(132, 22);
             this.textBox_description.TabIndex = 90;
             // 
-            // textBox_other_service
-            // 
-            this.textBox_other_service.Location = new System.Drawing.Point(619, 276);
-            this.textBox_other_service.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_other_service.Name = "textBox_other_service";
-            this.textBox_other_service.Size = new System.Drawing.Size(132, 22);
-            this.textBox_other_service.TabIndex = 89;
-            this.textBox_other_service.Text = "Przyczyna serwisu";
-            this.textBox_other_service.Visible = false;
-            // 
             // Combobox_service
             // 
             this.Combobox_service.Items.AddRange(new object[] {
@@ -192,6 +184,7 @@
             this.button_send_to_service.TabIndex = 87;
             this.button_send_to_service.Text = "Wyślij do serwisu";
             this.button_send_to_service.UseVisualStyleBackColor = false;
+            this.button_send_to_service.Click += new System.EventHandler(this.button_send_to_service_Click);
             // 
             // dataGridView_cars_on_service
             // 
@@ -230,12 +223,42 @@
             this.button_repaired.TabIndex = 99;
             this.button_repaired.Text = "Naprawiony";
             this.button_repaired.UseVisualStyleBackColor = false;
+            this.button_repaired.Click += new System.EventHandler(this.button_repaired_Click);
+            // 
+            // textBox_price
+            // 
+            this.textBox_price.Location = new System.Drawing.Point(740, 480);
+            this.textBox_price.Name = "textBox_price";
+            this.textBox_price.Size = new System.Drawing.Size(100, 22);
+            this.textBox_price.TabIndex = 100;
+            // 
+            // comboBox_Company_name
+            // 
+            this.comboBox_Company_name.FormattingEnabled = true;
+            this.comboBox_Company_name.Location = new System.Drawing.Point(740, 273);
+            this.comboBox_Company_name.Name = "comboBox_Company_name";
+            this.comboBox_Company_name.Size = new System.Drawing.Size(121, 24);
+            this.comboBox_Company_name.TabIndex = 101;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F);
+            this.label4.ForeColor = System.Drawing.Color.Yellow;
+            this.label4.Location = new System.Drawing.Point(655, 273);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 23);
+            this.label4.TabIndex = 102;
+            this.label4.Text = "Firma:";
             // 
             // UserControl_send_to_service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.comboBox_Company_name);
+            this.Controls.Add(this.textBox_price);
             this.Controls.Add(this.button_repaired);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView_cars_on_service);
@@ -246,7 +269,6 @@
             this.Controls.Add(this.label_desc_model);
             this.Controls.Add(this.label_desc_brand);
             this.Controls.Add(this.textBox_description);
-            this.Controls.Add(this.textBox_other_service);
             this.Controls.Add(this.Combobox_service);
             this.Controls.Add(this.button_send_to_service);
             this.Controls.Add(this.dataGridView_care_car_DB);
@@ -271,11 +293,13 @@
         private System.Windows.Forms.Label label_desc_model;
         private System.Windows.Forms.Label label_desc_brand;
         private System.Windows.Forms.TextBox textBox_description;
-        private System.Windows.Forms.TextBox textBox_other_service;
         private System.Windows.Forms.ComboBox Combobox_service;
         private System.Windows.Forms.Button button_send_to_service;
         private System.Windows.Forms.DataGridView dataGridView_cars_on_service;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_repaired;
+        private System.Windows.Forms.TextBox textBox_price;
+        private System.Windows.Forms.ComboBox comboBox_Company_name;
+        private System.Windows.Forms.Label label4;
     }
 }
