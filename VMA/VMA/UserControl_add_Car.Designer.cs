@@ -386,6 +386,7 @@
             // comboBox_car_version
             // 
             this.comboBox_car_version.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.comboBox_car_version.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_car_version.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_car_version.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox_car_version.ForeColor = System.Drawing.Color.Yellow;

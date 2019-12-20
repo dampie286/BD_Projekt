@@ -91,14 +91,19 @@ namespace VMA
             }
         }
 
-        private void label_name_Click(object sender, EventArgs e)
+        public void ClearUserControl()
         {
-
+            textBox_name.Clear();
+            textBox_surrname.Clear();
+            textBox_id_worker.Clear();
+            dateTimePicker_date_birth.Value = DateTime.Today;
+            textBox_city.Clear();
+            textBox_code.Clear();
+            textBox_house.Clear();
+            textBox_phone_number.Clear();
+            textBox_street.Clear();
+            textBox_tmp_pass.Clear();
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

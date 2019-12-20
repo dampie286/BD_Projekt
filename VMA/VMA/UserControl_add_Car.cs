@@ -102,11 +102,6 @@ namespace VMA
             }
         }
        
-
-
-
-
-
         private void textBox_brand_Click(object sender, EventArgs e)
         {
             textBox_brand.Clear();
@@ -238,6 +233,21 @@ namespace VMA
             }
 
 
+        }
+
+        public void ClearUserControl()
+        {
+            textBox_brand.Clear();
+            textBox_model.Clear();
+            textBox_age.Clear();
+            textBox_license.Clear();
+            textBox_mileage.Clear();
+            textBox_avg_fuel.Clear();
+            dateTimePicker_date_tech.Value = DateTime.Today;
+            dateTimePicker_oil_date.Value = DateTime.Today;
+            textBox_oil_km.Clear();
+            dateTimePicker_gear_date.Value = DateTime.Today;
+            textBox_gear_km.Clear();
         }
     }
     }
