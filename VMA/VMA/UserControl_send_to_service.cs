@@ -118,7 +118,6 @@ namespace VMA
                         };
                         db.ServiceSets.InsertOnSubmit(service);
                         db.SubmitChanges();
-
                     }
                     catch (Exception)
                     {
@@ -178,8 +177,6 @@ namespace VMA
                     veh.available = "yes";
 
                     care.price = Convert.ToDouble(textBox_price.Text);
-
-
                     db.SubmitChanges();
                     fillDataGridView();
                     fillDataGridView2();

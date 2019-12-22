@@ -42,6 +42,12 @@
             this.label_brand = new System.Windows.Forms.Label();
             this.label_desc_model = new System.Windows.Forms.Label();
             this.label_desc_brand = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox_Company_name = new System.Windows.Forms.ComboBox();
+            this.comboBox_service = new System.Windows.Forms.ComboBox();
+            this.textBox_description = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_care_car_DB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,6 +189,7 @@
             this.button_reserv.TabIndex = 40;
             this.button_reserv.Text = "Rezerwuj";
             this.button_reserv.UseVisualStyleBackColor = false;
+            this.button_reserv.Click += new System.EventHandler(this.button_reserv_Click);
             // 
             // label_model
             // 
@@ -230,11 +237,83 @@
             this.label_desc_brand.TabIndex = 95;
             this.label_desc_brand.Text = "Marka:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F);
+            this.label4.ForeColor = System.Drawing.Color.Yellow;
+            this.label4.Location = new System.Drawing.Point(804, 399);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 23);
+            this.label4.TabIndex = 105;
+            this.label4.Text = "Firma:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F);
+            this.label3.ForeColor = System.Drawing.Color.Yellow;
+            this.label3.Location = new System.Drawing.Point(456, 454);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 23);
+            this.label3.TabIndex = 104;
+            this.label3.Text = "Opisz problem";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.Yellow;
+            this.label2.Location = new System.Drawing.Point(426, 401);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 23);
+            this.label2.TabIndex = 103;
+            this.label2.Text = "Rodzaj serwisu:";
+            // 
+            // comboBox_Company_name
+            // 
+            this.comboBox_Company_name.FormattingEnabled = true;
+            this.comboBox_Company_name.Location = new System.Drawing.Point(787, 435);
+            this.comboBox_Company_name.Name = "comboBox_Company_name";
+            this.comboBox_Company_name.Size = new System.Drawing.Size(103, 24);
+            this.comboBox_Company_name.TabIndex = 106;
+            // 
+            // comboBox_service
+            // 
+            this.comboBox_service.FormattingEnabled = true;
+            this.comboBox_service.Items.AddRange(new object[] {
+            "Wymiana oleju",
+            "Wymiana oleju + filtry",
+            "Przegląd",
+            "Wymiana żarówek",
+            "Wymiana rozrzadu ",
+            "Naprawa",
+            "INNA"});
+            this.comboBox_service.Location = new System.Drawing.Point(592, 398);
+            this.comboBox_service.Name = "comboBox_service";
+            this.comboBox_service.Size = new System.Drawing.Size(121, 24);
+            this.comboBox_service.TabIndex = 107;
+            this.comboBox_service.Text = "Rodzaj serwiu";
+            // 
+            // textBox_description
+            // 
+            this.textBox_description.Location = new System.Drawing.Point(600, 454);
+            this.textBox_description.Name = "textBox_description";
+            this.textBox_description.Size = new System.Drawing.Size(100, 22);
+            this.textBox_description.TabIndex = 108;
+            // 
             // UserControl_menage_care_cars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.Controls.Add(this.textBox_description);
+            this.Controls.Add(this.comboBox_service);
+            this.Controls.Add(this.comboBox_Company_name);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label_model);
             this.Controls.Add(this.label_brand);
             this.Controls.Add(this.label_desc_model);
@@ -274,5 +353,11 @@
         private System.Windows.Forms.Label label_brand;
         private System.Windows.Forms.Label label_desc_model;
         private System.Windows.Forms.Label label_desc_brand;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox_Company_name;
+        private System.Windows.Forms.ComboBox comboBox_service;
+        private System.Windows.Forms.TextBox textBox_description;
     }
 }

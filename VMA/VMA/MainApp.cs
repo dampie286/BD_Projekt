@@ -72,7 +72,7 @@ namespace VMA
         {
             userControl_menage_care_cars1.setUserID(log);
             userControl_menage_care_cars1.fillDataGridView();
-           
+            userControl_menage_care_cars1.fillComboBox_Company();
             userControl_menage_care_cars1.BringToFront();
         }
 
