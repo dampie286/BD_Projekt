@@ -304,9 +304,9 @@
             this.label1.Location = new System.Drawing.Point(47, 151);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 23);
+            this.label1.Size = new System.Drawing.Size(247, 23);
             this.label1.TabIndex = 78;
-            this.label1.Text = "Przebieg po wypożyczeniem:";
+            this.label1.Text = "Przebieg po wypożyczeniu:";
             // 
             // label_to
             // 

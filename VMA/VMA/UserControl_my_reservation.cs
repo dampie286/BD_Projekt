@@ -15,6 +15,7 @@ namespace VMA
         int user_id;
         int row = -1;
         DataBaseDataContext db = new DataBaseDataContext();
+
         public UserControl_my_reservation()
         {
             InitializeComponent();
@@ -71,11 +72,12 @@ namespace VMA
             // panel_with_myreservation.Show();
             try
             {
+                
                 row = dataGridView_my_reservation.CurrentCell.RowIndex;
                 label_brand.Text = (string)dataGridView_my_reservation.Rows[row].Cells[2].Value;
                 label_model.Text = (string)dataGridView_my_reservation.Rows[row].Cells[3].Value;
-                label_from.Text = dataGridView_my_reservation.Rows[row].Cells[4].Value.ToString();
-                label_to.Text = (string)dataGridView_my_reservation.Rows[row].Cells[5].Value.ToString();
+                label_from.Text = Convert.ToDateTime(dataGridView_my_reservation.Rows[row].Cells[4].Value.ToString()).ToShortDateString();
+                label_to.Text = Convert.ToDateTime((string)dataGridView_my_reservation.Rows[row].Cells[5].Value.ToString()).ToShortDateString();
                 label_purpose.Text = dataGridView_my_reservation.Rows[row].Cells[7].Value.ToString();
             }
             catch { }
@@ -131,6 +133,7 @@ namespace VMA
                                          where x.reservation_id == Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[9].Value)
                                          select x)
                                             .FirstOrDefault();
+
                     db.ReservationSets.DeleteOnSubmit(row_To_Delete);
                     db.SubmitChanges();
 

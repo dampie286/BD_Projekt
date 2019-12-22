@@ -68,11 +68,11 @@ namespace VMA
             try
             {
                 row = dataGridView_my_rents.CurrentCell.RowIndex;
-                label_brand.Text = (string)dataGridView_my_rents.Rows[row].Cells[1].Value;
-                label_model.Text = (string)dataGridView_my_rents.Rows[row].Cells[2].Value;
-                label_from.Text = dataGridView_my_rents.Rows[row].Cells[3].Value.ToString();
-                label_to.Text = (string)dataGridView_my_rents.Rows[row].Cells[4].Value.ToString();
-                label_purpose.Text = dataGridView_my_rents.Rows[row].Cells[6].Value.ToString();
+                label_brand.Text = (string)dataGridView_my_rents.Rows[row].Cells[2].Value;
+                label_model.Text = (string)dataGridView_my_rents.Rows[row].Cells[3].Value;
+                label_from.Text = Convert.ToDateTime(dataGridView_my_rents.Rows[row].Cells[4].Value.ToString()).ToShortDateString();
+                label_to.Text = Convert.ToDateTime((string)dataGridView_my_rents.Rows[row].Cells[5].Value.ToString()).ToShortDateString();
+                label_purpose.Text = dataGridView_my_rents.Rows[row].Cells[6].Value.ToString() + " [KM]";
                 car_id = (int)dataGridView_my_rents.Rows[row].Cells[0].Value;
             }
             catch

@@ -25,6 +25,7 @@ namespace VMA
         {
             user_id = id;
         }
+
         public void fillDataGridView()
         {
             var query = from x in db.CareSets
@@ -41,10 +42,7 @@ namespace VMA
             dataGridView_care_car_DB.DataSource = query;
 
             dataGridView_care_car_DB.Columns[0].Visible = false;
-
         }
-
-       
 
         /*private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -74,75 +72,7 @@ namespace VMA
             }
         }*/
 
-        /*private void button_send_to_service_Click(object sender, EventArgs e)
-        {
-            if (Combobox_service.SelectedIndex == -1 || string.IsNullOrEmpty(textBox_description.Text))
-            {
-                MessageBox.Show("Wybierz przyczynę serwisu i opisz problem", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                try
-                {
-                    int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
-                    car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
-                    VehicleSet vechicle = db.VehicleSets.Where(x => x.vehicle_id == car_id).First();
-
-                    vechicle.available = "no";
-
-                    CareSet care_id = db.CareSets
-                                      .Where(x => x.Vehicle_vehicle_id == car_id)
-                                      .First();
-
-                    CompanySet company_id = db.CompanySets
-                                            .Where(x => x.name == "AutoRIP")
-                                            .First();
-                    try
-                    {
-                        ServiceSet service = new ServiceSet()
-                        {
-                            is_repair = false,
-                            name = Combobox_service.Text,
-                            description = textBox_description.Text
-                        };
-                        db.ServiceSets.InsertOnSubmit(service);
-                        db.SubmitChanges();
-
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Nie udało się oddać auta do serwisu", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    try
-                    {
-                        ServiceSet service = db.ServiceSets.OrderByDescending(p => p.service_id).First();
-
-                        Care_serviceSet newservice = new Care_serviceSet()
-                        {
-                            date_from = DateTime.Today,
-                            Care_care_id = care_id.care_id,
-                            Service_service_id = service.service_id,
-                            price = 500,
-                            Company_company_id = company_id.company_id
-                        };
-                        db.Care_serviceSets.InsertOnSubmit(newservice);
-                        db.SubmitChanges();
-
-                        fillDataGridView();
-                        fillDataGridView2();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Nie dodało się do bazy care_service", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Zaznacz samochód", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }*/
-
+        
         private void dataGridView_care_car_DB_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
@@ -171,7 +101,6 @@ namespace VMA
             
             try
             {
-                
                 int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
                 int car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
 
@@ -187,7 +116,6 @@ namespace VMA
                 {
                     MessageBox.Show("Auto jest juz niedostępne", "Information available", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            
             }
             catch (Exception)
             {
@@ -206,9 +134,7 @@ namespace VMA
 
                 if (chceck_serv)
                 {
-
                     MessageBox.Show("Nie można odblokować auta będącego w serwsie", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 }
                 else
                 {
@@ -316,7 +242,6 @@ namespace VMA
 
                                 peoples += worker.name + " " + worker.surname + " nr telefonu do pracownika: " + worker.phone_nr.ToString() + "\n";
                             }
-                           
                             MessageBox.Show( peoples, "Error check", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception)
@@ -330,16 +255,14 @@ namespace VMA
                             Worker_worker_id = user_id,
                             Vehicle_vehicle_id = vechicle.vehicle_id
                         };
-                        db.ReservationSets.InsertOnSubmit(newreserv);
 
+                        db.ReservationSets.InsertOnSubmit(newreserv);
                         db.SubmitChanges();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("Nie udało się stworzyć rezerwacji", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                     }
-
                 }
                 catch (Exception)
                 {
@@ -347,33 +270,6 @@ namespace VMA
                 }
             }
         }
-
-        /* private void button_repaired_Click(object sender, EventArgs e)
-         {
-             try
-             {
-                 int row = dataGridView_cars_on_service.CurrentCell.RowIndex;
-                 int car_id = (int)dataGridView_cars_on_service.Rows[row].Cells[0].Value;
-                 int service_id = (int)dataGridView_cars_on_service.Rows[row].Cells[1].Value;
-
-                 Care_serviceSet care = db.Care_serviceSets.Where(p=>p.ServiceSet.service_id==service_id).First();
-                 care.data_to = DateTime.Today;
-
-               ServiceSet service = db.ServiceSets.Where(p => p.service_id == service_id).First();
-                 service.is_repair = true;
-
-                 VehicleSet veh = db.VehicleSets.Where(p => p.vehicle_id == car_id).First();
-                 veh.available = "yes";
-
-                 db.SubmitChanges();
-                 fillDataGridView();
-                 fillDataGridView2();
-             }
-             catch (Exception)
-             {
-                 MessageBox.Show("Zaznacz samochód, który został naprawiony", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }
-         }*/
     }
     }
 
