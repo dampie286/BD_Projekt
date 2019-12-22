@@ -207,6 +207,7 @@ namespace VMA
                         Care_serviceSet newservice = new Care_serviceSet()
                         {
                             date_from = dateTimePicker_from_date_reserv.Value,
+                            data_to = Convert.ToDateTime("1999-01-01 00:00:00.000"),
                             Care_care_id = care_id.care_id,
                             Service_service_id = service.service_id,
                             price = -10,
