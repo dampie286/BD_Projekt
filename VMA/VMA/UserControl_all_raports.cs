@@ -64,6 +64,56 @@ namespace VMA
                 }
             }
         }
+        private void GeneratePDF(string filename, string description, DataTable data, double prices, double prices_II)
+        {
+            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+            PdfPTable pdftable = new PdfPTable(data.Columns.Count);
+            pdftable.DefaultCell.Padding = 3;
+            pdftable.WidthPercentage = 100;
+            pdftable.HorizontalAlignment = Element.ALIGN_MIDDLE;
+            pdftable.DefaultCell.BorderWidth = 1;
+
+            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+
+            foreach (DataColumn col in data.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(col.ColumnName, text));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                pdftable.AddCell(cell);
+            }
+
+            foreach (DataRow row in data.Rows)
+            {
+                foreach (object obj in row.ItemArray)
+                {
+                    pdftable.AddCell(new Phrase(obj.ToString(), text));
+                }
+            }
+            double sum = prices_II + prices;
+            var savefiledialogue = new SaveFileDialog();
+            savefiledialogue.FileName = filename;
+            savefiledialogue.DefaultExt = ".pdf";
+            if (savefiledialogue.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream fstream = new FileStream(savefiledialogue.FileName, FileMode.Create))
+                {
+                    Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+                    PdfWriter.GetInstance(pdfdoc, fstream);
+                    pdfdoc.Open();
+                    Phrase ph = new Phrase(description + " \n \n");
+                    pdfdoc.Add(ph);
+                    pdfdoc.Add(pdftable);
+                    pdfdoc.Add(new Phrase("\n "));
+                    pdfdoc.Add(new Phrase("Koszt eksploatacyjny wynosi: " + prices_II.ToString()));
+                    pdfdoc.Add(new Phrase("\n \n "));
+                    pdfdoc.Add(new Phrase("Koszt serwisow w danym okresie wynosi " + prices.ToString() + " zl \n"));
+                    pdfdoc.Add(new Phrase("Aby podejzec szczegolowe koszta serwisu z danego okresu wygeneruj liste serwisow w zadanym okresie \n \n "));
+                    pdfdoc.Add(new Phrase("Koszt calkowity za dany okres wynosi: " + sum.ToString() + " zl" + "\n"));
+                    pdfdoc.Close();
+                    fstream.Close();
+                }
+            }
+        }
 
         private void button_worker_generate_to_pdf_Click(object sender, EventArgs e)
         {
@@ -380,7 +430,7 @@ namespace VMA
             VehicleSet vehicle;
             WorkerSet worker;
             PurchaseSet purchase;
-
+            double sum = 0;
             var Cars = from x in db.RentSets
                        where ((x.date_from >= dateTimePicker_from_date_reserv.Value.Date && x.date_to <= dateTimePicker_to_date_reserv.Value.Date)
                                || (x.date_from <= dateTimePicker_from_date_reserv.Value.Date && x.date_to >= dateTimePicker_from_date_reserv.Value.Date))
@@ -393,27 +443,32 @@ namespace VMA
                 rent = db.RentSets.Where(x => x.rent_id == idw).First();
 
                 purchase = db.PurchaseSets.Where(x => x.Rent_rent_id == rent.rent_id).SingleOrDefault();
-
+               
                 if (purchase == null)
                 {
 
                 }
                 else
                 {
+                    sum += purchase.price;
                     vehicle = db.VehicleSets.Where(y => y.vehicle_id == rent.Vehicle_vehicle_id).First();
-
+                   
                     worker = db.WorkerSets.Where(z => z.worker_id == rent.Worker_worker_id).First();
 
 
                     data.Rows.Add(worker.name, worker.surname, vehicle.brand, vehicle.model, vehicle.licence_plate,
                         rent.date_from.Date.ToShortDateString(), rent.date_to.Date.ToShortDateString(), rent.purpose, purchase.price);
                 }
-
-                
             }
 
+            var service_price = (from x in db.Care_serviceSets
+                                 where x.data_to != Convert.ToDateTime("1999 - 01 - 01 00:00:00.000") && ((x.date_from >= dateTimePicker_from_date_reserv.Value.Date && x.data_to <= dateTimePicker_to_date_reserv.Value.Date)
+                                || (x.date_from <= dateTimePicker_from_date_reserv.Value.Date && x.data_to >= dateTimePicker_from_date_reserv.Value.Date))
+                                 select x).Sum(x => x.price);
+
+
             
-            GeneratePDF("Lista Kosztów", "Lista kosztow od " + dateTimePicker_from_date_reserv.Value.Date.ToShortDateString() + " do " + dateTimePicker_to_date_reserv.Value.Date.ToShortDateString(), data);
+             GeneratePDF("Lista Kosztów", "Lista kosztow od " + dateTimePicker_from_date_reserv.Value.Date.ToShortDateString() + " do " + dateTimePicker_to_date_reserv.Value.Date.ToShortDateString(), data, service_price, sum);
         }
       
     }

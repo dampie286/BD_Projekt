@@ -12,20 +12,14 @@ namespace VMA
 {
     public partial class UserControl_services : UserControl
     {
+        DataBaseDataContext db = new DataBaseDataContext();
         public UserControl_services()
         {
             InitializeComponent();
         }
 
-
-
-
-
-
-
         public void fillDataGridView()
         {
-            DataBaseDataContext db = new DataBaseDataContext();
             var Selectquery = from x in db.CompanySets
                               where x.description!="brakwspolpracy"
                               select new

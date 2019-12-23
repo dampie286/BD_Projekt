@@ -63,6 +63,7 @@ namespace VMA
                                 PRZYCZYNA = x.name,
                                 OPIS = x.description
                             };
+
                 dataGridView_cars_on_service.DataSource = query;
                 dataGridView_cars_on_service.Columns[0].Visible = false;
                 dataGridView_cars_on_service.Columns[1].Visible = false;
@@ -77,7 +78,8 @@ namespace VMA
         public void fillComboBox_Company()
         {
             var qury = (from x in db.CompanySets
-                       select x.name).ToList();
+                        where x.description != "brakwspolpracy"
+                        select x.name).ToList();
 
             comboBox_Company_name.DataSource = qury;
         }
