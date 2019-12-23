@@ -15,8 +15,8 @@ namespace VMA
     public partial class UserControl_modified_delet_car : UserControl
     {
         int id;
-        
-        
+        DataBaseDataContext db = new DataBaseDataContext();
+
         public UserControl_modified_delet_car()
         {
             InitializeComponent();
@@ -34,62 +34,63 @@ namespace VMA
             dataGridView_veh_DB.Columns[4].Visible = false;
             dataGridView_veh_DB.Columns[5].Visible = true;
             dataGridView_veh_DB.Columns[6].Visible = true;
-            dataGridView_veh_DB.Columns[7].Visible = true;
-            dataGridView_veh_DB.Columns[8].Visible = false;
 
         }
 
         public void fillDataGridView()
         {
-
-            DataBaseDataContext db = new DataBaseDataContext();
-            var Selectquery = from x in db.VehicleSets where x.available == "yes " && x.available != "deleted" select x;
+            var Selectquery = from x in db.VehicleSets
+                              where x.available == "yes " 
+                                    && x.available != "deleted"
+                              select new
+                              {
+                                  ID = x.vehicle_id,
+                                  Marka = x.brand,
+                                  Model = x.model,
+                                  Wersja = x.version,
+                                  Rejestracja = x.licence_plate,
+                                  Spalanie = x.avg_consumption,
+                                  Paliwo = x.fuel_type,
+                                  Przebieg = x.mileage
+                              };
 
             dataGridView_veh_DB.DataSource = Selectquery;
-
             gridedit();
-
-         
-
         }
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-
-
             var result = MessageBox.Show("Czy napewno chcesz usunąć auto?", "Potwierdzenie",
                                  MessageBoxButtons.YesNo,
                                  MessageBoxIcon.Question);
+
             if (result == DialogResult.Yes)
             {
-
-                DataBaseDataContext db = new DataBaseDataContext();
                 bool confirm = false;
 
                 int row = dataGridView_veh_DB.CurrentCell.RowIndex;
 
                 var id_del = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
-
-
-                var query = from x in db.VehicleSets where x.vehicle_id == id_del select x;
-
-
-
+                
+                var query = from x in db.VehicleSets
+                            where x.vehicle_id == id_del
+                            select x;
+                
                 foreach (VehicleSet x in query)
                 {
                     x.available = "deleted";
-
-
                 }
-
-
-                var query1 = from x in db.CareSets where x.Vehicle_vehicle_id == id_del && x.date_to==null select x;
+                
+                var query1 = from x in db.CareSets
+                             where x.Vehicle_vehicle_id == id_del 
+                                   && x.date_to == Convert.ToDateTime("1999-01-01 00:00:00.000")
+                             select x;
 
                 foreach (CareSet x in query1)
                 {
                     x.date_to = DateTime.Today;
-
                 }
+
                 try
                 {
                     db.SubmitChanges();
@@ -98,7 +99,6 @@ namespace VMA
                 catch
                 {
                     MessageBox.Show("Nie udało się usunąć auta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 }
 
                 if (confirm)
@@ -106,18 +106,12 @@ namespace VMA
                     MessageBox.Show("Usunięto auto", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
 
-
-
-
                 fillDataGridView();
             }
-            else {
-
+            else
+            {
                 MessageBox.Show("Anulowano usunięcie auta", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
-
         }
 
         private void button_filter_Click(object sender, EventArgs e)
@@ -128,13 +122,14 @@ namespace VMA
             string filtr_licence = textBox_license.Text;
             string filtr_avg = textBox_equipment.Text;
             string filtr_fuel = textBox_mileage.Text;
-            DataBaseDataContext db = new DataBaseDataContext();
-
-
+            
             try
             { 
 
-            var query = from x in db.VehicleSets where x.available == "yes " && x.available != "deleted" select x;
+            var query = from x in db.VehicleSets
+                        where x.available == "yes " 
+                              && x.available != "deleted"
+                        select x;
 
             if (filtr_brand == "Marka" || filtr_brand == "")
             {
@@ -194,10 +189,8 @@ namespace VMA
 
             }
 
-
-
-
-            var query1 = from x in query select x; 
+            var query1 = from x in query
+                         select x; 
 
             dataGridView_veh_DB.DataSource = query1;
             gridedit();
@@ -205,62 +198,49 @@ namespace VMA
        }
            catch
            {
-
-
                 MessageBox.Show("Zły format danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
            }
-
-
-
-
-
         }
 
         private void button_modified_Click(object sender, EventArgs e)
         {
             try
             {
-               
-
                 int row = dataGridView_veh_DB.CurrentCell.RowIndex;
 
                 id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
                 label_brand.Text = dataGridView_veh_DB.Rows[row].Cells[1].Value.ToString();
                 label_model.Text = dataGridView_veh_DB.Rows[row].Cells[2].Value.ToString();
 
-                string x = dataGridView_veh_DB.Rows[row].Cells[6].Value.ToString();
+                string x = dataGridView_veh_DB.Rows[row].Cells[5].Value.ToString();
 
                 string y = x.Replace(",", ".");
 
                 textBox_combustion.Text = y;
 
-
                 comboBox_car_version.Text = dataGridView_veh_DB.Rows[row].Cells[3].Value.ToString();
 
-                textBox_edit_lic.Text = dataGridView_veh_DB.Rows[row].Cells[5].Value.ToString();
-                comboBox_type_of_fuel.Text = dataGridView_veh_DB.Rows[row].Cells[7].Value.ToString();
+                textBox_edit_lic.Text = dataGridView_veh_DB.Rows[row].Cells[4].Value.ToString();
+                comboBox_type_of_fuel.Text = dataGridView_veh_DB.Rows[row].Cells[5].Value.ToString();
+
                 panel_modified.Show();
             }
-            catch {
+            catch
+            {
 
                 MessageBox.Show("Nie wybrano auta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            DataBaseDataContext db = new DataBaseDataContext();
             bool confirm = false;
             try
             {
-
-
-                var query = from x in db.VehicleSets where x.vehicle_id == id select x;
+                var query = from x in db.VehicleSets
+                            where x.vehicle_id == id
+                            select x;
 
                 double avg = Double.Parse(textBox_combustion.Text, CultureInfo.InvariantCulture);
 
@@ -273,8 +253,6 @@ namespace VMA
                     x.fuel_type = comboBox_type_of_fuel.Text.ToString();
                     x.licence_plate = plateV1;
                     x.version = comboBox_car_version.Text.ToString();
-                    
-
                 }
 
                 db.SubmitChanges();
@@ -283,7 +261,6 @@ namespace VMA
             catch
             {
                 MessageBox.Show("Nie udało się zmienić danych.Spróbuj podać Spalanie w formiacie wartość.wartość", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
 
             if (confirm)
@@ -293,9 +270,6 @@ namespace VMA
 
             fillDataGridView();
             gridedit();
-
-
-
         }
 
         private void textBox_brand_Enter(object sender, EventArgs e)
@@ -412,15 +386,10 @@ namespace VMA
             {
                 e.Handled = true;
             }
-
-
-
         }
 
         private void textBox_equipment_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-
             char chh = e.KeyChar;
             if (chh == 46 && textBox_equipment.Text.IndexOf('.') != -1)
             {
@@ -431,45 +400,28 @@ namespace VMA
             {
                 e.Handled = true;
             }
-
-
-
-
         }
 
         private void textBox_edit_lic_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-
-
             int x = textBox_edit_lic.TextLength;
-
-
+            
             char chh = e.KeyChar;
-
-
+            
             if (chh != 32)
             {
                 if (chh != 8)
                 {
                     if (x > 8)
                     {
-
                         e.Handled = true;
-
-
                     }
-
                 }
             }
             else
             {
                 e.Handled = true;
-
             }
-
-
-
         }
     }
 }

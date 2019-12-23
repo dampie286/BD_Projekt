@@ -107,7 +107,7 @@
             this.dataGridView_workers_DB.ReadOnly = true;
             this.dataGridView_workers_DB.RowTemplate.Height = 24;
             this.dataGridView_workers_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_workers_DB.Size = new System.Drawing.Size(634, 255);
+            this.dataGridView_workers_DB.Size = new System.Drawing.Size(759, 255);
             this.dataGridView_workers_DB.TabIndex = 74;
             // 
             // panel3

@@ -12,8 +12,9 @@ namespace VMA
 {
     public partial class UserControl_modified_del_Workesrs : UserControl
     {
-
+        DataBaseDataContext db = new DataBaseDataContext();
         int id;
+
         public UserControl_modified_del_Workesrs()
         {
             InitializeComponent();
@@ -26,55 +27,48 @@ namespace VMA
 
         private void Grid_edit()
         {
-
-            //widocznos kolumn
-              dataGridView_workers_DB.RowHeadersVisible = false;
+            //dataGridView_workers_DB.RowHeadersVisible = false;
             dataGridView_workers_DB.Columns[0].Visible = false;
             //  dataGridView_workers_DB.Columns[1].Visible = false;
             // dataGridView_workers_DB.Columns[2].Visible = false;
             //dataGridView_workers_DB.Columns[3].Visible = false;
-            dataGridView_workers_DB.Columns[4].Visible = false;
-            dataGridView_workers_DB.Columns[5].Visible = false;
-            dataGridView_workers_DB.Columns[6].Visible = false;
-            // dataGridView_workers_DB.Columns[7].Visible = false;
-            dataGridView_workers_DB.Columns[8].Visible = false;
-            dataGridView_workers_DB.Columns[9].Visible = false;
-            dataGridView_workers_DB.Columns[10].Visible = false;
-            dataGridView_workers_DB.Columns[11].Visible = false;
-            dataGridView_workers_DB.Columns[12].Visible = false;
-            //opcje kolumn w edycji
-
-
-
-
-
-
-
-
+            //dataGridView_workers_DB.Columns[4].Visible = false;
+            //dataGridView_workers_DB.Columns[5].Visible = false;
+            //dataGridView_workers_DB.Columns[6].Visible = false;
+            //// dataGridView_workers_DB.Columns[7].Visible = false;
+            //dataGridView_workers_DB.Columns[8].Visible = false;
+            //dataGridView_workers_DB.Columns[9].Visible = false;
+            //dataGridView_workers_DB.Columns[10].Visible = false;
+            //dataGridView_workers_DB.Columns[11].Visible = false;
+            //dataGridView_workers_DB.Columns[12].Visible = false;
         }
 
         public void fillDataGridView()
         {
+            var query = from x in db.WorkerSets
+                        where x.position != "fired"
+                        select new
+                        {
+                            ID = x.worker_id,
+                            Imię = x.name,
+                            Nazwisko = x.surname,
+                            Stanowisko = x.position,
+                            PESEL = x.PESEL,
+                            DataUrodzenia = x.date_of_birth,
+                            Telefon =  x.phone_nr,
+                            Miasto = x.city,
+                            Ulica = x.street,
+                            Kod = x.city_code,
+                            NumerDomu = x.house
 
-
-            DataBaseDataContext db = new DataBaseDataContext();
-            var query = from x in db.WorkerSets where x.position!="fired" select x;
+                        };
            
             dataGridView_workers_DB.DataSource = query;
             Grid_edit();
-
         }
-
         
-
-
-
-
         private void button_modified_Click(object sender, EventArgs e)
         {
-            
-
-
             try
             {
 
@@ -84,15 +78,13 @@ namespace VMA
 
                 var surname = dataGridView_workers_DB.Rows[row].Cells[2].Value;
                 var position = dataGridView_workers_DB.Rows[row].Cells[3].Value;
-                var number = dataGridView_workers_DB.Rows[row].Cells[7].Value.ToString();
-                var code = dataGridView_workers_DB.Rows[row].Cells[8].Value.ToString();
+                var number = dataGridView_workers_DB.Rows[row].Cells[6].Value.ToString();
+                var code = dataGridView_workers_DB.Rows[row].Cells[7].Value.ToString();
                 var city = dataGridView_workers_DB.Rows[row].Cells[9].Value.ToString();
-                var street = dataGridView_workers_DB.Rows[row].Cells[10].Value.ToString();
-                var home = dataGridView_workers_DB.Rows[row].Cells[11].Value.ToString();
+                var street = dataGridView_workers_DB.Rows[row].Cells[8].Value.ToString();
+                var home = dataGridView_workers_DB.Rows[row].Cells[10].Value.ToString();
 
-
-
-
+                
                 label_name_with_choice.Text = dataGridView_workers_DB.Rows[row].Cells[1].Value.ToString();
                 textBox_edit_surname.Text = surname.ToString();
                 comboBox_position.Text = position.ToString();
@@ -106,20 +98,19 @@ namespace VMA
             catch {
                 MessageBox.Show("Nie wybrano prcownika", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
         }
 
 
 
         private void button_filter_Click(object sender, EventArgs e)
         {
-            DataBaseDataContext db = new DataBaseDataContext();
-            var query = from x in db.WorkerSets where x.position!="fired"  select x;
-            string filtr_name=textBox_name.Text;
-            string filtr_surname=textBox_surrname.Text;
-            string filtr_position=textBox_position.Text;
+            var query = from x in db.WorkerSets
+                        where x.position != "fired"
+                        select x;
+
+            string filtr_name = textBox_name.Text;
+            string filtr_surname = textBox_surrname.Text;
+            string filtr_position = textBox_position.Text;
             try
             {
                 if (filtr_name == "Imię" || filtr_name == "")
@@ -155,43 +146,34 @@ namespace VMA
             {
                 MessageBox.Show("Zły format danych", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-
-            }
+        }
 
         private void button_delete_Click_1(object sender, EventArgs e)
         {
-
-
-
-
             var result = MessageBox.Show("Czy napewno chcesz usunąć pracownika?", "Potwierdzenie",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-
-                DataBaseDataContext db = new DataBaseDataContext();
-
                 bool confirm = false;
-
-
+                
                 int row = dataGridView_workers_DB.CurrentCell.RowIndex;
 
                var idd = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value; ;
-
-
-                var delete_worker = from x in db.WorkerSets where x.worker_id == idd  select x;
+                
+                var delete_worker = from x in db.WorkerSets
+                                    where x.worker_id == idd
+                                    select x;
 
                 foreach (WorkerSet x in delete_worker)
                 {
                     x.position = "fired";
-
-
                 }
                
-                var query = from x in db.CareSets where x.Keeper_worker_id == idd select x;
+                var query = from x in db.CareSets
+                            where x.Keeper_worker_id == idd
+                            select x;
 
                 foreach (CareSet x in query)
                 {
@@ -199,7 +181,6 @@ namespace VMA
 
                 }
                
-
                 try
                 {
                     db.SubmitChanges();
@@ -221,7 +202,6 @@ namespace VMA
             }
 
         }
-
 
         private void textBox_name_Enter_1(object sender, EventArgs e)
         {
@@ -271,26 +251,13 @@ namespace VMA
             }
         }
 
-       
-
-       
-
-        
-
         private void button_confirm_modification_Click(object sender, EventArgs e)
         {
-
-            
-           
-           DataBaseDataContext db = new DataBaseDataContext();
            bool confirm = false;
-
-
-
-
-
-
-           var query = from x in db.WorkerSets where x.worker_id == id select x;
+            
+           var query = from x in db.WorkerSets
+                       where x.worker_id == id
+                       select x;
 
            foreach (WorkerSet x in query)
            {
