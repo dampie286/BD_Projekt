@@ -51,7 +51,7 @@ namespace VMA
             Grid_edit();
         }
 
-        private void GeneratePDF(string filename, string description, DataTable data)
+        private void GeneratePDF(string filename, string description, DataTable data, double kms, double costs, double counts)
         {
             BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
             PdfPTable pdftable = new PdfPTable(data.Columns.Count);
@@ -86,10 +86,13 @@ namespace VMA
                 {
                     Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
                     PdfWriter.GetInstance(pdfdoc, fstream);
-                    pdfdoc.Open();
-                    Phrase ph = new Phrase(description + " \n \n");
-                    pdfdoc.Add(ph);
+                    pdfdoc.Open(); 
+                    pdfdoc.Add(new Phrase(description + " \n \n"));
                     pdfdoc.Add(pdftable);
+                    pdfdoc.Add(new Phrase("\n"));
+                    pdfdoc.Add(new Phrase("Sumaryczna liczba km za zadany okres: " + kms + " km\n"));
+                    pdfdoc.Add(new Phrase("Sumaryczna liczba wypożyczen: " + counts + "\n"));
+                    pdfdoc.Add(new Phrase("Sumaryczny koszt: " + costs + " zl\n"));
                     pdfdoc.Close();
                     fstream.Close();
                 }
@@ -107,6 +110,7 @@ namespace VMA
             data.Columns.Add("Koszt [ZŁ]");
             WorkerSet worker;
             string km, cost, count;
+            double kms = 0, costs = 0, counts = 0;
             var Worker = from x in db.WorkerSets
                        select x.worker_id;
 
@@ -125,9 +129,10 @@ namespace VMA
 
                     var count_km = (worker_rent2
                                         .Where(x => x.mileage_end != 0)
-                                            .Sum(x => x.mileage_end - x.mileage_start)).ToString(); 
-                    km = count_km;
+                                            .Sum(x => x.mileage_end - x.mileage_start)); 
 
+                    km = count_km.ToString();
+                    kms += count_km;
                 }
                 catch (Exception)
                 {
@@ -138,7 +143,9 @@ namespace VMA
                     var query1 = ((from x in db.RentSets
                                    where x.Worker_worker_id == idw && x.date_from.Date >= date_from.Date && x.date_to.Date <= date_to.Date
                                    select x.Vehicle_vehicle_id)).Count();
+
                     count = query1.ToString();
+                    counts += query1;
                 }
                 catch (Exception)
                 {
@@ -149,7 +156,9 @@ namespace VMA
                     var count_cost = db.PurchaseSets
                                         .Where(x => x.RentSet.Worker_worker_id == idw && x.RentSet.date_from.Date >= date_from.Date && x.RentSet.date_to.Date <= date_to.Date)
                                             .Sum(x => x.price);
+
                     cost = count_cost.ToString();
+                    costs += count_cost;
                 }
                 catch (Exception)
                 {
@@ -157,11 +166,10 @@ namespace VMA
                 }
                     data.Rows.Add(worker.worker_id, worker.name, worker.surname, km, count, cost);
             }
-            //data.Rows.Add("---", "---", "---", "---", "---", "Sumaryczny koszt: ");
 
 
-            GeneratePDF("Koszta pracowników", "Koszta za okres: ", data);
-            
+            GeneratePDF("Statystyki pracowników", "Statystyki za okres: " + dateTimePicker_from_date_reserv.Value.ToShortDateString() +
+                         " - " + dateTimePicker_to_date_reserv.Value.ToShortDateString(), data, kms, costs, counts);
         }
      
 
@@ -238,10 +246,7 @@ namespace VMA
             catch (Exception)
             {
                 MessageBox.Show("Coś się zepsuło i nie było mnie słychać", "PDF.Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
-            MessageBox.Show("Robie PDF dla wszystkich pracowników w danym okresie :)", "PDF", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
         }
     }
 }

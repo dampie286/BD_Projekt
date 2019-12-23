@@ -81,14 +81,14 @@ namespace VMA
         public void fillDataGridView()
         {
 
-            var Selectquery = from x in db.VehicleSets where x.available != "deleted" select x;
+            var Selectquery = from x in db.VehicleSets
+                              where x.available != "deleted"
+                              select x;
 
             dataGridView_veh_DB.DataSource = Selectquery;
 
             gridedit();
         }
-
-      
 
         private void UserControl_raports_stats_cars_Load(object sender, EventArgs e)
         {
@@ -195,13 +195,12 @@ namespace VMA
         private void button_generate_to_pdf_Click(object sender, EventArgs e)
         {
             DataTable data = new DataTable("Stats");
-            data.Columns.Add("ID");
-            data.Columns.Add("IMIE");
-            data.Columns.Add("NAZWISKO");
+            data.Columns.Add("Marka");
+            data.Columns.Add("Model");
+            data.Columns.Add("Rejestracja");
             data.Columns.Add("Liczba KM");
             data.Columns.Add("Spalone litry");
             data.Columns.Add("Liczba wyp. pojazdów");
-            data.Columns.Add("Koszt [ZŁ]");
 
             VehicleSet worker;
             string km, cost, count;
