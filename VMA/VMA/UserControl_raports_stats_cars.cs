@@ -149,7 +149,7 @@ namespace VMA
 
                 var count_km = worker_rent2
                                 .Where(x => x.mileage_end != 0)
-                                    .Sum(x => (x.mileage_end - x.mileage_start)/100*x.VehicleSet.avg_consumption);
+                                    .Sum(x => (x.mileage_end - x.mileage_start)*x.VehicleSet.avg_consumption/100);
                 
                 label_all_combustion.Text = count_km.ToString() + " L";
             }
@@ -176,14 +176,30 @@ namespace VMA
             //koszt pojazdu
             try
             {
-                var count_cost_workers = db.PurchaseSets
-                                .Where(x => x.RentSet.Vehicle_vehicle_id == id && x.RentSet.date_from.Date >=date_from.Date && x.RentSet.date_to.Date <= date_to.Date)
-                                    .Sum(x => x.price);
-                
-                var count_cost_servis = db.Care_serviceSets
-                                .Where(x => x.CareSet.Vehicle_vehicle_id == id && x.date_from.Date >= date_from.Date && x.data_to.Value.Date <=date_to.Date)
-                                    .Sum(x => x.price);
-                
+                var count_cost_workers =0.0;
+                var count_cost_servis = 0.0;
+                try
+                {
+                     count_cost_workers = db.PurchaseSets
+                                    .Where(x => x.RentSet.Vehicle_vehicle_id == id && x.RentSet.date_from.Date >= date_from.Date && x.RentSet.date_to.Date <= date_to.Date)
+                                        .Sum(x => x.price);
+                }
+
+                catch
+                {
+                   
+                }
+
+                try
+                {
+                     count_cost_servis = db.Care_serviceSets
+                                    .Where(x => x.CareSet.Vehicle_vehicle_id == id && x.date_from.Date >= date_from.Date && x.data_to.Value.Date <= date_to.Date)
+                                        .Sum(x => x.price);
+                }
+                catch
+                {
+
+                }
                 label_cost_car.Text = (count_cost_servis + count_cost_workers).ToString() + "zł";
             }
             catch
@@ -200,7 +216,7 @@ namespace VMA
             data.Columns.Add("Rejestracja");
             data.Columns.Add("Liczba KM");
             data.Columns.Add("Spalone litry");
-            data.Columns.Add("Liczba wyp. pojazdów");
+            data.Columns.Add("Koszt pojazdów");
 
             VehicleSet worker;
             string km, cost, count;
@@ -239,7 +255,7 @@ namespace VMA
                     
                     var count_km = worker_rent2
                                     .Where(x => x.mileage_end != 0)
-                                        .Sum(x => (x.mileage_end - x.mileage_start) / 100 * x.VehicleSet.avg_consumption);
+                                        .Sum(x => (x.mileage_end - x.mileage_start) * x.VehicleSet.avg_consumption/100);
 
                     count = count_km.ToString();
                 }
@@ -247,21 +263,37 @@ namespace VMA
                 {
                     count = "---";
                 }
-                try // koszt nie działa
+                try
                 {
-                    var count_cost_workers = db.PurchaseSets
-                                .Where(x => x.RentSet.Vehicle_vehicle_id == idw && x.RentSet.date_from.Date >= date_from.Date && x.RentSet.date_to.Date <= date_to.Date)
-                                    .Sum(x => x.price);
-                    
-                    var count_cost_servis = db.Care_serviceSets
-                                    .Where(x => x.CareSet.Vehicle_vehicle_id == idw && x.date_from.Date >= date_from.Date && x.data_to.Value.Date <= date_to.Date)
-                                        .Sum(x => x.price);
-                    
-                    cost = count_cost_servis.ToString();
+                    var count_cost_workers = 0.0;
+                    var count_cost_servis = 0.0;
+                    try
+                    {
+                        count_cost_workers = db.PurchaseSets
+                                       .Where(x => x.RentSet.Vehicle_vehicle_id == idw && x.RentSet.date_from.Date >= date_from.Date && x.RentSet.date_to.Date <= date_to.Date)
+                                           .Sum(x => x.price);
+                    }
+
+                    catch
+                    {
+
+                    }
+
+                    try
+                    {
+                        count_cost_servis = db.Care_serviceSets
+                                       .Where(x => x.CareSet.Vehicle_vehicle_id == idw && x.date_from.Date >= date_from.Date && x.data_to.Value.Date <= date_to.Date)
+                                           .Sum(x => x.price);
+                    }
+                    catch
+                    {
+
+                    }
+                    cost= (count_cost_servis + count_cost_workers).ToString() + "zł";
                 }
-                catch (Exception)
+                catch
                 {
-                    cost = "---";
+                    cost= "----";
                 }
                 // liczba serwisow nie działa
                 try
