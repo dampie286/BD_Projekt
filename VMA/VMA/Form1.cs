@@ -163,21 +163,6 @@ namespace VMA
            
         }
 
-        private void Form_login_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-
-            char chh = e.KeyChar;
-
-            if ( chh == 13)
-            {
-              login();
-
-            }
-
-
-
-        }
 
         private void textBox_login_password_KeyPress(object sender, KeyPressEventArgs e)
         {

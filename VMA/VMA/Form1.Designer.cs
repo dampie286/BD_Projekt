@@ -158,7 +158,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vehicles Management App";
             this.Load += new System.EventHandler(this.Form_login_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form_login_KeyPress);
+          
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pass_symbol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_login_symbol)).EndInit();
             this.ResumeLayout(false);
