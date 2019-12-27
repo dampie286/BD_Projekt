@@ -319,9 +319,9 @@
             this.comboBox_purpose_of_rent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_purpose_of_rent.FormattingEnabled = true;
             this.comboBox_purpose_of_rent.Items.AddRange(new object[] {
-            "Delegacja",
-            "Służbowy",
-            "Prywatny"});
+            "Prywatny",
+            "Służbowy ",
+            "Delegacja"});
             this.comboBox_purpose_of_rent.Location = new System.Drawing.Point(305, 479);
             this.comboBox_purpose_of_rent.Name = "comboBox_purpose_of_rent";
             this.comboBox_purpose_of_rent.Size = new System.Drawing.Size(173, 24);

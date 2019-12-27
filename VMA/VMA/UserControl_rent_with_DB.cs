@@ -183,57 +183,78 @@ namespace VMA
                 car_id = (int)dataGridView_veh_DB.Rows[row].Cells[0].Value;
                 
 
-                if (comboBox_purpose_of_rent.Text == "Służbowy" || comboBox_purpose_of_rent.Text == "Prywatny")
+                if (comboBox_purpose_of_rent.Text == "Służbowy" || comboBox_purpose_of_rent.Text == "Prywatny" || comboBox_purpose_of_rent.Text == "Delegacja")
                 {
-                    try
+
+                    var counter_modulo = db.RentSets
+                                               .Where(x => x.Worker_worker_id == user_id
+                                                       && ((x.date_from <= time_from
+                                                           && x.date_to >= time_from)
+                                                           || (x.date_from <= time_to
+                                                               && x.date_to >= time_to)))
+                                                                   .Select(x => x.rent_id)
+                                                                       .Count();
+
+
+                    if (counter_modulo==0)
                     {
-                        ReservationSet newReserv = new ReservationSet()
+
+                        try
                         {
-                            purpose = comboBox_purpose_of_rent.Text,
-                            date_from = time_from,
-                            date_to = time_to,
-                            Worker_worker_id = user_id,
-                            Vehicle_vehicle_id = car_id
-                        };
-                        db.ReservationSets.InsertOnSubmit(newReserv);
-                        db.SubmitChanges();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Nie udało się dokonać rezerwacji pojazdu", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                    try
-                    {
-                        var mileage_st = (from x in db.VehicleSets
-                                         where x.vehicle_id == car_id
-                                         select x.mileage)
-                                            .Single();
-
-                        ReservationSet reserv = db.ReservationSets
-                                            .Where(x => x.date_to == time_to 
-                                                    && x.date_from == time_from 
-                                                    && x.Vehicle_vehicle_id == car_id)
-                                                    .First();
-                    RentSet newRent = new RentSet()
+                            ReservationSet newReserv = new ReservationSet()
+                            {
+                                purpose = comboBox_purpose_of_rent.Text,
+                                date_from = time_from,
+                                date_to = time_to,
+                                Worker_worker_id = user_id,
+                                Vehicle_vehicle_id = car_id
+                            };
+                            db.ReservationSets.InsertOnSubmit(newReserv);
+                            db.SubmitChanges();
+                        }
+                        catch (Exception)
                         {
-                            purpose = comboBox_purpose_of_rent.Text,
-                            date_from = time_from,
-                            date_to = time_to,
-                            mileage_start = mileage_st,
-                            Worker_worker_id = user_id,
-                            Reservation_reservation_id = reserv.reservation_id,
-                            Vehicle_vehicle_id = car_id
-                        };
-                        db.RentSets.InsertOnSubmit(newRent);
-                        db.SubmitChanges();
-                        
-                        MessageBox.Show("Wypożyczyłeś pojazd od dzisiaj do " + time_to.Date.ToShortDateString(), "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Nie udało się dokonać rezerwacji pojazdu", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
 
+                        try
+                        {
+                            var mileage_st = (from x in db.VehicleSets
+                                              where x.vehicle_id == car_id
+                                              select x.mileage)
+                                                .Single();
+
+                            ReservationSet reserv = db.ReservationSets
+                                                .Where(x => x.date_to == time_to
+                                                        && x.date_from == time_from
+                                                        && x.Vehicle_vehicle_id == car_id)
+                                                        .First();
+                            RentSet newRent = new RentSet()
+                            {
+                                purpose = comboBox_purpose_of_rent.Text,
+                                date_from = time_from,
+                                date_to = time_to,
+                                mileage_start = mileage_st,
+                                Worker_worker_id = user_id,
+                                Reservation_reservation_id = reserv.reservation_id,
+                                Vehicle_vehicle_id = car_id
+                            };
+                            db.RentSets.InsertOnSubmit(newRent);
+                            db.SubmitChanges();
+
+                            MessageBox.Show("Wypożyczyłeś pojazd od dzisiaj do " + time_to.Date.ToShortDateString(), "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            fillDataGridView();
+
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Nie udało się dokonać wypożyczenia pojazdu", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    catch (Exception)
+                    else
+
                     {
-                        MessageBox.Show("Nie udało się dokonać wypożyczenia pojazdu", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Masz już wypożyczone auto w takim okresie", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
