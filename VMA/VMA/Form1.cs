@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace VMA
 {
@@ -171,6 +172,9 @@ namespace VMA
             if (chh == 13)
             {
                 login();
+                SoundPlayer player = new SoundPlayer();
+                player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "777.wav";
+                player.Play();
 
             }
 
