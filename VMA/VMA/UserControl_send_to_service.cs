@@ -29,7 +29,7 @@ namespace VMA
         {
             var query = from x in db.CareSets
                         join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
-                        where x.Keeper_worker_id == user_id && x.VehicleSet.available=="no" 
+                        where x.Keeper_worker_id == user_id && x.VehicleSet.available !="Serwis" 
                         select new
                         {
                             ID = y.vehicle_id,
@@ -86,16 +86,7 @@ namespace VMA
         }
 
         private void button_send_to_service_Click(object sender, EventArgs e)
-
-
         {
-
-
-
-
-
-
-
             if (Combobox_service.SelectedIndex == -1 || string.IsNullOrEmpty(textBox_description.Text))
             {
                 MessageBox.Show("Wybierz przyczynę serwisu i opisz problem", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -109,7 +100,7 @@ namespace VMA
                     string company_name;
                     VehicleSet vechicle = db.VehicleSets.Where(x => x.vehicle_id == car_id).First();
 
-                    vechicle.available = "no";
+                    vechicle.available = "Serwis";
 
                     CareSet care_id = db.CareSets
                                       .Where(x => x.Vehicle_vehicle_id == car_id)

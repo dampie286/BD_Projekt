@@ -116,6 +116,11 @@ namespace VMA
                     db.SubmitChanges();
                     fillDataGridView();
                 }
+                else if (veh.available == "Serwis")
+                {
+                    MessageBox.Show("Auto jest na Serwisie", "Information available", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
                 else
                 {
                     MessageBox.Show("Auto jest juz niedostępne", "Information available", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -150,6 +155,11 @@ namespace VMA
 
                         db.SubmitChanges();
                         fillDataGridView();
+                    }
+                    else if (veh.available == "Serwis")
+                    {
+                        MessageBox.Show("Auto jest na Serwisie", "Information available", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                     }
                     else
                     {
