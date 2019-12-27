@@ -16,6 +16,7 @@ namespace VMA
         int user_id;
         int car_id;
         int row;
+        int rent_id;
         public UserControl_my_rents()
         {
             InitializeComponent();
@@ -43,13 +44,15 @@ namespace VMA
                                   OD = y.date_from,
                                   DO = y.date_to,
                                   PRZEBIEG = x.mileage,
-                                  CEL = y.purpose
+                                  CEL = y.purpose,
+                                  id_rent=y.rent_id
                               };
 
             dataGridView_my_rents.DataSource = Selectquery;
 
 
             dataGridView_my_rents.Columns[0].Visible = false;
+            dataGridView_my_rents.Columns[8].Visible = false;
             dataGridView_my_rents.RowHeadersVisible = false;
             dataGridView_my_rents.ReadOnly = true;        //nie moze edytować kolumn
 
@@ -74,6 +77,7 @@ namespace VMA
                 label_to.Text = Convert.ToDateTime((string)dataGridView_my_rents.Rows[row].Cells[5].Value.ToString()).ToShortDateString();
                 label_purpose.Text = dataGridView_my_rents.Rows[row].Cells[6].Value.ToString() + " [KM]";
                 car_id = (int)dataGridView_my_rents.Rows[row].Cells[0].Value;
+                rent_id = (int)dataGridView_my_rents.Rows[row].Cells[8].Value;
             }
             catch
             { }
@@ -81,13 +85,11 @@ namespace VMA
 
         private void button_confirm_end_rent_Click(object sender, EventArgs e)
         {
-            try
-            {
-                RentSet rent = (from x in db.RentSets
-                                where x.Vehicle_vehicle_id == car_id
-                                      && x.date_from == Convert.ToDateTime(dataGridView_my_rents.Rows[row].Cells[4].Value)
-                                      && x.date_to == Convert.ToDateTime(dataGridView_my_rents.Rows[row].Cells[5].Value)
-                                select x).Single();
+             try
+             {
+            var rent = (from x in db.RentSets
+                            where x.rent_id == rent_id select x).Single();
+                                    
                 
                     if (rent.mileage_start < Convert.ToInt32(textBox_mileage.Text))
                     {
@@ -117,11 +119,43 @@ namespace VMA
                         MessageBox.Show("Przebieg po jest mniejszy niż przed", "Error Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
+
+             
+
+
+
+
+
             }
-            catch (Exception)
+           catch (Exception)
             {
                 MessageBox.Show("Zaznacz wypożyczenie", "Error Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           }
+
+
+       
+
+
+            
+            PurchaseSet car = new PurchaseSet()
+            {
+                Rent_rent_id=rent_id,
+                price=Convert.ToDouble(textBox_all_cost.Text),
+                type= comboBox_type_cost.Text,
+                purchase_date= Convert.ToDateTime((string)dataGridView_my_rents.Rows[row].Cells[5].Value.ToString()),
+                litres=50,
+                mileage=100
+
+
+
+            };
+          db.PurchaseSets.InsertOnSubmit(car);
+
+        db.SubmitChanges();
+            
+
+
+
         }
 
         private void comboBox_type_cost_SelectedIndexChanged(object sender, EventArgs e)
