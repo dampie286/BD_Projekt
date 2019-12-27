@@ -75,9 +75,13 @@ namespace VMA
         
         private void dataGridView_care_car_DB_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
-            label_brand.Text = (string)dataGridView_care_car_DB.Rows[row].Cells[1].Value;
-            label_model.Text = (string)dataGridView_care_car_DB.Rows[row].Cells[2].Value;
+            try
+            {
+                int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
+                label_brand.Text = (string)dataGridView_care_car_DB.Rows[row].Cells[1].Value;
+                label_model.Text = (string)dataGridView_care_car_DB.Rows[row].Cells[2].Value;
+            }
+            catch { }
         }
         private int if_car_is_in_service()
         {
@@ -86,7 +90,7 @@ namespace VMA
 
         public void fillComboBox_Company()
         {
-            var qury = (from x in db.CompanySets
+            var qury = (from x in db.CompanySets where x.description!= "brakwspolpracy"
                         select x.name).ToList();
 
             comboBox_Company_name.DataSource = qury;
@@ -271,6 +275,10 @@ namespace VMA
                 }
             }
         }
+
+      
+
+
     }
     }
 

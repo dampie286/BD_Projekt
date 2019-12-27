@@ -66,6 +66,7 @@
             this.dataGridView_care_car_DB.Size = new System.Drawing.Size(506, 230);
             this.dataGridView_care_car_DB.TabIndex = 21;
             this.dataGridView_care_car_DB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_care_car_DB_CellClick);
+          
             // 
             // label_your_cars_care
             // 
@@ -194,23 +195,23 @@
             // label_model
             // 
             this.label_model.AutoSize = true;
-            this.label_model.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_model.ForeColor = System.Drawing.Color.Yellow;
             this.label_model.Location = new System.Drawing.Point(101, 563);
             this.label_model.Margin = new System.Windows.Forms.Padding(0);
             this.label_model.Name = "label_model";
-            this.label_model.Size = new System.Drawing.Size(0, 24);
+            this.label_model.Size = new System.Drawing.Size(0, 25);
             this.label_model.TabIndex = 98;
             // 
             // label_brand
             // 
             this.label_brand.AutoSize = true;
-            this.label_brand.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_brand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_brand.ForeColor = System.Drawing.Color.Yellow;
             this.label_brand.Location = new System.Drawing.Point(101, 501);
             this.label_brand.Margin = new System.Windows.Forms.Padding(0);
             this.label_brand.Name = "label_brand";
-            this.label_brand.Size = new System.Drawing.Size(0, 24);
+            this.label_brand.Size = new System.Drawing.Size(0, 25);
             this.label_brand.TabIndex = 97;
             // 
             // label_desc_model

@@ -467,6 +467,7 @@
             this.textBox_oil_km.Size = new System.Drawing.Size(133, 19);
             this.textBox_oil_km.TabIndex = 96;
             this.textBox_oil_km.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_oil_km.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_oil_km_KeyPress);
             // 
             // panel2
             // 

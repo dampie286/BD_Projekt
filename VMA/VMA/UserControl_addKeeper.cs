@@ -48,46 +48,52 @@ namespace VMA
             bool confirm = false;
             try
             {
+                var result = MessageBox.Show("Czy napewno chcesz dodać opieke?", "Potwierdzenie",
+                               MessageBoxButtons.YesNo,
+                               MessageBoxIcon.Question);
 
 
-                int row = dataGridView_Worker.CurrentCell.RowIndex;
-                int row1 = dataGridView_veh.CurrentCell.RowIndex;
-
-                int selected_worker_id = (int)dataGridView_Worker.Rows[row].Cells[0].Value;
-                var car_id = (int)dataGridView_veh.Rows[row1].Cells[0].Value;
-
-                var keeper = (from x in db.WorkerSet_Keepers where x.keeper_id == selected_worker_id select x).Any();
-
-                if (!keeper)
+                if (result == DialogResult.Yes)
                 {
-                    WorkerSet_Keeper keeperr = new WorkerSet_Keeper()
+                    int row = dataGridView_Worker.CurrentCell.RowIndex;
+                    int row1 = dataGridView_veh.CurrentCell.RowIndex;
+
+                    int selected_worker_id = (int)dataGridView_Worker.Rows[row].Cells[0].Value;
+                    var car_id = (int)dataGridView_veh.Rows[row1].Cells[0].Value;
+
+                    var keeper = (from x in db.WorkerSet_Keepers where x.keeper_id == selected_worker_id select x).Any();
+
+                    if (!keeper)
                     {
-                        keeper_id = selected_worker_id,
-                        worker_id = selected_worker_id,
+                        WorkerSet_Keeper keeperr = new WorkerSet_Keeper()
+                        {
+                            keeper_id = selected_worker_id,
+                            worker_id = selected_worker_id,
+
+                        };
+                        db.WorkerSet_Keepers.InsertOnSubmit(keeperr);
+                        db.SubmitChanges();
+
+                    }
+
+
+
+                    int keeper_id = selected_worker_id;
+
+                    CareSet care = new CareSet()
+                    {
+                        date_from = DateTime.Today,
+                        date_to = Convert.ToDateTime("1999 - 01 - 01 00:00:00.000"),
+                        Vehicle_vehicle_id = car_id,
+                        Keeper_worker_id = keeper_id,
 
                     };
-                    db.WorkerSet_Keepers.InsertOnSubmit(keeperr);
+
+                    db.CareSets.InsertOnSubmit(care);
                     db.SubmitChanges();
+                    confirm = true;
 
                 }
-
-
-
-                int keeper_id = selected_worker_id;
-
-                CareSet care = new CareSet()
-                {
-                    date_from = DateTime.Today,
-                    date_to = Convert.ToDateTime("1999 - 01 - 01 00:00:00.000"),
-                    Vehicle_vehicle_id = car_id,
-                    Keeper_worker_id = keeper_id,
-
-                };
-
-                db.CareSets.InsertOnSubmit(care);
-                db.SubmitChanges();
-                confirm = true;
-
             }
             catch
             {
@@ -101,7 +107,7 @@ namespace VMA
                 MessageBox.Show("Przypisano auto opiekunowi", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             fillDataGridView();
-
+        
 
 
         }

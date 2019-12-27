@@ -45,6 +45,7 @@
             this.textBox_price = new System.Windows.Forms.TextBox();
             this.comboBox_Company_name = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label_price = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_care_car_DB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_cars_on_service)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +76,7 @@
             this.dataGridView_care_car_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_care_car_DB.Size = new System.Drawing.Size(435, 175);
             this.dataGridView_care_car_DB.TabIndex = 86;
+            this.dataGridView_care_car_DB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_care_car_DB_CellClick);
             // 
             // label3
             // 
@@ -102,23 +104,23 @@
             // label_model
             // 
             this.label_model.AutoSize = true;
-            this.label_model.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_model.ForeColor = System.Drawing.Color.Yellow;
             this.label_model.Location = new System.Drawing.Point(106, 323);
             this.label_model.Margin = new System.Windows.Forms.Padding(0);
             this.label_model.Name = "label_model";
-            this.label_model.Size = new System.Drawing.Size(0, 24);
+            this.label_model.Size = new System.Drawing.Size(0, 25);
             this.label_model.TabIndex = 94;
             // 
             // label_brand
             // 
             this.label_brand.AutoSize = true;
-            this.label_brand.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_brand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_brand.ForeColor = System.Drawing.Color.Yellow;
             this.label_brand.Location = new System.Drawing.Point(106, 273);
             this.label_brand.Margin = new System.Windows.Forms.Padding(0);
             this.label_brand.Name = "label_brand";
-            this.label_brand.Size = new System.Drawing.Size(0, 24);
+            this.label_brand.Size = new System.Drawing.Size(0, 25);
             this.label_brand.TabIndex = 93;
             // 
             // label_desc_model
@@ -231,6 +233,7 @@
             this.textBox_price.Name = "textBox_price";
             this.textBox_price.Size = new System.Drawing.Size(100, 22);
             this.textBox_price.TabIndex = 100;
+            this.textBox_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_price_KeyPress);
             // 
             // comboBox_Company_name
             // 
@@ -251,11 +254,23 @@
             this.label4.TabIndex = 102;
             this.label4.Text = "Firma:";
             // 
+            // label_price
+            // 
+            this.label_price.AutoSize = true;
+            this.label_price.Font = new System.Drawing.Font("Arial", 12F);
+            this.label_price.ForeColor = System.Drawing.Color.Yellow;
+            this.label_price.Location = new System.Drawing.Point(736, 442);
+            this.label_price.Name = "label_price";
+            this.label_price.Size = new System.Drawing.Size(146, 23);
+            this.label_price.TabIndex = 103;
+            this.label_price.Text = "Koszt naprawy:";
+            // 
             // UserControl_send_to_service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.Controls.Add(this.label_price);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox_Company_name);
             this.Controls.Add(this.textBox_price);
@@ -301,5 +316,6 @@
         private System.Windows.Forms.TextBox textBox_price;
         private System.Windows.Forms.ComboBox comboBox_Company_name;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_price;
     }
 }

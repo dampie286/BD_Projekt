@@ -29,7 +29,7 @@ namespace VMA
         {
             var query = from x in db.CareSets
                         join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
-                        where x.Keeper_worker_id == user_id
+                        where x.Keeper_worker_id == user_id && x.VehicleSet.available=="no" 
                         select new
                         {
                             ID = y.vehicle_id,
@@ -81,11 +81,21 @@ namespace VMA
                         where x.description != "brakwspolpracy"
                         select x.name).ToList();
 
+            qury.Insert(0,"Wybierz");
             comboBox_Company_name.DataSource = qury;
         }
 
         private void button_send_to_service_Click(object sender, EventArgs e)
+
+
         {
+
+
+
+
+
+
+
             if (Combobox_service.SelectedIndex == -1 || string.IsNullOrEmpty(textBox_description.Text))
             {
                 MessageBox.Show("Wybierz przyczynę serwisu i opisz problem", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -182,11 +192,37 @@ namespace VMA
                     db.SubmitChanges();
                     fillDataGridView();
                     fillDataGridView2();
+                    textBox_price.Clear();
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Zaznacz samochód, który został naprawiony", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void dataGridView_care_car_DB_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            try
+            {
+                int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
+                label_brand.Text = (string)dataGridView_care_car_DB.Rows[row].Cells[1].Value;
+                label_model.Text = (string)dataGridView_care_car_DB.Rows[row].Cells[2].Value;
+            }
+            catch { }
+
+
+        }
+
+        private void textBox_price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chh = e.KeyChar;
+
+            if (!Char.IsDigit(chh) && chh != 8)
+            {
+                e.Handled = true;
             }
         }
     }

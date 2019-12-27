@@ -164,13 +164,33 @@ namespace VMA
 
         private void textBox_age_KeyPress(object sender, KeyPressEventArgs e)
         {
+            int x = textBox_age.TextLength;
+
 
             char chh = e.KeyChar;
-           
-            if (!Char.IsDigit(chh) && chh != 8)
+
+
+            if (Char.IsDigit(chh) || chh ==8)
+            {
+                if ( chh != 8)
+                {
+                    if (x > 3)
+                    {
+
+                        e.Handled = true;
+
+
+                    }
+
+                }
+            }
+            else
             {
                 e.Handled = true;
+
             }
+
+
         }
 
         private void textBox_mileage_KeyPress(object sender, KeyPressEventArgs e)
@@ -248,6 +268,20 @@ namespace VMA
             textBox_oil_km.Clear();
             dateTimePicker_gear_date.Value = DateTime.Today;
             textBox_gear_km.Clear();
+        }
+
+        private void textBox_oil_km_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            char chh = e.KeyChar;
+
+            if (!Char.IsDigit(chh) && chh != 8)
+            {
+                e.Handled = true;
+            }
+
+
+
         }
     }
     }
