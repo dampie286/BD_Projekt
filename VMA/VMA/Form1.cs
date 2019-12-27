@@ -69,12 +69,13 @@ namespace VMA
         }
 
 
-        private void button_sign_in_Click(object sender, EventArgs e)
+        private void login()
         {
+
             name = textBox_login_name.Text.ToString();
             password = textBox_login_password.Text.ToString();
-            
-        
+
+
             try
             {
                 var user = db.WorkerSets.Where(i => i.password == password && i.name == name).Single();
@@ -83,7 +84,7 @@ namespace VMA
                     if (user.position != "fired")
 
                     {
-                        if (user.position == "admin" )
+                        if (user.position == "admin")
                         {
                             textBox_login_name.Clear();
                             textBox_login_password.Clear();
@@ -92,11 +93,11 @@ namespace VMA
                             check_reservation(user.worker_id);
                             this.Hide();
                         }
-                        else if(user.position == "kierownik" || user.position == "Kierownik")
+                        else if (user.position == "kierownik" || user.position == "Kierownik")
                         {
                             textBox_login_name.Clear();
                             textBox_login_password.Clear();
-                            menagerapp = new Form_panel_manager(this,user.worker_id);
+                            menagerapp = new Form_panel_manager(this, user.worker_id);
                             menagerapp.Show();
                             check_reservation(user.worker_id);
                             this.Hide();
@@ -132,13 +133,20 @@ namespace VMA
                     }
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 textBox_login_name.Clear();
                 textBox_login_password.Clear();
                 MessageBox.Show("Błędny login lub hasło ", "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+
+        }
+
+        private void button_sign_in_Click(object sender, EventArgs e)
+        {
+
+            login();
             
         }
 
@@ -153,6 +161,47 @@ namespace VMA
         private void button_sign_in_KeyDown(object sender, KeyEventArgs e)
         {
            
+        }
+
+        private void Form_login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+            char chh = e.KeyChar;
+
+            if ( chh == 13)
+            {
+              login();
+
+            }
+
+
+
+        }
+
+        private void textBox_login_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chh = e.KeyChar;
+
+            if (chh == 13)
+            {
+                login();
+
+            }
+
+        }
+
+        private void textBox_login_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            char chh = e.KeyChar;
+            if (chh == 13)
+            {
+                SendKeys.Send("{TAB}");
+
+            }
+
+
         }
     }
 }
