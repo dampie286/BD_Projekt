@@ -94,9 +94,9 @@ namespace VMA
 
 
 
-                    var dupa = (from x in db.VehicleSets where x.vehicle_id == a select x).Single();
-
-                     veh = db.VehicleSets.Where(x => x.vehicle_id == a);
+                    veh = (from x in db.VehicleSets where x.vehicle_id == a select x).Single();
+;
+                     
 
                     var wwr = db.VehicleSets.First().vehicle_id;
 
