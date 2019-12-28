@@ -85,14 +85,20 @@ namespace VMA
                 {
                     var query1 = (from x in db.Check_vehicleSets
                                  join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
-                                 where x.Vehicle_vehicle_id == 2011
+                                 where x.Vehicle_vehicle_id ==id_car
                                        && x.oil_change_mileage - 1000 <= y.mileage
-                                 select y.vehicle_id).ToList();
+                                 select y).First().vehicle_id;
 
-                   
-                        veh = db.VehicleSets.Where(x => x.vehicle_id == query1[0]);
-                  
-                   
+
+                    int a = query1;
+
+
+
+                    var dupa = (from x in db.VehicleSets where x.vehicle_id == a select x).Single();
+
+                     veh = db.VehicleSets.Where(x => x.vehicle_id == a);
+
+                    var wwr = db.VehicleSets.First().vehicle_id;
 
                     cars_oil += veh.model + " " + veh.licence_plate;
 
