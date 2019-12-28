@@ -15,7 +15,7 @@ namespace VMA
         public UserControl_addWorker()
         {
             InitializeComponent();
-            dateTimePicker_date_birth.MaxDate=DateTime.Today;
+            dateTimePicker_date_birth.MaxDate = DateTime.Today;
         }
 
         private void button_add_worker_Click(object sender, EventArgs e)
@@ -29,14 +29,14 @@ namespace VMA
                     {
                         name = Convert.ToString(textBox_name.Text),
                         surname = Convert.ToString(textBox_surrname.Text),
-                       position = Convert.ToString(comboBox_position.Text),
+                        position = Convert.ToString(comboBox_position.Text),
                         PESEL = Convert.ToString(textBox_id_worker.Text),
 
-                       date_of_birth = Convert.ToDateTime(dateTimePicker_date_birth.Text),
-                       city= Convert.ToString(textBox_city.Text),
-                       city_code= Convert.ToString(textBox_code.Text),
-                        street=Convert.ToString(textBox_street.Text),
-                        house=Convert.ToString(textBox_house.Text),
+                        date_of_birth = Convert.ToDateTime(dateTimePicker_date_birth.Text),
+                        city = Convert.ToString(textBox_city.Text),
+                        city_code = Convert.ToString(textBox_code.Text),
+                        street = Convert.ToString(textBox_street.Text),
+                        house = Convert.ToString(textBox_house.Text),
 
                         password = Convert.ToString(textBox_tmp_pass.Text),
                         phone_nr = Convert.ToString(textBox_phone_number.Text)
@@ -67,7 +67,7 @@ namespace VMA
                     textBox_tmp_pass.Clear();
                 }
 
-               
+
             }
         }
 
@@ -104,6 +104,70 @@ namespace VMA
             textBox_street.Clear();
             textBox_tmp_pass.Clear();
         }
-     
+
+        private void textBox_code_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+
+            char chh = e.KeyChar;
+            if (chh == 46 && textBox_code.Text.IndexOf('-') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(chh) && chh != 8 && chh != 45)
+            {
+                e.Handled = true;
+            }
+
+
+
+
+
+        }
+
+        private void textBox_street_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+
+
+        }
+
+        private void textBox_phone_number_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+
+
+            int x = textBox_phone_number.TextLength;
+            char chh = e.KeyChar;
+
+
+
+
+
+
+
+            if (!Char.IsDigit(chh) && chh != 8)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                if (chh != 8)
+                {
+                    if (x > 8)
+                    {
+
+                        e.Handled = true;
+
+
+                    }
+
+                }
+
+
+            }
+        }
     }
 }

@@ -210,8 +210,12 @@ namespace VMA
         private void textBox_price_KeyPress(object sender, KeyPressEventArgs e)
         {
             char chh = e.KeyChar;
-
-            if (!Char.IsDigit(chh) && chh != 8)
+            if (chh == 46 && textBox_price.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(chh) && chh != 8 && chh != 46)
             {
                 e.Handled = true;
             }

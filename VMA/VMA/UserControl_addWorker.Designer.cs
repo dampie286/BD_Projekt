@@ -83,7 +83,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.Yellow;
             this.panel8.Location = new System.Drawing.Point(473, 508);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(173, 1);
             this.panel8.TabIndex = 77;
@@ -108,7 +108,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.Yellow;
             this.panel7.Location = new System.Drawing.Point(265, 250);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(173, 1);
             this.panel7.TabIndex = 75;
@@ -132,7 +132,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Yellow;
             this.panel2.Location = new System.Drawing.Point(265, 311);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(173, 1);
             this.panel2.TabIndex = 65;
@@ -157,7 +157,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Yellow;
             this.panel1.Location = new System.Drawing.Point(265, 188);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(173, 1);
             this.panel1.TabIndex = 63;
@@ -263,7 +263,6 @@
             this.label2.TabIndex = 82;
             this.label2.Text = "Nazwisko";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        
             // 
             // label_name
             // 
@@ -279,7 +278,7 @@
             this.label_name.TabIndex = 81;
             this.label_name.Text = "Imię";
             this.label_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-           
+            // 
             // dateTimePicker_date_birth
             // 
             this.dateTimePicker_date_birth.CalendarForeColor = System.Drawing.Color.Yellow;
@@ -316,7 +315,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Yellow;
             this.panel4.Location = new System.Drawing.Point(663, 434);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(173, 1);
             this.panel4.TabIndex = 91;
@@ -335,6 +334,7 @@
             this.textBox_phone_number.Size = new System.Drawing.Size(173, 19);
             this.textBox_phone_number.TabIndex = 90;
             this.textBox_phone_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_phone_number.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_phone_number_KeyPress_1);
             // 
             // label1
             // 
@@ -355,7 +355,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Yellow;
             this.panel3.Location = new System.Drawing.Point(663, 188);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(173, 1);
             this.panel3.TabIndex = 94;
@@ -394,7 +394,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Yellow;
             this.panel5.Location = new System.Drawing.Point(663, 250);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(173, 1);
             this.panel5.TabIndex = 97;
@@ -413,6 +413,7 @@
             this.textBox_code.Size = new System.Drawing.Size(173, 19);
             this.textBox_code.TabIndex = 96;
             this.textBox_code.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_code_KeyPress);
             // 
             // label9
             // 
@@ -433,7 +434,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.Yellow;
             this.panel6.Location = new System.Drawing.Point(663, 311);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(173, 1);
             this.panel6.TabIndex = 100;
@@ -452,6 +453,7 @@
             this.textBox_street.Size = new System.Drawing.Size(173, 19);
             this.textBox_street.TabIndex = 99;
             this.textBox_street.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_street.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_street_KeyPress);
             // 
             // label10
             // 
@@ -472,7 +474,7 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.Yellow;
             this.panel9.Location = new System.Drawing.Point(663, 373);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(173, 1);
             this.panel9.TabIndex = 103;
