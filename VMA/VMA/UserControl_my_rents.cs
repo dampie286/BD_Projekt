@@ -116,54 +116,54 @@ namespace VMA
 
                         }
 
+                    mileage1 = Convert.ToInt32(textBox_mileage.Text) - Convert.ToInt32(dataGridView_my_rents.Rows[row].Cells[6].Value.ToString());
+
                     if (comboBox_type_cost.SelectedIndex == -1)
                     {
-                        PurchaseSet car = new PurchaseSet()
-                        {
-                            Rent_rent_id = rent_id,
-                            price = Convert.ToDouble(textBox_all_cost.Text),
-                            type = "PB95",
-                            purchase_date = rent.date_to,  //Convert.ToDateTime((string)dataGridView_my_rents.Rows[row].Cells[5].Value),
-                            litres = 0,
-                            mileage = Convert.ToInt32(textBox_mileage.Text) - Convert.ToInt32(label_desc_mileage.Text)
-                        };
-                        db.PurchaseSets.InsertOnSubmit(car);
-
                         db.SubmitChanges();
                     }
                     else if (comboBox_type_cost.Text == "Tankowanie")
                     {
-                        mileage1 = Convert.ToInt32(textBox_mileage.Text) - Convert.ToInt32(dataGridView_my_rents.Rows[row].Cells[6].Value.ToString());
                         litres = Convert.ToDouble(textBox_litres.Text);
                         PurchaseSet car = new PurchaseSet()
                         {
                             Rent_rent_id = rent_id,
                             price = Convert.ToDouble(textBox_all_cost.Text),
-                            type = "PB95",
-                            purchase_date = rent.date_to,//Convert.ToDateTime("2019-06-25 00:00:00.000"),//rent.date_to,
+                            type = "Paliwo",
+                            purchase_date = rent.date_to,
                             litres = Convert.ToDouble(textBox_litres.Text),
                             mileage = mileage1
-                            //Rent_rent_id = rent_id,
-                            //price = Convert.ToDouble(textBox_all_cost.Text),
-                            //type = "PB95",
-                            //purchase_date = Convert.ToDateTime((string)dataGridView_my_rents.Rows[row].Cells[5].Value.ToString()),
-                            //litres = litres,
-                            //mileage = Convert.ToInt32(textBox_mileage.Text) - Convert.ToInt32(label_desc_mileage.Text)
                         };
                         db.PurchaseSets.InsertOnSubmit(car);
 
                         db.SubmitChanges();
                     }
-                    else
+                    else if(comboBox_type_cost.Text == "Tankowanie oraz inne")
+                    {
+                        litres = Convert.ToDouble(textBox_litres.Text);
+                        PurchaseSet car = new PurchaseSet()
+                        {
+                            Rent_rent_id = rent_id,
+                            price = Convert.ToDouble(textBox_all_cost.Text),
+                            type = textBox_other.Text,
+                            purchase_date = rent.date_to,
+                            litres = litres,
+                            mileage = mileage1
+                        };
+                        db.PurchaseSets.InsertOnSubmit(car);
+
+                        db.SubmitChanges();
+                    }
+                    else if (comboBox_type_cost.Text == "Inne")
                     {
                         PurchaseSet car = new PurchaseSet()
                         {
                             Rent_rent_id = rent_id,
                             price = Convert.ToDouble(textBox_all_cost.Text),
-                            type = comboBox_type_cost.Text,
-                            purchase_date = Convert.ToDateTime((string)dataGridView_my_rents.Rows[row].Cells[5].Value.ToString()),
+                            type = textBox_other.Text,
+                            purchase_date = rent.date_to,
                             litres = 0,
-                            mileage = Convert.ToInt32(textBox_mileage.Text) - Convert.ToInt32(label_desc_mileage.Text)
+                            mileage = mileage1
                         };
                         db.PurchaseSets.InsertOnSubmit(car);
 
