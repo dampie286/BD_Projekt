@@ -108,24 +108,46 @@ namespace VMA
                 }
                 else
                 {
-                    RentSet newRent = new RentSet()
+
+                    var time_from = Convert.ToDateTime(dataGridView_my_reservation.Rows[row].Cells[4].Value.ToString());
+                    var time_to= Convert.ToDateTime((string)dataGridView_my_reservation.Rows[row].Cells[5].Value.ToString());
+                    var counter_modulo = db.RentSets
+                                               .Where(x => x.Worker_worker_id == user_id
+                                                       && ((x.date_from <= time_from
+                                                           && x.date_to >= time_from)
+                                                           || (x.date_from <= time_to
+                                                               && x.date_to >= time_to)))
+                                                                   .Select(x => x.rent_id)
+                                                                       .Count();
+
+
+                    if (counter_modulo == 0)
                     {
-                        purpose = dataGridView_my_reservation.Rows[row].Cells[7].Value.ToString(),
-                        date_from = Convert.ToDateTime(dataGridView_my_reservation.Rows[row].Cells[4].Value),
-                        date_to = Convert.ToDateTime(dataGridView_my_reservation.Rows[row].Cells[5].Value),
-                        mileage_start = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[8].Value),
-                        Worker_worker_id = user_id,
-                        Reservation_reservation_id = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[9].Value),
-                        Vehicle_vehicle_id = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[0].Value),
-                        mileage_end = 0
-                        
-                    };
 
-                    db.RentSets.InsertOnSubmit(newRent);
-                    db.SubmitChanges();
+                        RentSet newRent = new RentSet()
+                        {
+                            purpose = dataGridView_my_reservation.Rows[row].Cells[7].Value.ToString(),
+                            date_from = Convert.ToDateTime(dataGridView_my_reservation.Rows[row].Cells[4].Value),
+                            date_to = Convert.ToDateTime(dataGridView_my_reservation.Rows[row].Cells[5].Value),
+                            mileage_start = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[8].Value),
+                            Worker_worker_id = user_id,
+                            Reservation_reservation_id = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[9].Value),
+                            Vehicle_vehicle_id = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[0].Value),
+                            mileage_end = 0
 
-                    MessageBox.Show("Wypożyczyłeś samochód, bezpiecznej jazdy", "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    fillDataGridView();
+                        };
+
+                        db.RentSets.InsertOnSubmit(newRent);
+                        db.SubmitChanges();
+
+                        MessageBox.Show("Wypożyczyłeś samochód, bezpiecznej jazdy", "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        fillDataGridView();
+                    }
+                    else
+
+                    {
+                        MessageBox.Show("Masz już wypożyczone auto w takim okresie", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception)
