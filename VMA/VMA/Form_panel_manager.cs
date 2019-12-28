@@ -33,8 +33,26 @@ namespace VMA
             userControl_raports_stats1.Button_cars_Click += new System.EventHandler(this.userControl_raports_Button_cars_Click);
             userControl_raports_stats1.Button_workers_Click += new System.EventHandler(this.userControl_raports_Button_workers_Click);
             userControl_raports_stats1.Button_all_Click += new System.EventHandler(this.userControl_raports_Button_all_Click);
+            userControl_manage_care1.Button_reserve_block_car_Click += new System.EventHandler(this.userControl_Button_reserve_block_carClick);
+            userControl_manage_care1.Button_send_receive_car_Click += new System.EventHandler(this.userControl_Button_send_receive_car_Click);
+
+        }
+        private void userControl_Button_send_receive_car_Click(object sender, EventArgs e)
+        {
+            userControl_send_to_service1.setUserID(log);
+            userControl_send_to_service1.fillDataGridView();
+            userControl_send_to_service1.fillDataGridView2();
+            userControl_send_to_service1.fillComboBox_Company();
+            userControl_send_to_service1.BringToFront();
         }
 
+        private void userControl_Button_reserve_block_carClick(object sender, EventArgs e)
+        {
+            userControl_menage_care_cars1.setUserID(log);
+            userControl_menage_care_cars1.fillDataGridView();
+            userControl_menage_care_cars1.fillComboBox_Company();
+            userControl_menage_care_cars1.BringToFront();
+        }
         private void userControl_rent_Button_my_rents_Click(object sender, EventArgs e)
         {
             userControl_my_rents1.litres_and_other_hide();
@@ -164,6 +182,11 @@ namespace VMA
             userControl_raports_stats_workers1.fillDataGridView();
             userControl_raports_stats_cars1.fillDataGridView();
             userControl_menage_all1.BringToFront();
+        }
+
+        private void button_care_Click(object sender, EventArgs e)
+        {
+            userControl_manage_care1.BringToFront();   
         }
     }
 }
