@@ -17,6 +17,9 @@ namespace VMA
         int car_id;
         int row;
         int rent_id;
+        double litres;
+        int mileage1;
+        
         public UserControl_my_rents()
         {
             InitializeComponent();
@@ -42,7 +45,7 @@ namespace VMA
                                   MARKA = x.brand,
                                   MODEL = x.model,
                                   OD = y.date_from,
-                                  DO = y.date_to,
+                                  DO = y.date_to.ToShortDateString(),
                                   PRZEBIEG = x.mileage,
                                   CEL = y.purpose,
                                   id_rent=y.rent_id
@@ -94,7 +97,7 @@ namespace VMA
                     if (rent.mileage_start < Convert.ToInt32(textBox_mileage.Text))
                     {
                         rent.mileage_end = Convert.ToInt32(textBox_mileage.Text);
-                        db.SubmitChanges();
+                       
 
                         try
                         {
@@ -102,9 +105,8 @@ namespace VMA
                                               where x.vehicle_id == car_id
                                               select x).Single();
                             veh.mileage = Convert.ToInt32(textBox_mileage.Text);
-                            db.SubmitChanges();
-                        fillDataGridView();
-                        litres_and_other_hide();
+                           
+                        
                         MessageBox.Show("Zakończenie rezerwacji zakończyło się powodzeniem", "Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
@@ -113,49 +115,80 @@ namespace VMA
                             MessageBox.Show("Nie udało się nadpisać przebiegu pojazdu", "Error Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         }
+
+                    if (comboBox_type_cost.SelectedIndex == -1)
+                    {
+                        PurchaseSet car = new PurchaseSet()
+                        {
+                            Rent_rent_id = rent_id,
+                            price = Convert.ToDouble(textBox_all_cost.Text),
+                            type = "PB95",
+                            purchase_date = rent.date_to,  //Convert.ToDateTime((string)dataGridView_my_rents.Rows[row].Cells[5].Value),
+                            litres = 0,
+                            mileage = Convert.ToInt32(textBox_mileage.Text) - Convert.ToInt32(label_desc_mileage.Text)
+                        };
+                        db.PurchaseSets.InsertOnSubmit(car);
+
+                        db.SubmitChanges();
                     }
+                    else if (comboBox_type_cost.Text == "Tankowanie")
+                    {
+                        mileage1 = Convert.ToInt32(textBox_mileage.Text) - Convert.ToInt32(dataGridView_my_rents.Rows[row].Cells[6].Value.ToString());
+                        litres = Convert.ToDouble(textBox_litres.Text);
+                        PurchaseSet car = new PurchaseSet()
+                        {
+                            Rent_rent_id = rent_id,
+                            price = Convert.ToDouble(textBox_all_cost.Text),
+                            type = "PB95",
+                            purchase_date = rent.date_to,//Convert.ToDateTime("2019-06-25 00:00:00.000"),//rent.date_to,
+                            litres = Convert.ToDouble(textBox_litres.Text),
+                            mileage = mileage1
+                            //Rent_rent_id = rent_id,
+                            //price = Convert.ToDouble(textBox_all_cost.Text),
+                            //type = "PB95",
+                            //purchase_date = Convert.ToDateTime((string)dataGridView_my_rents.Rows[row].Cells[5].Value.ToString()),
+                            //litres = litres,
+                            //mileage = Convert.ToInt32(textBox_mileage.Text) - Convert.ToInt32(label_desc_mileage.Text)
+                        };
+                        db.PurchaseSets.InsertOnSubmit(car);
+
+                        db.SubmitChanges();
+                    }
+                    else
+                    {
+                        PurchaseSet car = new PurchaseSet()
+                        {
+                            Rent_rent_id = rent_id,
+                            price = Convert.ToDouble(textBox_all_cost.Text),
+                            type = comboBox_type_cost.Text,
+                            purchase_date = Convert.ToDateTime((string)dataGridView_my_rents.Rows[row].Cells[5].Value.ToString()),
+                            litres = 0,
+                            mileage = Convert.ToInt32(textBox_mileage.Text) - Convert.ToInt32(label_desc_mileage.Text)
+                        };
+                        db.PurchaseSets.InsertOnSubmit(car);
+
+                        db.SubmitChanges();
+                    }
+
+
+                    fillDataGridView();
+                    litres_and_other_hide();
+                }
                     else
                     {
                         MessageBox.Show("Przebieg po jest mniejszy niż przed", "Error Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
-
-             
-
-
-
-
-
+                    
             }
            catch (Exception)
             {
                 MessageBox.Show("Zaznacz wypożyczenie", "Error Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
            }
-
-
-       
-
-
-            
-            PurchaseSet car = new PurchaseSet()
-            {
-                Rent_rent_id=rent_id,
-                price=Convert.ToDouble(textBox_all_cost.Text),
-                type= comboBox_type_cost.Text,
-                purchase_date= Convert.ToDateTime((string)dataGridView_my_rents.Rows[row].Cells[5].Value.ToString()),
-                litres=50,
-                mileage=100
-
-
-
-            };
-          db.PurchaseSets.InsertOnSubmit(car);
-
-        db.SubmitChanges();
-            
-
-
-
+            //            Tankowanie
+            //Inne
+            //Tankowanie oraz inne
+           
         }
 
         private void comboBox_type_cost_SelectedIndexChanged(object sender, EventArgs e)
