@@ -173,11 +173,23 @@ namespace VMA
                     Care_serviceSet care = db.Care_serviceSets.Where(p => p.ServiceSet.service_id == service_id).First();
                     care.data_to = DateTime.Today;
 
+                    Check_vehicleSet check = db.Check_vehicleSets.Where(p => p.Vehicle_vehicle_id == car_id).First();
+                    
                     ServiceSet service = db.ServiceSets.Where(p => p.service_id == service_id).First();
                     service.is_repair = true;
 
                     VehicleSet veh = db.VehicleSets.Where(p => p.vehicle_id == car_id).First();
                     veh.available = "yes";
+
+
+                    if (service.name == "Wymiana oleju + filtry")
+                    {
+                        check.oil_change_mileage += 15000;
+                    }
+                    else if (service.name == "Wymiana rozrzadu")
+                    {
+                        check.timing_gear_mileage += 15000;
+                    }
 
                     care.price = Convert.ToDouble(textBox_price.Text);
                     db.SubmitChanges();

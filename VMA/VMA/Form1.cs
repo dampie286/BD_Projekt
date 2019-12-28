@@ -69,6 +69,60 @@ namespace VMA
            
         }
 
+        private void check_Cars(int user_id)
+        {
+            VehicleSet veh;
+            string cars_oil = "Zbliża się wymiana oleju dla ";
+            string cars_timing = "Zbliża się wymiana rozrządu dla ";
+            try
+            {
+                var query = (from x in db.CareSets
+                             join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
+                             where x.Keeper_worker_id == user_id
+                             select y.vehicle_id);
+
+                foreach (int id_car in query)
+                {
+                    var query1 = (from x in db.Check_vehicleSets
+                                 join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
+                                 where x.Vehicle_vehicle_id == 2011
+                                       && x.oil_change_mileage - 1000 <= y.mileage
+                                 select y.vehicle_id).ToList();
+
+                   
+                        veh = db.VehicleSets.Where(x => x.vehicle_id == query1[0]);
+                  
+                   
+
+                    cars_oil += veh.model + " " + veh.licence_plate;
+
+                    var query2 = from x in db.Check_vehicleSets
+                                 join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
+                                 where x.Vehicle_vehicle_id == id_car
+                                       && x.timing_gear_mileage - 1000 <= y.mileage
+                                 select y.vehicle_id;
+
+                    veh = db.VehicleSets.Where(x => x.vehicle_id == Convert.ToInt32(query2))
+                                           .SingleOrDefault();
+
+                    cars_timing += veh.model + " " + veh.licence_plate;
+                }
+                if (cars_timing == "Zbliża się wymiana rozrządu dla ")
+                {
+                    cars_timing = ".";
+                }
+
+                if (cars_oil == "Zbliża się wymiana oleju dla ")
+                {
+                    cars_oil = "";
+                }
+
+                MessageBox.Show(cars_timing + " " + cars_oil, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception)
+            { }
+
+        }
 
         private void login()
         {
@@ -92,6 +146,7 @@ namespace VMA
                             adminapp = new Form_panel_admin(this);
                             adminapp.Show();
                             check_reservation(user.worker_id);
+                            check_Cars(user.worker_id);
                             this.Hide();
                         }
                         else if (user.position == "kierownik" || user.position == "Kierownik")
@@ -101,6 +156,7 @@ namespace VMA
                             menagerapp = new Form_panel_manager(this, user.worker_id);
                             menagerapp.Show();
                             check_reservation(user.worker_id);
+                            check_Cars(user.worker_id);
                             this.Hide();
                         }
                         else
@@ -115,6 +171,7 @@ namespace VMA
                                 mainapp = new MainApp(this, user.name, user.surname, user.worker_id, true);
                                 mainapp.Show();
                                 check_reservation(user.worker_id);
+                                check_Cars(user.worker_id);
                                 this.Hide();
                             }
                             else
@@ -124,6 +181,7 @@ namespace VMA
                                 mainapp = new MainApp(this, user.name, user.surname, user.worker_id, false);
                                 mainapp.Show();
                                 check_reservation(user.worker_id);
+                                check_Cars(user.worker_id);
                                 this.Hide();
                             }
                         }
