@@ -190,6 +190,10 @@ namespace VMA
                     {
                         check.timing_gear_mileage += 15000;
                     }
+                    else if (service.name == "Przegląd")
+                    {
+                        check.tech_review.AddYears(1); 
+                    }
 
                     care.price = Convert.ToDouble(textBox_price.Text);
                     db.SubmitChanges();

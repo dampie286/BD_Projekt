@@ -18,9 +18,13 @@ namespace VMA
         Form_panel_manager menagerapp;
         string name;
         string password;
-        
-        
-      
+
+        string cars_oil = "Zbliża się wymiana oleju dla: \n";
+
+        string cars_tech_review = "Zbliża się koniec przeglądu dla: \n";
+
+        string cars_timing = "Zbliża się wymiana rozrządu dla: \n";
+
         DataBaseDataContext db = new DataBaseDataContext();
         public Form_login()
         {
@@ -71,9 +75,8 @@ namespace VMA
 
         private void check_Cars(int user_id)
         {
-            VehicleSet veh;
-            string cars_oil = "Zbliża się wymiana oleju dla ";
-            string cars_timing = "Zbliża się wymiana rozrządu dla ";
+            //VehicleSet veh;
+           
             try
             {
                 var query = (from x in db.CareSets
@@ -81,53 +84,104 @@ namespace VMA
                              where x.Keeper_worker_id == user_id
                              select y.vehicle_id);
 
-                foreach (int id_car in query)
+                try
                 {
-                    var query1 = (from x in db.Check_vehicleSets
-                                 join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
-                                 where x.Vehicle_vehicle_id ==id_car
-                                       && x.oil_change_mileage - 1000 <= y.mileage
-                                 select y).First().vehicle_id;
+                    foreach (int id_car in query)
+                    {
+                        /// olej
+                        var query1 = (from x in db.Check_vehicleSets
+                                      join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
+                                      where x.Vehicle_vehicle_id == id_car
+                                            && x.oil_change_mileage - 1000 <= y.mileage
+                                      select y).First().vehicle_id;
 
+                        var veh = (from x in db.VehicleSets where x.vehicle_id == query1 select x).Single();
 
-                    int a = query1;
+                        cars_oil += veh.model + "  " + veh.licence_plate;
 
+                        cars_oil += "\n";
+                    }
 
-
-                    veh = (from x in db.VehicleSets where x.vehicle_id == a select x).Single();
-;
-                     
-
-                    var wwr = db.VehicleSets.First().vehicle_id;
-
-                    cars_oil += veh.model + " " + veh.licence_plate;
-
-                    var query2 = from x in db.Check_vehicleSets
-                                 join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
-                                 where x.Vehicle_vehicle_id == id_car
-                                       && x.timing_gear_mileage - 1000 <= y.mileage
-                                 select y.vehicle_id;
-
-                    veh = db.VehicleSets.Where(x => x.vehicle_id == Convert.ToInt32(query2))
-                                           .SingleOrDefault();
-
-                    cars_timing += veh.model + " " + veh.licence_plate;
+                    if (cars_oil == "Zbliża się wymiana oleju dla: \n")
+                    {
+                        cars_oil = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show(cars_oil, "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    cars_oil = "Zbliża się wymiana oleju dla: \n";
                 }
-                if (cars_timing == "Zbliża się wymiana rozrządu dla ")
+                catch (Exception)
+                { }
+                try
+                {  ///rozrząd
+                    foreach (int id_car in query)
+                    {
+                        
+
+                        var query2 = (from x in db.Check_vehicleSets
+                                      join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
+                                      where x.Vehicle_vehicle_id == id_car
+                                            && x.timing_gear_mileage - 1000 <= y.mileage
+                                      select y).First().vehicle_id;
+
+                        var veh1 = db.VehicleSets.Where(x => x.vehicle_id == query2)
+                                                .SingleOrDefault();
+                        
+                        cars_timing += veh1.model + "  " + veh1.licence_plate;
+                        cars_timing += "\n";
+                    }
+
+                    if (cars_timing == "Zbliża się wymiana rozrządu dla: \n")
+                    {
+                        cars_timing = ".";
+                    }
+                    else
+                    {
+                        MessageBox.Show(cars_timing, "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    cars_timing = "Zbliża się wymiana rozrządu dla: \n";
+                }
+                catch (Exception)
+                { }
+
+                try
                 {
-                    cars_timing = ".";
-                }
+                    foreach (int id_car in query)
+                    {
+                        /// przegląd
+                        var query3 = (from x in db.Check_vehicleSets
+                                      join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
+                                      where x.Vehicle_vehicle_id == id_car
+                                            && x.tech_review.AddMonths(11) <= DateTime.Today
+                                      select y).First().vehicle_id;
 
-                if (cars_oil == "Zbliża się wymiana oleju dla ")
-                {
-                    cars_oil = "";
-                }
+                        var veh2 = db.VehicleSets.Where(x => x.vehicle_id == query3)
+                                               .SingleOrDefault();
 
-                MessageBox.Show(cars_timing + " " + cars_oil, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        cars_tech_review += veh2.brand + " " + veh2.licence_plate;
+                        cars_tech_review += "\n";
+                    }
+
+                    if (cars_tech_review == "Zbliża się koniec przeglądu dla: \n")
+                    {
+                        cars_tech_review = " ";
+                    }
+                    else
+                    {
+                        MessageBox.Show(cars_tech_review, "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    cars_tech_review = "Zbliża się koniec przeglądu dla: \n";
+                }
+                catch
+                { }
+
+              
+
             }
             catch (Exception)
             { }
-
         }
 
         private void login()
@@ -236,9 +290,9 @@ namespace VMA
             if (chh == 13)
             {
                 login();
-                SoundPlayer player = new SoundPlayer();
-                player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "777.wav";
-                player.Play();
+                //SoundPlayer player = new SoundPlayer();
+                //player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "777.wav";
+                //player.Play();
 
             }
 

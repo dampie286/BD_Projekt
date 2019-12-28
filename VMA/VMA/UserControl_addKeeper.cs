@@ -28,7 +28,15 @@ namespace VMA
 
         
 
-            var query = from x in db.WorkerSets where x.position!="fired" select new { Id_opiekuna = x.worker_id, Imie = x.name, Nawisko = x.surname, Stanowsiko = x.position };
+            var query = from x in db.WorkerSets
+                        where x.position!="fired" && x.position != "admin" 
+                        select new
+                        {
+                            Id_opiekuna = x.worker_id,
+                            Imie = x.name,
+                            Nawisko = x.surname,
+                            Stanowsiko = x.position
+                        };
 
             dataGridView_Worker.DataSource = query;
             dataGridView_Worker.Columns[0].Visible = false;
@@ -36,7 +44,10 @@ namespace VMA
             ///auta bez opiekuna
 
             var query2 = from x in db.VehicleSets
-                         where (!(from o in db.CareSets where o.date_to== Convert.ToDateTime("1999 - 01 - 01 00:00:00.000") select o.Vehicle_vehicle_id).Contains(x.vehicle_id)) && x.available!="deleted" select new { Id = x.vehicle_id, Marka = x.brand, Model = x.model, Rejestracja = x.licence_plate };
+                         where (!(from o in db.CareSets
+                                  where o.date_to== Convert.ToDateTime("1999 - 01 - 01 00:00:00.000")
+                                  select o.Vehicle_vehicle_id).Contains(x.vehicle_id)) 
+                                  && x.available!="deleted" select new { Id = x.vehicle_id, Marka = x.brand, Model = x.model, Rejestracja = x.licence_plate };
 
 
             dataGridView_veh.DataSource = query2;
