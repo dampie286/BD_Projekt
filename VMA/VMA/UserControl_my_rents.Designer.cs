@@ -143,6 +143,7 @@
             this.textBox_all_cost.Size = new System.Drawing.Size(173, 19);
             this.textBox_all_cost.TabIndex = 96;
             this.textBox_all_cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_all_cost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_all_cost_KeyPress);
             // 
             // label_all_cost
             // 
@@ -179,6 +180,7 @@
             this.textBox_litres.Size = new System.Drawing.Size(173, 19);
             this.textBox_litres.TabIndex = 93;
             this.textBox_litres.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_litres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_litres_KeyPress);
             // 
             // label_litres
             // 
@@ -295,6 +297,7 @@
             this.textBox_mileage.Size = new System.Drawing.Size(173, 19);
             this.textBox_mileage.TabIndex = 79;
             this.textBox_mileage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_mileage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_mileage_KeyPress);
             // 
             // label1
             // 
@@ -311,56 +314,56 @@
             // label_to
             // 
             this.label_to.AutoSize = true;
-            this.label_to.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_to.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_to.ForeColor = System.Drawing.Color.Yellow;
             this.label_to.Location = new System.Drawing.Point(404, 63);
             this.label_to.Margin = new System.Windows.Forms.Padding(0);
             this.label_to.Name = "label_to";
-            this.label_to.Size = new System.Drawing.Size(0, 24);
+            this.label_to.Size = new System.Drawing.Size(0, 25);
             this.label_to.TabIndex = 77;
             // 
             // label_from
             // 
             this.label_from.AutoSize = true;
-            this.label_from.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_from.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_from.ForeColor = System.Drawing.Color.Yellow;
             this.label_from.Location = new System.Drawing.Point(402, 17);
             this.label_from.Margin = new System.Windows.Forms.Padding(0);
             this.label_from.Name = "label_from";
-            this.label_from.Size = new System.Drawing.Size(0, 24);
+            this.label_from.Size = new System.Drawing.Size(0, 25);
             this.label_from.TabIndex = 76;
             // 
             // label_purpose
             // 
             this.label_purpose.AutoSize = true;
-            this.label_purpose.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_purpose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_purpose.ForeColor = System.Drawing.Color.Yellow;
             this.label_purpose.Location = new System.Drawing.Point(375, 111);
             this.label_purpose.Margin = new System.Windows.Forms.Padding(0);
             this.label_purpose.Name = "label_purpose";
-            this.label_purpose.Size = new System.Drawing.Size(0, 24);
+            this.label_purpose.Size = new System.Drawing.Size(0, 25);
             this.label_purpose.TabIndex = 75;
             // 
             // label_model
             // 
             this.label_model.AutoSize = true;
-            this.label_model.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_model.ForeColor = System.Drawing.Color.Yellow;
             this.label_model.Location = new System.Drawing.Point(119, 64);
             this.label_model.Margin = new System.Windows.Forms.Padding(0);
             this.label_model.Name = "label_model";
-            this.label_model.Size = new System.Drawing.Size(0, 24);
+            this.label_model.Size = new System.Drawing.Size(0, 25);
             this.label_model.TabIndex = 74;
             // 
             // label_brand
             // 
             this.label_brand.AutoSize = true;
-            this.label_brand.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_brand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_brand.ForeColor = System.Drawing.Color.Yellow;
             this.label_brand.Location = new System.Drawing.Point(119, 18);
             this.label_brand.Margin = new System.Windows.Forms.Padding(0);
             this.label_brand.Name = "label_brand";
-            this.label_brand.Size = new System.Drawing.Size(0, 24);
+            this.label_brand.Size = new System.Drawing.Size(0, 25);
             this.label_brand.TabIndex = 73;
             // 
             // label_desc_to

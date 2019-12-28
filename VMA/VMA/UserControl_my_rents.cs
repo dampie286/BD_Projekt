@@ -105,8 +105,8 @@ namespace VMA
                                               where x.vehicle_id == car_id
                                               select x).Single();
                             veh.mileage = Convert.ToInt32(textBox_mileage.Text);
-                           
-                        
+                        db.SubmitChanges();
+
                         MessageBox.Show("Zakończenie rezerwacji zakończyło się powodzeniem", "Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
@@ -245,6 +245,44 @@ namespace VMA
         {
             other_hide();
             litres_fuel_hide();
+        }
+
+        private void textBox_litres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chh = e.KeyChar;
+            if (chh == 46 && textBox_litres.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(chh) && chh != 8 && chh != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_all_cost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chh = e.KeyChar;
+            if (chh == 46 && textBox_all_cost.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+            if (!Char.IsDigit(chh) && chh != 8 && chh != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_mileage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chh = e.KeyChar;
+
+            if (!Char.IsDigit(chh) && chh != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
