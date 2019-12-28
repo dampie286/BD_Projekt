@@ -26,6 +26,21 @@ namespace VMA
             user_id = id;
         }
 
+
+        private void clear()
+        {
+
+
+            label_brand.Text = "";
+            label_model.Text = "";
+            label_from.Text = "";
+            label_to.Text = "";
+            label_purpose.Text = "";
+
+
+
+        }
+
         public void fillDataGridView() //funkcja do wypłenienia tabeli
         {
             var Selectquery = from x in db.VehicleSets
@@ -117,6 +132,9 @@ namespace VMA
             {
                 MessageBox.Show("Coś się popsuło i nie było mnie słychać", "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            clear();
+
         }
 
         private void button_delete_res_Click(object sender, EventArgs e)
@@ -146,6 +164,8 @@ namespace VMA
             {
                 MessageBox.Show("Coś się popsuło i nie było mnie słychać", "Bad delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            clear();
         }
     }
 }
