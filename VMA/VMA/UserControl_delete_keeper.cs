@@ -80,34 +80,45 @@ namespace VMA
             
             bool confirm = false;
 
-            int row = dataGridView_keepers_DB.CurrentCell.RowIndex;
 
-            var edit_id = (int)dataGridView_keepers_DB.Rows[row].Cells[0].Value;
+            var result = MessageBox.Show("Czy napewno chcesz dodać opieke?", "Potwierdzenie",
+                              MessageBoxButtons.YesNo,
+                              MessageBoxIcon.Question);
 
-            var query = from x in db.CareSets where x.care_id == edit_id select x;
 
-            foreach (CareSet x in query)
+            if (result == DialogResult.Yes)
             {
-                x.date_to = DateTime.Today;
 
-            }
-            try
-            {
-                db.SubmitChanges();
-                confirm = true;
-            }
-            catch
-            {
-                MessageBox.Show("Nie udało się zakończyć opieki", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int row = dataGridView_keepers_DB.CurrentCell.RowIndex;
 
+                var edit_id = (int)dataGridView_keepers_DB.Rows[row].Cells[0].Value;
+
+                var query = from x in db.CareSets where x.care_id == edit_id select x;
+
+                foreach (CareSet x in query)
+                {
+                    x.date_to = DateTime.Today;
+
+                }
+                try
+                {
+                    db.SubmitChanges();
+                    confirm = true;
+                }
+                catch
+                {
+                    MessageBox.Show("Nie udało się zakończyć opieki", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+
+                if (confirm)
+                {
+                    MessageBox.Show("Zakończono opieke", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+
+                fillDataGridView2();
             }
 
-            if (confirm)
-            {
-                MessageBox.Show("Zakończono opieke", "Potwierdzenie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-
-            fillDataGridView2();
         }
         
 

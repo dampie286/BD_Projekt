@@ -185,10 +185,16 @@ namespace VMA
             {
                 MessageBox.Show("Zaznacz wypożyczenie", "Error Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
            }
-            //            Tankowanie
-            //Inne
-            //Tankowanie oraz inne
-           
+            //   czyszczenie
+            textBox_mileage.Clear();
+            textBox_other.Clear();
+            textBox_litres.Clear();
+            textBox_all_cost.Clear();
+
+
+
+
+
         }
 
         private void comboBox_type_cost_SelectedIndexChanged(object sender, EventArgs e)
