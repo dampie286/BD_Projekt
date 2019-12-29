@@ -108,7 +108,7 @@ namespace VMA
                     }
                     else
                     {
-                        MessageBox.Show(cars_oil, "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(cars_oil, "Cars Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     cars_oil = "Zbliża się wymiana oleju dla: \n";
                 }
@@ -139,7 +139,7 @@ namespace VMA
                     }
                     else
                     {
-                        MessageBox.Show(cars_timing, "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(cars_timing, "Cars Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     cars_timing = "Zbliża się wymiana rozrządu dla: \n";
                 }
@@ -170,7 +170,7 @@ namespace VMA
                     }
                     else
                     {
-                        MessageBox.Show(cars_tech_review, "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(cars_tech_review, "Cars Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     cars_tech_review = "Zbliża się koniec przeglądu dla: \n";
                 }
@@ -205,9 +205,9 @@ namespace VMA
                             textBox_login_password.Clear();
                             adminapp = new Form_panel_admin(this);
                             adminapp.Show();
+                            this.Hide();
                             check_reservation(user.worker_id);
                             check_Cars(user.worker_id);
-                            this.Hide();
                         }
                         else if (user.position == "kierownik" || user.position == "Kierownik")
                         {
@@ -215,9 +215,9 @@ namespace VMA
                             textBox_login_password.Clear();
                             menagerapp = new Form_panel_manager(this, user.worker_id);
                             menagerapp.Show();
+                            this.Hide();
                             check_reservation(user.worker_id);
                             check_Cars(user.worker_id);
-                            this.Hide();
                         }
                         else
 
@@ -230,9 +230,9 @@ namespace VMA
                                 textBox_login_password.Clear();
                                 mainapp = new MainApp(this, user.name, user.surname, user.worker_id, true);
                                 mainapp.Show();
+                                this.Hide();
                                 check_reservation(user.worker_id);
                                 check_Cars(user.worker_id);
-                                this.Hide();
                             }
                             else
                             {
@@ -240,9 +240,9 @@ namespace VMA
                                 textBox_login_password.Clear();
                                 mainapp = new MainApp(this, user.name, user.surname, user.worker_id, false);
                                 mainapp.Show();
+                                this.Hide();
                                 check_reservation(user.worker_id);
                                 check_Cars(user.worker_id);
-                                this.Hide();
                             }
                         }
                     }
