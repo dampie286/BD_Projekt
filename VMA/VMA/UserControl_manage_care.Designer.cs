@@ -40,10 +40,10 @@
             this.button_reserve_block_car.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_reserve_block_car.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_reserve_block_car.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_reserve_block_car.Location = new System.Drawing.Point(335, 393);
-            this.button_reserve_block_car.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_reserve_block_car.Location = new System.Drawing.Point(238, 260);
+            this.button_reserve_block_car.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_reserve_block_car.Name = "button_reserve_block_car";
-            this.button_reserve_block_car.Size = new System.Drawing.Size(309, 64);
+            this.button_reserve_block_car.Size = new System.Drawing.Size(230, 50);
             this.button_reserve_block_car.TabIndex = 45;
             this.button_reserve_block_car.Text = "Rezerwuj/blokuj samochód";
             this.button_reserve_block_car.UseVisualStyleBackColor = false;
@@ -56,10 +56,10 @@
             this.button_send_receive_car.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_send_receive_car.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_send_receive_car.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_send_receive_car.Location = new System.Drawing.Point(335, 272);
-            this.button_send_receive_car.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_send_receive_car.Location = new System.Drawing.Point(238, 180);
+            this.button_send_receive_car.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_send_receive_car.Name = "button_send_receive_car";
-            this.button_send_receive_car.Size = new System.Drawing.Size(309, 64);
+            this.button_send_receive_car.Size = new System.Drawing.Size(230, 50);
             this.button_send_receive_car.TabIndex = 44;
             this.button_send_receive_car.Text = "Wyślij pojazd do serwisu";
             this.button_send_receive_car.UseVisualStyleBackColor = false;
@@ -68,25 +68,26 @@
             // label_menage_keepers
             // 
             this.label_menage_keepers.AutoSize = true;
-            this.label_menage_keepers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
+            this.label_menage_keepers.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_menage_keepers.ForeColor = System.Drawing.Color.Yellow;
-            this.label_menage_keepers.Location = new System.Drawing.Point(362, 203);
+            this.label_menage_keepers.Location = new System.Drawing.Point(253, 140);
             this.label_menage_keepers.Margin = new System.Windows.Forms.Padding(0);
             this.label_menage_keepers.Name = "label_menage_keepers";
-            this.label_menage_keepers.Size = new System.Drawing.Size(252, 29);
+            this.label_menage_keepers.Size = new System.Drawing.Size(199, 22);
             this.label_menage_keepers.TabIndex = 43;
             this.label_menage_keepers.Text = "Zarządzaj pojazdami";
             // 
             // UserControl_manage_care
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.Controls.Add(this.button_reserve_block_car);
             this.Controls.Add(this.button_send_receive_car);
             this.Controls.Add(this.label_menage_keepers);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserControl_manage_care";
-            this.Size = new System.Drawing.Size(941, 656);
+            this.Size = new System.Drawing.Size(706, 533);
             this.ResumeLayout(false);
             this.PerformLayout();
 

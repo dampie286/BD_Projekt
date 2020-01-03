@@ -70,7 +70,7 @@
             this.label_who_online.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.label_who_online.Location = new System.Drawing.Point(429, 7);
             this.label_who_online.Name = "label_who_online";
-            this.label_who_online.Size = new System.Drawing.Size(220, 17);
+            this.label_who_online.Size = new System.Drawing.Size(188, 15);
             this.label_who_online.TabIndex = 1;
             this.label_who_online.Text = "Zalogowany jako Imię i Nazwisko";
             // 
@@ -235,7 +235,7 @@
             // 
             this.userControl_my_rents1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_my_rents1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_my_rents1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_my_rents1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_my_rents1.Name = "userControl_my_rents1";
             this.userControl_my_rents1.Size = new System.Drawing.Size(941, 656);
             this.userControl_my_rents1.TabIndex = 47;
@@ -262,7 +262,7 @@
             // 
             this.userControl_services1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_services1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_services1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_services1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_services1.Name = "userControl_services1";
             this.userControl_services1.Size = new System.Drawing.Size(941, 656);
             this.userControl_services1.TabIndex = 44;
@@ -271,7 +271,7 @@
             // 
             this.userControl_raports_stats_workers1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_raports_stats_workers1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_raports_stats_workers1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_raports_stats_workers1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_raports_stats_workers1.Name = "userControl_raports_stats_workers1";
             this.userControl_raports_stats_workers1.Size = new System.Drawing.Size(941, 656);
             this.userControl_raports_stats_workers1.TabIndex = 43;
@@ -318,7 +318,7 @@
             this.userControl_raports_stats1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_raports_stats1.ForeColor = System.Drawing.Color.Black;
             this.userControl_raports_stats1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_raports_stats1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_raports_stats1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_raports_stats1.Name = "userControl_raports_stats1";
             this.userControl_raports_stats1.Size = new System.Drawing.Size(941, 656);
             this.userControl_raports_stats1.TabIndex = 38;
@@ -420,6 +420,7 @@
             // 
             this.userControl_manage_care1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_manage_care1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_manage_care1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_manage_care1.Name = "userControl_manage_care1";
             this.userControl_manage_care1.Size = new System.Drawing.Size(941, 656);
             this.userControl_manage_care1.TabIndex = 50;
@@ -428,6 +429,7 @@
             // 
             this.userControl_send_to_service1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_send_to_service1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_send_to_service1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_send_to_service1.Name = "userControl_send_to_service1";
             this.userControl_send_to_service1.Size = new System.Drawing.Size(941, 656);
             this.userControl_send_to_service1.TabIndex = 51;
@@ -480,6 +482,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_panel_manager";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vehicles Management App";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_panel_manager_FormClosed);
             this.Load += new System.EventHandler(this.Form_panel_manager_Load);
