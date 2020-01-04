@@ -257,7 +257,13 @@ namespace VMA
 
                                 peoples += worker.name + " " + worker.surname + " nr telefonu do pracownika: " + worker.phone_nr.ToString() + "\n";
                             }
-                            MessageBox.Show( peoples, "Error check", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            if (peoples == "Powiadom następujące osoby o wysyłaniu pojazdu na serwis w terminie ich rezerwacji, oraz poproś o usunięcie owej rezerwacji: \n ")
+                            { }
+                            else
+                            {
+                                MessageBox.Show(peoples, "Error check", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                         catch (Exception)
                         {
