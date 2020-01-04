@@ -206,8 +206,6 @@ namespace VMA
                             adminapp = new Form_panel_admin(this);
                             adminapp.Show();
                             this.Hide();
-                            check_reservation(user.worker_id);
-                            check_Cars(user.worker_id);
                         }
                         else if (user.position == "kierownik" || user.position == "Kierownik")
                         {
