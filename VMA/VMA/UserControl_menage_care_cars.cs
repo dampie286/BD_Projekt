@@ -292,6 +292,23 @@ namespace VMA
             }
         }
 
+        private void textBox_description_Enter(object sender, EventArgs e)
+        {
+            if (textBox_description.Text.Equals(@"Opis..."))
+            {
+                textBox_description.Text = "";
+                textBox_description.ForeColor = Color.FromArgb(255, 255, 0);
+            }
+        }
+
+        private void textBox_description_Leave(object sender, EventArgs e)
+        {
+            if (textBox_description.Text.Equals(""))
+            {
+                textBox_description.Text = "Opis...";
+                textBox_description.ForeColor = Color.FromArgb(120, 120, 0);   
+            }
+        }
     }
     }
 
