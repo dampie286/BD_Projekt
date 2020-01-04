@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView_care_car_DB = new System.Windows.Forms.DataGridView();
             this.label_your_cars_care = new System.Windows.Forms.Label();
             this.button_blocked = new System.Windows.Forms.Button();
@@ -57,31 +57,38 @@
             // 
             this.dataGridView_care_car_DB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_care_car_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_care_car_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView_care_car_DB.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView_care_car_DB.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_care_car_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_care_car_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_care_car_DB.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_care_car_DB.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_care_car_DB.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_care_car_DB.EnableHeadersVisualStyles = false;
             this.dataGridView_care_car_DB.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_care_car_DB.Location = new System.Drawing.Point(29, 57);
             this.dataGridView_care_car_DB.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridView_care_car_DB.MultiSelect = false;
             this.dataGridView_care_car_DB.Name = "dataGridView_care_car_DB";
+            this.dataGridView_care_car_DB.ReadOnly = true;
+            this.dataGridView_care_car_DB.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView_care_car_DB.RowHeadersVisible = false;
             this.dataGridView_care_car_DB.RowTemplate.Height = 24;
             this.dataGridView_care_car_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView_care_car_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_care_car_DB.Size = new System.Drawing.Size(449, 245);
             this.dataGridView_care_car_DB.TabIndex = 21;
             this.dataGridView_care_car_DB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_care_car_DB_CellClick);
@@ -106,7 +113,7 @@
             this.button_blocked.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_blocked.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_blocked.Location = new System.Drawing.Point(516, 131);
-            this.button_blocked.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_blocked.Margin = new System.Windows.Forms.Padding(2);
             this.button_blocked.Name = "button_blocked";
             this.button_blocked.Size = new System.Drawing.Size(140, 34);
             this.button_blocked.TabIndex = 33;
@@ -122,7 +129,7 @@
             this.button_unblocking.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_unblocking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_unblocking.Location = new System.Drawing.Point(516, 191);
-            this.button_unblocking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_unblocking.Margin = new System.Windows.Forms.Padding(2);
             this.button_unblocking.Name = "button_unblocking";
             this.button_unblocking.Size = new System.Drawing.Size(140, 34);
             this.button_unblocking.TabIndex = 34;
@@ -163,7 +170,7 @@
             this.dateTimePicker_to_date_reserv.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimePicker_to_date_reserv.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_to_date_reserv.Location = new System.Drawing.Point(100, 478);
-            this.dateTimePicker_to_date_reserv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker_to_date_reserv.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker_to_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
             this.dateTimePicker_to_date_reserv.Name = "dateTimePicker_to_date_reserv";
             this.dateTimePicker_to_date_reserv.Size = new System.Drawing.Size(88, 22);
@@ -190,7 +197,7 @@
             this.dateTimePicker_from_date_reserv.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimePicker_from_date_reserv.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_from_date_reserv.Location = new System.Drawing.Point(100, 438);
-            this.dateTimePicker_from_date_reserv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker_from_date_reserv.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker_from_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
             this.dateTimePicker_from_date_reserv.Name = "dateTimePicker_from_date_reserv";
             this.dateTimePicker_from_date_reserv.Size = new System.Drawing.Size(88, 22);
@@ -204,7 +211,7 @@
             this.button_reserv.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_reserv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_reserv.Location = new System.Drawing.Point(542, 471);
-            this.button_reserv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_reserv.Margin = new System.Windows.Forms.Padding(2);
             this.button_reserv.Name = "button_reserv";
             this.button_reserv.Size = new System.Drawing.Size(140, 34);
             this.button_reserv.TabIndex = 40;
@@ -303,15 +310,18 @@
             this.comboBox_Company_name.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox_Company_name.ForeColor = System.Drawing.Color.Yellow;
             this.comboBox_Company_name.FormattingEnabled = true;
-            this.comboBox_Company_name.Location = new System.Drawing.Point(360, 478);
-            this.comboBox_Company_name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_Company_name.Location = new System.Drawing.Point(360, 479);
+            this.comboBox_Company_name.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_Company_name.Name = "comboBox_Company_name";
-            this.comboBox_Company_name.Size = new System.Drawing.Size(87, 24);
+            this.comboBox_Company_name.Size = new System.Drawing.Size(160, 24);
             this.comboBox_Company_name.TabIndex = 106;
             // 
             // comboBox_service
             // 
+            this.comboBox_service.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.comboBox_service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_service.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox_service.ForeColor = System.Drawing.Color.Yellow;
             this.comboBox_service.FormattingEnabled = true;
             this.comboBox_service.Items.AddRange(new object[] {
             "Wymiana oleju",
@@ -322,11 +332,11 @@
             "Naprawa",
             "INNA"});
             this.comboBox_service.Location = new System.Drawing.Point(360, 438);
-            this.comboBox_service.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_service.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_service.Name = "comboBox_service";
-            this.comboBox_service.Size = new System.Drawing.Size(122, 24);
+            this.comboBox_service.Size = new System.Drawing.Size(160, 24);
             this.comboBox_service.TabIndex = 107;
-            this.comboBox_service.Text = "Rodzaj serwiu";
+            this.comboBox_service.Text = "Rodzaj serwisu...";
             // 
             // textBox_description
             // 
@@ -335,11 +345,15 @@
             this.textBox_description.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_description.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_description.Location = new System.Drawing.Point(360, 360);
-            this.textBox_description.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_description.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_description.Multiline = true;
             this.textBox_description.Name = "textBox_description";
-            this.textBox_description.Size = new System.Drawing.Size(240, 19);
+            this.textBox_description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox_description.Size = new System.Drawing.Size(240, 55);
             this.textBox_description.TabIndex = 108;
             this.textBox_description.Text = "Opis...";
+            this.textBox_description.Enter += new System.EventHandler(this.textBox_description_Enter);
+            this.textBox_description.Leave += new System.EventHandler(this.textBox_description_Leave);
             // 
             // UserControl_menage_care_cars
             // 
@@ -366,7 +380,7 @@
             this.Controls.Add(this.button_blocked);
             this.Controls.Add(this.label_your_cars_care);
             this.Controls.Add(this.dataGridView_care_car_DB);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl_menage_care_cars";
             this.Size = new System.Drawing.Size(706, 533);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_care_car_DB)).EndInit();
