@@ -111,6 +111,8 @@ namespace VMA
 
                     var time_from = Convert.ToDateTime(dataGridView_my_reservation.Rows[row].Cells[4].Value.ToString());
                     var time_to= Convert.ToDateTime((string)dataGridView_my_reservation.Rows[row].Cells[5].Value.ToString());
+                    
+
                     var counter_modulo = db.RentSets
                                                .Where(x => x.Worker_worker_id == user_id
                                                        && ((x.date_from <= time_from
@@ -169,10 +171,34 @@ namespace VMA
                 }
                 else
                 {
-                    var row_To_Delete = (from x in db.ReservationSets
-                                         where x.reservation_id == Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[9].Value)
-                                         select x)
-                                            .FirstOrDefault();
+                    
+                
+                        var row_To_Delete = (from x in db.ReservationSets
+                                             where x.reservation_id == Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[9].Value)
+                                             select x)
+                                                .FirstOrDefault();
+                    try
+                    {
+                        if (row_To_Delete.purpose == "Serwis")
+                        {
+                            var service_To_Delete = (from x in db.Care_serviceSets
+                                                     join y in db.CareSets on x.Care_care_id equals y.care_id
+                                                     where y.Vehicle_vehicle_id == row_To_Delete.Vehicle_vehicle_id
+                                                           && x.date_from == row_To_Delete.date_from 
+                                                     select x).FirstOrDefault();
+
+                            var service_delete = (from x in db.ServiceSets
+                                                  where x.service_id == service_To_Delete.Service_service_id
+                                                  select x).FirstOrDefault();
+
+                            db.ServiceSets.DeleteOnSubmit(service_delete);
+
+                            db.Care_serviceSets.DeleteOnSubmit(service_To_Delete);
+                            
+                        }
+                    }
+                    catch (Exception)
+                    { }
 
                     db.ReservationSets.DeleteOnSubmit(row_To_Delete);
                     db.SubmitChanges();

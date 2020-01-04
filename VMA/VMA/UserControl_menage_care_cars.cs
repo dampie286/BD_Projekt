@@ -270,7 +270,7 @@ namespace VMA
                         }
                         ReservationSet newreserv = new ReservationSet()
                         {
-                            date_from = dateTimePicker_to_date_reserv.Value,
+                            date_from = dateTimePicker_from_date_reserv.Value,
                             date_to = dateTimePicker_to_date_reserv.Value,
                             purpose = "Serwis",
                             Worker_worker_id = user_id,
