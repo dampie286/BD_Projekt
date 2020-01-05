@@ -262,7 +262,7 @@ namespace VMA
                             { }
                             else
                             {
-                                MessageBox.Show(peoples, "Error check", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show(peoples, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                         catch (Exception)

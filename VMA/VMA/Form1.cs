@@ -61,13 +61,13 @@ namespace VMA
 
             if (select.Any(x => x.OD == DateTime.Today.Date.AddDays(1)))
             {
-                MessageBox.Show("Masz rezerwacje na jutro", "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Masz rezerwacje na jutro", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
             if (select.Any(x => x.OD == DateTime.Today.Date))
             {
-                MessageBox.Show("Masz dzisiaj rezerwacje", "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Masz dzisiaj rezerwacje", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
            
