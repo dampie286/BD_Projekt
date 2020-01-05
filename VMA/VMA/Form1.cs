@@ -19,12 +19,6 @@ namespace VMA
         string name;
         string password;
 
-        string cars_oil = "Zbliża się wymiana oleju dla: \n";
-
-        string cars_tech_review = "Zbliża się koniec przeglądu dla: \n";
-
-        string cars_timing = "Zbliża się wymiana rozrządu dla: \n";
-
         DataBaseDataContext db = new DataBaseDataContext();
         public Form_login()
         {
@@ -76,7 +70,14 @@ namespace VMA
         private void check_Cars(int user_id)
         {
             //VehicleSet veh;
-           
+
+
+            string cars_oil = "Zbliża się wymiana oleju dla: \n";
+
+            string cars_tech_review = "Zbliża się koniec przeglądu dla: \n";
+
+            string cars_timing = "Zbliża się wymiana rozrządu dla: \n";
+            
             try
             {
                 var query = (from x in db.CareSets
