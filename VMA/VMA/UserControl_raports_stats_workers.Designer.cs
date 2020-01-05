@@ -74,7 +74,7 @@
             this.button_show.Font = new System.Drawing.Font("Arial", 12F);
             this.button_show.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_show.Location = new System.Drawing.Point(590, 54);
-            this.button_show.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_show.Margin = new System.Windows.Forms.Padding(2);
             this.button_show.Name = "button_show";
             this.button_show.Size = new System.Drawing.Size(100, 30);
             this.button_show.TabIndex = 54;
@@ -102,7 +102,7 @@
             this.dateTimePicker_to_date_reserv.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_to_date_reserv.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimePicker_to_date_reserv.Location = new System.Drawing.Point(345, 58);
-            this.dateTimePicker_to_date_reserv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker_to_date_reserv.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker_to_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
             this.dateTimePicker_to_date_reserv.Name = "dateTimePicker_to_date_reserv";
             this.dateTimePicker_to_date_reserv.Size = new System.Drawing.Size(230, 22);
@@ -128,7 +128,7 @@
             this.dateTimePicker_from_date_reserv.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_from_date_reserv.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimePicker_from_date_reserv.Location = new System.Drawing.Point(60, 58);
-            this.dateTimePicker_from_date_reserv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker_from_date_reserv.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker_from_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
             this.dateTimePicker_from_date_reserv.Name = "dateTimePicker_from_date_reserv";
             this.dateTimePicker_from_date_reserv.Size = new System.Drawing.Size(230, 22);
@@ -138,8 +138,11 @@
             // 
             this.dataGridView_workers_DB.AllowUserToAddRows = false;
             this.dataGridView_workers_DB.AllowUserToDeleteRows = false;
+            this.dataGridView_workers_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView_workers_DB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_workers_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_workers_DB.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView_workers_DB.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView_workers_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_workers_DB.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView_workers_DB.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
@@ -333,7 +336,7 @@
             this.button_generate_to_pdf.Font = new System.Drawing.Font("Arial", 12F);
             this.button_generate_to_pdf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_generate_to_pdf.Location = new System.Drawing.Point(570, 480);
-            this.button_generate_to_pdf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_generate_to_pdf.Margin = new System.Windows.Forms.Padding(2);
             this.button_generate_to_pdf.Name = "button_generate_to_pdf";
             this.button_generate_to_pdf.Size = new System.Drawing.Size(120, 33);
             this.button_generate_to_pdf.TabIndex = 100;
@@ -369,7 +372,7 @@
             this.Controls.Add(this.label_from_date);
             this.Controls.Add(this.dateTimePicker_from_date_reserv);
             this.Controls.Add(this.label_menage_keepers);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl_raports_stats_workers";
             this.Size = new System.Drawing.Size(706, 533);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_workers_DB)).EndInit();

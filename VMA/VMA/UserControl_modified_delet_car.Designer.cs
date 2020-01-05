@@ -117,12 +117,12 @@
             this.button_filter.BackColor = System.Drawing.Color.Yellow;
             this.button_filter.FlatAppearance.BorderSize = 0;
             this.button_filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_filter.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_filter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_filter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_filter.Location = new System.Drawing.Point(612, 14);
-            this.button_filter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_filter.Location = new System.Drawing.Point(590, 10);
+            this.button_filter.Margin = new System.Windows.Forms.Padding(2);
             this.button_filter.Name = "button_filter";
-            this.button_filter.Size = new System.Drawing.Size(75, 25);
+            this.button_filter.Size = new System.Drawing.Size(100, 33);
             this.button_filter.TabIndex = 51;
             this.button_filter.Text = "Filtruj";
             this.button_filter.UseVisualStyleBackColor = false;
@@ -135,7 +135,7 @@
             this.textBox_license.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_license.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_license.Location = new System.Drawing.Point(208, 19);
-            this.textBox_license.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_license.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_license.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_license.MinimumSize = new System.Drawing.Size(4, 15);
             this.textBox_license.Name = "textBox_license";
@@ -153,7 +153,7 @@
             this.textBox_mileage.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_mileage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_mileage.Location = new System.Drawing.Point(398, 19);
-            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_mileage.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_mileage.MinimumSize = new System.Drawing.Size(4, 15);
             this.textBox_mileage.Name = "textBox_mileage";
@@ -171,7 +171,7 @@
             this.textBox_version.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_version.Location = new System.Drawing.Point(303, 19);
-            this.textBox_version.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_version.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_version.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_version.MinimumSize = new System.Drawing.Size(4, 15);
             this.textBox_version.Name = "textBox_version";
@@ -189,7 +189,7 @@
             this.textBox_equipment.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_equipment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_equipment.Location = new System.Drawing.Point(493, 19);
-            this.textBox_equipment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_equipment.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_equipment.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_equipment.MinimumSize = new System.Drawing.Size(4, 15);
             this.textBox_equipment.Name = "textBox_equipment";
@@ -208,7 +208,7 @@
             this.textBox_model.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_model.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_model.Location = new System.Drawing.Point(113, 19);
-            this.textBox_model.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_model.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_model.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_model.MinimumSize = new System.Drawing.Size(4, 15);
             this.textBox_model.Name = "textBox_model";
@@ -226,7 +226,7 @@
             this.textBox_brand.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_brand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_brand.Location = new System.Drawing.Point(18, 19);
-            this.textBox_brand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_brand.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_brand.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_brand.MinimumSize = new System.Drawing.Size(4, 15);
             this.textBox_brand.Name = "textBox_brand";
@@ -241,8 +241,11 @@
             // 
             this.dataGridView_veh_DB.AllowUserToAddRows = false;
             this.dataGridView_veh_DB.AllowUserToDeleteRows = false;
+            this.dataGridView_veh_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView_veh_DB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_veh_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_veh_DB.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView_veh_DB.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -272,7 +275,7 @@
             this.dataGridView_veh_DB.RowTemplate.Height = 24;
             this.dataGridView_veh_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_veh_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_veh_DB.Size = new System.Drawing.Size(580, 240);
+            this.dataGridView_veh_DB.Size = new System.Drawing.Size(563, 240);
             this.dataGridView_veh_DB.TabIndex = 58;
             // 
             // button_modified
@@ -280,12 +283,12 @@
             this.button_modified.BackColor = System.Drawing.Color.Yellow;
             this.button_modified.FlatAppearance.BorderSize = 0;
             this.button_modified.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_modified.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_modified.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_modified.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_modified.Location = new System.Drawing.Point(615, 140);
-            this.button_modified.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_modified.Location = new System.Drawing.Point(590, 140);
+            this.button_modified.Margin = new System.Windows.Forms.Padding(2);
             this.button_modified.Name = "button_modified";
-            this.button_modified.Size = new System.Drawing.Size(75, 25);
+            this.button_modified.Size = new System.Drawing.Size(100, 33);
             this.button_modified.TabIndex = 59;
             this.button_modified.Text = "Modyfikuj";
             this.button_modified.UseVisualStyleBackColor = false;
@@ -296,12 +299,12 @@
             this.button_delete.BackColor = System.Drawing.Color.Yellow;
             this.button_delete.FlatAppearance.BorderSize = 0;
             this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_delete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_delete.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_delete.Location = new System.Drawing.Point(615, 190);
-            this.button_delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_delete.Location = new System.Drawing.Point(590, 190);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(2);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(75, 25);
+            this.button_delete.Size = new System.Drawing.Size(100, 33);
             this.button_delete.TabIndex = 60;
             this.button_delete.Text = "Usuń";
             this.button_delete.UseVisualStyleBackColor = false;
@@ -313,8 +316,8 @@
             this.textBox_edit_lic.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_edit_lic.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_edit_lic.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_edit_lic.Location = new System.Drawing.Point(310, 60);
-            this.textBox_edit_lic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_edit_lic.Location = new System.Drawing.Point(310, 70);
+            this.textBox_edit_lic.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_edit_lic.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_edit_lic.MinimumSize = new System.Drawing.Size(4, 15);
             this.textBox_edit_lic.Name = "textBox_edit_lic";
@@ -341,7 +344,7 @@
             this.label_model.AutoSize = true;
             this.label_model.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_model.ForeColor = System.Drawing.Color.Yellow;
-            this.label_model.Location = new System.Drawing.Point(110, 60);
+            this.label_model.Location = new System.Drawing.Point(110, 70);
             this.label_model.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_model.Name = "label_model";
             this.label_model.Size = new System.Drawing.Size(51, 18);
@@ -365,7 +368,7 @@
             this.panel_modified.Controls.Add(this.textBox_edit_lic);
             this.panel_modified.Controls.Add(this.label_model);
             this.panel_modified.Location = new System.Drawing.Point(20, 320);
-            this.panel_modified.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_modified.Margin = new System.Windows.Forms.Padding(2);
             this.panel_modified.Name = "panel_modified";
             this.panel_modified.Size = new System.Drawing.Size(670, 190);
             this.panel_modified.TabIndex = 67;
@@ -375,12 +378,12 @@
             this.button1.BackColor = System.Drawing.Color.Yellow;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button1.Location = new System.Drawing.Point(504, 165);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(480, 157);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 25);
+            this.button1.Size = new System.Drawing.Size(190, 33);
             this.button1.TabIndex = 94;
             this.button1.Text = "Potwierdź modyfikację";
             this.button1.UseVisualStyleBackColor = false;
@@ -392,12 +395,12 @@
             this.textBox_combustion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_combustion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_combustion.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_combustion.Location = new System.Drawing.Point(110, 100);
-            this.textBox_combustion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_combustion.Location = new System.Drawing.Point(110, 120);
+            this.textBox_combustion.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_combustion.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_combustion.MinimumSize = new System.Drawing.Size(4, 15);
             this.textBox_combustion.Name = "textBox_combustion";
-            this.textBox_combustion.Size = new System.Drawing.Size(38, 19);
+            this.textBox_combustion.Size = new System.Drawing.Size(73, 19);
             this.textBox_combustion.TabIndex = 93;
             this.textBox_combustion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_combustion_KeyPress);
             // 
@@ -406,7 +409,7 @@
             this.comboBox_type_of_fuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.comboBox_type_of_fuel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_type_of_fuel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox_type_of_fuel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox_type_of_fuel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox_type_of_fuel.ForeColor = System.Drawing.Color.Yellow;
             this.comboBox_type_of_fuel.Items.AddRange(new object[] {
             "Benzyna",
@@ -414,10 +417,10 @@
             "LPG",
             "CNG i Hybryda",
             "Elektryczny"});
-            this.comboBox_type_of_fuel.Location = new System.Drawing.Point(310, 98);
-            this.comboBox_type_of_fuel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_type_of_fuel.Location = new System.Drawing.Point(310, 120);
+            this.comboBox_type_of_fuel.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_type_of_fuel.Name = "comboBox_type_of_fuel";
-            this.comboBox_type_of_fuel.Size = new System.Drawing.Size(131, 24);
+            this.comboBox_type_of_fuel.Size = new System.Drawing.Size(131, 26);
             this.comboBox_type_of_fuel.TabIndex = 92;
             // 
             // comboBox_car_version
@@ -425,7 +428,7 @@
             this.comboBox_car_version.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.comboBox_car_version.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_car_version.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox_car_version.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox_car_version.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox_car_version.ForeColor = System.Drawing.Color.Yellow;
             this.comboBox_car_version.Items.AddRange(new object[] {
             "Sedan",
@@ -439,10 +442,10 @@
             "SUV",
             "VAN",
             "Dostawcze"});
-            this.comboBox_car_version.Location = new System.Drawing.Point(310, 18);
-            this.comboBox_car_version.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_car_version.Location = new System.Drawing.Point(310, 16);
+            this.comboBox_car_version.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_car_version.Name = "comboBox_car_version";
-            this.comboBox_car_version.Size = new System.Drawing.Size(131, 24);
+            this.comboBox_car_version.Size = new System.Drawing.Size(131, 26);
             this.comboBox_car_version.TabIndex = 91;
             // 
             // label6
@@ -462,7 +465,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label8.Location = new System.Drawing.Point(49, 60);
+            this.label8.Location = new System.Drawing.Point(49, 70);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 18);
@@ -474,7 +477,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label4.Location = new System.Drawing.Point(30, 100);
+            this.label4.Location = new System.Drawing.Point(30, 120);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 18);
@@ -486,7 +489,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label3.Location = new System.Drawing.Point(219, 100);
+            this.label3.Location = new System.Drawing.Point(219, 120);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 18);
@@ -498,7 +501,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label2.Location = new System.Drawing.Point(214, 60);
+            this.label2.Location = new System.Drawing.Point(214, 70);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 18);
@@ -539,7 +542,7 @@
             this.Controls.Add(this.textBox_equipment);
             this.Controls.Add(this.textBox_model);
             this.Controls.Add(this.textBox_brand);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl_modified_delet_car";
             this.Size = new System.Drawing.Size(706, 533);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_veh_DB)).EndInit();

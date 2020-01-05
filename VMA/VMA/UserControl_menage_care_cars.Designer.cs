@@ -89,7 +89,7 @@
             this.dataGridView_care_car_DB.RowTemplate.Height = 24;
             this.dataGridView_care_car_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_care_car_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_care_car_DB.Size = new System.Drawing.Size(449, 245);
+            this.dataGridView_care_car_DB.Size = new System.Drawing.Size(491, 245);
             this.dataGridView_care_car_DB.TabIndex = 21;
             this.dataGridView_care_car_DB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_care_car_DB_CellClick);
             // 
@@ -112,7 +112,7 @@
             this.button_blocked.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_blocked.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_blocked.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_blocked.Location = new System.Drawing.Point(516, 131);
+            this.button_blocked.Location = new System.Drawing.Point(542, 131);
             this.button_blocked.Margin = new System.Windows.Forms.Padding(2);
             this.button_blocked.Name = "button_blocked";
             this.button_blocked.Size = new System.Drawing.Size(140, 34);
@@ -128,7 +128,7 @@
             this.button_unblocking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_unblocking.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_unblocking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_unblocking.Location = new System.Drawing.Point(516, 191);
+            this.button_unblocking.Location = new System.Drawing.Point(542, 191);
             this.button_unblocking.Margin = new System.Windows.Forms.Padding(2);
             this.button_unblocking.Name = "button_unblocking";
             this.button_unblocking.Size = new System.Drawing.Size(140, 34);
@@ -145,9 +145,9 @@
             this.label1.Location = new System.Drawing.Point(25, 319);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 22);
+            this.label1.Size = new System.Drawing.Size(343, 22);
             this.label1.TabIndex = 35;
-            this.label1.Text = "Rezerwacja pojazdu na serwis";
+            this.label1.Text = "REZERWACJA POJAZDU NA SERWIS";
             // 
             // label_to_date_reserv
             // 
@@ -307,20 +307,20 @@
             // 
             this.comboBox_Company_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.comboBox_Company_name.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox_Company_name.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox_Company_name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox_Company_name.ForeColor = System.Drawing.Color.Yellow;
             this.comboBox_Company_name.FormattingEnabled = true;
-            this.comboBox_Company_name.Location = new System.Drawing.Point(360, 479);
+            this.comboBox_Company_name.Location = new System.Drawing.Point(360, 476);
             this.comboBox_Company_name.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_Company_name.Name = "comboBox_Company_name";
-            this.comboBox_Company_name.Size = new System.Drawing.Size(160, 24);
+            this.comboBox_Company_name.Size = new System.Drawing.Size(160, 26);
             this.comboBox_Company_name.TabIndex = 106;
             // 
             // comboBox_service
             // 
             this.comboBox_service.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.comboBox_service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox_service.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox_service.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox_service.ForeColor = System.Drawing.Color.Yellow;
             this.comboBox_service.FormattingEnabled = true;
             this.comboBox_service.Items.AddRange(new object[] {
@@ -331,10 +331,10 @@
             "Wymiana rozrzadu ",
             "Naprawa",
             "INNA"});
-            this.comboBox_service.Location = new System.Drawing.Point(360, 438);
+            this.comboBox_service.Location = new System.Drawing.Point(360, 436);
             this.comboBox_service.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_service.Name = "comboBox_service";
-            this.comboBox_service.Size = new System.Drawing.Size(160, 24);
+            this.comboBox_service.Size = new System.Drawing.Size(160, 26);
             this.comboBox_service.TabIndex = 107;
             this.comboBox_service.Text = "Rodzaj serwisu...";
             // 

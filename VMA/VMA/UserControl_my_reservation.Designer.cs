@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_my_reservation = new System.Windows.Forms.Label();
             this.dataGridView_my_reservation = new System.Windows.Forms.DataGridView();
             this.button_rent = new System.Windows.Forms.Button();
@@ -69,24 +69,24 @@
             this.dataGridView_my_reservation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_my_reservation.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_my_reservation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_my_reservation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_my_reservation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_my_reservation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_my_reservation.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_my_reservation.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_my_reservation.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_my_reservation.EnableHeadersVisualStyles = false;
             this.dataGridView_my_reservation.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_my_reservation.Location = new System.Drawing.Point(25, 60);
@@ -112,7 +112,7 @@
             this.button_rent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_rent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_rent.Location = new System.Drawing.Point(287, 183);
-            this.button_rent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_rent.Margin = new System.Windows.Forms.Padding(2);
             this.button_rent.Name = "button_rent";
             this.button_rent.Size = new System.Drawing.Size(178, 34);
             this.button_rent.TabIndex = 56;
@@ -136,7 +136,7 @@
             this.panel_with_myreservation.Controls.Add(this.label_desc_brand);
             this.panel_with_myreservation.Controls.Add(this.button_rent);
             this.panel_with_myreservation.Location = new System.Drawing.Point(25, 300);
-            this.panel_with_myreservation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_with_myreservation.Margin = new System.Windows.Forms.Padding(2);
             this.panel_with_myreservation.Name = "panel_with_myreservation";
             this.panel_with_myreservation.Size = new System.Drawing.Size(660, 217);
             this.panel_with_myreservation.TabIndex = 57;
@@ -149,7 +149,7 @@
             this.button_delete_res.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_delete_res.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_delete_res.Location = new System.Drawing.Point(482, 183);
-            this.button_delete_res.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_delete_res.Margin = new System.Windows.Forms.Padding(2);
             this.button_delete_res.Name = "button_delete_res";
             this.button_delete_res.Size = new System.Drawing.Size(178, 34);
             this.button_delete_res.TabIndex = 68;
@@ -160,56 +160,56 @@
             // label_to
             // 
             this.label_to.AutoSize = true;
-            this.label_to.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_to.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_to.ForeColor = System.Drawing.Color.Yellow;
             this.label_to.Location = new System.Drawing.Point(310, 90);
             this.label_to.Margin = new System.Windows.Forms.Padding(0);
             this.label_to.Name = "label_to";
-            this.label_to.Size = new System.Drawing.Size(0, 20);
+            this.label_to.Size = new System.Drawing.Size(0, 19);
             this.label_to.TabIndex = 67;
             // 
             // label_from
             // 
             this.label_from.AutoSize = true;
-            this.label_from.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_from.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_from.ForeColor = System.Drawing.Color.Yellow;
             this.label_from.Location = new System.Drawing.Point(310, 40);
             this.label_from.Margin = new System.Windows.Forms.Padding(0);
             this.label_from.Name = "label_from";
-            this.label_from.Size = new System.Drawing.Size(0, 20);
+            this.label_from.Size = new System.Drawing.Size(0, 19);
             this.label_from.TabIndex = 66;
             // 
             // label_purpose
             // 
             this.label_purpose.AutoSize = true;
-            this.label_purpose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_purpose.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_purpose.ForeColor = System.Drawing.Color.Yellow;
             this.label_purpose.Location = new System.Drawing.Point(90, 140);
             this.label_purpose.Margin = new System.Windows.Forms.Padding(0);
             this.label_purpose.Name = "label_purpose";
-            this.label_purpose.Size = new System.Drawing.Size(0, 20);
+            this.label_purpose.Size = new System.Drawing.Size(0, 19);
             this.label_purpose.TabIndex = 65;
             // 
             // label_model
             // 
             this.label_model.AutoSize = true;
-            this.label_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_model.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_model.ForeColor = System.Drawing.Color.Yellow;
             this.label_model.Location = new System.Drawing.Point(90, 90);
             this.label_model.Margin = new System.Windows.Forms.Padding(0);
             this.label_model.Name = "label_model";
-            this.label_model.Size = new System.Drawing.Size(0, 20);
+            this.label_model.Size = new System.Drawing.Size(0, 19);
             this.label_model.TabIndex = 64;
             // 
             // label_brand
             // 
             this.label_brand.AutoSize = true;
-            this.label_brand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_brand.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_brand.ForeColor = System.Drawing.Color.Yellow;
             this.label_brand.Location = new System.Drawing.Point(90, 40);
             this.label_brand.Margin = new System.Windows.Forms.Padding(0);
             this.label_brand.Name = "label_brand";
-            this.label_brand.Size = new System.Drawing.Size(0, 20);
+            this.label_brand.Size = new System.Drawing.Size(0, 19);
             this.label_brand.TabIndex = 63;
             this.label_brand.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -298,7 +298,7 @@
             this.Controls.Add(this.panel_with_myreservation);
             this.Controls.Add(this.dataGridView_my_reservation);
             this.Controls.Add(this.label_my_reservation);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl_my_reservation";
             this.Size = new System.Drawing.Size(706, 533);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_my_reservation)).EndInit();

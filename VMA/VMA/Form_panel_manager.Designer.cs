@@ -105,7 +105,7 @@
             this.button_settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_settings.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_settings.ForeColor = System.Drawing.Color.Yellow;
-            this.button_settings.Location = new System.Drawing.Point(0, 444);
+            this.button_settings.Location = new System.Drawing.Point(0, 464);
             this.button_settings.Margin = new System.Windows.Forms.Padding(0);
             this.button_settings.MaximumSize = new System.Drawing.Size(177, 35);
             this.button_settings.MinimumSize = new System.Drawing.Size(177, 35);
@@ -126,7 +126,7 @@
             this.button_statistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_statistic.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_statistic.ForeColor = System.Drawing.Color.Yellow;
-            this.button_statistic.Location = new System.Drawing.Point(-2, 400);
+            this.button_statistic.Location = new System.Drawing.Point(0, 413);
             this.button_statistic.Margin = new System.Windows.Forms.Padding(0);
             this.button_statistic.MaximumSize = new System.Drawing.Size(177, 35);
             this.button_statistic.MinimumSize = new System.Drawing.Size(177, 35);
@@ -210,7 +210,7 @@
             this.button_raports_stats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_raports_stats.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_raports_stats.ForeColor = System.Drawing.Color.Yellow;
-            this.button_raports_stats.Location = new System.Drawing.Point(0, 352);
+            this.button_raports_stats.Location = new System.Drawing.Point(0, 362);
             this.button_raports_stats.Margin = new System.Windows.Forms.Padding(0);
             this.button_raports_stats.MaximumSize = new System.Drawing.Size(177, 70);
             this.button_raports_stats.Name = "button_raports_stats";
@@ -235,7 +235,7 @@
             // 
             this.userControl_my_rents1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_my_rents1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_my_rents1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_my_rents1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_my_rents1.Name = "userControl_my_rents1";
             this.userControl_my_rents1.Size = new System.Drawing.Size(941, 656);
             this.userControl_my_rents1.TabIndex = 47;
@@ -262,7 +262,7 @@
             // 
             this.userControl_services1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_services1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_services1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_services1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_services1.Name = "userControl_services1";
             this.userControl_services1.Size = new System.Drawing.Size(941, 656);
             this.userControl_services1.TabIndex = 44;
@@ -271,7 +271,7 @@
             // 
             this.userControl_raports_stats_workers1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_raports_stats_workers1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_raports_stats_workers1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_raports_stats_workers1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_raports_stats_workers1.Name = "userControl_raports_stats_workers1";
             this.userControl_raports_stats_workers1.Size = new System.Drawing.Size(941, 656);
             this.userControl_raports_stats_workers1.TabIndex = 43;
@@ -318,7 +318,7 @@
             this.userControl_raports_stats1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_raports_stats1.ForeColor = System.Drawing.Color.Black;
             this.userControl_raports_stats1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_raports_stats1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_raports_stats1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_raports_stats1.Name = "userControl_raports_stats1";
             this.userControl_raports_stats1.Size = new System.Drawing.Size(941, 656);
             this.userControl_raports_stats1.TabIndex = 38;
@@ -405,7 +405,7 @@
             this.button_care.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_care.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_care.ForeColor = System.Drawing.Color.Yellow;
-            this.button_care.Location = new System.Drawing.Point(0, 304);
+            this.button_care.Location = new System.Drawing.Point(0, 311);
             this.button_care.Margin = new System.Windows.Forms.Padding(0);
             this.button_care.MaximumSize = new System.Drawing.Size(177, 35);
             this.button_care.MinimumSize = new System.Drawing.Size(177, 35);
@@ -429,7 +429,7 @@
             // 
             this.userControl_send_to_service1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_send_to_service1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_send_to_service1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_send_to_service1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_send_to_service1.Name = "userControl_send_to_service1";
             this.userControl_send_to_service1.Size = new System.Drawing.Size(941, 656);
             this.userControl_send_to_service1.TabIndex = 51;

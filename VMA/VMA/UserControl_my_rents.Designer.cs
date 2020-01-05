@@ -33,6 +33,7 @@
             this.label_rent = new System.Windows.Forms.Label();
             this.dataGridView_my_rents = new System.Windows.Forms.DataGridView();
             this.panel_end_rent = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel_all_cost = new System.Windows.Forms.Panel();
             this.textBox_all_cost = new System.Windows.Forms.TextBox();
             this.label_all_cost = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.label_desc_from = new System.Windows.Forms.Label();
             this.label_desc_model = new System.Windows.Forms.Label();
             this.label_desc_brand = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_my_rents)).BeginInit();
             this.panel_end_rent.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,7 @@
             // 
             // dataGridView_my_rents
             // 
+            this.dataGridView_my_rents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView_my_rents.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_my_rents.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_my_rents.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -143,16 +144,25 @@
             this.panel_end_rent.Controls.Add(this.label_desc_model);
             this.panel_end_rent.Controls.Add(this.label_desc_brand);
             this.panel_end_rent.Location = new System.Drawing.Point(25, 220);
-            this.panel_end_rent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_end_rent.Margin = new System.Windows.Forms.Padding(2);
             this.panel_end_rent.Name = "panel_end_rent";
             this.panel_end_rent.Size = new System.Drawing.Size(660, 280);
             this.panel_end_rent.TabIndex = 58;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Yellow;
+            this.panel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.panel1.Location = new System.Drawing.Point(500, 42);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(130, 1);
+            this.panel1.TabIndex = 98;
             // 
             // panel_all_cost
             // 
             this.panel_all_cost.BackColor = System.Drawing.Color.Yellow;
             this.panel_all_cost.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.panel_all_cost.Location = new System.Drawing.Point(155, 252);
+            this.panel_all_cost.Location = new System.Drawing.Point(155, 232);
             this.panel_all_cost.Name = "panel_all_cost";
             this.panel_all_cost.Size = new System.Drawing.Size(130, 1);
             this.panel_all_cost.TabIndex = 97;
@@ -163,8 +173,8 @@
             this.textBox_all_cost.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_all_cost.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_all_cost.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_all_cost.Location = new System.Drawing.Point(155, 229);
-            this.textBox_all_cost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_all_cost.Location = new System.Drawing.Point(155, 210);
+            this.textBox_all_cost.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_all_cost.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_all_cost.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_all_cost.Name = "textBox_all_cost";
@@ -178,7 +188,7 @@
             this.label_all_cost.AutoSize = true;
             this.label_all_cost.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_all_cost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label_all_cost.Location = new System.Drawing.Point(20, 230);
+            this.label_all_cost.Location = new System.Drawing.Point(20, 210);
             this.label_all_cost.Margin = new System.Windows.Forms.Padding(0);
             this.label_all_cost.Name = "label_all_cost";
             this.label_all_cost.Size = new System.Drawing.Size(125, 18);
@@ -189,7 +199,7 @@
             // 
             this.panel_litres.BackColor = System.Drawing.Color.Yellow;
             this.panel_litres.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.panel_litres.Location = new System.Drawing.Point(315, 212);
+            this.panel_litres.Location = new System.Drawing.Point(315, 182);
             this.panel_litres.Name = "panel_litres";
             this.panel_litres.Size = new System.Drawing.Size(130, 1);
             this.panel_litres.TabIndex = 94;
@@ -200,8 +210,8 @@
             this.textBox_litres.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_litres.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_litres.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_litres.Location = new System.Drawing.Point(315, 190);
-            this.textBox_litres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_litres.Location = new System.Drawing.Point(315, 160);
+            this.textBox_litres.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_litres.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_litres.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_litres.Name = "textBox_litres";
@@ -215,7 +225,7 @@
             this.label_litres.AutoSize = true;
             this.label_litres.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_litres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label_litres.Location = new System.Drawing.Point(230, 190);
+            this.label_litres.Location = new System.Drawing.Point(230, 160);
             this.label_litres.Margin = new System.Windows.Forms.Padding(0);
             this.label_litres.Name = "label_litres";
             this.label_litres.Size = new System.Drawing.Size(83, 18);
@@ -233,8 +243,8 @@
             "Tankowanie",
             "Inne\t",
             "Tankowanie oraz inne"});
-            this.comboBox_type_cost.Location = new System.Drawing.Point(165, 147);
-            this.comboBox_type_cost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_type_cost.Location = new System.Drawing.Point(165, 107);
+            this.comboBox_type_cost.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_type_cost.Name = "comboBox_type_cost";
             this.comboBox_type_cost.Size = new System.Drawing.Size(185, 24);
             this.comboBox_type_cost.TabIndex = 91;
@@ -245,7 +255,7 @@
             this.label_other.AutoSize = true;
             this.label_other.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_other.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label_other.Location = new System.Drawing.Point(20, 190);
+            this.label_other.Location = new System.Drawing.Point(20, 160);
             this.label_other.Margin = new System.Windows.Forms.Padding(0);
             this.label_other.Name = "label_other";
             this.label_other.Size = new System.Drawing.Size(40, 18);
@@ -256,7 +266,7 @@
             // 
             this.panel_other.BackColor = System.Drawing.Color.Yellow;
             this.panel_other.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.panel_other.Location = new System.Drawing.Point(70, 212);
+            this.panel_other.Location = new System.Drawing.Point(70, 182);
             this.panel_other.Name = "panel_other";
             this.panel_other.Size = new System.Drawing.Size(130, 1);
             this.panel_other.TabIndex = 84;
@@ -267,8 +277,8 @@
             this.textBox_other.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_other.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_other.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_other.Location = new System.Drawing.Point(70, 190);
-            this.textBox_other.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_other.Location = new System.Drawing.Point(70, 160);
+            this.textBox_other.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_other.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_other.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_other.Name = "textBox_other";
@@ -281,7 +291,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label2.Location = new System.Drawing.Point(20, 150);
+            this.label2.Location = new System.Drawing.Point(20, 110);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 18);
@@ -293,12 +303,12 @@
             this.button_confirm_end_rent.BackColor = System.Drawing.Color.Yellow;
             this.button_confirm_end_rent.FlatAppearance.BorderSize = 0;
             this.button_confirm_end_rent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_confirm_end_rent.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.button_confirm_end_rent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_confirm_end_rent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_confirm_end_rent.Location = new System.Drawing.Point(505, 234);
-            this.button_confirm_end_rent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_confirm_end_rent.Location = new System.Drawing.Point(452, 230);
+            this.button_confirm_end_rent.Margin = new System.Windows.Forms.Padding(2);
             this.button_confirm_end_rent.Name = "button_confirm_end_rent";
-            this.button_confirm_end_rent.Size = new System.Drawing.Size(155, 46);
+            this.button_confirm_end_rent.Size = new System.Drawing.Size(210, 50);
             this.button_confirm_end_rent.TabIndex = 81;
             this.button_confirm_end_rent.Text = "Potwierdź zakończenie wypożyczenia";
             this.button_confirm_end_rent.UseVisualStyleBackColor = false;
@@ -308,7 +318,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.Yellow;
             this.panel10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.panel10.Location = new System.Drawing.Point(260, 132);
+            this.panel10.Location = new System.Drawing.Point(500, 82);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(130, 1);
             this.panel10.TabIndex = 80;
@@ -319,8 +329,8 @@
             this.textBox_mileage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_mileage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_mileage.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_mileage.Location = new System.Drawing.Point(260, 110);
-            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_mileage.Location = new System.Drawing.Point(500, 60);
+            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_mileage.MaximumSize = new System.Drawing.Size(150, 25);
             this.textBox_mileage.MinimumSize = new System.Drawing.Size(4, 18);
             this.textBox_mileage.Name = "textBox_mileage";
@@ -334,19 +344,19 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label1.Location = new System.Drawing.Point(20, 110);
+            this.label1.Location = new System.Drawing.Point(393, 60);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 18);
+            this.label1.Size = new System.Drawing.Size(97, 18);
             this.label1.TabIndex = 78;
-            this.label1.Text = "Przebieg po wypożyczeniu:";
+            this.label1.Text = "Przebieg po:";
             // 
             // label_to
             // 
             this.label_to.AutoSize = true;
             this.label_to.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_to.ForeColor = System.Drawing.Color.Yellow;
-            this.label_to.Location = new System.Drawing.Point(410, 50);
+            this.label_to.Location = new System.Drawing.Point(240, 60);
             this.label_to.Margin = new System.Windows.Forms.Padding(0);
             this.label_to.Name = "label_to";
             this.label_to.Size = new System.Drawing.Size(0, 18);
@@ -357,7 +367,7 @@
             this.label_from.AutoSize = true;
             this.label_from.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_from.ForeColor = System.Drawing.Color.Yellow;
-            this.label_from.Location = new System.Drawing.Point(410, 20);
+            this.label_from.Location = new System.Drawing.Point(240, 20);
             this.label_from.Margin = new System.Windows.Forms.Padding(0);
             this.label_from.Name = "label_from";
             this.label_from.Size = new System.Drawing.Size(0, 18);
@@ -367,7 +377,7 @@
             // 
             this.label_purpose.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_purpose.ForeColor = System.Drawing.Color.Yellow;
-            this.label_purpose.Location = new System.Drawing.Point(260, 80);
+            this.label_purpose.Location = new System.Drawing.Point(500, 20);
             this.label_purpose.Margin = new System.Windows.Forms.Padding(0);
             this.label_purpose.Name = "label_purpose";
             this.label_purpose.Size = new System.Drawing.Size(130, 19);
@@ -379,7 +389,7 @@
             this.label_model.AutoSize = true;
             this.label_model.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_model.ForeColor = System.Drawing.Color.Yellow;
-            this.label_model.Location = new System.Drawing.Point(90, 50);
+            this.label_model.Location = new System.Drawing.Point(90, 60);
             this.label_model.Margin = new System.Windows.Forms.Padding(0);
             this.label_model.Name = "label_model";
             this.label_model.Size = new System.Drawing.Size(0, 18);
@@ -401,43 +411,43 @@
             this.label_desc_to.AutoSize = true;
             this.label_desc_to.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_desc_to.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label_desc_to.Location = new System.Drawing.Point(326, 50);
+            this.label_desc_to.Location = new System.Drawing.Point(197, 60);
             this.label_desc_to.Margin = new System.Windows.Forms.Padding(0);
             this.label_desc_to.Name = "label_desc_to";
-            this.label_desc_to.Size = new System.Drawing.Size(74, 18);
+            this.label_desc_to.Size = new System.Drawing.Size(33, 18);
             this.label_desc_to.TabIndex = 72;
-            this.label_desc_to.Text = "Do kiedy:";
+            this.label_desc_to.Text = "Do:";
             // 
             // label_desc_mileage
             // 
             this.label_desc_mileage.AutoSize = true;
             this.label_desc_mileage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_desc_mileage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label_desc_mileage.Location = new System.Drawing.Point(20, 80);
+            this.label_desc_mileage.Location = new System.Drawing.Point(372, 20);
             this.label_desc_mileage.Margin = new System.Windows.Forms.Padding(0);
             this.label_desc_mileage.Name = "label_desc_mileage";
-            this.label_desc_mileage.Size = new System.Drawing.Size(230, 18);
+            this.label_desc_mileage.Size = new System.Drawing.Size(118, 18);
             this.label_desc_mileage.TabIndex = 71;
-            this.label_desc_mileage.Text = "Przebieg przed wypożyczeniem:";
+            this.label_desc_mileage.Text = "Przebieg przed:";
             // 
             // label_desc_from
             // 
             this.label_desc_from.AutoSize = true;
             this.label_desc_from.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_desc_from.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label_desc_from.Location = new System.Drawing.Point(326, 20);
+            this.label_desc_from.Location = new System.Drawing.Point(197, 20);
             this.label_desc_from.Margin = new System.Windows.Forms.Padding(0);
             this.label_desc_from.Name = "label_desc_from";
-            this.label_desc_from.Size = new System.Drawing.Size(74, 18);
+            this.label_desc_from.Size = new System.Drawing.Size(33, 18);
             this.label_desc_from.TabIndex = 70;
-            this.label_desc_from.Text = "Od kiedy:";
+            this.label_desc_from.Text = "Od:";
             // 
             // label_desc_model
             // 
             this.label_desc_model.AutoSize = true;
             this.label_desc_model.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_desc_model.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label_desc_model.Location = new System.Drawing.Point(20, 50);
+            this.label_desc_model.Location = new System.Drawing.Point(20, 60);
             this.label_desc_model.Margin = new System.Windows.Forms.Padding(0);
             this.label_desc_model.Name = "label_desc_model";
             this.label_desc_model.Size = new System.Drawing.Size(55, 18);
@@ -456,15 +466,6 @@
             this.label_desc_brand.TabIndex = 68;
             this.label_desc_brand.Text = "Marka:";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Yellow;
-            this.panel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.panel1.Location = new System.Drawing.Point(260, 102);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(130, 1);
-            this.panel1.TabIndex = 98;
-            // 
             // UserControl_my_rents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,7 +474,7 @@
             this.Controls.Add(this.panel_end_rent);
             this.Controls.Add(this.dataGridView_my_rents);
             this.Controls.Add(this.label_rent);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl_my_rents";
             this.Size = new System.Drawing.Size(706, 533);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_my_rents)).EndInit();

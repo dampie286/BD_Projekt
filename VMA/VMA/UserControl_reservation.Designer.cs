@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox_mileage = new System.Windows.Forms.TextBox();
             this.textBox_version = new System.Windows.Forms.TextBox();
             this.textBox_equipment = new System.Windows.Forms.TextBox();
@@ -62,7 +62,7 @@
             this.textBox_mileage.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_mileage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_mileage.Location = new System.Drawing.Point(398, 19);
-            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_mileage.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_mileage.MaximumSize = new System.Drawing.Size(100, 25);
             this.textBox_mileage.MinimumSize = new System.Drawing.Size(4, 15);
             this.textBox_mileage.Name = "textBox_mileage";
@@ -82,7 +82,7 @@
             this.textBox_version.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_version.Location = new System.Drawing.Point(303, 19);
-            this.textBox_version.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_version.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_version.MaximumSize = new System.Drawing.Size(100, 25);
             this.textBox_version.MinimumSize = new System.Drawing.Size(4, 15);
             this.textBox_version.Name = "textBox_version";
@@ -100,7 +100,7 @@
             this.textBox_equipment.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_equipment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_equipment.Location = new System.Drawing.Point(208, 19);
-            this.textBox_equipment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_equipment.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_equipment.MaximumSize = new System.Drawing.Size(100, 25);
             this.textBox_equipment.MinimumSize = new System.Drawing.Size(4, 15);
             this.textBox_equipment.Name = "textBox_equipment";
@@ -120,7 +120,7 @@
             this.textBox_model.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_model.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_model.Location = new System.Drawing.Point(113, 19);
-            this.textBox_model.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_model.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_model.MaximumSize = new System.Drawing.Size(100, 25);
             this.textBox_model.MinimumSize = new System.Drawing.Size(4, 15);
             this.textBox_model.Name = "textBox_model";
@@ -140,7 +140,7 @@
             this.textBox_brand.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_brand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
             this.textBox_brand.Location = new System.Drawing.Point(18, 19);
-            this.textBox_brand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_brand.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_brand.MaximumSize = new System.Drawing.Size(100, 25);
             this.textBox_brand.MinimumSize = new System.Drawing.Size(4, 15);
             this.textBox_brand.Name = "textBox_brand";
@@ -194,28 +194,29 @@
             // dataGridView_veh_DB
             // 
             this.dataGridView_veh_DB.AllowUserToResizeRows = false;
+            this.dataGridView_veh_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView_veh_DB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_veh_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_veh_DB.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_veh_DB.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_veh_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_veh_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_veh_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_veh_DB.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_veh_DB.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_veh_DB.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_veh_DB.EnableHeadersVisualStyles = false;
             this.dataGridView_veh_DB.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_veh_DB.Location = new System.Drawing.Point(25, 110);
@@ -256,7 +257,7 @@
             this.dateTimePicker_from_date_reserv.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_from_date_reserv.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimePicker_from_date_reserv.Location = new System.Drawing.Point(55, 58);
-            this.dateTimePicker_from_date_reserv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker_from_date_reserv.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker_from_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
             this.dateTimePicker_from_date_reserv.Name = "dateTimePicker_from_date_reserv";
             this.dateTimePicker_from_date_reserv.Size = new System.Drawing.Size(225, 22);
@@ -296,7 +297,7 @@
             this.dateTimePicker_to_date_reserv.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_to_date_reserv.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimePicker_to_date_reserv.Location = new System.Drawing.Point(315, 58);
-            this.dateTimePicker_to_date_reserv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker_to_date_reserv.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker_to_date_reserv.MinDate = new System.DateTime(2019, 12, 9, 0, 0, 0, 0);
             this.dateTimePicker_to_date_reserv.Name = "dateTimePicker_to_date_reserv";
             this.dateTimePicker_to_date_reserv.Size = new System.Drawing.Size(225, 22);
@@ -311,7 +312,7 @@
             this.button_reserv.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_reserv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_reserv.Location = new System.Drawing.Point(283, 460);
-            this.button_reserv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_reserv.Margin = new System.Windows.Forms.Padding(2);
             this.button_reserv.Name = "button_reserv";
             this.button_reserv.Size = new System.Drawing.Size(140, 34);
             this.button_reserv.TabIndex = 31;
@@ -328,7 +329,7 @@
             this.button_check_available_cars.Font = new System.Drawing.Font("Arial", 12F);
             this.button_check_available_cars.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_check_available_cars.Location = new System.Drawing.Point(550, 52);
-            this.button_check_available_cars.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_check_available_cars.Margin = new System.Windows.Forms.Padding(2);
             this.button_check_available_cars.Name = "button_check_available_cars";
             this.button_check_available_cars.Size = new System.Drawing.Size(140, 34);
             this.button_check_available_cars.TabIndex = 32;
@@ -347,7 +348,7 @@
             "Służbowy",
             "Prywatny"});
             this.comboBox_purpose_of_reservation.Location = new System.Drawing.Point(283, 401);
-            this.comboBox_purpose_of_reservation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_purpose_of_reservation.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_purpose_of_reservation.Name = "comboBox_purpose_of_reservation";
             this.comboBox_purpose_of_reservation.Size = new System.Drawing.Size(140, 26);
             this.comboBox_purpose_of_reservation.TabIndex = 33;

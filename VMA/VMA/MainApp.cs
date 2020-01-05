@@ -33,9 +33,9 @@ namespace VMA
             if( if_keeper)
             {
                 //label_who_online.Text += " Opiekunek"; to było do sprawdzenai czy opiekun się pojawi i wczyta
-                this.button_manag_care_car.Location = new System.Drawing.Point(0, 326);
-                this.button_statistic.Location= new System.Drawing.Point(0, 377);
-                this.button_settings.Location= new System.Drawing.Point(0, 428);
+                this.button_manag_care_car.Location = new System.Drawing.Point(0, 311);
+                this.button_statistic.Location= new System.Drawing.Point(0, 362);
+                this.button_settings.Location= new System.Drawing.Point(0, 413);
                // this.userControl_menage_care_car1 = new UserControl_menage_care_cars();
                 
                 //userControl_menage_care_car1.SendToBack();

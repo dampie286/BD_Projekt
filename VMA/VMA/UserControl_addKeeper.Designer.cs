@@ -85,7 +85,7 @@
             this.dataGridView_Worker.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_Worker.EnableHeadersVisualStyles = false;
             this.dataGridView_Worker.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.dataGridView_Worker.Location = new System.Drawing.Point(33, 62);
+            this.dataGridView_Worker.Location = new System.Drawing.Point(25, 50);
             this.dataGridView_Worker.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView_Worker.MultiSelect = false;
             this.dataGridView_Worker.Name = "dataGridView_Worker";
@@ -103,7 +103,7 @@
             this.dataGridView_Worker.RowTemplate.Height = 24;
             this.dataGridView_Worker.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_Worker.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Worker.Size = new System.Drawing.Size(431, 348);
+            this.dataGridView_Worker.Size = new System.Drawing.Size(323, 283);
             this.dataGridView_Worker.TabIndex = 46;
             this.dataGridView_Worker.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Worker_CellClick);
             // 
@@ -137,7 +137,7 @@
             this.dataGridView_veh.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_veh.EnableHeadersVisualStyles = false;
             this.dataGridView_veh.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.dataGridView_veh.Location = new System.Drawing.Point(483, 62);
+            this.dataGridView_veh.Location = new System.Drawing.Point(362, 50);
             this.dataGridView_veh.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView_veh.MultiSelect = false;
             this.dataGridView_veh.Name = "dataGridView_veh";
@@ -155,7 +155,7 @@
             this.dataGridView_veh.RowTemplate.Height = 24;
             this.dataGridView_veh.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_veh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_veh.Size = new System.Drawing.Size(431, 348);
+            this.dataGridView_veh.Size = new System.Drawing.Size(323, 283);
             this.dataGridView_veh.TabIndex = 47;
             this.dataGridView_veh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_veh_CellClick);
             // 
@@ -166,10 +166,10 @@
             this.add_care.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_care.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.add_care.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.add_care.Location = new System.Drawing.Point(727, 591);
-            this.add_care.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.add_care.Location = new System.Drawing.Point(545, 480);
+            this.add_care.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.add_care.Name = "add_care";
-            this.add_care.Size = new System.Drawing.Size(187, 43);
+            this.add_care.Size = new System.Drawing.Size(140, 35);
             this.add_care.TabIndex = 83;
             this.add_care.Text = "Przypisz auto";
             this.add_care.UseVisualStyleBackColor = false;
@@ -180,10 +180,10 @@
             this.label_information_about_car.AutoSize = true;
             this.label_information_about_car.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_information_about_car.ForeColor = System.Drawing.Color.Yellow;
-            this.label_information_about_car.Location = new System.Drawing.Point(33, 25);
+            this.label_information_about_car.Location = new System.Drawing.Point(25, 20);
             this.label_information_about_car.Margin = new System.Windows.Forms.Padding(0);
             this.label_information_about_car.Name = "label_information_about_car";
-            this.label_information_about_car.Size = new System.Drawing.Size(320, 29);
+            this.label_information_about_car.Size = new System.Drawing.Size(249, 22);
             this.label_information_about_car.TabIndex = 84;
             this.label_information_about_car.Text = "NADAJ PRAWA OPIEKUNA";
             // 
@@ -192,10 +192,10 @@
             this.label_surrname.AutoSize = true;
             this.label_surrname.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_surrname.ForeColor = System.Drawing.Color.Yellow;
-            this.label_surrname.Location = new System.Drawing.Point(225, 535);
+            this.label_surrname.Location = new System.Drawing.Point(169, 435);
             this.label_surrname.Margin = new System.Windows.Forms.Padding(0);
             this.label_surrname.Name = "label_surrname";
-            this.label_surrname.Size = new System.Drawing.Size(0, 23);
+            this.label_surrname.Size = new System.Drawing.Size(0, 18);
             this.label_surrname.TabIndex = 95;
             // 
             // label_name
@@ -203,10 +203,10 @@
             this.label_name.AutoSize = true;
             this.label_name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_name.ForeColor = System.Drawing.Color.Yellow;
-            this.label_name.Location = new System.Drawing.Point(225, 480);
+            this.label_name.Location = new System.Drawing.Point(169, 390);
             this.label_name.Margin = new System.Windows.Forms.Padding(0);
             this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(0, 23);
+            this.label_name.Size = new System.Drawing.Size(0, 18);
             this.label_name.TabIndex = 94;
             // 
             // label_license
@@ -214,10 +214,10 @@
             this.label_license.AutoSize = true;
             this.label_license.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_license.ForeColor = System.Drawing.Color.Yellow;
-            this.label_license.Location = new System.Drawing.Point(510, 591);
+            this.label_license.Location = new System.Drawing.Point(382, 480);
             this.label_license.Margin = new System.Windows.Forms.Padding(0);
             this.label_license.Name = "label_license";
-            this.label_license.Size = new System.Drawing.Size(0, 23);
+            this.label_license.Size = new System.Drawing.Size(0, 18);
             this.label_license.TabIndex = 93;
             // 
             // label_model
@@ -225,10 +225,10 @@
             this.label_model.AutoSize = true;
             this.label_model.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_model.ForeColor = System.Drawing.Color.Yellow;
-            this.label_model.Location = new System.Drawing.Point(510, 535);
+            this.label_model.Location = new System.Drawing.Point(382, 435);
             this.label_model.Margin = new System.Windows.Forms.Padding(0);
             this.label_model.Name = "label_model";
-            this.label_model.Size = new System.Drawing.Size(0, 23);
+            this.label_model.Size = new System.Drawing.Size(0, 18);
             this.label_model.TabIndex = 92;
             // 
             // label_brand
@@ -236,10 +236,10 @@
             this.label_brand.AutoSize = true;
             this.label_brand.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_brand.ForeColor = System.Drawing.Color.Yellow;
-            this.label_brand.Location = new System.Drawing.Point(510, 480);
+            this.label_brand.Location = new System.Drawing.Point(382, 390);
             this.label_brand.Margin = new System.Windows.Forms.Padding(0);
             this.label_brand.Name = "label_brand";
-            this.label_brand.Size = new System.Drawing.Size(0, 23);
+            this.label_brand.Size = new System.Drawing.Size(0, 18);
             this.label_brand.TabIndex = 91;
             // 
             // label_desc_my_choice
@@ -247,22 +247,22 @@
             this.label_desc_my_choice.AutoSize = true;
             this.label_desc_my_choice.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_desc_my_choice.ForeColor = System.Drawing.Color.Yellow;
-            this.label_desc_my_choice.Location = new System.Drawing.Point(33, 431);
+            this.label_desc_my_choice.Location = new System.Drawing.Point(25, 350);
             this.label_desc_my_choice.Margin = new System.Windows.Forms.Padding(0);
             this.label_desc_my_choice.Name = "label_desc_my_choice";
-            this.label_desc_my_choice.Size = new System.Drawing.Size(177, 29);
+            this.label_desc_my_choice.Size = new System.Drawing.Size(159, 22);
             this.label_desc_my_choice.TabIndex = 90;
-            this.label_desc_my_choice.Text = "Nowy opiekun";
+            this.label_desc_my_choice.Text = "NOWY OPIEKUN";
             // 
             // label_desc_to
             // 
             this.label_desc_to.AutoSize = true;
             this.label_desc_to.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_desc_to.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label_desc_to.Location = new System.Drawing.Point(117, 535);
+            this.label_desc_to.Location = new System.Drawing.Point(88, 435);
             this.label_desc_to.Margin = new System.Windows.Forms.Padding(0);
             this.label_desc_to.Name = "label_desc_to";
-            this.label_desc_to.Size = new System.Drawing.Size(93, 23);
+            this.label_desc_to.Size = new System.Drawing.Size(75, 18);
             this.label_desc_to.TabIndex = 89;
             this.label_desc_to.Text = "Nazwisko";
             // 
@@ -271,10 +271,10 @@
             this.label_desc_purpose.AutoSize = true;
             this.label_desc_purpose.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_desc_purpose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label_desc_purpose.Location = new System.Drawing.Point(382, 591);
+            this.label_desc_purpose.Location = new System.Drawing.Point(286, 480);
             this.label_desc_purpose.Margin = new System.Windows.Forms.Padding(0);
             this.label_desc_purpose.Name = "label_desc_purpose";
-            this.label_desc_purpose.Size = new System.Drawing.Size(109, 23);
+            this.label_desc_purpose.Size = new System.Drawing.Size(86, 18);
             this.label_desc_purpose.TabIndex = 88;
             this.label_desc_purpose.Text = "Rejestracja";
             // 
@@ -283,10 +283,10 @@
             this.label_desc_from.AutoSize = true;
             this.label_desc_from.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_desc_from.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label_desc_from.Location = new System.Drawing.Point(163, 480);
+            this.label_desc_from.Location = new System.Drawing.Point(122, 390);
             this.label_desc_from.Margin = new System.Windows.Forms.Padding(0);
             this.label_desc_from.Name = "label_desc_from";
-            this.label_desc_from.Size = new System.Drawing.Size(47, 23);
+            this.label_desc_from.Size = new System.Drawing.Size(37, 18);
             this.label_desc_from.TabIndex = 87;
             this.label_desc_from.Text = "Imię";
             // 
@@ -295,10 +295,10 @@
             this.label_desc_model.AutoSize = true;
             this.label_desc_model.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_desc_model.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label_desc_model.Location = new System.Drawing.Point(429, 535);
+            this.label_desc_model.Location = new System.Drawing.Point(322, 435);
             this.label_desc_model.Margin = new System.Windows.Forms.Padding(0);
             this.label_desc_model.Name = "label_desc_model";
-            this.label_desc_model.Size = new System.Drawing.Size(64, 23);
+            this.label_desc_model.Size = new System.Drawing.Size(51, 18);
             this.label_desc_model.TabIndex = 86;
             this.label_desc_model.Text = "Model";
             // 
@@ -307,10 +307,10 @@
             this.label_desc_brand.AutoSize = true;
             this.label_desc_brand.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_desc_brand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label_desc_brand.Location = new System.Drawing.Point(428, 480);
+            this.label_desc_brand.Location = new System.Drawing.Point(321, 390);
             this.label_desc_brand.Margin = new System.Windows.Forms.Padding(0);
             this.label_desc_brand.Name = "label_desc_brand";
-            this.label_desc_brand.Size = new System.Drawing.Size(66, 23);
+            this.label_desc_brand.Size = new System.Drawing.Size(52, 18);
             this.label_desc_brand.TabIndex = 85;
             this.label_desc_brand.Text = "Marka";
             // 
@@ -319,10 +319,10 @@
             this.label_postion.AutoSize = true;
             this.label_postion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_postion.ForeColor = System.Drawing.Color.Yellow;
-            this.label_postion.Location = new System.Drawing.Point(225, 591);
+            this.label_postion.Location = new System.Drawing.Point(169, 480);
             this.label_postion.Margin = new System.Windows.Forms.Padding(0);
             this.label_postion.Name = "label_postion";
-            this.label_postion.Size = new System.Drawing.Size(0, 23);
+            this.label_postion.Size = new System.Drawing.Size(0, 18);
             this.label_postion.TabIndex = 97;
             // 
             // label4
@@ -330,16 +330,16 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.label4.Location = new System.Drawing.Point(99, 591);
+            this.label4.Location = new System.Drawing.Point(74, 480);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 23);
+            this.label4.Size = new System.Drawing.Size(89, 18);
             this.label4.TabIndex = 96;
             this.label4.Text = "Stanowisko";
             // 
             // UserControl_addKeeper
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.Controls.Add(this.label_postion);
@@ -359,9 +359,9 @@
             this.Controls.Add(this.add_care);
             this.Controls.Add(this.dataGridView_veh);
             this.Controls.Add(this.dataGridView_Worker);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserControl_addKeeper";
-            this.Size = new System.Drawing.Size(941, 656);
+            this.Size = new System.Drawing.Size(706, 533);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Worker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_veh)).EndInit();
             this.ResumeLayout(false);

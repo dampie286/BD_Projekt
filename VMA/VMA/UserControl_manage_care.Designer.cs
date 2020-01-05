@@ -41,11 +41,11 @@
             this.button_reserve_block_car.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_reserve_block_car.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_reserve_block_car.Location = new System.Drawing.Point(238, 260);
-            this.button_reserve_block_car.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_reserve_block_car.Margin = new System.Windows.Forms.Padding(2);
             this.button_reserve_block_car.Name = "button_reserve_block_car";
             this.button_reserve_block_car.Size = new System.Drawing.Size(230, 50);
             this.button_reserve_block_car.TabIndex = 45;
-            this.button_reserve_block_car.Text = "Rezerwuj/blokuj samochód";
+            this.button_reserve_block_car.Text = "Rezerwuj / blokuj samochód";
             this.button_reserve_block_car.UseVisualStyleBackColor = false;
             this.button_reserve_block_car.Click += new System.EventHandler(this.button_reserve_block_car_Click);
             // 
@@ -57,7 +57,7 @@
             this.button_send_receive_car.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_send_receive_car.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.button_send_receive_car.Location = new System.Drawing.Point(238, 180);
-            this.button_send_receive_car.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_send_receive_car.Margin = new System.Windows.Forms.Padding(2);
             this.button_send_receive_car.Name = "button_send_receive_car";
             this.button_send_receive_car.Size = new System.Drawing.Size(230, 50);
             this.button_send_receive_car.TabIndex = 44;
@@ -85,7 +85,7 @@
             this.Controls.Add(this.button_reserve_block_car);
             this.Controls.Add(this.button_send_receive_car);
             this.Controls.Add(this.label_menage_keepers);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl_manage_care";
             this.Size = new System.Drawing.Size(706, 533);
             this.ResumeLayout(false);

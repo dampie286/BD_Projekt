@@ -175,34 +175,34 @@
             // label_license
             // 
             this.label_license.AutoSize = true;
-            this.label_license.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_license.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_license.ForeColor = System.Drawing.Color.Yellow;
             this.label_license.Location = new System.Drawing.Point(150, 420);
             this.label_license.Margin = new System.Windows.Forms.Padding(0);
             this.label_license.Name = "label_license";
-            this.label_license.Size = new System.Drawing.Size(0, 19);
+            this.label_license.Size = new System.Drawing.Size(0, 18);
             this.label_license.TabIndex = 74;
             // 
             // label_model
             // 
             this.label_model.AutoSize = true;
-            this.label_model.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_model.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_model.ForeColor = System.Drawing.Color.Yellow;
             this.label_model.Location = new System.Drawing.Point(150, 380);
             this.label_model.Margin = new System.Windows.Forms.Padding(0);
             this.label_model.Name = "label_model";
-            this.label_model.Size = new System.Drawing.Size(0, 19);
+            this.label_model.Size = new System.Drawing.Size(0, 18);
             this.label_model.TabIndex = 73;
             // 
             // label_brand
             // 
             this.label_brand.AutoSize = true;
-            this.label_brand.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_brand.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_brand.ForeColor = System.Drawing.Color.Yellow;
             this.label_brand.Location = new System.Drawing.Point(150, 340);
             this.label_brand.Margin = new System.Windows.Forms.Padding(0);
             this.label_brand.Name = "label_brand";
-            this.label_brand.Size = new System.Drawing.Size(0, 19);
+            this.label_brand.Size = new System.Drawing.Size(0, 18);
             this.label_brand.TabIndex = 72;
             // 
             // label_desc_my_choice
@@ -256,12 +256,12 @@
             // label_current_mileage
             // 
             this.label_current_mileage.AutoSize = true;
-            this.label_current_mileage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_current_mileage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_current_mileage.ForeColor = System.Drawing.Color.Yellow;
             this.label_current_mileage.Location = new System.Drawing.Point(150, 460);
             this.label_current_mileage.Margin = new System.Windows.Forms.Padding(0);
             this.label_current_mileage.Name = "label_current_mileage";
-            this.label_current_mileage.Size = new System.Drawing.Size(0, 19);
+            this.label_current_mileage.Size = new System.Drawing.Size(0, 18);
             this.label_current_mileage.TabIndex = 76;
             // 
             // label2
@@ -279,12 +279,12 @@
             // label_cost_car
             // 
             this.label_cost_car.AutoSize = true;
-            this.label_cost_car.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_cost_car.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_cost_car.ForeColor = System.Drawing.Color.Yellow;
             this.label_cost_car.Location = new System.Drawing.Point(450, 460);
             this.label_cost_car.Margin = new System.Windows.Forms.Padding(0);
             this.label_cost_car.Name = "label_cost_car";
-            this.label_cost_car.Size = new System.Drawing.Size(0, 19);
+            this.label_cost_car.Size = new System.Drawing.Size(0, 18);
             this.label_cost_car.TabIndex = 84;
             // 
             // label3
@@ -302,34 +302,34 @@
             // label_count_services
             // 
             this.label_count_services.AutoSize = true;
-            this.label_count_services.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_count_services.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_count_services.ForeColor = System.Drawing.Color.Yellow;
             this.label_count_services.Location = new System.Drawing.Point(450, 420);
             this.label_count_services.Margin = new System.Windows.Forms.Padding(0);
             this.label_count_services.Name = "label_count_services";
-            this.label_count_services.Size = new System.Drawing.Size(0, 19);
+            this.label_count_services.Size = new System.Drawing.Size(0, 18);
             this.label_count_services.TabIndex = 82;
             // 
             // label_all_combustion
             // 
             this.label_all_combustion.AutoSize = true;
-            this.label_all_combustion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_all_combustion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_all_combustion.ForeColor = System.Drawing.Color.Yellow;
             this.label_all_combustion.Location = new System.Drawing.Point(450, 380);
             this.label_all_combustion.Margin = new System.Windows.Forms.Padding(0);
             this.label_all_combustion.Name = "label_all_combustion";
-            this.label_all_combustion.Size = new System.Drawing.Size(0, 19);
+            this.label_all_combustion.Size = new System.Drawing.Size(0, 18);
             this.label_all_combustion.TabIndex = 81;
             // 
             // label_mileage_time
             // 
             this.label_mileage_time.AutoSize = true;
-            this.label_mileage_time.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_mileage_time.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_mileage_time.ForeColor = System.Drawing.Color.Yellow;
             this.label_mileage_time.Location = new System.Drawing.Point(450, 340);
             this.label_mileage_time.Margin = new System.Windows.Forms.Padding(0);
             this.label_mileage_time.Name = "label_mileage_time";
-            this.label_mileage_time.Size = new System.Drawing.Size(0, 19);
+            this.label_mileage_time.Size = new System.Drawing.Size(0, 18);
             this.label_mileage_time.TabIndex = 80;
             // 
             // label7
