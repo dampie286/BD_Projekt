@@ -47,12 +47,12 @@
             this.button_delete.BackColor = System.Drawing.Color.Yellow;
             this.button_delete.FlatAppearance.BorderSize = 0;
             this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_delete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_delete.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_delete.Location = new System.Drawing.Point(612, 459);
+            this.button_delete.Location = new System.Drawing.Point(591, 465);
             this.button_delete.Margin = new System.Windows.Forms.Padding(2);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(75, 25);
+            this.button_delete.Size = new System.Drawing.Size(100, 33);
             this.button_delete.TabIndex = 86;
             this.button_delete.Text = "Usuń";
             this.button_delete.UseVisualStyleBackColor = false;
@@ -62,6 +62,9 @@
             // 
             this.dataGridView_keepers_DB.AllowUserToAddRows = false;
             this.dataGridView_keepers_DB.AllowUserToDeleteRows = false;
+            this.dataGridView_keepers_DB.AllowUserToResizeColumns = false;
+            this.dataGridView_keepers_DB.AllowUserToResizeRows = false;
+            this.dataGridView_keepers_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView_keepers_DB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_keepers_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_keepers_DB.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -95,7 +98,7 @@
             this.dataGridView_keepers_DB.RowTemplate.Height = 24;
             this.dataGridView_keepers_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_keepers_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_keepers_DB.Size = new System.Drawing.Size(583, 431);
+            this.dataGridView_keepers_DB.Size = new System.Drawing.Size(558, 466);
             this.dataGridView_keepers_DB.TabIndex = 84;
             // 
             // panel3
@@ -127,12 +130,12 @@
             this.button_filter.BackColor = System.Drawing.Color.Yellow;
             this.button_filter.FlatAppearance.BorderSize = 0;
             this.button_filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_filter.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_filter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_filter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_filter.Location = new System.Drawing.Point(348, 14);
+            this.button_filter.Location = new System.Drawing.Point(348, 10);
             this.button_filter.Margin = new System.Windows.Forms.Padding(2);
             this.button_filter.Name = "button_filter";
-            this.button_filter.Size = new System.Drawing.Size(75, 25);
+            this.button_filter.Size = new System.Drawing.Size(100, 33);
             this.button_filter.TabIndex = 80;
             this.button_filter.Text = "Filtruj";
             this.button_filter.UseVisualStyleBackColor = false;

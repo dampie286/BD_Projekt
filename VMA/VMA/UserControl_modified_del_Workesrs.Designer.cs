@@ -98,6 +98,8 @@
             // 
             this.dataGridView_workers_DB.AllowUserToAddRows = false;
             this.dataGridView_workers_DB.AllowUserToDeleteRows = false;
+            this.dataGridView_workers_DB.AllowUserToResizeColumns = false;
+            this.dataGridView_workers_DB.AllowUserToResizeRows = false;
             this.dataGridView_workers_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView_workers_DB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_workers_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -139,7 +141,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Yellow;
-            this.panel3.Location = new System.Drawing.Point(208, 38);
+            this.panel3.Location = new System.Drawing.Point(238, 38);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(90, 1);
             this.panel3.TabIndex = 72;
@@ -147,7 +149,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Yellow;
-            this.panel2.Location = new System.Drawing.Point(113, 38);
+            this.panel2.Location = new System.Drawing.Point(128, 38);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(90, 1);
             this.panel2.TabIndex = 73;
@@ -167,7 +169,7 @@
             this.button_filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_filter.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_filter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_filter.Location = new System.Drawing.Point(312, 10);
+            this.button_filter.Location = new System.Drawing.Point(348, 10);
             this.button_filter.Margin = new System.Windows.Forms.Padding(2);
             this.button_filter.Name = "button_filter";
             this.button_filter.Size = new System.Drawing.Size(100, 33);
@@ -182,7 +184,7 @@
             this.textBox_position.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_position.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_position.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            this.textBox_position.Location = new System.Drawing.Point(208, 19);
+            this.textBox_position.Location = new System.Drawing.Point(238, 19);
             this.textBox_position.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_position.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_position.MinimumSize = new System.Drawing.Size(4, 15);
@@ -200,7 +202,7 @@
             this.textBox_surrname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_surrname.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_surrname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            this.textBox_surrname.Location = new System.Drawing.Point(113, 19);
+            this.textBox_surrname.Location = new System.Drawing.Point(128, 19);
             this.textBox_surrname.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_surrname.MaximumSize = new System.Drawing.Size(90, 25);
             this.textBox_surrname.MinimumSize = new System.Drawing.Size(4, 15);

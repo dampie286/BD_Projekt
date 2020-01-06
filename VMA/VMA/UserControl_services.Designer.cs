@@ -73,6 +73,10 @@
             // 
             // dataGridView_services
             // 
+            this.dataGridView_services.AllowUserToAddRows = false;
+            this.dataGridView_services.AllowUserToDeleteRows = false;
+            this.dataGridView_services.AllowUserToResizeColumns = false;
+            this.dataGridView_services.AllowUserToResizeRows = false;
             this.dataGridView_services.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView_services.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_services.BorderStyle = System.Windows.Forms.BorderStyle.None;

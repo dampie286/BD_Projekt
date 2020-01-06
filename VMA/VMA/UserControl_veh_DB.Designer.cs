@@ -189,7 +189,9 @@
             // 
             // dataGridView_veh_DB
             // 
-            this.dataGridView_veh_DB.AllowUserToOrderColumns = true;
+            this.dataGridView_veh_DB.AllowUserToAddRows = false;
+            this.dataGridView_veh_DB.AllowUserToDeleteRows = false;
+            this.dataGridView_veh_DB.AllowUserToResizeColumns = false;
             this.dataGridView_veh_DB.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));

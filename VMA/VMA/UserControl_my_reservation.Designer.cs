@@ -64,6 +64,10 @@
             // 
             // dataGridView_my_reservation
             // 
+            this.dataGridView_my_reservation.AllowUserToAddRows = false;
+            this.dataGridView_my_reservation.AllowUserToDeleteRows = false;
+            this.dataGridView_my_reservation.AllowUserToResizeColumns = false;
+            this.dataGridView_my_reservation.AllowUserToResizeRows = false;
             this.dataGridView_my_reservation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView_my_reservation.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_my_reservation.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -91,7 +95,9 @@
             this.dataGridView_my_reservation.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_my_reservation.Location = new System.Drawing.Point(25, 60);
             this.dataGridView_my_reservation.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridView_my_reservation.MultiSelect = false;
             this.dataGridView_my_reservation.Name = "dataGridView_my_reservation";
+            this.dataGridView_my_reservation.ReadOnly = true;
             this.dataGridView_my_reservation.RowHeadersVisible = false;
             this.dataGridView_my_reservation.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView_my_reservation.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
@@ -100,6 +106,7 @@
             this.dataGridView_my_reservation.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView_my_reservation.RowTemplate.Height = 24;
             this.dataGridView_my_reservation.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView_my_reservation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_my_reservation.Size = new System.Drawing.Size(660, 220);
             this.dataGridView_my_reservation.TabIndex = 48;
             this.dataGridView_my_reservation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_my_reservation_CellClick);

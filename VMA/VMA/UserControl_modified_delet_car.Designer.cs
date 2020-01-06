@@ -241,6 +241,8 @@
             // 
             this.dataGridView_veh_DB.AllowUserToAddRows = false;
             this.dataGridView_veh_DB.AllowUserToDeleteRows = false;
+            this.dataGridView_veh_DB.AllowUserToResizeColumns = false;
+            this.dataGridView_veh_DB.AllowUserToResizeRows = false;
             this.dataGridView_veh_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView_veh_DB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_veh_DB.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -275,7 +277,7 @@
             this.dataGridView_veh_DB.RowTemplate.Height = 24;
             this.dataGridView_veh_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_veh_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_veh_DB.Size = new System.Drawing.Size(563, 240);
+            this.dataGridView_veh_DB.Size = new System.Drawing.Size(558, 237);
             this.dataGridView_veh_DB.TabIndex = 58;
             // 
             // button_modified
@@ -285,7 +287,7 @@
             this.button_modified.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_modified.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_modified.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_modified.Location = new System.Drawing.Point(590, 140);
+            this.button_modified.Location = new System.Drawing.Point(592, 134);
             this.button_modified.Margin = new System.Windows.Forms.Padding(2);
             this.button_modified.Name = "button_modified";
             this.button_modified.Size = new System.Drawing.Size(100, 33);
@@ -301,7 +303,7 @@
             this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_delete.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button_delete.Location = new System.Drawing.Point(590, 190);
+            this.button_delete.Location = new System.Drawing.Point(592, 184);
             this.button_delete.Margin = new System.Windows.Forms.Padding(2);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(100, 33);
@@ -380,7 +382,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.button1.Location = new System.Drawing.Point(480, 157);
+            this.button1.Location = new System.Drawing.Point(482, 157);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(190, 33);
