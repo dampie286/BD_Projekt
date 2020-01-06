@@ -62,9 +62,29 @@ namespace VMA
             if (select.Any(x => x.OD == DateTime.Today.Date))
             {
                 MessageBox.Show("Masz dzisiaj rezerwacje", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
            
+        }
+
+        private void check_rent(int user_id)
+        {
+            var rents = (from x in db.RentSets
+                         where x.Worker_worker_id == user_id
+                               && x.date_to < DateTime.Today
+                               && x.mileage_end == 0
+                         select x).FirstOrDefault();
+            if (rents == null)
+            { }
+            else
+            {
+                var car = (from x in db.VehicleSets
+                          where x.vehicle_id == rents.Vehicle_vehicle_id
+                          select x).FirstOrDefault();
+                
+                MessageBox.Show("Zakończ wypożyczenie samochodu: \n" + car.model + " " + car.licence_plate + "\n" + "Wypożyczenie zakończyło się: " + rents.date_to.ToShortDateString(),
+                                "Rent Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         private void check_Cars(int user_id)
@@ -171,6 +191,7 @@ namespace VMA
                     }
                     else
                     {
+
                         MessageBox.Show(cars_tech_review, "Cars Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     cars_tech_review = "Zbliża się koniec przeglądu dla: \n";
@@ -217,6 +238,7 @@ namespace VMA
                             this.Hide();
                             check_reservation(user.worker_id);
                             check_Cars(user.worker_id);
+                            check_rent(user.worker_id);
                         }
                         else
 
@@ -232,6 +254,7 @@ namespace VMA
                                 this.Hide();
                                 check_reservation(user.worker_id);
                                 check_Cars(user.worker_id);
+                                check_rent(user.worker_id);
                             }
                             else
                             {
@@ -242,6 +265,7 @@ namespace VMA
                                 this.Hide();
                                 check_reservation(user.worker_id);
                                 check_Cars(user.worker_id);
+                                check_rent(user.worker_id);
                             }
                         }
                     }
