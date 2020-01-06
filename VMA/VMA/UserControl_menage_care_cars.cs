@@ -30,7 +30,7 @@ namespace VMA
         {
             var query = from x in db.CareSets
                         join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
-                        where x.Keeper_worker_id == user_id
+                        where x.Keeper_worker_id == user_id && y.available != "deleted" 
                         select new
                         {
                             ID = y.vehicle_id,
