@@ -53,8 +53,8 @@ namespace VMA
                                   REJESTRACJA = x.licence_plate,
                                   MARKA = x.brand,
                                   MODEL = x.model,
-                                  OD = y.date_from,
-                                  DO = y.date_to,
+                                  OD = y.date_from.ToShortDateString(),
+                                  DO = y.date_to.ToShortDateString(),
                                   REZERWUJACY = z.surname,
                                   CEL = y.purpose
                               };
