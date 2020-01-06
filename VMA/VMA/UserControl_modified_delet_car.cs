@@ -40,8 +40,7 @@ namespace VMA
         public void fillDataGridView()
         {
             var Selectquery = from x in db.VehicleSets
-                              where x.available == "yes " 
-                                    && x.available != "deleted"
+                              where  x.available != "deleted"
                               select new
                               {
                                   ID = x.vehicle_id,

@@ -29,7 +29,7 @@ namespace VMA
         {
             var query = from x in db.CareSets
                         join y in db.VehicleSets on x.Vehicle_vehicle_id equals y.vehicle_id
-                        where x.Keeper_worker_id == user_id && x.VehicleSet.available !="Serwis" 
+                        where x.Keeper_worker_id == user_id && x.VehicleSet.available !="Serwis" && x.VehicleSet.available != "deleted"
                         select new
                         {
                             ID = y.vehicle_id,
@@ -133,6 +133,7 @@ namespace VMA
                         Care_serviceSet newservice = new Care_serviceSet()
                         {
                             date_from = DateTime.Today,
+                            data_to = Convert.ToDateTime("1999 - 01 - 01 00:00:00.000"),
                             Care_care_id = care_id.care_id,
                             Service_service_id = service.service_id,
                             price = -10,
