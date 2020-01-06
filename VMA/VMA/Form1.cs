@@ -212,7 +212,7 @@ namespace VMA
                         {
                             textBox_login_name.Clear();
                             textBox_login_password.Clear();
-                            menagerapp = new Form_panel_manager(this, user.worker_id);
+                            menagerapp = new Form_panel_manager(this, user.worker_id,user.surname,user.name);
                             menagerapp.Show();
                             this.Hide();
                             check_reservation(user.worker_id);

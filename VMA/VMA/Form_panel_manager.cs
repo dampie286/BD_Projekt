@@ -15,11 +15,12 @@ namespace VMA
         private Form_login windLog;     //przechowywanie adresu do loginy
         private bool close = false;     //sprawdzamy czy wylogowywaliśmy się
         public int log;
-        public Form_panel_manager(Form_login add_tmp ,int id_log)
+        public Form_panel_manager(Form_login add_tmp ,int id_log,string surrnameWork,string nameWork)
         {
             windLog = add_tmp;
             InitializeComponent();
             log = id_log;
+            label_who_online.Text = "Zalogowany jako " + nameWork + " " + surrnameWork;
             //dodanie zdarzenia klikniecia wypozyczenia  z bazy
             userControl_rent1.Button_rentDB_Click += new System.EventHandler(this.userControl_rent_Button_rentDB_Click);
             //dodanie zdarzenia klikniecia wypozyczenia z rezerwacji
