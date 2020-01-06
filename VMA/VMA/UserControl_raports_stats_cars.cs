@@ -193,7 +193,7 @@ namespace VMA
                 try
                 {
                      count_cost_servis = db.Care_serviceSets
-                                    .Where(x => x.CareSet.Vehicle_vehicle_id == id && x.date_from.Date >= date_from.Date && x.data_to.Value.Date <= date_to.Date)
+                                    .Where(x => x.CareSet.Vehicle_vehicle_id == id && x.date_from.Date >= date_from.Date && x.data_to.Value.Date <= date_to.Date && x.price!=-10)
                                         .Sum(x => x.price);
                 }
                 catch
@@ -282,7 +282,7 @@ namespace VMA
                     try
                     {
                         count_cost_servis = db.Care_serviceSets
-                                       .Where(x => x.CareSet.Vehicle_vehicle_id == idw && x.date_from.Date >= date_from.Date && x.data_to.Value.Date <= date_to.Date)
+                                       .Where(x => x.CareSet.Vehicle_vehicle_id == idw && x.date_from.Date >= date_from.Date && x.data_to.Value.Date <= date_to.Date && x.price != -10)
                                            .Sum(x => x.price);
                     }
                     catch
