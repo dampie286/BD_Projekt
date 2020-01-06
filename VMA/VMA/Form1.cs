@@ -22,7 +22,6 @@ namespace VMA
         DataBaseDataContext db = new DataBaseDataContext();
         public Form_login()
         {
-            
             InitializeComponent();
         }
 

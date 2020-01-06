@@ -29,16 +29,11 @@ namespace VMA
 
         private void clear()
         {
-
-
             label_brand.Text = "";
             label_model.Text = "";
             label_from.Text = "";
             label_to.Text = "";
             label_purpose.Text = "";
-
-
-
         }
 
         public void fillDataGridView() //funkcja do wypłenienia tabeli
@@ -110,8 +105,8 @@ namespace VMA
                 {
 
                     var time_from = Convert.ToDateTime(dataGridView_my_reservation.Rows[row].Cells[4].Value.ToString());
-                    var time_to= Convert.ToDateTime((string)dataGridView_my_reservation.Rows[row].Cells[5].Value.ToString());
-                    
+                    var time_to = Convert.ToDateTime((string)dataGridView_my_reservation.Rows[row].Cells[5].Value.ToString());
+
 
                     var counter_modulo = db.RentSets
                                                .Where(x => x.Worker_worker_id == user_id
@@ -122,33 +117,40 @@ namespace VMA
                                                                    .Select(x => x.rent_id)
                                                                        .Count();
 
-
-                    if (counter_modulo == 0)
+                    if (time_from > DateTime.Today)
                     {
+                        MessageBox.Show("Jeszcze nie możesz wypożyczyć tego samochodu, możesz to zrobić: \n" + time_from.ToShortDateString() , "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        RentSet newRent = new RentSet()
-                        {
-                            purpose = dataGridView_my_reservation.Rows[row].Cells[7].Value.ToString(),
-                            date_from = Convert.ToDateTime(dataGridView_my_reservation.Rows[row].Cells[4].Value),
-                            date_to = Convert.ToDateTime(dataGridView_my_reservation.Rows[row].Cells[5].Value),
-                            mileage_start = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[8].Value),
-                            Worker_worker_id = user_id,
-                            Reservation_reservation_id = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[9].Value),
-                            Vehicle_vehicle_id = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[0].Value),
-                            mileage_end = 0
-
-                        };
-
-                        db.RentSets.InsertOnSubmit(newRent);
-                        db.SubmitChanges();
-
-                        MessageBox.Show("Wypożyczyłeś samochód, bezpiecznej jazdy", "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        fillDataGridView();
                     }
                     else
-
                     {
-                        MessageBox.Show("Masz już wypożyczone auto w takim okresie", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (counter_modulo == 0)
+                        {
+
+                            RentSet newRent = new RentSet()
+                            {
+                                purpose = dataGridView_my_reservation.Rows[row].Cells[7].Value.ToString(),
+                                date_from = Convert.ToDateTime(dataGridView_my_reservation.Rows[row].Cells[4].Value),
+                                date_to = Convert.ToDateTime(dataGridView_my_reservation.Rows[row].Cells[5].Value),
+                                mileage_start = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[8].Value),
+                                Worker_worker_id = user_id,
+                                Reservation_reservation_id = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[9].Value),
+                                Vehicle_vehicle_id = Convert.ToInt32(dataGridView_my_reservation.Rows[row].Cells[0].Value),
+                                mileage_end = 0
+
+                            };
+
+                            db.RentSets.InsertOnSubmit(newRent);
+                            db.SubmitChanges();
+
+                            MessageBox.Show("Wypożyczyłeś samochód, bezpiecznej jazdy", "Good Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            fillDataGridView();
+                        }
+                        else
+
+                        {
+                            MessageBox.Show("Masz już wypożyczone auto w takim okresie", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
