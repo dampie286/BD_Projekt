@@ -214,7 +214,7 @@ namespace VMA
                         }
                         catch (Exception)
                         {
-                            MessageBox.Show("Nie udało się dokonać rezerwacji pojazdu", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Nie udało się dokonać wypożyczenia pojazdu", "Error Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                         try
@@ -248,7 +248,7 @@ namespace VMA
                         }
                         catch (Exception)
                         {
-                            MessageBox.Show("Nie udało się dokonać wypożyczenia pojazdu", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Nie udało się dokonać wypożyczenia pojazdu", "Error Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -259,12 +259,12 @@ namespace VMA
                 }
                 else
                 {
-                    MessageBox.Show("Wybierz cel rezerwacji", "Error Car", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Wybierz cel wypożyczenia", "Error Car", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Zaznacz auto które chcesz zarezerwować", "Error Car", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Zaznacz auto które chcesz wypożyczyć", "Error Car", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
