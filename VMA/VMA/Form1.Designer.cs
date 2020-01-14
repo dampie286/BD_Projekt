@@ -36,8 +36,10 @@
             this.panel_underline_login = new System.Windows.Forms.Panel();
             this.pictureBox_pass_symbol = new System.Windows.Forms.PictureBox();
             this.pictureBox_login_symbol = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pass_symbol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_login_symbol)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_login_name
@@ -92,7 +94,7 @@
             // 
             this.panel_underline_pass.BackColor = System.Drawing.Color.Yellow;
             this.panel_underline_pass.Location = new System.Drawing.Point(96, 172);
-            this.panel_underline_pass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_underline_pass.Margin = new System.Windows.Forms.Padding(4);
             this.panel_underline_pass.Name = "panel_underline_pass";
             this.panel_underline_pass.Size = new System.Drawing.Size(205, 1);
             this.panel_underline_pass.TabIndex = 3;
@@ -101,7 +103,7 @@
             // 
             this.panel_underline_login.BackColor = System.Drawing.Color.Yellow;
             this.panel_underline_login.Location = new System.Drawing.Point(96, 102);
-            this.panel_underline_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_underline_login.Margin = new System.Windows.Forms.Padding(4);
             this.panel_underline_login.Name = "panel_underline_login";
             this.panel_underline_login.Size = new System.Drawing.Size(205, 1);
             this.panel_underline_login.TabIndex = 4;
@@ -113,7 +115,7 @@
             this.pictureBox_pass_symbol.Image = global::VMA.Properties.Resources._lock;
             this.pictureBox_pass_symbol.InitialImage = null;
             this.pictureBox_pass_symbol.Location = new System.Drawing.Point(96, 145);
-            this.pictureBox_pass_symbol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_pass_symbol.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_pass_symbol.Name = "pictureBox_pass_symbol";
             this.pictureBox_pass_symbol.Size = new System.Drawing.Size(25, 23);
             this.pictureBox_pass_symbol.TabIndex = 6;
@@ -126,11 +128,21 @@
             this.pictureBox_login_symbol.Image = global::VMA.Properties.Resources.user_alt;
             this.pictureBox_login_symbol.InitialImage = null;
             this.pictureBox_login_symbol.Location = new System.Drawing.Point(96, 75);
-            this.pictureBox_login_symbol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_login_symbol.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_login_symbol.Name = "pictureBox_login_symbol";
             this.pictureBox_login_symbol.Size = new System.Drawing.Size(25, 23);
             this.pictureBox_login_symbol.TabIndex = 5;
             this.pictureBox_login_symbol.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.pictureBox1.Location = new System.Drawing.Point(18, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 34);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
             // Form_login
             // 
@@ -138,6 +150,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(381, 302);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox_pass_symbol);
             this.Controls.Add(this.pictureBox_login_symbol);
             this.Controls.Add(this.panel_underline_login);
@@ -158,9 +171,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vehicles Management App";
             this.Load += new System.EventHandler(this.Form_login_Load);
-          
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pass_symbol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_login_symbol)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +188,7 @@
         private System.Windows.Forms.Panel panel_underline_login;
         private System.Windows.Forms.PictureBox pictureBox_login_symbol;
         private System.Windows.Forms.PictureBox pictureBox_pass_symbol;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
