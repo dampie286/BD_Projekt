@@ -24,11 +24,11 @@ namespace VMA
                               where x.description!="brakwspolpracy"
                               select new
                               {
-                                  ID=x.company_id,
-                                  Nazwa= x.name,
-                                 Specialność=x.description,
-                                 Adres=x.address,
-                                 Numer_Telefonu=x.phone_nr,
+                                  ID = x.company_id,
+                                  NAZWA = x.name,
+                                  SPECJALNOŚĆ = x.description,
+                                  ADRES = x.address,
+                                  TELEFON = x.phone_nr,
                               };
 
             dataGridView_services.DataSource = Selectquery;

@@ -191,7 +191,7 @@ namespace VMA
                                                        && ((x.date_from <= time_from
                                                            && x.date_to >= time_from)
                                                            || (x.date_from <= time_to
-                                                               && x.date_to >= time_to)))
+                                                               && x.date_to >= time_to)) && x.mileage_end == 0)
                                                                    .Select(x => x.rent_id)
                                                                        .Count();
 

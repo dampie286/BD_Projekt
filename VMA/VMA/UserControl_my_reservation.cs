@@ -49,7 +49,7 @@ namespace VMA
                                   MARKA = x.brand, MODEL = x.model,
                                   OD = y.date_from.ToShortDateString(),
                                   DO = y.date_to.ToShortDateString(),
-                                  REZERWUJACY = z.surname,
+                                  REZERWUJĄCY = z.surname,
                                   CEL = y.purpose,
                                   PRZEBIEG = x.mileage,
                                   Reserv_id = y.reservation_id

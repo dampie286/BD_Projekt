@@ -169,12 +169,14 @@
             this.dataGridView_workers_DB.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dataGridView_workers_DB.Location = new System.Drawing.Point(25, 95);
             this.dataGridView_workers_DB.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridView_workers_DB.MultiSelect = false;
             this.dataGridView_workers_DB.Name = "dataGridView_workers_DB";
             this.dataGridView_workers_DB.ReadOnly = true;
             this.dataGridView_workers_DB.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView_workers_DB.RowHeadersVisible = false;
             this.dataGridView_workers_DB.RowTemplate.Height = 24;
             this.dataGridView_workers_DB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView_workers_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_workers_DB.Size = new System.Drawing.Size(665, 195);
             this.dataGridView_workers_DB.TabIndex = 75;
             // 
