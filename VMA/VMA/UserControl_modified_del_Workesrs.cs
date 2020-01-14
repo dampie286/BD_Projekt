@@ -50,16 +50,16 @@ namespace VMA
                         select new
                         {
                             ID = x.worker_id,
-                            Imię = x.name,
-                            Nazwisko = x.surname,
-                            Stanowisko = x.position,
+                            IMIĘ = x.name,
+                            NAZWISKO = x.surname,
+                            STANOWISKO = x.position,
                             PESEL = x.PESEL,
-                            DataUrodzenia = x.date_of_birth,
-                            Telefon =  x.phone_nr,
-                            Miasto = x.city,
-                            Ulica = x.street,
-                            Kod = x.city_code,
-                            NumerDomu = x.house
+                            DATA_URODZENIA = x.date_of_birth,
+                            TELEFON =  x.phone_nr,
+                            MIASTO = x.city,
+                            ULICA = x.street,
+                            KOD = x.city_code,
+                            NR_DOMU = x.house
 
                         };
            

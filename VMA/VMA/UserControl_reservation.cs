@@ -55,7 +55,7 @@ namespace VMA
                                   MODEL = x.model,
                                   OD = y.date_from.ToShortDateString(),
                                   DO = y.date_to.ToShortDateString(),
-                                  REZERWUJACY = z.surname,
+                                  REZERWUJĄCY = z.surname,
                                   CEL = y.purpose
                               };
             

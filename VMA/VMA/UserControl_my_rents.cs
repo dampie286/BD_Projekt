@@ -48,7 +48,7 @@ namespace VMA
                                   DO = y.date_to.ToShortDateString(),
                                   PRZEBIEG = x.mileage,
                                   CEL = y.purpose,
-                                  id_rent=y.rent_id
+                                  id_rent = y.rent_id
                               };
 
             dataGridView_my_rents.DataSource = Selectquery;

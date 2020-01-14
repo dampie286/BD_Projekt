@@ -65,29 +65,25 @@ namespace VMA
                 }
             }
         }
-        private void gridedit()
-        {
-            dataGridView_veh_DB.RowHeadersVisible = false;
-            dataGridView_veh_DB.Columns[0].Visible = false;
-            dataGridView_veh_DB.Columns[1].Visible = true;
-            dataGridView_veh_DB.Columns[2].Visible = true;
-            dataGridView_veh_DB.Columns[3].Visible = true;
-            dataGridView_veh_DB.Columns[4].Visible = false;
-            dataGridView_veh_DB.Columns[5].Visible = true;
-            dataGridView_veh_DB.Columns[6].Visible = true;
-            dataGridView_veh_DB.Columns[7].Visible = true;
-            dataGridView_veh_DB.Columns[8].Visible = false;
-        }
+        
         public void fillDataGridView()
         {
 
             var Selectquery = from x in db.VehicleSets
                               where x.available != "deleted"
-                              select x;
+                              select new
+                              {
+                                  MARKA = x.brand,
+                                  MODEL = x.model,
+                                  WERSJA = x.version,
+                                  REJESTRACJA = x.licence_plate,
+                                  SPALANIE = x.avg_consumption,
+                                  PALIWO = x.fuel_type,
+                                  PRZEBIEG = x.mileage
+                              };
 
             dataGridView_veh_DB.DataSource = Selectquery;
 
-            gridedit();
         }
 
         private void UserControl_raports_stats_cars_Load(object sender, EventArgs e)

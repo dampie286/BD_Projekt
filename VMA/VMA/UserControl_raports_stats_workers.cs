@@ -21,34 +21,22 @@ namespace VMA
         {
             InitializeComponent();
         }
-        private void Grid_edit()
-        {
-
-            //widocznos kolumn
-            dataGridView_workers_DB.RowHeadersVisible = false;
-            dataGridView_workers_DB.Columns[0].Visible = false;
-            //  dataGridView_workers_DB.Columns[1].Visible = false; imie
-            // dataGridView_workers_DB.Columns[2].Visible = false;  nazwisko    
-            //dataGridView_workers_DB.Columns[3].Visible = false;   pozycja
-            dataGridView_workers_DB.Columns[4].Visible = false;
-            dataGridView_workers_DB.Columns[5].Visible = false;
-            dataGridView_workers_DB.Columns[6].Visible = false;
-            // dataGridView_workers_DB.Columns[7].Visible = false;  nr telefonu
-            dataGridView_workers_DB.Columns[8].Visible = false;
-            dataGridView_workers_DB.Columns[9].Visible = false;
-            dataGridView_workers_DB.Columns[10].Visible = false;
-            dataGridView_workers_DB.Columns[11].Visible = false;
-            dataGridView_workers_DB.Columns[12].Visible = false;
-
-        }
 
         public void fillDataGridView()
         {
 
-            var query = from x in db.WorkerSets where x.position != "fired" select x;
+            var query = from x in db.WorkerSets
+                        where x.position != "fired"
+                        select new
+                        {
+                            IMIĘ = x.name,
+                            NAZWISKO = x.surname,
+                            STANOWISKO = x.position,
+                            TELEFON = x.phone_nr
+                        };
 
             dataGridView_workers_DB.DataSource = query;
-            Grid_edit();
+            
         }
 
         private void GeneratePDF(string filename, string description, DataTable data, double kms, double costs, double counts)
