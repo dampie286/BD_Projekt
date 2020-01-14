@@ -35,7 +35,7 @@ namespace VMA
                             ID = y.vehicle_id,
                             AUTO = y.model,
                             REJESTRACJA = y.licence_plate,
-                            DOSTĘPNOSC = y.available
+                            DOSTĘPNOŚĆ = y.available
                         };
 
             dataGridView_care_car_DB.DataSource = query;

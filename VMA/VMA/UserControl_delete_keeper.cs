@@ -65,7 +65,7 @@ namespace VMA
                         select new
                         {
                             ID = x.care_id,
-                            IMIE = x.WorkerSet_Keeper.WorkerSet.name,
+                            IMIĘ = x.WorkerSet_Keeper.WorkerSet.name,
                             NAZWISKO = x.WorkerSet_Keeper.WorkerSet.surname,
                             OPIEKA = x.VehicleSet.model,
                             REJESTRACJA = x.VehicleSet.licence_plate

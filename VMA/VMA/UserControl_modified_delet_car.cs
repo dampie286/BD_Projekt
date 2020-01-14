@@ -44,13 +44,13 @@ namespace VMA
                               select new
                               {
                                   ID = x.vehicle_id,
-                                  Marka = x.brand,
-                                  Model = x.model,
-                                  Wersja = x.version,
-                                  Rejestracja = x.licence_plate,
-                                  Spalanie = x.avg_consumption,
-                                  Paliwo = x.fuel_type,
-                                  Przebieg = x.mileage
+                                  MARKA = x.brand,
+                                  MODEL = x.model,
+                                  WERSJA = x.version,
+                                  REJESTRACJA = x.licence_plate,
+                                  SPALANIE = x.avg_consumption,
+                                  PALIWO = x.fuel_type,
+                                  PRZEBIEG = x.mileage
                               };
 
             dataGridView_veh_DB.DataSource = Selectquery;
