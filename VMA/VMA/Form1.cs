@@ -16,6 +16,8 @@ namespace VMA
         MainApp mainapp;
         Form_panel_admin adminapp;
         Form_panel_manager menagerapp;
+        Form2 sett;
+
         string name;
         string password;
 
@@ -312,9 +314,7 @@ namespace VMA
             if (chh == 13)
             {
                 login();
-                //SoundPlayer player = new SoundPlayer();
-                //player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "777.wav";
-                //player.Play();
+             
 
             }
 
@@ -329,6 +329,25 @@ namespace VMA
                 SendKeys.Send("{TAB}");
 
             }
+
+
+        }
+
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+
+
+            sett = new Form2();
+
+            sett.Show();
+
+
+
+
+
+
+
+
 
 
         }
