@@ -73,6 +73,7 @@ namespace VMA
                               where x.available != "deleted"
                               select new
                               {
+                                  ID = x.vehicle_id,
                                   MARKA = x.brand,
                                   MODEL = x.model,
                                   WERSJA = x.version,
@@ -107,8 +108,8 @@ namespace VMA
 
                 label_brand.Text = (string)dataGridView_veh_DB.Rows[row].Cells[1].Value;
                 label_model.Text = (string)dataGridView_veh_DB.Rows[row].Cells[2].Value;
-                label_license.Text = dataGridView_veh_DB.Rows[row].Cells[5].Value.ToString();
-                label_current_mileage.Text = dataGridView_veh_DB.Rows[row].Cells[9].Value.ToString();
+                label_license.Text = dataGridView_veh_DB.Rows[row].Cells[4].Value.ToString();
+                label_current_mileage.Text = dataGridView_veh_DB.Rows[row].Cells[7].Value.ToString();
             }
             catch
             {

@@ -29,6 +29,7 @@ namespace VMA
                         where x.position != "fired"
                         select new
                         {
+                            ID = x.worker_id,
                             IMIĘ = x.name,
                             NAZWISKO = x.surname,
                             STANOWISKO = x.position,
@@ -174,7 +175,7 @@ namespace VMA
 
                 label_name_with_choice.Text = dataGridView_workers_DB.Rows[row].Cells[1].Value.ToString();
                 label_surrname.Text = dataGridView_workers_DB.Rows[row].Cells[2].Value.ToString();
-                label_number.Text = dataGridView_workers_DB.Rows[row].Cells[7].Value.ToString();
+                label_number.Text = dataGridView_workers_DB.Rows[row].Cells[4].Value.ToString();
                 label_position.Text = dataGridView_workers_DB.Rows[row].Cells[3].Value.ToString();
 
                  id = (int)dataGridView_workers_DB.Rows[row].Cells[0].Value;
