@@ -181,115 +181,144 @@ namespace VMA
             }
             else
             {
-                try
+                int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
+                car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
+                var count_Reservations = db.ReservationSets
+                                                .Where(x => x.Vehicle_vehicle_id == car_id && x.Worker_worker_id == user_id
+                                                        && ((x.date_from <= dateTimePicker_from_date_reserv.Value
+                                                            && x.date_to >= dateTimePicker_from_date_reserv.Value)
+                                                            || (x.date_from <= dateTimePicker_to_date_reserv.Value
+                                                                && x.date_to >= dateTimePicker_to_date_reserv.Value)))
+                                                                    .Select(x => x.reservation_id)
+                                                                        .Count();
+
+                if (count_Reservations == 0)
                 {
-                    int row = dataGridView_care_car_DB.CurrentCell.RowIndex;
-                    car_id = (int)dataGridView_care_car_DB.Rows[row].Cells[0].Value;
-                    string company_name;
-                    VehicleSet vechicle = db.VehicleSets.Where(x => x.vehicle_id == car_id).First();
 
-                    //vechicle.available = "no";
-
-                    CareSet care_id = db.CareSets
-                                      .Where(x => x.Vehicle_vehicle_id == car_id)
-                                      .First();
-
-                    company_name = comboBox_Company_name.Text;
-
-                    CompanySet company_id = db.CompanySets
-                                            .Where(x => x.name == company_name)
-                                            .First();
                     try
                     {
-                        ServiceSet service = new ServiceSet()
-                        {
-                            is_repair = false,
-                            name = comboBox_service.Text,
-                            description = textBox_description.Text
-                        };
-                        db.ServiceSets.InsertOnSubmit(service);
-                        db.SubmitChanges();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Nie udało się oddać auta do serwisu", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    try
-                    {
-                        ServiceSet service = db.ServiceSets.OrderByDescending(p => p.service_id).First();
+                      
+                       
+                        string company_name;
+                        VehicleSet vechicle = db.VehicleSets.Where(x => x.vehicle_id == car_id).First();
 
-                        Care_serviceSet newservice = new Care_serviceSet()
-                        {
-                            date_from = dateTimePicker_from_date_reserv.Value,
-                            data_to = Convert.ToDateTime("1999-01-01 00:00:00.000"),
-                            Care_care_id = care_id.care_id,
-                            Service_service_id = service.service_id,
-                            price = -10,
-                            Company_company_id = company_id.company_id
-                        };
-                        db.Care_serviceSets.InsertOnSubmit(newservice);
-                        db.SubmitChanges();
+                        //vechicle.available = "no";
 
-                        fillDataGridView();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Nie dodało się do bazy care_service", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    try
-                    {
-                        WorkerSet worker;
-                        
+                        CareSet care_id = db.CareSets
+                                          .Where(x => x.Vehicle_vehicle_id == car_id)
+                                          .First();
+
+                        company_name = comboBox_Company_name.Text;
+
+                        CompanySet company_id = db.CompanySets
+                                                .Where(x => x.name == company_name)
+                                                .First();
                         try
                         {
-                            var people = (from x in db.ReservationSets
-                                         where ((x.date_from >= dateTimePicker_from_date_reserv.Value && x.date_from <= dateTimePicker_to_date_reserv.Value)
-                                                || (x.date_to >= dateTimePicker_from_date_reserv.Value && x.date_to <= dateTimePicker_to_date_reserv.Value)
-                                                || (x.date_from >= dateTimePicker_from_date_reserv.Value && x.date_to <= dateTimePicker_to_date_reserv.Value))
-                                                && x.Vehicle_vehicle_id == vechicle.vehicle_id
-                                                && x.Worker_worker_id != user_id
-                                         select x.Worker_worker_id).Distinct();
-
-                            string peoples = "Powiadom następujące osoby o wysyłaniu pojazdu na serwis w terminie ich rezerwacji, oraz poproś o usunięcie owej rezerwacji: \n ";
-                            foreach (int id in people)
+                            ServiceSet service = new ServiceSet()
                             {
-                                worker = db.WorkerSets.Where(x => x.worker_id == id).SingleOrDefault();
+                                is_repair = false,
+                                name = comboBox_service.Text,
+                                description = textBox_description.Text
+                            };
+                            db.ServiceSets.InsertOnSubmit(service);
+                            db.SubmitChanges();
 
-                                peoples += worker.name + " " + worker.surname + " nr telefonu do pracownika: " + worker.phone_nr.ToString() + "\n";
-                            }
-
-                            if (peoples == "Powiadom następujące osoby o wysyłaniu pojazdu na serwis w terminie ich rezerwacji, oraz poproś o usunięcie owej rezerwacji: \n ")
-                            { }
-                            else
-                            {
-                                MessageBox.Show(peoples, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
                         }
                         catch (Exception)
                         {
+                            MessageBox.Show("Nie udało się oddać auta do serwisu", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        ReservationSet newreserv = new ReservationSet()
+                        try
                         {
-                            date_from = dateTimePicker_from_date_reserv.Value,
-                            date_to = dateTimePicker_to_date_reserv.Value,
-                            purpose = "Serwis",
-                            Worker_worker_id = user_id,
-                            Vehicle_vehicle_id = vechicle.vehicle_id
-                        };
+                            ServiceSet service = db.ServiceSets.OrderByDescending(p => p.service_id).First();
 
-                        db.ReservationSets.InsertOnSubmit(newreserv);
-                        db.SubmitChanges();
+                            Care_serviceSet newservice = new Care_serviceSet()
+                            {
+                                date_from = dateTimePicker_from_date_reserv.Value,
+                                data_to = Convert.ToDateTime("1999-01-01 00:00:00.000"),
+                                Care_care_id = care_id.care_id,
+                                Service_service_id = service.service_id,
+                                price = -10,
+                                Company_company_id = company_id.company_id
+                            };
+                            db.Care_serviceSets.InsertOnSubmit(newservice);
+                            db.SubmitChanges();
+                            MessageBox.Show("Zarezerwowałeś pojazd od " + dateTimePicker_from_date_reserv.Value.ToShortDateString(), "Good Reservation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            fillDataGridView();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Nie dodało się do bazy care_service", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        try
+                        {
+                            WorkerSet worker;
+
+                            try
+                            {
+                                var people = (from x in db.ReservationSets
+                                              where ((x.date_from >= dateTimePicker_from_date_reserv.Value && x.date_from <= dateTimePicker_to_date_reserv.Value)
+                                                     || (x.date_to >= dateTimePicker_from_date_reserv.Value && x.date_to <= dateTimePicker_to_date_reserv.Value)
+                                                     || (x.date_from >= dateTimePicker_from_date_reserv.Value && x.date_to <= dateTimePicker_to_date_reserv.Value))
+                                                     && x.Vehicle_vehicle_id == vechicle.vehicle_id
+                                                     && x.Worker_worker_id != user_id
+                                              select x.Worker_worker_id).Distinct();
+
+                                string peoples = "Powiadom następujące osoby o wysyłaniu pojazdu na serwis w terminie ich rezerwacji, oraz poproś o usunięcie owej rezerwacji: \n ";
+                                foreach (int id in people)
+                                {
+                                    worker = db.WorkerSets.Where(x => x.worker_id == id).SingleOrDefault();
+
+                                    peoples += worker.name + " " + worker.surname + " nr telefonu do pracownika: " + worker.phone_nr.ToString() + "\n";
+                                }
+
+                                if (peoples == "Powiadom następujące osoby o wysyłaniu pojazdu na serwis w terminie ich rezerwacji, oraz poproś o usunięcie owej rezerwacji: \n ")
+                                { }
+                                else
+                                {
+                                    MessageBox.Show(peoples, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }
+                            catch (Exception)
+                            {
+                            }
+                            ReservationSet newreserv = new ReservationSet()
+                            {
+                                date_from = dateTimePicker_from_date_reserv.Value,
+                                date_to = dateTimePicker_to_date_reserv.Value,
+                                purpose = "Serwis",
+                                Worker_worker_id = user_id,
+                                Vehicle_vehicle_id = vechicle.vehicle_id
+                            };
+
+                            db.ReservationSets.InsertOnSubmit(newreserv);
+                            db.SubmitChanges();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Nie udało się stworzyć rezerwacji", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Nie udało się stworzyć rezerwacji", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Zaznacz samochód", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
+
+
                 }
-                catch (Exception)
+                else
                 {
-                    MessageBox.Show("Zaznacz samochód", "Error check", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    MessageBox.Show("Masz już zarezerwowane auto w takim okresie", "Error Reservation", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+
+
+
         }
 
         private void textBox_description_Enter(object sender, EventArgs e)
