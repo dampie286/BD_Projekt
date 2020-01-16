@@ -44,5 +44,11 @@ namespace VMA
                 Button_my_rents_Click(this, e);
             }
         }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helppdf help = new helppdf(11);
+            help.Show();
+        }
     }
 }

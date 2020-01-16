@@ -255,5 +255,11 @@ namespace VMA
                 textBox_description.ForeColor = Color.FromArgb(120, 120, 0);
             }
         }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helppdf help = new helppdf(16);
+            help.Show();
+        }
     }
 }

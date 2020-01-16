@@ -34,5 +34,11 @@ namespace VMA
                 Button_reserve_block_car_Click(this, e);
             }
         }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helppdf help = new helppdf(15);
+            help.Show();
+        }
     }
 }

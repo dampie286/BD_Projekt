@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl_rent_with_DB));
             this.button_rent = new System.Windows.Forms.Button();
             this.label_to_date_reserv = new System.Windows.Forms.Label();
             this.dateTimePicker_to_date_rent = new System.Windows.Forms.DateTimePicker();
@@ -50,7 +51,9 @@
             this.button_show_available_cars = new System.Windows.Forms.Button();
             this.comboBox_purpose_of_rent = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_veh_DB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
             this.SuspendLayout();
             // 
             // button_rent
@@ -180,7 +183,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Yellow;
             this.panel5.Location = new System.Drawing.Point(531, 47);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(120, 1);
             this.panel5.TabIndex = 41;
@@ -189,7 +192,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Yellow;
             this.panel4.Location = new System.Drawing.Point(404, 47);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(120, 1);
             this.panel4.TabIndex = 42;
@@ -198,7 +201,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Yellow;
             this.panel3.Location = new System.Drawing.Point(277, 47);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(120, 1);
             this.panel3.TabIndex = 43;
@@ -207,7 +210,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Yellow;
             this.panel2.Location = new System.Drawing.Point(151, 47);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(120, 1);
             this.panel2.TabIndex = 44;
@@ -216,7 +219,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Yellow;
             this.panel1.Location = new System.Drawing.Point(24, 47);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(120, 1);
             this.panel1.TabIndex = 39;
@@ -365,11 +368,24 @@
             this.label2.TabIndex = 59;
             this.label2.Text = "Cel wypożyczenia";
             // 
+            // pictureBox_help
+            // 
+            this.pictureBox_help.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
+            this.pictureBox_help.Location = new System.Drawing.Point(895, 23);
+            this.pictureBox_help.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox_help.Name = "pictureBox_help";
+            this.pictureBox_help.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox_help.TabIndex = 60;
+            this.pictureBox_help.TabStop = false;
+            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
+            // 
             // UserControl_rent_with_DB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.Controls.Add(this.pictureBox_help);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox_purpose_of_rent);
             this.Controls.Add(this.button_show_available_cars);
@@ -394,6 +410,7 @@
             this.Name = "UserControl_rent_with_DB";
             this.Size = new System.Drawing.Size(941, 656);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_veh_DB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,5 +438,6 @@
         private System.Windows.Forms.Button button_show_available_cars;
         private System.Windows.Forms.ComboBox comboBox_purpose_of_rent;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox_help;
     }
 }

@@ -290,5 +290,11 @@ namespace VMA
                 e.Handled = true;
             }
         }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helppdf help = new helppdf(14);
+            help.Show();
+        }
     }
 }
