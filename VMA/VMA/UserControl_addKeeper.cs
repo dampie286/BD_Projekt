@@ -138,6 +138,12 @@ namespace VMA
             label_model.Text = (string)dataGridView_veh.Rows[row].Cells[2].Value;
             label_license.Text = (string)dataGridView_veh.Rows[row].Cells[3].Value;
         }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helppdf help = new helppdf(2);
+            help.Show();
+        }
     }
 }
 

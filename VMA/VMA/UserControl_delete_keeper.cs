@@ -232,5 +232,11 @@ namespace VMA
             catch(Exception)
             { }
         }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helppdf help = new helppdf(2);
+            help.Show();
+        }
     }
 }

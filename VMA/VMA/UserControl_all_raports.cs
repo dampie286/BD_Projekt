@@ -470,6 +470,11 @@ namespace VMA
             
              GeneratePDF("Lista Kosztów", "Lista kosztow od " + dateTimePicker_from_date_reserv.Value.Date.ToShortDateString() + " do " + dateTimePicker_to_date_reserv.Value.Date.ToShortDateString(), data, service_price, sum);
         }
-      
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helppdf help = new helppdf(27);
+            help.Show();
+        }
     }
 }

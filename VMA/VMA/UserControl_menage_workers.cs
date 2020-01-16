@@ -34,5 +34,11 @@ namespace VMA
                 Button_menANDDelWorker_Click(this, e);
             }
         }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helppdf help = new helppdf(33);
+            help.Show();
+        }
     }
 }

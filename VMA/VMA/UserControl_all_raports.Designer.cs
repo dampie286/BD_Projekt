@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl_all_raports));
             this.button_cars_generate_to_pdf = new System.Windows.Forms.Button();
             this.label_to_date_reserv = new System.Windows.Forms.Label();
             this.dateTimePicker_to_date_reserv = new System.Windows.Forms.DateTimePicker();
@@ -49,6 +50,8 @@
             this.comboBox_status_of_care = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox_help = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
             this.SuspendLayout();
             // 
             // button_cars_generate_to_pdf
@@ -334,11 +337,24 @@
             this.label7.TabIndex = 89;
             this.label7.Text = "Lista pracowników";
             // 
+            // pictureBox_help
+            // 
+            this.pictureBox_help.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
+            this.pictureBox_help.Location = new System.Drawing.Point(885, 25);
+            this.pictureBox_help.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox_help.Name = "pictureBox_help";
+            this.pictureBox_help.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox_help.TabIndex = 102;
+            this.pictureBox_help.TabStop = false;
+            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
+            // 
             // UserControl_all_raports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.Controls.Add(this.pictureBox_help);
             this.Controls.Add(this.comboBox_status_of_care);
             this.Controls.Add(this.button_cost_generate_to_pdf);
             this.Controls.Add(this.button_services_generate_to_pdf);
@@ -363,6 +379,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserControl_all_raports";
             this.Size = new System.Drawing.Size(941, 656);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,5 +408,6 @@
         private System.Windows.Forms.ComboBox comboBox_status_of_care;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox_help;
     }
 }

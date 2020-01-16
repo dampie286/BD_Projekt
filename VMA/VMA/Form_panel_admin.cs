@@ -164,5 +164,11 @@ namespace VMA
         {
             userControl_raports_stats1.BringToFront();
         }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helppdf help = new helppdf(28);
+            help.Show();
+        }
     }
 }

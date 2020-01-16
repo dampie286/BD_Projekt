@@ -309,5 +309,11 @@ namespace VMA
             }
             GeneratePDF("Koszta pojazdów", "Koszta za okres: " + dateTimePicker_from_date_reserv.Value.ToShortDateString() + " - " + dateTimePicker_to_date_reserv.Value.ToShortDateString(), data);
         }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helppdf help = new helppdf(25);
+            help.Show();
+        }
     }
 }

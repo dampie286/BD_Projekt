@@ -48,7 +48,9 @@
             this.userControl_add_Car1 = new VMA.UserControl_add_Car();
             this.userControl_raports_stats_cars1 = new VMA.UserControl_raports_stats_cars();
             this.userControl_raports_stats_workers1 = new VMA.UserControl_raports_stats_workers();
+            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
             this.SuspendLayout();
             // 
             // label_admin_is_online
@@ -58,7 +60,7 @@
             this.label_admin_is_online.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.label_admin_is_online.Location = new System.Drawing.Point(429, 7);
             this.label_admin_is_online.Name = "label_admin_is_online";
-            this.label_admin_is_online.Size = new System.Drawing.Size(174, 15);
+            this.label_admin_is_online.Size = new System.Drawing.Size(204, 17);
             this.label_admin_is_online.TabIndex = 1;
             this.label_admin_is_online.Text = "Zalogowany jako Administrator";
             // 
@@ -160,7 +162,7 @@
             this.userControl_raports_stats1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_raports_stats1.ForeColor = System.Drawing.Color.Black;
             this.userControl_raports_stats1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_raports_stats1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_raports_stats1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_raports_stats1.Name = "userControl_raports_stats1";
             this.userControl_raports_stats1.Size = new System.Drawing.Size(941, 656);
             this.userControl_raports_stats1.TabIndex = 30;
@@ -215,7 +217,7 @@
             // 
             this.userControl_modified_del_Workesrs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.userControl_modified_del_Workesrs1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_modified_del_Workesrs1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_modified_del_Workesrs1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_modified_del_Workesrs1.Name = "userControl_modified_del_Workesrs1";
             this.userControl_modified_del_Workesrs1.Size = new System.Drawing.Size(941, 656);
             this.userControl_modified_del_Workesrs1.TabIndex = 25;
@@ -242,7 +244,7 @@
             // 
             this.userControl_modified_delet_car1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.userControl_modified_delet_car1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_modified_delet_car1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_modified_delet_car1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_modified_delet_car1.Name = "userControl_modified_delet_car1";
             this.userControl_modified_delet_car1.Size = new System.Drawing.Size(941, 656);
             this.userControl_modified_delet_car1.TabIndex = 22;
@@ -269,16 +271,29 @@
             // 
             this.userControl_raports_stats_workers1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_raports_stats_workers1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_raports_stats_workers1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_raports_stats_workers1.Margin = new System.Windows.Forms.Padding(2);
             this.userControl_raports_stats_workers1.Name = "userControl_raports_stats_workers1";
             this.userControl_raports_stats_workers1.Size = new System.Drawing.Size(941, 656);
             this.userControl_raports_stats_workers1.TabIndex = 32;
+            // 
+            // pictureBox_help
+            // 
+            this.pictureBox_help.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
+            this.pictureBox_help.Location = new System.Drawing.Point(857, 2);
+            this.pictureBox_help.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox_help.Name = "pictureBox_help";
+            this.pictureBox_help.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox_help.TabIndex = 33;
+            this.pictureBox_help.TabStop = false;
+            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
             // 
             // Form_panel_admin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.pictureBox_help);
             this.Controls.Add(this.userControl_raports_stats_workers1);
             this.Controls.Add(this.userControl_raports_stats_cars1);
             this.Controls.Add(this.userControl_raports_stats1);
@@ -306,6 +321,7 @@
             this.Text = " Vehicles Management App";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_panel_admin_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,5 +348,6 @@
         private UserControl_raports_stats userControl_raports_stats1;
         private UserControl_raports_stats_cars userControl_raports_stats_cars1;
         private UserControl_raports_stats_workers userControl_raports_stats_workers1;
+        private System.Windows.Forms.PictureBox pictureBox_help;
     }
 }
