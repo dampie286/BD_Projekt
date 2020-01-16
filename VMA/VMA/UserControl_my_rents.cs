@@ -92,12 +92,13 @@ namespace VMA
              {
             var rent = (from x in db.RentSets
                             where x.rent_id == rent_id select x).Single();
-                                    
-                
+
+                if (!string.IsNullOrEmpty(textBox_mileage.Text))
+                {
                     if (rent.mileage_start < Convert.ToInt32(textBox_mileage.Text))
                     {
                         rent.mileage_end = Convert.ToInt32(textBox_mileage.Text);
-                       
+
 
                         try
                         {
@@ -105,81 +106,86 @@ namespace VMA
                                               where x.vehicle_id == car_id
                                               select x).Single();
                             veh.mileage = Convert.ToInt32(textBox_mileage.Text);
-                        db.SubmitChanges();
+                            db.SubmitChanges();
 
-                        MessageBox.Show("Zakończenie rezerwacji zakończyło się powodzeniem", "Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Zakończenie rezerwacji zakończyło się powodzeniem", "Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    }
-                    catch (Exception)
+                        }
+                        catch (Exception)
                         {
                             MessageBox.Show("Nie udało się nadpisać przebiegu pojazdu", "Error Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         }
 
-                    mileage1 = Convert.ToInt32(textBox_mileage.Text) - Convert.ToInt32(dataGridView_my_rents.Rows[row].Cells[6].Value.ToString());
+                        mileage1 = Convert.ToInt32(textBox_mileage.Text) - Convert.ToInt32(dataGridView_my_rents.Rows[row].Cells[6].Value.ToString());
 
-                    if (comboBox_type_cost.SelectedIndex == -1)
-                    {
-                        db.SubmitChanges();
-                    }
-                    else if (comboBox_type_cost.Text == "Tankowanie")
-                    {
-                        litres = Convert.ToDouble(textBox_litres.Text);
-                        PurchaseSet car = new PurchaseSet()
+                        if (comboBox_type_cost.SelectedIndex == -1)
                         {
-                            Rent_rent_id = rent_id,
-                            price = Convert.ToDouble(textBox_all_cost.Text),
-                            type = "Paliwo",
-                            purchase_date = rent.date_to,
-                            litres = Convert.ToDouble(textBox_litres.Text),
-                            mileage = mileage1
-                        };
-                        db.PurchaseSets.InsertOnSubmit(car);
-
-                        db.SubmitChanges();
-                    }
-                    else if(comboBox_type_cost.Text == "Tankowanie oraz inne")
-                    {
-                        litres = Convert.ToDouble(textBox_litres.Text);
-                        PurchaseSet car = new PurchaseSet()
+                            db.SubmitChanges();
+                        }
+                        else if (comboBox_type_cost.Text == "Tankowanie")
                         {
-                            Rent_rent_id = rent_id,
-                            price = Convert.ToDouble(textBox_all_cost.Text),
-                            type = textBox_other.Text,
-                            purchase_date = rent.date_to,
-                            litres = litres,
-                            mileage = mileage1
-                        };
-                        db.PurchaseSets.InsertOnSubmit(car);
+                            litres = Convert.ToDouble(textBox_litres.Text);
+                            PurchaseSet car = new PurchaseSet()
+                            {
+                                Rent_rent_id = rent_id,
+                                price = Convert.ToDouble(textBox_all_cost.Text),
+                                type = "Paliwo",
+                                purchase_date = rent.date_to,
+                                litres = Convert.ToDouble(textBox_litres.Text),
+                                mileage = mileage1
+                            };
+                            db.PurchaseSets.InsertOnSubmit(car);
 
-                        db.SubmitChanges();
-                    }
-                    else if (comboBox_type_cost.Text == "Inne")
-                    {
-                        PurchaseSet car = new PurchaseSet()
+                            db.SubmitChanges();
+                        }
+                        else if (comboBox_type_cost.Text == "Tankowanie oraz inne")
                         {
-                            Rent_rent_id = rent_id,
-                            price = Convert.ToDouble(textBox_all_cost.Text),
-                            type = textBox_other.Text,
-                            purchase_date = rent.date_to,
-                            litres = 0,
-                            mileage = mileage1
-                        };
-                        db.PurchaseSets.InsertOnSubmit(car);
+                            litres = Convert.ToDouble(textBox_litres.Text);
+                            PurchaseSet car = new PurchaseSet()
+                            {
+                                Rent_rent_id = rent_id,
+                                price = Convert.ToDouble(textBox_all_cost.Text),
+                                type = textBox_other.Text,
+                                purchase_date = rent.date_to,
+                                litres = litres,
+                                mileage = mileage1
+                            };
+                            db.PurchaseSets.InsertOnSubmit(car);
 
-                        db.SubmitChanges();
+                            db.SubmitChanges();
+                        }
+                        else if (comboBox_type_cost.Text == "Inne")
+                        {
+                            PurchaseSet car = new PurchaseSet()
+                            {
+                                Rent_rent_id = rent_id,
+                                price = Convert.ToDouble(textBox_all_cost.Text),
+                                type = textBox_other.Text,
+                                purchase_date = rent.date_to,
+                                litres = 0,
+                                mileage = mileage1
+                            };
+                            db.PurchaseSets.InsertOnSubmit(car);
+
+                            db.SubmitChanges();
+                        }
+
+
+                        fillDataGridView();
+                        litres_and_other_hide();
                     }
-
-
-                    fillDataGridView();
-                    litres_and_other_hide();
-                }
                     else
                     {
                         MessageBox.Show("Przebieg po jest mniejszy niż przed", "Error Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
-                    
+                }
+                else
+                {
+                    MessageBox.Show("Wpisz przebieg po zakończeniu jazd", "Error Ending Rent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
             }
            catch (Exception)
             {
