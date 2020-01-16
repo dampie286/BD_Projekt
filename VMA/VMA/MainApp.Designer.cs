@@ -62,7 +62,7 @@
             this.label_who_online.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.label_who_online.Location = new System.Drawing.Point(429, 7);
             this.label_who_online.Name = "label_who_online";
-            this.label_who_online.Size = new System.Drawing.Size(220, 17);
+            this.label_who_online.Size = new System.Drawing.Size(188, 15);
             this.label_who_online.TabIndex = 0;
             this.label_who_online.Text = "Zalogowany jako Imię i Nazwisko";
             // 
@@ -247,7 +247,7 @@
             // 
             this.userControl_menage_care_cars1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_menage_care_cars1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_menage_care_cars1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_menage_care_cars1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_menage_care_cars1.Name = "userControl_menage_care_cars1";
             this.userControl_menage_care_cars1.Size = new System.Drawing.Size(941, 656);
             this.userControl_menage_care_cars1.TabIndex = 22;
@@ -256,7 +256,7 @@
             // 
             this.userControl_settings1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_settings1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_settings1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_settings1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_settings1.Name = "userControl_settings1";
             this.userControl_settings1.Size = new System.Drawing.Size(941, 656);
             this.userControl_settings1.TabIndex = 19;
@@ -265,7 +265,7 @@
             // 
             this.userControl_myStatics1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_myStatics1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_myStatics1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_myStatics1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_myStatics1.Name = "userControl_myStatics1";
             this.userControl_myStatics1.Size = new System.Drawing.Size(941, 656);
             this.userControl_myStatics1.TabIndex = 18;
@@ -274,7 +274,7 @@
             // 
             this.userControl_my_reservation1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_my_reservation1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_my_reservation1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_my_reservation1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_my_reservation1.Name = "userControl_my_reservation1";
             this.userControl_my_reservation1.Size = new System.Drawing.Size(941, 656);
             this.userControl_my_reservation1.TabIndex = 17;
@@ -283,7 +283,7 @@
             // 
             this.userControl_rent_with_DB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_rent_with_DB1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_rent_with_DB1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_rent_with_DB1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_rent_with_DB1.Name = "userControl_rent_with_DB1";
             this.userControl_rent_with_DB1.Size = new System.Drawing.Size(941, 656);
             this.userControl_rent_with_DB1.TabIndex = 16;
@@ -292,7 +292,7 @@
             // 
             this.userControl_rent1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_rent1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_rent1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_rent1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_rent1.Name = "userControl_rent1";
             this.userControl_rent1.Size = new System.Drawing.Size(941, 656);
             this.userControl_rent1.TabIndex = 15;
@@ -328,7 +328,7 @@
             // 
             this.userControl_my_rents1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_my_rents1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_my_rents1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_my_rents1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControl_my_rents1.Name = "userControl_my_rents1";
             this.userControl_my_rents1.Size = new System.Drawing.Size(941, 656);
             this.userControl_my_rents1.TabIndex = 23;
@@ -337,10 +337,10 @@
             // 
             this.pictureBox_help.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
-            this.pictureBox_help.Location = new System.Drawing.Point(845, 0);
+            this.pictureBox_help.Location = new System.Drawing.Point(853, 4);
             this.pictureBox_help.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox_help.Name = "pictureBox_help";
-            this.pictureBox_help.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox_help.Size = new System.Drawing.Size(19, 19);
             this.pictureBox_help.TabIndex = 26;
             this.pictureBox_help.TabStop = false;
             this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
@@ -349,7 +349,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(882, 553);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.pictureBox_help);
             this.Controls.Add(this.button_manag_care_car);
             this.Controls.Add(this.pictureBox_main_logo);
