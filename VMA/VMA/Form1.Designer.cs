@@ -37,10 +37,11 @@
             this.pictureBox_pass_symbol = new System.Windows.Forms.PictureBox();
             this.pictureBox_login_symbol = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pass_symbol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_login_symbol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_login_name
@@ -95,7 +96,7 @@
             // 
             this.panel_underline_pass.BackColor = System.Drawing.Color.Yellow;
             this.panel_underline_pass.Location = new System.Drawing.Point(96, 172);
-            this.panel_underline_pass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_underline_pass.Margin = new System.Windows.Forms.Padding(4);
             this.panel_underline_pass.Name = "panel_underline_pass";
             this.panel_underline_pass.Size = new System.Drawing.Size(205, 1);
             this.panel_underline_pass.TabIndex = 3;
@@ -104,7 +105,7 @@
             // 
             this.panel_underline_login.BackColor = System.Drawing.Color.Yellow;
             this.panel_underline_login.Location = new System.Drawing.Point(96, 102);
-            this.panel_underline_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_underline_login.Margin = new System.Windows.Forms.Padding(4);
             this.panel_underline_login.Name = "panel_underline_login";
             this.panel_underline_login.Size = new System.Drawing.Size(205, 1);
             this.panel_underline_login.TabIndex = 4;
@@ -116,7 +117,7 @@
             this.pictureBox_pass_symbol.Image = global::VMA.Properties.Resources._lock;
             this.pictureBox_pass_symbol.InitialImage = null;
             this.pictureBox_pass_symbol.Location = new System.Drawing.Point(96, 145);
-            this.pictureBox_pass_symbol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_pass_symbol.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_pass_symbol.Name = "pictureBox_pass_symbol";
             this.pictureBox_pass_symbol.Size = new System.Drawing.Size(25, 23);
             this.pictureBox_pass_symbol.TabIndex = 6;
@@ -129,7 +130,7 @@
             this.pictureBox_login_symbol.Image = global::VMA.Properties.Resources.user_alt;
             this.pictureBox_login_symbol.InitialImage = null;
             this.pictureBox_login_symbol.Location = new System.Drawing.Point(96, 75);
-            this.pictureBox_login_symbol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_login_symbol.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_login_symbol.Name = "pictureBox_login_symbol";
             this.pictureBox_login_symbol.Size = new System.Drawing.Size(25, 23);
             this.pictureBox_login_symbol.TabIndex = 5;
@@ -147,15 +148,17 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
-            // button1
+            // pictureBox_help
             // 
-            this.button1.Location = new System.Drawing.Point(279, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "help";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.pictureBox_help.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
+            this.pictureBox_help.Location = new System.Drawing.Point(343, 14);
+            this.pictureBox_help.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox_help.Name = "pictureBox_help";
+            this.pictureBox_help.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox_help.TabIndex = 8;
+            this.pictureBox_help.TabStop = false;
+            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
             // 
             // Form_login
             // 
@@ -163,7 +166,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(380, 300);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox_help);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox_pass_symbol);
             this.Controls.Add(this.pictureBox_login_symbol);
@@ -188,6 +191,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_pass_symbol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_login_symbol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +207,7 @@
         private System.Windows.Forms.PictureBox pictureBox_login_symbol;
         private System.Windows.Forms.PictureBox pictureBox_pass_symbol;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox_help;
     }
 }
 

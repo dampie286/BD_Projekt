@@ -38,7 +38,6 @@
             this.button_logout = new System.Windows.Forms.Button();
             this.button_manag_care_car = new System.Windows.Forms.Button();
             this.pictureBox_main_logo = new System.Windows.Forms.PictureBox();
-            this.userControl_my_rents1 = new VMA.UserControl_my_rents();
             this.userControl_Welcome2 = new VMA.UserControl_Welcome();
             this.userControl_veh_DB2 = new VMA.UserControl_veh_DB();
             this.userControl_menage_care_cars1 = new VMA.UserControl_menage_care_cars();
@@ -48,9 +47,12 @@
             this.userControl_rent_with_DB1 = new VMA.UserControl_rent_with_DB();
             this.userControl_rent1 = new VMA.UserControl_rent();
             this.userControl_reservation1 = new VMA.UserControl_reservation();
-            this.userControl_manage_care1 = new VMA.UserControl_manage_care();
             this.userControl_send_to_service1 = new VMA.UserControl_send_to_service();
+            this.userControl_manage_care1 = new VMA.UserControl_manage_care();
+            this.userControl_my_rents1 = new VMA.UserControl_my_rents();
+            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_main_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
             this.SuspendLayout();
             // 
             // label_who_online
@@ -223,15 +225,6 @@
             this.pictureBox_main_logo.TabIndex = 20;
             this.pictureBox_main_logo.TabStop = false;
             // 
-            // userControl_my_rents1
-            // 
-            this.userControl_my_rents1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_my_rents1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_my_rents1.Margin = new System.Windows.Forms.Padding(2);
-            this.userControl_my_rents1.Name = "userControl_my_rents1";
-            this.userControl_my_rents1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_my_rents1.TabIndex = 23;
-            // 
             // userControl_Welcome2
             // 
             this.userControl_Welcome2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
@@ -313,30 +306,51 @@
             this.userControl_reservation1.Size = new System.Drawing.Size(941, 656);
             this.userControl_reservation1.TabIndex = 14;
             // 
-            // userControl_manage_care1
-            // 
-            this.userControl_manage_care1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.userControl_manage_care1.Location = new System.Drawing.Point(177, 27);
-            this.userControl_manage_care1.Name = "userControl_manage_care1";
-            this.userControl_manage_care1.Size = new System.Drawing.Size(941, 656);
-            this.userControl_manage_care1.TabIndex = 24;
-            // 
             // userControl_send_to_service1
             // 
             this.userControl_send_to_service1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.userControl_send_to_service1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_send_to_service1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControl_send_to_service1.Name = "userControl_send_to_service1";
             this.userControl_send_to_service1.Size = new System.Drawing.Size(941, 656);
             this.userControl_send_to_service1.TabIndex = 25;
+            // 
+            // userControl_manage_care1
+            // 
+            this.userControl_manage_care1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_manage_care1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_manage_care1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControl_manage_care1.Name = "userControl_manage_care1";
+            this.userControl_manage_care1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_manage_care1.TabIndex = 24;
+            // 
+            // userControl_my_rents1
+            // 
+            this.userControl_my_rents1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.userControl_my_rents1.Location = new System.Drawing.Point(177, 27);
+            this.userControl_my_rents1.Margin = new System.Windows.Forms.Padding(2);
+            this.userControl_my_rents1.Name = "userControl_my_rents1";
+            this.userControl_my_rents1.Size = new System.Drawing.Size(941, 656);
+            this.userControl_my_rents1.TabIndex = 23;
+            // 
+            // pictureBox_help
+            // 
+            this.pictureBox_help.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_help.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_help.Image")));
+            this.pictureBox_help.Location = new System.Drawing.Point(845, 0);
+            this.pictureBox_help.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox_help.Name = "pictureBox_help";
+            this.pictureBox_help.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox_help.TabIndex = 26;
+            this.pictureBox_help.TabStop = false;
+            this.pictureBox_help.Click += new System.EventHandler(this.pictureBox_help_Click);
             // 
             // MainApp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 553);
-            this.Controls.Add(this.userControl_send_to_service1);
-            this.Controls.Add(this.userControl_manage_care1);
-            this.Controls.Add(this.userControl_my_rents1);
+            this.Controls.Add(this.pictureBox_help);
             this.Controls.Add(this.button_manag_care_car);
             this.Controls.Add(this.pictureBox_main_logo);
             this.Controls.Add(this.button_logout);
@@ -355,6 +369,9 @@
             this.Controls.Add(this.userControl_rent_with_DB1);
             this.Controls.Add(this.userControl_rent1);
             this.Controls.Add(this.userControl_reservation1);
+            this.Controls.Add(this.userControl_send_to_service1);
+            this.Controls.Add(this.userControl_manage_care1);
+            this.Controls.Add(this.userControl_my_rents1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -367,6 +384,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainApp_FormClosed);
             this.Load += new System.EventHandler(this.MainApp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_main_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,5 +414,6 @@
         private UserControl_my_rents userControl_my_rents1;
         private UserControl_manage_care userControl_manage_care1;
         private UserControl_send_to_service userControl_send_to_service1;
+        private System.Windows.Forms.PictureBox pictureBox_help;
     }
 }

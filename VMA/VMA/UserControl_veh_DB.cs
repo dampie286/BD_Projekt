@@ -296,5 +296,11 @@ namespace VMA
             textBox_license.Text = "Rejestracja";
             textBox_license.ForeColor = Color.FromArgb(120, 120, 0);
         }
+
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helppdf help = new helppdf(7);
+            help.Show();
+        }
     }
 }

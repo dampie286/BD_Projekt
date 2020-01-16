@@ -352,24 +352,12 @@ namespace VMA
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int page = 5;
-            helppdf help = new helppdf(5);
-            help.Show();            
-            //Process process = new Process();
-           // ProcessStartInfo startInfo = new ProcessStartInfo();
-          
-           /* process.StartInfo.Arguments = "/A \"page=5\" \"C:\\Users\\damian\\Source\\Repos\\BD_Projekt\\VMA\\VMA\\bin\\Debug\\VMA_help_user.pdf";
-            process.StartInfo.FileName = AppDomain.CurrentDomain.BaseDirectory + "VMA_help_user.pdf";
-            process.Start();
-            /*Process process = new Process();
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            process.StartInfo = startInfo;
-            startInfo.Arguments = "/A \"page=4\"";
-            startInfo.FileName = AppDomain.CurrentDomain.BaseDirectory + "VMA_help_user.pdf";
-            process.Start();*/
+   
 
+        private void pictureBox_help_Click(object sender, EventArgs e)
+        {
+            helppdf help = new helppdf(3);
+            help.Show();
         }
     }
 }
