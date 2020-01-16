@@ -22,7 +22,7 @@ namespace VMA
         {
             axAcroPDF1.src= AppDomain.CurrentDomain.BaseDirectory + "VMA_help_user.pdf";
             axAcroPDF1.setCurrentPage(numberpage);
-            axAcroPDF1.setZoom(50);
+            axAcroPDF1.setZoom(68);
         }
     }
 }
