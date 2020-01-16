@@ -20,6 +20,12 @@ namespace VMA
 
         private void button_add_worker_Click(object sender, EventArgs e)
         {
+           
+
+          
+
+            if (Convert.ToString(textBox_id_worker.Text)!=""&& Convert.ToString(textBox_name.Text)!="" && Convert.ToString(textBox_surrname.Text)!= "" && Convert.ToString(comboBox_position.Text) != "" && Convert.ToString(textBox_city.Text) != "" && Convert.ToString(textBox_street.Text) != "" && Convert.ToString(textBox_house.Text) != "" && Convert.ToString(textBox_tmp_pass.Text) != "" && Convert.ToString(textBox_phone_number.Text) != "")
+            { 
             using (DataBaseDataContext db = new DataBaseDataContext())
             {
                 bool confirm = false;
@@ -67,6 +73,13 @@ namespace VMA
                     textBox_tmp_pass.Clear();
                 }
 
+
+            }
+
+            }else
+            {
+
+                MessageBox.Show("Należy uzupełnić wszystkie pola", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
