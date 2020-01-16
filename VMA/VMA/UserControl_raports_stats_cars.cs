@@ -312,7 +312,7 @@ namespace VMA
 
         private void pictureBox_help_Click(object sender, EventArgs e)
         {
-            helppdf help = new helppdf(25);
+            helppdf help = new helppdf(32);
             help.Show();
         }
     }
