@@ -162,6 +162,7 @@ namespace VMA
 
         private void button_statistic_Click(object sender, EventArgs e)
         {
+            userControl_myStatics1.statistic(log);
             userControl_myStatics1.BringToFront();
         }
 

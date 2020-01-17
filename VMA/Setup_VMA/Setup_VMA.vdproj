@@ -15,14 +15,8 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1FFA365B79BC05B9743599AD87730BD2"
-        "OwnerKey" = "8:_7E3137D8CDFF43A1827B6F0C8FF52FD7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_5010C1327B211F0FA4F42BF9981EE020"
-        "OwnerKey" = "8:_B8EFE09AE8CA71DEFA9EC1CD2BF09535"
+        "OwnerKey" = "8:_ED7FEEBB8111EB5C4C19CAB331E5B49E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -57,13 +51,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B8EFE09AE8CA71DEFA9EC1CD2BF09535"
-        "OwnerKey" = "8:_1FFA365B79BC05B9743599AD87730BD2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B8EFE09AE8CA71DEFA9EC1CD2BF09535"
+        "MsmKey" = "8:_C7E57B848B4B5F5C62F3C992F17C1FE5"
         "OwnerKey" = "8:_7E3137D8CDFF43A1827B6F0C8FF52FD7"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -93,6 +81,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_ED7FEEBB8111EB5C4C19CAB331E5B49E"
+        "OwnerKey" = "8:_C7E57B848B4B5F5C62F3C992F17C1FE5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_ED7FEEBB8111EB5C4C19CAB331E5B49E"
+        "OwnerKey" = "8:_7E3137D8CDFF43A1827B6F0C8FF52FD7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_FFC36EE1B5154B3EB18F1DC2AFA20E12"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -106,13 +106,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1FFA365B79BC05B9743599AD87730BD2"
+        "OwnerKey" = "8:_C7E57B848B4B5F5C62F3C992F17C1FE5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B8EFE09AE8CA71DEFA9EC1CD2BF09535"
+        "OwnerKey" = "8:_ED7FEEBB8111EB5C4C19CAB331E5B49E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -164,6 +164,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
         "Release"
@@ -188,6 +196,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -218,37 +234,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1FFA365B79BC05B9743599AD87730BD2"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_1FFA365B79BC05B9743599AD87730BD2"
-                    {
-                    "Name" = "8:AxInterop.AcroPDFLib.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:AxInterop.AcroPDFLib.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_D90A70F4FAD940FC9026480978C29E6D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5010C1327B211F0FA4F42BF9981EE020"
             {
             "SourcePath" = "8:AcroPDF.dll"
@@ -371,20 +356,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B8EFE09AE8CA71DEFA9EC1CD2BF09535"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C7E57B848B4B5F5C62F3C992F17C1FE5"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Interop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_B8EFE09AE8CA71DEFA9EC1CD2BF09535"
+                    "_C7E57B848B4B5F5C62F3C992F17C1FE5"
                     {
-                    "Name" = "8:Interop.AcroPDFLib.dll"
+                    "Name" = "8:AxInterop.AcroPDFLib.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Interop.AcroPDFLib.dll"
+            "SourcePath" = "8:AxInterop.AcroPDFLib.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D90A70F4FAD940FC9026480978C29E6D"
@@ -447,6 +432,37 @@
                     }
                 }
             "SourcePath" = "8:itextsharp.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_D90A70F4FAD940FC9026480978C29E6D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_ED7FEEBB8111EB5C4C19CAB331E5B49E"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Interop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_ED7FEEBB8111EB5C4C19CAB331E5B49E"
+                    {
+                    "Name" = "8:Interop.AcroPDFLib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Interop.AcroPDFLib.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D90A70F4FAD940FC9026480978C29E6D"
@@ -671,6 +687,20 @@
             "Transitive" = "11:FALSE"
             "Target" = "8:_7E3137D8CDFF43A1827B6F0C8FF52FD7"
             "Folder" = "8:_BD3E999E338845988FAFC2345DD0690F"
+            "WorkingFolder" = "8:_D90A70F4FAD940FC9026480978C29E6D"
+            "Icon" = "8:_FFC36EE1B5154B3EB18F1DC2AFA20E12"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C426505BFCE34163B549928512D1D5CF"
+            {
+            "Name" = "8:VMA"
+            "Arguments" = "8:"
+            "Description" = "8:VMA"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_7E3137D8CDFF43A1827B6F0C8FF52FD7"
+            "Folder" = "8:_2087FC1303C84485B85D107E3EF96D20"
             "WorkingFolder" = "8:_D90A70F4FAD940FC9026480978C29E6D"
             "Icon" = "8:_FFC36EE1B5154B3EB18F1DC2AFA20E12"
             "Feature" = "8:"
@@ -1076,7 +1106,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_7E3137D8CDFF43A1827B6F0C8FF52FD7"
             {
-            "SourcePath" = "8:..\\VMA\\obj\\Release\\VMA.exe"
+            "SourcePath" = "8:..\\VMA\\obj\\Debug\\VMA.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D90A70F4FAD940FC9026480978C29E6D"

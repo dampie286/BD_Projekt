@@ -216,7 +216,7 @@ namespace VMA
 
             try
             {
-                var user = db.WorkerSets.Where(i => i.password == password && i.name == name).Single();
+                var user = db.WorkerSets.Where(i => i.password == password && i.PESEL == name).Single();
                 if (user != null)
                 {
                     if (user.position != "fired")
